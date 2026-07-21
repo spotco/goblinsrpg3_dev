@@ -44,6 +44,11 @@ def main() -> None:
         "function parsedModifiers",
         "function nodeTiming",
         "function transitionList",
+        "function nodeLocalId",
+        "function triggerKey",
+        "function nodeTriggerConditions",
+        "function registerAnimationTriggerWaits",
+        "function emitAnimationTrigger",
         "function applyCommandBehavior",
         "function playAudioSource",
         "function flushPendingAudioCommands",
@@ -54,6 +59,8 @@ def main() -> None:
         fail("layer metric datasets are missing from app.js")
     if "ease-in-out" not in app_js or "autoReverse" not in app_js:
         fail("animation timing modifier support is missing from app.js")
+    if "animationTriggerWaiters" not in app_js or "triggerEvent === 3" not in app_js or "triggerEvent === 4" not in app_js:
+        fail("animation start/end trigger support is missing from app.js")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     animation_status = manifest.get("animationStatus", {})

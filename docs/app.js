@@ -11,6 +11,7 @@ const state = {
   animationSlides: new Map(),
   animationQueue: [],
   animationTimers: [],
+  animationTriggerWaiters: new Map(),
   currentLayerElements: new Map(),
   debug: new URLSearchParams(window.location.search).has("debug"),
 };
@@ -95,6 +96,7 @@ function clearAnimationTimers() {
   }
   state.animationTimers = [];
   state.animationQueue = [];
+  state.animationTriggerWaiters = new Map();
 }
 
 function scheduleAnimation(callback, delayMs = 0) {
@@ -297,11 +299,65 @@ function nodeDelay(node) {
   let delay = 0;
   for (const condition of node.conditions || []) {
     const parsed = condition.parsed;
+    if (parsed && parsed.triggerObject === 2 && (parsed.triggerEvent === 3 || parsed.triggerEvent === 4)) {
+      continue;
+    }
     if (parsed && Number.isFinite(parsed.delayMs) && parsed.delayMs > delay) {
       delay = parsed.delayMs;
     }
   }
   return delay;
+}
+
+function nodeLocalId(node) {
+  const match = typeof node.id === "string" ? node.id.match(/tn(\d+)$/) : null;
+  return match ? Number.parseInt(match[1], 10) : null;
+}
+
+function triggerKey(triggerEvent, targetId) {
+  return `${triggerEvent}:${targetId}`;
+}
+
+function nodeTriggerConditions(node) {
+  return (node.conditions || [])
+    .map((condition) => condition.parsed)
+    .filter((condition) => {
+      return (
+        condition &&
+        condition.triggerObject === 2 &&
+        (condition.triggerEvent === 3 || condition.triggerEvent === 4) &&
+        Number.isFinite(condition.targetId) &&
+        condition.targetId > 0
+      );
+    });
+}
+
+function registerAnimationTriggerWaits(node) {
+  for (const condition of nodeTriggerConditions(node)) {
+    const key = triggerKey(condition.triggerEvent, condition.targetId);
+    const waiters = state.animationTriggerWaiters.get(key) || [];
+    waiters.push({
+      node,
+      delayMs: Number.isFinite(condition.delayMs) && condition.delayMs > 0 ? condition.delayMs : 0,
+    });
+    state.animationTriggerWaiters.set(key, waiters);
+  }
+}
+
+function emitAnimationTrigger(triggerEvent, node) {
+  const localId = nodeLocalId(node);
+  if (!localId) {
+    return;
+  }
+  const key = triggerKey(triggerEvent, localId);
+  const waiters = state.animationTriggerWaiters.get(key);
+  if (!waiters || waiters.length === 0) {
+    return;
+  }
+  state.animationTriggerWaiters.delete(key);
+  for (const waiter of waiters) {
+    runAnimationNode(waiter.node, waiter.delayMs, true, true);
+  }
 }
 
 function nodeWaitsForClick(node) {
@@ -484,12 +540,19 @@ function applyBehavior(node, behavior) {
   }
 }
 
-function runAnimationNode(node, baseDelay = 0, allowClickNode = false) {
+function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTriggeredNode = false) {
+  if (nodeTriggerConditions(node).length > 0 && !allowTriggeredNode) {
+    registerAnimationTriggerWaits(node);
+    return;
+  }
   if (nodeWaitsForClick(node) && !allowClickNode) {
     state.animationQueue.push(node);
     return;
   }
   const startDelay = baseDelay + nodeDelay(node);
+  scheduleAnimation(() => {
+    emitAnimationTrigger(3, node);
+  }, startDelay);
   if (node.behaviors && node.behaviors.length) {
     scheduleAnimation(() => {
       for (const behavior of node.behaviors) {
@@ -497,8 +560,11 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false) {
       }
     }, startDelay);
   }
+  scheduleAnimation(() => {
+    emitAnimationTrigger(4, node);
+  }, startDelay + nodeDuration(node));
   for (const child of node.children || []) {
-    runAnimationNode(child, startDelay, false);
+    runAnimationNode(child, startDelay, false, false);
   }
 }
 
