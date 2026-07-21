@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import io
 import json
+import re
 import struct
 from collections import Counter
 from pathlib import Path
@@ -31,6 +32,9 @@ EX_HYPERLINK = 4055
 EX_HYPERLINK_ATOM = 4051
 SOUND = 2022
 SOUND_DATA = 2023
+OFFICEART_SP_CONTAINER = 0xF004
+OFFICEART_SP = 0xF00A
+OFFICEART_CLIENT_ANCHOR = 0xF010
 
 
 def iter_records(
@@ -62,6 +66,67 @@ def iter_records(
 def record_payload(data: bytes, record: dict[str, int]) -> bytes:
     start = record["offset"] + RECORD_HEADER.size
     return data[start : start + record["length"]]
+
+
+def iter_records_with_context(
+    data: bytes,
+    start: int = 0,
+    end: int | None = None,
+    depth: int = 0,
+    slide_state: dict[str, int] | None = None,
+    shape_context: dict[str, object] | None = None,
+) -> Iterator[dict[str, object]]:
+    """Walk records while retaining the containing slide and shape bounds."""
+
+    end = len(data) if end is None else end
+    slide_state = {"order": 0} if slide_state is None else slide_state
+    active_shape_context = shape_context
+    offset = start
+    while offset + RECORD_HEADER.size <= end:
+        ver_instance, record_type, record_length = RECORD_HEADER.unpack_from(data, offset)
+        record_end = offset + RECORD_HEADER.size + record_length
+        if record_end > end:
+            return
+        record: dict[str, object] = {
+            "offset": offset,
+            "depth": depth,
+            "version": ver_instance & 0xF,
+            "instance": ver_instance >> 4,
+            "type": record_type,
+            "length": record_length,
+            "slide_order": slide_state["order"] or None,
+            "shape_id": active_shape_context.get("shape_id") if active_shape_context else None,
+            "bounds": active_shape_context.get("bounds") if active_shape_context else None,
+        }
+        if depth == 0 and record_type == SLIDE:
+            slide_state["order"] += 1
+            record["slide_order"] = slide_state["order"]
+        next_shape_context = active_shape_context
+        if record_type == OFFICEART_SP_CONTAINER:
+            next_shape_context = {"shape_id": None, "bounds": None}
+        elif record_type == OFFICEART_SP and active_shape_context is not None:
+            payload = record_payload(data, {key: record[key] for key in ("offset", "length")})
+            if len(payload) >= 4:
+                next_shape_context = dict(active_shape_context)
+                next_shape_context["shape_id"] = struct.unpack_from("<I", payload)[0]
+        elif record_type == OFFICEART_CLIENT_ANCHOR and active_shape_context is not None:
+            payload = record_payload(data, {key: record[key] for key in ("offset", "length")})
+            if len(payload) >= 8:
+                next_shape_context = dict(active_shape_context)
+                next_shape_context["bounds"] = list(struct.unpack_from("<hhhh", payload))
+        if record_type in (OFFICEART_SP, OFFICEART_CLIENT_ANCHOR):
+            active_shape_context = next_shape_context
+        yield record
+        if (ver_instance & 0xF) == 0xF:
+            yield from iter_records_with_context(
+                data,
+                offset + RECORD_HEADER.size,
+                record_end,
+                depth + 1,
+                slide_state,
+                next_shape_context,
+            )
+        offset = record_end
 
 
 def png_end(data: bytes, start: int) -> int:
@@ -152,6 +217,7 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
         ppt = ole.openstream("PowerPoint Document").read()
         pictures = ole.openstream("Pictures").read()
         records = list(iter_records(ppt))
+        contextual_records = list(iter_records_with_context(ppt))
         counts = Counter(record["type"] for record in records)
         slides = [
             {key: record[key] for key in ("offset", "length", "depth", "instance")}
@@ -172,6 +238,72 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
             for record in records
             if record["type"] in (SOUND, SOUND_DATA)
         ]
+        hyperlinks: dict[int, dict[str, object]] = {}
+        for event in contextual_records:
+            if event["type"] != EX_HYPERLINK:
+                continue
+            payload_start = int(event["offset"]) + RECORD_HEADER.size
+            payload_end = payload_start + int(event["length"])
+            link_id = None
+            label = ""
+            child = payload_start
+            while child + RECORD_HEADER.size <= payload_end:
+                _vi, child_type, child_length = RECORD_HEADER.unpack_from(ppt, child)
+                child_payload = ppt[child + RECORD_HEADER.size : child + RECORD_HEADER.size + child_length]
+                if child_type == EX_HYPERLINK_ATOM and len(child_payload) >= 4:
+                    link_id = struct.unpack_from("<I", child_payload)[0]
+                elif child_type == 4026:
+                    label = child_payload.decode("utf-16le", "ignore")
+                child += RECORD_HEADER.size + child_length
+            if link_id is not None:
+                hyperlinks[link_id] = {
+                    "id": link_id,
+                    "label": label,
+                    "record_offset": event["offset"],
+                }
+        objects = []
+        interactive_actions = []
+        for event in contextual_records:
+            if event["type"] == OFFICEART_SP:
+                payload = record_payload(ppt, {key: event[key] for key in ("offset", "length")})
+                if len(payload) >= 4:
+                    objects.append(
+                        {
+                            "slide": event["slide_order"],
+                            "shape_id": struct.unpack_from("<I", payload)[0],
+                            "bounds": event["bounds"],
+                            "record_offset": event["offset"],
+                        }
+                    )
+            if event["type"] != INTERACTIVE_INFO_ATOM:
+                continue
+            payload = record_payload(ppt, {key: event[key] for key in ("offset", "length")})
+            if len(payload) < 12:
+                continue
+            sound_ref, hyperlink_id = struct.unpack_from("<II", payload)
+            action_code = payload[8]
+            target = hyperlinks.get(hyperlink_id)
+            label = target["label"] if target else None
+            match = re.fullmatch(r"Slide (\d+)", label or "")
+            interactive_actions.append(
+                {
+                    "record_offset": event["offset"],
+                    "slide": event["slide_order"],
+                    "shape_id": event["shape_id"],
+                    "bounds": event["bounds"],
+                    "sound_ref": sound_ref,
+                    "hyperlink_id": hyperlink_id,
+                    "target_label": label,
+                    "target_slide": int(match.group(1)) if match else None,
+                    "action_code": action_code,
+                    "flags_hex": payload[12:].hex(),
+                }
+            )
+        navigation_edges = [
+            action
+            for action in interactive_actions
+            if action["target_slide"] is not None
+        ]
         assets = extract_pictures(pictures, output_dir / "assets")
         source_audio = [
             {"path": name, "bytes": (source.parent / name).stat().st_size}
@@ -191,13 +323,17 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
             "record_type_counts": {str(key): value for key, value in sorted(counts.items())},
             "slides": slides,
             "actions": actions,
+            "hyperlinks": sorted(hyperlinks.values(), key=lambda item: int(item["id"])),
+            "objects": objects,
+            "interactive_actions": interactive_actions,
+            "navigation_edges": navigation_edges,
             "sounds": sounds,
             "embedded_assets": assets,
             "source_audio": source_audio,
         }
     output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "inventory.json").write_text(
-        json.dumps(inventory, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(inventory, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n"
     )
     return inventory
 

@@ -23,13 +23,13 @@ The counts are an extraction baseline, not yet a statement that every record is 
 1. **Freeze and inventory the source**
    - [x] Keep the `.pps` and original audio read-only as the reference copy; record the presentation hash and source stream inventory.
    - [x] Produce a repeatable baseline OLE record/slide/sound/media inventory in `generated/inventory.json`.
-   - [ ] Resolve persistent slide IDs, slide order, title/master/layout records, text runs, object bounds/z-order, all action settings, animation/transition records, and sound references.
-   - [ ] Produce reviewable reports for objects, asset use, and directed navigation edges (source screen, hotspot rectangle, action, target screen), including dangling/external/non-slide actions.
+   - [ ] Resolve persistent slide IDs, title/master/layout records, text runs, z-order, animation/transition records, and all sound-reference semantics.
+   - [x] Produce a reviewable JSON report for slides, shape objects, asset inventory, and directed navigation edges (source screen, hotspot rectangle, action, target screen), including non-slide actions.
 
 2. **Build a deterministic legacy-PowerPoint extractor**
    - [x] Add `tools/extract_ppt.py`, which reads the OLE streams with `olefile`, walks the MS-PPT record tree, and writes a generated inventory.
    - [x] Extract PNG bitmap payloads losslessly; decode/convert the single DIB image to PNG; preserve source record IDs, dimensions, and hashes.
-   - [ ] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape/text run and its PowerPoint coordinates; do not infer a “next slide” fallback.
+   - [x] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape and PowerPoint coordinates; do not infer a “next slide” fallback.
    - [ ] Capture PowerPoint text, colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [ ] Convert and associate all audio cues in browser-compatible formats.
    - Capture PowerPoint text, colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.

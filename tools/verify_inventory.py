@@ -17,6 +17,13 @@ def main() -> None:
     assert inventory["record_type_counts"]["1006"] == 201
     assert inventory["record_type_counts"]["4083"] == 217
     assert inventory["record_type_counts"]["4055"] == 194
+    assert len(inventory["hyperlinks"]) == 194
+    assert len(inventory["objects"]) == 1591
+    assert len(inventory["interactive_actions"]) == 217
+    assert len(inventory["navigation_edges"]) == 194
+    assert all(action["shape_id"] is not None for action in inventory["interactive_actions"])
+    assert all(action["bounds"] is not None for action in inventory["interactive_actions"])
+    assert all(edge["target_slide"] for edge in inventory["navigation_edges"])
     assert len(inventory["embedded_assets"]) == 116
     assert sum(asset["encoding"] == "png" for asset in inventory["embedded_assets"]) == 115
     assert sum(asset["encoding"] == "dib->png" for asset in inventory["embedded_assets"]) == 1
