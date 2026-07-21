@@ -99,6 +99,10 @@
       "unresolvedShapeTargets": []
     }
   },
+  "transitionStatus": {
+    "status": "available",
+    "count": 201
+  },
   "audio": [
     {
       "source": "rocksong.wma",
@@ -230,7 +234,21 @@
           "pictureType": "PNG",
           "sourceBytes": 650
         }
-      ]
+      ],
+      "transition": {
+        "slide": 1,
+        "recordOffset": 370129,
+        "slideTimeMs": 4000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "a00f0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-002",
@@ -375,7 +393,19 @@
           "pictureType": "PNG",
           "sourceBytes": 2495
         }
-      ]
+      ],
+      "transition": {
+        "slide": 2,
+        "recordOffset": 375445,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-003",
@@ -480,7 +510,21 @@
           "type": "text",
           "text": "100 to 150 years ago\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 3,
+        "recordOffset": 377475,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 1,
+        "effectType": 3,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000103010002b24c30"
+      }
     },
     {
       "id": "slide-004",
@@ -590,7 +634,21 @@
           "type": "text",
           "text": "And then the goblins invaded\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 4,
+        "recordOffset": 382026,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000200010002b24c30"
+      }
     },
     {
       "id": "slide-005",
@@ -695,7 +753,21 @@
           "type": "text",
           "text": "And there seemed no end"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 5,
+        "recordOffset": 382941,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000200010002b24c30"
+      }
     },
     {
       "id": "slide-006",
@@ -754,7 +826,21 @@
           "type": "text",
           "text": "Until the \ufffdhero of time\ufffd appeared."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 6,
+        "recordOffset": 386512,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000200010002b24c30"
+      }
     },
     {
       "id": "slide-007",
@@ -974,7 +1060,21 @@
           "type": "text",
           "text": "The hero of time ded them all with fell run of his spear.\n(don\ufffdt ask)"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 7,
+        "recordOffset": 388296,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000200010002b24c30"
+      }
     },
     {
       "id": "slide-008",
@@ -1056,7 +1156,21 @@
           "type": "text",
           "text": "This is 100 to 150 years later\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 8,
+        "recordOffset": 397395,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000200010002b24c30"
+      }
     },
     {
       "id": "slide-009",
@@ -1221,7 +1335,19 @@
           "pictureType": "PNG",
           "sourceBytes": 444
         }
-      ]
+      ],
+      "transition": {
+        "slide": 9,
+        "recordOffset": 400518,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-010",
@@ -1394,7 +1520,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 10,
+        "recordOffset": 404133,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-011",
@@ -1490,7 +1628,19 @@
           "pictureType": "PNG",
           "sourceBytes": 444
         }
-      ]
+      ],
+      "transition": {
+        "slide": 11,
+        "recordOffset": 405184,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-012",
@@ -1632,7 +1782,21 @@
           "type": "text",
           "text": "I\ufffdll give you this if you leave me alone."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 12,
+        "recordOffset": 405793,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000200010002b24c30"
+      }
     },
     {
       "id": "slide-013",
@@ -1751,7 +1915,21 @@
           "pictureType": "PNG",
           "sourceBytes": 2495
         }
-      ]
+      ],
+      "transition": {
+        "slide": 13,
+        "recordOffset": 409181,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "00000000000000000200010002b24c30"
+      }
     },
     {
       "id": "slide-014",
@@ -2115,7 +2293,21 @@
           "pictureType": "PNG",
           "sourceBytes": 2495
         }
-      ]
+      ],
+      "transition": {
+        "slide": 14,
+        "recordOffset": 411062,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-015",
@@ -2413,7 +2605,21 @@
           "type": "text",
           "text": "I\ufffdm bored\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 15,
+        "recordOffset": 420621,
+        "slideTimeMs": 9000,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 22,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 0,
+        "rawHex": "28230000000000000016000400b24c30"
+      }
     },
     {
       "id": "slide-016",
@@ -2683,7 +2889,19 @@
           "type": "text",
           "text": "\n"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 16,
+        "recordOffset": 424033,
+        "slideTimeMs": 9000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "28230000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-017",
@@ -2909,7 +3127,19 @@
           "pictureType": "PNG",
           "sourceBytes": 130
         }
-      ]
+      ],
+      "transition": {
+        "slide": 17,
+        "recordOffset": 426722,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-018",
@@ -3163,7 +3393,19 @@
           "pictureType": "PNG",
           "sourceBytes": 135
         }
-      ]
+      ],
+      "transition": {
+        "slide": 18,
+        "recordOffset": 434301,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-019",
@@ -3389,7 +3631,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 19,
+        "recordOffset": 441946,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-020",
@@ -3615,7 +3869,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 20,
+        "recordOffset": 447757,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-021",
@@ -3862,7 +4128,19 @@
           "type": "text",
           "text": "15"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 21,
+        "recordOffset": 453567,
+        "slideTimeMs": 9000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "28230000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-022",
@@ -4081,7 +4359,19 @@
           "type": "text",
           "text": "15"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 22,
+        "recordOffset": 454902,
+        "slideTimeMs": 9000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "28230000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-023",
@@ -4330,7 +4620,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 23,
+        "recordOffset": 456169,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-024",
@@ -4628,7 +4930,19 @@
           "type": "text",
           "text": "10"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 24,
+        "recordOffset": 471617,
+        "slideTimeMs": 9000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "28230000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-025",
@@ -4849,7 +5163,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 25,
+        "recordOffset": 473160,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-026",
@@ -5042,7 +5368,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 26,
+        "recordOffset": 483474,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-027",
@@ -5238,7 +5576,19 @@
           "pictureType": "PNG",
           "sourceBytes": 788
         }
-      ]
+      ],
+      "transition": {
+        "slide": 27,
+        "recordOffset": 491287,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-028",
@@ -5436,7 +5786,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 28,
+        "recordOffset": 492410,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-029",
@@ -5698,7 +6060,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 29,
+        "recordOffset": 498430,
+        "slideTimeMs": 4000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "a00f0000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-030",
@@ -5863,7 +6237,19 @@
           "pictureType": "PNG",
           "sourceBytes": 2495
         }
-      ]
+      ],
+      "transition": {
+        "slide": 30,
+        "recordOffset": 507386,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-031",
@@ -6112,7 +6498,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 31,
+        "recordOffset": 510974,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-032",
@@ -6333,7 +6731,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 32,
+        "recordOffset": 526422,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-033",
@@ -6590,7 +7000,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 33,
+        "recordOffset": 536736,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-034",
@@ -6783,7 +7205,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 34,
+        "recordOffset": 542578,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-035",
@@ -7009,7 +7443,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 35,
+        "recordOffset": 550391,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-036",
@@ -7406,7 +7852,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 36,
+        "recordOffset": 556200,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-037",
@@ -7604,7 +8062,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 37,
+        "recordOffset": 573174,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-038",
@@ -7797,7 +8267,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 38,
+        "recordOffset": 579194,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-039",
@@ -7993,7 +8475,19 @@
           "pictureType": "PNG",
           "sourceBytes": 788
         }
-      ]
+      ],
+      "transition": {
+        "slide": 39,
+        "recordOffset": 587007,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-040",
@@ -8219,7 +8713,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 40,
+        "recordOffset": 588130,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-041",
@@ -8417,7 +8923,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 41,
+        "recordOffset": 593939,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-042",
@@ -8610,7 +9128,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 42,
+        "recordOffset": 599959,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-043",
@@ -8893,7 +9423,21 @@
           "pictureType": "PNG",
           "sourceBytes": 788
         }
-      ]
+      ],
+      "transition": {
+        "slide": 43,
+        "recordOffset": 607772,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-044",
@@ -8998,7 +9542,21 @@
           "type": "text",
           "text": "\ufffdYou are here\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 44,
+        "recordOffset": 610960,
+        "slideTimeMs": 7000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "581b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-045",
@@ -9057,7 +9615,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 45,
+        "recordOffset": 615078,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-046",
@@ -9353,7 +9925,19 @@
           "type": "text",
           "text": "-flee"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 46,
+        "recordOffset": 616888,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 22,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000016000000b24c30"
+      }
     },
     {
       "id": "slide-047",
@@ -9542,7 +10126,21 @@
           "pictureType": "PNG",
           "sourceBytes": 871
         }
-      ]
+      ],
+      "transition": {
+        "slide": 47,
+        "recordOffset": 619816,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 0,
+        "rawHex": "b80b0000000000000200000400b24c30"
+      }
     },
     {
       "id": "slide-048",
@@ -9665,7 +10263,21 @@
           "type": "text",
           "text": "Huh what the heck?"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 48,
+        "recordOffset": 626742,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 1,
+        "effectType": 11,
+        "flags": 1,
+        "flagNames": [
+          "manualAdvance"
+        ],
+        "speed": 0,
+        "rawHex": "0000000000000000010b010000b24c30"
+      }
     },
     {
       "id": "slide-049",
@@ -9802,7 +10414,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 49,
+        "recordOffset": 632624,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 11,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "0000000000000000000b000000b24c30"
+      }
     },
     {
       "id": "slide-050",
@@ -10001,7 +10625,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 50,
+        "recordOffset": 633539,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-051",
@@ -10192,7 +10828,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 51,
+        "recordOffset": 634750,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-052",
@@ -10391,7 +11039,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 52,
+        "recordOffset": 635841,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-053",
@@ -10482,7 +11142,19 @@
           "type": "text",
           "text": "OCCUPIED!!\n(back)"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 53,
+        "recordOffset": 637380,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-054",
@@ -10678,7 +11350,19 @@
           "type": "text",
           "text": "You trash digger\ufffd."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 54,
+        "recordOffset": 638120,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-055",
@@ -10755,7 +11439,21 @@
           "type": "text",
           "text": "Huh?"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 55,
+        "recordOffset": 642562,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-056",
@@ -10915,7 +11613,19 @@
           "type": "text",
           "text": "Don\ufffdt just stand there\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 56,
+        "recordOffset": 645310,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-057",
@@ -11061,7 +11771,21 @@
           "type": "text",
           "text": "\ufffd\ufffd\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 57,
+        "recordOffset": 648560,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-058",
@@ -11207,7 +11931,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 58,
+        "recordOffset": 653408,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-059",
@@ -11266,7 +12004,21 @@
           "type": "text",
           "text": "We believe you\ufffdre the\n\ufffdHero of time\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 59,
+        "recordOffset": 658367,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-060",
@@ -11394,7 +12146,21 @@
           "type": "text",
           "text": "There you will find your destiny\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 60,
+        "recordOffset": 660187,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 1,
+        "effectType": 21,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 0,
+        "rawHex": "88130000000000000115000400b24c30"
+      }
     },
     {
       "id": "slide-061",
@@ -11471,7 +12237,21 @@
           "type": "text",
           "text": "NOTE FROM SHINY: LETS SEE YOU COME UP WITH ANYTHING BETTER!!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 61,
+        "recordOffset": 664107,
+        "slideTimeMs": 4000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "a00f0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-062",
@@ -11553,7 +12333,21 @@
           "type": "text",
           "text": "You must defeat them before they take over the world!!!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 62,
+        "recordOffset": 666965,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-063",
@@ -11612,7 +12406,21 @@
           "type": "text",
           "text": "Take over the world!!!!!!!!!!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 63,
+        "recordOffset": 668916,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-064",
@@ -11694,7 +12502,21 @@
           "type": "text",
           "text": "She sure gets her point made\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 64,
+        "recordOffset": 670695,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 27,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 0,
+        "rawHex": "b80b000000000000001b000400b24c30"
+      }
     },
     {
       "id": "slide-065",
@@ -11862,7 +12684,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 65,
+        "recordOffset": 672597,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-066",
@@ -11921,7 +12755,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 66,
+        "recordOffset": 675713,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-067",
@@ -12228,7 +13076,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 67,
+        "recordOffset": 677235,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000200000000b24c30"
+      }
     },
     {
       "id": "slide-068",
@@ -12287,7 +13147,21 @@
           "type": "text",
           "text": "\ufffd\n"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 68,
+        "recordOffset": 678913,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-069",
@@ -12540,7 +13414,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 69,
+        "recordOffset": 680592,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000200000000b24c30"
+      }
     },
     {
       "id": "slide-070",
@@ -12631,7 +13517,19 @@
           "type": "text",
           "text": "Hey ,can I have some money mister?\n(back\ufffd)\n"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 70,
+        "recordOffset": 682024,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-071",
@@ -12722,7 +13620,19 @@
           "type": "text",
           "text": "Hey ,can I have some money, mister?\n(back\ufffd)\n"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 71,
+        "recordOffset": 682831,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-072",
@@ -12921,7 +13831,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 72,
+        "recordOffset": 683640,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-073",
@@ -13012,7 +13934,19 @@
           "type": "text",
           "text": "Help me!!\n\n(back)"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 73,
+        "recordOffset": 684949,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-074",
@@ -13185,7 +14119,19 @@
           "type": "text",
           "text": "(back)"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 74,
+        "recordOffset": 685713,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-075",
@@ -13244,7 +14190,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 75,
+        "recordOffset": 689269,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-076",
@@ -13303,7 +14263,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 76,
+        "recordOffset": 691561,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-077",
@@ -13362,7 +14336,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 77,
+        "recordOffset": 693370,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-078",
@@ -13421,7 +14409,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 78,
+        "recordOffset": 695017,
+        "slideTimeMs": 4000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "a00f0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-079",
@@ -13694,7 +14696,19 @@
           "type": "text",
           "text": "-flee"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 79,
+        "recordOffset": 696815,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 22,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000016000002b24c30"
+      }
     },
     {
       "id": "slide-080",
@@ -14154,7 +15168,21 @@
           "type": "text",
           "text": "Felled Mr. T!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 80,
+        "recordOffset": 699571,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-081",
@@ -14419,7 +15447,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 81,
+        "recordOffset": 712874,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-082",
@@ -14612,7 +15652,19 @@
           "type": "text",
           "text": "Click to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 82,
+        "recordOffset": 717576,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-083",
@@ -14838,7 +15890,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 83,
+        "recordOffset": 721985,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-084",
@@ -14952,7 +16016,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 84,
+        "recordOffset": 727100,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-085",
@@ -15090,7 +16166,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 85,
+        "recordOffset": 729676,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-086",
@@ -15288,7 +16378,19 @@
           "type": "text",
           "text": "Click here to continue."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 86,
+        "recordOffset": 732587,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-087",
@@ -15561,7 +16663,19 @@
           "type": "text",
           "text": "10"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 87,
+        "recordOffset": 736707,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-088",
@@ -15818,7 +16932,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 88,
+        "recordOffset": 738352,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-089",
@@ -15956,7 +17082,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 89,
+        "recordOffset": 743496,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-090",
@@ -16154,7 +17294,19 @@
           "type": "text",
           "text": "Click here to continue."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 90,
+        "recordOffset": 746407,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-091",
@@ -16213,7 +17365,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 91,
+        "recordOffset": 750527,
+        "slideTimeMs": 4000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "a00f0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-092",
@@ -16486,7 +17652,19 @@
           "type": "text",
           "text": "-Flee"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 92,
+        "recordOffset": 752047,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 22,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000016000000b24c30"
+      }
     },
     {
       "id": "slide-093",
@@ -16600,7 +17778,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 93,
+        "recordOffset": 754739,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-094",
@@ -16819,7 +18009,19 @@
           "type": "text",
           "text": "You can\ufffdt run from a slug! That\ufffds just not cool!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 94,
+        "recordOffset": 757315,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-095",
@@ -17068,7 +18270,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 95,
+        "recordOffset": 759954,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-096",
@@ -17333,7 +18547,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 96,
+        "recordOffset": 766668,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-097",
@@ -17848,7 +19074,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 97,
+        "recordOffset": 771529,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-098",
@@ -17907,7 +19145,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 98,
+        "recordOffset": 785809,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-099",
@@ -17998,7 +19250,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 99,
+        "recordOffset": 787651,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-100",
@@ -18057,7 +19321,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 100,
+        "recordOffset": 788310,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-101",
@@ -18125,7 +19403,19 @@
           "pictureType": "PNG",
           "sourceBytes": 3822
         }
-      ]
+      ],
+      "transition": {
+        "slide": 101,
+        "recordOffset": 790156,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-102",
@@ -18347,7 +19637,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 102,
+        "recordOffset": 790693,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-103",
@@ -18492,7 +19794,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 103,
+        "recordOffset": 792080,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-104",
@@ -18750,7 +20064,19 @@
           "pictureType": "PNG",
           "sourceBytes": 2495
         }
-      ]
+      ],
+      "transition": {
+        "slide": 104,
+        "recordOffset": 792907,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-105",
@@ -18895,7 +20221,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 105,
+        "recordOffset": 795126,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-106",
@@ -18986,7 +20324,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 106,
+        "recordOffset": 795953,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-107",
@@ -19355,7 +20705,19 @@
           "pictureType": "PNG",
           "sourceBytes": 157
         }
-      ]
+      ],
+      "transition": {
+        "slide": 107,
+        "recordOffset": 796612,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-108",
@@ -19724,7 +21086,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 108,
+        "recordOffset": 797967,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-109",
@@ -20009,7 +21383,19 @@
           "pictureType": "PNG",
           "sourceBytes": 211
         }
-      ]
+      ],
+      "transition": {
+        "slide": 109,
+        "recordOffset": 799322,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-110",
@@ -20406,7 +21792,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 110,
+        "recordOffset": 800479,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-111",
@@ -20582,7 +21980,21 @@
           "pictureType": "PNG",
           "sourceBytes": 157
         }
-      ]
+      ],
+      "transition": {
+        "slide": 111,
+        "recordOffset": 801900,
+        "slideTimeMs": 1000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "e8030000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-112",
@@ -20881,7 +22293,19 @@
           "type": "text",
           "text": "-flee"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 112,
+        "recordOffset": 802721,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 22,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000016000000b24c30"
+      }
     },
     {
       "id": "slide-113",
@@ -21149,7 +22573,19 @@
           "type": "text",
           "text": "-limit"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 113,
+        "recordOffset": 805784,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-114",
@@ -21434,7 +22870,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 114,
+        "recordOffset": 809221,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-115",
@@ -21628,7 +23076,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 115,
+        "recordOffset": 815434,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-116",
@@ -21872,7 +23334,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 116,
+        "recordOffset": 819754,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-117",
@@ -22329,7 +23803,21 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 117,
+        "recordOffset": 824685,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-118",
@@ -22573,7 +24061,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 118,
+        "recordOffset": 839210,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-119",
@@ -22818,7 +24318,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 119,
+        "recordOffset": 844141,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-120",
@@ -22986,7 +24498,19 @@
           "type": "text",
           "text": "20"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 120,
+        "recordOffset": 845877,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-121",
@@ -23180,7 +24704,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 121,
+        "recordOffset": 846935,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-122",
@@ -23369,7 +24907,21 @@
           "type": "text",
           "text": "Player takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 122,
+        "recordOffset": 851255,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-123",
@@ -23614,7 +25166,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 123,
+        "recordOffset": 855156,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-124",
@@ -23808,7 +25372,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 124,
+        "recordOffset": 856895,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-125",
@@ -24052,7 +25630,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 125,
+        "recordOffset": 861215,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-126",
@@ -24564,7 +26154,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 126,
+        "recordOffset": 866122,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "70170000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-127",
@@ -24818,7 +26420,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 127,
+        "recordOffset": 882317,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-128",
@@ -25048,7 +26662,21 @@
           "type": "text",
           "text": "Defense raised by 20%!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 128,
+        "recordOffset": 883461,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-129",
@@ -25292,7 +26920,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 129,
+        "recordOffset": 888672,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-130",
@@ -25522,7 +27162,21 @@
           "type": "text",
           "text": "Defense raised by 20%!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 130,
+        "recordOffset": 893579,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-131",
@@ -25711,7 +27365,21 @@
           "type": "text",
           "text": "Player takes 10 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 131,
+        "recordOffset": 898790,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-132",
@@ -25848,7 +27516,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 132,
+        "recordOffset": 902691,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-133",
@@ -26042,7 +27722,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 133,
+        "recordOffset": 903698,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-134",
@@ -26286,7 +27980,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 134,
+        "recordOffset": 908018,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-135",
@@ -26423,7 +28129,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 135,
+        "recordOffset": 912925,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-136",
@@ -26695,7 +28413,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 136,
+        "recordOffset": 913935,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-137",
@@ -26886,7 +28616,19 @@
           "type": "text",
           "text": "-magic"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 137,
+        "recordOffset": 920894,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-138",
@@ -27135,14 +28877,38 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 138,
+        "recordOffset": 922110,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-139",
       "slide": 139,
       "image": "screens/slide-139.png",
       "hotspots": [],
-      "layers": []
+      "layers": [],
+      "transition": {
+        "slide": 139,
+        "recordOffset": 927432,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-140",
@@ -27372,7 +29138,21 @@
           "type": "text",
           "text": "Defense raised by 20%!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 140,
+        "recordOffset": 927857,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-141",
@@ -27616,7 +29396,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 141,
+        "recordOffset": 933068,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-142",
@@ -27830,7 +29622,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 142,
+        "recordOffset": 937971,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-143",
@@ -28287,7 +30091,21 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 143,
+        "recordOffset": 939656,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-144",
@@ -28531,14 +30349,38 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 144,
+        "recordOffset": 954181,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-145",
       "slide": 145,
       "image": "screens/slide-145.png",
       "hotspots": [],
-      "layers": []
+      "layers": [],
+      "transition": {
+        "slide": 145,
+        "recordOffset": 959088,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-146",
@@ -28995,7 +30837,21 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 146,
+        "recordOffset": 959424,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-147",
@@ -29239,7 +31095,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 147,
+        "recordOffset": 973949,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-148",
@@ -29270,7 +31138,19 @@
           "type": "text",
           "text": "Magic\ufffded battle."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 148,
+        "recordOffset": 978856,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-149",
@@ -29459,7 +31339,21 @@
           "type": "text",
           "text": "Player takes 4 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 149,
+        "recordOffset": 979376,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "88130000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-150",
@@ -29704,7 +31598,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 150,
+        "recordOffset": 983276,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-151",
@@ -29898,7 +31804,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 151,
+        "recordOffset": 984710,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-152",
@@ -30142,7 +32062,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 152,
+        "recordOffset": 989030,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-153",
@@ -30379,7 +32311,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 153,
+        "recordOffset": 993937,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-154",
@@ -30573,7 +32517,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 154,
+        "recordOffset": 995797,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-155",
@@ -30817,7 +32775,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 155,
+        "recordOffset": 1000117,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-156",
@@ -31085,7 +33055,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 156,
+        "recordOffset": 1005024,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-157",
@@ -31279,7 +33261,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 157,
+        "recordOffset": 1006939,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-158",
@@ -31523,7 +33519,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 158,
+        "recordOffset": 1011259,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-159",
@@ -31791,7 +33799,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 159,
+        "recordOffset": 1016166,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-160",
@@ -31985,7 +34005,21 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 160,
+        "recordOffset": 1018091,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-161",
@@ -32229,7 +34263,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 161,
+        "recordOffset": 1022411,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-162",
@@ -32686,7 +34732,21 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 162,
+        "recordOffset": 1027318,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-163",
@@ -32930,7 +34990,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 163,
+        "recordOffset": 1041843,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-164",
@@ -33121,7 +35193,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 164,
+        "recordOffset": 1046750,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-165",
@@ -33393,7 +35477,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 165,
+        "recordOffset": 1047986,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-166",
@@ -33424,7 +35520,19 @@
           "type": "text",
           "text": "If magic/limit"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 166,
+        "recordOffset": 1054945,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-167",
@@ -33881,7 +35989,21 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 167,
+        "recordOffset": 1055403,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-168",
@@ -34125,7 +36247,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 168,
+        "recordOffset": 1069928,
+        "slideTimeMs": 5000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "88130000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-169",
@@ -34262,7 +36396,19 @@
           "type": "text",
           "text": "00%"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 169,
+        "recordOffset": 1074835,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-170",
@@ -34534,7 +36680,19 @@
           "type": "text",
           "text": "Click here to continue"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 170,
+        "recordOffset": 1075842,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "d0070000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-171",
@@ -34565,7 +36723,19 @@
           "type": "text",
           "text": "After Battle"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 171,
+        "recordOffset": 1082801,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-172",
@@ -34710,7 +36880,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 172,
+        "recordOffset": 1083259,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-173",
@@ -34801,7 +36983,19 @@
           "type": "text",
           "text": "Tis\ufffd here ye shall find th\ufffdart destiny.\n(back)"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 173,
+        "recordOffset": 1084086,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-174",
@@ -35000,7 +37194,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 174,
+        "recordOffset": 1084911,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-175",
@@ -35091,7 +37297,19 @@
           "type": "text",
           "text": "What up Holmes?\n(BACK!!!)"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 175,
+        "recordOffset": 1085912,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-176",
@@ -35182,7 +37400,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 176,
+        "recordOffset": 1086660,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-177",
@@ -35273,7 +37503,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 177,
+        "recordOffset": 1087319,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-178",
@@ -35418,7 +37660,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 178,
+        "recordOffset": 1087978,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000017000000b24c30"
+      }
     },
     {
       "id": "slide-179",
@@ -35617,7 +37871,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 179,
+        "recordOffset": 1088805,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000017000000b24c30"
+      }
     },
     {
       "id": "slide-180",
@@ -35816,7 +38082,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 180,
+        "recordOffset": 1089800,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000017000000b24c30"
+      }
     },
     {
       "id": "slide-181",
@@ -35961,7 +38239,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 181,
+        "recordOffset": 1090795,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000017000000b24c30"
+      }
     },
     {
       "id": "slide-182",
@@ -36106,7 +38396,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 182,
+        "recordOffset": 1091622,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000017000000b24c30"
+      }
     },
     {
       "id": "slide-183",
@@ -36243,7 +38545,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 183,
+        "recordOffset": 1092449,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-184",
@@ -36274,7 +38588,21 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 184,
+        "recordOffset": 1095625,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-185",
@@ -36310,7 +38638,21 @@
           "pictureType": "PNG",
           "sourceBytes": 559
         }
-      ]
+      ],
+      "transition": {
+        "slide": 185,
+        "recordOffset": 1096146,
+        "slideTimeMs": 1000,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "e8030000000000000017000402b24c30"
+      }
     },
     {
       "id": "slide-186",
@@ -36346,7 +38688,21 @@
           "pictureType": "PNG",
           "sourceBytes": 1766
         }
-      ]
+      ],
+      "transition": {
+        "slide": 186,
+        "recordOffset": 1096637,
+        "slideTimeMs": 1000,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "e8030000000000000017000402b24c30"
+      }
     },
     {
       "id": "slide-187",
@@ -36382,7 +38738,21 @@
           "pictureType": "PNG",
           "sourceBytes": 1800
         }
-      ]
+      ],
+      "transition": {
+        "slide": 187,
+        "recordOffset": 1097128,
+        "slideTimeMs": 3000,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "b80b0000000000000017000402b24c30"
+      }
     },
     {
       "id": "slide-188",
@@ -36418,7 +38788,21 @@
           "pictureType": "PNG",
           "sourceBytes": 2104
         }
-      ]
+      ],
+      "transition": {
+        "slide": 188,
+        "recordOffset": 1097619,
+        "slideTimeMs": 1000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "e8030000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-189",
@@ -36477,7 +38861,21 @@
           "type": "text",
           "text": "Who dares step into the light?"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 189,
+        "recordOffset": 1098110,
+        "slideTimeMs": 2000,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 23,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "d0070000000000000017000402b24c30"
+      }
     },
     {
       "id": "slide-190",
@@ -36745,7 +39143,19 @@
           "type": "text",
           "text": "45"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 190,
+        "recordOffset": 1099884,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 0,
+        "effectType": 22,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 0,
+        "rawHex": "00000000000000000016000000b24c30"
+      }
     },
     {
       "id": "slide-191",
@@ -36832,7 +39242,21 @@
           "type": "text",
           "text": "Ow\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 191,
+        "recordOffset": 1102664,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-192",
@@ -36896,7 +39320,21 @@
           "pictureType": "PNG",
           "sourceBytes": 2261
         }
-      ]
+      ],
+      "transition": {
+        "slide": 192,
+        "recordOffset": 1105804,
+        "slideTimeMs": 1000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "e8030000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-193",
@@ -37046,7 +39484,19 @@
           "pictureType": "PNG",
           "sourceBytes": 2495
         }
-      ]
+      ],
+      "transition": {
+        "slide": 193,
+        "recordOffset": 1107907,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-194",
@@ -37395,7 +39845,19 @@
           "type": "text",
           "text": ""
         }
-      ]
+      ],
+      "transition": {
+        "slide": 194,
+        "recordOffset": 1110642,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "70170000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-195",
@@ -37537,7 +39999,19 @@
           "type": "text",
           "text": "Click here to continue\ufffd"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 195,
+        "recordOffset": 1123936,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-196",
@@ -37716,7 +40190,21 @@
           "type": "text",
           "text": "+12"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 196,
+        "recordOffset": 1127402,
+        "slideTimeMs": 10000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "10270000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-197",
@@ -37881,7 +40369,19 @@
           "pictureType": "PNG",
           "sourceBytes": 2495
         }
-      ]
+      ],
+      "transition": {
+        "slide": 197,
+        "recordOffset": 1132938,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-198",
@@ -38004,7 +40504,21 @@
           "type": "text",
           "text": "Huh?"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 198,
+        "recordOffset": 1136526,
+        "slideTimeMs": 6000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "70170000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-199",
@@ -38063,7 +40577,21 @@
           "type": "text",
           "text": "Hi"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 199,
+        "recordOffset": 1141480,
+        "slideTimeMs": 4000,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 1024,
+        "flagNames": [
+          "autoAdvance"
+        ],
+        "speed": 2,
+        "rawHex": "a00f0000000000000200000402b24c30"
+      }
     },
     {
       "id": "slide-200",
@@ -38149,7 +40677,19 @@
           "type": "text",
           "text": "(press ESC to exit\ufffd)"
         }
-      ]
+      ],
+      "transition": {
+        "slide": 200,
+        "recordOffset": 1143226,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     },
     {
       "id": "slide-201",
@@ -38459,7 +40999,19 @@
           "type": "text",
           "text": "Bye."
         }
-      ]
+      ],
+      "transition": {
+        "slide": 201,
+        "recordOffset": 1145154,
+        "slideTimeMs": 0,
+        "soundRef": 0,
+        "effectDirection": 2,
+        "effectType": 0,
+        "flags": 0,
+        "flagNames": [],
+        "speed": 2,
+        "rawHex": "00000000000000000200000002b24c30"
+      }
     }
   ]
 }

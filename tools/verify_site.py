@@ -65,6 +65,7 @@ def main() -> None:
     missing_targets = []
     zero_hotspots = []
     enabled_count = 0
+    transition_count = 0
     layer_count = 0
     image_layer_count = 0
     animated_layer_count = 0
@@ -72,6 +73,8 @@ def main() -> None:
         image_path = args.site / screen["image"]
         if not image_path.exists():
             missing_files.append(screen["image"])
+        if screen.get("transition"):
+            transition_count += 1
         for layer in screen.get("layers", []):
             layer_count += 1
             if layer.get("animated"):
@@ -102,6 +105,11 @@ def main() -> None:
         fail(f"enabled hotspots with zero area: {zero_hotspots[:5]}")
     if enabled_count != 194:
         fail(f"expected 194 enabled navigation hotspots, found {enabled_count}")
+    if manifest.get("transitionStatus", {}).get("status") == "available":
+        if manifest["transitionStatus"].get("count") != 201:
+            fail("expected 201 extracted transitions in manifest status")
+        if transition_count != 201:
+            fail(f"expected 201 screen transitions, found {transition_count}")
     if manifest.get("layerStatus", {}).get("status") == "available":
         if layer_count != 1182:
             fail(f"expected 1182 slide layers, found {layer_count}")

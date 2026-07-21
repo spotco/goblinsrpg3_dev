@@ -306,8 +306,34 @@ function renderScreen(screen) {
   layersLayer.hidden = !renderedLayers;
   missingRender.hidden = true;
   setupAnimations(screen);
+  applySlideTransition(screen);
   renderHotspots(screen);
   setStatus(`Screen ${slideNumber}`);
+}
+
+function transitionDuration(screen) {
+  const speed = screen.transition && screen.transition.speed;
+  if (speed === 0) {
+    return 900;
+  }
+  if (speed === 1) {
+    return 650;
+  }
+  return 400;
+}
+
+function applySlideTransition(screen) {
+  const transition = screen.transition;
+  if (!transition || transition.effectType === 0) {
+    return;
+  }
+  stage.style.setProperty("--transition-duration", `${transitionDuration(screen)}ms`);
+  stage.classList.remove("is-transitioning");
+  void stage.offsetWidth;
+  stage.classList.add("is-transitioning");
+  scheduleAnimation(() => {
+    stage.classList.remove("is-transitioning");
+  }, transitionDuration(screen));
 }
 
 screenImage.addEventListener("error", () => {

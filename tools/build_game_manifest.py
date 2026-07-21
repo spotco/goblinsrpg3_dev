@@ -44,6 +44,7 @@ def build_screens(
     inventory: dict[str, object],
     screen_dir: str,
     layers_by_slide: dict[int, list[dict[str, object]]] | None = None,
+    transitions_by_slide: dict[int, dict[str, object]] | None = None,
 ) -> list[dict[str, object]]:
     presentation = inventory["presentation"]
     width = int(presentation["width"])
@@ -80,6 +81,8 @@ def build_screens(
         }
         if layers_by_slide is not None:
             screen["layers"] = layers_by_slide.get(index, [])
+        if transitions_by_slide is not None:
+            screen["transition"] = transitions_by_slide.get(index)
         screens.append(screen)
     return screens
 
@@ -161,6 +164,14 @@ def copy_animation_manifest(animation_manifest_path: Path, output_dir: Path) -> 
     }
 
 
+def load_transitions(timing_manifest_path: Path) -> tuple[dict[int, dict[str, object]], dict[str, object]]:
+    if not timing_manifest_path.exists():
+        return {}, {"status": "missing"}
+    timing = json.loads(timing_manifest_path.read_text(encoding="utf-8"))
+    transitions = {int(item["slide"]): item for item in timing.get("transitions", [])}
+    return transitions, {"status": "available", "count": len(transitions)}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inventory", type=Path, default=Path("generated/inventory.json"))
@@ -170,6 +181,7 @@ def main() -> None:
     parser.add_argument("--screen-source", type=Path, default=Path("generated/reconstructed"))
     parser.add_argument("--layers", type=Path, default=Path("generated/layers.json"))
     parser.add_argument("--animations", type=Path, default=Path("generated/animations.json"))
+    parser.add_argument("--timing", type=Path, default=Path("generated/timing_manifest.json"))
     args = parser.parse_args()
 
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
@@ -177,6 +189,7 @@ def main() -> None:
     screen_status = copy_screens(args.screen_source, args.output, args.screen_dir)
     layers_by_slide, layer_status = copy_layers(args.layers, args.output)
     animation_status = copy_animation_manifest(args.animations, args.output)
+    transitions_by_slide, transition_status = load_transitions(args.timing)
     manifest = {
         "title": "Goblins RPG 3",
         "source": inventory["source"],
@@ -185,8 +198,9 @@ def main() -> None:
         "screenImageStatus": screen_status,
         "layerStatus": layer_status,
         "animationStatus": animation_status,
+        "transitionStatus": transition_status,
         "audio": copy_audio(args.audio_manifest, args.output),
-        "screens": build_screens(inventory, args.screen_dir, layers_by_slide),
+        "screens": build_screens(inventory, args.screen_dir, layers_by_slide, transitions_by_slide),
     }
     output_path = args.output / "game-manifest.json"
     output_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
