@@ -100,6 +100,7 @@ Critical path work added from the animation findings:
    - [x] Include non-Aspose layer data and per-slide image-instance files in `docs/game-manifest.json` for the browser runtime.
    - [x] Include decoded PP10 animation timing-tree data as `docs/animation-manifest.json` and load it in the browser runtime.
    - [x] Implement a layer renderer for separately addressable slide images, text, and shape placeholders; keep screenshot/reconstructed raster layers as static fallback/reference layers.
+   - [x] Implement the first JavaScript animation scheduler pass: decoded slide lookup, `OnNext` click queueing, delayed node execution, visibility set effects, and basic fade/dissolve opacity effects.
    - [ ] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the full PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
    - [ ] Implement PowerPoint-style animation scheduling: parallel/sequential time nodes, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, visibility/set effects, and audio commands.
    - Start or resume audio only after the first user gesture to satisfy browser autoplay rules; implement explicit loop/stop/replace behavior from the source inventory and degrade gracefully when audio is unavailable.
@@ -112,6 +113,7 @@ Critical path work added from the animation findings:
    - [x] Add regression verification for the decoded PP10 animation manifest: nested time-node count, trigger events, behavior kinds, modifier types, interpolation modes, and layer-target alignment.
    - [x] Add extractor regression tests for per-slide image/text object extraction, including copied image-instance files and resolved animated shape targets.
    - [x] Add site verification for layer-rendering hooks and generated layer image files.
+   - [x] Add site verification for first-pass animation scheduler hooks.
    - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
    - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
    - [ ] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.

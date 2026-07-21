@@ -6,6 +6,10 @@ const state = {
   audioUnlocked: false,
   audioElements: new Map(),
   animations: null,
+  animationSlides: new Map(),
+  animationQueue: [],
+  animationTimers: [],
+  currentLayerElements: new Map(),
   debug: new URLSearchParams(window.location.search).has("debug"),
 };
 
@@ -53,6 +57,19 @@ function stopAudio() {
     element.pause();
     element.currentTime = 0;
   }
+}
+
+function clearAnimationTimers() {
+  for (const timer of state.animationTimers) {
+    window.clearTimeout(timer);
+  }
+  state.animationTimers = [];
+  state.animationQueue = [];
+}
+
+function scheduleAnimation(callback, delayMs = 0) {
+  const timer = window.setTimeout(callback, Math.max(delayMs, 0));
+  state.animationTimers.push(timer);
 }
 
 function updateAudioMute() {
@@ -124,6 +141,7 @@ function positionLayerElement(element, layer) {
 
 function renderLayers(screen) {
   layersLayer.replaceChildren();
+  state.currentLayerElements = new Map();
   const layers = screen.layers || [];
   for (const layer of layers) {
     const element = document.createElement("div");
@@ -140,9 +158,143 @@ function renderLayers(screen) {
       element.textContent = layer.text || "";
       element.style.fontSize = `${Math.max(layer.bounds.height * 72, 1)}cqh`;
     }
+    state.currentLayerElements.set(String(layer.shapeId), element);
     layersLayer.append(element);
   }
   return layers.length > 0;
+}
+
+function parsedStrings(items) {
+  const values = [];
+  for (const item of items || []) {
+    const parsed = item.parsed;
+    if (parsed && typeof parsed.stringValue === "string") {
+      values.push(parsed.stringValue);
+    }
+  }
+  return values;
+}
+
+function nodeDelay(node) {
+  let delay = 0;
+  for (const condition of node.conditions || []) {
+    const parsed = condition.parsed;
+    if (parsed && Number.isFinite(parsed.delayMs) && parsed.delayMs > delay) {
+      delay = parsed.delayMs;
+    }
+  }
+  return delay;
+}
+
+function nodeWaitsForClick(node) {
+  return (node.conditions || []).some((condition) => {
+    const event = condition.parsed && condition.parsed.triggerEvent;
+    return event === 9 || event === 10;
+  });
+}
+
+function targetsFor(node, behavior) {
+  const targets = behavior.targets && behavior.targets.length ? behavior.targets : node.targets || [];
+  return targets
+    .filter((target) => target.kind === "shape" && target.shapeId !== undefined)
+    .map((target) => state.currentLayerElements.get(String(target.shapeId)))
+    .filter(Boolean);
+}
+
+function nodeDuration(node) {
+  const parsed = node.timeNode && node.timeNode.parsed;
+  if (!parsed || !Number.isFinite(parsed.durationMs) || parsed.durationMs <= 1) {
+    return 1;
+  }
+  return parsed.durationMs;
+}
+
+function applySetBehavior(elements, strings) {
+  if (!strings.includes("style.visibility")) {
+    return;
+  }
+  const visibility = strings.includes("hidden") ? "hidden" : strings.includes("visible") ? "visible" : null;
+  if (!visibility) {
+    return;
+  }
+  for (const element of elements) {
+    element.style.visibility = visibility;
+    if (visibility === "visible") {
+      element.style.opacity = element.style.opacity || "1";
+    }
+  }
+}
+
+function applyEffectBehavior(elements, strings, duration) {
+  if (!strings.some((value) => value === "fade" || value === "dissolve")) {
+    return;
+  }
+  for (const element of elements) {
+    element.style.visibility = "visible";
+    element.style.opacity = "0";
+    element.style.transition = `opacity ${duration}ms linear`;
+    window.requestAnimationFrame(() => {
+      element.style.opacity = "1";
+    });
+  }
+}
+
+function applyBehavior(node, behavior) {
+  const elements = targetsFor(node, behavior);
+  if (elements.length === 0) {
+    return;
+  }
+  const strings = parsedStrings(behavior.variants);
+  const duration = nodeDuration(node);
+  if (behavior.kind === "set") {
+    applySetBehavior(elements, strings);
+  } else if (behavior.kind === "effect") {
+    applyEffectBehavior(elements, strings, duration);
+  }
+}
+
+function runAnimationNode(node, baseDelay = 0, allowClickNode = false) {
+  if (nodeWaitsForClick(node) && !allowClickNode) {
+    state.animationQueue.push(node);
+    return;
+  }
+  const startDelay = baseDelay + nodeDelay(node);
+  if (node.behaviors && node.behaviors.length) {
+    scheduleAnimation(() => {
+      for (const behavior of node.behaviors) {
+        applyBehavior(node, behavior);
+      }
+    }, startDelay);
+  }
+  for (const child of node.children || []) {
+    runAnimationNode(child, startDelay, false);
+  }
+}
+
+function setupAnimations(screen) {
+  clearAnimationTimers();
+  for (const element of state.currentLayerElements.values()) {
+    element.style.visibility = "";
+    element.style.opacity = "";
+    element.style.transition = "";
+    element.style.transform = "";
+  }
+  const slideAnimations = state.animationSlides.get(screen.slide);
+  if (!slideAnimations) {
+    return;
+  }
+  for (const node of slideAnimations.rootTimeNodes || []) {
+    runAnimationNode(node, 0, false);
+  }
+}
+
+function advanceAnimation() {
+  const node = state.animationQueue.shift();
+  if (!node) {
+    return false;
+  }
+  runAnimationNode(node, 0, true);
+  return true;
 }
 
 function renderScreen(screen) {
@@ -153,6 +305,7 @@ function renderScreen(screen) {
   screenImage.hidden = renderedLayers;
   layersLayer.hidden = !renderedLayers;
   missingRender.hidden = true;
+  setupAnimations(screen);
   renderHotspots(screen);
   setStatus(`Screen ${slideNumber}`);
 }
@@ -164,6 +317,7 @@ screenImage.addEventListener("error", () => {
 
 stage.addEventListener("click", () => {
   unlockAudio();
+  advanceAnimation();
 });
 
 restartButton.addEventListener("click", () => {
@@ -191,6 +345,7 @@ fetch("game-manifest.json")
     updateAudioMute();
     return loadAnimations(manifest).then((animations) => {
       state.animations = animations;
+      state.animationSlides = new Map((animations?.slides || []).map((slide) => [slide.slide, slide]));
       navigateTo(manifest.startScreen);
     });
   })

@@ -31,6 +31,15 @@ def main() -> None:
         fail("layer renderer root is missing from index.html")
     if "function renderLayers" not in app_js:
         fail("renderLayers function is missing from app.js")
+    for required_function in (
+        "function setupAnimations",
+        "function advanceAnimation",
+        "function runAnimationNode",
+        "function applySetBehavior",
+        "function applyEffectBehavior",
+    ):
+        if required_function not in app_js:
+            fail(f"{required_function} is missing from app.js")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     animation_status = manifest.get("animationStatus", {})
