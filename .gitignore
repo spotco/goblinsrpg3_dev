@@ -1,6 +1,10 @@
 # Disposable research environment and local Python cache
 _port_analysis_tmp/venv/
 _port_analysis_tmp/python313/
+_port_analysis_tmp/jdk*/
+_port_analysis_tmp/poi*/
+_port_analysis_tmp/*.zip
+_port_analysis_tmp/*.sha512
 _port_analysis_tmp/python-*.exe
 _port_analysis_tmp/test_aspose*.png
 _port_analysis_tmp/*.log

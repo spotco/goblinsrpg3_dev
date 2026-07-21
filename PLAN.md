@@ -21,6 +21,7 @@ The counts are an extraction baseline, not yet a statement that every record is 
 ## Python utility decision
 
 - `olefile` plus the project’s MS-PPT record parser is the primary path. It runs in the existing Python 3.14 virtual environment and does not require Winget, the Microsoft Store, Office, or a server at runtime.
+- Apache POI is now validated as the non-Aspose reference path for the legacy `.pps`: it exposes slides, page size, pictures, picture instances, shapes, text, hyperlinks, embedded sounds, and slide transition atoms. It does not expose this deck's shape animation atoms through HSLF, so the Python OLE parser remains necessary for OfficeArt/client-data animation/action records.
 - Aspose.Slides for Python via .NET is a useful optional renderer: it supports legacy PPT/PPS and can export slide images without Microsoft PowerPoint, but its current Windows wheel requires Python `<3.14`, is proprietary, and evaluation output may be watermarked. It would require a separately installed Python 3.13 environment and a licensing decision.
 - A direct python.org Python 3.13.13 install in `_port_analysis_tmp/python313/` successfully loads Aspose.Slides and renders all 201 slides at 1440x1080, but the evaluation watermark makes those PNGs unsuitable for the final playable site. Keep this as a development/reference path only unless a license is supplied.
 - `python-pptx` is not a solution for this input because it targets the modern OOXML `.pptx` format, not PowerPoint 97–2003 binary `.pps`.
@@ -40,6 +41,8 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - [x] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape and PowerPoint coordinates; do not infer a “next slide” fallback.
    - [x] Capture PowerPoint text runs and their source shape/bounds metadata.
    - [x] Capture first-pass shape layout, fill, line, image, and z-order metadata with `tools/extract_layout_aspose.py`.
+   - [x] Validate Apache POI against the original `.pps` with `tools/poi/PoiAudit.java`; record the findings in `POI_EVALUATION.md`.
+   - [x] Extract first-pass slide transition and shape animation timing data with `tools/extract_timing.py`.
    - [ ] Improve font, text wrapping, line geometry, and full visual layering fidelity. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
    - [ ] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path.
@@ -58,6 +61,7 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - [x] Display a responsive 4:3 game stage. Render each screen at its original aspect ratio, letterbox it on wider/narrower displays, and position transparent semantic buttons from the extracted hotspot coordinates.
    - [x] Drive basic navigation state exclusively from the manifest: load the start screen, perform only declared slide-link actions, provide restart/mute controls, and keep blank-stage clicks inert.
    - [ ] Support any required non-slide action, reveal/state, and exact restart behavior found during manual review. Do not expose browser history as an in-game action unless the original game has an equivalent control.
+   - [ ] Implement JavaScript slide transitions and shape/text/image animation playback from `generated/timing_manifest.json`.
    - Start or resume audio only after the first user gesture to satisfy browser autoplay rules; implement explicit loop/stop/replace behavior from the source inventory and degrade gracefully when audio is unavailable.
    - Give invisible hotspots useful accessible labels and focus handling without adding visual controls that alter the original presentation.
 
