@@ -21,14 +21,17 @@ The counts are an extraction baseline, not yet a statement that every record is 
 ## Implementation plan
 
 1. **Freeze and inventory the source**
-   - Keep the `.pps` and original audio read-only as the reference copy; record hashes for all inputs.
-   - Complete a repeatable inventory that resolves persistent slide IDs, slide order, title/master/layout records, text runs, object bounds/z-order, all action settings, animation/transition records, sound references, and embedded media.
-   - Produce reviewable CSV/JSON reports: slides, objects, asset use, and directed navigation edges (source screen, hotspot rectangle, action, target screen). Flag dangling targets, external links, and actions that are not slide jumps.
+   - [x] Keep the `.pps` and original audio read-only as the reference copy; record the presentation hash and source stream inventory.
+   - [x] Produce a repeatable baseline OLE record/slide/sound/media inventory in `generated/inventory.json`.
+   - [ ] Resolve persistent slide IDs, slide order, title/master/layout records, text runs, object bounds/z-order, all action settings, animation/transition records, and sound references.
+   - [ ] Produce reviewable reports for objects, asset use, and directed navigation edges (source screen, hotspot rectangle, action, target screen), including dangling/external/non-slide actions.
 
 2. **Build a deterministic legacy-PowerPoint extractor**
-   - Retain a Python extraction tool in the project (separate from the temporary research folder) that reads the OLE streams with `olefile`, parses the MS-PPT record tree/persist directory and OfficeArt drawing records, and writes its output under a generated directory.
-   - Extract PNG bitmap payloads losslessly; decode/convert the single DIB image to PNG; preserve source IDs, dimensions, and hashes for deduplication and traceability.
-   - Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape/text run and its PowerPoint coordinates; do not infer a “next slide” fallback.
+   - [x] Add `tools/extract_ppt.py`, which reads the OLE streams with `olefile`, walks the MS-PPT record tree, and writes a generated inventory.
+   - [x] Extract PNG bitmap payloads losslessly; decode/convert the single DIB image to PNG; preserve source record IDs, dimensions, and hashes.
+   - [ ] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape/text run and its PowerPoint coordinates; do not infer a “next slide” fallback.
+   - [ ] Capture PowerPoint text, colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
+   - [ ] Convert and associate all audio cues in browser-compatible formats.
    - Capture PowerPoint text, colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - Use the installed `ffmpeg` to create browser-compatible audio (prefer Ogg/Opus and MP3 fallback) from WMA; render the MIDI to an audio asset if browser MIDI playback cannot reproduce it consistently. Associate every converted file with its original cue and loop/trigger behavior.
 
