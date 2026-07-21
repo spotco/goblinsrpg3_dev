@@ -39,6 +39,7 @@ python tools/verify_animation_manifest.py
 python tools/verify_layers.py
 python tools/verify_embedded_audio.py
 python tools/verify_site.py
+python tools/verify_runtime_traversal.py
 ```
 
 `generated/poi_audit.tsv` is produced by `tools/poi/PoiAudit.java` using the portable JDK and Apache POI copies in `_port_analysis_tmp/`. See `POI_EVALUATION.md` for the exact toolchain notes.
@@ -47,6 +48,7 @@ python tools/verify_site.py
 
 - The screen PNGs are a first-pass reconstruction, not a verified pixel-perfect PowerPoint export.
 - The manifest now includes separately addressable image/text/shape layers and a decoded PP10 animation timing tree, but the JavaScript animation player is not fully implemented yet.
+- `generated/runtime_traversal.json` validates every declared hotspot edge and reports graph reachability/cycles. The current hotspot-only graph starts at `slide-001`, which has no hotspot, so opening-slide animation/click behavior still needs manual/runtime QA.
 - `Ffvictory.mid` is identified in the audio manifest but still needs rendering through a MIDI synth/soundfont.
 - Audio cue timing/loop behavior still needs to be associated with the extracted PowerPoint action records.
 - Manual playthrough and visual review are still required before calling this final.

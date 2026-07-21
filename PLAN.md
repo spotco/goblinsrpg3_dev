@@ -128,7 +128,8 @@ Critical path work added from the animation findings:
    - [x] Add site verification for first-pass start/end animation trigger runtime hooks.
    - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
    - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
-   - [ ] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.
+   - [x] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops.
+   - [ ] Maintain a manual playthrough checklist for major branches/endings.
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
 
 6. **Package for GitHub Pages**
