@@ -100,7 +100,7 @@ Critical path work added from the animation findings:
    - [x] Create a dependency-light HTML/CSS/JavaScript app in `docs/` with `index.html`, an asset directory, and generated `game-manifest.json`. Use relative URLs only so the site works at a GitHub project-pages subpath.
    - [x] Display a responsive 4:3 game stage. Render each screen at its original aspect ratio, letterbox it on wider/narrower displays, and position transparent semantic buttons from the extracted hotspot coordinates.
    - [x] Drive basic navigation state exclusively from the manifest: load the start screen, perform only declared slide-link actions, provide restart/mute controls, and keep blank-stage clicks inert.
-   - [ ] Support any required non-slide action, reveal/state, and exact restart behavior found during manual review. Do not expose browser history as an in-game action unless the original game has an equivalent control.
+   - [x] Support extracted non-slide action behavior in the browser runtime: 7 clickable mapped media actions, 1 mapped media action with zero click area, 3 unresolved media actions kept explicit, and 12 explicit no-op actions kept inert. Do not expose browser history as an in-game action unless the original game has an equivalent control.
    - [x] Include non-Aspose layer data and per-slide image-instance files in `docs/game-manifest.json` for the browser runtime.
    - [x] Include decoded PP10 animation timing-tree data as `docs/animation-manifest.json` and load it in the browser runtime.
    - [x] Implement a layer renderer for separately addressable slide images, text, and shape placeholders; keep screenshot/reconstructed raster layers as static fallback/reference layers.
@@ -131,6 +131,7 @@ Critical path work added from the animation findings:
    - [x] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
    - [x] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
    - [x] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops.
+   - [x] Add gameplay behavior regression checks for extracted non-slide action semantics: navigation, clickable media, zero-area media, unresolved media, and explicit no-op actions.
    - [ ] Maintain a manual playthrough checklist for major branches/endings.
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
 

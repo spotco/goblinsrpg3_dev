@@ -51,6 +51,7 @@ def build_screens(
     screen_dir: str,
     layers_by_slide: dict[int, list[dict[str, object]]] | None = None,
     transitions_by_slide: dict[int, dict[str, object]] | None = None,
+    media_bindings_by_shape: dict[tuple[int, int], dict[str, object]] | None = None,
 ) -> list[dict[str, object]]:
     presentation = inventory["presentation"]
     width = int(presentation["width"])
@@ -72,9 +73,30 @@ def build_screens(
             "flagsHex": action.get("flags_hex"),
             "label": action.get("target_label") or ACTION_NAMES.get(action_code, "action"),
             "enabled": bool(action.get("target_slide")),
+            "clickable": bool(action.get("target_slide")),
+            "behaviorStatus": "navigation" if action.get("target_slide") else "no_runtime_action",
         }
         if bounds:
             hotspot["bounds"] = normalize_bounds(bounds, width, height)
+        if action_code == 6 and action.get("shape_id") is not None and media_bindings_by_shape is not None:
+            media_binding = media_bindings_by_shape.get((slide, int(action["shape_id"])))
+            if media_binding:
+                hotspot["mediaBindingId"] = media_binding["id"]
+                hotspot["mediaStatus"] = media_binding["status"]
+                bounds_record = hotspot.get("bounds") or {}
+                positive_area = bounds_record.get("width", 0) > 0 and bounds_record.get("height", 0) > 0
+                hotspot["behaviorStatus"] = (
+                    "clickable_media"
+                    if media_binding.get("status") == "mapped" and positive_area
+                    else "mapped_media_zero_area"
+                    if media_binding.get("status") == "mapped"
+                    else "unresolved_media"
+                )
+                hotspot["clickable"] = media_binding.get("status") == "mapped" and positive_area
+            else:
+                hotspot["behaviorStatus"] = "missing_media_binding"
+        elif action_code == 0:
+            hotspot["behaviorStatus"] = "explicit_noop"
         actions_by_slide.setdefault(slide, []).append(hotspot)
 
     screens: list[dict[str, object]] = []
@@ -365,6 +387,9 @@ def main() -> None:
     transitions_by_slide, transition_status = load_transitions(args.timing)
     copied_audio = copy_audio(args.audio_manifest, args.output)
     media_bindings = build_media_bindings(inventory, args.timing, copied_audio)
+    media_bindings_by_shape = {
+        (int(binding["slide"]), int(binding["shapeId"])): binding for binding in media_bindings
+    }
     audio_cues = build_audio_cues(inventory, args.timing, copied_audio, media_bindings)
     manifest = {
         "title": "Goblins RPG 3",
@@ -378,7 +403,13 @@ def main() -> None:
         "audio": copied_audio,
         "audioCues": audio_cues,
         "mediaBindings": media_bindings,
-        "screens": build_screens(inventory, args.screen_dir, layers_by_slide, transitions_by_slide),
+        "screens": build_screens(
+            inventory,
+            args.screen_dir,
+            layers_by_slide,
+            transitions_by_slide,
+            media_bindings_by_shape,
+        ),
     }
     output_path = args.output / "game-manifest.json"
     output_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")

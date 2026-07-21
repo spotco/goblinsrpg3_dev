@@ -93,6 +93,8 @@ def main() -> None:
     missing_targets = []
     zero_hotspots = []
     enabled_count = 0
+    clickable_count = 0
+    clickable_media_count = 0
     transition_count = 0
     layer_count = 0
     image_layer_count = 0
@@ -113,6 +115,13 @@ def main() -> None:
                 if not layer_path.exists():
                     missing_layer_files.append(layer["instancePath"])
         for hotspot in screen.get("hotspots", []):
+            if hotspot.get("clickable"):
+                clickable_count += 1
+                if hotspot.get("action") == "media":
+                    clickable_media_count += 1
+                bounds = hotspot.get("bounds") or {}
+                if bounds.get("width", 0) <= 0 or bounds.get("height", 0) <= 0:
+                    zero_hotspots.append(hotspot["id"])
             if not hotspot.get("enabled"):
                 continue
             enabled_count += 1
@@ -133,6 +142,10 @@ def main() -> None:
         fail(f"enabled hotspots with zero area: {zero_hotspots[:5]}")
     if enabled_count != 194:
         fail(f"expected 194 enabled navigation hotspots, found {enabled_count}")
+    if clickable_count != 201:
+        fail(f"expected 201 clickable runtime hotspots, found {clickable_count}")
+    if clickable_media_count != 7:
+        fail(f"expected 7 clickable media hotspots, found {clickable_media_count}")
     if manifest.get("transitionStatus", {}).get("status") == "available":
         if manifest["transitionStatus"].get("count") != 201:
             fail("expected 201 extracted transitions in manifest status")

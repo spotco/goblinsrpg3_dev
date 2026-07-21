@@ -1817,6 +1817,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 2",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3024,
@@ -1848,6 +1850,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": true,
+          "behaviorStatus": "clickable_media",
           "bounds": {
             "raw": [
               4128,
@@ -1865,7 +1869,9 @@
               5760,
               4320
             ]
-          }
+          },
+          "mediaBindingId": "slide-002-shape-2066",
+          "mediaStatus": "mapped"
         }
       ],
       "layers": [
@@ -4301,6 +4307,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 9",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2064,
@@ -4731,6 +4739,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2112,
@@ -4762,6 +4772,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 10",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -5117,6 +5129,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 11",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -5289,6 +5303,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2112,
@@ -5626,6 +5642,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": true,
+          "behaviorStatus": "clickable_media",
           "bounds": {
             "raw": [
               0,
@@ -5643,7 +5661,9 @@
               5760,
               192
             ]
-          }
+          },
+          "mediaBindingId": "slide-013-shape-14342",
+          "mediaStatus": "mapped"
         }
       ],
       "layers": [
@@ -5877,6 +5897,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2208,
@@ -5908,6 +5930,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": true,
+          "behaviorStatus": "clickable_media",
           "bounds": {
             "raw": [
               2064,
@@ -5925,7 +5949,9 @@
               2976,
               2256
             ]
-          }
+          },
+          "mediaBindingId": "slide-014-shape-15390",
+          "mediaStatus": "mapped"
         }
       ],
       "layers": [
@@ -6642,6 +6668,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 18",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -6673,6 +6701,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 15",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3072,
@@ -7397,6 +7427,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 32",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -7428,6 +7460,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 17",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3072,
@@ -8100,6 +8134,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 22",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -8594,6 +8630,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 24",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               576,
@@ -9138,6 +9176,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 24",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -9632,6 +9672,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 25",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -10126,6 +10168,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 19",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -10157,6 +10201,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 17",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3072,
@@ -10743,6 +10789,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 34",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -10774,6 +10822,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 36",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3072,
@@ -11310,6 +11360,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 24",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -11890,6 +11942,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 31",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -11921,6 +11975,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 31",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3072,
@@ -12643,6 +12699,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 20",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -13173,6 +13231,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 26",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -13653,6 +13713,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 34",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2832,
@@ -13684,6 +13746,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 27",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3120,
@@ -14134,6 +14198,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 28",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -14578,6 +14644,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 29",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               720,
@@ -15316,6 +15384,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": true,
+          "behaviorStatus": "clickable_media",
           "bounds": {
             "raw": [
               0,
@@ -15333,7 +15403,9 @@
               5760,
               192
             ]
-          }
+          },
+          "mediaBindingId": "slide-030-shape-37896",
+          "mediaStatus": "mapped"
         }
       ],
       "layers": [
@@ -15737,6 +15809,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 29",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -16317,6 +16391,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 29",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -16847,6 +16923,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 37",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -16878,6 +16956,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 37",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -17388,6 +17468,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 21",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -17868,6 +17950,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 35",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -18362,6 +18446,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               3072,
@@ -18393,6 +18479,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 42",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3168,
@@ -19180,6 +19268,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 28",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -19624,6 +19714,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 38",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -20104,6 +20196,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 39",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2832,
@@ -20135,6 +20229,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 40",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3120,
@@ -20585,6 +20681,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 35",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -21079,6 +21177,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 41",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -21523,6 +21623,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 21",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -23049,6 +23151,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 46",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -23080,6 +23184,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 46",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3120,
@@ -23111,6 +23217,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 46",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3504,
@@ -24771,6 +24879,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 49",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -25151,6 +25261,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 50",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3408,
@@ -25182,6 +25294,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 51",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               192,
@@ -25213,6 +25327,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 54",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               192,
@@ -25633,6 +25749,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               3360,
@@ -25664,6 +25782,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 49",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3360,
@@ -26139,6 +26259,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 49",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               48,
@@ -26170,6 +26292,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 52",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               288,
@@ -26201,6 +26325,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 53",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               912,
@@ -26621,6 +26747,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 51",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               144,
@@ -26861,6 +26989,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 51",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               624,
@@ -26892,6 +27022,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "unresolved_media",
           "bounds": {
             "raw": [
               0,
@@ -26909,7 +27041,9 @@
               5760,
               192
             ]
-          }
+          },
+          "mediaBindingId": "slide-054-shape-65543",
+          "mediaStatus": "unresolved_audio_id"
         }
       ],
       "layers": [
@@ -27613,6 +27747,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 56",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               480,
@@ -30715,6 +30851,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 64",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2400,
@@ -30746,6 +30884,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 77",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3312,
@@ -31304,6 +31444,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 75",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1008,
@@ -31335,6 +31477,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 75",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1152,
@@ -31366,6 +31510,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 68",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2640,
@@ -31397,6 +31543,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 69",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1340,
@@ -31428,6 +31576,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 72",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               -48,
@@ -32218,6 +32368,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 75",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1008,
@@ -32249,6 +32401,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 75",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1104,
@@ -32280,6 +32434,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 71",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1340,
@@ -32311,6 +32467,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 72",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               -48,
@@ -32837,6 +32995,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 67",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -33091,6 +33251,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 69",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               672,
@@ -33345,6 +33507,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 69",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               -48,
@@ -33376,6 +33540,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 73",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2880,
@@ -33407,6 +33573,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 74",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1152,
@@ -33827,6 +33995,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 72",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2304,
@@ -34099,6 +34269,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": true,
+          "behaviorStatus": "clickable_media",
           "bounds": {
             "raw": [
               0,
@@ -34116,7 +34288,9 @@
               5760,
               192
             ]
-          }
+          },
+          "mediaBindingId": "slide-074-shape-87044",
+          "mediaStatus": "mapped"
         },
         {
           "id": "s074-a686492",
@@ -34130,6 +34304,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 72",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               816,
@@ -35117,6 +35293,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 83",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2880,
@@ -35148,6 +35326,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 80",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3168,
@@ -35179,6 +35359,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 82",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3456,
@@ -37369,6 +37551,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": true,
+          "behaviorStatus": "clickable_media",
           "bounds": {
             "raw": [
               0,
@@ -37386,7 +37570,9 @@
               5760,
               192
             ]
-          }
+          },
+          "mediaBindingId": "slide-081-shape-94216",
+          "mediaStatus": "mapped"
         },
         {
           "id": "s081-a714228",
@@ -37400,6 +37586,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 93",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1632,
@@ -38131,6 +38319,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 84",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1632,
@@ -38611,6 +38801,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 85",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               624,
@@ -39105,6 +39297,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 91",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2880,
@@ -39743,6 +39937,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 87",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               384,
@@ -40187,6 +40383,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 80",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3168,
@@ -40218,6 +40416,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 82",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3456,
@@ -40249,6 +40449,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 88",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2832,
@@ -40891,6 +41093,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 89",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               432,
@@ -40922,6 +41126,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 89",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               432,
@@ -41776,6 +41982,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 30",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               384,
@@ -42378,6 +42586,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 95",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -42409,6 +42619,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 97",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3072,
@@ -42440,6 +42652,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 94",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3360,
@@ -43082,6 +43296,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 100",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2880,
@@ -43376,6 +43592,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 95",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2784,
@@ -43407,6 +43625,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 97",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3072,
@@ -43943,6 +44163,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 96",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               816,
@@ -44523,6 +44745,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "unresolved_media",
           "bounds": {
             "raw": [
               0,
@@ -44540,7 +44764,9 @@
               5760,
               192
             ]
-          }
+          },
+          "mediaBindingId": "slide-096-shape-111627",
+          "mediaStatus": "unresolved_audio_id"
         },
         {
           "id": "s096-a768024",
@@ -44554,6 +44780,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 98",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1584,
@@ -45285,6 +45513,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 96",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               816,
@@ -47127,6 +47357,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 102",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -47493,6 +47725,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 99",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -47615,6 +47849,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 103",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -47646,6 +47882,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 104",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               -144,
@@ -47677,6 +47915,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 105",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -48183,6 +48423,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 108",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -48214,6 +48456,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 109",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -48528,6 +48772,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 103",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -48559,6 +48805,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 103",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -48590,6 +48838,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 105",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -48621,6 +48871,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "mapped_media_zero_area",
           "bounds": {
             "raw": [
               1632,
@@ -48638,7 +48890,9 @@
               0,
               1824
             ]
-          }
+          },
+          "mediaBindingId": "slide-104-shape-121869",
+          "mediaStatus": "mapped"
         }
       ],
       "layers": [
@@ -49102,6 +49356,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 106",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1344,
@@ -49133,6 +49389,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 107",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -49447,6 +49705,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 107",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -49655,6 +49915,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 102",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -49686,6 +49948,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 108",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -50400,6 +50664,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 102",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -50431,6 +50697,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 110",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -51145,6 +51413,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 102",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -51176,6 +51446,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 102",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -51740,6 +52012,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 102",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -51771,6 +52045,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 111",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -52857,6 +53133,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 115",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -52888,6 +53166,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 114",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2976,
@@ -52919,6 +53199,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 118",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3312,
@@ -52950,6 +53232,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 113",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3648,
@@ -53648,6 +53932,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 114",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2976,
@@ -53679,6 +53965,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 115",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -53710,6 +53998,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 118",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3312,
@@ -54420,6 +54710,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 149",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3936,
@@ -55688,6 +55980,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 120",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -57622,6 +57916,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 121",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -58238,6 +58534,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 122",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -58269,6 +58567,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 145",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3168,
@@ -58300,6 +58600,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 141",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -58892,6 +59194,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 136",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -58923,6 +59227,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 131",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -60247,6 +60553,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 125",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -60278,6 +60586,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 127",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3168,
@@ -60309,6 +60619,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 129",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -61345,6 +61657,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 30",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -61961,6 +62275,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 128",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2304,
@@ -63415,6 +63731,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 171",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -64647,6 +64965,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 30",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -66431,6 +66751,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 134",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -67255,6 +67577,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 30",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -67871,6 +68195,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 139",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -68251,6 +68577,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 128",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2496,
@@ -68917,6 +69245,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 139",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -68948,6 +69278,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 128",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -69434,6 +69766,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 138",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2208,
@@ -70721,6 +71055,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 143",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -71337,6 +71673,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 133",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -71368,6 +71706,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 144",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -73258,6 +73598,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 30",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -75211,6 +75553,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 137",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -76413,6 +76757,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 151",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -76444,6 +76790,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2928,
@@ -76475,6 +76823,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 167",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -77514,6 +77864,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 153",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -78130,6 +78482,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 154",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -78161,6 +78515,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 162",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -79263,6 +79619,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2112,
@@ -79870,6 +80228,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2688,
@@ -79901,6 +80261,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 157",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -79932,6 +80294,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 126",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -81057,6 +81421,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2112,
@@ -81664,6 +82030,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2688,
@@ -81695,6 +82063,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 160",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -81726,6 +82096,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 126",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -82851,6 +83223,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 30",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -84785,6 +85159,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2112,
@@ -85392,6 +85768,8 @@
           "flagsHex": "079f0d30",
           "label": "none",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "bounds": {
             "raw": [
               2688,
@@ -85423,6 +85801,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 165",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -85912,6 +86292,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 127",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2496,
@@ -88002,6 +88384,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 169",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2112,
@@ -88618,6 +89002,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 170",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2688,
@@ -88998,6 +89384,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 127",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2496,
@@ -89770,6 +90158,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 173",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2496,
@@ -89801,6 +90191,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 174",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1392,
@@ -90115,6 +90507,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 172",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1440,
@@ -90355,6 +90749,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 175",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2016,
@@ -90386,6 +90782,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 176",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               864,
@@ -90417,6 +90815,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 176",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               864,
@@ -90837,6 +91237,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 174",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1104,
@@ -91077,6 +91479,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 177",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               240,
@@ -91285,6 +91689,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 178",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -91493,6 +91899,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 177",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1920,
@@ -91524,6 +91932,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 179",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -91838,6 +92248,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 177",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1920,
@@ -91869,6 +92281,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 178",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1872,
@@ -91900,6 +92314,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 180",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -92320,6 +92736,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 177",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1920,
@@ -92351,6 +92769,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 179",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1920,
@@ -92382,6 +92802,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 181",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -92802,6 +93224,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 180",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1920,
@@ -92833,6 +93257,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 182",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -93147,6 +93573,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 174",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               720,
@@ -93178,6 +93606,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 183",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               384,
@@ -93492,6 +93922,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 184",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               0,
@@ -94426,6 +94858,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 191",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               2928,
@@ -94457,6 +94891,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 194",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3120,
@@ -94488,6 +94924,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 195",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               3312,
@@ -95496,6 +95934,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 198",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               768,
@@ -95527,6 +95967,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "unresolved_media",
           "bounds": {
             "raw": [
               1632,
@@ -95544,7 +95986,9 @@
               0,
               1824
             ]
-          }
+          },
+          "mediaBindingId": "slide-193-shape-233483",
+          "mediaStatus": "unresolved_audio_id"
         }
       ],
       "layers": [
@@ -95796,6 +96240,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 192",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               -528,
@@ -96914,6 +97360,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 196",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               576,
@@ -97866,6 +98314,8 @@
           "flagsHex": "ff9f0d30",
           "label": "media",
           "enabled": false,
+          "clickable": true,
+          "behaviorStatus": "clickable_media",
           "bounds": {
             "raw": [
               0,
@@ -97883,7 +98333,9 @@
               5760,
               192
             ]
-          }
+          },
+          "mediaBindingId": "slide-197-shape-237574",
+          "mediaStatus": "mapped"
         }
       ],
       "layers": [
@@ -98897,6 +99349,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 201",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               192,
@@ -99141,6 +99595,8 @@
           "flagsHex": "079f0d30",
           "label": "Slide 200",
           "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
           "bounds": {
             "raw": [
               1728,

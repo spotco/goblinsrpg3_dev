@@ -40,6 +40,7 @@ python tools/verify_render_manifest.py
 python tools/build_game_manifest.py
 python tools/extract_source_semantics.py
 python tools/generate_visual_review.py
+python tools/generate_gameplay_behavior_review.py
 python tools/verify_extractor_contract.py
 python tools/verify_inventory.py generated/inventory.json
 python tools/verify_timing_tree.py
@@ -49,6 +50,7 @@ python tools/verify_layers.py
 python tools/verify_animated_layer_coverage.py
 python tools/verify_embedded_audio.py
 python tools/verify_audio_cues.py
+python tools/verify_gameplay_behavior.py
 python tools/verify_site.py
 python tools/verify_runtime_traversal.py
 ```
@@ -67,3 +69,4 @@ python tools/verify_runtime_traversal.py
 - `docs/game-manifest.json` includes `audioCues` and `mediaBindings[].cueBehavior` records for trigger/start/loop/stop/replace behavior that is exposed by the extracted PowerPoint atoms.
 - Three legacy embedded-audio cue references remain explicitly unresolved in `mediaBindings`; their cue IDs are not present in the embedded sound collection or recoverable linked-source inventory, so they need final PowerPoint-reference QA before mapping.
 - `generated/visual_review_checklist.json` contains the 201-screen manual visual-review scaffold; manual playthrough and visual review are still required before calling this final.
+- `generated/gameplay_behavior_review.json` classifies all 217 extracted action records: 194 navigation actions, 7 clickable mapped media actions, 1 mapped media action with zero click area, 3 unresolved media actions, and 12 explicit no-op actions.

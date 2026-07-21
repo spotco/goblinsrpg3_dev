@@ -151,10 +151,34 @@ async function loadAnimations(manifest) {
   return response.json();
 }
 
+function mediaBindingForHotspot(hotspot) {
+  if (hotspot.mediaBindingId) {
+    return (state.manifest.mediaBindings || []).find((binding) => binding.id === hotspot.mediaBindingId) || null;
+  }
+  if (hotspot.shapeId === undefined || !state.current) {
+    return null;
+  }
+  return state.mediaBindings.get(`${state.current.slide}:${hotspot.shapeId}`) || null;
+}
+
+function handleHotspotAction(hotspot) {
+  unlockAudio();
+  if (hotspot.action === "hyperlink" && hotspot.targetSlide) {
+    navigateTo(screenId(hotspot.targetSlide));
+    return;
+  }
+  if (hotspot.action === "media") {
+    const binding = mediaBindingForHotspot(hotspot);
+    if (binding && binding.status === "mapped" && binding.audioSource) {
+      playAudioSource(binding.audioSource, binding.startSeconds || 0, binding.cueBehavior || {});
+    }
+  }
+}
+
 function renderHotspots(screen) {
   hotspotsLayer.replaceChildren();
   for (const hotspot of screen.hotspots || []) {
-    if (!hotspot.bounds || !hotspot.enabled || !hotspot.targetSlide) {
+    if (!hotspot.bounds || !hotspot.clickable) {
       continue;
     }
     const button = document.createElement("button");
@@ -165,12 +189,17 @@ function renderHotspots(screen) {
     button.style.top = `${bounds.y * 100}%`;
     button.style.width = `${bounds.width * 100}%`;
     button.style.height = `${bounds.height * 100}%`;
-    button.dataset.target = screenId(hotspot.targetSlide);
-    button.setAttribute("aria-label", hotspot.label || `Go to slide ${hotspot.targetSlide}`);
+    button.dataset.action = hotspot.action;
+    if (hotspot.targetSlide) {
+      button.dataset.target = screenId(hotspot.targetSlide);
+    }
+    button.setAttribute(
+      "aria-label",
+      hotspot.label || (hotspot.targetSlide ? `Go to slide ${hotspot.targetSlide}` : `Run ${hotspot.action} action`),
+    );
     button.addEventListener("click", (event) => {
       event.stopPropagation();
-      unlockAudio();
-      navigateTo(event.currentTarget.dataset.target);
+      handleHotspotAction(hotspot);
     });
     hotspotsLayer.append(button);
   }

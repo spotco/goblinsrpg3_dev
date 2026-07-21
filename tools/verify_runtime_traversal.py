@@ -55,9 +55,11 @@ def enabled_hotspot_edges(manifest: dict[str, Any]) -> list[dict[str, Any]]:
 
 def verify_runtime_click_semantics(app_js: str) -> None:
     required_snippets = (
+        "if (hotspot.targetSlide) {",
         "button.dataset.target = screenId(hotspot.targetSlide);",
         "event.stopPropagation();",
-        "navigateTo(event.currentTarget.dataset.target);",
+        "handleHotspotAction(hotspot);",
+        "navigateTo(screenId(hotspot.targetSlide));",
     )
     for snippet in required_snippets:
         if snippet not in app_js:
