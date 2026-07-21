@@ -5,6 +5,7 @@ const state = {
   muted: false,
   audioUnlocked: false,
   audioElements: new Map(),
+  animations: null,
   debug: new URLSearchParams(window.location.search).has("debug"),
 };
 
@@ -68,6 +69,18 @@ function navigateTo(id) {
   }
   state.current = next;
   renderScreen(next);
+}
+
+async function loadAnimations(manifest) {
+  const animationStatus = manifest.animationStatus;
+  if (!animationStatus || animationStatus.status !== "available" || !animationStatus.path) {
+    return null;
+  }
+  const response = await fetch(animationStatus.path);
+  if (!response.ok) {
+    throw new Error(`Animation manifest load failed: ${response.status}`);
+  }
+  return response.json();
 }
 
 function renderHotspots(screen) {
@@ -137,7 +150,10 @@ fetch("game-manifest.json")
     state.screens = new Map(manifest.screens.map((screen) => [screen.id, screen]));
     prepareAudio();
     updateAudioMute();
-    navigateTo(manifest.startScreen);
+    return loadAnimations(manifest).then((animations) => {
+      state.animations = animations;
+      navigateTo(manifest.startScreen);
+    });
   })
   .catch((error) => {
     setStatus(error.message);

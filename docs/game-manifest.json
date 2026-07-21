@@ -24,6 +24,81 @@
     },
     "copiedImageInstances": 532
   },
+  "animationStatus": {
+    "status": "available",
+    "path": "animation-manifest.json",
+    "summary": {
+      "slidesWithAnimations": 197,
+      "timeNodeContainers": 2407,
+      "recordCounts": {
+        "RT_VisualShapeAtom": 1022,
+        "RT_HashCodeAtom": 197,
+        "11009": 310,
+        "RT_BuildList": 197,
+        "RT_BuildAtom": 209,
+        "RT_ParaBuild": 209,
+        "RT_ParaBuildAtom": 209,
+        "RT_SlideTime10Atom": 197,
+        "RT_TimeConditionContainer": 2093,
+        "RT_TimeNode": 2533,
+        "RT_TimeCondition": 2093,
+        "RT_TimeModifier": 478,
+        "RT_TimeBehaviorContainer": 1004,
+        "RT_TimeAnimateBehaviorContainer": 18,
+        "RT_TimeEffectBehaviorContainer": 291,
+        "RT_TimeMotionBehaviorContainer": 215,
+        "RT_TimeScaleBehaviorContainer": 3,
+        "RT_TimeSetBehaviorContainer": 466,
+        "RT_TimeCommandBehaviorContainer": 11,
+        "RT_TimeBehavior": 1004,
+        "RT_TimeAnimateBehavior": 18,
+        "RT_TimeEffectBehavior": 291,
+        "RT_TimeMotionBehavior": 215,
+        "RT_TimeScaleBehavior": 3,
+        "RT_TimeSetBehavior": 466,
+        "RT_TimeCommandBehavior": 11,
+        "RT_TimeClientVisualElement": 1332,
+        "RT_TimePropertyList": 2867,
+        "RT_TimeVariantList": 699,
+        "RT_TimeAnimationValueList": 16,
+        "RT_TimeIterateData": 2,
+        "RT_TimeSequenceData": 135,
+        "RT_TimeVariant": 6078,
+        "RT_TimeAnimationValue": 35,
+        "RT_TimeExtTimeNodeContainer": 2407,
+        "RT_TimeSubEffectContainer": 126
+      },
+      "conditionEvents": {
+        "0": 1538,
+        "1": 130,
+        "3": 7,
+        "4": 108,
+        "9": 146,
+        "10": 146,
+        "11": 18
+      },
+      "modifierTypes": {
+        "0": 12,
+        "3": 229,
+        "4": 227,
+        "5": 10
+      },
+      "animateCalcModes": {
+        "1": 18
+      },
+      "behaviorKinds": {
+        "animate": 18,
+        "command": 11,
+        "effect": 291,
+        "motion": 215,
+        "scale": 3,
+        "set": 466
+      },
+      "shapeTargets": 567,
+      "soundTargets": 1,
+      "unresolvedShapeTargets": []
+    }
+  },
   "audio": [
     {
       "source": "rocksong.wma",

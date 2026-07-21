@@ -23,6 +23,16 @@ def main() -> None:
         fail("docs/game-manifest.json is missing")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    animation_status = manifest.get("animationStatus", {})
+    if animation_status.get("status") == "available":
+        animation_path = args.site / animation_status["path"]
+        if not animation_path.exists():
+            fail(f"animation manifest is missing: {animation_status['path']}")
+        animation_manifest = json.loads(animation_path.read_text(encoding="utf-8"))
+        if animation_manifest.get("format") != "goblins-rpg3-animation-manifest-v1":
+            fail("animation manifest has unexpected format")
+        if animation_manifest.get("summary", {}).get("timeNodeContainers") != 2407:
+            fail("animation manifest has unexpected time-node count")
     screens = manifest.get("screens", [])
     if len(screens) != 201:
         fail(f"expected 201 screens, found {len(screens)}")

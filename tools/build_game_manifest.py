@@ -148,6 +148,19 @@ def copy_layers(layer_manifest_path: Path, output_dir: Path) -> tuple[dict[int, 
     }
 
 
+def copy_animation_manifest(animation_manifest_path: Path, output_dir: Path) -> dict[str, object]:
+    if not animation_manifest_path.exists():
+        return {"status": "missing"}
+    animation_manifest = json.loads(animation_manifest_path.read_text(encoding="utf-8"))
+    target = output_dir / "animation-manifest.json"
+    target.write_text(json.dumps(animation_manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
+    return {
+        "status": "available",
+        "path": target.relative_to(output_dir).as_posix(),
+        "summary": animation_manifest.get("summary", {}),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inventory", type=Path, default=Path("generated/inventory.json"))
@@ -156,12 +169,14 @@ def main() -> None:
     parser.add_argument("--screen-dir", default="screens")
     parser.add_argument("--screen-source", type=Path, default=Path("generated/reconstructed"))
     parser.add_argument("--layers", type=Path, default=Path("generated/layers.json"))
+    parser.add_argument("--animations", type=Path, default=Path("generated/animations.json"))
     args = parser.parse_args()
 
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     args.output.mkdir(parents=True, exist_ok=True)
     screen_status = copy_screens(args.screen_source, args.output, args.screen_dir)
     layers_by_slide, layer_status = copy_layers(args.layers, args.output)
+    animation_status = copy_animation_manifest(args.animations, args.output)
     manifest = {
         "title": "Goblins RPG 3",
         "source": inventory["source"],
@@ -169,6 +184,7 @@ def main() -> None:
         "startScreen": "slide-001",
         "screenImageStatus": screen_status,
         "layerStatus": layer_status,
+        "animationStatus": animation_status,
         "audio": copy_audio(args.audio_manifest, args.output),
         "screens": build_screens(inventory, args.screen_dir, layers_by_slide),
     }
