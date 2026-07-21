@@ -1,0 +1,180 @@
+{
+  "format": "goblins-rpg3-extractor-contract-v1",
+  "source": {
+    "path": "goblins3 v.1.0 LAUNCH.pps",
+    "sha256": "5ef9ef5169b09119fd3e9cd7015fc8f25ff78bf104041cbc1ebbca13be45fa93"
+  },
+  "counts": {
+    "slides": 201,
+    "interactiveActions": 217,
+    "navigationEdges": 194,
+    "hyperlinks": 194,
+    "objects": 1591,
+    "textRuns": 357,
+    "embeddedAssets": 116,
+    "pngAssets": 115,
+    "dibAssets": 1
+  },
+  "decodedAssetSample": [
+    {
+      "id": "asset-000",
+      "path": "generated/assets/asset-000.png",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-001",
+      "path": "generated/assets/asset-001.png",
+      "width": 512,
+      "height": 384,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-002",
+      "path": "generated/assets/asset-002.png",
+      "width": 510,
+      "height": 382,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-003",
+      "path": "generated/assets/asset-003.png",
+      "width": 512,
+      "height": 382,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-004",
+      "path": "generated/assets/asset-004.png",
+      "width": 328,
+      "height": 351,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-005",
+      "path": "generated/assets/asset-005.png",
+      "width": 8,
+      "height": 8,
+      "mode": "RGBA",
+      "encoding": "dib->png"
+    },
+    {
+      "id": "asset-006",
+      "path": "generated/assets/asset-006.png",
+      "width": 510,
+      "height": 382,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-007",
+      "path": "generated/assets/asset-007.png",
+      "width": 512,
+      "height": 384,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-008",
+      "path": "generated/assets/asset-008.png",
+      "width": 511,
+      "height": 383,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-009",
+      "path": "generated/assets/asset-009.png",
+      "width": 512,
+      "height": 384,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-010",
+      "path": "generated/assets/asset-010.png",
+      "width": 127,
+      "height": 99,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-011",
+      "path": "generated/assets/asset-011.png",
+      "width": 127,
+      "height": 99,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-012",
+      "path": "generated/assets/asset-012.png",
+      "width": 190,
+      "height": 126,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-013",
+      "path": "generated/assets/asset-013.png",
+      "width": 96,
+      "height": 116,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-014",
+      "path": "generated/assets/asset-014.png",
+      "width": 510,
+      "height": 382,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-015",
+      "path": "generated/assets/asset-015.png",
+      "width": 97,
+      "height": 87,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-016",
+      "path": "generated/assets/asset-016.png",
+      "width": 512,
+      "height": 383,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-017",
+      "path": "generated/assets/asset-017.png",
+      "width": 512,
+      "height": 383,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-018",
+      "path": "generated/assets/asset-018.png",
+      "width": 109,
+      "height": 148,
+      "mode": "P",
+      "encoding": "png"
+    },
+    {
+      "id": "asset-019",
+      "path": "generated/assets/asset-019.png",
+      "width": 150,
+      "height": 105,
+      "mode": "P",
+      "encoding": "png"
+    }
+  ]
+}

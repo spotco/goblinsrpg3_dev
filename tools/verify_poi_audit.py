@@ -24,6 +24,12 @@ def main() -> None:
         "sounds": 0,
         "transitions": 0,
         "links": 0,
+        "geometry": 0,
+        "style": 0,
+        "clip": 0,
+        "textStyle": 0,
+        "paragraphs": 0,
+        "textRuns": 0,
     }
     for line in lines:
         parts = line.split("\t")
@@ -38,6 +44,18 @@ def main() -> None:
             poi_shapes.add((int(parts[1]), int(parts[3])))
         elif key == "PICTURE":
             counters["pictureInstances"] += 1
+        elif key == "GEOMETRY":
+            counters["geometry"] += 1
+        elif key == "STYLE":
+            counters["style"] += 1
+        elif key == "CLIP":
+            counters["clip"] += 1
+        elif key == "TEXTSTYLE":
+            counters["textStyle"] += 1
+        elif key == "PARAGRAPH":
+            counters["paragraphs"] += 1
+        elif key == "TEXTRUN":
+            counters["textRuns"] += 1
         elif key == "TRANSITION":
             counters["transitions"] += 1
         elif key in {"TEXTLINK", "SHAPELINK"}:
@@ -53,6 +71,12 @@ def main() -> None:
     assert counters["pictures"] == 116, counters
     assert counters["sounds"] == 5, counters
     assert counters["pictureInstances"] == 532, counters
+    assert counters["geometry"] == 1182, counters
+    assert counters["style"] == 1182, counters
+    assert counters["clip"] == 532, counters
+    assert counters["textStyle"] == 650, counters
+    assert counters["paragraphs"] == 681, counters
+    assert counters["textRuns"] == 695, counters
     assert counters["transitions"] == 201, counters
     assert counters["links"] == 194, counters
     assert len(timing["transitions"]) == 201

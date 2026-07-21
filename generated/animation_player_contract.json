@@ -1,0 +1,110 @@
+{
+  "format": "goblins-rpg3-animation-player-contract-v1",
+  "summary": {
+    "features": 7,
+    "allPassed": true,
+    "timeNodeContainers": 2407,
+    "mappedMediaBindings": 8
+  },
+  "features": [
+    {
+      "feature": "linear interpolation",
+      "manifestEvidence": {
+        "animateCalcModes": {
+          "1": 18
+        }
+      },
+      "runtimeSnippets": [
+        "function evaluatePowerPointFormula",
+        "function applyAnimateBehavior",
+        "function setMetric",
+        "transitionList([\"left\", \"top\"], timing)"
+      ]
+    },
+    {
+      "feature": "acceleration/deceleration modifiers",
+      "manifestEvidence": {
+        "modifierTypes": {
+          "3": 229,
+          "4": 227,
+          "5": 10
+        }
+      },
+      "runtimeSnippets": [
+        "function modifierStrength",
+        "ease-in",
+        "ease-out",
+        "autoReverse"
+      ]
+    },
+    {
+      "feature": "chained start/end triggers",
+      "manifestEvidence": {
+        "conditionEvents": {
+          "3": 7,
+          "4": 108
+        }
+      },
+      "runtimeSnippets": [
+        "function registerAnimationTriggerWaits",
+        "function emitAnimationTrigger",
+        "emitAnimationTrigger(3, node)",
+        "emitAnimationTrigger(4, node)"
+      ]
+    },
+    {
+      "feature": "OnNext/OnPrev sequence traversal",
+      "manifestEvidence": {
+        "conditionEvents": {
+          "9": 146,
+          "10": 146
+        },
+        "timeSequenceData": 135
+      },
+      "runtimeSnippets": [
+        "function nodeWaitsForClick",
+        "state.animationQueue.push(node)",
+        "function advanceAnimation"
+      ]
+    },
+    {
+      "feature": "visibility changes",
+      "manifestEvidence": {
+        "variantStrings": [
+          "hidden",
+          "style.visibility",
+          "visible"
+        ],
+        "setBehaviors": 466
+      },
+      "runtimeSnippets": [
+        "function applySetBehavior",
+        "style.visibility",
+        "element.style.visibility = visibility"
+      ]
+    },
+    {
+      "feature": "motion paths",
+      "manifestEvidence": {
+        "motionBehaviors": 215
+      },
+      "runtimeSnippets": [
+        "function motionEndpoint",
+        "function applyMotionBehavior",
+        "element.style.transform"
+      ]
+    },
+    {
+      "feature": "sound commands",
+      "manifestEvidence": {
+        "commandBehaviors": 11,
+        "mappedMediaBindings": 8
+      },
+      "runtimeSnippets": [
+        "function applyCommandBehavior",
+        "function playAudioSource",
+        "flushPendingAudioCommands"
+      ]
+    }
+  ]
+}

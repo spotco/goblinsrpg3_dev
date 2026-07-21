@@ -21,10 +21,19 @@ def main() -> None:
     assert summary["textLayers"] == 650
     assert summary["animatedShapeTargets"] == 567
     assert summary["animatedLayers"] == 567
+    assert summary["styledLayers"] == 1182
+    assert summary["transformLayers"] == 1182
+    assert summary["textStyleLayers"] == 650
+    assert summary["paragraphs"] == 681
+    assert summary["textRuns"] == 695
+    assert summary["actionBoundLayers"] == 210
+    assert summary["hyperlinkBoundLayers"] == 192
 
     image_layers = []
     animated_images = 0
     animated_text = 0
+    action_bound_layers = 0
+    hyperlink_bound_layers = 0
     for slide in manifest["slides"]:
         assert "layers" in slide
         z_orders = [layer["zOrder"] for layer in slide["layers"]]
@@ -33,19 +42,41 @@ def main() -> None:
             bounds = layer["bounds"]
             assert "points" in bounds
             assert layer["type"] in {"image", "text", "shape"}
+            assert "shapeType" in layer
+            assert "transform" in layer
+            assert {"rotation", "flipHorizontal", "flipVertical"} <= set(layer["transform"])
+            assert "style" in layer
+            if "actions" in layer:
+                action_bound_layers += 1
+                for action in layer["actions"]:
+                    assert "actionCode" in action
+                    assert "hyperlinkId" in action
+            if "hyperlinks" in layer:
+                hyperlink_bound_layers += 1
+                for hyperlink in layer["hyperlinks"]:
+                    assert "id" in hyperlink
+                    assert "type" in hyperlink
             if layer["animated"] and layer["type"] == "image":
                 animated_images += 1
             if layer["animated"] and layer["type"] == "text":
                 animated_text += 1
             if layer["type"] == "image":
+                assert "clip" in layer
                 image_layers.append(layer)
                 path = Path(layer["instancePath"])
                 assert path.exists(), path
                 assert path.stat().st_size == layer["sourceBytes"], path
+            if layer["type"] == "text":
+                assert "textStyle" in layer
+                assert "paragraphs" in layer
+                assert "textRuns" in layer
+                assert layer["textStyle"]["wordWrap"] in {True, False}
 
     assert len(image_layers) == 532
     assert animated_images > 0
     assert animated_text > 0
+    assert action_bound_layers == 210
+    assert hyperlink_bound_layers == 192
     print("layer manifest verification passed")
 
 

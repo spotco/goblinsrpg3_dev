@@ -35,6 +35,9 @@ def main() -> None:
         "function setupAnimations",
         "function advanceAnimation",
         "function runAnimationNode",
+        "function applyLayerTransform",
+        "function applyLayerVisualStyle",
+        "function applyTextLayerStyle",
         "function applySetBehavior",
         "function applyEffectBehavior",
         "function applyAnimateBehavior",
@@ -144,6 +147,13 @@ def main() -> None:
             fail(f"expected 532 image layers, found {image_layer_count}")
         if animated_layer_count != 567:
             fail(f"expected 567 animated layers, found {animated_layer_count}")
+        layer_summary = manifest["layerStatus"].get("summary", {})
+        if layer_summary.get("styledLayers") != 1182:
+            fail("expected 1182 styled layers in manifest status")
+        if layer_summary.get("textStyleLayers") != 650:
+            fail("expected 650 text-style layers in manifest status")
+        if layer_summary.get("actionBoundLayers") != 210:
+            fail("expected 210 action-bound layers in manifest status")
 
     print("site verification passed")
 

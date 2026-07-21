@@ -173,6 +173,82 @@ function positionLayerElement(element, layer) {
   element.dataset.pptY = String(bounds.y);
   element.dataset.pptW = String(bounds.width);
   element.dataset.pptH = String(bounds.height);
+  applyLayerTransform(element, layer);
+  applyLayerVisualStyle(element, layer);
+}
+
+function pointWidthToContainer(value) {
+  return `${(Number(value || 0) / 720) * 100}cqw`;
+}
+
+function pointHeightToContainer(value) {
+  return `${(Number(value || 0) / 540) * 100}cqh`;
+}
+
+function pointFontToContainer(value) {
+  return `${(Number(value || 1) / 540) * 100}cqh`;
+}
+
+function applyLayerTransform(element, layer) {
+  const transform = layer.transform || {};
+  const parts = [];
+  if (Number.isFinite(transform.rotation) && transform.rotation !== 0) {
+    parts.push(`rotate(${transform.rotation}deg)`);
+  }
+  const scaleX = transform.flipHorizontal ? -1 : 1;
+  const scaleY = transform.flipVertical ? -1 : 1;
+  if (scaleX !== 1 || scaleY !== 1) {
+    parts.push(`scale(${scaleX}, ${scaleY})`);
+  }
+  const baseTransform = parts.join(" ");
+  element.dataset.baseTransform = baseTransform;
+  element.style.transform = baseTransform;
+  element.style.transformOrigin = "center center";
+}
+
+function applyLayerVisualStyle(element, layer) {
+  const style = layer.style || {};
+  if (style.fillColor) {
+    element.style.backgroundColor = style.fillColor;
+  }
+  if (style.lineColor && Number(style.lineWidth || 0) > 0) {
+    element.style.border = `${style.lineWidth}pt solid ${style.lineColor}`;
+  }
+  if (style.lineDash && style.lineDash !== "SOLID") {
+    element.style.borderStyle = "dashed";
+  }
+}
+
+function applyTextLayerStyle(element, layer) {
+  const textStyle = layer.textStyle || {};
+  const firstRun = (layer.textRuns || [])[0] || {};
+  const firstParagraph = (layer.paragraphs || [])[0] || {};
+  element.style.display = "flex";
+  element.style.paddingLeft = pointWidthToContainer(textStyle.leftInset);
+  element.style.paddingRight = pointWidthToContainer(textStyle.rightInset);
+  element.style.paddingTop = pointHeightToContainer(textStyle.topInset);
+  element.style.paddingBottom = pointHeightToContainer(textStyle.bottomInset);
+  element.style.whiteSpace = textStyle.wordWrap === false ? "pre" : "pre-wrap";
+  element.style.overflowWrap = textStyle.wordWrap === false ? "normal" : "break-word";
+  element.style.textAlign = String(firstParagraph.textAlign || "LEFT").toLowerCase();
+  element.style.alignItems =
+    textStyle.verticalAlignment === "MIDDLE" ? "center" : textStyle.verticalAlignment === "BOTTOM" ? "flex-end" : "flex-start";
+  element.style.justifyContent = "flex-start";
+  element.style.fontFamily = firstRun.fontFamily ? `"${firstRun.fontFamily}", Arial, sans-serif` : "Arial, sans-serif";
+  if (Number.isFinite(firstRun.fontSize)) {
+    element.style.fontSize = pointFontToContainer(firstRun.fontSize);
+  } else {
+    element.style.fontSize = `${Math.max(layer.bounds.height * 72, 1)}cqh`;
+  }
+  if (firstRun.fontColor) {
+    element.style.color = firstRun.fontColor;
+  }
+  element.style.fontWeight = firstRun.bold ? "700" : "400";
+  element.style.fontStyle = firstRun.italic ? "italic" : "normal";
+  element.style.textDecoration = firstRun.underline ? "underline" : firstRun.strikethrough ? "line-through" : "none";
+  if (Number.isFinite(firstParagraph.lineSpacing) && firstParagraph.lineSpacing > 0) {
+    element.style.lineHeight = String(firstParagraph.lineSpacing / 100);
+  }
 }
 
 function renderLayers(screen) {
@@ -192,7 +268,7 @@ function renderLayers(screen) {
       element.append(image);
     } else if (layer.type === "text") {
       element.textContent = layer.text || "";
-      element.style.fontSize = `${Math.max(layer.bounds.height * 72, 1)}cqh`;
+      applyTextLayerStyle(element, layer);
     }
     state.currentLayerElements.set(String(layer.shapeId), element);
     layersLayer.append(element);
@@ -490,7 +566,8 @@ function applyMotionBehavior(elements, strings, timing) {
     const originalTransform = element.style.transform;
     element.style.transition = transitionList(["transform"], timing);
     window.requestAnimationFrame(() => {
-      element.style.transform = `translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`;
+      const baseTransform = element.dataset.baseTransform || "";
+      element.style.transform = `${baseTransform} translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`.trim();
     });
     if (timing.autoReverse) {
       scheduleAnimation(() => {
@@ -574,7 +651,7 @@ function setupAnimations(screen) {
     element.style.visibility = "";
     element.style.opacity = "";
     element.style.transition = "";
-    element.style.transform = "";
+    element.style.transform = element.dataset.baseTransform || "";
   }
   const slideAnimations = state.animationSlides.get(screen.slide);
   if (!slideAnimations) {

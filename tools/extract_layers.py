@@ -16,6 +16,20 @@ import shutil
 from pathlib import Path
 
 
+def parse_bool(value: str) -> bool:
+    return value.lower() == "true"
+
+
+def parse_optional_float(value: str) -> float | None:
+    if value == "" or value.lower() == "null":
+        return None
+    return float(value)
+
+
+def parse_optional_string(value: str) -> str | None:
+    return value if value and value.lower() != "null" else None
+
+
 def parse_poi_audit(path: Path) -> tuple[dict[str, object], dict[int, list[dict[str, object]]]]:
     metadata: dict[str, object] = {}
     shapes: dict[tuple[int, int], dict[str, object]] = {}
@@ -49,6 +63,31 @@ def parse_poi_audit(path: Path) -> tuple[dict[str, object], dict[int, list[dict[
             }
             shapes[(slide, shape_id)] = shape
             by_slide.setdefault(slide, []).append(shape)
+        elif key == "GEOMETRY":
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape["geometry"] = {
+                    "shapeType": parse_optional_string(parts[4]),
+                    "rotation": float(parts[5]),
+                    "flipHorizontal": parse_bool(parts[6]),
+                    "flipVertical": parse_bool(parts[7]),
+                    "placeholder": parse_bool(parts[8]),
+                }
+        elif key == "STYLE":
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape["style"] = {
+                    "fillColor": parse_optional_string(parts[4]),
+                    "lineColor": parse_optional_string(parts[5]),
+                    "lineWidth": float(parts[6]),
+                    "lineDash": parse_optional_string(parts[7]),
+                    "lineCap": parse_optional_string(parts[8]),
+                    "lineCompound": parse_optional_string(parts[9]),
+                }
         elif key == "PICTURE":
             slide = int(parts[1])
             shape_id = int(parts[3])
@@ -60,13 +99,104 @@ def parse_poi_audit(path: Path) -> tuple[dict[str, object], dict[int, list[dict[
                 "pictureType": parts[5],
                 "sourceBytes": int(parts[6]),
             }
+        elif key == "CLIP":
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape["clip"] = {
+                    "top": int(parts[4]),
+                    "right": int(parts[5]),
+                    "bottom": int(parts[6]),
+                    "left": int(parts[7]),
+                    "units": "poi-picture-clipping-insets",
+                }
         elif key == "TEXT":
             slide = int(parts[1])
             shape_id = int(parts[3])
             shape = shapes.get((slide, shape_id))
             if shape is None:
                 continue
-            shape["text"] = parts[4].replace("\\r", "\r").replace("\\n", "\n") if len(parts) >= 5 else ""
+            shape["text"] = (
+                "" if len(parts) < 5 or parts[4] == "null" else parts[4].replace("\\r", "\r").replace("\\n", "\n")
+            )
+        elif key == "TEXTSTYLE":
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape["textStyle"] = {
+                    "wordWrap": parse_bool(parts[4]),
+                    "wordWrapEx": int(parts[5]),
+                    "verticalAlignment": parse_optional_string(parts[6]),
+                    "textDirection": parse_optional_string(parts[7]),
+                    "textRotation": parse_optional_string(parts[8]),
+                    "leftInset": float(parts[9]),
+                    "rightInset": float(parts[10]),
+                    "topInset": float(parts[11]),
+                    "bottomInset": float(parts[12]),
+                    "textHeight": float(parts[13]),
+                }
+        elif key == "PARAGRAPH":
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape.setdefault("paragraphs", []).append(
+                    {
+                        "paragraphIndex": int(parts[4]),
+                        "start": int(parts[5]),
+                        "length": int(parts[6]),
+                        "textAlign": parse_optional_string(parts[7]),
+                        "fontAlign": parse_optional_string(parts[8]),
+                        "indentLevel": int(parts[9]),
+                        "leftMargin": parse_optional_float(parts[10]),
+                        "rightMargin": parse_optional_float(parts[11]),
+                        "indent": parse_optional_float(parts[12]),
+                        "lineSpacing": parse_optional_float(parts[13]),
+                        "spaceBefore": parse_optional_float(parts[14]),
+                        "spaceAfter": parse_optional_float(parts[15]),
+                        "bullet": parse_bool(parts[16]),
+                        "bulletChar": parse_optional_string(parts[17]),
+                        "bulletFont": parse_optional_string(parts[18]),
+                        "bulletSize": parse_optional_float(parts[19]),
+                    }
+                )
+        elif key == "TEXTRUN":
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape.setdefault("textRuns", []).append(
+                    {
+                        "paragraphIndex": int(parts[4]),
+                        "runIndex": int(parts[5]),
+                        "start": int(parts[6]),
+                        "length": int(parts[7]),
+                        "text": parts[8].replace("\\r", "\r").replace("\\n", "\n"),
+                        "fontFamily": parse_optional_string(parts[9]),
+                        "fontSize": parse_optional_float(parts[10]),
+                        "bold": parse_bool(parts[11]),
+                        "italic": parse_bool(parts[12]),
+                        "underline": parse_bool(parts[13]),
+                        "strikethrough": parse_bool(parts[14]),
+                        "fontColor": parse_optional_string(parts[15]),
+                    }
+                )
+        elif key in {"SHAPELINK", "TEXTLINK"}:
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape.setdefault("hyperlinks", []).append(
+                    {
+                        "source": key,
+                        "id": int(parts[4]),
+                        "type": parse_optional_string(parts[5]),
+                        "label": parse_optional_string(parts[6]),
+                        "address": parse_optional_string(parts[7]) if len(parts) > 7 else None,
+                    }
+                )
 
     return metadata, by_slide
 
@@ -148,6 +278,23 @@ def main() -> None:
         int(slide): set(map(int, shape_ids))
         for slide, shape_ids in timing_tree.get("animationTargets", {}).get("shapeTargetsBySlide", {}).items()
     }
+    actions_by_shape: dict[tuple[int, int], list[dict[str, object]]] = {}
+    for action in inventory.get("interactive_actions", []):
+        if action.get("shape_id") is None:
+            continue
+        slide = int(action["slide"])
+        shape_id = int(action["shape_id"])
+        actions_by_shape.setdefault((slide, shape_id), []).append(
+            {
+                "recordOffset": action["record_offset"],
+                "actionCode": action["action_code"],
+                "soundRef": action["sound_ref"],
+                "hyperlinkId": action["hyperlink_id"],
+                "targetLabel": action["target_label"],
+                "targetSlide": action["target_slide"],
+                "flagsHex": action["flags_hex"],
+            }
+        )
 
     slides: list[dict[str, object]] = []
     image_instance_count = 0
@@ -169,6 +316,21 @@ def main() -> None:
                 "bounds": normal_bounds(shape["bounds"], page_width, page_height),
                 "animated": animated,
             }
+            if "geometry" in shape:
+                geometry = dict(shape["geometry"])
+                base["shapeType"] = geometry.pop("shapeType")
+                base["transform"] = {
+                    "rotation": geometry["rotation"],
+                    "flipHorizontal": geometry["flipHorizontal"],
+                    "flipVertical": geometry["flipVertical"],
+                }
+                base["placeholder"] = geometry["placeholder"]
+            if "style" in shape:
+                base["style"] = shape["style"]
+            if "hyperlinks" in shape:
+                base["hyperlinks"] = shape["hyperlinks"]
+            if (slide, shape_id) in actions_by_shape:
+                base["actions"] = actions_by_shape[(slide, shape_id)]
             if animated:
                 animated_layer_count += 1
             if "picture" in shape:
@@ -191,9 +353,17 @@ def main() -> None:
                     "pictureType": picture["pictureType"],
                     "sourceBytes": picture["sourceBytes"],
                 }
+                if "clip" in shape:
+                    layer["clip"] = shape["clip"]
                 image_instance_count += 1
             elif "text" in shape:
                 layer = {**base, "type": "text", "text": shape.get("text", "")}
+                if "textStyle" in shape:
+                    layer["textStyle"] = shape["textStyle"]
+                if "paragraphs" in shape:
+                    layer["paragraphs"] = shape["paragraphs"]
+                if "textRuns" in shape:
+                    layer["textRuns"] = shape["textRuns"]
                 text_layer_count += 1
             else:
                 layer = {**base, "type": "shape"}
@@ -214,6 +384,27 @@ def main() -> None:
             "textLayers": text_layer_count,
             "animatedLayers": animated_layer_count,
             "animatedShapeTargets": sum(len(targets) for targets in animation_targets.values()),
+            "styledLayers": sum(
+                1 for slide in slides for layer in slide["layers"] if "style" in layer
+            ),
+            "transformLayers": sum(
+                1 for slide in slides for layer in slide["layers"] if "transform" in layer
+            ),
+            "textStyleLayers": sum(
+                1 for slide in slides for layer in slide["layers"] if "textStyle" in layer
+            ),
+            "paragraphs": sum(
+                len(layer.get("paragraphs", [])) for slide in slides for layer in slide["layers"]
+            ),
+            "textRuns": sum(
+                len(layer.get("textRuns", [])) for slide in slides for layer in slide["layers"]
+            ),
+            "actionBoundLayers": sum(
+                1 for slide in slides for layer in slide["layers"] if "actions" in layer
+            ),
+            "hyperlinkBoundLayers": sum(
+                1 for slide in slides for layer in slide["layers"] if "hyperlinks" in layer
+            ),
         },
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

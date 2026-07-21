@@ -63,7 +63,7 @@ Critical path work added from the animation findings:
 1. **Freeze and inventory the source**
    - [x] Keep the `.pps` and original audio read-only as the reference copy; record the presentation hash and source stream inventory.
    - [x] Produce a repeatable baseline OLE record/slide/sound/media inventory in `generated/inventory.json`.
-   - [ ] Resolve persistent slide IDs, title/master/layout records, text runs, z-order, animation/transition records, and all sound-reference semantics.
+   - [x] Resolve persistent slide IDs, title/master/layout records, text runs, z-order, animation/transition records, and explicit sound-reference status in `generated/source_semantics.json`.
    - [x] Produce a reviewable JSON report for slides, shape objects, asset inventory, and directed navigation edges (source screen, hotspot rectangle, action, target screen), including non-slide actions.
 
 2. **Build a deterministic legacy-PowerPoint extractor**
@@ -77,9 +77,10 @@ Critical path work added from the animation findings:
    - [x] Confirm complex PP10 animation timing trees are present and accessible; record the evidence in `generated/timing_tree_audit.json` and `ANIMATION_EVALUATION.md`.
    - [x] Extract per-slide image instances as separate addressable objects, including source asset id, bounds, z-order, and animation target id.
    - [x] Extract text objects as separate addressable objects, including text values, bounds, z-order, and animation target id.
-   - [ ] Improve layer extraction for crop/clip, transforms, fill/line style, text style, paragraph/character target ranges, and hyperlink/action binding on layers.
+   - [x] Improve layer extraction for crop/clip, transforms, fill/line style, text style, paragraph/character target ranges, and hyperlink/action binding on layers.
    - [x] Implement a PP10 timing-tree decoder that emits a JS-ready manifest for nested time nodes, node ids, triggers, sequence data, interpolation modes, acceleration/deceleration/auto-reverse modifiers, behavior containers, keyframes/formulas, motion paths, text/image visibility changes, and sound commands.
-   - [ ] Improve font, text wrapping, line geometry, and full visual layering fidelity. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
+   - [x] Improve first-pass font, text wrapping, line geometry, and visual layering fidelity using extracted POI style/text-run metadata in the layer manifest, browser runtime, and reconstructed raster renderer.
+   - [ ] Complete full visual layering fidelity against Microsoft PowerPoint reference screenshots. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
    - [x] Extract embedded PowerPoint WAV sounds and convert them to browser-compatible MP3 and Opus assets.
    - [ ] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path.
@@ -114,7 +115,7 @@ Critical path work added from the animation findings:
    - Give invisible hotspots useful accessible labels and focus handling without adding visual controls that alter the original presentation.
 
 5. **Validate fidelity and game logic**
-   - Unit-test the extractor: input hash, expected stream/slide/action/asset counts, asset decoding, and absence of unresolved slide targets.
+   - [x] Unit-test the extractor: input hash, expected stream/slide/action/asset counts, asset decoding, and absence of unresolved slide targets.
    - [x] Add static-server smoke validation for the generated `docs/` app, manifest, and first screen asset.
    - [x] Add regression verification for the PP10 timing-tree audit: timing blob counts, key timing records, trigger events, modifier types, sequence data, variant strings, and absence of unresolved shape targets.
    - [x] Add regression verification for the decoded PP10 animation manifest: nested time-node count, trigger events, behavior kinds, modifier types, interpolation modes, and layer-target alignment.
@@ -127,7 +128,7 @@ Critical path work added from the animation findings:
    - [x] Add site verification for first-pass acceleration/deceleration and auto-reverse runtime hooks.
    - [x] Add site verification for first-pass start/end animation trigger runtime hooks.
    - [x] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
-   - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
+   - [x] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
    - [x] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops.
    - [ ] Maintain a manual playthrough checklist for major branches/endings.
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
