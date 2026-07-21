@@ -1,0 +1,14 @@
+# Disposable research environment and local Python cache
+_port_analysis_tmp/venv/
+__pycache__/
+*.py[cod]
+
+# Generated port output (keep source and plans tracked)
+build/
+dist/
+site/
+
+# Local editor/OS files
+.DS_Store
+Thumbs.db
+.vscode/
