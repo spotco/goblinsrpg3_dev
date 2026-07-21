@@ -80,7 +80,7 @@ Critical path work added from the animation findings:
    - [x] Improve layer extraction for crop/clip, transforms, fill/line style, text style, paragraph/character target ranges, and hyperlink/action binding on layers.
    - [x] Implement a PP10 timing-tree decoder that emits a JS-ready manifest for nested time nodes, node ids, triggers, sequence data, interpolation modes, acceleration/deceleration/auto-reverse modifiers, behavior containers, keyframes/formulas, motion paths, text/image visibility changes, and sound commands.
    - [x] Improve first-pass font, text wrapping, line geometry, and visual layering fidelity using extracted POI style/text-run metadata in the layer manifest, browser runtime, and reconstructed raster renderer.
-   - [ ] Complete full visual layering fidelity against Microsoft PowerPoint reference screenshots. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
+   - [ ] Complete full visual layering fidelity against Microsoft PowerPoint reference screenshots. The selected fallback for any unsupported legacy drawing construct is the generated per-screen raster layer from `tools/render_reconstructed.py`, with hotspots remaining as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
    - [x] Extract embedded PowerPoint WAV sounds and convert them to browser-compatible MP3 and Opus assets.
    - [x] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path. The selected path is the repo-local deterministic `tools/render_midi.py` additive synth (`goblins-python-additive-v1`), followed by ffmpeg MP3/Opus conversion.
@@ -90,10 +90,11 @@ Critical path work added from the animation findings:
 3. **Establish visual reference renders before porting gameplay**
    - [x] Retire the watermarked Aspose renderer path and keep `tools/render_reconstructed.py` on the non-Aspose layer manifest.
    - [x] Generate a first-pass unwatermarked reconstructed raster layer with `tools/render_reconstructed.py` and copy it into `docs/screens/` for browser playability.
-   - [ ] Select a publishable non-watermarked render path. Options are a manual Microsoft PowerPoint export or a custom HTML/SVG reconstruction from extracted OfficeArt/POI records.
-   - [ ] Render every source slide at a fixed 4:3 resolution using the selected controlled PowerPoint-compatible renderer. If a conversion tool changes visuals, compare it against a short set of reference screenshots from Microsoft PowerPoint and select/document the closest rendering path.
-   - Store only the reusable/reference assets needed for development; retain an index that identifies the source slide and render settings for each screen.
-   - Review all visible screens and hotspots, including branches that cannot be reached by straightforward play, and annotate special behavior (restart, modal-like reveal, repeated click, hidden object, or non-slide action).
+   - [x] Select a publishable non-watermarked render path: the repo-local custom layer reconstruction in `tools/render_reconstructed.py`, documented in `RENDERING.md`.
+   - [x] Render every source slide at a fixed 4:3 resolution using the selected controlled renderer and verify the outputs with `tools/verify_render_manifest.py`. Microsoft PowerPoint reference comparison remains part of the open full-fidelity item above.
+   - [x] Store only the reusable/reference assets needed for development; retain an index in `generated/reconstructed/render_manifest.json` that identifies the source slide, render settings, file size, and SHA-256 for each screen.
+   - [x] Generate `generated/visual_review_checklist.json` for all visible screens and hotspots, including branch-only screens and flags for unreachable, cyclic, animated, transformed, and non-navigation/media-action screens.
+   - [ ] Manually review all visible screens and hotspots against Microsoft PowerPoint reference screenshots, including branches that cannot be reached by straightforward play, and annotate special behavior (restart, modal-like reveal, repeated click, hidden object, or non-slide action).
 
 4. **Implement the static web game**
    - [x] Create a dependency-light HTML/CSS/JavaScript app in `docs/` with `index.html`, an asset directory, and generated `game-manifest.json`. Use relative URLs only so the site works at a GitHub project-pages subpath.

@@ -1,1208 +1,2432 @@
-[
-  {
-    "slide": 1,
-    "path": "generated/reconstructed/slide-001.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 2,
-    "path": "generated/reconstructed/slide-002.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 3,
-    "path": "generated/reconstructed/slide-003.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 4,
-    "path": "generated/reconstructed/slide-004.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 5,
-    "path": "generated/reconstructed/slide-005.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 6,
-    "path": "generated/reconstructed/slide-006.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 7,
-    "path": "generated/reconstructed/slide-007.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 8,
-    "path": "generated/reconstructed/slide-008.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 9,
-    "path": "generated/reconstructed/slide-009.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 10,
-    "path": "generated/reconstructed/slide-010.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 11,
-    "path": "generated/reconstructed/slide-011.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 12,
-    "path": "generated/reconstructed/slide-012.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 13,
-    "path": "generated/reconstructed/slide-013.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 14,
-    "path": "generated/reconstructed/slide-014.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 15,
-    "path": "generated/reconstructed/slide-015.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 16,
-    "path": "generated/reconstructed/slide-016.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 17,
-    "path": "generated/reconstructed/slide-017.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 18,
-    "path": "generated/reconstructed/slide-018.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 19,
-    "path": "generated/reconstructed/slide-019.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 20,
-    "path": "generated/reconstructed/slide-020.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 21,
-    "path": "generated/reconstructed/slide-021.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 22,
-    "path": "generated/reconstructed/slide-022.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 23,
-    "path": "generated/reconstructed/slide-023.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 24,
-    "path": "generated/reconstructed/slide-024.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 25,
-    "path": "generated/reconstructed/slide-025.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 26,
-    "path": "generated/reconstructed/slide-026.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 27,
-    "path": "generated/reconstructed/slide-027.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 28,
-    "path": "generated/reconstructed/slide-028.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 29,
-    "path": "generated/reconstructed/slide-029.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 30,
-    "path": "generated/reconstructed/slide-030.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 31,
-    "path": "generated/reconstructed/slide-031.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 32,
-    "path": "generated/reconstructed/slide-032.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 33,
-    "path": "generated/reconstructed/slide-033.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 34,
-    "path": "generated/reconstructed/slide-034.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 35,
-    "path": "generated/reconstructed/slide-035.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 36,
-    "path": "generated/reconstructed/slide-036.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 37,
-    "path": "generated/reconstructed/slide-037.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 38,
-    "path": "generated/reconstructed/slide-038.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 39,
-    "path": "generated/reconstructed/slide-039.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 40,
-    "path": "generated/reconstructed/slide-040.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 41,
-    "path": "generated/reconstructed/slide-041.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 42,
-    "path": "generated/reconstructed/slide-042.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 43,
-    "path": "generated/reconstructed/slide-043.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 44,
-    "path": "generated/reconstructed/slide-044.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 45,
-    "path": "generated/reconstructed/slide-045.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 46,
-    "path": "generated/reconstructed/slide-046.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 47,
-    "path": "generated/reconstructed/slide-047.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 48,
-    "path": "generated/reconstructed/slide-048.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 49,
-    "path": "generated/reconstructed/slide-049.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 50,
-    "path": "generated/reconstructed/slide-050.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 51,
-    "path": "generated/reconstructed/slide-051.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 52,
-    "path": "generated/reconstructed/slide-052.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 53,
-    "path": "generated/reconstructed/slide-053.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 54,
-    "path": "generated/reconstructed/slide-054.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 55,
-    "path": "generated/reconstructed/slide-055.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 56,
-    "path": "generated/reconstructed/slide-056.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 57,
-    "path": "generated/reconstructed/slide-057.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 58,
-    "path": "generated/reconstructed/slide-058.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 59,
-    "path": "generated/reconstructed/slide-059.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 60,
-    "path": "generated/reconstructed/slide-060.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 61,
-    "path": "generated/reconstructed/slide-061.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 62,
-    "path": "generated/reconstructed/slide-062.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 63,
-    "path": "generated/reconstructed/slide-063.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 64,
-    "path": "generated/reconstructed/slide-064.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 65,
-    "path": "generated/reconstructed/slide-065.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 66,
-    "path": "generated/reconstructed/slide-066.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 67,
-    "path": "generated/reconstructed/slide-067.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 68,
-    "path": "generated/reconstructed/slide-068.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 69,
-    "path": "generated/reconstructed/slide-069.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 70,
-    "path": "generated/reconstructed/slide-070.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 71,
-    "path": "generated/reconstructed/slide-071.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 72,
-    "path": "generated/reconstructed/slide-072.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 73,
-    "path": "generated/reconstructed/slide-073.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 74,
-    "path": "generated/reconstructed/slide-074.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 75,
-    "path": "generated/reconstructed/slide-075.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 76,
-    "path": "generated/reconstructed/slide-076.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 77,
-    "path": "generated/reconstructed/slide-077.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 78,
-    "path": "generated/reconstructed/slide-078.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 79,
-    "path": "generated/reconstructed/slide-079.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 80,
-    "path": "generated/reconstructed/slide-080.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 81,
-    "path": "generated/reconstructed/slide-081.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 82,
-    "path": "generated/reconstructed/slide-082.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 83,
-    "path": "generated/reconstructed/slide-083.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 84,
-    "path": "generated/reconstructed/slide-084.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 85,
-    "path": "generated/reconstructed/slide-085.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 86,
-    "path": "generated/reconstructed/slide-086.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 87,
-    "path": "generated/reconstructed/slide-087.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 88,
-    "path": "generated/reconstructed/slide-088.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 89,
-    "path": "generated/reconstructed/slide-089.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 90,
-    "path": "generated/reconstructed/slide-090.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 91,
-    "path": "generated/reconstructed/slide-091.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 92,
-    "path": "generated/reconstructed/slide-092.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 93,
-    "path": "generated/reconstructed/slide-093.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 94,
-    "path": "generated/reconstructed/slide-094.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 95,
-    "path": "generated/reconstructed/slide-095.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 96,
-    "path": "generated/reconstructed/slide-096.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 97,
-    "path": "generated/reconstructed/slide-097.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 98,
-    "path": "generated/reconstructed/slide-098.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 99,
-    "path": "generated/reconstructed/slide-099.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 100,
-    "path": "generated/reconstructed/slide-100.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 101,
-    "path": "generated/reconstructed/slide-101.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 102,
-    "path": "generated/reconstructed/slide-102.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 103,
-    "path": "generated/reconstructed/slide-103.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 104,
-    "path": "generated/reconstructed/slide-104.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 105,
-    "path": "generated/reconstructed/slide-105.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 106,
-    "path": "generated/reconstructed/slide-106.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 107,
-    "path": "generated/reconstructed/slide-107.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 108,
-    "path": "generated/reconstructed/slide-108.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 109,
-    "path": "generated/reconstructed/slide-109.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 110,
-    "path": "generated/reconstructed/slide-110.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 111,
-    "path": "generated/reconstructed/slide-111.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 112,
-    "path": "generated/reconstructed/slide-112.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 113,
-    "path": "generated/reconstructed/slide-113.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 114,
-    "path": "generated/reconstructed/slide-114.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 115,
-    "path": "generated/reconstructed/slide-115.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 116,
-    "path": "generated/reconstructed/slide-116.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 117,
-    "path": "generated/reconstructed/slide-117.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 118,
-    "path": "generated/reconstructed/slide-118.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 119,
-    "path": "generated/reconstructed/slide-119.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 120,
-    "path": "generated/reconstructed/slide-120.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 121,
-    "path": "generated/reconstructed/slide-121.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 122,
-    "path": "generated/reconstructed/slide-122.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 123,
-    "path": "generated/reconstructed/slide-123.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 124,
-    "path": "generated/reconstructed/slide-124.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 125,
-    "path": "generated/reconstructed/slide-125.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 126,
-    "path": "generated/reconstructed/slide-126.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 127,
-    "path": "generated/reconstructed/slide-127.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 128,
-    "path": "generated/reconstructed/slide-128.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 129,
-    "path": "generated/reconstructed/slide-129.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 130,
-    "path": "generated/reconstructed/slide-130.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 131,
-    "path": "generated/reconstructed/slide-131.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 132,
-    "path": "generated/reconstructed/slide-132.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 133,
-    "path": "generated/reconstructed/slide-133.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 134,
-    "path": "generated/reconstructed/slide-134.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 135,
-    "path": "generated/reconstructed/slide-135.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 136,
-    "path": "generated/reconstructed/slide-136.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 137,
-    "path": "generated/reconstructed/slide-137.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 138,
-    "path": "generated/reconstructed/slide-138.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 139,
-    "path": "generated/reconstructed/slide-139.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 140,
-    "path": "generated/reconstructed/slide-140.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 141,
-    "path": "generated/reconstructed/slide-141.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 142,
-    "path": "generated/reconstructed/slide-142.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 143,
-    "path": "generated/reconstructed/slide-143.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 144,
-    "path": "generated/reconstructed/slide-144.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 145,
-    "path": "generated/reconstructed/slide-145.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 146,
-    "path": "generated/reconstructed/slide-146.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 147,
-    "path": "generated/reconstructed/slide-147.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 148,
-    "path": "generated/reconstructed/slide-148.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 149,
-    "path": "generated/reconstructed/slide-149.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 150,
-    "path": "generated/reconstructed/slide-150.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 151,
-    "path": "generated/reconstructed/slide-151.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 152,
-    "path": "generated/reconstructed/slide-152.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 153,
-    "path": "generated/reconstructed/slide-153.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 154,
-    "path": "generated/reconstructed/slide-154.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 155,
-    "path": "generated/reconstructed/slide-155.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 156,
-    "path": "generated/reconstructed/slide-156.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 157,
-    "path": "generated/reconstructed/slide-157.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 158,
-    "path": "generated/reconstructed/slide-158.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 159,
-    "path": "generated/reconstructed/slide-159.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 160,
-    "path": "generated/reconstructed/slide-160.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 161,
-    "path": "generated/reconstructed/slide-161.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 162,
-    "path": "generated/reconstructed/slide-162.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 163,
-    "path": "generated/reconstructed/slide-163.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 164,
-    "path": "generated/reconstructed/slide-164.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 165,
-    "path": "generated/reconstructed/slide-165.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 166,
-    "path": "generated/reconstructed/slide-166.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 167,
-    "path": "generated/reconstructed/slide-167.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 168,
-    "path": "generated/reconstructed/slide-168.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 169,
-    "path": "generated/reconstructed/slide-169.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 170,
-    "path": "generated/reconstructed/slide-170.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 171,
-    "path": "generated/reconstructed/slide-171.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 172,
-    "path": "generated/reconstructed/slide-172.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 173,
-    "path": "generated/reconstructed/slide-173.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 174,
-    "path": "generated/reconstructed/slide-174.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 175,
-    "path": "generated/reconstructed/slide-175.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 176,
-    "path": "generated/reconstructed/slide-176.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 177,
-    "path": "generated/reconstructed/slide-177.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 178,
-    "path": "generated/reconstructed/slide-178.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 179,
-    "path": "generated/reconstructed/slide-179.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 180,
-    "path": "generated/reconstructed/slide-180.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 181,
-    "path": "generated/reconstructed/slide-181.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 182,
-    "path": "generated/reconstructed/slide-182.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 183,
-    "path": "generated/reconstructed/slide-183.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 184,
-    "path": "generated/reconstructed/slide-184.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 185,
-    "path": "generated/reconstructed/slide-185.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 186,
-    "path": "generated/reconstructed/slide-186.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 187,
-    "path": "generated/reconstructed/slide-187.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 188,
-    "path": "generated/reconstructed/slide-188.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 189,
-    "path": "generated/reconstructed/slide-189.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 190,
-    "path": "generated/reconstructed/slide-190.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 191,
-    "path": "generated/reconstructed/slide-191.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 192,
-    "path": "generated/reconstructed/slide-192.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 193,
-    "path": "generated/reconstructed/slide-193.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 194,
-    "path": "generated/reconstructed/slide-194.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 195,
-    "path": "generated/reconstructed/slide-195.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 196,
-    "path": "generated/reconstructed/slide-196.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 197,
-    "path": "generated/reconstructed/slide-197.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 198,
-    "path": "generated/reconstructed/slide-198.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 199,
-    "path": "generated/reconstructed/slide-199.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 200,
-    "path": "generated/reconstructed/slide-200.png",
-    "width": 720,
-    "height": 540
-  },
-  {
-    "slide": 201,
-    "path": "generated/reconstructed/slide-201.png",
-    "width": 720,
-    "height": 540
-  }
-]
+{
+  "format": "goblins-rpg3-render-manifest-v2",
+  "renderer": "goblins-layer-reconstruction-v2",
+  "sourceLayerManifest": "generated/layers.json",
+  "renderSettings": {
+    "scale": 1.0,
+    "width": 720,
+    "height": 540,
+    "background": "#000000",
+    "path": "custom non-Aspose layer reconstruction"
+  },
+  "summary": {
+    "slideCount": 201,
+    "imageCount": 532,
+    "textCount": 650,
+    "transformedLayerCount": 0
+  },
+  "slides": [
+    {
+      "slide": 1,
+      "path": "generated/reconstructed/slide-001.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 16044,
+      "sha256": "4aea3a7426bde443f8ad2efd4dc83c67303fa5d7a0d2cf0a2ad2371612a75e9b",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 2,
+      "path": "generated/reconstructed/slide-002.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 4485,
+      "sha256": "e640591ed0efa6c75d38332b8b278cd0f84bae3462fa7390172c780d78cc9b0b",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 3,
+      "path": "generated/reconstructed/slide-003.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 47028,
+      "sha256": "00937e14cc557e2df8d3f7e07f3f5e6560e0fb8832a8e585451177cd17878739",
+      "layerCount": 4,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 4,
+      "path": "generated/reconstructed/slide-004.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 77905,
+      "sha256": "a3cfead4560dcfcf500917cc1ee023ccaae0f62d5a218f0b0424194511ddee09",
+      "layerCount": 3,
+      "imageLayerCount": 2,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 5,
+      "path": "generated/reconstructed/slide-005.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 92052,
+      "sha256": "abb82b2399b26df0e1ecf4f1f5a4f0c1c6fda7f02e36c1a28f141a249d6e50fa",
+      "layerCount": 3,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 6,
+      "path": "generated/reconstructed/slide-006.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 188130,
+      "sha256": "1ff073400969e7551c614895bd442fd8c628dca1efe61c49876a5eebc9e49089",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 7,
+      "path": "generated/reconstructed/slide-007.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 174583,
+      "sha256": "45ec8999c9c3024c9cb8ad8699bc19ee453dbd0926d9a5a805a179f3e58d4991",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 8,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 8,
+      "path": "generated/reconstructed/slide-008.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 46880,
+      "sha256": "f6034835d93749a26ae8b9be95fa31f64672e03de912964eedaf2a8f8fc4d278",
+      "layerCount": 3,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 9,
+      "path": "generated/reconstructed/slide-009.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 49216,
+      "sha256": "329814a9235079c6b3741b9fa5637c6f233729481e3e5e16da988f1e9d1ed612",
+      "layerCount": 4,
+      "imageLayerCount": 2,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 10,
+      "path": "generated/reconstructed/slide-010.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 45218,
+      "sha256": "53bfbe641cf894245f729240e2c1ccaf2305b993a5734b2f2b551c821dfc47df",
+      "layerCount": 4,
+      "imageLayerCount": 2,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 11,
+      "path": "generated/reconstructed/slide-011.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 40160,
+      "sha256": "0f1a6fe7682ac299659869ebb8cb282716bf6279f6015c6e5578c1ba6c661d28",
+      "layerCount": 2,
+      "imageLayerCount": 2,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 12,
+      "path": "generated/reconstructed/slide-012.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 48080,
+      "sha256": "f0c77336d5654e9d129f031febf648b9b0b43ffb0ef14a27b52409686d9ee535",
+      "layerCount": 4,
+      "imageLayerCount": 2,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 13,
+      "path": "generated/reconstructed/slide-013.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73136,
+      "sha256": "6d962e14d37347c9235bc88fbdf47623f2b6a65f3fff2498ca2ade2575c439a6",
+      "layerCount": 3,
+      "imageLayerCount": 2,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 14,
+      "path": "generated/reconstructed/slide-014.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 65592,
+      "sha256": "0dac068aa0485e683dfa976eb94d43c1ea8b0fa613fea74340e20bb4848a3544",
+      "layerCount": 10,
+      "imageLayerCount": 8,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 15,
+      "path": "generated/reconstructed/slide-015.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 48727,
+      "sha256": "0a61694d465bc08685af443700a7bce620b6bbb6208de06f6af15d70cfe7b3f7",
+      "layerCount": 8,
+      "imageLayerCount": 4,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 16,
+      "path": "generated/reconstructed/slide-016.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 44973,
+      "sha256": "22ca3674b9126a978a4dbab3e70b859bda2e37bcfd2695f5d7f984464c7e64dd",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 17,
+      "path": "generated/reconstructed/slide-017.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 38827,
+      "sha256": "85658c5d70719d29e00fa26f96bc7878590762439b995644e5c1c12ffb4a0d06",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 18,
+      "path": "generated/reconstructed/slide-018.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 38886,
+      "sha256": "9cfe698f45101ad5d80459880d53cd0122f5b8411ad3f11403b71647ed142676",
+      "layerCount": 8,
+      "imageLayerCount": 6,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 19,
+      "path": "generated/reconstructed/slide-019.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71510,
+      "sha256": "b4c21740ffdd26b7e52fb41bfa0247227f64bb2a4e3c639f2c986078d85cb75d",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 20,
+      "path": "generated/reconstructed/slide-020.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71508,
+      "sha256": "18fba0d6a4d294b519401753f6dc6a09744b8cd7c1476840808fe96de6fa99e6",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 21,
+      "path": "generated/reconstructed/slide-021.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41520,
+      "sha256": "f35c11c0ba7b29459d22a08391dc1e2dbde160603ac6d5dc820c858779000b5e",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 22,
+      "path": "generated/reconstructed/slide-022.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41111,
+      "sha256": "0f4a5399d7af68f83b80de8f8ca951be82c18b5ffa75dba7903b16c014815cfe",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 23,
+      "path": "generated/reconstructed/slide-023.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 64189,
+      "sha256": "8f69baf79e53774f1659d872ecc1e3698b4e48d350f5f57311b8cb8f0e70f8b6",
+      "layerCount": 8,
+      "imageLayerCount": 5,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 24,
+      "path": "generated/reconstructed/slide-024.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42591,
+      "sha256": "dc6fdafda2d0c91a0de5dd792c61fd39b7c76e747d39d5e2fc04b15e9f18929e",
+      "layerCount": 7,
+      "imageLayerCount": 4,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 25,
+      "path": "generated/reconstructed/slide-025.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 62630,
+      "sha256": "47cb3e019a80674bcb1b696f15d6d820ed56343f1af7936b363874685762c664",
+      "layerCount": 7,
+      "imageLayerCount": 4,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 26,
+      "path": "generated/reconstructed/slide-026.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 54976,
+      "sha256": "3054a7bdcfe955f2dda62179012fc9e9f802d66c1d2f7fb061853bb6c8325822",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 27,
+      "path": "generated/reconstructed/slide-027.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 40898,
+      "sha256": "a771b25de43d4dfce38a1fda270aa586808621436dbaa75049482873309023d3",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 28,
+      "path": "generated/reconstructed/slide-028.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 39003,
+      "sha256": "5f157862565ded4d6a7aa7d1d12e3e99a18e6c7887f67eb3203a093391dc1bf3",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 29,
+      "path": "generated/reconstructed/slide-029.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 54816,
+      "sha256": "c5db157c81316da2738b0b7c573ef7ca5c55581192df9289e7c9026e23cf9ee7",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 30,
+      "path": "generated/reconstructed/slide-030.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 39267,
+      "sha256": "619d10cae576b9bba9a710e61b43f7b29aafad01b2be63133d7fc3dc24a90ba0",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 31,
+      "path": "generated/reconstructed/slide-031.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 64189,
+      "sha256": "8f69baf79e53774f1659d872ecc1e3698b4e48d350f5f57311b8cb8f0e70f8b6",
+      "layerCount": 8,
+      "imageLayerCount": 5,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 32,
+      "path": "generated/reconstructed/slide-032.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 62630,
+      "sha256": "47cb3e019a80674bcb1b696f15d6d820ed56343f1af7936b363874685762c664",
+      "layerCount": 7,
+      "imageLayerCount": 4,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 33,
+      "path": "generated/reconstructed/slide-033.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71508,
+      "sha256": "18fba0d6a4d294b519401753f6dc6a09744b8cd7c1476840808fe96de6fa99e6",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 34,
+      "path": "generated/reconstructed/slide-034.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 54976,
+      "sha256": "3054a7bdcfe955f2dda62179012fc9e9f802d66c1d2f7fb061853bb6c8325822",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 35,
+      "path": "generated/reconstructed/slide-035.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71489,
+      "sha256": "caabb211397d9f1fe2a26008f11e886fdfd5711f8a132dc891d33cb11fa635bd",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 36,
+      "path": "generated/reconstructed/slide-036.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 66510,
+      "sha256": "92077030ae008c2a95d4d8d6db55161ac4bf689a8c5ba90ee8edba44c8c8889e",
+      "layerCount": 12,
+      "imageLayerCount": 10,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 37,
+      "path": "generated/reconstructed/slide-037.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 39003,
+      "sha256": "5f157862565ded4d6a7aa7d1d12e3e99a18e6c7887f67eb3203a093391dc1bf3",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 38,
+      "path": "generated/reconstructed/slide-038.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 54976,
+      "sha256": "3054a7bdcfe955f2dda62179012fc9e9f802d66c1d2f7fb061853bb6c8325822",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 39,
+      "path": "generated/reconstructed/slide-039.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41090,
+      "sha256": "8746f44fba68b0230f54c243b46d84faa07c26faa0e8ed223e2230e4fc3bfc58",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 40,
+      "path": "generated/reconstructed/slide-040.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71489,
+      "sha256": "caabb211397d9f1fe2a26008f11e886fdfd5711f8a132dc891d33cb11fa635bd",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 41,
+      "path": "generated/reconstructed/slide-041.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 39003,
+      "sha256": "5f157862565ded4d6a7aa7d1d12e3e99a18e6c7887f67eb3203a093391dc1bf3",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 42,
+      "path": "generated/reconstructed/slide-042.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 54976,
+      "sha256": "3054a7bdcfe955f2dda62179012fc9e9f802d66c1d2f7fb061853bb6c8325822",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 43,
+      "path": "generated/reconstructed/slide-043.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 90052,
+      "sha256": "7de067b28ba3ed749f19d6a3ab86dd63eaefe1c19ce538f0b024b63e67ddb144",
+      "layerCount": 10,
+      "imageLayerCount": 9,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 44,
+      "path": "generated/reconstructed/slide-044.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 87856,
+      "sha256": "c826026b3d2778a990ec3fe911b23a6d5a108ada62e70156cc7c547387528e01",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 45,
+      "path": "generated/reconstructed/slide-045.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 86258,
+      "sha256": "cc98168f96e82c89a3ee2b3e7f12a2c6793283b310f13c1b3a94515e58ef3673",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 46,
+      "path": "generated/reconstructed/slide-046.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41559,
+      "sha256": "c1c214c87f471ba8329b4bae30c3ef3da1f77216e34979006c00989474491b1e",
+      "layerCount": 7,
+      "imageLayerCount": 2,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 47,
+      "path": "generated/reconstructed/slide-047.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 55103,
+      "sha256": "a8502cf197c20fef0eb5efaffb2c0d2a3d62a9c646573f16897d962cd1fb9f7e",
+      "layerCount": 7,
+      "imageLayerCount": 4,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 48,
+      "path": "generated/reconstructed/slide-048.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 7987,
+      "sha256": "9e69dd37e45109526d2745e2068eab63fbdb8ba6cd69f0f85a4dcda8abbbe534",
+      "layerCount": 4,
+      "imageLayerCount": 0,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 49,
+      "path": "generated/reconstructed/slide-049.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 29051,
+      "sha256": "c84aee634d020a87d106d2462eb9a7fc835c4be1799c9ebdec067df925854cbc",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 50,
+      "path": "generated/reconstructed/slide-050.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 46093,
+      "sha256": "43342138cd9c8c65c89ca99deec58ec3440352581f0c46da96f3af4a4bb36552",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 51,
+      "path": "generated/reconstructed/slide-051.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 49350,
+      "sha256": "c9b87eed87c76ed28ef97d62acf8b26cc4f9483ef50c71ca12a33d7a0a4c0495",
+      "layerCount": 3,
+      "imageLayerCount": 1,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 52,
+      "path": "generated/reconstructed/slide-052.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 50191,
+      "sha256": "3acd74f92eb03c529ade196904a2d47d928e3831a51d3601832ba6600e2a5e25",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 53,
+      "path": "generated/reconstructed/slide-053.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 49860,
+      "sha256": "5694ec4e73630213f197357b871a34a0d8087810b4eae3375b728879e7f29515",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 54,
+      "path": "generated/reconstructed/slide-054.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 76441,
+      "sha256": "b83cca976a9ee7eff50767e526d1bba23fded22f92daf47e1d84cd12e112e7c0",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 55,
+      "path": "generated/reconstructed/slide-055.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 3386,
+      "sha256": "5446231ee3dc5bc3760e3ba30051b5a0429b9f7a4b3177fc3b8bf2115ee81405",
+      "layerCount": 2,
+      "imageLayerCount": 0,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 56,
+      "path": "generated/reconstructed/slide-056.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 87613,
+      "sha256": "be772f394b7407dcb85983d94bf8b45529847978d3033019588df7e67bbdfe58",
+      "layerCount": 3,
+      "imageLayerCount": 1,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 57,
+      "path": "generated/reconstructed/slide-057.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 6590,
+      "sha256": "6868fec4fa3bc0d0e96166e6243a1c8b2205e6b9f040728467133a3474db11a8",
+      "layerCount": 4,
+      "imageLayerCount": 0,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 58,
+      "path": "generated/reconstructed/slide-058.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 9264,
+      "sha256": "c3b325ed342fdf6efbedea53fd6cae4c7be668925c4bca587d35037be0212bd1",
+      "layerCount": 4,
+      "imageLayerCount": 0,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 59,
+      "path": "generated/reconstructed/slide-059.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 86991,
+      "sha256": "23492184edf01f12e5bf8ea82cfa47fb537b499991f48b127c406e6cbd737838",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 60,
+      "path": "generated/reconstructed/slide-060.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 23096,
+      "sha256": "dee3d7ca0b42f6b5b85b4e7dc637f40a450dded8e2df6c0ffea5da554fabd292",
+      "layerCount": 4,
+      "imageLayerCount": 1,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 61,
+      "path": "generated/reconstructed/slide-061.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 9250,
+      "sha256": "b7db39a295afcda4260b01325a6de14be9bab39e402cbb81cc08ee3368ee5b70",
+      "layerCount": 2,
+      "imageLayerCount": 0,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 62,
+      "path": "generated/reconstructed/slide-062.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 88665,
+      "sha256": "fe92738fa56f756ddfa3584363a9fe6c36c24198473b602237735171e572e3ae",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 63,
+      "path": "generated/reconstructed/slide-063.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 28583,
+      "sha256": "cc02ed9c4fdaa7c1bdf3cf93859605e538df7f3f74e98d3df5fbbb90b9ae85e5",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 64,
+      "path": "generated/reconstructed/slide-064.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 30141,
+      "sha256": "1c817e90330df5ce147c0d5176b1db7f3a321a8f9515525f2b56e994430d5dd8",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 65,
+      "path": "generated/reconstructed/slide-065.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 26502,
+      "sha256": "5e016d4b7b2b7e545b6d0240ee2b2451e2c7b8df53b8ab27063abfd9a14bf5e7",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 66,
+      "path": "generated/reconstructed/slide-066.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 23225,
+      "sha256": "cf03f72a4df408fadc1f2c81fb2d58a11a5a076ef6877ff63f21ab9c99e12eb9",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 67,
+      "path": "generated/reconstructed/slide-067.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 51434,
+      "sha256": "20ed12bca7b0ff8f50f53311c5efb9157c8342d6dfa5878a7fc2928a9e0d7b06",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 68,
+      "path": "generated/reconstructed/slide-068.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 49880,
+      "sha256": "c0761cd7ed2ee11a0e3620cc562454f677ae66290323615aba3517871133f501",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 69,
+      "path": "generated/reconstructed/slide-069.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 51596,
+      "sha256": "009c87a0d9bc540e611b36c1cdc62328d06f95952ced9e596fc2922f7ab63ab5",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 70,
+      "path": "generated/reconstructed/slide-070.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 54996,
+      "sha256": "a6197fef3e9ca36b1d2cce8b55ee0c51fd2c8f22ca5c8d0f6d421421f724232f",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 71,
+      "path": "generated/reconstructed/slide-071.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 55043,
+      "sha256": "499498ecb4423a3d0adea642e393c83ce2692335b2e3cf9a32a1a47a5a734621",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 72,
+      "path": "generated/reconstructed/slide-072.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 60965,
+      "sha256": "63a0f933b327f3e86e5472af5d23e597dbb6de06d18d845b6b309d6a2ab86a62",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 73,
+      "path": "generated/reconstructed/slide-073.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 63535,
+      "sha256": "bb90e63b949b2e801cf2281f23a68458ddf65a28c05c961fefab4b5a155e4549",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 74,
+      "path": "generated/reconstructed/slide-074.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 61016,
+      "sha256": "519101f55bb635b6278b7ca0d1c45b66ed80a30ffc5dd62b194a4a810b16afb8",
+      "layerCount": 4,
+      "imageLayerCount": 2,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 75,
+      "path": "generated/reconstructed/slide-075.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 23225,
+      "sha256": "cf03f72a4df408fadc1f2c81fb2d58a11a5a076ef6877ff63f21ab9c99e12eb9",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 76,
+      "path": "generated/reconstructed/slide-076.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 26502,
+      "sha256": "5e016d4b7b2b7e545b6d0240ee2b2451e2c7b8df53b8ab27063abfd9a14bf5e7",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 77,
+      "path": "generated/reconstructed/slide-077.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 26502,
+      "sha256": "5e016d4b7b2b7e545b6d0240ee2b2451e2c7b8df53b8ab27063abfd9a14bf5e7",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 78,
+      "path": "generated/reconstructed/slide-078.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 33219,
+      "sha256": "958ebf10d4b6430f8d284ffcff8e2e24ce255ca6010af2275b92e5d41ce9c8d2",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 79,
+      "path": "generated/reconstructed/slide-079.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 51920,
+      "sha256": "3a75f2b98a58db48639c304180c9e75d234aec9a16352a31176033a5ddce47a8",
+      "layerCount": 6,
+      "imageLayerCount": 2,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 80,
+      "path": "generated/reconstructed/slide-080.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 47044,
+      "sha256": "8bdad8fa99c57521fc83ef50c6af3d1cbdd2ff7334700410a2f901505fe58535",
+      "layerCount": 5,
+      "imageLayerCount": 3,
+      "textLayerCount": 16,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 81,
+      "path": "generated/reconstructed/slide-081.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 45145,
+      "sha256": "e13ee1ecb056474f5b18c490d35033b438d9d2348f6452dfb6fc36a5b92e46a1",
+      "layerCount": 6,
+      "imageLayerCount": 2,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 82,
+      "path": "generated/reconstructed/slide-082.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42949,
+      "sha256": "22e783272802c37d672f7a68b5565e2b67d73e071cf83955db2f1a4c488d4a18",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 83,
+      "path": "generated/reconstructed/slide-083.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 67139,
+      "sha256": "6abe9cf9c7a0e317c993c6a0415433784ac24699f7c2cdb29f3920886ef91713",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 84,
+      "path": "generated/reconstructed/slide-084.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 33219,
+      "sha256": "958ebf10d4b6430f8d284ffcff8e2e24ce255ca6010af2275b92e5d41ce9c8d2",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 85,
+      "path": "generated/reconstructed/slide-085.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 46088,
+      "sha256": "86aaa7908605b751175172f7325f187f896ef0aa9294630aeffc3e4f15def800",
+      "layerCount": 3,
+      "imageLayerCount": 3,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 86,
+      "path": "generated/reconstructed/slide-086.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 49210,
+      "sha256": "d2ca31420cc9d96d67aa7510764d4f5124e1558b97711cf6e6cd29bbb976908f",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 87,
+      "path": "generated/reconstructed/slide-087.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 50029,
+      "sha256": "0ad4fa08161b6e61025bbee83184aa67563b94f145810ce61f0e17ac145964d2",
+      "layerCount": 6,
+      "imageLayerCount": 2,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 88,
+      "path": "generated/reconstructed/slide-088.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 66552,
+      "sha256": "e99ea8978c8d9869f96693a54c4a82a1b9f1aa289363ccd18fa3b932bb001284",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 89,
+      "path": "generated/reconstructed/slide-089.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 46088,
+      "sha256": "86aaa7908605b751175172f7325f187f896ef0aa9294630aeffc3e4f15def800",
+      "layerCount": 3,
+      "imageLayerCount": 3,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 90,
+      "path": "generated/reconstructed/slide-090.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 49210,
+      "sha256": "d2ca31420cc9d96d67aa7510764d4f5124e1558b97711cf6e6cd29bbb976908f",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 91,
+      "path": "generated/reconstructed/slide-091.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42278,
+      "sha256": "a252226ad9f2bc84b94b14d17982910b9dffa3e3485087eab6e3ec0432ccccf9",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 92,
+      "path": "generated/reconstructed/slide-092.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 40754,
+      "sha256": "71eca01bfe2729534037db1cb390ee28973e1b42858d61189d71793a70ed67c9",
+      "layerCount": 6,
+      "imageLayerCount": 2,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 93,
+      "path": "generated/reconstructed/slide-093.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 33219,
+      "sha256": "958ebf10d4b6430f8d284ffcff8e2e24ce255ca6010af2275b92e5d41ce9c8d2",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 94,
+      "path": "generated/reconstructed/slide-094.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42906,
+      "sha256": "f040eb8a8e6941a4fe5a9925c9ee530e8050c24c58841341db812594d83cc8f5",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 95,
+      "path": "generated/reconstructed/slide-095.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 60664,
+      "sha256": "90e41081e58e3d5c83c28a5ede9e47940c22fd22522c205b1f8f83bb2b119ce6",
+      "layerCount": 8,
+      "imageLayerCount": 5,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 96,
+      "path": "generated/reconstructed/slide-096.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 45132,
+      "sha256": "9b7cc157e850f19e43bdfc9f8f98cd4ef754cf1bd231707dc818bf939e9bacc4",
+      "layerCount": 6,
+      "imageLayerCount": 2,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 97,
+      "path": "generated/reconstructed/slide-097.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41592,
+      "sha256": "8f3d1d2640fa523e7e4ac6276f8bc1cc9a29134371b7a98d93cfec15bbfcf6da",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 17,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 98,
+      "path": "generated/reconstructed/slide-098.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42278,
+      "sha256": "a252226ad9f2bc84b94b14d17982910b9dffa3e3485087eab6e3ec0432ccccf9",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 99,
+      "path": "generated/reconstructed/slide-099.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 131201,
+      "sha256": "d1ea4ae8d9fef1366f9fa8c9f7c6ade8fcf36d2b48e72acdde4c211e657419b3",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 100,
+      "path": "generated/reconstructed/slide-100.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42278,
+      "sha256": "a252226ad9f2bc84b94b14d17982910b9dffa3e3485087eab6e3ec0432ccccf9",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 101,
+      "path": "generated/reconstructed/slide-101.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42278,
+      "sha256": "a252226ad9f2bc84b94b14d17982910b9dffa3e3485087eab6e3ec0432ccccf9",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 102,
+      "path": "generated/reconstructed/slide-102.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 50722,
+      "sha256": "29741cacd058b8faf963dfc2aa8ee4518a798d27ec132026577fb99ecd443ca4",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 103,
+      "path": "generated/reconstructed/slide-103.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 93011,
+      "sha256": "e4d3641890b5575b10ac5fa48edbb98b82f3bbeb758f197351a869da32453b8f",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 104,
+      "path": "generated/reconstructed/slide-104.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 50722,
+      "sha256": "29741cacd058b8faf963dfc2aa8ee4518a798d27ec132026577fb99ecd443ca4",
+      "layerCount": 2,
+      "imageLayerCount": 2,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 105,
+      "path": "generated/reconstructed/slide-105.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 87783,
+      "sha256": "7e30462cb982549cfde89612a1e5dfbd6f8a4846c6f9a86602a49c10351de218",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 106,
+      "path": "generated/reconstructed/slide-106.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 88513,
+      "sha256": "b6ff44d4d124808d5fa26b4b93a74017892a1bed59837f47678623e831a2fb39",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 107,
+      "path": "generated/reconstructed/slide-107.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 57797,
+      "sha256": "9a860cf0f1220fdf4e621e8a1e1891017d0cef66454660ebdcdbcc8900af15bb",
+      "layerCount": 9,
+      "imageLayerCount": 9,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 108,
+      "path": "generated/reconstructed/slide-108.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 66488,
+      "sha256": "d5a3fbb4dfb7194a1df7c527b57ebad227450ac70a74b9187a4085a36ab2a615",
+      "layerCount": 9,
+      "imageLayerCount": 9,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 109,
+      "path": "generated/reconstructed/slide-109.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 57362,
+      "sha256": "7ac3701381e9e4250157cb1089fc01fffbd4f542f7f4975498bc74387444efbb",
+      "layerCount": 6,
+      "imageLayerCount": 6,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 110,
+      "path": "generated/reconstructed/slide-110.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 60395,
+      "sha256": "3ff0a5b214f10743941f1b3d70f34d02ffbf1a9fdc14d6f86ee3cccf664dac60",
+      "layerCount": 10,
+      "imageLayerCount": 10,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 111,
+      "path": "generated/reconstructed/slide-111.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 77754,
+      "sha256": "f3f7391751e12559b567b42bf5566e54642020171251855dfeeffa0752073ca4",
+      "layerCount": 6,
+      "imageLayerCount": 6,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 112,
+      "path": "generated/reconstructed/slide-112.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 133066,
+      "sha256": "cd245385af7965514fc4eb0d59a7006a758ba81b58eb52204e3ca7e6a6c81f9e",
+      "layerCount": 6,
+      "imageLayerCount": 1,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 113,
+      "path": "generated/reconstructed/slide-113.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 136101,
+      "sha256": "3892c610904792ccc5a6388cb5e1fd1976b8a85fe8ea019bef0ba8929b9f837b",
+      "layerCount": 5,
+      "imageLayerCount": 1,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 114,
+      "path": "generated/reconstructed/slide-114.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 76297,
+      "sha256": "f2869364982606abc81be3de2c06d5db7a155e860c553c95561ea3f3e2d77aff",
+      "layerCount": 6,
+      "imageLayerCount": 3,
+      "textLayerCount": 7,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 115,
+      "path": "generated/reconstructed/slide-115.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 116,
+      "path": "generated/reconstructed/slide-116.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74072,
+      "sha256": "88e1f455587186b096ef1cb43f8919329d9fe4c66b912ee911133a448151ebbf",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 117,
+      "path": "generated/reconstructed/slide-117.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73239,
+      "sha256": "1b145b4c3b90675eaffa79265a1425817996f47f224f5633d6c4cb4cd1827233",
+      "layerCount": 9,
+      "imageLayerCount": 7,
+      "textLayerCount": 11,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 118,
+      "path": "generated/reconstructed/slide-118.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74072,
+      "sha256": "88e1f455587186b096ef1cb43f8919329d9fe4c66b912ee911133a448151ebbf",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 119,
+      "path": "generated/reconstructed/slide-119.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 128274,
+      "sha256": "21d6e528301d996c42c8bbee11a969756ce1a5c1c64449f3e127d5f29fe7b273",
+      "layerCount": 5,
+      "imageLayerCount": 1,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 120,
+      "path": "generated/reconstructed/slide-120.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 127817,
+      "sha256": "57280efd2437da6d289b7e38bec844ef779b6bef47cf1c33eb3f72d868d1ed29",
+      "layerCount": 4,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 121,
+      "path": "generated/reconstructed/slide-121.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 122,
+      "path": "generated/reconstructed/slide-122.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71359,
+      "sha256": "554c3fd40a1bc466eb27b91a0cd2ab905c9a5089978632bc26d4f7118a764108",
+      "layerCount": 5,
+      "imageLayerCount": 4,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 123,
+      "path": "generated/reconstructed/slide-123.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 127883,
+      "sha256": "18a96cb6449127a9a2c4ce97c4787cfc977871914e175f0cf7fc1a2911055731",
+      "layerCount": 5,
+      "imageLayerCount": 1,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 124,
+      "path": "generated/reconstructed/slide-124.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 125,
+      "path": "generated/reconstructed/slide-125.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74051,
+      "sha256": "81270372763fcd6170179c53e258b5b6fd16196c8b249f6035cf20fdaa0b60c7",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 126,
+      "path": "generated/reconstructed/slide-126.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73127,
+      "sha256": "ce4b3ff3a1f32f03cf36c28d6f9d38f9f6cc280e68703f57ae16f3fe20a9a964",
+      "layerCount": 10,
+      "imageLayerCount": 7,
+      "textLayerCount": 12,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 127,
+      "path": "generated/reconstructed/slide-127.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 77754,
+      "sha256": "f3f7391751e12559b567b42bf5566e54642020171251855dfeeffa0752073ca4",
+      "layerCount": 7,
+      "imageLayerCount": 6,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 128,
+      "path": "generated/reconstructed/slide-128.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74804,
+      "sha256": "949db3c87ee811d2eab7b3d83efa87587e622a034ced40f71f3e9b233d832ed6",
+      "layerCount": 5,
+      "imageLayerCount": 3,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 129,
+      "path": "generated/reconstructed/slide-129.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 130,
+      "path": "generated/reconstructed/slide-130.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74804,
+      "sha256": "949db3c87ee811d2eab7b3d83efa87587e622a034ced40f71f3e9b233d832ed6",
+      "layerCount": 5,
+      "imageLayerCount": 3,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 131,
+      "path": "generated/reconstructed/slide-131.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71365,
+      "sha256": "079bb200bd7c653beff667cd52a5488c3ee5a0439df8d05abe9644cfb6510d9a",
+      "layerCount": 5,
+      "imageLayerCount": 4,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 132,
+      "path": "generated/reconstructed/slide-132.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 125177,
+      "sha256": "f5c1b2e2a1a04766a57ae5e9b0970cbc6cd38955b784105d92c5b5d7cc402195",
+      "layerCount": 4,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 133,
+      "path": "generated/reconstructed/slide-133.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 134,
+      "path": "generated/reconstructed/slide-134.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 135,
+      "path": "generated/reconstructed/slide-135.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 125037,
+      "sha256": "e4439ebd9c35b033294dd7de5121753f4af7e1225cf247b4c69d465ff0c4a246",
+      "layerCount": 4,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 136,
+      "path": "generated/reconstructed/slide-136.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 75366,
+      "sha256": "285868df9c4088974b95077a2343222a23b5f94bf921e34ca6fd276bb6d6c8d2",
+      "layerCount": 8,
+      "imageLayerCount": 5,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 137,
+      "path": "generated/reconstructed/slide-137.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 126294,
+      "sha256": "0e23414ef0e8b23453101e0e5b3b2ca054f9dc0c7071650577841314c7160074",
+      "layerCount": 5,
+      "imageLayerCount": 1,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 138,
+      "path": "generated/reconstructed/slide-138.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 72113,
+      "sha256": "d6fda002cd4f8a8ea04b012cd8e44c5c75d7ff6b3ed7cb0c309ba5c836c7831f",
+      "layerCount": 7,
+      "imageLayerCount": 5,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 139,
+      "path": "generated/reconstructed/slide-139.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 1209,
+      "sha256": "788c6307c5165946d3d280b7cbd2642186370b0f215188d62a5010262655df8b",
+      "layerCount": 0,
+      "imageLayerCount": 0,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 140,
+      "path": "generated/reconstructed/slide-140.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74804,
+      "sha256": "949db3c87ee811d2eab7b3d83efa87587e622a034ced40f71f3e9b233d832ed6",
+      "layerCount": 5,
+      "imageLayerCount": 3,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 141,
+      "path": "generated/reconstructed/slide-141.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73298,
+      "sha256": "b759f6ca854b3d1caee78e00bbf24bd9254cb363963b32d4048398cd363a2bad",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 142,
+      "path": "generated/reconstructed/slide-142.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 125583,
+      "sha256": "6acc6e95360624853af49d436240ae52382e25df9c64a1b71aa30cf1d796c11c",
+      "layerCount": 5,
+      "imageLayerCount": 1,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 143,
+      "path": "generated/reconstructed/slide-143.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73224,
+      "sha256": "5d12039d5cf28d0af2227ae848c96a648644bd5df3129ec6dc6ecc3845ed5c87",
+      "layerCount": 9,
+      "imageLayerCount": 7,
+      "textLayerCount": 11,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 144,
+      "path": "generated/reconstructed/slide-144.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 145,
+      "path": "generated/reconstructed/slide-145.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 1209,
+      "sha256": "788c6307c5165946d3d280b7cbd2642186370b0f215188d62a5010262655df8b",
+      "layerCount": 0,
+      "imageLayerCount": 0,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 146,
+      "path": "generated/reconstructed/slide-146.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73224,
+      "sha256": "5d12039d5cf28d0af2227ae848c96a648644bd5df3129ec6dc6ecc3845ed5c87",
+      "layerCount": 9,
+      "imageLayerCount": 7,
+      "textLayerCount": 11,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 147,
+      "path": "generated/reconstructed/slide-147.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 148,
+      "path": "generated/reconstructed/slide-148.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 1209,
+      "sha256": "788c6307c5165946d3d280b7cbd2642186370b0f215188d62a5010262655df8b",
+      "layerCount": 1,
+      "imageLayerCount": 0,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 149,
+      "path": "generated/reconstructed/slide-149.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 71126,
+      "sha256": "5fb9a46ca3cf7e03d88e7b6c8c1a41fc0a85c79dbcda93ad30d594e06f8bb77f",
+      "layerCount": 5,
+      "imageLayerCount": 4,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 150,
+      "path": "generated/reconstructed/slide-150.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 128502,
+      "sha256": "c9dda5c5b36fee25814430f3ef3f9ce7064979e83acbb8b1544949c6c4c2dff8",
+      "layerCount": 6,
+      "imageLayerCount": 1,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 151,
+      "path": "generated/reconstructed/slide-151.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 152,
+      "path": "generated/reconstructed/slide-152.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 153,
+      "path": "generated/reconstructed/slide-153.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 128375,
+      "sha256": "a0bf4b0de88131d51861ad70c6bc223792e80156e9b1653c734981049adcf417",
+      "layerCount": 6,
+      "imageLayerCount": 1,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 154,
+      "path": "generated/reconstructed/slide-154.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 155,
+      "path": "generated/reconstructed/slide-155.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 156,
+      "path": "generated/reconstructed/slide-156.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 127969,
+      "sha256": "0b51fd72800227d95706dc5669a7a5e3694d22ba8fc59fb23aaad95a99060df1",
+      "layerCount": 6,
+      "imageLayerCount": 1,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 157,
+      "path": "generated/reconstructed/slide-157.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 158,
+      "path": "generated/reconstructed/slide-158.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 159,
+      "path": "generated/reconstructed/slide-159.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 128051,
+      "sha256": "3a2a4aed108c7d29c0b68ada98fa909f6488484aa87b6d175278b0f3dd8e26fa",
+      "layerCount": 6,
+      "imageLayerCount": 1,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 160,
+      "path": "generated/reconstructed/slide-160.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 70037,
+      "sha256": "0667045d058b5e203ec6b0b34ea877b4bba6df465ff4b9a8fb40b0368f8fb61c",
+      "layerCount": 6,
+      "imageLayerCount": 5,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 161,
+      "path": "generated/reconstructed/slide-161.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 162,
+      "path": "generated/reconstructed/slide-162.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73224,
+      "sha256": "5d12039d5cf28d0af2227ae848c96a648644bd5df3129ec6dc6ecc3845ed5c87",
+      "layerCount": 9,
+      "imageLayerCount": 7,
+      "textLayerCount": 11,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 163,
+      "path": "generated/reconstructed/slide-163.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 164,
+      "path": "generated/reconstructed/slide-164.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 127611,
+      "sha256": "697ce159347238c6857700bc7cab906e2c0ad9d03359e5ae04855ba6d4300e72",
+      "layerCount": 5,
+      "imageLayerCount": 1,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 165,
+      "path": "generated/reconstructed/slide-165.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74865,
+      "sha256": "e9be2469a2e6f31656187f24c1ff2a83a8b51d7f0dd2202e0e0f58d38d759f84",
+      "layerCount": 8,
+      "imageLayerCount": 5,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 166,
+      "path": "generated/reconstructed/slide-166.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 5134,
+      "sha256": "b3ff6bff6338272da61535b2730d1d7cda4625dc76712488f0db9ca49a0b5fb8",
+      "layerCount": 1,
+      "imageLayerCount": 0,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 167,
+      "path": "generated/reconstructed/slide-167.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 73224,
+      "sha256": "5d12039d5cf28d0af2227ae848c96a648644bd5df3129ec6dc6ecc3845ed5c87",
+      "layerCount": 9,
+      "imageLayerCount": 7,
+      "textLayerCount": 11,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 168,
+      "path": "generated/reconstructed/slide-168.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74056,
+      "sha256": "ec5695e15a57552785700531a9dd400f0465b8446944b102829b73b79b75154c",
+      "layerCount": 6,
+      "imageLayerCount": 4,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 169,
+      "path": "generated/reconstructed/slide-169.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 125240,
+      "sha256": "939e700cf247025591270bf29c6229d1fb271d8520379c845b380d250ef827c8",
+      "layerCount": 4,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 170,
+      "path": "generated/reconstructed/slide-170.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 74865,
+      "sha256": "e9be2469a2e6f31656187f24c1ff2a83a8b51d7f0dd2202e0e0f58d38d759f84",
+      "layerCount": 8,
+      "imageLayerCount": 5,
+      "textLayerCount": 4,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 171,
+      "path": "generated/reconstructed/slide-171.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 5176,
+      "sha256": "8f878cf9a8eee4687daafc8c9879efa6324ae27c342dda3565b0451855921971",
+      "layerCount": 1,
+      "imageLayerCount": 0,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 172,
+      "path": "generated/reconstructed/slide-172.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 29598,
+      "sha256": "4442c4050fa21626c898614b90210847c63a38bc88809b2fc73d7386705d8120",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 173,
+      "path": "generated/reconstructed/slide-173.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 35053,
+      "sha256": "a053f83f41c17c388d34e8948e9a225fd1456984f8faec6b42077b399ef8332b",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 174,
+      "path": "generated/reconstructed/slide-174.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 53055,
+      "sha256": "d64d980e88b9d93a962cd69968599a234e3f539ea1716ced87d0121cafc22bff",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 175,
+      "path": "generated/reconstructed/slide-175.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 56311,
+      "sha256": "a71cab7a1492984ece3f2edb3c3c3e2c8507543600d1a47d4a8efe0c6f9bf3c0",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 176,
+      "path": "generated/reconstructed/slide-176.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 77573,
+      "sha256": "866c24eb3633a85e5aa7b10268b49b49a83ade171e8bb800552275177c3c7915",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 177,
+      "path": "generated/reconstructed/slide-177.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 42777,
+      "sha256": "369716c858344429d4b2c2c7a7d560f42911dea7bc6f5fa742e8e41d46800a07",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 178,
+      "path": "generated/reconstructed/slide-178.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41425,
+      "sha256": "7642bb7ed4e2742555d430a2d452a806643c63e36e95e004cac1602d852710be",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 179,
+      "path": "generated/reconstructed/slide-179.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41356,
+      "sha256": "a2bb0d3c7db9727b489280c2dda8d877414c3600d76913df4d485bcc568835ae",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 180,
+      "path": "generated/reconstructed/slide-180.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41200,
+      "sha256": "72bda9486847222aa3faa5d49a83aa6e359fd3a64e9c0e3560607d9774b3caec",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 181,
+      "path": "generated/reconstructed/slide-181.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41455,
+      "sha256": "085eae41e70ee3a93e2ed794a34cad972ee8b48efd7936c54902b41c8fd581ca",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 182,
+      "path": "generated/reconstructed/slide-182.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 26082,
+      "sha256": "9555e8740d24882b7a67ebc28b553742f5357377ae2ddda69517b14f87bd5401",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 183,
+      "path": "generated/reconstructed/slide-183.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 211849,
+      "sha256": "a21598f0335da4aeb96bdf91f8b4b2368cf2017052394a1e372108d7861c6b7d",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 184,
+      "path": "generated/reconstructed/slide-184.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 1209,
+      "sha256": "788c6307c5165946d3d280b7cbd2642186370b0f215188d62a5010262655df8b",
+      "layerCount": 0,
+      "imageLayerCount": 0,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 185,
+      "path": "generated/reconstructed/slide-185.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 8195,
+      "sha256": "66d3c84fab5f18d812db91a45aabfbb5a63fec17053e6f6cc6fee32e89880a49",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 186,
+      "path": "generated/reconstructed/slide-186.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 33684,
+      "sha256": "b3b0e669354144ba715a3c5a43fc0a09a00275a836fce13935777a2a22069771",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 187,
+      "path": "generated/reconstructed/slide-187.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 28377,
+      "sha256": "78bcda3c0554f64b3012a9e0b5ee7ce0ac32efa560df1ee6c95c715decb7a6ef",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 188,
+      "path": "generated/reconstructed/slide-188.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 31397,
+      "sha256": "52ec0bd156a68556bf2580dc548d358aa0b16f11b7257f131b3134a0d2c5b084",
+      "layerCount": 1,
+      "imageLayerCount": 1,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 189,
+      "path": "generated/reconstructed/slide-189.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 75211,
+      "sha256": "2db1b25959e171db2e6cd3c56bb1557b2833def6192d8ca694dc0f158af3eb71",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 190,
+      "path": "generated/reconstructed/slide-190.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 77996,
+      "sha256": "403ec0cf8c38547eaecf4e6d0d03110cc1f676467aa98b6766c0f6a7f24232f6",
+      "layerCount": 6,
+      "imageLayerCount": 1,
+      "textLayerCount": 6,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 191,
+      "path": "generated/reconstructed/slide-191.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 38138,
+      "sha256": "1ca72822d0a085b5bc897e39cbd20054f0d45e83515818fc24380a0c57b4e3fe",
+      "layerCount": 3,
+      "imageLayerCount": 2,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 192,
+      "path": "generated/reconstructed/slide-192.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 54912,
+      "sha256": "9c026bfe54cae0743066766f0e0291595ba5e1cc9c6722e4ce7816d42ec28032",
+      "layerCount": 2,
+      "imageLayerCount": 2,
+      "textLayerCount": 0,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 193,
+      "path": "generated/reconstructed/slide-193.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 31673,
+      "sha256": "039faca9ff4a1cf7177e4e2adfb6bde993c03af2f548d4c17f24cbf6f56d5054",
+      "layerCount": 3,
+      "imageLayerCount": 2,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 194,
+      "path": "generated/reconstructed/slide-194.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 37398,
+      "sha256": "f318d6f6d9d350e63f99464d81a2f4b78e3d967ebce559aa7a5a7138a37a89fe",
+      "layerCount": 2,
+      "imageLayerCount": 2,
+      "textLayerCount": 11,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 195,
+      "path": "generated/reconstructed/slide-195.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 41387,
+      "sha256": "0affab2f74cb5528588194a5754e624e0fed4e2e24676dfabb3848d74786916a",
+      "layerCount": 4,
+      "imageLayerCount": 2,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 196,
+      "path": "generated/reconstructed/slide-196.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 45981,
+      "sha256": "e441b62828c9c3d371fb464ef47e5d6e4ddb80dc0f3ebe3cfacbfb078e6dd309",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 197,
+      "path": "generated/reconstructed/slide-197.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 39267,
+      "sha256": "619d10cae576b9bba9a710e61b43f7b29aafad01b2be63133d7fc3dc24a90ba0",
+      "layerCount": 5,
+      "imageLayerCount": 2,
+      "textLayerCount": 3,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 198,
+      "path": "generated/reconstructed/slide-198.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 15965,
+      "sha256": "f50ff4a4f849593d385b99aeebc0630802f3cf359ec152ab42cfb45389dbb239",
+      "layerCount": 4,
+      "imageLayerCount": 0,
+      "textLayerCount": 5,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 199,
+      "path": "generated/reconstructed/slide-199.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 35441,
+      "sha256": "d460671f84719be9e2fecd4901db473ab0dbbf6a60bf1bbb1f0c7b04150234ee",
+      "layerCount": 2,
+      "imageLayerCount": 1,
+      "textLayerCount": 1,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 200,
+      "path": "generated/reconstructed/slide-200.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 1209,
+      "sha256": "788c6307c5165946d3d280b7cbd2642186370b0f215188d62a5010262655df8b",
+      "layerCount": 2,
+      "imageLayerCount": 0,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    },
+    {
+      "slide": 201,
+      "path": "generated/reconstructed/slide-201.png",
+      "width": 720,
+      "height": 540,
+      "bytes": 85492,
+      "sha256": "e199b41dfa1d7f3a6cddf59400e62294249d03984c0052632e0ffdbaa4ab9d36",
+      "layerCount": 10,
+      "imageLayerCount": 8,
+      "textLayerCount": 2,
+      "transformedLayerCount": 0
+    }
+  ]
+}

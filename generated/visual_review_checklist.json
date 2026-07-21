@@ -1,0 +1,3553 @@
+{
+  "format": "goblins-rpg3-visual-review-checklist-v1",
+  "source": {
+    "gameManifest": "docs/game-manifest.json",
+    "renderManifest": "generated/reconstructed/render_manifest.json",
+    "runtimeTraversal": "generated/runtime_traversal.json"
+  },
+  "summary": {
+    "screens": 201,
+    "pendingManualReview": 201,
+    "screensWithEnabledHotspots": 124,
+    "screensWithAnimatedLayers": 135,
+    "screensWithTransformedLayers": 32,
+    "unreachableFromHotspotGraph": 200
+  },
+  "screens": [
+    {
+      "id": "slide-001",
+      "slide": 1,
+      "render": "generated/reconstructed/slide-001.png",
+      "browserScreen": "screens/slide-001.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-002",
+      "slide": 2,
+      "render": "generated/reconstructed/slide-002.png",
+      "browserScreen": "screens/slide-002.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-003",
+      "slide": 3,
+      "render": "generated/reconstructed/slide-003.png",
+      "browserScreen": "screens/slide-003.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 4,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-004",
+      "slide": 4,
+      "render": "generated/reconstructed/slide-004.png",
+      "browserScreen": "screens/slide-004.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-005",
+      "slide": 5,
+      "render": "generated/reconstructed/slide-005.png",
+      "browserScreen": "screens/slide-005.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 4,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-006",
+      "slide": 6,
+      "render": "generated/reconstructed/slide-006.png",
+      "browserScreen": "screens/slide-006.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-007",
+      "slide": 7,
+      "render": "generated/reconstructed/slide-007.png",
+      "browserScreen": "screens/slide-007.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 9,
+      "animatedLayerCount": 8,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-008",
+      "slide": 8,
+      "render": "generated/reconstructed/slide-008.png",
+      "browserScreen": "screens/slide-008.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-009",
+      "slide": 9,
+      "render": "generated/reconstructed/slide-009.png",
+      "browserScreen": "screens/slide-009.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 5,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-010",
+      "slide": 10,
+      "render": "generated/reconstructed/slide-010.png",
+      "browserScreen": "screens/slide-010.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-011",
+      "slide": 11,
+      "render": "generated/reconstructed/slide-011.png",
+      "browserScreen": "screens/slide-011.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-012",
+      "slide": 12,
+      "render": "generated/reconstructed/slide-012.png",
+      "browserScreen": "screens/slide-012.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 1,
+      "layerCount": 4,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-013",
+      "slide": 13,
+      "render": "generated/reconstructed/slide-013.png",
+      "browserScreen": "screens/slide-013.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 1,
+      "layerCount": 3,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-014",
+      "slide": 14,
+      "render": "generated/reconstructed/slide-014.png",
+      "browserScreen": "screens/slide-014.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 2,
+      "layerCount": 11,
+      "animatedLayerCount": 9,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-015",
+      "slide": 15,
+      "render": "generated/reconstructed/slide-015.png",
+      "browserScreen": "screens/slide-015.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 9,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-016",
+      "slide": 16,
+      "render": "generated/reconstructed/slide-016.png",
+      "browserScreen": "screens/slide-016.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 8,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-017",
+      "slide": 17,
+      "render": "generated/reconstructed/slide-017.png",
+      "browserScreen": "screens/slide-017.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-018",
+      "slide": 18,
+      "render": "generated/reconstructed/slide-018.png",
+      "browserScreen": "screens/slide-018.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-019",
+      "slide": 19,
+      "render": "generated/reconstructed/slide-019.png",
+      "browserScreen": "screens/slide-019.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-020",
+      "slide": 20,
+      "render": "generated/reconstructed/slide-020.png",
+      "browserScreen": "screens/slide-020.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-021",
+      "slide": 21,
+      "render": "generated/reconstructed/slide-021.png",
+      "browserScreen": "screens/slide-021.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 7,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-022",
+      "slide": 22,
+      "render": "generated/reconstructed/slide-022.png",
+      "browserScreen": "screens/slide-022.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 6,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-023",
+      "slide": 23,
+      "render": "generated/reconstructed/slide-023.png",
+      "browserScreen": "screens/slide-023.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-024",
+      "slide": 24,
+      "render": "generated/reconstructed/slide-024.png",
+      "browserScreen": "screens/slide-024.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 9,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-025",
+      "slide": 25,
+      "render": "generated/reconstructed/slide-025.png",
+      "browserScreen": "screens/slide-025.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-026",
+      "slide": 26,
+      "render": "generated/reconstructed/slide-026.png",
+      "browserScreen": "screens/slide-026.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-027",
+      "slide": 27,
+      "render": "generated/reconstructed/slide-027.png",
+      "browserScreen": "screens/slide-027.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 5,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-028",
+      "slide": 28,
+      "render": "generated/reconstructed/slide-028.png",
+      "browserScreen": "screens/slide-028.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-029",
+      "slide": 29,
+      "render": "generated/reconstructed/slide-029.png",
+      "browserScreen": "screens/slide-029.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 9,
+      "animatedLayerCount": 7,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-030",
+      "slide": 30,
+      "render": "generated/reconstructed/slide-030.png",
+      "browserScreen": "screens/slide-030.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 1,
+      "layerCount": 5,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-031",
+      "slide": 31,
+      "render": "generated/reconstructed/slide-031.png",
+      "browserScreen": "screens/slide-031.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-032",
+      "slide": 32,
+      "render": "generated/reconstructed/slide-032.png",
+      "browserScreen": "screens/slide-032.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-033",
+      "slide": 33,
+      "render": "generated/reconstructed/slide-033.png",
+      "browserScreen": "screens/slide-033.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 7,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-034",
+      "slide": 34,
+      "render": "generated/reconstructed/slide-034.png",
+      "browserScreen": "screens/slide-034.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-035",
+      "slide": 35,
+      "render": "generated/reconstructed/slide-035.png",
+      "browserScreen": "screens/slide-035.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-036",
+      "slide": 36,
+      "render": "generated/reconstructed/slide-036.png",
+      "browserScreen": "screens/slide-036.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 12,
+      "animatedLayerCount": 8,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-037",
+      "slide": 37,
+      "render": "generated/reconstructed/slide-037.png",
+      "browserScreen": "screens/slide-037.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-038",
+      "slide": 38,
+      "render": "generated/reconstructed/slide-038.png",
+      "browserScreen": "screens/slide-038.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-039",
+      "slide": 39,
+      "render": "generated/reconstructed/slide-039.png",
+      "browserScreen": "screens/slide-039.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 5,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-040",
+      "slide": 40,
+      "render": "generated/reconstructed/slide-040.png",
+      "browserScreen": "screens/slide-040.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-041",
+      "slide": 41,
+      "render": "generated/reconstructed/slide-041.png",
+      "browserScreen": "screens/slide-041.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-042",
+      "slide": 42,
+      "render": "generated/reconstructed/slide-042.png",
+      "browserScreen": "screens/slide-042.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-043",
+      "slide": 43,
+      "render": "generated/reconstructed/slide-043.png",
+      "browserScreen": "screens/slide-043.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 10,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-044",
+      "slide": 44,
+      "render": "generated/reconstructed/slide-044.png",
+      "browserScreen": "screens/slide-044.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 4,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-045",
+      "slide": 45,
+      "render": "generated/reconstructed/slide-045.png",
+      "browserScreen": "screens/slide-045.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-046",
+      "slide": 46,
+      "render": "generated/reconstructed/slide-046.png",
+      "browserScreen": "screens/slide-046.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 8,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-047",
+      "slide": 47,
+      "render": "generated/reconstructed/slide-047.png",
+      "browserScreen": "screens/slide-047.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-048",
+      "slide": 48,
+      "render": "generated/reconstructed/slide-048.png",
+      "browserScreen": "screens/slide-048.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 5,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-049",
+      "slide": 49,
+      "render": "generated/reconstructed/slide-049.png",
+      "browserScreen": "screens/slide-049.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-050",
+      "slide": 50,
+      "render": "generated/reconstructed/slide-050.png",
+      "browserScreen": "screens/slide-050.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-051",
+      "slide": 51,
+      "render": "generated/reconstructed/slide-051.png",
+      "browserScreen": "screens/slide-051.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 5,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-052",
+      "slide": 52,
+      "render": "generated/reconstructed/slide-052.png",
+      "browserScreen": "screens/slide-052.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-053",
+      "slide": 53,
+      "render": "generated/reconstructed/slide-053.png",
+      "browserScreen": "screens/slide-053.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-054",
+      "slide": 54,
+      "render": "generated/reconstructed/slide-054.png",
+      "browserScreen": "screens/slide-054.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 5,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-055",
+      "slide": 55,
+      "render": "generated/reconstructed/slide-055.png",
+      "browserScreen": "screens/slide-055.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-056",
+      "slide": 56,
+      "render": "generated/reconstructed/slide-056.png",
+      "browserScreen": "screens/slide-056.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 5,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-057",
+      "slide": 57,
+      "render": "generated/reconstructed/slide-057.png",
+      "browserScreen": "screens/slide-057.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-058",
+      "slide": 58,
+      "render": "generated/reconstructed/slide-058.png",
+      "browserScreen": "screens/slide-058.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-059",
+      "slide": 59,
+      "render": "generated/reconstructed/slide-059.png",
+      "browserScreen": "screens/slide-059.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-060",
+      "slide": 60,
+      "render": "generated/reconstructed/slide-060.png",
+      "browserScreen": "screens/slide-060.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 5,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-061",
+      "slide": 61,
+      "render": "generated/reconstructed/slide-061.png",
+      "browserScreen": "screens/slide-061.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-062",
+      "slide": 62,
+      "render": "generated/reconstructed/slide-062.png",
+      "browserScreen": "screens/slide-062.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 3,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-063",
+      "slide": 63,
+      "render": "generated/reconstructed/slide-063.png",
+      "browserScreen": "screens/slide-063.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-064",
+      "slide": 64,
+      "render": "generated/reconstructed/slide-064.png",
+      "browserScreen": "screens/slide-064.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 3,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-065",
+      "slide": 65,
+      "render": "generated/reconstructed/slide-065.png",
+      "browserScreen": "screens/slide-065.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 4,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-066",
+      "slide": 66,
+      "render": "generated/reconstructed/slide-066.png",
+      "browserScreen": "screens/slide-066.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-067",
+      "slide": 67,
+      "render": "generated/reconstructed/slide-067.png",
+      "browserScreen": "screens/slide-067.png",
+      "enabledHotspots": 5,
+      "totalHotspots": 5,
+      "layerCount": 6,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-068",
+      "slide": 68,
+      "render": "generated/reconstructed/slide-068.png",
+      "browserScreen": "screens/slide-068.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-069",
+      "slide": 69,
+      "render": "generated/reconstructed/slide-069.png",
+      "browserScreen": "screens/slide-069.png",
+      "enabledHotspots": 4,
+      "totalHotspots": 4,
+      "layerCount": 5,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-070",
+      "slide": 70,
+      "render": "generated/reconstructed/slide-070.png",
+      "browserScreen": "screens/slide-070.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-071",
+      "slide": 71,
+      "render": "generated/reconstructed/slide-071.png",
+      "browserScreen": "screens/slide-071.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-072",
+      "slide": 72,
+      "render": "generated/reconstructed/slide-072.png",
+      "browserScreen": "screens/slide-072.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-073",
+      "slide": 73,
+      "render": "generated/reconstructed/slide-073.png",
+      "browserScreen": "screens/slide-073.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-074",
+      "slide": 74,
+      "render": "generated/reconstructed/slide-074.png",
+      "browserScreen": "screens/slide-074.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 4,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-075",
+      "slide": 75,
+      "render": "generated/reconstructed/slide-075.png",
+      "browserScreen": "screens/slide-075.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-076",
+      "slide": 76,
+      "render": "generated/reconstructed/slide-076.png",
+      "browserScreen": "screens/slide-076.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-077",
+      "slide": 77,
+      "render": "generated/reconstructed/slide-077.png",
+      "browserScreen": "screens/slide-077.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-078",
+      "slide": 78,
+      "render": "generated/reconstructed/slide-078.png",
+      "browserScreen": "screens/slide-078.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-079",
+      "slide": 79,
+      "render": "generated/reconstructed/slide-079.png",
+      "browserScreen": "screens/slide-079.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 7,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-080",
+      "slide": 80,
+      "render": "generated/reconstructed/slide-080.png",
+      "browserScreen": "screens/slide-080.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 19,
+      "animatedLayerCount": 17,
+      "transformedLayerCount": 10,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-081",
+      "slide": 81,
+      "render": "generated/reconstructed/slide-081.png",
+      "browserScreen": "screens/slide-081.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 8,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 2,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-082",
+      "slide": 82,
+      "render": "generated/reconstructed/slide-082.png",
+      "browserScreen": "screens/slide-082.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-083",
+      "slide": 83,
+      "render": "generated/reconstructed/slide-083.png",
+      "browserScreen": "screens/slide-083.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 7,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-084",
+      "slide": 84,
+      "render": "generated/reconstructed/slide-084.png",
+      "browserScreen": "screens/slide-084.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-085",
+      "slide": 85,
+      "render": "generated/reconstructed/slide-085.png",
+      "browserScreen": "screens/slide-085.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 5,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-086",
+      "slide": 86,
+      "render": "generated/reconstructed/slide-086.png",
+      "browserScreen": "screens/slide-086.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-087",
+      "slide": 87,
+      "render": "generated/reconstructed/slide-087.png",
+      "browserScreen": "screens/slide-087.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 7,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-088",
+      "slide": 88,
+      "render": "generated/reconstructed/slide-088.png",
+      "browserScreen": "screens/slide-088.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 7,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-089",
+      "slide": 89,
+      "render": "generated/reconstructed/slide-089.png",
+      "browserScreen": "screens/slide-089.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 5,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-090",
+      "slide": 90,
+      "render": "generated/reconstructed/slide-090.png",
+      "browserScreen": "screens/slide-090.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 6,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-091",
+      "slide": 91,
+      "render": "generated/reconstructed/slide-091.png",
+      "browserScreen": "screens/slide-091.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-092",
+      "slide": 92,
+      "render": "generated/reconstructed/slide-092.png",
+      "browserScreen": "screens/slide-092.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 7,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-093",
+      "slide": 93,
+      "render": "generated/reconstructed/slide-093.png",
+      "browserScreen": "screens/slide-093.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-094",
+      "slide": 94,
+      "render": "generated/reconstructed/slide-094.png",
+      "browserScreen": "screens/slide-094.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 6,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-095",
+      "slide": 95,
+      "render": "generated/reconstructed/slide-095.png",
+      "browserScreen": "screens/slide-095.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 7,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-096",
+      "slide": 96,
+      "render": "generated/reconstructed/slide-096.png",
+      "browserScreen": "screens/slide-096.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 8,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 2,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-097",
+      "slide": 97,
+      "render": "generated/reconstructed/slide-097.png",
+      "browserScreen": "screens/slide-097.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 20,
+      "animatedLayerCount": 18,
+      "transformedLayerCount": 10,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-098",
+      "slide": 98,
+      "render": "generated/reconstructed/slide-098.png",
+      "browserScreen": "screens/slide-098.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-099",
+      "slide": 99,
+      "render": "generated/reconstructed/slide-099.png",
+      "browserScreen": "screens/slide-099.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-100",
+      "slide": 100,
+      "render": "generated/reconstructed/slide-100.png",
+      "browserScreen": "screens/slide-100.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-101",
+      "slide": 101,
+      "render": "generated/reconstructed/slide-101.png",
+      "browserScreen": "screens/slide-101.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-102",
+      "slide": 102,
+      "render": "generated/reconstructed/slide-102.png",
+      "browserScreen": "screens/slide-102.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 5,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-103",
+      "slide": 103,
+      "render": "generated/reconstructed/slide-103.png",
+      "browserScreen": "screens/slide-103.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-104",
+      "slide": 104,
+      "render": "generated/reconstructed/slide-104.png",
+      "browserScreen": "screens/slide-104.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 4,
+      "layerCount": 5,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-105",
+      "slide": 105,
+      "render": "generated/reconstructed/slide-105.png",
+      "browserScreen": "screens/slide-105.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-106",
+      "slide": 106,
+      "render": "generated/reconstructed/slide-106.png",
+      "browserScreen": "screens/slide-106.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-107",
+      "slide": 107,
+      "render": "generated/reconstructed/slide-107.png",
+      "browserScreen": "screens/slide-107.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 11,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-108",
+      "slide": 108,
+      "render": "generated/reconstructed/slide-108.png",
+      "browserScreen": "screens/slide-108.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 11,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-109",
+      "slide": 109,
+      "render": "generated/reconstructed/slide-109.png",
+      "browserScreen": "screens/slide-109.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 8,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-110",
+      "slide": 110,
+      "render": "generated/reconstructed/slide-110.png",
+      "browserScreen": "screens/slide-110.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 12,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-111",
+      "slide": 111,
+      "render": "generated/reconstructed/slide-111.png",
+      "browserScreen": "screens/slide-111.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 6,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-112",
+      "slide": 112,
+      "render": "generated/reconstructed/slide-112.png",
+      "browserScreen": "screens/slide-112.png",
+      "enabledHotspots": 4,
+      "totalHotspots": 4,
+      "layerCount": 7,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-113",
+      "slide": 113,
+      "render": "generated/reconstructed/slide-113.png",
+      "browserScreen": "screens/slide-113.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 7,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-114",
+      "slide": 114,
+      "render": "generated/reconstructed/slide-114.png",
+      "browserScreen": "screens/slide-114.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 10,
+      "animatedLayerCount": 6,
+      "transformedLayerCount": 3,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-115",
+      "slide": 115,
+      "render": "generated/reconstructed/slide-115.png",
+      "browserScreen": "screens/slide-115.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-116",
+      "slide": 116,
+      "render": "generated/reconstructed/slide-116.png",
+      "browserScreen": "screens/slide-116.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-117",
+      "slide": 117,
+      "render": "generated/reconstructed/slide-117.png",
+      "browserScreen": "screens/slide-117.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 18,
+      "animatedLayerCount": 14,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-118",
+      "slide": 118,
+      "render": "generated/reconstructed/slide-118.png",
+      "browserScreen": "screens/slide-118.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-119",
+      "slide": 119,
+      "render": "generated/reconstructed/slide-119.png",
+      "browserScreen": "screens/slide-119.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 6,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-120",
+      "slide": 120,
+      "render": "generated/reconstructed/slide-120.png",
+      "browserScreen": "screens/slide-120.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-121",
+      "slide": 121,
+      "render": "generated/reconstructed/slide-121.png",
+      "browserScreen": "screens/slide-121.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-122",
+      "slide": 122,
+      "render": "generated/reconstructed/slide-122.png",
+      "browserScreen": "screens/slide-122.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-123",
+      "slide": 123,
+      "render": "generated/reconstructed/slide-123.png",
+      "browserScreen": "screens/slide-123.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 6,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-124",
+      "slide": 124,
+      "render": "generated/reconstructed/slide-124.png",
+      "browserScreen": "screens/slide-124.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-125",
+      "slide": 125,
+      "render": "generated/reconstructed/slide-125.png",
+      "browserScreen": "screens/slide-125.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-126",
+      "slide": 126,
+      "render": "generated/reconstructed/slide-126.png",
+      "browserScreen": "screens/slide-126.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 19,
+      "animatedLayerCount": 16,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-127",
+      "slide": 127,
+      "render": "generated/reconstructed/slide-127.png",
+      "browserScreen": "screens/slide-127.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-128",
+      "slide": 128,
+      "render": "generated/reconstructed/slide-128.png",
+      "browserScreen": "screens/slide-128.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 9,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 3,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-129",
+      "slide": 129,
+      "render": "generated/reconstructed/slide-129.png",
+      "browserScreen": "screens/slide-129.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-130",
+      "slide": 130,
+      "render": "generated/reconstructed/slide-130.png",
+      "browserScreen": "screens/slide-130.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 9,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 3,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-131",
+      "slide": 131,
+      "render": "generated/reconstructed/slide-131.png",
+      "browserScreen": "screens/slide-131.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-132",
+      "slide": 132,
+      "render": "generated/reconstructed/slide-132.png",
+      "browserScreen": "screens/slide-132.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-133",
+      "slide": 133,
+      "render": "generated/reconstructed/slide-133.png",
+      "browserScreen": "screens/slide-133.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-134",
+      "slide": 134,
+      "render": "generated/reconstructed/slide-134.png",
+      "browserScreen": "screens/slide-134.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-135",
+      "slide": 135,
+      "render": "generated/reconstructed/slide-135.png",
+      "browserScreen": "screens/slide-135.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-136",
+      "slide": 136,
+      "render": "generated/reconstructed/slide-136.png",
+      "browserScreen": "screens/slide-136.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 9,
+      "animatedLayerCount": 7,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-137",
+      "slide": 137,
+      "render": "generated/reconstructed/slide-137.png",
+      "browserScreen": "screens/slide-137.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 5,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-138",
+      "slide": 138,
+      "render": "generated/reconstructed/slide-138.png",
+      "browserScreen": "screens/slide-138.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-139",
+      "slide": 139,
+      "render": "generated/reconstructed/slide-139.png",
+      "browserScreen": "screens/slide-139.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 0,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-140",
+      "slide": 140,
+      "render": "generated/reconstructed/slide-140.png",
+      "browserScreen": "screens/slide-140.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 9,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 3,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-141",
+      "slide": 141,
+      "render": "generated/reconstructed/slide-141.png",
+      "browserScreen": "screens/slide-141.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-142",
+      "slide": 142,
+      "render": "generated/reconstructed/slide-142.png",
+      "browserScreen": "screens/slide-142.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 6,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-143",
+      "slide": 143,
+      "render": "generated/reconstructed/slide-143.png",
+      "browserScreen": "screens/slide-143.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 18,
+      "animatedLayerCount": 14,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-144",
+      "slide": 144,
+      "render": "generated/reconstructed/slide-144.png",
+      "browserScreen": "screens/slide-144.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-145",
+      "slide": 145,
+      "render": "generated/reconstructed/slide-145.png",
+      "browserScreen": "screens/slide-145.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 0,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-146",
+      "slide": 146,
+      "render": "generated/reconstructed/slide-146.png",
+      "browserScreen": "screens/slide-146.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 18,
+      "animatedLayerCount": 14,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-147",
+      "slide": 147,
+      "render": "generated/reconstructed/slide-147.png",
+      "browserScreen": "screens/slide-147.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-148",
+      "slide": 148,
+      "render": "generated/reconstructed/slide-148.png",
+      "browserScreen": "screens/slide-148.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-149",
+      "slide": 149,
+      "render": "generated/reconstructed/slide-149.png",
+      "browserScreen": "screens/slide-149.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-150",
+      "slide": 150,
+      "render": "generated/reconstructed/slide-150.png",
+      "browserScreen": "screens/slide-150.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 3,
+      "layerCount": 6,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-151",
+      "slide": 151,
+      "render": "generated/reconstructed/slide-151.png",
+      "browserScreen": "screens/slide-151.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-152",
+      "slide": 152,
+      "render": "generated/reconstructed/slide-152.png",
+      "browserScreen": "screens/slide-152.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-153",
+      "slide": 153,
+      "render": "generated/reconstructed/slide-153.png",
+      "browserScreen": "screens/slide-153.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 7,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-154",
+      "slide": 154,
+      "render": "generated/reconstructed/slide-154.png",
+      "browserScreen": "screens/slide-154.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-155",
+      "slide": 155,
+      "render": "generated/reconstructed/slide-155.png",
+      "browserScreen": "screens/slide-155.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-156",
+      "slide": 156,
+      "render": "generated/reconstructed/slide-156.png",
+      "browserScreen": "screens/slide-156.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 3,
+      "layerCount": 7,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-157",
+      "slide": 157,
+      "render": "generated/reconstructed/slide-157.png",
+      "browserScreen": "screens/slide-157.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-158",
+      "slide": 158,
+      "render": "generated/reconstructed/slide-158.png",
+      "browserScreen": "screens/slide-158.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-159",
+      "slide": 159,
+      "render": "generated/reconstructed/slide-159.png",
+      "browserScreen": "screens/slide-159.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 3,
+      "layerCount": 7,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-160",
+      "slide": 160,
+      "render": "generated/reconstructed/slide-160.png",
+      "browserScreen": "screens/slide-160.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-161",
+      "slide": 161,
+      "render": "generated/reconstructed/slide-161.png",
+      "browserScreen": "screens/slide-161.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-162",
+      "slide": 162,
+      "render": "generated/reconstructed/slide-162.png",
+      "browserScreen": "screens/slide-162.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 18,
+      "animatedLayerCount": 14,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-163",
+      "slide": 163,
+      "render": "generated/reconstructed/slide-163.png",
+      "browserScreen": "screens/slide-163.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-164",
+      "slide": 164,
+      "render": "generated/reconstructed/slide-164.png",
+      "browserScreen": "screens/slide-164.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 5,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-165",
+      "slide": 165,
+      "render": "generated/reconstructed/slide-165.png",
+      "browserScreen": "screens/slide-165.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 9,
+      "animatedLayerCount": 7,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-166",
+      "slide": 166,
+      "render": "generated/reconstructed/slide-166.png",
+      "browserScreen": "screens/slide-166.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-167",
+      "slide": 167,
+      "render": "generated/reconstructed/slide-167.png",
+      "browserScreen": "screens/slide-167.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 18,
+      "animatedLayerCount": 14,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-168",
+      "slide": 168,
+      "render": "generated/reconstructed/slide-168.png",
+      "browserScreen": "screens/slide-168.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 8,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 1,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-169",
+      "slide": 169,
+      "render": "generated/reconstructed/slide-169.png",
+      "browserScreen": "screens/slide-169.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-170",
+      "slide": 170,
+      "render": "generated/reconstructed/slide-170.png",
+      "browserScreen": "screens/slide-170.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 9,
+      "animatedLayerCount": 7,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-171",
+      "slide": 171,
+      "render": "generated/reconstructed/slide-171.png",
+      "browserScreen": "screens/slide-171.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-172",
+      "slide": 172,
+      "render": "generated/reconstructed/slide-172.png",
+      "browserScreen": "screens/slide-172.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-173",
+      "slide": 173,
+      "render": "generated/reconstructed/slide-173.png",
+      "browserScreen": "screens/slide-173.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-174",
+      "slide": 174,
+      "render": "generated/reconstructed/slide-174.png",
+      "browserScreen": "screens/slide-174.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-175",
+      "slide": 175,
+      "render": "generated/reconstructed/slide-175.png",
+      "browserScreen": "screens/slide-175.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-176",
+      "slide": 176,
+      "render": "generated/reconstructed/slide-176.png",
+      "browserScreen": "screens/slide-176.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-177",
+      "slide": 177,
+      "render": "generated/reconstructed/slide-177.png",
+      "browserScreen": "screens/slide-177.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-178",
+      "slide": 178,
+      "render": "generated/reconstructed/slide-178.png",
+      "browserScreen": "screens/slide-178.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-179",
+      "slide": 179,
+      "render": "generated/reconstructed/slide-179.png",
+      "browserScreen": "screens/slide-179.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-180",
+      "slide": 180,
+      "render": "generated/reconstructed/slide-180.png",
+      "browserScreen": "screens/slide-180.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 4,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-181",
+      "slide": 181,
+      "render": "generated/reconstructed/slide-181.png",
+      "browserScreen": "screens/slide-181.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-182",
+      "slide": 182,
+      "render": "generated/reconstructed/slide-182.png",
+      "browserScreen": "screens/slide-182.png",
+      "enabledHotspots": 2,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-183",
+      "slide": 183,
+      "render": "generated/reconstructed/slide-183.png",
+      "browserScreen": "screens/slide-183.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 4,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-184",
+      "slide": 184,
+      "render": "generated/reconstructed/slide-184.png",
+      "browserScreen": "screens/slide-184.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-185",
+      "slide": 185,
+      "render": "generated/reconstructed/slide-185.png",
+      "browserScreen": "screens/slide-185.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-186",
+      "slide": 186,
+      "render": "generated/reconstructed/slide-186.png",
+      "browserScreen": "screens/slide-186.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-187",
+      "slide": 187,
+      "render": "generated/reconstructed/slide-187.png",
+      "browserScreen": "screens/slide-187.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-188",
+      "slide": 188,
+      "render": "generated/reconstructed/slide-188.png",
+      "browserScreen": "screens/slide-188.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 1,
+      "animatedLayerCount": 0,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-189",
+      "slide": 189,
+      "render": "generated/reconstructed/slide-189.png",
+      "browserScreen": "screens/slide-189.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-190",
+      "slide": 190,
+      "render": "generated/reconstructed/slide-190.png",
+      "browserScreen": "screens/slide-190.png",
+      "enabledHotspots": 3,
+      "totalHotspots": 3,
+      "layerCount": 7,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-191",
+      "slide": 191,
+      "render": "generated/reconstructed/slide-191.png",
+      "browserScreen": "screens/slide-191.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-192",
+      "slide": 192,
+      "render": "generated/reconstructed/slide-192.png",
+      "browserScreen": "screens/slide-192.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-193",
+      "slide": 193,
+      "render": "generated/reconstructed/slide-193.png",
+      "browserScreen": "screens/slide-193.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 2,
+      "layerCount": 3,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-194",
+      "slide": 194,
+      "render": "generated/reconstructed/slide-194.png",
+      "browserScreen": "screens/slide-194.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 13,
+      "animatedLayerCount": 11,
+      "transformedLayerCount": 4,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "transformed_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-195",
+      "slide": 195,
+      "render": "generated/reconstructed/slide-195.png",
+      "browserScreen": "screens/slide-195.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 4,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-196",
+      "slide": 196,
+      "render": "generated/reconstructed/slide-196.png",
+      "browserScreen": "screens/slide-196.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 7,
+      "animatedLayerCount": 5,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-197",
+      "slide": 197,
+      "render": "generated/reconstructed/slide-197.png",
+      "browserScreen": "screens/slide-197.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 1,
+      "layerCount": 5,
+      "animatedLayerCount": 3,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots",
+        "non_navigation_or_media_actions"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-198",
+      "slide": 198,
+      "render": "generated/reconstructed/slide-198.png",
+      "browserScreen": "screens/slide-198.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 5,
+      "animatedLayerCount": 4,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-199",
+      "slide": 199,
+      "render": "generated/reconstructed/slide-199.png",
+      "browserScreen": "screens/slide-199.png",
+      "enabledHotspots": 0,
+      "totalHotspots": 0,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "animated_layers",
+        "no_enabled_hotspots"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-200",
+      "slide": 200,
+      "render": "generated/reconstructed/slide-200.png",
+      "browserScreen": "screens/slide-200.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 2,
+      "animatedLayerCount": 1,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    },
+    {
+      "id": "slide-201",
+      "slide": 201,
+      "render": "generated/reconstructed/slide-201.png",
+      "browserScreen": "screens/slide-201.png",
+      "enabledHotspots": 1,
+      "totalHotspots": 1,
+      "layerCount": 10,
+      "animatedLayerCount": 2,
+      "transformedLayerCount": 0,
+      "flags": [
+        "unreachable_from_hotspot_graph",
+        "cycle_participant",
+        "animated_layers"
+      ],
+      "reviewStatus": "pending_manual_review",
+      "notes": ""
+    }
+  ]
+}

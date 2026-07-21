@@ -36,8 +36,10 @@ python tools/extract_layers.py
 python tools/extract_embedded_audio.py "goblins3 v.1.0 LAUNCH.pps"
 python tools/convert_audio.py
 python tools/render_reconstructed.py
+python tools/verify_render_manifest.py
 python tools/build_game_manifest.py
 python tools/extract_source_semantics.py
+python tools/generate_visual_review.py
 python tools/verify_extractor_contract.py
 python tools/verify_inventory.py generated/inventory.json
 python tools/verify_timing_tree.py
@@ -55,7 +57,8 @@ python tools/verify_runtime_traversal.py
 
 ## Current limitations
 
-- The screen PNGs are a first-pass reconstruction, not a verified pixel-perfect PowerPoint export.
+- The selected publishable non-watermarked render path is the repo-local custom layer reconstruction documented in `RENDERING.md`; it is verified by `generated/reconstructed/render_manifest.json` and `tools/verify_render_manifest.py`.
+- The screen PNGs are not yet verified pixel-perfect against Microsoft PowerPoint reference screenshots.
 - The manifest now includes separately addressable image/text/shape layers and a decoded PP10 animation timing tree, but the JavaScript animation player is not fully implemented yet.
 - `generated/source_semantics.json` consolidates stable slide IDs, title/name/master/layout flags, z-order coverage, text/style metadata, transition coverage, animation counts, and audio cue resolution status.
 - `generated/animated_layer_coverage.json` verifies all 567 animated PowerPoint shape targets have separate browser layers, so animation-critical objects are not only present in the fallback screen raster.
@@ -63,4 +66,4 @@ python tools/verify_runtime_traversal.py
 - `Ffvictory.mid` is rendered by `tools/render_midi.py` with the deterministic repo-local `goblins-python-additive-v1` synth, then converted to MP3 and Opus by `tools/convert_audio.py`.
 - `docs/game-manifest.json` includes `audioCues` and `mediaBindings[].cueBehavior` records for trigger/start/loop/stop/replace behavior that is exposed by the extracted PowerPoint atoms.
 - Three legacy embedded-audio cue references remain explicitly unresolved in `mediaBindings`; their cue IDs are not present in the embedded sound collection or recoverable linked-source inventory, so they need final PowerPoint-reference QA before mapping.
-- Manual playthrough and visual review are still required before calling this final.
+- `generated/visual_review_checklist.json` contains the 201-screen manual visual-review scaffold; manual playthrough and visual review are still required before calling this final.
