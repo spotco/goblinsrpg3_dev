@@ -18,6 +18,13 @@ The delivered site will include the extracted/converted assets, a declarative ga
 
 The counts are an extraction baseline, not yet a statement that every record is visible or reachable in play.
 
+## Python utility decision
+
+- `olefile` plus the project’s MS-PPT record parser is the primary path. It runs in the existing Python 3.14 virtual environment and does not require Winget, the Microsoft Store, Office, or a server at runtime.
+- Aspose.Slides for Python via .NET is a useful optional renderer: it supports legacy PPT/PPS and can export slide images without Microsoft PowerPoint, but its current Windows wheel requires Python `<3.14`, is proprietary, and evaluation output may be watermarked. It would require a separately installed Python 3.13 environment and a licensing decision.
+- `python-pptx` is not a solution for this input because it targets the modern OOXML `.pptx` format, not PowerPoint 97–2003 binary `.pps`.
+- LibreOffice/UNO wrappers are another conversion route, but they still require a separate office application and are not Python-only. They are not a current dependency.
+
 ## Implementation plan
 
 1. **Freeze and inventory the source**
@@ -30,7 +37,8 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - [x] Add `tools/extract_ppt.py`, which reads the OLE streams with `olefile`, walks the MS-PPT record tree, and writes a generated inventory.
    - [x] Extract PNG bitmap payloads losslessly; decode/convert the single DIB image to PNG; preserve source record IDs, dimensions, and hashes.
    - [x] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape and PowerPoint coordinates; do not infer a “next slide” fallback.
-   - [ ] Capture PowerPoint text, colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
+   - [x] Capture PowerPoint text runs and their source shape/bounds metadata.
+   - [ ] Capture colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [ ] Convert and associate all audio cues in browser-compatible formats.
    - Capture PowerPoint text, colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - Use the installed `ffmpeg` to create browser-compatible audio (prefer Ogg/Opus and MP3 fallback) from WMA; render the MIDI to an audio asset if browser MIDI playback cannot reproduce it consistently. Associate every converted file with its original cue and loop/trigger behavior.

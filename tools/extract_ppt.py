@@ -32,6 +32,8 @@ EX_HYPERLINK = 4055
 EX_HYPERLINK_ATOM = 4051
 SOUND = 2022
 SOUND_DATA = 2023
+TEXT_CHARS = 4000
+TEXT_BYTES = 4008
 OFFICEART_SP_CONTAINER = 0xF004
 OFFICEART_SP = 0xF00A
 OFFICEART_CLIENT_ANCHOR = 0xF010
@@ -262,6 +264,7 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
                     "record_offset": event["offset"],
                 }
         objects = []
+        text_runs = []
         interactive_actions = []
         for event in contextual_records:
             if event["type"] == OFFICEART_SP:
@@ -275,6 +278,23 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
                             "record_offset": event["offset"],
                         }
                     )
+            if event["type"] in (TEXT_CHARS, TEXT_BYTES):
+                payload = record_payload(ppt, {key: event[key] for key in ("offset", "length")})
+                text = (
+                    payload.decode("utf-16le", "replace")
+                    if event["type"] == TEXT_CHARS
+                    else payload.decode("cp1252", "replace")
+                )
+                text_runs.append(
+                    {
+                        "slide": event["slide_order"],
+                        "shape_id": event["shape_id"],
+                        "bounds": event["bounds"],
+                        "record_offset": event["offset"],
+                        "encoding": "utf-16le" if event["type"] == TEXT_CHARS else "cp1252",
+                        "text": text,
+                    }
+                )
             if event["type"] != INTERACTIVE_INFO_ATOM:
                 continue
             payload = record_payload(ppt, {key: event[key] for key in ("offset", "length")})
@@ -325,6 +345,7 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
             "actions": actions,
             "hyperlinks": sorted(hyperlinks.values(), key=lambda item: int(item["id"])),
             "objects": objects,
+            "text_runs": text_runs,
             "interactive_actions": interactive_actions,
             "navigation_edges": navigation_edges,
             "sounds": sounds,

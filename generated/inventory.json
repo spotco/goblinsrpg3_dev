@@ -16695,6 +16695,4639 @@
       "record_offset": 1147144
     }
   ],
+  "text_runs": [
+    {
+      "slide": null,
+      "shape_id": null,
+      "bounds": null,
+      "record_offset": 366187,
+      "encoding": "cp1252",
+      "text": "If magic/limit"
+    },
+    {
+      "slide": null,
+      "shape_id": null,
+      "bounds": null,
+      "record_offset": 366391,
+      "encoding": "cp1252",
+      "text": "After Battle"
+    },
+    {
+      "slide": null,
+      "shape_id": 1026,
+      "bounds": [
+        173,
+        288,
+        5472,
+        893
+      ],
+      "record_offset": 368937,
+      "encoding": "cp1252",
+      "text": "Click to edit Master title style"
+    },
+    {
+      "slide": null,
+      "shape_id": 1027,
+      "bounds": [
+        1008,
+        288,
+        5472,
+        3859
+      ],
+      "record_offset": 369149,
+      "encoding": "cp1252",
+      "text": "Click to edit Master text styles\rSecond level\rThird level\rFourth level\rFifth level"
+    },
+    {
+      "slide": null,
+      "shape_id": 1028,
+      "bounds": [
+        3934,
+        288,
+        1632,
+        4234
+      ],
+      "record_offset": 369435,
+      "encoding": "utf-16le",
+      "text": "*"
+    },
+    {
+      "slide": null,
+      "shape_id": 1029,
+      "bounds": [
+        3934,
+        1968,
+        3792,
+        4234
+      ],
+      "record_offset": 369625,
+      "encoding": "utf-16le",
+      "text": "*"
+    },
+    {
+      "slide": null,
+      "shape_id": 1030,
+      "bounds": [
+        3934,
+        4128,
+        5472,
+        4234
+      ],
+      "record_offset": 369817,
+      "encoding": "utf-16le",
+      "text": "*"
+    },
+    {
+      "slide": 1,
+      "shape_id": 69639,
+      "bounds": [
+        2976,
+        1488,
+        4224,
+        3207
+      ],
+      "record_offset": 370505,
+      "encoding": "cp1252",
+      "text": "Presents"
+    },
+    {
+      "slide": 2,
+      "shape_id": 2056,
+      "bounds": [
+        3024,
+        1776,
+        3360,
+        3255
+      ],
+      "record_offset": 375835,
+      "encoding": "cp1252",
+      "text": "Click here to start"
+    },
+    {
+      "slide": 3,
+      "shape_id": 3077,
+      "bounds": [
+        3504,
+        2928,
+        5760,
+        3735
+      ],
+      "record_offset": 377835,
+      "encoding": "cp1252",
+      "text": "It was a long lived peace in the land"
+    },
+    {
+      "slide": 3,
+      "shape_id": 3078,
+      "bounds": [
+        3504,
+        2928,
+        5616,
+        3735
+      ],
+      "record_offset": 378080,
+      "encoding": "utf-16le",
+      "text": "Until…."
+    },
+    {
+      "slide": 3,
+      "shape_id": 3079,
+      "bounds": [
+        3456,
+        2928,
+        5328,
+        3687
+      ],
+      "record_offset": 378302,
+      "encoding": "utf-16le",
+      "text": "100 to 150 years ago…"
+    },
+    {
+      "slide": 4,
+      "shape_id": 4105,
+      "bounds": [
+        3792,
+        2400,
+        5280,
+        4023
+      ],
+      "record_offset": 382530,
+      "encoding": "utf-16le",
+      "text": "And then the goblins invaded…"
+    },
+    {
+      "slide": 5,
+      "shape_id": 5125,
+      "bounds": [
+        2976,
+        1824,
+        4128,
+        3380
+      ],
+      "record_offset": 383287,
+      "encoding": "utf-16le",
+      "text": "They Burned an pillaged the countryside…"
+    },
+    {
+      "slide": 5,
+      "shape_id": 5127,
+      "bounds": [
+        3408,
+        1824,
+        3936,
+        3639
+      ],
+      "record_offset": 383719,
+      "encoding": "cp1252",
+      "text": "And there seemed no end"
+    },
+    {
+      "slide": 6,
+      "shape_id": 7173,
+      "bounds": [
+        2928,
+        3504,
+        5472,
+        3332
+      ],
+      "record_offset": 386858,
+      "encoding": "utf-16le",
+      "text": "Until the “hero of time” appeared."
+    },
+    {
+      "slide": 7,
+      "shape_id": 8204,
+      "bounds": [
+        2976,
+        2352,
+        3888,
+        3813
+      ],
+      "record_offset": 389678,
+      "encoding": "utf-16le",
+      "text": "The hero of time ded them all with fell run of his spear.\r(don’t ask)"
+    },
+    {
+      "slide": 8,
+      "shape_id": 9222,
+      "bounds": [
+        3120,
+        2688,
+        5328,
+        3351
+      ],
+      "record_offset": 397741,
+      "encoding": "cp1252",
+      "text": "Peace was restored once more."
+    },
+    {
+      "slide": 8,
+      "shape_id": 9223,
+      "bounds": [
+        3168,
+        2688,
+        4992,
+        3399
+      ],
+      "record_offset": 397978,
+      "encoding": "utf-16le",
+      "text": "This is 100 to 150 years later…"
+    },
+    {
+      "slide": 9,
+      "shape_id": 10247,
+      "bounds": [
+        2496,
+        192,
+        2832,
+        2900
+      ],
+      "record_offset": 401008,
+      "encoding": "cp1252",
+      "text": "You live in the small, quiet village of New Jersey."
+    },
+    {
+      "slide": 9,
+      "shape_id": 10248,
+      "bounds": [
+        3072,
+        240,
+        2592,
+        3476
+      ],
+      "record_offset": 401267,
+      "encoding": "cp1252",
+      "text": "HINT: Click on something to talk/examine"
+    },
+    {
+      "slide": 10,
+      "shape_id": 11270,
+      "bounds": [
+        2016,
+        3264,
+        4416,
+        2593
+      ],
+      "record_offset": 404545,
+      "encoding": "utf-16le",
+      "text": "Hello! Uh, I mean… RUFF RUFF!!"
+    },
+    {
+      "slide": 10,
+      "shape_id": 11271,
+      "bounds": [
+        2928,
+        3936,
+        5568,
+        3159
+      ],
+      "record_offset": 404761,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 12,
+      "shape_id": 13324,
+      "bounds": [
+        2160,
+        3456,
+        4416,
+        2737
+      ],
+      "record_offset": 406257,
+      "encoding": "utf-16le",
+      "text": "Okay, Okay. I give. I’m a talking dog."
+    },
+    {
+      "slide": 12,
+      "shape_id": 13326,
+      "bounds": [
+        2064,
+        3312,
+        4320,
+        2814
+      ],
+      "record_offset": 406541,
+      "encoding": "utf-16le",
+      "text": "I’ll give you this if you leave me alone."
+    },
+    {
+      "slide": 13,
+      "shape_id": 14341,
+      "bounds": [
+        384,
+        1680,
+        5760,
+        672
+      ],
+      "record_offset": 409475,
+      "encoding": "cp1252",
+      "text": "Got the sword!"
+    },
+    {
+      "slide": 14,
+      "shape_id": 15378,
+      "bounds": [
+        3168,
+        1200,
+        2736,
+        3572
+      ],
+      "record_offset": 411606,
+      "encoding": "cp1252",
+      "text": "AAA!!! The goblins are attacking!!"
+    },
+    {
+      "slide": 14,
+      "shape_id": 15386,
+      "bounds": [
+        2976,
+        3840,
+        4848,
+        3207
+      ],
+      "record_offset": 412542,
+      "encoding": "cp1252",
+      "text": "(Darn strait)"
+    },
+    {
+      "slide": 15,
+      "shape_id": 17418,
+      "bounds": [
+        192,
+        2448,
+        5760,
+        480
+      ],
+      "record_offset": 421309,
+      "encoding": "cp1252",
+      "text": "Goblin x3 attacked!"
+    },
+    {
+      "slide": 15,
+      "shape_id": 17419,
+      "bounds": [
+        2784,
+        3888,
+        5616,
+        3015
+      ],
+      "record_offset": 421486,
+      "encoding": "cp1252",
+      "text": "-Attack"
+    },
+    {
+      "slide": 15,
+      "shape_id": 17424,
+      "bounds": [
+        3072,
+        3936,
+        5136,
+        3303
+      ],
+      "record_offset": 421693,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 15,
+      "shape_id": 17427,
+      "bounds": [
+        1296,
+        2544,
+        3840,
+        1527
+      ],
+      "record_offset": 421952,
+      "encoding": "utf-16le",
+      "text": "I’m bored…"
+    },
+    {
+      "slide": 16,
+      "shape_id": 20487,
+      "bounds": [
+        192,
+        2448,
+        5760,
+        480
+      ],
+      "record_offset": 424655,
+      "encoding": "utf-16le",
+      "text": "Goblin fled of boredom…"
+    },
+    {
+      "slide": 16,
+      "shape_id": 20488,
+      "bounds": [
+        2784,
+        3888,
+        5616,
+        3015
+      ],
+      "record_offset": 424859,
+      "encoding": "cp1252",
+      "text": "-Attack"
+    },
+    {
+      "slide": 16,
+      "shape_id": 20489,
+      "bounds": [
+        3072,
+        3936,
+        5136,
+        3303
+      ],
+      "record_offset": 425066,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 16,
+      "shape_id": 20491,
+      "bounds": [
+        3456,
+        96,
+        2496,
+        3947
+      ],
+      "record_offset": 425271,
+      "encoding": "cp1252",
+      "text": "\r"
+    },
+    {
+      "slide": 17,
+      "shape_id": 18442,
+      "bounds": [
+        192,
+        1248,
+        4032,
+        423
+      ],
+      "record_offset": 427266,
+      "encoding": "utf-16le",
+      "text": "CAN’T ESCAPE!!!"
+    },
+    {
+      "slide": 17,
+      "shape_id": 18443,
+      "bounds": [
+        480,
+        1296,
+        3120,
+        711
+      ],
+      "record_offset": 427504,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 18,
+      "shape_id": 23558,
+      "bounds": [
+        192,
+        1248,
+        4032,
+        423
+      ],
+      "record_offset": 434845,
+      "encoding": "utf-16le",
+      "text": "CAN’T ESCAPE!!"
+    },
+    {
+      "slide": 18,
+      "shape_id": 23559,
+      "bounds": [
+        576,
+        1296,
+        3168,
+        807
+      ],
+      "record_offset": 435081,
+      "encoding": "utf-16le",
+      "text": "Click here  to continue…"
+    },
+    {
+      "slide": 19,
+      "shape_id": 24594,
+      "bounds": [
+        240,
+        1008,
+        3744,
+        471
+      ],
+      "record_offset": 442608,
+      "encoding": "cp1252",
+      "text": "Felled goblin!!!"
+    },
+    {
+      "slide": 19,
+      "shape_id": 24595,
+      "bounds": [
+        480,
+        1056,
+        3024,
+        711
+      ],
+      "record_offset": 442832,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 20,
+      "shape_id": 25607,
+      "bounds": [
+        240,
+        1008,
+        3744,
+        471
+      ],
+      "record_offset": 448419,
+      "encoding": "cp1252",
+      "text": "Felled goblin!!"
+    },
+    {
+      "slide": 20,
+      "shape_id": 25608,
+      "bounds": [
+        480,
+        1056,
+        3024,
+        711
+      ],
+      "record_offset": 448642,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 21,
+      "shape_id": 27655,
+      "bounds": [
+        2784,
+        3888,
+        5616,
+        3015
+      ],
+      "record_offset": 454137,
+      "encoding": "cp1252",
+      "text": "-Attack"
+    },
+    {
+      "slide": 21,
+      "shape_id": 27656,
+      "bounds": [
+        3072,
+        3936,
+        5136,
+        3303
+      ],
+      "record_offset": 454344,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 21,
+      "shape_id": 27657,
+      "bounds": [
+        336,
+        624,
+        1152,
+        567
+      ],
+      "record_offset": 454551,
+      "encoding": "cp1252",
+      "text": "15"
+    },
+    {
+      "slide": 22,
+      "shape_id": 28678,
+      "bounds": [
+        2784,
+        3888,
+        5616,
+        3015
+      ],
+      "record_offset": 455406,
+      "encoding": "cp1252",
+      "text": "-Attack"
+    },
+    {
+      "slide": 22,
+      "shape_id": 28679,
+      "bounds": [
+        3072,
+        3936,
+        5136,
+        3303
+      ],
+      "record_offset": 455613,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 22,
+      "shape_id": 28680,
+      "bounds": [
+        336,
+        672,
+        1152,
+        567
+      ],
+      "record_offset": 455818,
+      "encoding": "cp1252",
+      "text": "15"
+    },
+    {
+      "slide": 23,
+      "shape_id": 29706,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 456779,
+      "encoding": "cp1252",
+      "text": "Goblin x3 Attacks!"
+    },
+    {
+      "slide": 23,
+      "shape_id": 29707,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 457005,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 23,
+      "shape_id": 29708,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 457236,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 24,
+      "shape_id": 31752,
+      "bounds": [
+        2784,
+        3888,
+        5616,
+        3015
+      ],
+      "record_offset": 472253,
+      "encoding": "cp1252",
+      "text": "-Attack"
+    },
+    {
+      "slide": 24,
+      "shape_id": 31753,
+      "bounds": [
+        3072,
+        3936,
+        5136,
+        3303
+      ],
+      "record_offset": 472460,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 24,
+      "shape_id": 31757,
+      "bounds": [
+        336,
+        624,
+        1200,
+        567
+      ],
+      "record_offset": 472809,
+      "encoding": "cp1252",
+      "text": "10"
+    },
+    {
+      "slide": 25,
+      "shape_id": 32775,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 473704,
+      "encoding": "cp1252",
+      "text": "Goblin x2 Attacks!"
+    },
+    {
+      "slide": 25,
+      "shape_id": 32776,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 473930,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 25,
+      "shape_id": 32777,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 474161,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 26,
+      "shape_id": 33798,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 483952,
+      "encoding": "cp1252",
+      "text": "Goblin x1 Attacks!"
+    },
+    {
+      "slide": 26,
+      "shape_id": 33799,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 484178,
+      "encoding": "cp1252",
+      "text": "Player takes 5 damage!"
+    },
+    {
+      "slide": 26,
+      "shape_id": 33800,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 484408,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 27,
+      "shape_id": 34821,
+      "bounds": [
+        336,
+        624,
+        1152,
+        567
+      ],
+      "record_offset": 491581,
+      "encoding": "cp1252",
+      "text": "10"
+    },
+    {
+      "slide": 27,
+      "shape_id": 34822,
+      "bounds": [
+        2832,
+        3888,
+        5520,
+        3063
+      ],
+      "record_offset": 491735,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 27,
+      "shape_id": 34823,
+      "bounds": [
+        3120,
+        3936,
+        5280,
+        3351
+      ],
+      "record_offset": 491942,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 28,
+      "shape_id": 35849,
+      "bounds": [
+        192,
+        672,
+        3744,
+        423
+      ],
+      "record_offset": 492902,
+      "encoding": "utf-16le",
+      "text": "Can’t escape!"
+    },
+    {
+      "slide": 28,
+      "shape_id": 35850,
+      "bounds": [
+        480,
+        768,
+        2784,
+        711
+      ],
+      "record_offset": 493084,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…."
+    },
+    {
+      "slide": 29,
+      "shape_id": 36870,
+      "bounds": [
+        288,
+        912,
+        4128,
+        519
+      ],
+      "record_offset": 498842,
+      "encoding": "cp1252",
+      "text": "Goblin releases Fury!!"
+    },
+    {
+      "slide": 29,
+      "shape_id": 36879,
+      "bounds": [
+        528,
+        960,
+        3072,
+        759
+      ],
+      "record_offset": 499582,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage."
+    },
+    {
+      "slide": 29,
+      "shape_id": 36880,
+      "bounds": [
+        720,
+        1008,
+        2736,
+        951
+      ],
+      "record_offset": 499813,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 30,
+      "shape_id": 37892,
+      "bounds": [
+        336,
+        1728,
+        4848,
+        567
+      ],
+      "record_offset": 507614,
+      "encoding": "cp1252",
+      "text": "DED!!"
+    },
+    {
+      "slide": 30,
+      "shape_id": 37894,
+      "bounds": [
+        480,
+        1920,
+        4416,
+        711
+      ],
+      "record_offset": 507889,
+      "encoding": "cp1252",
+      "text": "You ded."
+    },
+    {
+      "slide": 30,
+      "shape_id": 37895,
+      "bounds": [
+        864,
+        1680,
+        3552,
+        1095
+      ],
+      "record_offset": 508105,
+      "encoding": "cp1252",
+      "text": "Press esc to exit."
+    },
+    {
+      "slide": 31,
+      "shape_id": 38919,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 511584,
+      "encoding": "cp1252",
+      "text": "Goblin x3 Attacks!"
+    },
+    {
+      "slide": 31,
+      "shape_id": 38920,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 511810,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 31,
+      "shape_id": 38921,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 512041,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 32,
+      "shape_id": 39942,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 526966,
+      "encoding": "cp1252",
+      "text": "Goblin x2 Attacks!"
+    },
+    {
+      "slide": 32,
+      "shape_id": 39943,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 527192,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 32,
+      "shape_id": 39944,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 527423,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 33,
+      "shape_id": 40967,
+      "bounds": [
+        240,
+        1008,
+        3744,
+        471
+      ],
+      "record_offset": 537398,
+      "encoding": "cp1252",
+      "text": "Felled goblin!!"
+    },
+    {
+      "slide": 33,
+      "shape_id": 40968,
+      "bounds": [
+        480,
+        1056,
+        3024,
+        711
+      ],
+      "record_offset": 537653,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 34,
+      "shape_id": 41990,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 543056,
+      "encoding": "cp1252",
+      "text": "Goblin x1 Attacks!"
+    },
+    {
+      "slide": 34,
+      "shape_id": 41991,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 543282,
+      "encoding": "cp1252",
+      "text": "Player takes 5 damage!"
+    },
+    {
+      "slide": 34,
+      "shape_id": 41992,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 543512,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 35,
+      "shape_id": 45063,
+      "bounds": [
+        240,
+        1008,
+        3744,
+        471
+      ],
+      "record_offset": 551053,
+      "encoding": "cp1252",
+      "text": "Felled goblin!"
+    },
+    {
+      "slide": 35,
+      "shape_id": 45064,
+      "bounds": [
+        480,
+        1056,
+        3024,
+        711
+      ],
+      "record_offset": 551275,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 36,
+      "shape_id": 46094,
+      "bounds": [
+        2304,
+        960,
+        2640,
+        2968
+      ],
+      "record_offset": 556862,
+      "encoding": "cp1252",
+      "text": "HAHAHAHA!!\rYAH!! TAKE THAT STUPID GOBLINS!!!"
+    },
+    {
+      "slide": 36,
+      "shape_id": 46102,
+      "bounds": [
+        3168,
+        912,
+        2448,
+        3572
+      ],
+      "record_offset": 557444,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…."
+    },
+    {
+      "slide": 37,
+      "shape_id": 47110,
+      "bounds": [
+        192,
+        672,
+        3744,
+        423
+      ],
+      "record_offset": 573666,
+      "encoding": "utf-16le",
+      "text": "Can’t escape!"
+    },
+    {
+      "slide": 37,
+      "shape_id": 47111,
+      "bounds": [
+        480,
+        768,
+        2784,
+        711
+      ],
+      "record_offset": 573848,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…."
+    },
+    {
+      "slide": 38,
+      "shape_id": 48133,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 579672,
+      "encoding": "cp1252",
+      "text": "Goblin x1 Attacks!"
+    },
+    {
+      "slide": 38,
+      "shape_id": 48134,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 579898,
+      "encoding": "cp1252",
+      "text": "Player takes 5 damage!"
+    },
+    {
+      "slide": 38,
+      "shape_id": 48135,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 580128,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 39,
+      "shape_id": 49155,
+      "bounds": [
+        336,
+        624,
+        1152,
+        567
+      ],
+      "record_offset": 587301,
+      "encoding": "cp1252",
+      "text": "20"
+    },
+    {
+      "slide": 39,
+      "shape_id": 49156,
+      "bounds": [
+        2832,
+        3840,
+        5472,
+        3063
+      ],
+      "record_offset": 587455,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 39,
+      "shape_id": 49157,
+      "bounds": [
+        3120,
+        3936,
+        5280,
+        3351
+      ],
+      "record_offset": 587662,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 40,
+      "shape_id": 50183,
+      "bounds": [
+        240,
+        1008,
+        3744,
+        471
+      ],
+      "record_offset": 588792,
+      "encoding": "cp1252",
+      "text": "Felled goblin!"
+    },
+    {
+      "slide": 40,
+      "shape_id": 50184,
+      "bounds": [
+        480,
+        1056,
+        3024,
+        711
+      ],
+      "record_offset": 589014,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 41,
+      "shape_id": 51206,
+      "bounds": [
+        192,
+        672,
+        3744,
+        423
+      ],
+      "record_offset": 594431,
+      "encoding": "utf-16le",
+      "text": "Can’t escape!"
+    },
+    {
+      "slide": 41,
+      "shape_id": 51207,
+      "bounds": [
+        480,
+        768,
+        2784,
+        711
+      ],
+      "record_offset": 594613,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…."
+    },
+    {
+      "slide": 42,
+      "shape_id": 52229,
+      "bounds": [
+        192,
+        1008,
+        3360,
+        423
+      ],
+      "record_offset": 600437,
+      "encoding": "cp1252",
+      "text": "Goblin x1 Attacks!"
+    },
+    {
+      "slide": 42,
+      "shape_id": 52230,
+      "bounds": [
+        432,
+        1056,
+        3360,
+        663
+      ],
+      "record_offset": 600663,
+      "encoding": "cp1252",
+      "text": "Player takes 5 damage!"
+    },
+    {
+      "slide": 42,
+      "shape_id": 52231,
+      "bounds": [
+        672,
+        1104,
+        2976,
+        903
+      ],
+      "record_offset": 600893,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 43,
+      "shape_id": 53255,
+      "bounds": [
+        1632,
+        1680,
+        3600,
+        1863
+      ],
+      "record_offset": 608184,
+      "encoding": "cp1252",
+      "text": "So you flee like crazy"
+    },
+    {
+      "slide": 44,
+      "shape_id": 54280,
+      "bounds": [
+        1632,
+        2208,
+        3264,
+        1863
+      ],
+      "record_offset": 611510,
+      "encoding": "utf-16le",
+      "text": "“You are here”"
+    },
+    {
+      "slide": 46,
+      "shape_id": 56325,
+      "bounds": [
+        336,
+        624,
+        1008,
+        567
+      ],
+      "record_offset": 617182,
+      "encoding": "cp1252",
+      "text": "5"
+    },
+    {
+      "slide": 46,
+      "shape_id": 56327,
+      "bounds": [
+        240,
+        2400,
+        5184,
+        471
+      ],
+      "record_offset": 617457,
+      "encoding": "cp1252",
+      "text": "Ubergoblin attacks!"
+    },
+    {
+      "slide": 46,
+      "shape_id": 56333,
+      "bounds": [
+        2784,
+        3984,
+        5568,
+        3015
+      ],
+      "record_offset": 617952,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 46,
+      "shape_id": 56334,
+      "bounds": [
+        3120,
+        3984,
+        5184,
+        3351
+      ],
+      "record_offset": 618159,
+      "encoding": "cp1252",
+      "text": "-LIMIT"
+    },
+    {
+      "slide": 46,
+      "shape_id": 56335,
+      "bounds": [
+        3504,
+        3984,
+        5040,
+        3735
+      ],
+      "record_offset": 618365,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 47,
+      "shape_id": 57352,
+      "bounds": [
+        0,
+        1296,
+        3696,
+        231
+      ],
+      "record_offset": 620294,
+      "encoding": "cp1252",
+      "text": "Ubergoblin attacks!"
+    },
+    {
+      "slide": 47,
+      "shape_id": 57353,
+      "bounds": [
+        240,
+        1104,
+        3216,
+        471
+      ],
+      "record_offset": 620521,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage."
+    },
+    {
+      "slide": 47,
+      "shape_id": 57354,
+      "bounds": [
+        480,
+        1008,
+        3024,
+        711
+      ],
+      "record_offset": 620752,
+      "encoding": "utf-16le",
+      "text": "Player is dead…………….."
+    },
+    {
+      "slide": 48,
+      "shape_id": 58375,
+      "bounds": [
+        336,
+        1008,
+        4416,
+        567
+      ],
+      "record_offset": 627118,
+      "encoding": "utf-16le",
+      "text": "………"
+    },
+    {
+      "slide": 48,
+      "shape_id": 58376,
+      "bounds": [
+        720,
+        864,
+        3600,
+        951
+      ],
+      "record_offset": 627332,
+      "encoding": "cp1252",
+      "text": "Am I dead?"
+    },
+    {
+      "slide": 48,
+      "shape_id": 58377,
+      "bounds": [
+        1200,
+        672,
+        5520,
+        1431
+      ],
+      "record_offset": 627550,
+      "encoding": "utf-16le",
+      "text": "“We need to talk, come to my room. It’s the one to the left.”"
+    },
+    {
+      "slide": 48,
+      "shape_id": 58378,
+      "bounds": [
+        1584,
+        816,
+        3648,
+        1815
+      ],
+      "record_offset": 627880,
+      "encoding": "cp1252",
+      "text": "Huh what the heck?"
+    },
+    {
+      "slide": 51,
+      "shape_id": 62470,
+      "bounds": [
+        2976,
+        3984,
+        5280,
+        3380
+      ],
+      "record_offset": 635044,
+      "encoding": "cp1252",
+      "text": "ELVIS FOREVER!!!"
+    },
+    {
+      "slide": 51,
+      "shape_id": 62471,
+      "bounds": [
+        3360,
+        3312,
+        4752,
+        3533
+      ],
+      "record_offset": 635252,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 53,
+      "shape_id": 64518,
+      "bounds": [
+        144,
+        2688,
+        4224,
+        912
+      ],
+      "record_offset": 637680,
+      "encoding": "cp1252",
+      "text": "OCCUPIED!!\r(back)"
+    },
+    {
+      "slide": 54,
+      "shape_id": 65541,
+      "bounds": [
+        240,
+        1344,
+        4416,
+        528
+      ],
+      "record_offset": 638466,
+      "encoding": "cp1252",
+      "text": "Got the Magic sword!"
+    },
+    {
+      "slide": 54,
+      "shape_id": 65542,
+      "bounds": [
+        624,
+        1920,
+        3696,
+        855
+      ],
+      "record_offset": 638692,
+      "encoding": "cp1252",
+      "text": "(Back)"
+    },
+    {
+      "slide": 54,
+      "shape_id": 65544,
+      "bounds": [
+        1056,
+        1680,
+        4608,
+        1287
+      ],
+      "record_offset": 639112,
+      "encoding": "utf-16le",
+      "text": "You trash digger…."
+    },
+    {
+      "slide": 55,
+      "shape_id": 66565,
+      "bounds": [
+        672,
+        576,
+        4752,
+        903
+      ],
+      "record_offset": 642938,
+      "encoding": "utf-16le",
+      "text": "So you’ve come…"
+    },
+    {
+      "slide": 55,
+      "shape_id": 66566,
+      "bounds": [
+        1056,
+        576,
+        3984,
+        1287
+      ],
+      "record_offset": 643176,
+      "encoding": "cp1252",
+      "text": "Huh?"
+    },
+    {
+      "slide": 56,
+      "shape_id": 67589,
+      "bounds": [
+        192,
+        2784,
+        4368,
+        423
+      ],
+      "record_offset": 645656,
+      "encoding": "utf-16le",
+      "text": "I’ve been waiting."
+    },
+    {
+      "slide": 56,
+      "shape_id": 67593,
+      "bounds": [
+        480,
+        2880,
+        4800,
+        711
+      ],
+      "record_offset": 646384,
+      "encoding": "utf-16le",
+      "text": "Don’t just stand there…"
+    },
+    {
+      "slide": 57,
+      "shape_id": 68615,
+      "bounds": [
+        576,
+        432,
+        4704,
+        807
+      ],
+      "record_offset": 648936,
+      "encoding": "cp1252",
+      "text": "Who are you?"
+    },
+    {
+      "slide": 57,
+      "shape_id": 68616,
+      "bounds": [
+        912,
+        384,
+        4176,
+        1143
+      ],
+      "record_offset": 649156,
+      "encoding": "utf-16le",
+      "text": "Don’t you know?"
+    },
+    {
+      "slide": 57,
+      "shape_id": 68617,
+      "bounds": [
+        1248,
+        432,
+        2448,
+        1479
+      ],
+      "record_offset": 649394,
+      "encoding": "utf-16le",
+      "text": "Uhhhhh………..Not really…"
+    },
+    {
+      "slide": 57,
+      "shape_id": 68619,
+      "bounds": [
+        1728,
+        528,
+        4368,
+        1959
+      ],
+      "record_offset": 649816,
+      "encoding": "utf-16le",
+      "text": "………"
+    },
+    {
+      "slide": 58,
+      "shape_id": 70661,
+      "bounds": [
+        288,
+        288,
+        4416,
+        519
+      ],
+      "record_offset": 653784,
+      "encoding": "utf-16le",
+      "text": "Okay, well, that doesn’t really matter"
+    },
+    {
+      "slide": 58,
+      "shape_id": 70663,
+      "bounds": [
+        720,
+        288,
+        4560,
+        951
+      ],
+      "record_offset": 654068,
+      "encoding": "utf-16le",
+      "text": "You’re really special…"
+    },
+    {
+      "slide": 58,
+      "shape_id": 70664,
+      "bounds": [
+        672,
+        240,
+        4032,
+        903
+      ],
+      "record_offset": 654320,
+      "encoding": "utf-16le",
+      "text": "I’ve actually called you here for a reason…"
+    },
+    {
+      "slide": 58,
+      "shape_id": 70665,
+      "bounds": [
+        1104,
+        240,
+        3168,
+        1335
+      ],
+      "record_offset": 654614,
+      "encoding": "cp1252",
+      "text": "And what would that be?"
+    },
+    {
+      "slide": 59,
+      "shape_id": 71685,
+      "bounds": [
+        240,
+        2784,
+        4992,
+        731
+      ],
+      "record_offset": 658713,
+      "encoding": "utf-16le",
+      "text": "We believe you’re the\r“Hero of time”"
+    },
+    {
+      "slide": 60,
+      "shape_id": 72711,
+      "bounds": [
+        2784,
+        1200,
+        4080,
+        3015
+      ],
+      "record_offset": 660677,
+      "encoding": "cp1252",
+      "text": "Far, Far to the south, There is a tower,"
+    },
+    {
+      "slide": 60,
+      "shape_id": 72712,
+      "bounds": [
+        3024,
+        1248,
+        4080,
+        3428
+      ],
+      "record_offset": 660925,
+      "encoding": "cp1252",
+      "text": "Which is believed to be the tomb of the last hero."
+    },
+    {
+      "slide": 60,
+      "shape_id": 72713,
+      "bounds": [
+        3504,
+        1296,
+        4128,
+        3735
+      ],
+      "record_offset": 661183,
+      "encoding": "utf-16le",
+      "text": "There you will find your destiny…"
+    },
+    {
+      "slide": 61,
+      "shape_id": 73733,
+      "bounds": [
+        336,
+        624,
+        5328,
+        567
+      ],
+      "record_offset": 664483,
+      "encoding": "utf-16le",
+      "text": "Why does this draw so heavily from Zelda…?"
+    },
+    {
+      "slide": 61,
+      "shape_id": 73735,
+      "bounds": [
+        672,
+        336,
+        5760,
+        903
+      ],
+      "record_offset": 664775,
+      "encoding": "cp1252",
+      "text": "NOTE FROM SHINY: LETS SEE YOU COME UP WITH ANYTHING BETTER!!"
+    },
+    {
+      "slide": 62,
+      "shape_id": 74758,
+      "bounds": [
+        0,
+        2832,
+        4560,
+        577
+      ],
+      "record_offset": 667459,
+      "encoding": "cp1252",
+      "text": "You must defeat them before they take over the world!!!"
+    },
+    {
+      "slide": 63,
+      "shape_id": 77829,
+      "bounds": [
+        192,
+        3408,
+        6672,
+        1018
+      ],
+      "record_offset": 669262,
+      "encoding": "cp1252",
+      "text": "Take over the world!!!!!!!!!!"
+    },
+    {
+      "slide": 64,
+      "shape_id": 78854,
+      "bounds": [
+        2496,
+        2112,
+        3600,
+        2900
+      ],
+      "record_offset": 671137,
+      "encoding": "utf-16le",
+      "text": "She sure gets her point made…"
+    },
+    {
+      "slide": 67,
+      "shape_id": 79878,
+      "bounds": [
+        1152,
+        4848,
+        5184,
+        1383
+      ],
+      "record_offset": 677677,
+      "encoding": "cp1252",
+      "text": "out"
+    },
+    {
+      "slide": 68,
+      "shape_id": 80901,
+      "bounds": [
+        2016,
+        288,
+        1008,
+        2448
+      ],
+      "record_offset": 679277,
+      "encoding": "utf-16le",
+      "text": "…\r"
+    },
+    {
+      "slide": 69,
+      "shape_id": 82948,
+      "bounds": [
+        1104,
+        4848,
+        5520,
+        1335
+      ],
+      "record_offset": 681034,
+      "encoding": "cp1252",
+      "text": "out"
+    },
+    {
+      "slide": 70,
+      "shape_id": 81926,
+      "bounds": [
+        672,
+        3552,
+        5184,
+        1440
+      ],
+      "record_offset": 682324,
+      "encoding": "utf-16le",
+      "text": "Hey ,can I have some money mister?\r(back…)\r"
+    },
+    {
+      "slide": 71,
+      "shape_id": 83971,
+      "bounds": [
+        672,
+        3552,
+        5184,
+        1440
+      ],
+      "record_offset": 683131,
+      "encoding": "utf-16le",
+      "text": "Hey ,can I have some money, mister?\r(back…)\r"
+    },
+    {
+      "slide": 73,
+      "shape_id": 86022,
+      "bounds": [
+        2304,
+        3552,
+        4896,
+        2928
+      ],
+      "record_offset": 685275,
+      "encoding": "cp1252",
+      "text": "Help me!!\r\r(back)"
+    },
+    {
+      "slide": 74,
+      "shape_id": 87046,
+      "bounds": [
+        336,
+        1920,
+        5232,
+        624
+      ],
+      "record_offset": 686221,
+      "encoding": "cp1252",
+      "text": "Got the glass!!"
+    },
+    {
+      "slide": 74,
+      "shape_id": 87047,
+      "bounds": [
+        816,
+        2016,
+        3552,
+        1047
+      ],
+      "record_offset": 686442,
+      "encoding": "cp1252",
+      "text": "(back)"
+    },
+    {
+      "slide": 79,
+      "shape_id": 92173,
+      "bounds": [
+        144,
+        2640,
+        5280,
+        375
+      ],
+      "record_offset": 697537,
+      "encoding": "cp1252",
+      "text": "Mr. T attacks!"
+    },
+    {
+      "slide": 79,
+      "shape_id": 92174,
+      "bounds": [
+        2880,
+        3888,
+        5520,
+        3111
+      ],
+      "record_offset": 697707,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 79,
+      "shape_id": 92175,
+      "bounds": [
+        3168,
+        3888,
+        5328,
+        3399
+      ],
+      "record_offset": 697914,
+      "encoding": "cp1252",
+      "text": "-LIMIT"
+    },
+    {
+      "slide": 79,
+      "shape_id": 92176,
+      "bounds": [
+        3456,
+        3888,
+        5136,
+        3687
+      ],
+      "record_offset": 698120,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 80,
+      "shape_id": 93191,
+      "bounds": [
+        96,
+        1056,
+        4368,
+        327
+      ],
+      "record_offset": 700049,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 80,
+      "shape_id": 93220,
+      "bounds": [
+        384,
+        1008,
+        4368,
+        615
+      ],
+      "record_offset": 701974,
+      "encoding": "cp1252",
+      "text": "Felled Mr. T!"
+    },
+    {
+      "slide": 81,
+      "shape_id": 94212,
+      "bounds": [
+        768,
+        672,
+        3888,
+        999
+      ],
+      "record_offset": 713102,
+      "encoding": "cp1252",
+      "text": "Gained a level"
+    },
+    {
+      "slide": 81,
+      "shape_id": 94214,
+      "bounds": [
+        672,
+        768,
+        5760,
+        903
+      ],
+      "record_offset": 713386,
+      "encoding": "cp1252",
+      "text": "Gained a level!"
+    },
+    {
+      "slide": 81,
+      "shape_id": 94215,
+      "bounds": [
+        1008,
+        816,
+        3120,
+        1499
+      ],
+      "record_offset": 713609,
+      "encoding": "cp1252",
+      "text": "-Hp +10\r-Mp +10"
+    },
+    {
+      "slide": 81,
+      "shape_id": 94219,
+      "bounds": [
+        1632,
+        768,
+        3072,
+        1863
+      ],
+      "record_offset": 714162,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 82,
+      "shape_id": 95239,
+      "bounds": [
+        1392,
+        3168,
+        6768,
+        1623
+      ],
+      "record_offset": 718054,
+      "encoding": "cp1252",
+      "text": "Fled successfully!"
+    },
+    {
+      "slide": 82,
+      "shape_id": 95240,
+      "bounds": [
+        1632,
+        480,
+        1680,
+        1805
+      ],
+      "record_offset": 718280,
+      "encoding": "cp1252",
+      "text": "I pity the foo.."
+    },
+    {
+      "slide": 82,
+      "shape_id": 95241,
+      "bounds": [
+        1632,
+        3216,
+        5328,
+        1863
+      ],
+      "record_offset": 718506,
+      "encoding": "utf-16le",
+      "text": "Click to continue…"
+    },
+    {
+      "slide": 83,
+      "shape_id": 96265,
+      "bounds": [
+        336,
+        816,
+        3264,
+        567
+      ],
+      "record_offset": 722647,
+      "encoding": "cp1252",
+      "text": "Mr. T takes 7 damage!"
+    },
+    {
+      "slide": 83,
+      "shape_id": 96266,
+      "bounds": [
+        624,
+        816,
+        2928,
+        855
+      ],
+      "record_offset": 722876,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 86,
+      "shape_id": 99336,
+      "bounds": [
+        96,
+        720,
+        4608,
+        327
+      ],
+      "record_offset": 733183,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 86,
+      "shape_id": 99337,
+      "bounds": [
+        384,
+        816,
+        3216,
+        615
+      ],
+      "record_offset": 733414,
+      "encoding": "cp1252",
+      "text": "Click here to continue."
+    },
+    {
+      "slide": 87,
+      "shape_id": 100359,
+      "bounds": [
+        3168,
+        3888,
+        5328,
+        3399
+      ],
+      "record_offset": 737383,
+      "encoding": "cp1252",
+      "text": "-LIMIT"
+    },
+    {
+      "slide": 87,
+      "shape_id": 100360,
+      "bounds": [
+        3456,
+        3888,
+        5136,
+        3687
+      ],
+      "record_offset": 737589,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 87,
+      "shape_id": 100361,
+      "bounds": [
+        2832,
+        3888,
+        4848,
+        3063
+      ],
+      "record_offset": 737794,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 87,
+      "shape_id": 100363,
+      "bounds": [
+        336,
+        672,
+        1152,
+        567
+      ],
+      "record_offset": 738001,
+      "encoding": "cp1252",
+      "text": "10"
+    },
+    {
+      "slide": 88,
+      "shape_id": 101385,
+      "bounds": [
+        96,
+        864,
+        3312,
+        327
+      ],
+      "record_offset": 739014,
+      "encoding": "cp1252",
+      "text": "Mr. T takes 10 damage!"
+    },
+    {
+      "slide": 88,
+      "shape_id": 101386,
+      "bounds": [
+        432,
+        912,
+        2976,
+        663
+      ],
+      "record_offset": 739276,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 90,
+      "shape_id": 103430,
+      "bounds": [
+        96,
+        720,
+        4608,
+        327
+      ],
+      "record_offset": 747003,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 90,
+      "shape_id": 103431,
+      "bounds": [
+        384,
+        816,
+        3216,
+        615
+      ],
+      "record_offset": 747234,
+      "encoding": "cp1252",
+      "text": "Click here to continue."
+    },
+    {
+      "slide": 92,
+      "shape_id": 107526,
+      "bounds": [
+        144,
+        2256,
+        4368,
+        375
+      ],
+      "record_offset": 752459,
+      "encoding": "cp1252",
+      "text": "Slug attacks!"
+    },
+    {
+      "slide": 92,
+      "shape_id": 107528,
+      "bounds": [
+        2784,
+        3936,
+        5328,
+        3015
+      ],
+      "record_offset": 752944,
+      "encoding": "cp1252",
+      "text": "-Attack"
+    },
+    {
+      "slide": 92,
+      "shape_id": 107529,
+      "bounds": [
+        3072,
+        3984,
+        5280,
+        3303
+      ],
+      "record_offset": 753151,
+      "encoding": "cp1252",
+      "text": "-LIMIT"
+    },
+    {
+      "slide": 92,
+      "shape_id": 107530,
+      "bounds": [
+        3360,
+        3984,
+        5616,
+        3591
+      ],
+      "record_offset": 753357,
+      "encoding": "cp1252",
+      "text": "-Flee"
+    },
+    {
+      "slide": 94,
+      "shape_id": 109574,
+      "bounds": [
+        2784,
+        3936,
+        5328,
+        3015
+      ],
+      "record_offset": 757991,
+      "encoding": "cp1252",
+      "text": "-Attack"
+    },
+    {
+      "slide": 94,
+      "shape_id": 109575,
+      "bounds": [
+        3072,
+        3984,
+        5280,
+        3303
+      ],
+      "record_offset": 758198,
+      "encoding": "cp1252",
+      "text": "-LIMIT"
+    },
+    {
+      "slide": 94,
+      "shape_id": 109577,
+      "bounds": [
+        1728,
+        3072,
+        5136,
+        2132
+      ],
+      "record_offset": 758456,
+      "encoding": "utf-16le",
+      "text": "You can’t run from a slug! That’s just not cool!"
+    },
+    {
+      "slide": 95,
+      "shape_id": 110599,
+      "bounds": [
+        336,
+        816,
+        3264,
+        567
+      ],
+      "record_offset": 760550,
+      "encoding": "cp1252",
+      "text": "Slug takes 14 damage!"
+    },
+    {
+      "slide": 95,
+      "shape_id": 110600,
+      "bounds": [
+        576,
+        864,
+        2976,
+        807
+      ],
+      "record_offset": 760779,
+      "encoding": "cp1252",
+      "text": "Felled slug!"
+    },
+    {
+      "slide": 95,
+      "shape_id": 110603,
+      "bounds": [
+        816,
+        816,
+        2448,
+        1047
+      ],
+      "record_offset": 761065,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 96,
+      "shape_id": 111620,
+      "bounds": [
+        768,
+        864,
+        3792,
+        999
+      ],
+      "record_offset": 766896,
+      "encoding": "cp1252",
+      "text": "New level up"
+    },
+    {
+      "slide": 96,
+      "shape_id": 111622,
+      "bounds": [
+        672,
+        768,
+        5760,
+        903
+      ],
+      "record_offset": 767178,
+      "encoding": "cp1252",
+      "text": "Gained a level!"
+    },
+    {
+      "slide": 96,
+      "shape_id": 111623,
+      "bounds": [
+        1008,
+        816,
+        3120,
+        1499
+      ],
+      "record_offset": 767401,
+      "encoding": "cp1252",
+      "text": "-Hp +10\r-Mp +10"
+    },
+    {
+      "slide": 96,
+      "shape_id": 111628,
+      "bounds": [
+        1584,
+        816,
+        2736,
+        1815
+      ],
+      "record_offset": 767954,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 97,
+      "shape_id": 112645,
+      "bounds": [
+        96,
+        1056,
+        4368,
+        327
+      ],
+      "record_offset": 771941,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 97,
+      "shape_id": 112660,
+      "bounds": [
+        384,
+        1008,
+        4368,
+        615
+      ],
+      "record_offset": 773866,
+      "encoding": "cp1252",
+      "text": "Felled Slug!"
+    },
+    {
+      "slide": 97,
+      "shape_id": 112663,
+      "bounds": [
+        816,
+        816,
+        2448,
+        1047
+      ],
+      "record_offset": 774152,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 112,
+      "shape_id": 130057,
+      "bounds": [
+        192,
+        2832,
+        5040,
+        423
+      ],
+      "record_offset": 803067,
+      "encoding": "cp1252",
+      "text": "Goblin commander attacks!"
+    },
+    {
+      "slide": 112,
+      "shape_id": 130065,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 803714,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 112,
+      "shape_id": 130066,
+      "bounds": [
+        2976,
+        3936,
+        4944,
+        3207
+      ],
+      "record_offset": 803921,
+      "encoding": "cp1252",
+      "text": "-magic"
+    },
+    {
+      "slide": 112,
+      "shape_id": 130067,
+      "bounds": [
+        3312,
+        3984,
+        5088,
+        3543
+      ],
+      "record_offset": 804127,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 112,
+      "shape_id": 130068,
+      "bounds": [
+        3648,
+        3984,
+        5040,
+        3879
+      ],
+      "record_offset": 804333,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 113,
+      "shape_id": 131081,
+      "bounds": [
+        2880,
+        2016,
+        3552,
+        3717
+      ],
+      "record_offset": 806602,
+      "encoding": "utf-16le",
+      "text": "You can’t flee from a boss! Duhh….\rWhy did I even include that?"
+    },
+    {
+      "slide": 113,
+      "shape_id": 131082,
+      "bounds": [
+        2976,
+        3936,
+        4944,
+        3207
+      ],
+      "record_offset": 806884,
+      "encoding": "cp1252",
+      "text": "-magic"
+    },
+    {
+      "slide": 113,
+      "shape_id": 131084,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 807090,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 113,
+      "shape_id": 131086,
+      "bounds": [
+        3312,
+        3984,
+        5088,
+        3543
+      ],
+      "record_offset": 807769,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 114,
+      "shape_id": 132104,
+      "bounds": [
+        3408,
+        1632,
+        3552,
+        3639
+      ],
+      "record_offset": 809699,
+      "encoding": "cp1252",
+      "text": "Player casts shield!"
+    },
+    {
+      "slide": 114,
+      "shape_id": 132110,
+      "bounds": [
+        3648,
+        1632,
+        3648,
+        3879
+      ],
+      "record_offset": 810479,
+      "encoding": "cp1252",
+      "text": "Defense raised by 20%!"
+    },
+    {
+      "slide": 114,
+      "shape_id": 132113,
+      "bounds": [
+        3936,
+        1680,
+        3744,
+        4167
+      ],
+      "record_offset": 810709,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 115,
+      "shape_id": 135185,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 816240,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 116,
+      "shape_id": 138254,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 820596,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 116,
+      "shape_id": 138255,
+      "bounds": [
+        2112,
+        2880,
+        3936,
+        2516
+      ],
+      "record_offset": 820827,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 117,
+      "shape_id": 140298,
+      "bounds": [
+        1536,
+        2400,
+        4032,
+        1767
+      ],
+      "record_offset": 825307,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 117,
+      "shape_id": 140315,
+      "bounds": [
+        1824,
+        2304,
+        3888,
+        2228
+      ],
+      "record_offset": 826472,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 25 damage!"
+    },
+    {
+      "slide": 118,
+      "shape_id": 141321,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 840052,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 118,
+      "shape_id": 141322,
+      "bounds": [
+        2112,
+        2880,
+        3936,
+        2516
+      ],
+      "record_offset": 840283,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 119,
+      "shape_id": 143365,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 844435,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 119,
+      "shape_id": 143369,
+      "bounds": [
+        3168,
+        3936,
+        5040,
+        3399
+      ],
+      "record_offset": 844642,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 119,
+      "shape_id": 143372,
+      "bounds": [
+        2928,
+        3936,
+        4944,
+        3159
+      ],
+      "record_offset": 844848,
+      "encoding": "cp1252",
+      "text": "-magic"
+    },
+    {
+      "slide": 119,
+      "shape_id": 143373,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 845054,
+      "encoding": "cp1252",
+      "text": "20"
+    },
+    {
+      "slide": 120,
+      "shape_id": 144389,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 846171,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 120,
+      "shape_id": 144392,
+      "bounds": [
+        2928,
+        3936,
+        4944,
+        3159
+      ],
+      "record_offset": 846378,
+      "encoding": "cp1252",
+      "text": "-magic"
+    },
+    {
+      "slide": 120,
+      "shape_id": 144393,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 846584,
+      "encoding": "cp1252",
+      "text": "20"
+    },
+    {
+      "slide": 121,
+      "shape_id": 146441,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 847741,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 122,
+      "shape_id": 147465,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 852097,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 123,
+      "shape_id": 148484,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 855450,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 123,
+      "shape_id": 148485,
+      "bounds": [
+        3168,
+        3936,
+        5040,
+        3399
+      ],
+      "record_offset": 855657,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 123,
+      "shape_id": 148486,
+      "bounds": [
+        2928,
+        3936,
+        4944,
+        3159
+      ],
+      "record_offset": 855863,
+      "encoding": "cp1252",
+      "text": "-magic"
+    },
+    {
+      "slide": 123,
+      "shape_id": 148487,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 856069,
+      "encoding": "cp1252",
+      "text": "5"
+    },
+    {
+      "slide": 124,
+      "shape_id": 149513,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 857701,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 125,
+      "shape_id": 150537,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 862057,
+      "encoding": "cp1252",
+      "text": "Player takes 15 damage!"
+    },
+    {
+      "slide": 125,
+      "shape_id": 150538,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 862288,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 126,
+      "shape_id": 151559,
+      "bounds": [
+        1536,
+        2400,
+        4032,
+        1767
+      ],
+      "record_offset": 866744,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 126,
+      "shape_id": 151573,
+      "bounds": [
+        1824,
+        2352,
+        3888,
+        2228
+      ],
+      "record_offset": 867909,
+      "encoding": "cp1252",
+      "text": "Felled goblin commander!"
+    },
+    {
+      "slide": 126,
+      "shape_id": 151574,
+      "bounds": [
+        2304,
+        2256,
+        3840,
+        2535
+      ],
+      "record_offset": 868141,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 127,
+      "shape_id": 152580,
+      "bounds": [
+        1008,
+        768,
+        4464,
+        1239
+      ],
+      "record_offset": 882545,
+      "encoding": "cp1252",
+      "text": "WIN"
+    },
+    {
+      "slide": 128,
+      "shape_id": 153605,
+      "bounds": [
+        3696,
+        1584,
+        3504,
+        3927
+      ],
+      "record_offset": 883939,
+      "encoding": "cp1252",
+      "text": "Player casts shield!"
+    },
+    {
+      "slide": 128,
+      "shape_id": 153610,
+      "bounds": [
+        3888,
+        1632,
+        3648,
+        4119
+      ],
+      "record_offset": 884719,
+      "encoding": "cp1252",
+      "text": "Defense raised by 20%!"
+    },
+    {
+      "slide": 129,
+      "shape_id": 154633,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 889514,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 129,
+      "shape_id": 154634,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 889745,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 130,
+      "shape_id": 156677,
+      "bounds": [
+        3696,
+        1584,
+        3504,
+        3927
+      ],
+      "record_offset": 894057,
+      "encoding": "cp1252",
+      "text": "Player casts shield!"
+    },
+    {
+      "slide": 130,
+      "shape_id": 156682,
+      "bounds": [
+        3888,
+        1632,
+        3648,
+        4119
+      ],
+      "record_offset": 894837,
+      "encoding": "cp1252",
+      "text": "Defense raised by 20%!"
+    },
+    {
+      "slide": 131,
+      "shape_id": 158729,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 899632,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 132,
+      "shape_id": 157700,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 902985,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 132,
+      "shape_id": 157702,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 903192,
+      "encoding": "cp1252",
+      "text": "10"
+    },
+    {
+      "slide": 132,
+      "shape_id": 157703,
+      "bounds": [
+        624,
+        576,
+        1008,
+        855
+      ],
+      "record_offset": 903346,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 133,
+      "shape_id": 159753,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 904504,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 134,
+      "shape_id": 160777,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 908860,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 134,
+      "shape_id": 160778,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 909091,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 135,
+      "shape_id": 163844,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 913219,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 135,
+      "shape_id": 163845,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 913426,
+      "encoding": "cp1252",
+      "text": "5"
+    },
+    {
+      "slide": 135,
+      "shape_id": 163846,
+      "bounds": [
+        624,
+        576,
+        1008,
+        855
+      ],
+      "record_offset": 913583,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 136,
+      "shape_id": 164873,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 914741,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 136,
+      "shape_id": 164875,
+      "bounds": [
+        2064,
+        3408,
+        4944,
+        2468
+      ],
+      "record_offset": 914982,
+      "encoding": "cp1252",
+      "text": "Felled goblin commander!"
+    },
+    {
+      "slide": 136,
+      "shape_id": 164876,
+      "bounds": [
+        2496,
+        3456,
+        4608,
+        2900
+      ],
+      "record_offset": 915214,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 137,
+      "shape_id": 166916,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 921188,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 137,
+      "shape_id": 166917,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 921395,
+      "encoding": "cp1252",
+      "text": "5"
+    },
+    {
+      "slide": 137,
+      "shape_id": 166918,
+      "bounds": [
+        624,
+        576,
+        1008,
+        855
+      ],
+      "record_offset": 921552,
+      "encoding": "cp1252",
+      "text": "10%"
+    },
+    {
+      "slide": 137,
+      "shape_id": 166919,
+      "bounds": [
+        2928,
+        3936,
+        4896,
+        3159
+      ],
+      "record_offset": 921707,
+      "encoding": "cp1252",
+      "text": "-magic"
+    },
+    {
+      "slide": 138,
+      "shape_id": 161801,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 922916,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 138,
+      "shape_id": 161802,
+      "bounds": [
+        2208,
+        3360,
+        4848,
+        2612
+      ],
+      "record_offset": 923157,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 140,
+      "shape_id": 167941,
+      "bounds": [
+        3696,
+        1584,
+        3504,
+        3927
+      ],
+      "record_offset": 928335,
+      "encoding": "cp1252",
+      "text": "Player casts shield!"
+    },
+    {
+      "slide": 140,
+      "shape_id": 167946,
+      "bounds": [
+        3888,
+        1632,
+        3648,
+        4119
+      ],
+      "record_offset": 929115,
+      "encoding": "cp1252",
+      "text": "Defense raised by 20%!"
+    },
+    {
+      "slide": 141,
+      "shape_id": 168969,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 933910,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 141,
+      "shape_id": 168970,
+      "bounds": [
+        2112,
+        3024,
+        3984,
+        2516
+      ],
+      "record_offset": 934141,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 142,
+      "shape_id": 171012,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 938265,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 142,
+      "shape_id": 171013,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 938472,
+      "encoding": "cp1252",
+      "text": "10"
+    },
+    {
+      "slide": 142,
+      "shape_id": 171014,
+      "bounds": [
+        624,
+        576,
+        1008,
+        855
+      ],
+      "record_offset": 938626,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 142,
+      "shape_id": 171015,
+      "bounds": [
+        2928,
+        3936,
+        4752,
+        3159
+      ],
+      "record_offset": 938781,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 143,
+      "shape_id": 172039,
+      "bounds": [
+        1536,
+        2400,
+        4032,
+        1767
+      ],
+      "record_offset": 940278,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 143,
+      "shape_id": 172054,
+      "bounds": [
+        1776,
+        2496,
+        3984,
+        2180
+      ],
+      "record_offset": 941443,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 25 damage!"
+    },
+    {
+      "slide": 144,
+      "shape_id": 173065,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 955023,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 144,
+      "shape_id": 173066,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 955254,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 146,
+      "shape_id": 174087,
+      "bounds": [
+        1536,
+        2400,
+        4032,
+        1767
+      ],
+      "record_offset": 960046,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 146,
+      "shape_id": 174100,
+      "bounds": [
+        1776,
+        2496,
+        3984,
+        2180
+      ],
+      "record_offset": 961211,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 25 damage!"
+    },
+    {
+      "slide": 147,
+      "shape_id": 176137,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 974791,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 147,
+      "shape_id": 176138,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 975022,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 148,
+      "shape_id": 177156,
+      "bounds": [
+        1008,
+        1488,
+        5328,
+        1239
+      ],
+      "record_offset": 979084,
+      "encoding": "utf-16le",
+      "text": "Magic’ed battle."
+    },
+    {
+      "slide": 149,
+      "shape_id": 179208,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 980218,
+      "encoding": "cp1252",
+      "text": "Player takes 4 damage!"
+    },
+    {
+      "slide": 150,
+      "shape_id": 180227,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 983570,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 150,
+      "shape_id": 180228,
+      "bounds": [
+        2928,
+        3936,
+        5040,
+        3159
+      ],
+      "record_offset": 983777,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 150,
+      "shape_id": 180230,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 984031,
+      "encoding": "cp1252",
+      "text": "31"
+    },
+    {
+      "slide": 150,
+      "shape_id": 180232,
+      "bounds": [
+        3504,
+        624,
+        3168,
+        3735
+      ],
+      "record_offset": 984185,
+      "encoding": "cp1252",
+      "text": "Round2.aftermagic"
+    },
+    {
+      "slide": 150,
+      "shape_id": 180233,
+      "bounds": [
+        576,
+        576,
+        1104,
+        807
+      ],
+      "record_offset": 984358,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 151,
+      "shape_id": 183304,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 985516,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 152,
+      "shape_id": 184328,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 989872,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 152,
+      "shape_id": 184329,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 990103,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 153,
+      "shape_id": 185347,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 994231,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 153,
+      "shape_id": 185348,
+      "bounds": [
+        2928,
+        3936,
+        5040,
+        3159
+      ],
+      "record_offset": 994438,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 153,
+      "shape_id": 185349,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 994644,
+      "encoding": "cp1252",
+      "text": "21"
+    },
+    {
+      "slide": 153,
+      "shape_id": 185351,
+      "bounds": [
+        3504,
+        624,
+        3168,
+        3735
+      ],
+      "record_offset": 995270,
+      "encoding": "cp1252",
+      "text": "Round3.magic.attack"
+    },
+    {
+      "slide": 153,
+      "shape_id": 185352,
+      "bounds": [
+        576,
+        576,
+        1104,
+        807
+      ],
+      "record_offset": 995445,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 154,
+      "shape_id": 186376,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 996603,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 155,
+      "shape_id": 187400,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 1000959,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 155,
+      "shape_id": 187401,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 1001190,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 156,
+      "shape_id": 188419,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 1005318,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 156,
+      "shape_id": 188420,
+      "bounds": [
+        2928,
+        3936,
+        5040,
+        3159
+      ],
+      "record_offset": 1005573,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 156,
+      "shape_id": 188421,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 1005779,
+      "encoding": "cp1252",
+      "text": "11"
+    },
+    {
+      "slide": 156,
+      "shape_id": 188423,
+      "bounds": [
+        3504,
+        624,
+        3168,
+        3735
+      ],
+      "record_offset": 1006405,
+      "encoding": "cp1252",
+      "text": "Round4.magic.attack.attack"
+    },
+    {
+      "slide": 156,
+      "shape_id": 188424,
+      "bounds": [
+        576,
+        576,
+        1104,
+        807
+      ],
+      "record_offset": 1006587,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 157,
+      "shape_id": 189448,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 1007745,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 158,
+      "shape_id": 190472,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 1012101,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 158,
+      "shape_id": 190473,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 1012332,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 159,
+      "shape_id": 191491,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 1016460,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 159,
+      "shape_id": 191492,
+      "bounds": [
+        2928,
+        3936,
+        5040,
+        3159
+      ],
+      "record_offset": 1016715,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 159,
+      "shape_id": 191493,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 1016921,
+      "encoding": "cp1252",
+      "text": "1"
+    },
+    {
+      "slide": 159,
+      "shape_id": 191495,
+      "bounds": [
+        3504,
+        624,
+        3168,
+        3735
+      ],
+      "record_offset": 1017550,
+      "encoding": "cp1252",
+      "text": "Round5.magic.attack.attack.attack"
+    },
+    {
+      "slide": 159,
+      "shape_id": 191496,
+      "bounds": [
+        576,
+        576,
+        1104,
+        807
+      ],
+      "record_offset": 1017739,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 160,
+      "shape_id": 192520,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 1018897,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 161,
+      "shape_id": 193544,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 1023253,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 161,
+      "shape_id": 193545,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 1023484,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 162,
+      "shape_id": 195590,
+      "bounds": [
+        1536,
+        2400,
+        4032,
+        1767
+      ],
+      "record_offset": 1027940,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 162,
+      "shape_id": 195603,
+      "bounds": [
+        1776,
+        2496,
+        3984,
+        2180
+      ],
+      "record_offset": 1029105,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 25 damage!"
+    },
+    {
+      "slide": 163,
+      "shape_id": 196616,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 1042685,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 163,
+      "shape_id": 196617,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 1042916,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 164,
+      "shape_id": 197635,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 1047044,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 164,
+      "shape_id": 197637,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 1047299,
+      "encoding": "cp1252",
+      "text": "11"
+    },
+    {
+      "slide": 164,
+      "shape_id": 197639,
+      "bounds": [
+        3504,
+        624,
+        3168,
+        3735
+      ],
+      "record_offset": 1047453,
+      "encoding": "cp1252",
+      "text": "Round4.magic.attack.limit"
+    },
+    {
+      "slide": 164,
+      "shape_id": 197640,
+      "bounds": [
+        576,
+        576,
+        1104,
+        807
+      ],
+      "record_offset": 1047634,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 165,
+      "shape_id": 198664,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 1048792,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 165,
+      "shape_id": 198666,
+      "bounds": [
+        2016,
+        3408,
+        4752,
+        2420
+      ],
+      "record_offset": 1049033,
+      "encoding": "cp1252",
+      "text": "Felled goblin commander!"
+    },
+    {
+      "slide": 165,
+      "shape_id": 198667,
+      "bounds": [
+        2496,
+        3456,
+        5040,
+        2727
+      ],
+      "record_offset": 1049265,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 167,
+      "shape_id": 201734,
+      "bounds": [
+        1536,
+        2400,
+        4032,
+        1767
+      ],
+      "record_offset": 1056025,
+      "encoding": "cp1252",
+      "text": "Player charges LIMIT!"
+    },
+    {
+      "slide": 167,
+      "shape_id": 201747,
+      "bounds": [
+        1776,
+        2496,
+        3984,
+        2180
+      ],
+      "record_offset": 1057190,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 25 damage!"
+    },
+    {
+      "slide": 168,
+      "shape_id": 202760,
+      "bounds": [
+        1632,
+        2976,
+        4224,
+        2036
+      ],
+      "record_offset": 1070770,
+      "encoding": "cp1252",
+      "text": "Player takes 10 damage!"
+    },
+    {
+      "slide": 168,
+      "shape_id": 202761,
+      "bounds": [
+        2112,
+        2928,
+        3888,
+        2516
+      ],
+      "record_offset": 1071001,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 169,
+      "shape_id": 203779,
+      "bounds": [
+        2688,
+        3936,
+        5472,
+        2919
+      ],
+      "record_offset": 1075129,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 169,
+      "shape_id": 203781,
+      "bounds": [
+        384,
+        576,
+        960,
+        615
+      ],
+      "record_offset": 1075336,
+      "encoding": "cp1252",
+      "text": "21"
+    },
+    {
+      "slide": 169,
+      "shape_id": 203784,
+      "bounds": [
+        576,
+        576,
+        1104,
+        807
+      ],
+      "record_offset": 1075490,
+      "encoding": "cp1252",
+      "text": "00%"
+    },
+    {
+      "slide": 170,
+      "shape_id": 204808,
+      "bounds": [
+        1632,
+        3120,
+        4560,
+        2036
+      ],
+      "record_offset": 1076648,
+      "encoding": "cp1252",
+      "text": "Goblin commander takes 15 damage!"
+    },
+    {
+      "slide": 170,
+      "shape_id": 204809,
+      "bounds": [
+        2016,
+        3408,
+        4752,
+        2420
+      ],
+      "record_offset": 1076889,
+      "encoding": "cp1252",
+      "text": "Felled goblin commander!"
+    },
+    {
+      "slide": 170,
+      "shape_id": 204810,
+      "bounds": [
+        2496,
+        3456,
+        5040,
+        2727
+      ],
+      "record_offset": 1077121,
+      "encoding": "cp1252",
+      "text": "Click here to continue"
+    },
+    {
+      "slide": 173,
+      "shape_id": 208901,
+      "bounds": [
+        1440,
+        3552,
+        4656,
+        2256
+      ],
+      "record_offset": 1084398,
+      "encoding": "utf-16le",
+      "text": "Tis’ here ye shall find th’art destiny.\r(back)"
+    },
+    {
+      "slide": 175,
+      "shape_id": 214019,
+      "bounds": [
+        1104,
+        3888,
+        5328,
+        1776
+      ],
+      "record_offset": 1086212,
+      "encoding": "cp1252",
+      "text": "What up Holmes?\r(BACK!!!)"
+    },
+    {
+      "slide": 183,
+      "shape_id": 223239,
+      "bounds": [
+        192,
+        1344,
+        4320,
+        423
+      ],
+      "record_offset": 1092943,
+      "encoding": "utf-16le",
+      "text": "Step into the light… if th’art worthy…"
+    },
+    {
+      "slide": 189,
+      "shape_id": 229381,
+      "bounds": [
+        384,
+        2832,
+        5232,
+        615
+      ],
+      "record_offset": 1098456,
+      "encoding": "cp1252",
+      "text": "Who dares step into the light?"
+    },
+    {
+      "slide": 190,
+      "shape_id": 230405,
+      "bounds": [
+        96,
+        2928,
+        4752,
+        327
+      ],
+      "record_offset": 1100230,
+      "encoding": "cp1252",
+      "text": "Guardian Askook Attacks!"
+    },
+    {
+      "slide": 190,
+      "shape_id": 230406,
+      "bounds": [
+        2928,
+        4272,
+        5472,
+        3159
+      ],
+      "record_offset": 1100406,
+      "encoding": "cp1252",
+      "text": "-attack"
+    },
+    {
+      "slide": 190,
+      "shape_id": 230407,
+      "bounds": [
+        3120,
+        4272,
+        5040,
+        3351
+      ],
+      "record_offset": 1100613,
+      "encoding": "cp1252",
+      "text": "-limit"
+    },
+    {
+      "slide": 190,
+      "shape_id": 230408,
+      "bounds": [
+        3312,
+        4272,
+        5136,
+        3543
+      ],
+      "record_offset": 1100819,
+      "encoding": "cp1252",
+      "text": "-flee"
+    },
+    {
+      "slide": 190,
+      "shape_id": 230410,
+      "bounds": [
+        336,
+        576,
+        864,
+        567
+      ],
+      "record_offset": 1101264,
+      "encoding": "cp1252",
+      "text": "45"
+    },
+    {
+      "slide": 191,
+      "shape_id": 231430,
+      "bounds": [
+        144,
+        1104,
+        2016,
+        375
+      ],
+      "record_offset": 1103076,
+      "encoding": "utf-16le",
+      "text": "Ow…"
+    },
+    {
+      "slide": 193,
+      "shape_id": 233482,
+      "bounds": [
+        768,
+        2880,
+        4320,
+        1172
+      ],
+      "record_offset": 1108253,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 195,
+      "shape_id": 235528,
+      "bounds": [
+        336,
+        2832,
+        4560,
+        567
+      ],
+      "record_offset": 1124348,
+      "encoding": "utf-16le",
+      "text": "Can’t flee!"
+    },
+    {
+      "slide": 195,
+      "shape_id": 235529,
+      "bounds": [
+        576,
+        2880,
+        4512,
+        980
+      ],
+      "record_offset": 1124574,
+      "encoding": "utf-16le",
+      "text": "Click here to continue…"
+    },
+    {
+      "slide": 196,
+      "shape_id": 236553,
+      "bounds": [
+        96,
+        1536,
+        2832,
+        673
+      ],
+      "record_offset": 1127958,
+      "encoding": "cp1252",
+      "text": "Guardian Askook Unleashes INFINITY"
+    },
+    {
+      "slide": 196,
+      "shape_id": 236558,
+      "bounds": [
+        816,
+        1344,
+        2688,
+        1393
+      ],
+      "record_offset": 1128552,
+      "encoding": "cp1252",
+      "text": "Player takes 4,326,105 Damage."
+    },
+    {
+      "slide": 196,
+      "shape_id": 236559,
+      "bounds": [
+        1440,
+        1536,
+        2688,
+        1671
+      ],
+      "record_offset": 1128806,
+      "encoding": "cp1252",
+      "text": "+12"
+    },
+    {
+      "slide": 197,
+      "shape_id": 237570,
+      "bounds": [
+        336,
+        1728,
+        4848,
+        567
+      ],
+      "record_offset": 1133166,
+      "encoding": "cp1252",
+      "text": "DED!!"
+    },
+    {
+      "slide": 197,
+      "shape_id": 237572,
+      "bounds": [
+        480,
+        1920,
+        4416,
+        711
+      ],
+      "record_offset": 1133441,
+      "encoding": "cp1252",
+      "text": "You ded."
+    },
+    {
+      "slide": 197,
+      "shape_id": 237573,
+      "bounds": [
+        864,
+        1680,
+        3552,
+        1095
+      ],
+      "record_offset": 1133657,
+      "encoding": "cp1252",
+      "text": "Press esc to exit."
+    },
+    {
+      "slide": 198,
+      "shape_id": 238602,
+      "bounds": [
+        240,
+        960,
+        3840,
+        817
+      ],
+      "record_offset": 1136902,
+      "encoding": "utf-16le",
+      "text": "So the legends are true…You are the Hero of time™… it is, now your destiny to kill every stinkin’ goblin."
+    },
+    {
+      "slide": 198,
+      "shape_id": 238603,
+      "bounds": [
+        912,
+        1008,
+        3696,
+        1143
+      ],
+      "record_offset": 1137320,
+      "encoding": "utf-16le",
+      "text": "Aww, shiz…"
+    },
+    {
+      "slide": 198,
+      "shape_id": 238604,
+      "bounds": [
+        1248,
+        1056,
+        4608,
+        1652
+      ],
+      "record_offset": 1137548,
+      "encoding": "utf-16le",
+      "text": "Don’t worry… if you die now, your stuff will end up in some museum."
+    },
+    {
+      "slide": 198,
+      "shape_id": 238605,
+      "bounds": [
+        1776,
+        1104,
+        3072,
+        2007
+      ],
+      "record_offset": 1137890,
+      "encoding": "cp1252",
+      "text": "Huh?"
+    },
+    {
+      "slide": 199,
+      "shape_id": 239621,
+      "bounds": [
+        1008,
+        2784,
+        3552,
+        1239
+      ],
+      "record_offset": 1141826,
+      "encoding": "cp1252",
+      "text": "Hi"
+    },
+    {
+      "slide": 200,
+      "shape_id": 240644,
+      "bounds": [
+        192,
+        720,
+        4560,
+        480
+      ],
+      "record_offset": 1143454,
+      "encoding": "cp1252",
+      "text": "The End."
+    },
+    {
+      "slide": 200,
+      "shape_id": 240653,
+      "bounds": [
+        864,
+        624,
+        3312,
+        1095
+      ],
+      "record_offset": 1143716,
+      "encoding": "utf-16le",
+      "text": "(press ESC to exit…)"
+    },
+    {
+      "slide": 201,
+      "shape_id": 241674,
+      "bounds": [
+        0,
+        1392,
+        3648,
+        5430
+      ],
+      "record_offset": 1145830,
+      "encoding": "utf-16le",
+      "text": "Credits—\rExecutive Producer-Shiny Yang\rMain programmer- Shiny Yang\rArt director- Shiny Yang\rMonster Design- Shiny Yang\rEthics Director- Brian Goddard\rBattle Programmer- Shiny Yang\r-Music-\rTheme song- “Jesu, joy of man’s desire” by Baby Einstein\rRock’s song- “Trogdor” by Strong Bad.\rVictory song- “FF1 fanfare by anonymous at Vgmusic.com\rSpecial thanks-\rDavid, Brian and Mr. Mullins.\rMay 20th, 2005, SPOTCO\r-=Thanks 4 Playing=-\r\r\r\r "
+    },
+    {
+      "slide": 201,
+      "shape_id": 241678,
+      "bounds": [
+        1728,
+        1920,
+        3600,
+        1959
+      ],
+      "record_offset": 1147048,
+      "encoding": "cp1252",
+      "text": "Bye."
+    }
+  ],
   "interactive_actions": [
     {
       "record_offset": 375904,

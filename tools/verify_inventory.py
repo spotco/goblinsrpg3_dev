@@ -19,6 +19,7 @@ def main() -> None:
     assert inventory["record_type_counts"]["4055"] == 194
     assert len(inventory["hyperlinks"]) == 194
     assert len(inventory["objects"]) == 1591
+    assert len(inventory["text_runs"]) == 357
     assert len(inventory["interactive_actions"]) == 217
     assert len(inventory["navigation_edges"]) == 194
     assert all(action["shape_id"] is not None for action in inventory["interactive_actions"])
