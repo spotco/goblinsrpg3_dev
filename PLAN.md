@@ -126,7 +126,7 @@ Critical path work added from the animation findings:
    - [x] Add regression verification for embedded audio extraction/conversion and mapped media command bindings.
    - [x] Add site verification for first-pass acceleration/deceleration and auto-reverse runtime hooks.
    - [x] Add site verification for first-pass start/end animation trigger runtime hooks.
-   - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
+   - [x] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
    - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
    - [x] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops.
    - [ ] Maintain a manual playthrough checklist for major branches/endings.

@@ -37,6 +37,7 @@ python tools/verify_inventory.py generated/inventory.json
 python tools/verify_timing_tree.py
 python tools/verify_animation_manifest.py
 python tools/verify_layers.py
+python tools/verify_animated_layer_coverage.py
 python tools/verify_embedded_audio.py
 python tools/verify_site.py
 python tools/verify_runtime_traversal.py
@@ -48,6 +49,7 @@ python tools/verify_runtime_traversal.py
 
 - The screen PNGs are a first-pass reconstruction, not a verified pixel-perfect PowerPoint export.
 - The manifest now includes separately addressable image/text/shape layers and a decoded PP10 animation timing tree, but the JavaScript animation player is not fully implemented yet.
+- `generated/animated_layer_coverage.json` verifies all 567 animated PowerPoint shape targets have separate browser layers, so animation-critical objects are not only present in the fallback screen raster.
 - `generated/runtime_traversal.json` validates every declared hotspot edge and reports graph reachability/cycles. The current hotspot-only graph starts at `slide-001`, which has no hotspot, so opening-slide animation/click behavior still needs manual/runtime QA.
 - `Ffvictory.mid` is identified in the audio manifest but still needs rendering through a MIDI synth/soundfont.
 - Audio cue timing/loop behavior still needs to be associated with the extracted PowerPoint action records.
