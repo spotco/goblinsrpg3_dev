@@ -40,8 +40,9 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - [x] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape and PowerPoint coordinates; do not infer a “next slide” fallback.
    - [x] Capture PowerPoint text runs and their source shape/bounds metadata.
    - [ ] Capture colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
-   - [ ] Convert and associate all audio cues in browser-compatible formats.
-   - Use `ffmpeg`, if available, to create browser-compatible audio (prefer Ogg/Opus and MP3 fallback) from WMA; render the MIDI to an audio asset if browser MIDI playback cannot reproduce it consistently. Associate every converted file with its original cue and loop/trigger behavior.
+   - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
+   - [ ] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path.
+   - [ ] Associate all converted files with their original cue and loop/trigger behavior.
 
 3. **Establish visual reference renders before porting gameplay**
    - [x] Validate a Python-based renderer path: `tools/render_aspose.py` can render all 201 source slides at a fixed 4:3 resolution from Python 3.13 without Microsoft PowerPoint.

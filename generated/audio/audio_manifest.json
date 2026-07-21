@@ -1,0 +1,50 @@
+[
+  {
+    "source": "rocksong.wma",
+    "source_bytes": 1622771,
+    "source_sha256": "84590b17a532da7ec6fc442d9eb0c6d980da1a4bb15d2b736afbe9998d6a29b4",
+    "outputs": [
+      {
+        "type": "mp3",
+        "path": "generated/audio/rocksong.mp3",
+        "bytes": 1597665,
+        "sha256": "91fe926e7425800c5bcdee66bb4f58110eaa26b7a4f463aff3886a25612b0896"
+      },
+      {
+        "type": "opus",
+        "path": "generated/audio/rocksong.opus",
+        "bytes": 1153774,
+        "sha256": "17ecda45804566ce286625e8beaacaa5bad370099167a32ff34501af67f0b318"
+      }
+    ],
+    "status": "converted"
+  },
+  {
+    "source": "titlesong.wma",
+    "source_bytes": 936785,
+    "source_sha256": "b82d456e2c3d73009a07eb98d8a53e4509cb5b1ff6bb8c836c3182a9ad2fcf16",
+    "outputs": [
+      {
+        "type": "mp3",
+        "path": "generated/audio/titlesong.mp3",
+        "bytes": 1847160,
+        "sha256": "08bc5c003c6f89545ccf38710891c541a61f5041fffbd78af71fc33241695c96"
+      },
+      {
+        "type": "opus",
+        "path": "generated/audio/titlesong.opus",
+        "bytes": 1768623,
+        "sha256": "f75cf47217059e0c039a5c29a2d171a3209af13561f8b4cce028d9d5b5eb13e4"
+      }
+    ],
+    "status": "converted"
+  },
+  {
+    "source": "Ffvictory.mid",
+    "source_bytes": 4665,
+    "source_sha256": "cbb1cad92260d8805494ecb1b0d63bf060802341daeefa222eee26b0bdd482de",
+    "outputs": [],
+    "status": "needs_midi_synthesis",
+    "note": "MIDI is a score, not sampled audio. Render it with a soundfont or synth, then add the rendered file to the web manifest."
+  }
+]
