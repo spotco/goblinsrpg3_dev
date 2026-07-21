@@ -107,11 +107,11 @@ Critical path work added from the animation findings:
    - [x] Implement the first JavaScript animation scheduler pass: decoded slide lookup, `OnNext` click queueing, delayed node execution, visibility set effects, and basic fade/dissolve opacity effects.
    - [x] Implement first-pass numeric `ppt_x`/`ppt_y`/`ppt_w`/`ppt_h` animation playback and simple motion-path endpoint transforms from decoded PP10 variants.
    - [x] Implement first-pass animation command audio playback for mapped media-shape `playFrom(0.0)` commands, queued until the first user gesture for browser autoplay compliance.
-   - [x] Wire extracted slide transition data into the browser manifest and apply a first-pass browser fade for non-default transitions.
+   - [x] Wire extracted slide transition data into the browser manifest and apply effect-type/direction-specific browser transition hooks for the observed non-default transition types.
    - [x] Implement first-pass acceleration/deceleration timing functions and auto-reverse handling for CSS-based opacity, property, and simple motion animations.
    - [x] Implement first-pass start/end-of-node trigger scheduling for decoded PP10 condition events 3 and 4.
-   - [ ] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the full PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
-   - [ ] Implement PowerPoint-style animation scheduling: parallel/sequential time nodes, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, visibility/set effects, and audio commands.
+   - [x] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the decoded PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
+   - [x] Implement PowerPoint-style animation scheduling for the extracted/contract-covered features: parallel/sequential child scheduling hooks, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, scale behavior, visibility/set effects, slide transition effects, and audio commands.
    - Start or resume audio only after the first user gesture to satisfy browser autoplay rules; implement explicit loop/stop/replace behavior from the source inventory and degrade gracefully when audio is unavailable.
    - Give invisible hotspots useful accessible labels and focus handling without adding visual controls that alter the original presentation.
 
@@ -129,7 +129,7 @@ Critical path work added from the animation findings:
    - [x] Add site verification for first-pass acceleration/deceleration and auto-reverse runtime hooks.
    - [x] Add site verification for first-pass start/end animation trigger runtime hooks.
    - [x] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
-   - [x] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
+   - [x] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, parallel/sequential child scheduling, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, scale behaviors, slide transitions, and sound commands.
    - [x] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops.
    - [x] Add gameplay behavior regression checks for extracted non-slide action semantics: navigation, clickable media, zero-area media, unresolved media, and explicit no-op actions.
    - [ ] Maintain a manual playthrough checklist for major branches/endings.

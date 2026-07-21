@@ -1,7 +1,7 @@
 {
   "format": "goblins-rpg3-animation-player-contract-v1",
   "summary": {
-    "features": 7,
+    "features": 10,
     "allPassed": true,
     "timeNodeContainers": 2407,
     "mappedMediaBindings": 8
@@ -19,7 +19,8 @@
         "function applyAnimateBehavior",
         "function setMetric",
         "transitionList([\"left\", \"top\"], timing)"
-      ]
+      ],
+      "styleSnippets": []
     },
     {
       "feature": "acceleration/deceleration modifiers",
@@ -34,8 +35,25 @@
         "function modifierStrength",
         "ease-in",
         "ease-out",
-        "autoReverse"
-      ]
+        "autoReverse",
+        "holdFill"
+      ],
+      "styleSnippets": []
+    },
+    {
+      "feature": "parallel/sequential child scheduling",
+      "manifestEvidence": {
+        "timeSequenceData": 135,
+        "timeNodeContainers": 2407
+      },
+      "runtimeSnippets": [
+        "function scheduleChildNodes",
+        "function nodeChildrenRunOnClick",
+        "function nodeRunsSequentialChildren",
+        "function subtreeDuration",
+        "runAnimationNode(child, startDelay + childDelay"
+      ],
+      "styleSnippets": []
     },
     {
       "feature": "chained start/end triggers",
@@ -50,7 +68,8 @@
         "function emitAnimationTrigger",
         "emitAnimationTrigger(3, node)",
         "emitAnimationTrigger(4, node)"
-      ]
+      ],
+      "styleSnippets": []
     },
     {
       "feature": "OnNext/OnPrev sequence traversal",
@@ -65,7 +84,8 @@
         "function nodeWaitsForClick",
         "state.animationQueue.push(node)",
         "function advanceAnimation"
-      ]
+      ],
+      "styleSnippets": []
     },
     {
       "feature": "visibility changes",
@@ -81,7 +101,8 @@
         "function applySetBehavior",
         "style.visibility",
         "element.style.visibility = visibility"
-      ]
+      ],
+      "styleSnippets": []
     },
     {
       "feature": "motion paths",
@@ -92,6 +113,45 @@
         "function motionEndpoint",
         "function applyMotionBehavior",
         "element.style.transform"
+      ],
+      "styleSnippets": []
+    },
+    {
+      "feature": "scale behaviors",
+      "manifestEvidence": {
+        "scaleBehaviors": 3
+      },
+      "runtimeSnippets": [
+        "function applyScaleBehavior",
+        "function scaleTargetFromBehavior",
+        "behavior.kind === \"scale\""
+      ],
+      "styleSnippets": []
+    },
+    {
+      "feature": "slide transition effects",
+      "manifestEvidence": {
+        "transitionEffectTypes": [
+          3,
+          11,
+          21,
+          22,
+          23,
+          27
+        ]
+      },
+      "runtimeSnippets": [
+        "function transitionEffectClass",
+        "function transitionDirectionClass",
+        "`transition-effect-${effectType}`"
+      ],
+      "styleSnippets": [
+        "transition-effect-22",
+        "transition-effect-23",
+        "slide-wipe-horizontal",
+        "slide-wipe-vertical",
+        "slide-push-in",
+        "slide-dissolve-in"
       ]
     },
     {
@@ -104,7 +164,8 @@
         "function applyCommandBehavior",
         "function playAudioSource",
         "flushPendingAudioCommands"
-      ]
+      ],
+      "styleSnippets": []
     }
   ]
 }

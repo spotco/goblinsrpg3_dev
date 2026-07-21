@@ -65,6 +65,7 @@ def main() -> None:
     animation_manifest = load_json(args.animation_manifest)
     game_manifest = load_json(args.game_manifest)
     app_js = args.app.read_text(encoding="utf-8")
+    styles_css = args.app.with_name("styles.css").read_text(encoding="utf-8")
     summary = animation_manifest.get("summary", {})
     condition_events = {int(key): int(value) for key, value in summary.get("conditionEvents", {}).items()}
     modifier_types = {int(key): int(value) for key, value in summary.get("modifierTypes", {}).items()}
@@ -74,6 +75,11 @@ def main() -> None:
     mapped_media_bindings = [
         binding for binding in game_manifest.get("mediaBindings", []) if binding.get("status") == "mapped"
     ]
+    transition_types = {
+        int(screen.get("transition", {}).get("effectType", 0))
+        for screen in game_manifest.get("screens", [])
+        if screen.get("transition", {}).get("effectType", 0)
+    }
 
     feature_checks = [
         {
@@ -91,7 +97,22 @@ def main() -> None:
             "feature": "acceleration/deceleration modifiers",
             "manifestEvidence": {"modifierTypes": {key: modifier_types.get(key, 0) for key in (3, 4, 5)}},
             "present": modifier_types.get(3, 0) > 0 and modifier_types.get(4, 0) > 0,
-            "snippets": ("function modifierStrength", "ease-in", "ease-out", "autoReverse"),
+            "snippets": ("function modifierStrength", "ease-in", "ease-out", "autoReverse", "holdFill"),
+        },
+        {
+            "feature": "parallel/sequential child scheduling",
+            "manifestEvidence": {
+                "timeSequenceData": summary.get("recordCounts", {}).get("RT_TimeSequenceData"),
+                "timeNodeContainers": summary.get("timeNodeContainers"),
+            },
+            "present": int(summary.get("recordCounts", {}).get("RT_TimeSequenceData", 0)) == 135,
+            "snippets": (
+                "function scheduleChildNodes",
+                "function nodeChildrenRunOnClick",
+                "function nodeRunsSequentialChildren",
+                "function subtreeDuration",
+                "runAnimationNode(child, startDelay + childDelay",
+            ),
         },
         {
             "feature": "chained start/end triggers",
@@ -129,6 +150,30 @@ def main() -> None:
             "snippets": ("function motionEndpoint", "function applyMotionBehavior", "element.style.transform"),
         },
         {
+            "feature": "scale behaviors",
+            "manifestEvidence": {"scaleBehaviors": behavior_kinds.get("scale")},
+            "present": int(behavior_kinds.get("scale", 0)) == 3,
+            "snippets": ("function applyScaleBehavior", "function scaleTargetFromBehavior", "behavior.kind === \"scale\""),
+        },
+        {
+            "feature": "slide transition effects",
+            "manifestEvidence": {"transitionEffectTypes": sorted(transition_types)},
+            "present": transition_types == {3, 11, 21, 22, 23, 27},
+            "snippets": (
+                "function transitionEffectClass",
+                "function transitionDirectionClass",
+                "`transition-effect-${effectType}`",
+            ),
+            "styleSnippets": (
+                "transition-effect-22",
+                "transition-effect-23",
+                "slide-wipe-horizontal",
+                "slide-wipe-vertical",
+                "slide-push-in",
+                "slide-dissolve-in",
+            ),
+        },
+        {
             "feature": "sound commands",
             "manifestEvidence": {
                 "commandBehaviors": behavior_kinds.get("command"),
@@ -143,6 +188,8 @@ def main() -> None:
         if not check["present"]:
             fail(f"{check['feature']} manifest evidence is missing or changed: {check['manifestEvidence']}")
         require_snippets(app_js, check["feature"], check["snippets"])
+        if check.get("styleSnippets"):
+            require_snippets(styles_css, check["feature"], check["styleSnippets"])
 
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(
@@ -160,6 +207,7 @@ def main() -> None:
                         "feature": check["feature"],
                         "manifestEvidence": check["manifestEvidence"],
                         "runtimeSnippets": list(check["snippets"]),
+                        "styleSnippets": list(check.get("styleSnippets", [])),
                     }
                     for check in feature_checks
                 ],
@@ -168,6 +216,7 @@ def main() -> None:
         )
         + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     print(f"animation player contract verification passed: {len(feature_checks)} features")
 

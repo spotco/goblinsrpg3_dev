@@ -27,6 +27,7 @@ def main() -> None:
         fail("docs/game-manifest.json is missing")
     index_html = index_path.read_text(encoding="utf-8")
     app_js = app_path.read_text(encoding="utf-8")
+    styles_css = (args.site / "styles.css").read_text(encoding="utf-8")
     if 'id="layers"' not in index_html:
         fail("layer renderer root is missing from index.html")
     if "function renderLayers" not in app_js:
@@ -42,10 +43,20 @@ def main() -> None:
         "function applyEffectBehavior",
         "function applyAnimateBehavior",
         "function applyMotionBehavior",
+        "function applyScaleBehavior",
         "function evaluatePowerPointFormula",
         "function motionEndpoint",
+        "function scaleTargetFromBehavior",
         "function parsedModifiers",
+        "function nodeParsed",
         "function nodeTiming",
+        "function nodeUsesHoldFill",
+        "function nodeRestartMode",
+        "function nodeSequenceData",
+        "function nodeChildrenRunOnClick",
+        "function nodeRunsSequentialChildren",
+        "function subtreeDuration",
+        "function scheduleChildNodes",
         "function transitionList",
         "function nodeLocalId",
         "function triggerKey",
@@ -53,6 +64,9 @@ def main() -> None:
         "function registerAnimationTriggerWaits",
         "function emitAnimationTrigger",
         "function applyCommandBehavior",
+        "function transitionEffectClass",
+        "function transitionDirectionClass",
+        "function clearSlideTransitionClasses",
         "function playAudioSource",
         "function stopAudioExcept",
         "function flushPendingAudioCommands",
@@ -65,6 +79,20 @@ def main() -> None:
         fail("animation timing modifier support is missing from app.js")
     if "animationTriggerWaiters" not in app_js or "triggerEvent === 3" not in app_js or "triggerEvent === 4" not in app_js:
         fail("animation start/end trigger support is missing from app.js")
+    for transition_hook in (
+        "transition-effect-22",
+        "transition-effect-23",
+        "transition-effect-21",
+        "transition-effect-27",
+        "transition-effect-3",
+        "transition-effect-11",
+        "slide-wipe-horizontal",
+        "slide-wipe-vertical",
+        "slide-push-in",
+        "slide-dissolve-in",
+    ):
+        if transition_hook not in styles_css:
+            fail(f"transition CSS hook is missing: {transition_hook}")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     animation_status = manifest.get("animationStatus", {})

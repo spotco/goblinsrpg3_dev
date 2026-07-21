@@ -61,7 +61,7 @@ python tools/verify_runtime_traversal.py
 
 - The selected publishable non-watermarked render path is the repo-local custom layer reconstruction documented in `RENDERING.md`; it is verified by `generated/reconstructed/render_manifest.json` and `tools/verify_render_manifest.py`.
 - The screen PNGs are not yet verified pixel-perfect against Microsoft PowerPoint reference screenshots.
-- The manifest now includes separately addressable image/text/shape layers and a decoded PP10 animation timing tree, but the JavaScript animation player is not fully implemented yet.
+- The manifest now includes separately addressable image/text/shape layers and a decoded PP10 animation timing tree. The browser runtime has contract-covered first-pass support for linear property interpolation, acceleration/deceleration modifiers, auto-reverse, hold/restart behavior, OnNext/OnPrev queueing, chained start/end triggers, motion paths, scale behavior, visibility/set effects, observed slide transition effects, and mapped audio commands.
 - `generated/source_semantics.json` consolidates stable slide IDs, title/name/master/layout flags, z-order coverage, text/style metadata, transition coverage, animation counts, and audio cue resolution status.
 - `generated/animated_layer_coverage.json` verifies all 567 animated PowerPoint shape targets have separate browser layers, so animation-critical objects are not only present in the fallback screen raster.
 - `generated/runtime_traversal.json` validates every declared hotspot edge and reports graph reachability/cycles. The current hotspot-only graph starts at `slide-001`, which has no hotspot, so opening-slide animation/click behavior still needs manual/runtime QA.

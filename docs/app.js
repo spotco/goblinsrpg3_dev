@@ -12,6 +12,8 @@ const state = {
   animationQueue: [],
   animationTimers: [],
   animationTriggerWaiters: new Map(),
+  animationStartedNodes: new Set(),
+  animationCompletedNodes: new Set(),
   currentLayerElements: new Map(),
   debug: new URLSearchParams(window.location.search).has("debug"),
 };
@@ -115,6 +117,8 @@ function clearAnimationTimers() {
   state.animationTimers = [];
   state.animationQueue = [];
   state.animationTriggerWaiters = new Map();
+  state.animationStartedNodes = new Set();
+  state.animationCompletedNodes = new Set();
 }
 
 function scheduleAnimation(callback, delayMs = 0) {
@@ -338,6 +342,10 @@ function parsedModifiers(node) {
   return (node.modifiers || []).map((modifier) => modifier.parsed).filter(Boolean);
 }
 
+function nodeParsed(node) {
+  return (node.timeNode && node.timeNode.parsed) || {};
+}
+
 function hasModifier(node, modifierType) {
   return parsedModifiers(node).some((modifier) => modifier.modifierType === modifierType);
 }
@@ -432,6 +440,16 @@ function nodeDelay(node) {
   return delay;
 }
 
+function nodeUsesHoldFill(node) {
+  const parsed = nodeParsed(node);
+  return parsed.usesFill === true && parsed.fill === 3;
+}
+
+function nodeRestartMode(node) {
+  const parsed = nodeParsed(node);
+  return Number.isFinite(parsed.restart) ? parsed.restart : 0;
+}
+
 function nodeLocalId(node) {
   const match = typeof node.id === "string" ? node.id.match(/tn(\d+)$/) : null;
   return match ? Number.parseInt(match[1], 10) : null;
@@ -499,7 +517,7 @@ function targetsFor(node, behavior) {
 }
 
 function nodeDuration(node) {
-  const parsed = node.timeNode && node.timeNode.parsed;
+  const parsed = nodeParsed(node);
   if (!parsed || !Number.isFinite(parsed.durationMs) || parsed.durationMs <= 1) {
     return 1;
   }
@@ -522,7 +540,33 @@ function nodeTiming(node) {
     duration,
     timingFunction,
     autoReverse: hasModifier(node, 5),
+    holdFill: nodeUsesHoldFill(node),
   };
+}
+
+function nodeSequenceData(node) {
+  return (node.sequence && node.sequence.parsed) || null;
+}
+
+function nodeChildrenRunOnClick(node) {
+  const sequence = nodeSequenceData(node);
+  return Boolean(sequence && sequence.usesNextAction && sequence.nextAction === 1 && (node.children || []).length > 1);
+}
+
+function nodeRunsSequentialChildren(node) {
+  const sequence = nodeSequenceData(node);
+  return Boolean(sequence && sequence.usesConcurrency && sequence.concurrency === 0);
+}
+
+function subtreeDuration(node) {
+  const children = node.children || [];
+  if (!children.length) {
+    return nodeDelay(node) + nodeDuration(node);
+  }
+  if (nodeRunsSequentialChildren(node)) {
+    return children.reduce((total, child) => total + subtreeDuration(child), nodeDelay(node) + nodeDuration(node));
+  }
+  return nodeDelay(node) + Math.max(nodeDuration(node), ...children.map((child) => subtreeDuration(child)));
 }
 
 function transitionList(properties, timing) {
@@ -550,6 +594,8 @@ function applyEffectBehavior(elements, strings, timing) {
     return;
   }
   for (const element of elements) {
+    const originalOpacity = element.style.opacity;
+    const originalVisibility = element.style.visibility;
     element.style.visibility = "visible";
     element.style.opacity = "0";
     element.style.transition = transitionList(["opacity"], timing);
@@ -559,6 +605,11 @@ function applyEffectBehavior(elements, strings, timing) {
     if (timing.autoReverse) {
       scheduleAnimation(() => {
         element.style.opacity = "0";
+      }, timing.duration);
+    } else if (!timing.holdFill) {
+      scheduleAnimation(() => {
+        element.style.opacity = originalOpacity;
+        element.style.visibility = originalVisibility;
       }, timing.duration);
     }
   }
@@ -585,6 +636,10 @@ function applyAnimateBehavior(elements, strings, timing) {
       setMetric(element, property, target);
     });
     if (timing.autoReverse) {
+      scheduleAnimation(() => {
+        setMetric(element, property, original);
+      }, timing.duration);
+    } else if (!timing.holdFill) {
       scheduleAnimation(() => {
         setMetric(element, property, original);
       }, timing.duration);
@@ -617,6 +672,54 @@ function applyMotionBehavior(elements, strings, timing) {
       element.style.transform = `${baseTransform} translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`.trim();
     });
     if (timing.autoReverse) {
+      scheduleAnimation(() => {
+        element.style.transform = originalTransform;
+      }, timing.duration);
+    } else if (!timing.holdFill) {
+      scheduleAnimation(() => {
+        element.style.transform = originalTransform;
+      }, timing.duration);
+    }
+  }
+}
+
+function littleEndianFloatFromHex(hex, offset) {
+  if (typeof hex !== "string" || hex.length < offset * 2 + 8) {
+    return null;
+  }
+  const bytes = new Uint8Array(4);
+  for (let index = 0; index < 4; index += 1) {
+    bytes[index] = Number.parseInt(hex.slice((offset + index) * 2, (offset + index + 1) * 2), 16);
+  }
+  return new DataView(bytes.buffer).getFloat32(0, true);
+}
+
+function scaleTargetFromBehavior(behavior) {
+  const atom = (behavior.atoms || []).find((item) => item.type === 61753 && typeof item.payloadHex === "string");
+  if (!atom) {
+    return null;
+  }
+  const x = littleEndianFloatFromHex(atom.payloadHex, 20);
+  const y = littleEndianFloatFromHex(atom.payloadHex, 24);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) {
+    return null;
+  }
+  return { x: x / 100, y: y / 100 };
+}
+
+function applyScaleBehavior(elements, behavior, timing) {
+  const target = scaleTargetFromBehavior(behavior);
+  if (!target) {
+    return;
+  }
+  for (const element of elements) {
+    const originalTransform = element.style.transform;
+    element.style.transition = transitionList(["transform"], timing);
+    window.requestAnimationFrame(() => {
+      const baseTransform = element.dataset.baseTransform || "";
+      element.style.transform = `${baseTransform} scale(${target.x}, ${target.y})`.trim();
+    });
+    if (timing.autoReverse || !timing.holdFill) {
       scheduleAnimation(() => {
         element.style.transform = originalTransform;
       }, timing.duration);
@@ -661,10 +764,15 @@ function applyBehavior(node, behavior) {
     applyAnimateBehavior(elements, strings, timing);
   } else if (behavior.kind === "motion") {
     applyMotionBehavior(elements, strings, timing);
+  } else if (behavior.kind === "scale") {
+    applyScaleBehavior(elements, behavior, timing);
   }
 }
 
 function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTriggeredNode = false) {
+  if (state.animationCompletedNodes.has(node.id) && nodeRestartMode(node) === 0 && !allowTriggeredNode && !allowClickNode) {
+    return;
+  }
   if (nodeTriggerConditions(node).length > 0 && !allowTriggeredNode) {
     registerAnimationTriggerWaits(node);
     return;
@@ -675,6 +783,7 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
   }
   const startDelay = baseDelay + nodeDelay(node);
   scheduleAnimation(() => {
+    state.animationStartedNodes.add(node.id);
     emitAnimationTrigger(3, node);
   }, startDelay);
   if (node.behaviors && node.behaviors.length) {
@@ -685,9 +794,32 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
     }, startDelay);
   }
   scheduleAnimation(() => {
+    state.animationCompletedNodes.add(node.id);
     emitAnimationTrigger(4, node);
   }, startDelay + nodeDuration(node));
-  for (const child of node.children || []) {
+  scheduleChildNodes(node, startDelay);
+}
+
+function scheduleChildNodes(node, startDelay) {
+  const children = node.children || [];
+  if (!children.length) {
+    return;
+  }
+  if (nodeChildrenRunOnClick(node)) {
+    for (const child of children) {
+      state.animationQueue.push(child);
+    }
+    return;
+  }
+  if (nodeRunsSequentialChildren(node)) {
+    let childDelay = 0;
+    for (const child of children) {
+      runAnimationNode(child, startDelay + childDelay, false, false);
+      childDelay += subtreeDuration(child);
+    }
+    return;
+  }
+  for (const child of children) {
     runAnimationNode(child, startDelay, false, false);
   }
 }
@@ -743,17 +875,42 @@ function transitionDuration(screen) {
   return 400;
 }
 
+function transitionEffectClass(transition) {
+  const effectType = transition && transition.effectType;
+  if (!effectType) {
+    return null;
+  }
+  return `transition-effect-${effectType}`;
+}
+
+function transitionDirectionClass(transition) {
+  const direction = transition && transition.effectDirection;
+  return Number.isFinite(direction) ? `transition-direction-${direction}` : "transition-direction-0";
+}
+
+function clearSlideTransitionClasses() {
+  for (const className of Array.from(stage.classList)) {
+    if (className.startsWith("transition-effect-") || className.startsWith("transition-direction-")) {
+      stage.classList.remove(className);
+    }
+  }
+}
+
 function applySlideTransition(screen) {
   const transition = screen.transition;
   if (!transition || transition.effectType === 0) {
+    clearSlideTransitionClasses();
     return;
   }
   stage.style.setProperty("--transition-duration", `${transitionDuration(screen)}ms`);
+  clearSlideTransitionClasses();
+  stage.classList.add(transitionEffectClass(transition), transitionDirectionClass(transition));
   stage.classList.remove("is-transitioning");
   void stage.offsetWidth;
   stage.classList.add("is-transitioning");
   scheduleAnimation(() => {
     stage.classList.remove("is-transitioning");
+    clearSlideTransitionClasses();
   }, transitionDuration(screen));
 }
 
