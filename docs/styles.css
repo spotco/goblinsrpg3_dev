@@ -56,6 +56,7 @@ button:focus-visible {
   overflow: hidden;
   background: #070604;
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  container-type: size;
 }
 
 .screen {
@@ -66,6 +67,39 @@ button:focus-visible {
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+.layers {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.layer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.layer-text {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: normal;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.05;
+}
+
+.layer-shape {
+  background: transparent;
 }
 
 .missing-render {
@@ -91,6 +125,7 @@ button:focus-visible {
 .hotspots {
   position: absolute;
   inset: 0;
+  z-index: 100000;
 }
 
 .hotspot {

@@ -99,7 +99,7 @@ Critical path work added from the animation findings:
    - [ ] Support any required non-slide action, reveal/state, and exact restart behavior found during manual review. Do not expose browser history as an in-game action unless the original game has an equivalent control.
    - [x] Include non-Aspose layer data and per-slide image-instance files in `docs/game-manifest.json` for the browser runtime.
    - [x] Include decoded PP10 animation timing-tree data as `docs/animation-manifest.json` and load it in the browser runtime.
-   - [ ] Implement a layer renderer for separately addressable slide images, text, shapes, and audio targets; keep screenshot/reconstructed raster layers only as static fallback/reference layers where no animation depends on their contents.
+   - [x] Implement a layer renderer for separately addressable slide images, text, and shape placeholders; keep screenshot/reconstructed raster layers as static fallback/reference layers.
    - [ ] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the full PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
    - [ ] Implement PowerPoint-style animation scheduling: parallel/sequential time nodes, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, visibility/set effects, and audio commands.
    - Start or resume audio only after the first user gesture to satisfy browser autoplay rules; implement explicit loop/stop/replace behavior from the source inventory and degrade gracefully when audio is unavailable.
@@ -111,7 +111,8 @@ Critical path work added from the animation findings:
    - [x] Add regression verification for the PP10 timing-tree audit: timing blob counts, key timing records, trigger events, modifier types, sequence data, variant strings, and absence of unresolved shape targets.
    - [x] Add regression verification for the decoded PP10 animation manifest: nested time-node count, trigger events, behavior kinds, modifier types, interpolation modes, and layer-target alignment.
    - [x] Add extractor regression tests for per-slide image/text object extraction, including copied image-instance files and resolved animated shape targets.
-   - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after the renderer starts using layers directly.
+   - [x] Add site verification for layer-rendering hooks and generated layer image files.
+   - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
    - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
    - [ ] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.

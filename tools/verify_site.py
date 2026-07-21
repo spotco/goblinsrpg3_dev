@@ -17,10 +17,20 @@ def main() -> None:
     args = parser.parse_args()
 
     manifest_path = args.site / "game-manifest.json"
-    if not (args.site / "index.html").exists():
+    index_path = args.site / "index.html"
+    app_path = args.site / "app.js"
+    if not index_path.exists():
         fail("docs/index.html is missing")
+    if not app_path.exists():
+        fail("docs/app.js is missing")
     if not manifest_path.exists():
         fail("docs/game-manifest.json is missing")
+    index_html = index_path.read_text(encoding="utf-8")
+    app_js = app_path.read_text(encoding="utf-8")
+    if 'id="layers"' not in index_html:
+        fail("layer renderer root is missing from index.html")
+    if "function renderLayers" not in app_js:
+        fail("renderLayers function is missing from app.js")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     animation_status = manifest.get("animationStatus", {})

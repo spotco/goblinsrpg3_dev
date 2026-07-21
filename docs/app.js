@@ -11,6 +11,7 @@ const state = {
 
 const stage = document.getElementById("stage");
 const screenImage = document.getElementById("screen");
+const layersLayer = document.getElementById("layers");
 const missingRender = document.getElementById("missing-render");
 const hotspotsLayer = document.getElementById("hotspots");
 const statusOutput = document.getElementById("status");
@@ -108,11 +109,49 @@ function renderHotspots(screen) {
   }
 }
 
+function positionLayerElement(element, layer) {
+  const bounds = layer.bounds;
+  element.className = `layer layer-${layer.type}`;
+  element.style.left = `${bounds.x * 100}%`;
+  element.style.top = `${bounds.y * 100}%`;
+  element.style.width = `${bounds.width * 100}%`;
+  element.style.height = `${bounds.height * 100}%`;
+  element.style.zIndex = String(layer.zOrder ?? 0);
+  element.dataset.layerId = layer.id;
+  element.dataset.shapeId = String(layer.shapeId);
+  element.dataset.animated = String(Boolean(layer.animated));
+}
+
+function renderLayers(screen) {
+  layersLayer.replaceChildren();
+  const layers = screen.layers || [];
+  for (const layer of layers) {
+    const element = document.createElement("div");
+    positionLayerElement(element, layer);
+    if (layer.type === "image" && layer.instancePath) {
+      const image = document.createElement("img");
+      image.className = "layer-image";
+      image.src = layer.instancePath;
+      image.alt = "";
+      image.decoding = "async";
+      image.draggable = false;
+      element.append(image);
+    } else if (layer.type === "text") {
+      element.textContent = layer.text || "";
+      element.style.fontSize = `${Math.max(layer.bounds.height * 72, 1)}cqh`;
+    }
+    layersLayer.append(element);
+  }
+  return layers.length > 0;
+}
+
 function renderScreen(screen) {
   const slideNumber = String(screen.slide).padStart(3, "0");
+  const renderedLayers = renderLayers(screen);
   screenImage.alt = `Screen ${slideNumber}`;
   screenImage.src = screen.image;
-  screenImage.hidden = false;
+  screenImage.hidden = renderedLayers;
+  layersLayer.hidden = !renderedLayers;
   missingRender.hidden = true;
   renderHotspots(screen);
   setStatus(`Screen ${slideNumber}`);
