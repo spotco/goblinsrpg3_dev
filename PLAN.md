@@ -83,9 +83,9 @@ Critical path work added from the animation findings:
    - [ ] Complete full visual layering fidelity against Microsoft PowerPoint reference screenshots. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
    - [x] Extract embedded PowerPoint WAV sounds and convert them to browser-compatible MP3 and Opus assets.
-   - [ ] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path.
+   - [x] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path. The selected path is the repo-local deterministic `tools/render_midi.py` additive synth (`goblins-python-additive-v1`), followed by ffmpeg MP3/Opus conversion.
    - [x] Associate media-shape animation commands with converted embedded audio where the legacy cue id resolves to an embedded sound id; keep unresolved cue ids explicit in `mediaBindings`.
-   - [ ] Associate all converted files with their original cue and loop/trigger behavior.
+   - [x] Associate all converted files with their original source/cue records and extracted loop/trigger behavior in `audioCues` and `mediaBindings[].cueBehavior`; keep legacy cue ids `3` and `4` explicit as unresolved because they are referenced by media commands but are not present in the embedded sound collection or recoverable linked-source inventory.
 
 3. **Establish visual reference renders before porting gameplay**
    - [x] Retire the watermarked Aspose renderer path and keep `tools/render_reconstructed.py` on the non-Aspose layer manifest.

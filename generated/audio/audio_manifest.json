@@ -1,6 +1,7 @@
 [
   {
     "source": "rocksong.wma",
+    "sourceKind": "linked_audio",
     "source_bytes": 1622771,
     "source_sha256": "84590b17a532da7ec6fc442d9eb0c6d980da1a4bb15d2b736afbe9998d6a29b4",
     "outputs": [
@@ -14,13 +15,14 @@
         "type": "opus",
         "path": "generated/audio/rocksong.opus",
         "bytes": 1153774,
-        "sha256": "d3aafab1e6fd276221707fb6ce59d24e150de75429e4ec888411eb23ff2f3242"
+        "sha256": "c962c237061e0ac8585f89fa91f808ed1541874206ee4a4ff1bf3b806ba85d84"
       }
     ],
     "status": "converted"
   },
   {
     "source": "titlesong.wma",
+    "sourceKind": "linked_audio",
     "source_bytes": 936785,
     "source_sha256": "b82d456e2c3d73009a07eb98d8a53e4509cb5b1ff6bb8c836c3182a9ad2fcf16",
     "outputs": [
@@ -34,21 +36,45 @@
         "type": "opus",
         "path": "generated/audio/titlesong.opus",
         "bytes": 1768623,
-        "sha256": "a0e765e3885c9768a135bb8415e72f915d1ab7227c83f39ba3eb5115d1e6807f"
+        "sha256": "53414963f9a53b5480b48e554fb33a80e7cc3497b0f06baff929bb3c253adcc6"
       }
     ],
     "status": "converted"
   },
   {
     "source": "Ffvictory.mid",
+    "sourceKind": "linked_midi",
     "source_bytes": 4665,
     "source_sha256": "cbb1cad92260d8805494ecb1b0d63bf060802341daeefa222eee26b0bdd482de",
-    "outputs": [],
-    "status": "needs_midi_synthesis",
-    "note": "MIDI is a score, not sampled audio. Render it with a soundfont or synth, then add the rendered file to the web manifest."
+    "outputs": [
+      {
+        "type": "mp3",
+        "path": "generated/audio/Ffvictory.mp3",
+        "bytes": 731054,
+        "sha256": "058e065364ff04679872a91d316a2d902d6374804bc0a33ccf9225dbb671ad5c"
+      },
+      {
+        "type": "opus",
+        "path": "generated/audio/Ffvictory.opus",
+        "bytes": 775748,
+        "sha256": "aceef98d44f53bab777b0a029bcf150fb4bce478138530f015a251570c6383db"
+      }
+    ],
+    "midiRender": {
+      "synth": "goblins-python-additive-v1",
+      "sampleRate": 44100,
+      "ticksPerBeat": 384,
+      "eventCount": 942,
+      "noteCount": 422,
+      "path": "generated/audio/Ffvictory.rendered.wav",
+      "bytes": 8047068,
+      "sha256": "6178f7b909a832f791ebf42d024de4483d53d42ab50d5c48b02accb1e77426ec"
+    },
+    "status": "converted"
   },
   {
     "source": "generated/embedded-audio/sound-001-bomb.wav",
+    "sourceKind": "embedded_powerpoint_sound",
     "source_bytes": 194166,
     "source_sha256": "a641ed5f90e4c2c4b955fa7522b8c35ecb10b93cf7f90e80bcbdc5e3f01545b7",
     "outputs": [
@@ -62,7 +88,7 @@
         "type": "opus",
         "path": "generated/audio/sound-001-bomb.opus",
         "bytes": 12889,
-        "sha256": "ee79006398dafd7a6c827bc5ff1049906c5827183e09855beb8636888d7d7261"
+        "sha256": "25fb5f698c438fe844c482fb415b55943e812926ff862cf43cbca4ee6d1aaf4d"
       }
     ],
     "embeddedSoundId": 1,
@@ -70,6 +96,7 @@
   },
   {
     "source": "generated/embedded-audio/sound-002-j0214098.wav",
+    "sourceKind": "embedded_powerpoint_sound",
     "source_bytes": 26810,
     "source_sha256": "0860e2a798e4cdc32d376bf5005b250a4c7c648b8c6e0a44b4b03a40373ccdfa",
     "outputs": [
@@ -83,7 +110,7 @@
         "type": "opus",
         "path": "generated/audio/sound-002-j0214098.opus",
         "bytes": 58522,
-        "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        "sha256": "d5eb00692a76999f8dcb7cfe6c4f396fb87bc69db4f6b6e9004b7959d8cff0a6"
       }
     ],
     "embeddedSoundId": 2,
@@ -91,6 +118,7 @@
   },
   {
     "source": "generated/embedded-audio/sound-005-MSj00747560000-1.wav",
+    "sourceKind": "embedded_powerpoint_sound",
     "source_bytes": 10330,
     "source_sha256": "a83d044d280763ae7816715707e00ef1e9238d6a5d3a9637420e9935f6a57207",
     "outputs": [
@@ -104,7 +132,7 @@
         "type": "opus",
         "path": "generated/audio/sound-005-MSj00747560000-1.opus",
         "bytes": 24046,
-        "sha256": "1af04d3f7d21c763897ce6df4ee02614942d664ea39c3e8d4ac4995076f1a26a"
+        "sha256": "a004cba52701df4aefa4f4365290b88c9570253c12abb0b149144f7e03aae817"
       }
     ],
     "embeddedSoundId": 5,
@@ -112,6 +140,7 @@
   },
   {
     "source": "generated/embedded-audio/sound-007-MSSN00568A0000-1.wav",
+    "sourceKind": "embedded_powerpoint_sound",
     "source_bytes": 25434,
     "source_sha256": "48f381f732615a4c3e97df9ade614c7b28d02e510210edea380eefa79876bb4a",
     "outputs": [
@@ -125,7 +154,7 @@
         "type": "opus",
         "path": "generated/audio/sound-007-MSSN00568A0000-1.opus",
         "bytes": 57519,
-        "sha256": "46c56c4c1e2fea46fb004b5eba4661a6dc1f5189b4f30b57b99b8fa00b34931d"
+        "sha256": "e84e744ff8e12a0dbd60a05d51418d802f3746866e79e8dc2f8c0b6988dd342e"
       }
     ],
     "embeddedSoundId": 7,
@@ -133,6 +162,7 @@
   },
   {
     "source": "generated/embedded-audio/sound-008-MSj03884740000-1.wav",
+    "sourceKind": "embedded_powerpoint_sound",
     "source_bytes": 79962,
     "source_sha256": "858d64b6d7f403428cfd3170dd71f0e5246a5fc36b33b5d6d8c2b41e6c71fd0f",
     "outputs": [
@@ -146,7 +176,7 @@
         "type": "opus",
         "path": "generated/audio/sound-008-MSj03884740000-1.opus",
         "bytes": 110217,
-        "sha256": "7ce49f7752da2212bb9ee4fa628e8afdebc05afd8faccb6fa2c8610915eb3ece"
+        "sha256": "2a75f1bfdd30a73e18ed80a1a6628689102672ce95fba739e24ba09a7688e442"
       }
     ],
     "embeddedSoundId": 8,

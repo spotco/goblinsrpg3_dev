@@ -54,6 +54,7 @@ def main() -> None:
         "function emitAnimationTrigger",
         "function applyCommandBehavior",
         "function playAudioSource",
+        "function stopAudioExcept",
         "function flushPendingAudioCommands",
     ):
         if required_function not in app_js:
@@ -78,6 +79,7 @@ def main() -> None:
             fail("animation manifest has unexpected time-node count")
     screens = manifest.get("screens", [])
     media_bindings = manifest.get("mediaBindings", [])
+    audio_cues = manifest.get("audioCues", [])
     mapped_media_bindings = [binding for binding in media_bindings if binding.get("status") == "mapped"]
     if len(screens) != 201:
         fail(f"expected 201 screens, found {len(screens)}")
@@ -140,6 +142,14 @@ def main() -> None:
         fail(f"expected 11 media command bindings, found {len(media_bindings)}")
     if len(mapped_media_bindings) != 8:
         fail(f"expected 8 mapped media command bindings, found {len(mapped_media_bindings)}")
+    if len(audio_cues) != 11:
+        fail(f"expected 11 audio cue records, found {len(audio_cues)}")
+    for binding in media_bindings:
+        behavior = binding.get("cueBehavior", {})
+        if behavior.get("trigger") != "animation_command":
+            fail(f"media binding missing animation cue behavior: {binding.get('id')}")
+    if "binding.cueBehavior" not in app_js:
+        fail("runtime does not pass cue behavior to audio playback")
     if manifest.get("layerStatus", {}).get("status") == "available":
         if layer_count != 1182:
             fail(f"expected 1182 slide layers, found {layer_count}")

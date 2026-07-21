@@ -46,6 +46,7 @@ python tools/verify_animation_player_contract.py
 python tools/verify_layers.py
 python tools/verify_animated_layer_coverage.py
 python tools/verify_embedded_audio.py
+python tools/verify_audio_cues.py
 python tools/verify_site.py
 python tools/verify_runtime_traversal.py
 ```
@@ -59,6 +60,7 @@ python tools/verify_runtime_traversal.py
 - `generated/source_semantics.json` consolidates stable slide IDs, title/name/master/layout flags, z-order coverage, text/style metadata, transition coverage, animation counts, and audio cue resolution status.
 - `generated/animated_layer_coverage.json` verifies all 567 animated PowerPoint shape targets have separate browser layers, so animation-critical objects are not only present in the fallback screen raster.
 - `generated/runtime_traversal.json` validates every declared hotspot edge and reports graph reachability/cycles. The current hotspot-only graph starts at `slide-001`, which has no hotspot, so opening-slide animation/click behavior still needs manual/runtime QA.
-- `Ffvictory.mid` is identified in the audio manifest but still needs rendering through a MIDI synth/soundfont.
-- Three legacy embedded-audio cue IDs remain explicitly unresolved in `mediaBindings`; timing/loop behavior still needs final PowerPoint-reference QA.
+- `Ffvictory.mid` is rendered by `tools/render_midi.py` with the deterministic repo-local `goblins-python-additive-v1` synth, then converted to MP3 and Opus by `tools/convert_audio.py`.
+- `docs/game-manifest.json` includes `audioCues` and `mediaBindings[].cueBehavior` records for trigger/start/loop/stop/replace behavior that is exposed by the extracted PowerPoint atoms.
+- Three legacy embedded-audio cue references remain explicitly unresolved in `mediaBindings`; their cue IDs are not present in the embedded sound collection or recoverable linked-source inventory, so they need final PowerPoint-reference QA before mapping.
 - Manual playthrough and visual review are still required before calling this final.

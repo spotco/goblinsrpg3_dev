@@ -18,6 +18,12 @@ ACTION_NAMES = {
     6: "media",
 }
 
+SOURCE_AUDIO_CUE_IDS = {
+    "titlesong.wma": "linked:titlesong",
+    "rocksong.wma": "linked:rocksong",
+    "Ffvictory.mid": "linked:Ffvictory",
+}
+
 
 def clamp(value: int, minimum: int, maximum: int) -> int:
     return max(minimum, min(maximum, value))
@@ -117,8 +123,118 @@ def copy_audio(audio_manifest_path: Path, output_dir: Path) -> list[dict[str, ob
             copied_outputs.append(copied)
         copied_entry = dict(entry)
         copied_entry["outputs"] = copied_outputs
+        copied_entry["cue"] = source_audio_cue(copied_entry)
         result.append(copied_entry)
     return result
+
+
+def source_audio_cue(audio_entry: dict[str, object]) -> dict[str, object]:
+    source = str(audio_entry.get("source", ""))
+    embedded_id = audio_entry.get("embeddedSoundId")
+    if embedded_id is not None:
+        return {
+            "id": f"embedded:{int(embedded_id)}",
+            "kind": "embedded_powerpoint_sound",
+            "embeddedSoundId": int(embedded_id),
+            "trigger": "referenced_by_powerpoint_sound_or_media_atom",
+            "loop": False,
+            "stop": False,
+            "replaceExisting": True,
+            "status": "source_backed",
+        }
+    return {
+        "id": SOURCE_AUDIO_CUE_IDS.get(Path(source).name, f"source:{Path(source).stem}"),
+        "kind": audio_entry.get("sourceKind", "linked_audio"),
+        "trigger": "linked_source_file_inventory",
+        "loop": False,
+        "stop": False,
+        "replaceExisting": True,
+        "status": "source_backed" if audio_entry.get("outputs") else "no_browser_outputs",
+    }
+
+
+def legacy_animation_cue_behavior(legacy: dict[str, object] | None, command: str, start_seconds: float) -> dict[str, object]:
+    flag_names = set(legacy.get("flagNames", [])) if legacy else set()
+    return {
+        "trigger": "animation_command",
+        "command": command,
+        "startSeconds": start_seconds,
+        "loop": "loopSound" in flag_names,
+        "stop": "stopSound" in flag_names or command == "stop",
+        "replaceExisting": "stopSound" not in flag_names,
+        "requiresUserGesture": True,
+        "source": "AnimationInfoAtom/TimeCommandBehavior",
+    }
+
+
+def build_audio_cues(
+    inventory: dict[str, object],
+    timing_manifest_path: Path,
+    copied_audio: list[dict[str, object]],
+    media_bindings: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    timing = json.loads(timing_manifest_path.read_text(encoding="utf-8")) if timing_manifest_path.exists() else {}
+    animations = timing.get("animations", [])
+    bindings_by_source: dict[str, list[dict[str, object]]] = {}
+    for binding in media_bindings:
+        if binding.get("audioSource"):
+            bindings_by_source.setdefault(str(binding["audioSource"]), []).append(
+                {
+                    "id": binding["id"],
+                    "slide": binding["slide"],
+                    "shapeId": binding["shapeId"],
+                    "legacyCueId": binding.get("legacyCueId"),
+                    "cueBehavior": binding.get("cueBehavior"),
+                }
+            )
+
+    cues = []
+    for index, entry in enumerate(copied_audio, start=1):
+        cue = dict(entry.get("cue") or source_audio_cue(entry))
+        cue.update(
+            {
+                "source": entry.get("source"),
+                "sourceIndex": index,
+                "outputs": entry.get("outputs", []),
+                "status": cue.get("status", entry.get("status")),
+                "mediaBindings": bindings_by_source.get(str(entry.get("source")), []),
+            }
+        )
+        embedded_id = entry.get("embeddedSoundId")
+        if embedded_id is not None:
+            cue["legacySoundAnimations"] = [
+                {
+                    "slide": item["slide"],
+                    "shapeId": item["shapeId"],
+                    "recordOffset": item["recordOffset"],
+                    "flagNames": item.get("flagNames", []),
+                    "behavior": legacy_animation_cue_behavior(item, "play", 0.0),
+                }
+                for item in animations
+                if item.get("soundRef") == embedded_id or item.get("orderId") == embedded_id
+            ]
+        else:
+            cue["legacySoundAnimations"] = []
+        cues.append(cue)
+
+    unresolved = [
+        {
+            "id": f"legacy-unresolved:{binding.get('legacyCueId')}",
+            "kind": "unresolved_legacy_media_cue",
+            "legacyCueId": binding.get("legacyCueId"),
+            "status": "unresolved_audio_id",
+            "mediaBinding": {
+                "id": binding["id"],
+                "slide": binding["slide"],
+                "shapeId": binding["shapeId"],
+                "cueBehavior": binding.get("cueBehavior"),
+            },
+            "reason": "Legacy cue id is referenced by a media-shape animation command but is not present in the embedded PowerPoint sound collection or linked source-audio inventory with a recoverable identifier.",
+        }
+        for binding in media_bindings
+        if binding.get("status") != "mapped"
+    ]
+    return cues + unresolved
 
 
 def build_media_bindings(
@@ -158,6 +274,7 @@ def build_media_bindings(
             "startSeconds": 0.0,
             "status": "mapped" if audio_entry else "unresolved_audio_id",
         }
+        binding["cueBehavior"] = legacy_animation_cue_behavior(legacy, "playFrom", 0.0)
         if legacy:
             binding["legacyAnimation"] = {
                 "recordOffset": legacy["recordOffset"],
@@ -167,6 +284,12 @@ def build_media_bindings(
         if audio_entry:
             binding["audioSource"] = audio_entry["source"]
             binding["audioOutputs"] = audio_entry["outputs"]
+            binding["audioCueId"] = (audio_entry.get("cue") or {}).get("id")
+        else:
+            binding["unresolvedReason"] = (
+                "Legacy cue id is not present in converted embedded audio outputs. "
+                "It may refer to a linked/deleted media object that needs PowerPoint reference validation."
+            )
         bindings.append(binding)
     return bindings
 
@@ -242,6 +365,7 @@ def main() -> None:
     transitions_by_slide, transition_status = load_transitions(args.timing)
     copied_audio = copy_audio(args.audio_manifest, args.output)
     media_bindings = build_media_bindings(inventory, args.timing, copied_audio)
+    audio_cues = build_audio_cues(inventory, args.timing, copied_audio, media_bindings)
     manifest = {
         "title": "Goblins RPG 3",
         "source": inventory["source"],
@@ -252,6 +376,7 @@ def main() -> None:
         "animationStatus": animation_status,
         "transitionStatus": transition_status,
         "audio": copied_audio,
+        "audioCues": audio_cues,
         "mediaBindings": media_bindings,
         "screens": build_screens(inventory, args.screen_dir, layers_by_slide, transitions_by_slide),
     }

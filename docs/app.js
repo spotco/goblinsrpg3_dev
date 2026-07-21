@@ -66,15 +66,33 @@ function stopAudio() {
   }
 }
 
-function playAudioSource(source, startSeconds = 0) {
+function stopAudioExcept(sourceToKeep = null) {
+  for (const [source, element] of state.audioElements.entries()) {
+    if (source === sourceToKeep) {
+      continue;
+    }
+    element.pause();
+    element.currentTime = 0;
+  }
+}
+
+function playAudioSource(source, startSeconds = 0, behavior = {}) {
   const element = state.audioElements.get(source);
   if (!element) {
     return;
   }
   if (!state.audioUnlocked) {
-    state.pendingAudioCommands.push({ source, startSeconds });
+    state.pendingAudioCommands.push({ source, startSeconds, behavior });
     return;
   }
+  if (behavior.stop) {
+    stopAudioExcept(null);
+    return;
+  }
+  if (behavior.replaceExisting !== false) {
+    stopAudioExcept(source);
+  }
+  element.loop = Boolean(behavior.loop);
   element.pause();
   element.currentTime = Math.max(startSeconds, 0);
   element.play().catch(() => {
@@ -86,7 +104,7 @@ function playAudioSource(source, startSeconds = 0) {
 function flushPendingAudioCommands() {
   const pending = state.pendingAudioCommands.splice(0);
   for (const command of pending) {
-    playAudioSource(command.source, command.startSeconds);
+    playAudioSource(command.source, command.startSeconds, command.behavior || {});
   }
 }
 
@@ -590,7 +608,7 @@ function applyCommandBehavior(node, behavior, strings) {
     }
     const binding = state.mediaBindings.get(`${state.current.slide}:${target.shapeId}`);
     if (binding && binding.status === "mapped" && binding.audioSource) {
-      playAudioSource(binding.audioSource, startSeconds);
+      playAudioSource(binding.audioSource, startSeconds, binding.cueBehavior || {});
     }
   }
 }

@@ -91,6 +91,7 @@ def main() -> None:
         )
 
     media_bindings = game_manifest.get("mediaBindings", [])
+    audio_cues = game_manifest.get("audioCues", [])
     unresolved_media = [binding for binding in media_bindings if binding.get("status") != "mapped"]
     source_audio = game_manifest.get("audio", [])
     transition_sound_refs = [
@@ -111,6 +112,8 @@ def main() -> None:
         "animationTimeNodeContainers": animations.get("summary", {}).get("timeNodeContainers"),
         "animationShapeTargets": animations.get("summary", {}).get("shapeTargets"),
         "sourceAudioEntries": len(source_audio),
+        "audioCueRecords": len(audio_cues),
+        "sourceBackedAudioCues": sum(1 for cue in audio_cues if cue.get("source")),
         "mediaCommandBindings": len(media_bindings),
         "mappedMediaCommandBindings": len(media_bindings) - len(unresolved_media),
         "unresolvedMediaCommandBindings": len(unresolved_media),
@@ -134,6 +137,7 @@ def main() -> None:
         "audioSemantics": {
             "status": "explicit_with_unresolved_legacy_cue_ids" if unresolved_media else "fully_mapped",
             "sourceAudio": source_audio,
+            "audioCues": audio_cues,
             "mediaBindings": media_bindings,
             "unresolvedMediaBindings": unresolved_media,
             "transitionSoundRefs": transition_sound_refs,
@@ -141,7 +145,7 @@ def main() -> None:
         "slides": slides,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(
         "source semantics extraction passed: "
         f"{summary['slides']} slides, {summary['layerTextRuns']} layer text runs, "

@@ -26,6 +26,19 @@ def main() -> None:
     converted_embedded = [item for item in audio if item.get("embeddedSoundId") is not None]
     assert len(audio) == 8
     assert len(converted_embedded) == 5
+    midi_entries = [item for item in audio if item["source"].endswith(".mid")]
+    assert len(midi_entries) == 1
+    midi_entry = midi_entries[0]
+    assert midi_entry["status"] == "converted"
+    assert midi_entry["midiRender"]["synth"] == "goblins-python-additive-v1"
+    rendered_wav = Path(midi_entry["midiRender"]["path"])
+    assert rendered_wav.exists(), rendered_wav
+    assert rendered_wav.stat().st_size == midi_entry["midiRender"]["bytes"], rendered_wav
+    assert len(midi_entry["outputs"]) == 2
+    for output in midi_entry["outputs"]:
+        path = Path(output["path"])
+        assert path.exists(), path
+        assert path.stat().st_size == output["bytes"], path
     assert [item["embeddedSoundId"] for item in converted_embedded] == [1, 2, 5, 7, 8]
     for item in converted_embedded:
         assert item["status"] == "converted"

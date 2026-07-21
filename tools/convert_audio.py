@@ -1,8 +1,8 @@
 """Convert source audio into browser-friendly assets.
 
-WMA can be transcoded directly with ffmpeg. MIDI needs synthesis through a
-soundfont or external synth before it becomes browser-playable audio, so this
-tool records MIDI files as unresolved instead of producing a misleading file.
+WMA and extracted WAV files are transcoded directly with ffmpeg. MIDI files are
+first rendered to sampled WAV with the repo-local deterministic synth in
+``tools/render_midi.py`` and then transcoded to MP3/Opus.
 """
 
 from __future__ import annotations
@@ -14,6 +14,8 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from render_midi import render_midi
+
 
 WMA_CONVERSIONS = (
     ("mp3", ("-c:a", "libmp3lame", "-b:a", "128k")),
@@ -21,6 +23,7 @@ WMA_CONVERSIONS = (
 )
 
 WAV_CONVERSIONS = WMA_CONVERSIONS
+MIDI_CONVERSIONS = WMA_CONVERSIONS
 
 
 def sha256(path: Path) -> str:
@@ -64,6 +67,16 @@ def embedded_sound_id(source: Path) -> int | None:
     return None
 
 
+def source_kind(source: Path) -> str:
+    if source.suffix.lower() in {".mid", ".midi"}:
+        return "linked_midi"
+    if source.suffix.lower() == ".wma":
+        return "linked_audio"
+    if embedded_sound_id(source) is not None:
+        return "embedded_powerpoint_sound"
+    return "unknown"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path("generated/audio"))
@@ -94,6 +107,7 @@ def main() -> None:
     for source in sources:
         entry: dict[str, object] = {
             "source": source.as_posix(),
+            "sourceKind": source_kind(source),
             "source_bytes": source.stat().st_size,
             "source_sha256": sha256(source),
             "outputs": [],
@@ -115,11 +129,19 @@ def main() -> None:
                 entry["outputs"].append(output_record(source, output, output_type))
             entry["status"] = "converted"
         elif suffix in {".mid", ".midi"}:
-            entry["status"] = "needs_midi_synthesis"
-            entry["note"] = (
-                "MIDI is a score, not sampled audio. Render it with a soundfont "
-                "or synth, then add the rendered file to the web manifest."
-            )
+            rendered_wav = args.output / f"{source.stem}.rendered.wav"
+            synth_metadata = render_midi(source, rendered_wav)
+            entry["midiRender"] = {
+                **synth_metadata,
+                "path": rendered_wav.as_posix(),
+                "bytes": rendered_wav.stat().st_size,
+                "sha256": sha256(rendered_wav),
+            }
+            for output_type, codec_args in MIDI_CONVERSIONS:
+                output = args.output / f"{source.stem}.{output_type}"
+                run_ffmpeg(ffmpeg, rendered_wav, output, codec_args)
+                entry["outputs"].append(output_record(source, output, output_type))
+            entry["status"] = "converted"
         else:
             entry["status"] = "unsupported_source_type"
         manifest.append(entry)
