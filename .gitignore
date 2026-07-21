@@ -1,5 +1,8 @@
 # Disposable research environment and local Python cache
 _port_analysis_tmp/venv/
+_port_analysis_tmp/python313/
+_port_analysis_tmp/python-*.exe
+_port_analysis_tmp/test_aspose*.png
 __pycache__/
 *.py[cod]
 
@@ -7,6 +10,7 @@ __pycache__/
 build/
 dist/
 site/
+generated/renders/
 
 # Local editor/OS files
 .DS_Store
