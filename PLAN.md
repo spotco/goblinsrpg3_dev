@@ -101,6 +101,7 @@ Critical path work added from the animation findings:
    - [x] Include decoded PP10 animation timing-tree data as `docs/animation-manifest.json` and load it in the browser runtime.
    - [x] Implement a layer renderer for separately addressable slide images, text, and shape placeholders; keep screenshot/reconstructed raster layers as static fallback/reference layers.
    - [x] Implement the first JavaScript animation scheduler pass: decoded slide lookup, `OnNext` click queueing, delayed node execution, visibility set effects, and basic fade/dissolve opacity effects.
+   - [x] Implement first-pass numeric `ppt_x`/`ppt_y`/`ppt_w`/`ppt_h` animation playback and simple motion-path endpoint transforms from decoded PP10 variants.
    - [x] Wire extracted slide transition data into the browser manifest and apply a first-pass browser fade for non-default transitions.
    - [ ] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the full PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
    - [ ] Implement PowerPoint-style animation scheduling: parallel/sequential time nodes, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, visibility/set effects, and audio commands.
@@ -115,6 +116,7 @@ Critical path work added from the animation findings:
    - [x] Add extractor regression tests for per-slide image/text object extraction, including copied image-instance files and resolved animated shape targets.
    - [x] Add site verification for layer-rendering hooks and generated layer image files.
    - [x] Add site verification for first-pass animation scheduler hooks.
+   - [x] Add site verification for numeric animation and simple motion playback hooks.
    - [x] Add site verification for extracted transition data on all screens.
    - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
    - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.

@@ -37,9 +37,15 @@ def main() -> None:
         "function runAnimationNode",
         "function applySetBehavior",
         "function applyEffectBehavior",
+        "function applyAnimateBehavior",
+        "function applyMotionBehavior",
+        "function evaluatePowerPointFormula",
+        "function motionEndpoint",
     ):
         if required_function not in app_js:
             fail(f"{required_function} is missing from app.js")
+    if "dataset.pptX" not in app_js or "dataset.pptY" not in app_js:
+        fail("layer metric datasets are missing from app.js")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     animation_status = manifest.get("animationStatus", {})

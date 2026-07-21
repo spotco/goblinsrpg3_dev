@@ -137,6 +137,10 @@ function positionLayerElement(element, layer) {
   element.dataset.layerId = layer.id;
   element.dataset.shapeId = String(layer.shapeId);
   element.dataset.animated = String(Boolean(layer.animated));
+  element.dataset.pptX = String(bounds.x);
+  element.dataset.pptY = String(bounds.y);
+  element.dataset.pptW = String(bounds.width);
+  element.dataset.pptH = String(bounds.height);
 }
 
 function renderLayers(screen) {
@@ -173,6 +177,74 @@ function parsedStrings(items) {
     }
   }
   return values;
+}
+
+function metricFor(element, property) {
+  const key = {
+    ppt_x: "pptX",
+    ppt_y: "pptY",
+    ppt_w: "pptW",
+    ppt_h: "pptH",
+  }[property];
+  return key ? Number.parseFloat(element.dataset[key] || "0") : 0;
+}
+
+function setMetric(element, property, value) {
+  const numeric = Number.isFinite(value) ? value : 0;
+  if (property === "ppt_x") {
+    element.dataset.pptX = String(numeric);
+    element.style.left = `${numeric * 100}%`;
+  } else if (property === "ppt_y") {
+    element.dataset.pptY = String(numeric);
+    element.style.top = `${numeric * 100}%`;
+  } else if (property === "ppt_w") {
+    element.dataset.pptW = String(numeric);
+    element.style.width = `${numeric * 100}%`;
+  } else if (property === "ppt_h") {
+    element.dataset.pptH = String(numeric);
+    element.style.height = `${numeric * 100}%`;
+  }
+}
+
+function evaluatePowerPointFormula(expression, element) {
+  if (typeof expression !== "string" || !expression.trim()) {
+    return null;
+  }
+  let formula = expression.trim().replace(/#/g, "");
+  if (formula.startsWith("(") && formula.endsWith(")")) {
+    formula = formula.slice(1, -1);
+  }
+  formula = formula.replace(/\bppt_x\b/g, String(metricFor(element, "ppt_x")));
+  formula = formula.replace(/\bppt_y\b/g, String(metricFor(element, "ppt_y")));
+  formula = formula.replace(/\bppt_w\b/g, String(metricFor(element, "ppt_w")));
+  formula = formula.replace(/\bppt_h\b/g, String(metricFor(element, "ppt_h")));
+  if (!/^[\d+\-*/(). eE]+$/.test(formula)) {
+    return null;
+  }
+  try {
+    const value = Function(`"use strict"; return (${formula});`)();
+    return Number.isFinite(value) ? value : null;
+  } catch (_error) {
+    return null;
+  }
+}
+
+function propertyNameFromStrings(strings) {
+  for (let index = strings.length - 1; index >= 0; index -= 1) {
+    if (/^ppt_[xywh]$/.test(strings[index])) {
+      return strings[index];
+    }
+  }
+  return null;
+}
+
+function formulaStrings(strings, property) {
+  return strings.filter((value) => {
+    if (!value || value === property || value.startsWith("M ") || value.includes(";")) {
+      return false;
+    }
+    return value.includes("#") || value.includes("ppt_") || /^[(]?[+\-]?\d/.test(value);
+  });
 }
 
 function nodeDelay(node) {
@@ -239,6 +311,53 @@ function applyEffectBehavior(elements, strings, duration) {
   }
 }
 
+function applyAnimateBehavior(elements, strings, duration) {
+  const property = propertyNameFromStrings(strings);
+  if (!property) {
+    return;
+  }
+  const formulas = formulaStrings(strings, property);
+  const targetFormula = formulas[formulas.length - 1];
+  for (const element of elements) {
+    const target = evaluatePowerPointFormula(targetFormula, element);
+    if (target === null) {
+      continue;
+    }
+    element.style.transition =
+      property === "ppt_x" || property === "ppt_y"
+        ? `left ${duration}ms linear, top ${duration}ms linear`
+        : `width ${duration}ms linear, height ${duration}ms linear`;
+    window.requestAnimationFrame(() => {
+      setMetric(element, property, target);
+    });
+  }
+}
+
+function motionEndpoint(path) {
+  if (typeof path !== "string" || !path.startsWith("M ")) {
+    return null;
+  }
+  const numbers = path.match(/[+\-]?(?:\d+\.?\d*|\.\d+)(?:E[+\-]?\d+)?/gi)?.map(Number) || [];
+  if (numbers.length < 4) {
+    return null;
+  }
+  return { x: numbers[numbers.length - 2], y: numbers[numbers.length - 1] };
+}
+
+function applyMotionBehavior(elements, strings, duration) {
+  const path = strings.find((value) => value.startsWith("M "));
+  const endpoint = motionEndpoint(path);
+  if (!endpoint) {
+    return;
+  }
+  for (const element of elements) {
+    element.style.transition = `transform ${duration}ms linear`;
+    window.requestAnimationFrame(() => {
+      element.style.transform = `translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`;
+    });
+  }
+}
+
 function applyBehavior(node, behavior) {
   const elements = targetsFor(node, behavior);
   if (elements.length === 0) {
@@ -250,6 +369,10 @@ function applyBehavior(node, behavior) {
     applySetBehavior(elements, strings);
   } else if (behavior.kind === "effect") {
     applyEffectBehavior(elements, strings, duration);
+  } else if (behavior.kind === "animate") {
+    applyAnimateBehavior(elements, strings, duration);
+  } else if (behavior.kind === "motion") {
+    applyMotionBehavior(elements, strings, duration);
   }
 }
 
