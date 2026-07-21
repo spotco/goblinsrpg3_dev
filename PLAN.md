@@ -81,7 +81,9 @@ Critical path work added from the animation findings:
    - [x] Implement a PP10 timing-tree decoder that emits a JS-ready manifest for nested time nodes, node ids, triggers, sequence data, interpolation modes, acceleration/deceleration/auto-reverse modifiers, behavior containers, keyframes/formulas, motion paths, text/image visibility changes, and sound commands.
    - [ ] Improve font, text wrapping, line geometry, and full visual layering fidelity. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
+   - [x] Extract embedded PowerPoint WAV sounds and convert them to browser-compatible MP3 and Opus assets.
    - [ ] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path.
+   - [x] Associate media-shape animation commands with converted embedded audio where the legacy cue id resolves to an embedded sound id; keep unresolved cue ids explicit in `mediaBindings`.
    - [ ] Associate all converted files with their original cue and loop/trigger behavior.
 
 3. **Establish visual reference renders before porting gameplay**
@@ -102,6 +104,7 @@ Critical path work added from the animation findings:
    - [x] Implement a layer renderer for separately addressable slide images, text, and shape placeholders; keep screenshot/reconstructed raster layers as static fallback/reference layers.
    - [x] Implement the first JavaScript animation scheduler pass: decoded slide lookup, `OnNext` click queueing, delayed node execution, visibility set effects, and basic fade/dissolve opacity effects.
    - [x] Implement first-pass numeric `ppt_x`/`ppt_y`/`ppt_w`/`ppt_h` animation playback and simple motion-path endpoint transforms from decoded PP10 variants.
+   - [x] Implement first-pass animation command audio playback for mapped media-shape `playFrom(0.0)` commands, queued until the first user gesture for browser autoplay compliance.
    - [x] Wire extracted slide transition data into the browser manifest and apply a first-pass browser fade for non-default transitions.
    - [ ] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the full PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
    - [ ] Implement PowerPoint-style animation scheduling: parallel/sequential time nodes, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, visibility/set effects, and audio commands.
@@ -118,6 +121,7 @@ Critical path work added from the animation findings:
    - [x] Add site verification for first-pass animation scheduler hooks.
    - [x] Add site verification for numeric animation and simple motion playback hooks.
    - [x] Add site verification for extracted transition data on all screens.
+   - [x] Add regression verification for embedded audio extraction/conversion and mapped media command bindings.
    - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
    - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
    - [ ] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.

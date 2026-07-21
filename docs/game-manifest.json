@@ -119,7 +119,7 @@
           "type": "opus",
           "path": "assets/audio/rocksong.opus",
           "bytes": 1153774,
-          "sha256": "17ecda45804566ce286625e8beaacaa5bad370099167a32ff34501af67f0b318"
+          "sha256": "d3aafab1e6fd276221707fb6ce59d24e150de75429e4ec888411eb23ff2f3242"
         }
       ],
       "status": "converted"
@@ -139,7 +139,7 @@
           "type": "opus",
           "path": "assets/audio/titlesong.opus",
           "bytes": 1768623,
-          "sha256": "f75cf47217059e0c039a5c29a2d171a3209af13561f8b4cce028d9d5b5eb13e4"
+          "sha256": "a0e765e3885c9768a135bb8415e72f915d1ab7227c83f39ba3eb5115d1e6807f"
         }
       ],
       "status": "converted"
@@ -151,6 +151,443 @@
       "outputs": [],
       "status": "needs_midi_synthesis",
       "note": "MIDI is a score, not sampled audio. Render it with a soundfont or synth, then add the rendered file to the web manifest."
+    },
+    {
+      "source": "generated/embedded-audio/sound-001-bomb.wav",
+      "source_bytes": 194166,
+      "source_sha256": "a641ed5f90e4c2c4b955fa7522b8c35ecb10b93cf7f90e80bcbdc5e3f01545b7",
+      "outputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-001-bomb.mp3",
+          "bytes": 18899,
+          "sha256": "5967ce70e7bb7d2a23ccd557a93ceccc152f92afcf0c53a52930192a9ef69c3b"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-001-bomb.opus",
+          "bytes": 12889,
+          "sha256": "ee79006398dafd7a6c827bc5ff1049906c5827183e09855beb8636888d7d7261"
+        }
+      ],
+      "embeddedSoundId": 1,
+      "status": "converted"
+    },
+    {
+      "source": "generated/embedded-audio/sound-002-j0214098.wav",
+      "source_bytes": 26810,
+      "source_sha256": "0860e2a798e4cdc32d376bf5005b250a4c7c648b8c6e0a44b4b03a40373ccdfa",
+      "outputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ],
+      "embeddedSoundId": 2,
+      "status": "converted"
+    },
+    {
+      "source": "generated/embedded-audio/sound-005-MSj00747560000-1.wav",
+      "source_bytes": 10330,
+      "source_sha256": "a83d044d280763ae7816715707e00ef1e9238d6a5d3a9637420e9935f6a57207",
+      "outputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-005-MSj00747560000-1.mp3",
+          "bytes": 16344,
+          "sha256": "b94a1019ef0f269c5e9c597163f27492614e13e1287303ba23590c03f872500a"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-005-MSj00747560000-1.opus",
+          "bytes": 24046,
+          "sha256": "1af04d3f7d21c763897ce6df4ee02614942d664ea39c3e8d4ac4995076f1a26a"
+        }
+      ],
+      "embeddedSoundId": 5,
+      "status": "converted"
+    },
+    {
+      "source": "generated/embedded-audio/sound-007-MSSN00568A0000-1.wav",
+      "source_bytes": 25434,
+      "source_sha256": "48f381f732615a4c3e97df9ade614c7b28d02e510210edea380eefa79876bb4a",
+      "outputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-007-MSSN00568A0000-1.mp3",
+          "bytes": 37660,
+          "sha256": "04b079564417eaf5c41e085521d76b780f02b1a2ad15f002c486538a9689db2e"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-007-MSSN00568A0000-1.opus",
+          "bytes": 57519,
+          "sha256": "46c56c4c1e2fea46fb004b5eba4661a6dc1f5189b4f30b57b99b8fa00b34931d"
+        }
+      ],
+      "embeddedSoundId": 7,
+      "status": "converted"
+    },
+    {
+      "source": "generated/embedded-audio/sound-008-MSj03884740000-1.wav",
+      "source_bytes": 79962,
+      "source_sha256": "858d64b6d7f403428cfd3170dd71f0e5246a5fc36b33b5d6d8c2b41e6c71fd0f",
+      "outputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-008-MSj03884740000-1.mp3",
+          "bytes": 58558,
+          "sha256": "2d8f781db0a7bcbe33d4599bb4aa25593e961f280ddca867dde93fa32a870289"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-008-MSj03884740000-1.opus",
+          "bytes": 110217,
+          "sha256": "7ce49f7752da2212bb9ee4fa628e8afdebc05afd8faccb6fa2c8610915eb3ece"
+        }
+      ],
+      "embeddedSoundId": 8,
+      "status": "converted"
+    }
+  ],
+  "mediaBindings": [
+    {
+      "id": "slide-002-shape-2066",
+      "slide": 2,
+      "shapeId": 2066,
+      "actionRecordOffset": 376082,
+      "legacyCueId": 2,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 376038,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000020000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-002-j0214098.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ]
+    },
+    {
+      "id": "slide-013-shape-14342",
+      "slide": 13,
+      "shapeId": 14342,
+      "actionRecordOffset": 409669,
+      "legacyCueId": 2,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 409625,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000020000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-002-j0214098.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ]
+    },
+    {
+      "id": "slide-014-shape-15390",
+      "slide": 14,
+      "shapeId": 15390,
+      "actionRecordOffset": 412733,
+      "legacyCueId": 5,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 412689,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous",
+          "hide"
+        ],
+        "rawHex": "00000007041500000000000000000000050000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-005-MSj00747560000-1.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-005-MSj00747560000-1.mp3",
+          "bytes": 16344,
+          "sha256": "b94a1019ef0f269c5e9c597163f27492614e13e1287303ba23590c03f872500a"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-005-MSj00747560000-1.opus",
+          "bytes": 24046,
+          "sha256": "1af04d3f7d21c763897ce6df4ee02614942d664ea39c3e8d4ac4995076f1a26a"
+        }
+      ]
+    },
+    {
+      "id": "slide-030-shape-37896",
+      "slide": 30,
+      "shapeId": 37896,
+      "actionRecordOffset": 508301,
+      "legacyCueId": 2,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 508257,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000020000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-002-j0214098.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ]
+    },
+    {
+      "id": "slide-054-shape-65543",
+      "slide": 54,
+      "shapeId": 65543,
+      "actionRecordOffset": 638920,
+      "legacyCueId": 3,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "unresolved_audio_id",
+      "legacyAnimation": {
+        "recordOffset": 638876,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000030000000000000000000d30"
+      }
+    },
+    {
+      "id": "slide-074-shape-87044",
+      "slide": 74,
+      "shapeId": 87044,
+      "actionRecordOffset": 685963,
+      "legacyCueId": 2,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 685919,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000020000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-002-j0214098.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ]
+    },
+    {
+      "id": "slide-081-shape-94216",
+      "slide": 81,
+      "shapeId": 94216,
+      "actionRecordOffset": 713802,
+      "legacyCueId": 2,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 713758,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000020000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-002-j0214098.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ]
+    },
+    {
+      "id": "slide-096-shape-111627",
+      "slide": 96,
+      "shapeId": 111627,
+      "actionRecordOffset": 767762,
+      "legacyCueId": 4,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "unresolved_audio_id",
+      "legacyAnimation": {
+        "recordOffset": 767718,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000040000000000000000000d30"
+      }
+    },
+    {
+      "id": "slide-104-shape-121869",
+      "slide": 104,
+      "shapeId": 121869,
+      "actionRecordOffset": 793733,
+      "legacyCueId": 2,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 793689,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000020000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-002-j0214098.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ]
+    },
+    {
+      "id": "slide-193-shape-233483",
+      "slide": 193,
+      "shapeId": 233483,
+      "actionRecordOffset": 1108521,
+      "legacyCueId": 3,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "unresolved_audio_id",
+      "legacyAnimation": {
+        "recordOffset": 1108477,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000030000000000000000000d30"
+      }
+    },
+    {
+      "id": "slide-197-shape-237574",
+      "slide": 197,
+      "shapeId": 237574,
+      "actionRecordOffset": 1133853,
+      "legacyCueId": 2,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "mapped",
+      "legacyAnimation": {
+        "recordOffset": 1133809,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000020000000000000000000d30"
+      },
+      "audioSource": "generated/embedded-audio/sound-002-j0214098.wav",
+      "audioOutputs": [
+        {
+          "type": "mp3",
+          "path": "assets/audio/sound-002-j0214098.mp3",
+          "bytes": 39750,
+          "sha256": "841131279bb119e86e095ec639a2762343abbb8ff887975a7cbb2dbfc9a89e62"
+        },
+        {
+          "type": "opus",
+          "path": "assets/audio/sound-002-j0214098.opus",
+          "bytes": 58522,
+          "sha256": "224b9f42f31c24791410894d2e22f03953a74b899bc99dfe7526d35e2ea8bec7"
+        }
+      ]
     }
   ],
   "screens": [

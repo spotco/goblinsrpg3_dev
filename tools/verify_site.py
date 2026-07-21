@@ -41,6 +41,9 @@ def main() -> None:
         "function applyMotionBehavior",
         "function evaluatePowerPointFormula",
         "function motionEndpoint",
+        "function applyCommandBehavior",
+        "function playAudioSource",
+        "function flushPendingAudioCommands",
     ):
         if required_function not in app_js:
             fail(f"{required_function} is missing from app.js")
@@ -59,6 +62,8 @@ def main() -> None:
         if animation_manifest.get("summary", {}).get("timeNodeContainers") != 2407:
             fail("animation manifest has unexpected time-node count")
     screens = manifest.get("screens", [])
+    media_bindings = manifest.get("mediaBindings", [])
+    mapped_media_bindings = [binding for binding in media_bindings if binding.get("status") == "mapped"]
     if len(screens) != 201:
         fail(f"expected 201 screens, found {len(screens)}")
 
@@ -116,6 +121,10 @@ def main() -> None:
             fail("expected 201 extracted transitions in manifest status")
         if transition_count != 201:
             fail(f"expected 201 screen transitions, found {transition_count}")
+    if len(media_bindings) != 11:
+        fail(f"expected 11 media command bindings, found {len(media_bindings)}")
+    if len(mapped_media_bindings) != 8:
+        fail(f"expected 8 mapped media command bindings, found {len(mapped_media_bindings)}")
     if manifest.get("layerStatus", {}).get("status") == "available":
         if layer_count != 1182:
             fail(f"expected 1182 slide layers, found {layer_count}")

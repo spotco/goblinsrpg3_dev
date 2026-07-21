@@ -121,6 +121,56 @@ def copy_audio(audio_manifest_path: Path, output_dir: Path) -> list[dict[str, ob
     return result
 
 
+def build_media_bindings(
+    inventory: dict[str, object],
+    timing_manifest_path: Path,
+    copied_audio: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    if not timing_manifest_path.exists():
+        return []
+    timing = json.loads(timing_manifest_path.read_text(encoding="utf-8"))
+    legacy_animations = {
+        (int(item["slide"]), int(item["shapeId"])): item
+        for item in timing.get("animations", [])
+        if item.get("shapeId") is not None
+    }
+    audio_by_embedded_id = {
+        int(item["embeddedSoundId"]): item
+        for item in copied_audio
+        if item.get("embeddedSoundId") is not None and item.get("outputs")
+    }
+    bindings = []
+    for action in inventory.get("interactive_actions", []):
+        if int(action.get("action_code", -1)) != 6 or action.get("shape_id") is None:
+            continue
+        slide = int(action["slide"])
+        shape_id = int(action["shape_id"])
+        legacy = legacy_animations.get((slide, shape_id))
+        cue_id = int(legacy["orderId"]) if legacy else None
+        audio_entry = audio_by_embedded_id.get(cue_id) if cue_id is not None else None
+        binding = {
+            "id": f"slide-{slide:03d}-shape-{shape_id}",
+            "slide": slide,
+            "shapeId": shape_id,
+            "actionRecordOffset": action["record_offset"],
+            "legacyCueId": cue_id,
+            "command": "playFrom",
+            "startSeconds": 0.0,
+            "status": "mapped" if audio_entry else "unresolved_audio_id",
+        }
+        if legacy:
+            binding["legacyAnimation"] = {
+                "recordOffset": legacy["recordOffset"],
+                "flagNames": legacy["flagNames"],
+                "rawHex": legacy["rawHex"],
+            }
+        if audio_entry:
+            binding["audioSource"] = audio_entry["source"]
+            binding["audioOutputs"] = audio_entry["outputs"]
+        bindings.append(binding)
+    return bindings
+
+
 def copy_layers(layer_manifest_path: Path, output_dir: Path) -> tuple[dict[int, list[dict[str, object]]] | None, dict[str, object]]:
     if not layer_manifest_path.exists():
         return None, {"status": "missing"}
@@ -190,6 +240,8 @@ def main() -> None:
     layers_by_slide, layer_status = copy_layers(args.layers, args.output)
     animation_status = copy_animation_manifest(args.animations, args.output)
     transitions_by_slide, transition_status = load_transitions(args.timing)
+    copied_audio = copy_audio(args.audio_manifest, args.output)
+    media_bindings = build_media_bindings(inventory, args.timing, copied_audio)
     manifest = {
         "title": "Goblins RPG 3",
         "source": inventory["source"],
@@ -199,7 +251,8 @@ def main() -> None:
         "layerStatus": layer_status,
         "animationStatus": animation_status,
         "transitionStatus": transition_status,
-        "audio": copy_audio(args.audio_manifest, args.output),
+        "audio": copied_audio,
+        "mediaBindings": media_bindings,
         "screens": build_screens(inventory, args.screen_dir, layers_by_slide, transitions_by_slide),
     }
     output_path = args.output / "game-manifest.json"

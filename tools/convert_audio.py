@@ -20,6 +20,8 @@ WMA_CONVERSIONS = (
     ("opus", ("-c:a", "libopus", "-b:a", "96k")),
 )
 
+WAV_CONVERSIONS = WMA_CONVERSIONS
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -52,6 +54,16 @@ def output_record(source: Path, output: Path, audio_type: str) -> dict[str, obje
     }
 
 
+def embedded_sound_id(source: Path) -> int | None:
+    match = source.name.lower().split("-")
+    if len(match) >= 2 and match[0] == "sound":
+        try:
+            return int(match[1])
+        except ValueError:
+            return None
+    return None
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path("generated/audio"))
@@ -71,7 +83,11 @@ def main() -> None:
 
     sources = args.sources
     if sources is None:
-        sources = sorted(Path(".").glob("*.wma")) + sorted(Path(".").glob("*.mid"))
+        sources = (
+            sorted(Path(".").glob("*.wma"))
+            + sorted(Path(".").glob("*.mid"))
+            + sorted(Path("generated/embedded-audio").glob("*.wav"))
+        )
 
     args.output.mkdir(parents=True, exist_ok=True)
     manifest: list[dict[str, object]] = []
@@ -82,9 +98,18 @@ def main() -> None:
             "source_sha256": sha256(source),
             "outputs": [],
         }
+        embedded_id = embedded_sound_id(source)
+        if embedded_id is not None:
+            entry["embeddedSoundId"] = embedded_id
         suffix = source.suffix.lower()
         if suffix == ".wma":
             for output_type, codec_args in WMA_CONVERSIONS:
+                output = args.output / f"{source.stem}.{output_type}"
+                run_ffmpeg(ffmpeg, source, output, codec_args)
+                entry["outputs"].append(output_record(source, output, output_type))
+            entry["status"] = "converted"
+        elif suffix == ".wav":
+            for output_type, codec_args in WAV_CONVERSIONS:
                 output = args.output / f"{source.stem}.{output_type}"
                 run_ffmpeg(ffmpeg, source, output, codec_args)
                 entry["outputs"].append(output_record(source, output, output_type))

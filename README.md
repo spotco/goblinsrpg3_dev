@@ -29,6 +29,7 @@ python tools/extract_ppt.py "goblins3 v.1.0 LAUNCH.pps"
 python tools/audit_timing_tree.py "goblins3 v.1.0 LAUNCH.pps"
 python tools/extract_animation_manifest.py "goblins3 v.1.0 LAUNCH.pps"
 python tools/extract_layers.py
+python tools/extract_embedded_audio.py "goblins3 v.1.0 LAUNCH.pps"
 python tools/convert_audio.py
 python tools/render_reconstructed.py
 python tools/build_game_manifest.py
@@ -36,6 +37,7 @@ python tools/verify_inventory.py generated/inventory.json
 python tools/verify_timing_tree.py
 python tools/verify_animation_manifest.py
 python tools/verify_layers.py
+python tools/verify_embedded_audio.py
 python tools/verify_site.py
 ```
 

@@ -5,6 +5,8 @@ const state = {
   muted: false,
   audioUnlocked: false,
   audioElements: new Map(),
+  mediaBindings: new Map(),
+  pendingAudioCommands: [],
   animations: null,
   animationSlides: new Map(),
   animationQueue: [],
@@ -36,7 +38,11 @@ function setStatus(text) {
 }
 
 function unlockAudio() {
+  const wasLocked = !state.audioUnlocked;
   state.audioUnlocked = true;
+  if (wasLocked) {
+    flushPendingAudioCommands();
+  }
 }
 
 function prepareAudio() {
@@ -56,6 +62,30 @@ function stopAudio() {
   for (const element of state.audioElements.values()) {
     element.pause();
     element.currentTime = 0;
+  }
+}
+
+function playAudioSource(source, startSeconds = 0) {
+  const element = state.audioElements.get(source);
+  if (!element) {
+    return;
+  }
+  if (!state.audioUnlocked) {
+    state.pendingAudioCommands.push({ source, startSeconds });
+    return;
+  }
+  element.pause();
+  element.currentTime = Math.max(startSeconds, 0);
+  element.play().catch(() => {
+    // Browser autoplay policy can still reject in edge cases. Keep gameplay
+    // running; the user can click again to unlock/resume audio.
+  });
+}
+
+function flushPendingAudioCommands() {
+  const pending = state.pendingAudioCommands.splice(0);
+  for (const command of pending) {
+    playAudioSource(command.source, command.startSeconds);
   }
 }
 
@@ -358,13 +388,35 @@ function applyMotionBehavior(elements, strings, duration) {
   }
 }
 
+function applyCommandBehavior(node, behavior, strings) {
+  if (!strings.some((value) => value.startsWith("playFrom"))) {
+    return;
+  }
+  const targets = behavior.targets && behavior.targets.length ? behavior.targets : node.targets || [];
+  const startMatch = strings.find((value) => value.startsWith("playFrom"))?.match(/playFrom\\(([-+\\d.]+)\\)/);
+  const startSeconds = startMatch ? Number.parseFloat(startMatch[1]) : 0;
+  for (const target of targets) {
+    if (target.kind !== "shape") {
+      continue;
+    }
+    const binding = state.mediaBindings.get(`${state.current.slide}:${target.shapeId}`);
+    if (binding && binding.status === "mapped" && binding.audioSource) {
+      playAudioSource(binding.audioSource, startSeconds);
+    }
+  }
+}
+
 function applyBehavior(node, behavior) {
+  const strings = parsedStrings(behavior.variants);
+  const duration = nodeDuration(node);
+  if (behavior.kind === "command") {
+    applyCommandBehavior(node, behavior, strings);
+    return;
+  }
   const elements = targetsFor(node, behavior);
   if (elements.length === 0) {
     return;
   }
-  const strings = parsedStrings(behavior.variants);
-  const duration = nodeDuration(node);
   if (behavior.kind === "set") {
     applySetBehavior(elements, strings);
   } else if (behavior.kind === "effect") {
@@ -490,6 +542,7 @@ fetch("game-manifest.json")
   .then((manifest) => {
     state.manifest = manifest;
     state.screens = new Map(manifest.screens.map((screen) => [screen.id, screen]));
+    state.mediaBindings = new Map((manifest.mediaBindings || []).map((binding) => [`${binding.slide}:${binding.shapeId}`, binding]));
     prepareAudio();
     updateAudioMute();
     return loadAnimations(manifest).then((animations) => {
