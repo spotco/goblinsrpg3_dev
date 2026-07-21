@@ -209,6 +209,22 @@ function parsedStrings(items) {
   return values;
 }
 
+function parsedModifiers(node) {
+  return (node.modifiers || []).map((modifier) => modifier.parsed).filter(Boolean);
+}
+
+function hasModifier(node, modifierType) {
+  return parsedModifiers(node).some((modifier) => modifier.modifierType === modifierType);
+}
+
+function modifierStrength(node, modifierType) {
+  const modifier = parsedModifiers(node).find((item) => item.modifierType === modifierType);
+  if (!modifier) {
+    return 0;
+  }
+  return Number.isFinite(modifier.floatValue) ? modifier.floatValue : 1;
+}
+
 function metricFor(element, property) {
   const key = {
     ppt_x: "pptX",
@@ -311,6 +327,29 @@ function nodeDuration(node) {
   return parsed.durationMs;
 }
 
+function nodeTiming(node) {
+  const duration = nodeDuration(node);
+  const acceleration = modifierStrength(node, 3);
+  const deceleration = modifierStrength(node, 4);
+  let timingFunction = "linear";
+  if (acceleration > 0 && deceleration > 0) {
+    timingFunction = "ease-in-out";
+  } else if (acceleration > 0) {
+    timingFunction = "ease-in";
+  } else if (deceleration > 0) {
+    timingFunction = "ease-out";
+  }
+  return {
+    duration,
+    timingFunction,
+    autoReverse: hasModifier(node, 5),
+  };
+}
+
+function transitionList(properties, timing) {
+  return properties.map((property) => `${property} ${timing.duration}ms ${timing.timingFunction}`).join(", ");
+}
+
 function applySetBehavior(elements, strings) {
   if (!strings.includes("style.visibility")) {
     return;
@@ -327,21 +366,26 @@ function applySetBehavior(elements, strings) {
   }
 }
 
-function applyEffectBehavior(elements, strings, duration) {
+function applyEffectBehavior(elements, strings, timing) {
   if (!strings.some((value) => value === "fade" || value === "dissolve")) {
     return;
   }
   for (const element of elements) {
     element.style.visibility = "visible";
     element.style.opacity = "0";
-    element.style.transition = `opacity ${duration}ms linear`;
+    element.style.transition = transitionList(["opacity"], timing);
     window.requestAnimationFrame(() => {
       element.style.opacity = "1";
     });
+    if (timing.autoReverse) {
+      scheduleAnimation(() => {
+        element.style.opacity = "0";
+      }, timing.duration);
+    }
   }
 }
 
-function applyAnimateBehavior(elements, strings, duration) {
+function applyAnimateBehavior(elements, strings, timing) {
   const property = propertyNameFromStrings(strings);
   if (!property) {
     return;
@@ -353,13 +397,19 @@ function applyAnimateBehavior(elements, strings, duration) {
     if (target === null) {
       continue;
     }
+    const original = metricFor(element, property);
     element.style.transition =
       property === "ppt_x" || property === "ppt_y"
-        ? `left ${duration}ms linear, top ${duration}ms linear`
-        : `width ${duration}ms linear, height ${duration}ms linear`;
+        ? transitionList(["left", "top"], timing)
+        : transitionList(["width", "height"], timing);
     window.requestAnimationFrame(() => {
       setMetric(element, property, target);
     });
+    if (timing.autoReverse) {
+      scheduleAnimation(() => {
+        setMetric(element, property, original);
+      }, timing.duration);
+    }
   }
 }
 
@@ -374,17 +424,23 @@ function motionEndpoint(path) {
   return { x: numbers[numbers.length - 2], y: numbers[numbers.length - 1] };
 }
 
-function applyMotionBehavior(elements, strings, duration) {
+function applyMotionBehavior(elements, strings, timing) {
   const path = strings.find((value) => value.startsWith("M "));
   const endpoint = motionEndpoint(path);
   if (!endpoint) {
     return;
   }
   for (const element of elements) {
-    element.style.transition = `transform ${duration}ms linear`;
+    const originalTransform = element.style.transform;
+    element.style.transition = transitionList(["transform"], timing);
     window.requestAnimationFrame(() => {
       element.style.transform = `translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`;
     });
+    if (timing.autoReverse) {
+      scheduleAnimation(() => {
+        element.style.transform = originalTransform;
+      }, timing.duration);
+    }
   }
 }
 
@@ -408,7 +464,7 @@ function applyCommandBehavior(node, behavior, strings) {
 
 function applyBehavior(node, behavior) {
   const strings = parsedStrings(behavior.variants);
-  const duration = nodeDuration(node);
+  const timing = nodeTiming(node);
   if (behavior.kind === "command") {
     applyCommandBehavior(node, behavior, strings);
     return;
@@ -420,11 +476,11 @@ function applyBehavior(node, behavior) {
   if (behavior.kind === "set") {
     applySetBehavior(elements, strings);
   } else if (behavior.kind === "effect") {
-    applyEffectBehavior(elements, strings, duration);
+    applyEffectBehavior(elements, strings, timing);
   } else if (behavior.kind === "animate") {
-    applyAnimateBehavior(elements, strings, duration);
+    applyAnimateBehavior(elements, strings, timing);
   } else if (behavior.kind === "motion") {
-    applyMotionBehavior(elements, strings, duration);
+    applyMotionBehavior(elements, strings, timing);
   }
 }
 

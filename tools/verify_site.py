@@ -41,6 +41,9 @@ def main() -> None:
         "function applyMotionBehavior",
         "function evaluatePowerPointFormula",
         "function motionEndpoint",
+        "function parsedModifiers",
+        "function nodeTiming",
+        "function transitionList",
         "function applyCommandBehavior",
         "function playAudioSource",
         "function flushPendingAudioCommands",
@@ -49,6 +52,8 @@ def main() -> None:
             fail(f"{required_function} is missing from app.js")
     if "dataset.pptX" not in app_js or "dataset.pptY" not in app_js:
         fail("layer metric datasets are missing from app.js")
+    if "ease-in-out" not in app_js or "autoReverse" not in app_js:
+        fail("animation timing modifier support is missing from app.js")
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     animation_status = manifest.get("animationStatus", {})
