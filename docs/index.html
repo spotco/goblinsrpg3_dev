@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goblins RPG 3</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="stage-wrap" aria-label="Game stage">
+        <div id="stage" class="stage" data-loading="true">
+          <img id="screen" class="screen" alt="">
+          <div id="missing-render" class="missing-render" hidden>
+            <p>Screen render pending</p>
+          </div>
+          <div id="hotspots" class="hotspots" aria-live="off"></div>
+        </div>
+      </section>
+      <nav class="control-strip" aria-label="Game controls">
+        <button id="restart" type="button">Restart</button>
+        <button id="mute" type="button" aria-pressed="false">Mute</button>
+        <output id="status" aria-live="polite">Loading</output>
+      </nav>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

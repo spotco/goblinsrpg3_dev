@@ -39,28 +39,32 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - [x] Extract PNG bitmap payloads losslessly; decode/convert the single DIB image to PNG; preserve source record IDs, dimensions, and hashes.
    - [x] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape and PowerPoint coordinates; do not infer a “next slide” fallback.
    - [x] Capture PowerPoint text runs and their source shape/bounds metadata.
-   - [ ] Capture colors, fonts, fills, lines, and layering. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
+   - [x] Capture first-pass shape layout, fill, line, image, and z-order metadata with `tools/extract_layout_aspose.py`.
+   - [ ] Improve font, text wrapping, line geometry, and full visual layering fidelity. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
    - [ ] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path.
    - [ ] Associate all converted files with their original cue and loop/trigger behavior.
 
 3. **Establish visual reference renders before porting gameplay**
    - [x] Validate a Python-based renderer path: `tools/render_aspose.py` can render all 201 source slides at a fixed 4:3 resolution from Python 3.13 without Microsoft PowerPoint.
+   - [x] Generate a first-pass unwatermarked reconstructed raster layer with `tools/render_reconstructed.py` and copy it into `docs/screens/` for browser playability.
    - [ ] Select a publishable non-watermarked render path. Options are a licensed Aspose.Slides run, a manual Microsoft PowerPoint export, or a custom HTML/SVG reconstruction from extracted OfficeArt records.
    - [ ] Render every source slide at a fixed 4:3 resolution using the selected controlled PowerPoint-compatible renderer. If a conversion tool changes visuals, compare it against a short set of reference screenshots from Microsoft PowerPoint and select/document the closest rendering path.
    - Store only the reusable/reference assets needed for development; retain an index that identifies the source slide and render settings for each screen.
    - Review all visible screens and hotspots, including branches that cannot be reached by straightforward play, and annotate special behavior (restart, modal-like reveal, repeated click, hidden object, or non-slide action).
 
 4. **Implement the static web game**
-   - Create a dependency-light HTML/CSS/JavaScript app with `index.html`, an asset directory, and a generated `game-manifest.json`. Use relative URLs only so the site works at a GitHub project-pages subpath.
-   - Display a responsive 4:3 game stage. Render each screen at its original aspect ratio, letterbox it on wider/narrower displays, and position transparent semantic buttons from the extracted hotspot coordinates.
-   - Drive state exclusively from the manifest: load the start screen, perform only declared actions, support required state/restart behavior, and keep blank-stage clicks inert. Do not expose browser history as an in-game action unless the original game has an equivalent control.
+   - [x] Create a dependency-light HTML/CSS/JavaScript app in `docs/` with `index.html`, an asset directory, and generated `game-manifest.json`. Use relative URLs only so the site works at a GitHub project-pages subpath.
+   - [x] Display a responsive 4:3 game stage. Render each screen at its original aspect ratio, letterbox it on wider/narrower displays, and position transparent semantic buttons from the extracted hotspot coordinates.
+   - [x] Drive basic navigation state exclusively from the manifest: load the start screen, perform only declared slide-link actions, provide restart/mute controls, and keep blank-stage clicks inert.
+   - [ ] Support any required non-slide action, reveal/state, and exact restart behavior found during manual review. Do not expose browser history as an in-game action unless the original game has an equivalent control.
    - Start or resume audio only after the first user gesture to satisfy browser autoplay rules; implement explicit loop/stop/replace behavior from the source inventory and degrade gracefully when audio is unavailable.
    - Give invisible hotspots useful accessible labels and focus handling without adding visual controls that alter the original presentation.
 
 5. **Validate fidelity and game logic**
    - Unit-test the extractor: input hash, expected stream/slide/action/asset counts, asset decoding, and absence of unresolved slide targets.
-   - Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.
+   - [x] Add static-server smoke validation for the generated `docs/` app, manifest, and first screen asset.
+   - [ ] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
 
 6. **Package for GitHub Pages**
