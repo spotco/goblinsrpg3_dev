@@ -40,7 +40,11 @@ def normalize_bounds(bounds: list[int], width: int, height: int) -> dict[str, ob
     }
 
 
-def build_screens(inventory: dict[str, object], screen_dir: str) -> list[dict[str, object]]:
+def build_screens(
+    inventory: dict[str, object],
+    screen_dir: str,
+    layers_by_slide: dict[int, list[dict[str, object]]] | None = None,
+) -> list[dict[str, object]]:
     presentation = inventory["presentation"]
     width = int(presentation["width"])
     height = int(presentation["height"])
@@ -68,14 +72,15 @@ def build_screens(inventory: dict[str, object], screen_dir: str) -> list[dict[st
 
     screens: list[dict[str, object]] = []
     for index, _slide in enumerate(inventory["slides"], start=1):
-        screens.append(
-            {
-                "id": f"slide-{index:03d}",
-                "slide": index,
-                "image": f"{screen_dir}/slide-{index:03d}.png",
-                "hotspots": actions_by_slide.get(index, []),
-            }
-        )
+        screen = {
+            "id": f"slide-{index:03d}",
+            "slide": index,
+            "image": f"{screen_dir}/slide-{index:03d}.png",
+            "hotspots": actions_by_slide.get(index, []),
+        }
+        if layers_by_slide is not None:
+            screen["layers"] = layers_by_slide.get(index, [])
+        screens.append(screen)
     return screens
 
 
@@ -113,6 +118,36 @@ def copy_audio(audio_manifest_path: Path, output_dir: Path) -> list[dict[str, ob
     return result
 
 
+def copy_layers(layer_manifest_path: Path, output_dir: Path) -> tuple[dict[int, list[dict[str, object]]] | None, dict[str, object]]:
+    if not layer_manifest_path.exists():
+        return None, {"status": "missing"}
+
+    layer_manifest = json.loads(layer_manifest_path.read_text(encoding="utf-8"))
+    copied_images = 0
+    layers_by_slide: dict[int, list[dict[str, object]]] = {}
+    layer_output_root = output_dir / "assets" / "slide-assets"
+    for slide in layer_manifest.get("slides", []):
+        slide_number = int(slide["slide"])
+        copied_layers = []
+        for layer in slide.get("layers", []):
+            copied_layer = dict(layer)
+            if copied_layer.get("type") == "image":
+                source_path = Path(str(copied_layer["instancePath"]))
+                target_path = layer_output_root / f"slide-{slide_number:03d}" / source_path.name
+                target_path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(source_path, target_path)
+                copied_layer["instancePath"] = target_path.relative_to(output_dir).as_posix()
+                copied_images += 1
+            copied_layers.append(copied_layer)
+        layers_by_slide[slide_number] = copied_layers
+
+    return layers_by_slide, {
+        "status": "available",
+        "summary": layer_manifest.get("summary", {}),
+        "copiedImageInstances": copied_images,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inventory", type=Path, default=Path("generated/inventory.json"))
@@ -120,19 +155,22 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("docs"))
     parser.add_argument("--screen-dir", default="screens")
     parser.add_argument("--screen-source", type=Path, default=Path("generated/reconstructed"))
+    parser.add_argument("--layers", type=Path, default=Path("generated/layers.json"))
     args = parser.parse_args()
 
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     args.output.mkdir(parents=True, exist_ok=True)
     screen_status = copy_screens(args.screen_source, args.output, args.screen_dir)
+    layers_by_slide, layer_status = copy_layers(args.layers, args.output)
     manifest = {
         "title": "Goblins RPG 3",
         "source": inventory["source"],
         "presentation": inventory["presentation"],
         "startScreen": "slide-001",
         "screenImageStatus": screen_status,
+        "layerStatus": layer_status,
         "audio": copy_audio(args.audio_manifest, args.output),
-        "screens": build_screens(inventory, args.screen_dir),
+        "screens": build_screens(inventory, args.screen_dir, layers_by_slide),
     }
     output_path = args.output / "game-manifest.json"
     output_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")

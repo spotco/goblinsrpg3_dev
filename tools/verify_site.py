@@ -32,13 +32,26 @@ def main() -> None:
         fail("start screen is not present in screens")
 
     missing_files = []
+    missing_layer_files = []
     missing_targets = []
     zero_hotspots = []
     enabled_count = 0
+    layer_count = 0
+    image_layer_count = 0
+    animated_layer_count = 0
     for screen in screens:
         image_path = args.site / screen["image"]
         if not image_path.exists():
             missing_files.append(screen["image"])
+        for layer in screen.get("layers", []):
+            layer_count += 1
+            if layer.get("animated"):
+                animated_layer_count += 1
+            if layer.get("type") == "image":
+                image_layer_count += 1
+                layer_path = args.site / layer["instancePath"]
+                if not layer_path.exists():
+                    missing_layer_files.append(layer["instancePath"])
         for hotspot in screen.get("hotspots", []):
             if not hotspot.get("enabled"):
                 continue
@@ -52,12 +65,21 @@ def main() -> None:
 
     if missing_files:
         fail(f"missing screen image files: {missing_files[:5]}")
+    if missing_layer_files:
+        fail(f"missing layer image files: {missing_layer_files[:5]}")
     if missing_targets:
         fail(f"hotspots target missing screens: {missing_targets[:5]}")
     if zero_hotspots:
         fail(f"enabled hotspots with zero area: {zero_hotspots[:5]}")
     if enabled_count != 194:
         fail(f"expected 194 enabled navigation hotspots, found {enabled_count}")
+    if manifest.get("layerStatus", {}).get("status") == "available":
+        if layer_count != 1182:
+            fail(f"expected 1182 slide layers, found {layer_count}")
+        if image_layer_count != 532:
+            fail(f"expected 532 image layers, found {image_layer_count}")
+        if animated_layer_count != 567:
+            fail(f"expected 567 animated layers, found {animated_layer_count}")
 
     print("site verification passed")
 

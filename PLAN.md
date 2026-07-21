@@ -22,8 +22,7 @@ The counts are an extraction baseline, not yet a statement that every record is 
 
 - `olefile` plus the project’s MS-PPT record parser is the primary path. It runs in the existing Python 3.14 virtual environment and does not require Winget, the Microsoft Store, Office, or a server at runtime.
 - Apache POI is now validated as the non-Aspose reference path for the legacy `.pps`: it exposes slides, page size, pictures, picture instances, shapes, text, hyperlinks, embedded sounds, and slide transition atoms. It does not expose this deck's shape animation atoms through HSLF, so the Python OLE parser remains necessary for OfficeArt/client-data animation/action records.
-- Aspose.Slides for Python via .NET is a useful optional renderer: it supports legacy PPT/PPS and can export slide images without Microsoft PowerPoint, but its current Windows wheel requires Python `<3.14`, is proprietary, and evaluation output may be watermarked. It would require a separately installed Python 3.13 environment and a licensing decision.
-- A direct python.org Python 3.13.13 install in `_port_analysis_tmp/python313/` successfully loads Aspose.Slides and renders all 201 slides at 1440x1080, but the evaluation watermark makes those PNGs unsuitable for the final playable site. Keep this as a development/reference path only unless a license is supplied.
+- The Aspose.Slides experiment has been retired from the repo because evaluation output is watermarked and cannot be on the critical path. The Python 3.13/Aspose temp install and tracked Aspose scripts were removed during cleanup.
 - `python-pptx` is not a solution for this input because it targets the modern OOXML `.pptx` format, not PowerPoint 97–2003 binary `.pps`.
 - LibreOffice/UNO wrappers are another conversion route, but they still require a separate office application and are not Python-only. They are not a current dependency.
 
@@ -72,12 +71,13 @@ Critical path work added from the animation findings:
    - [x] Extract PNG bitmap payloads losslessly; decode/convert the single DIB image to PNG; preserve source record IDs, dimensions, and hashes.
    - [x] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape and PowerPoint coordinates; do not infer a “next slide” fallback.
    - [x] Capture PowerPoint text runs and their source shape/bounds metadata.
-   - [x] Capture first-pass shape layout, fill, line, image, and z-order metadata with `tools/extract_layout_aspose.py`.
+   - [x] Capture per-slide image/text/shape layer metadata without Aspose using `tools/extract_layers.py`.
    - [x] Validate Apache POI against the original `.pps` with `tools/poi/PoiAudit.java`; record the findings in `POI_EVALUATION.md`.
    - [x] Extract first-pass slide transition and shape animation timing data with `tools/extract_timing.py`.
    - [x] Confirm complex PP10 animation timing trees are present and accessible; record the evidence in `generated/timing_tree_audit.json` and `ANIMATION_EVALUATION.md`.
-   - [ ] Extract per-slide image instances as separate addressable objects, including source asset id, bounds, crop/clip, transform, z-order, hyperlink/action binding, and animation target id.
-   - [ ] Extract animated text objects as separate addressable objects, including text runs, paragraph/character target ranges, bounds, style, z-order, hyperlink/action binding, and animation target id.
+   - [x] Extract per-slide image instances as separate addressable objects, including source asset id, bounds, z-order, and animation target id.
+   - [x] Extract text objects as separate addressable objects, including text values, bounds, z-order, and animation target id.
+   - [ ] Improve layer extraction for crop/clip, transforms, fill/line style, text style, paragraph/character target ranges, and hyperlink/action binding on layers.
    - [ ] Implement a full PP10 timing-tree decoder that emits a JS-ready manifest for nested time nodes, node ids, triggers, sequence data, interpolation modes, acceleration/deceleration/auto-reverse modifiers, behavior containers, keyframes/formulas, motion paths, text/image visibility changes, and sound commands.
    - [ ] Improve font, text wrapping, line geometry, and full visual layering fidelity. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
@@ -85,9 +85,9 @@ Critical path work added from the animation findings:
    - [ ] Associate all converted files with their original cue and loop/trigger behavior.
 
 3. **Establish visual reference renders before porting gameplay**
-   - [x] Validate a Python-based renderer path: `tools/render_aspose.py` can render all 201 source slides at a fixed 4:3 resolution from Python 3.13 without Microsoft PowerPoint.
+   - [x] Retire the watermarked Aspose renderer path and keep `tools/render_reconstructed.py` on the non-Aspose layer manifest.
    - [x] Generate a first-pass unwatermarked reconstructed raster layer with `tools/render_reconstructed.py` and copy it into `docs/screens/` for browser playability.
-   - [ ] Select a publishable non-watermarked render path. Options are a licensed Aspose.Slides run, a manual Microsoft PowerPoint export, or a custom HTML/SVG reconstruction from extracted OfficeArt records.
+   - [ ] Select a publishable non-watermarked render path. Options are a manual Microsoft PowerPoint export or a custom HTML/SVG reconstruction from extracted OfficeArt/POI records.
    - [ ] Render every source slide at a fixed 4:3 resolution using the selected controlled PowerPoint-compatible renderer. If a conversion tool changes visuals, compare it against a short set of reference screenshots from Microsoft PowerPoint and select/document the closest rendering path.
    - Store only the reusable/reference assets needed for development; retain an index that identifies the source slide and render settings for each screen.
    - Review all visible screens and hotspots, including branches that cannot be reached by straightforward play, and annotate special behavior (restart, modal-like reveal, repeated click, hidden object, or non-slide action).
@@ -97,6 +97,7 @@ Critical path work added from the animation findings:
    - [x] Display a responsive 4:3 game stage. Render each screen at its original aspect ratio, letterbox it on wider/narrower displays, and position transparent semantic buttons from the extracted hotspot coordinates.
    - [x] Drive basic navigation state exclusively from the manifest: load the start screen, perform only declared slide-link actions, provide restart/mute controls, and keep blank-stage clicks inert.
    - [ ] Support any required non-slide action, reveal/state, and exact restart behavior found during manual review. Do not expose browser history as an in-game action unless the original game has an equivalent control.
+   - [x] Include non-Aspose layer data and per-slide image-instance files in `docs/game-manifest.json` for the browser runtime.
    - [ ] Implement a layer renderer for separately addressable slide images, text, shapes, and audio targets; keep screenshot/reconstructed raster layers only as static fallback/reference layers where no animation depends on their contents.
    - [ ] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the full PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
    - [ ] Implement PowerPoint-style animation scheduling: parallel/sequential time nodes, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, visibility/set effects, and audio commands.
@@ -107,7 +108,8 @@ Critical path work added from the animation findings:
    - Unit-test the extractor: input hash, expected stream/slide/action/asset counts, asset decoding, and absence of unresolved slide targets.
    - [x] Add static-server smoke validation for the generated `docs/` app, manifest, and first screen asset.
    - [x] Add regression verification for the PP10 timing-tree audit: timing blob counts, key timing records, trigger events, modifier types, sequence data, variant strings, and absence of unresolved shape targets.
-   - [ ] Add extractor regression tests for per-slide image/text object extraction, including no unresolved animated shape targets and no animated object left only in a burned-in background layer.
+   - [x] Add extractor regression tests for per-slide image/text object extraction, including copied image-instance files and resolved animated shape targets.
+   - [ ] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after the renderer starts using layers directly.
    - [ ] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, and sound commands.
    - [ ] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
@@ -126,4 +128,4 @@ Critical path work added from the animation findings:
 
 ## Current research workspace
 
-`_port_analysis_tmp/` is a disposable investigation area. It contains a Python 3.14 virtual environment with `olefile` installed, a direct Python 3.13 renderer install, read-only inspection scripts, and the OLE record inventory used for the counts above. It is not part of the future web build and should be removed or ignored before release.
+`_port_analysis_tmp/` is a disposable investigation area. It contains the Python virtual environment, portable JDK, Apache POI bundle, read-only inspection scripts, and the OLE record inventory used for the counts above. The retired Python 3.13/Aspose experiment was removed. This directory is not part of the future web build and should remain ignored before release.

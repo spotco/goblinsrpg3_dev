@@ -26,23 +26,23 @@ The extraction tools use Python packages listed in `tools/requirements.txt`.
 
 ```powershell
 python tools/extract_ppt.py "goblins3 v.1.0 LAUNCH.pps"
+python tools/audit_timing_tree.py "goblins3 v.1.0 LAUNCH.pps"
+python tools/extract_layers.py
 python tools/convert_audio.py
+python tools/render_reconstructed.py
 python tools/build_game_manifest.py
 python tools/verify_inventory.py generated/inventory.json
+python tools/verify_timing_tree.py
+python tools/verify_layers.py
 python tools/verify_site.py
 ```
 
-The optional layout/rendering tools require the separate Python 3.13/Aspose.Slides setup noted in `PLAN.md`:
-
-```powershell
-python tools/extract_layout_aspose.py "goblins3 v.1.0 LAUNCH.pps"
-python tools/render_reconstructed.py
-python tools/build_game_manifest.py
-```
+`generated/poi_audit.tsv` is produced by `tools/poi/PoiAudit.java` using the portable JDK and Apache POI copies in `_port_analysis_tmp/`. See `POI_EVALUATION.md` for the exact toolchain notes.
 
 ## Current limitations
 
 - The screen PNGs are a first-pass reconstruction, not a verified pixel-perfect PowerPoint export.
+- The manifest now includes separately addressable image/text/shape layers, but the JavaScript animation player is not fully implemented yet.
 - `Ffvictory.mid` is identified in the audio manifest but still needs rendering through a MIDI synth/soundfont.
 - Audio cue timing/loop behavior still needs to be associated with the extracted PowerPoint action records.
 - Manual playthrough and visual review are still required before calling this final.

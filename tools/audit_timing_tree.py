@@ -335,6 +335,24 @@ def main() -> None:
             "unresolvedShapeReferenceCount": len(unresolved_refs),
             "unresolvedShapeReferenceSample": unresolved_refs[:20],
         },
+        "animationTargets": {
+            "shapeTargetsBySlide": {
+                str(slide): sorted(
+                    {
+                        int(item["shapeId"])
+                        for item in shape_refs
+                        if int(item["slide"]) == slide and item["shapeId"] is not None
+                    }
+                )
+                for slide in sorted({int(item["slide"]) for item in shape_refs})
+            },
+            "soundTargets": sorted(
+                {
+                    f'{int(item["slide"])}:{int(item["targetId"])}'
+                    for item in sound_refs
+                }
+            ),
+        },
         "timeNodeSummary": {
             "nodeTypes": counter_items(time_node_types),
             "durationMs": counter_items(time_node_durations),
