@@ -68,8 +68,9 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
 
 6. **Package for GitHub Pages**
-   - Add a concise README covering local preview, extraction/build commands, attribution/licensing decisions, and GitHub Pages publishing from the chosen branch or Actions workflow.
-   - Build into the repository's publish root (or `docs/`, if selected), verify it with a static HTTP server and a project-base-path URL, then enable/deploy GitHub Pages.
+   - [x] Add a concise README covering local preview, extraction/build commands, current limitations, and GitHub Pages publishing from `docs/`.
+   - [x] Build into the repository's `docs/` publish root and verify it with a static HTTP server.
+   - [ ] Enable/deploy GitHub Pages after the repository is pushed to GitHub.
    - Commit the source code and required generated game assets; exclude temporary environments, raw intermediate dumps, and nonessential reference renders.
 
 ## Technical decisions to make after extraction
