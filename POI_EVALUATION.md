@@ -77,5 +77,23 @@ Keep the project Python OLE parser as the authoritative extractor for:
 - shape animation atoms
 - interactive action atoms
 - OfficeArt/client-data records POI does not surface
+- PP10 timing-tree records in slide programmable tag binary blobs
 
 This is workable with additional effort. The practical implementation path is a hybrid extractor: POI validates and fills high-level shape/transition data, while the Python parser extracts the raw animation/action records and maps them to the same POI shape IDs.
+
+## PP10 timing-tree follow-up
+
+`tools/audit_timing_tree.py` confirms that this deck also contains complex PowerPoint 10 timing trees in `RT_ProgBinaryTag` / `RT_BinaryTagDataBlob` records. These are separate from the legacy 4081 animation atoms.
+
+The regenerated audit found:
+
+- 197 slides with timing-tree binary blobs
+- 2,407 `RT_TimeExtTimeNodeContainer` records
+- 2,533 `RT_TimeNode` atoms
+- 2,093 `RT_TimeCondition` atoms
+- 478 `RT_TimeModifier` atoms
+- 135 `RT_TimeSequenceData` atoms
+- 1,015 shape target references, all mapped to POI-known slide shapes
+- 7 sound target references
+
+Conclusion: POI can validate target shapes and slide transitions, but the JS port needs a dedicated Python decoder for these PP10 timing trees. See `ANIMATION_EVALUATION.md` for the animation-specific evidence and next implementation tasks.

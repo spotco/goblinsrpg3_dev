@@ -43,6 +43,8 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - [x] Capture first-pass shape layout, fill, line, image, and z-order metadata with `tools/extract_layout_aspose.py`.
    - [x] Validate Apache POI against the original `.pps` with `tools/poi/PoiAudit.java`; record the findings in `POI_EVALUATION.md`.
    - [x] Extract first-pass slide transition and shape animation timing data with `tools/extract_timing.py`.
+   - [x] Confirm complex PP10 animation timing trees are present and accessible; record the evidence in `generated/timing_tree_audit.json` and `ANIMATION_EVALUATION.md`.
+   - [ ] Implement a full PP10 timing-tree decoder that emits a JS-ready manifest for nested time nodes, triggers, sequence data, acceleration/deceleration modifiers, behavior containers, motion paths, text/image visibility changes, and sound commands.
    - [ ] Improve font, text wrapping, line geometry, and full visual layering fidelity. Where a legacy drawing construct cannot be represented reliably in HTML, use a generated per-screen raster/SVG layer while keeping hotspots as data-driven browser controls.
    - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
    - [ ] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path.
@@ -61,13 +63,14 @@ The counts are an extraction baseline, not yet a statement that every record is 
    - [x] Display a responsive 4:3 game stage. Render each screen at its original aspect ratio, letterbox it on wider/narrower displays, and position transparent semantic buttons from the extracted hotspot coordinates.
    - [x] Drive basic navigation state exclusively from the manifest: load the start screen, perform only declared slide-link actions, provide restart/mute controls, and keep blank-stage clicks inert.
    - [ ] Support any required non-slide action, reveal/state, and exact restart behavior found during manual review. Do not expose browser history as an in-game action unless the original game has an equivalent control.
-   - [ ] Implement JavaScript slide transitions and shape/text/image animation playback from `generated/timing_manifest.json`.
+   - [ ] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the full PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
    - Start or resume audio only after the first user gesture to satisfy browser autoplay rules; implement explicit loop/stop/replace behavior from the source inventory and degrade gracefully when audio is unavailable.
    - Give invisible hotspots useful accessible labels and focus handling without adding visual controls that alter the original presentation.
 
 5. **Validate fidelity and game logic**
    - Unit-test the extractor: input hash, expected stream/slide/action/asset counts, asset decoding, and absence of unresolved slide targets.
    - [x] Add static-server smoke validation for the generated `docs/` app, manifest, and first screen asset.
+   - [x] Add regression verification for the PP10 timing-tree audit: timing blob counts, key timing records, trigger events, modifier types, sequence data, variant strings, and absence of unresolved shape targets.
    - [ ] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops. Maintain a manual playthrough checklist for major branches/endings.
    - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
 
