@@ -30,6 +30,14 @@ def main() -> None:
     styles_css = (args.site / "styles.css").read_text(encoding="utf-8")
     if 'id="layers"' not in index_html:
         fail("layer renderer root is missing from index.html")
+    if 'http-equiv="Cache-Control"' not in index_html or 'http-equiv="Pragma"' not in index_html:
+        fail("index.html is missing no-cache metadata")
+    if "function assetUrl" not in app_js or 'cache: "no-store"' not in app_js:
+        fail("runtime asset cache prevention is missing from app.js")
+    if "URLSearchParams" in app_js:
+        fail("runtime debug/logging settings must not come from URL parameters")
+    if "RUNTIME_CONFIG" not in app_js or "debugCssEnabled" not in app_js or "loggingEnabled" not in app_js:
+        fail("runtime debug/logging configuration block is missing")
     if "function renderLayers" not in app_js:
         fail("renderLayers function is missing from app.js")
     for required_function in (

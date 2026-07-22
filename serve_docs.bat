@@ -16,11 +16,7 @@ echo.
 echo Open this URL:
 echo   http://127.0.0.1:8765/
 echo.
-echo Debug hotspots:
-echo   http://127.0.0.1:8765/?debug=1
-echo.
 echo Press Ctrl+C or close this console window to stop the server.
 echo.
 
-python -m http.server 8765 --bind 127.0.0.1 --directory docs
-
+python tools\serve_docs.py --bind 127.0.0.1 --port 8765 --directory docs

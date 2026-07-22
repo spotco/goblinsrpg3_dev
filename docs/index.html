@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Goblins RPG 3</title>
-    <link rel="stylesheet" href="styles.css">
+    <link id="runtime-styles" rel="stylesheet">
   </head>
   <body>
     <main class="game-shell">
@@ -24,6 +27,14 @@
         <output id="status" aria-live="polite">Loading</output>
       </nav>
     </main>
-    <script src="app.js"></script>
+    <script>
+      (() => {
+        const cacheBust = `?no-cache=${Date.now()}`;
+        document.getElementById("runtime-styles").href = `styles.css${cacheBust}`;
+        const appScript = document.createElement("script");
+        appScript.src = `app.js${cacheBust}`;
+        document.body.append(appScript);
+      })();
+    </script>
   </body>
 </html>

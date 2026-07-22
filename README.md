@@ -7,13 +7,14 @@ The current playable build lives in `docs/`, which is suitable for GitHub Pages 
 ## Git workflow
 
 Codex should commit completed, validated work locally, but should not push to GitHub unless explicitly asked.
+When explicitly asked to publish, use plain `git` rather than `gh`, ask for approval immediately before the push tool call, and honor the requested destination branch.
 
 ## Local preview
 
 Run a static server from the repository root:
 
 ```powershell
-python -m http.server 8765 --directory docs
+python tools/serve_docs.py --port 8765 --directory docs
 ```
 
 Then open:
@@ -22,7 +23,9 @@ Then open:
 http://127.0.0.1:8765/
 ```
 
-Add `?debug=1` to show hotspot rectangles.
+Debug hotspot styling and structured browser-console logging are controlled by `RUNTIME_CONFIG.debugCssEnabled` and `RUNTIME_CONFIG.loggingEnabled` near the top of `docs/app.js`; set either to `true` and reload while debugging. Logging can also be toggled at runtime with `window.goblinsRpg3Debug.toggle()` or `setEnabled(true|false)`, and inspected with `snapshot()`. Log entries use the `[GoblinsRPG3]` prefix and include sequence numbers, elapsed time, current screen, navigation, transition, timer, input, audio, layer, and animation-node details.
+
+The local server sends `no-store`/`no-cache` headers for every page and asset. The page also adds a per-load cache-busting query to scripts, styles, manifests, images, and audio, so refreshes always fetch current files.
 
 ## Rebuild generated data
 
