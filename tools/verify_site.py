@@ -34,12 +34,18 @@ def main() -> None:
         fail("index.html is missing no-cache metadata")
     if "function assetUrl" not in app_js or 'cache: "no-store"' not in app_js:
         fail("runtime asset cache prevention is missing from app.js")
-    if "URLSearchParams" in app_js:
-        fail("runtime debug/logging settings must not come from URL parameters")
+    if "function parseRuntimeQuery" not in app_js or "URLSearchParams" not in app_js:
+        fail("runtime URL debug query parsing is missing from app.js")
+    if "dumpScreen" not in app_js or "listProblems" not in app_js or "goto(" not in app_js:
+        fail("runtime debug API (dumpScreen/listProblems/goto) is missing from app.js")
+    if "debug-hud" not in app_js or "lastRenderDecision" not in app_js:
+        fail("runtime debug HUD / render decision tracing is missing from app.js")
     if "RUNTIME_CONFIG" not in app_js or "debugCssEnabled" not in app_js or "loggingEnabled" not in app_js:
         fail("runtime debug/logging configuration block is missing")
     if "function renderLayers" not in app_js:
         fail("renderLayers function is missing from app.js")
+    if ".debug-hud" not in styles_css or ".debug-hud[hidden]" not in styles_css:
+        fail("debug HUD styles are missing from styles.css")
     for required_function in (
         "function setupAnimations",
         "function advanceAnimation",

@@ -41,8 +41,20 @@ def hex_color(value: str | None, fallback: tuple[int, int, int, int]) -> tuple[i
 
 def font_for(size: int, family: str | None = None) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     normalized = (family or "").lower()
-    family_candidates = []
-    if "arial" in normalized:
+    family_candidates: list[Path] = []
+    if "impact" in normalized:
+        family_candidates.extend(
+            [
+                Path("C:/Windows/Fonts/impact.ttf"),
+                Path("C:/Windows/Fonts/Impact.ttf"),
+            ]
+        )
+    elif "arial black" in normalized:
+        family_candidates.append(Path("C:/Windows/Fonts/ariblk.ttf"))
+    elif "broadway" in normalized:
+        family_candidates.append(Path("C:/Windows/Fonts/BROADW.TTF"))
+        family_candidates.append(Path("C:/Windows/Fonts/broadway.ttf"))
+    elif "arial" in normalized:
         family_candidates.append(Path("C:/Windows/Fonts/arial.ttf"))
     elif "tahoma" in normalized:
         family_candidates.append(Path("C:/Windows/Fonts/tahoma.ttf"))
@@ -139,24 +151,59 @@ def render_text_layer(layer: dict[str, object], box: tuple[int, int, int, int], 
         return None
     layer_image = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     layer_draw = ImageDraw.Draw(layer_image)
-    draw_layer_box(layer_draw, layer, (0, 0, w, h), scale)
+    word_art = bool(layer.get("wordArt"))
+    # WordArt fill colors the glyphs, not a rectangular plate behind them.
+    if not word_art:
+        draw_layer_box(layer_draw, layer, (0, 0, w, h), scale)
     text_style = layer.get("textStyle") or {}
     text_runs = layer.get("textRuns") or []
     first_run = text_runs[0] if isinstance(text_runs, list) and text_runs else {}
     left_inset = round(float(text_style.get("leftInset", 0) if isinstance(text_style, dict) else 0) * scale)
     top_inset = round(float(text_style.get("topInset", 0) if isinstance(text_style, dict) else 0) * scale)
     right_inset = round(float(text_style.get("rightInset", 0) if isinstance(text_style, dict) else 0) * scale)
-    size = max(8, round(float(first_run.get("fontSize", 18) if isinstance(first_run, dict) else 18) * scale))
     family = first_run.get("fontFamily") if isinstance(first_run, dict) else None
-    font = font_for(size, family)
+    if word_art and isinstance(layer.get("geoText"), dict) and layer["geoText"].get("fontFamily"):
+        family = layer["geoText"]["fontFamily"]
+    if word_art:
+        # Fit WordArt into the shape box (width and height). POI placeholder runs are ~18pt.
+        size = max(12, round(h * 0.72))
+        font = font_for(size, family if isinstance(family, str) else None)
+        measure = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+        while size > 8:
+            bbox = measure.multiline_textbbox((0, 0), value, font=font)
+            text_w = bbox[2] - bbox[0]
+            text_h = bbox[3] - bbox[1]
+            if text_w <= max(w - 4, 1) and text_h <= max(h - 4, 1):
+                break
+            size -= 2
+            font = font_for(size, family if isinstance(family, str) else None)
+    elif isinstance(first_run, dict) and first_run.get("fontSize") is not None:
+        size = max(8, round(float(first_run.get("fontSize", 18)) * scale))
+        font = font_for(size, family if isinstance(family, str) else None)
+    else:
+        size = max(8, round(h * 0.45))
+        font = font_for(size, family if isinstance(family, str) else None)
     color = hex_color(
         first_run.get("fontColor") if isinstance(first_run, dict) and isinstance(first_run.get("fontColor"), str) else None,
         (255, 255, 255, 255),
     )
     text_width = max(w - left_inset - right_inset, 1)
-    if isinstance(text_style, dict) and text_style.get("wordWrap") is not False:
+    if isinstance(text_style, dict) and text_style.get("wordWrap") is not False and not word_art:
         value = wrap_text_for_box(value, font, text_width)
-    layer_draw.multiline_text((left_inset, top_inset), value, font=font, fill=color)
+    if word_art:
+        bbox = layer_draw.multiline_textbbox((0, 0), value, font=font)
+        text_w = bbox[2] - bbox[0]
+        text_h = bbox[3] - bbox[1]
+        tx = max(round((w - text_w) / 2 - bbox[0]), 0)
+        ty = max(round((h - text_h) / 2 - bbox[1]), 0)
+        style = layer.get("style") or {}
+        line = style.get("lineColor") if isinstance(style, dict) else None
+        if isinstance(line, str) and line.lower().startswith("#fff"):
+            for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (1, 1), (-1, 1), (1, -1)):
+                layer_draw.multiline_text((tx + dx, ty + dy), value, font=font, fill=(255, 255, 255, 255))
+        layer_draw.multiline_text((tx, ty), value, font=font, fill=color)
+    else:
+        layer_draw.multiline_text((left_inset, top_inset), value, font=font, fill=color)
     return layer_image
 
 
@@ -173,21 +220,62 @@ def render_image_layer(layer: dict[str, object], box: tuple[int, int, int, int],
     return layer_image
 
 
+def parse_slide_filter(value: str | None) -> set[int] | None:
+    if value is None or not str(value).strip() or str(value).strip().lower() == "all":
+        return None
+    selected: set[int] = set()
+    for part in str(value).split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            start_s, end_s = part.split("-", 1)
+            start_i, end_i = int(start_s), int(end_s)
+            if end_i < start_i:
+                start_i, end_i = end_i, start_i
+            selected.update(range(start_i, end_i + 1))
+        else:
+            selected.add(int(part))
+    return selected
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--layers", type=Path, default=Path("generated/layers.json"))
     parser.add_argument("--output", type=Path, default=Path("generated/reconstructed"))
     parser.add_argument("--scale", type=float, default=1.0)
+    parser.add_argument(
+        "--slides",
+        type=str,
+        default=None,
+        help="Optional subset to re-render, e.g. 2,14-16. Merges into existing render_manifest.json.",
+    )
     args = parser.parse_args()
     layer_manifest = json.loads(args.layers.read_text(encoding="utf-8"))
+    selected = parse_slide_filter(args.slides)
 
     args.output.mkdir(parents=True, exist_ok=True)
-    slides = []
+    rendered_entries: dict[int, dict[str, object]] = {}
+    # Preserve prior full-deck manifest entries when doing partial re-renders.
+    existing_manifest_path = args.output / "render_manifest.json"
+    if selected is not None and existing_manifest_path.exists():
+        existing = json.loads(existing_manifest_path.read_text(encoding="utf-8"))
+        for item in existing.get("slides") or []:
+            rendered_entries[int(item["slide"])] = item
+
     width, height = round(720 * args.scale), round(540 * args.scale)
+    rendered_now = 0
     for slide_data in layer_manifest["slides"]:
         slide_number = int(slide_data["slide"])
-        screen = Image.new("RGBA", (width, height), (0, 0, 0, 255))
-        draw = ImageDraw.Draw(screen)
+        if selected is not None and slide_number not in selected:
+            continue
+        # Source slides use a solid white background fill; only explicit black
+        # full-bleed shapes should darken the canvas.
+        bg = hex_color(
+            slide_data.get("backgroundColor") if isinstance(slide_data.get("backgroundColor"), str) else None,
+            (255, 255, 255, 255),
+        )
+        screen = Image.new("RGBA", (width, height), bg)
         # Composite in source z-order.
         layer_count = 0
         image_count = 0
@@ -217,20 +305,21 @@ def main() -> None:
             layer_count += 1
         output = args.output / f"slide-{slide_number:03d}.png"
         screen.convert("RGB").save(output, format="PNG", optimize=True)
-        slides.append(
-            {
-                "slide": slide_number,
-                "path": output.as_posix(),
-                "width": width,
-                "height": height,
-                "bytes": output.stat().st_size,
-                "sha256": sha256(output),
-                "layerCount": layer_count,
-                "imageLayerCount": image_count,
-                "textLayerCount": text_count,
-                "transformedLayerCount": transformed_count,
-            }
-        )
+        rendered_entries[slide_number] = {
+            "slide": slide_number,
+            "path": output.as_posix(),
+            "width": width,
+            "height": height,
+            "bytes": output.stat().st_size,
+            "sha256": sha256(output),
+            "layerCount": layer_count,
+            "imageLayerCount": image_count,
+            "textLayerCount": text_count,
+            "transformedLayerCount": transformed_count,
+        }
+        rendered_now += 1
+
+    slides = [rendered_entries[key] for key in sorted(rendered_entries)]
     manifest = {
         "format": "goblins-rpg3-render-manifest-v2",
         "renderer": RENDERER_ID,
@@ -239,21 +328,23 @@ def main() -> None:
             "scale": args.scale,
             "width": width,
             "height": height,
-            "background": "#000000",
+            "background": "#ffffff",
             "path": "custom non-Aspose layer reconstruction",
+            "slideFilter": args.slides,
         },
         "summary": {
             "slideCount": len(slides),
-            "imageCount": sum(item["imageLayerCount"] for item in slides),
-            "textCount": sum(item["textLayerCount"] for item in slides),
-            "transformedLayerCount": sum(item["transformedLayerCount"] for item in slides),
+            "imageCount": sum(int(item["imageLayerCount"]) for item in slides),
+            "textCount": sum(int(item["textLayerCount"]) for item in slides),
+            "transformedLayerCount": sum(int(item["transformedLayerCount"]) for item in slides),
+            "renderedThisRun": rendered_now,
         },
         "slides": slides,
     }
     (args.output / "render_manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n"
     )
-    print(f"Rendered {len(slides)} reconstructed screens to {args.output}")
+    print(f"Rendered {rendered_now} reconstructed screens to {args.output} (manifest entries={len(slides)})")
 
 
 if __name__ == "__main__":

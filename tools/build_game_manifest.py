@@ -52,6 +52,7 @@ def build_screens(
     layers_by_slide: dict[int, list[dict[str, object]]] | None = None,
     transitions_by_slide: dict[int, dict[str, object]] | None = None,
     media_bindings_by_shape: dict[tuple[int, int], dict[str, object]] | None = None,
+    slide_meta_by_slide: dict[int, dict[str, object]] | None = None,
 ) -> list[dict[str, object]]:
     presentation = inventory["presentation"]
     width = int(presentation["width"])
@@ -109,21 +110,58 @@ def build_screens(
         }
         if layers_by_slide is not None:
             screen["layers"] = layers_by_slide.get(index, [])
+        if slide_meta_by_slide is not None and index in slide_meta_by_slide:
+            screen.update(slide_meta_by_slide[index])
         if transitions_by_slide is not None:
             screen["transition"] = transitions_by_slide.get(index)
         screens.append(screen)
     return screens
 
 
-def copy_screens(screen_source: Path | None, output_dir: Path, screen_dir: str) -> str:
+def parse_slide_filter(value: str | None) -> set[int] | None:
+    if value is None or not str(value).strip() or str(value).strip().lower() == "all":
+        return None
+    selected: set[int] = set()
+    for part in str(value).split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            start_s, end_s = part.split("-", 1)
+            start_i, end_i = int(start_s), int(end_s)
+            if end_i < start_i:
+                start_i, end_i = end_i, start_i
+            selected.update(range(start_i, end_i + 1))
+        else:
+            selected.add(int(part))
+    return selected
+
+
+def copy_screens(
+    screen_source: Path | None,
+    output_dir: Path,
+    screen_dir: str,
+    slide_filter: set[int] | None = None,
+) -> str:
     if screen_source is None or not screen_source.exists():
         return "pending_publishable_renders"
     screen_output = output_dir / screen_dir
     screen_output.mkdir(parents=True, exist_ok=True)
     copied = 0
     for source in sorted(screen_source.glob("slide-*.png")):
+        # slide-012.png -> 12
+        try:
+            slide_number = int(source.stem.split("-")[1])
+        except (IndexError, ValueError):
+            slide_number = None
+        if slide_filter is not None and slide_number not in slide_filter:
+            continue
         shutil.copy2(source, screen_output / source.name)
         copied += 1
+    if slide_filter is not None:
+        # Partial publish still leaves a complete docs/screens tree if it already existed.
+        total = len(list(screen_output.glob("slide-*.png")))
+        return "custom_reconstruction" if total else "pending_publishable_renders"
     return "custom_reconstruction" if copied else "pending_publishable_renders"
 
 
@@ -316,16 +354,26 @@ def build_media_bindings(
     return bindings
 
 
-def copy_layers(layer_manifest_path: Path, output_dir: Path) -> tuple[dict[int, list[dict[str, object]]] | None, dict[str, object]]:
+def copy_layers(
+    layer_manifest_path: Path, output_dir: Path
+) -> tuple[dict[int, list[dict[str, object]]] | None, dict[int, dict[str, object]], dict[str, object]]:
     if not layer_manifest_path.exists():
-        return None, {"status": "missing"}
+        return None, {}, {"status": "missing"}
 
     layer_manifest = json.loads(layer_manifest_path.read_text(encoding="utf-8"))
     copied_images = 0
     layers_by_slide: dict[int, list[dict[str, object]]] = {}
+    slide_meta_by_slide: dict[int, dict[str, object]] = {}
     layer_output_root = output_dir / "assets" / "slide-assets"
     for slide in layer_manifest.get("slides", []):
         slide_number = int(slide["slide"])
+        meta: dict[str, object] = {}
+        if slide.get("backgroundColor"):
+            meta["backgroundColor"] = slide["backgroundColor"]
+        if slide.get("background"):
+            meta["background"] = slide["background"]
+        if meta:
+            slide_meta_by_slide[slide_number] = meta
         copied_layers = []
         for layer in slide.get("layers", []):
             copied_layer = dict(layer)
@@ -339,7 +387,7 @@ def copy_layers(layer_manifest_path: Path, output_dir: Path) -> tuple[dict[int, 
             copied_layers.append(copied_layer)
         layers_by_slide[slide_number] = copied_layers
 
-    return layers_by_slide, {
+    return layers_by_slide, slide_meta_by_slide, {
         "status": "available",
         "summary": layer_manifest.get("summary", {}),
         "copiedImageInstances": copied_images,
@@ -377,12 +425,19 @@ def main() -> None:
     parser.add_argument("--layers", type=Path, default=Path("generated/layers.json"))
     parser.add_argument("--animations", type=Path, default=Path("generated/animations.json"))
     parser.add_argument("--timing", type=Path, default=Path("generated/timing_manifest.json"))
+    parser.add_argument(
+        "--slides",
+        type=str,
+        default=None,
+        help="Optional subset of screen PNGs to refresh, e.g. 2,14-16. Full manifest is still rebuilt.",
+    )
     args = parser.parse_args()
 
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     args.output.mkdir(parents=True, exist_ok=True)
-    screen_status = copy_screens(args.screen_source, args.output, args.screen_dir)
-    layers_by_slide, layer_status = copy_layers(args.layers, args.output)
+    slide_filter = parse_slide_filter(args.slides)
+    screen_status = copy_screens(args.screen_source, args.output, args.screen_dir, slide_filter)
+    layers_by_slide, slide_meta_by_slide, layer_status = copy_layers(args.layers, args.output)
     animation_status = copy_animation_manifest(args.animations, args.output)
     transitions_by_slide, transition_status = load_transitions(args.timing)
     copied_audio = copy_audio(args.audio_manifest, args.output)
@@ -409,6 +464,7 @@ def main() -> None:
             layers_by_slide,
             transitions_by_slide,
             media_bindings_by_shape,
+            slide_meta_by_slide,
         ),
     }
     output_path = args.output / "game-manifest.json"

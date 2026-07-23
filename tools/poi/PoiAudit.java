@@ -7,11 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import org.apache.poi.ddf.AbstractEscherOptRecord;
+import org.apache.poi.ddf.EscherComplexProperty;
+import org.apache.poi.ddf.EscherProperty;
+import org.apache.poi.ddf.EscherRecord;
 import org.apache.poi.hslf.record.AnimationInfo;
 import org.apache.poi.hslf.record.AnimationInfoAtom;
 import org.apache.poi.hslf.record.Record;
 import org.apache.poi.hslf.record.RecordContainer;
 import org.apache.poi.hslf.record.SSSlideInfoAtom;
+import org.apache.poi.hslf.usermodel.HSLFBackground;
+import org.apache.poi.hslf.usermodel.HSLFFill;
 import org.apache.poi.hslf.usermodel.HSLFHyperlink;
 import org.apache.poi.hslf.usermodel.HSLFPictureData;
 import org.apache.poi.hslf.usermodel.HSLFPictureShape;
@@ -83,6 +89,22 @@ public final class PoiAudit {
                     slide.getFollowMasterScheme(),
                     slide.isHidden()
                 );
+                HSLFBackground background = slide.getBackground();
+                if (background != null) {
+                    HSLFFill bgFill = background.getFill();
+                    HSLFPictureData bgPicture = bgFill == null ? null : bgFill.getPictureData();
+                    System.out.printf(
+                        Locale.ROOT,
+                        "SLIDEBG\t%d\t%d\t%s\t%s\t%s%n",
+                        slideNo,
+                        bgFill == null ? -1 : bgFill.getFillType(),
+                        color(bgFill == null ? null : bgFill.getForegroundColor()),
+                        color(bgFill == null ? null : bgFill.getBackgroundColor()),
+                        bgPicture == null
+                            ? "null"
+                            : (bgPicture.getType() + ":" + bgPicture.getData().length)
+                    );
+                }
                 for (int i = 0; i < shapes.size(); i++) {
                     HSLFShape shape = shapes.get(i);
                     Rectangle2D anchor = shape.getAnchor();
@@ -159,6 +181,22 @@ public final class PoiAudit {
                             clipping.right,
                             clipping.bottom,
                             clipping.left
+                        );
+                    }
+
+                    // WordArt stores visible text in Escher geotext.unicode, which
+                    // HSLFTextShape.getText() often returns empty for this deck.
+                    String geoUnicode = geoTextProperty(shape, 0x00C0);
+                    String geoFont = geoTextProperty(shape, 0x00C5);
+                    if (geoUnicode != null && !geoUnicode.isEmpty()) {
+                        System.out.printf(
+                            Locale.ROOT,
+                            "GEOTEXT\t%d\t%d\t%d\t%s\t%s%n",
+                            slideNo,
+                            i,
+                            shape.getShapeId(),
+                            field(geoUnicode),
+                            field(geoFont)
                         );
                     }
 
@@ -295,6 +333,35 @@ public final class PoiAudit {
             field(link.getLabel()),
             field(link.getAddress())
         );
+    }
+
+    /** Read an Escher complex string property (UTF-16LE, null-terminated). */
+    private static String geoTextProperty(HSLFShape shape, int propertyId) {
+        for (EscherRecord record : shape.getSpContainer()) {
+            if (!(record instanceof AbstractEscherOptRecord)) {
+                continue;
+            }
+            AbstractEscherOptRecord opt = (AbstractEscherOptRecord) record;
+            for (EscherProperty property : opt.getEscherProperties()) {
+                if (property.getPropertyNumber() != propertyId || !(property instanceof EscherComplexProperty)) {
+                    continue;
+                }
+                byte[] data = ((EscherComplexProperty) property).getComplexData();
+                if (data == null || data.length < 2) {
+                    return null;
+                }
+                StringBuilder text = new StringBuilder();
+                for (int index = 0; index + 1 < data.length; index += 2) {
+                    int codeUnit = (data[index] & 0xff) | ((data[index + 1] & 0xff) << 8);
+                    if (codeUnit == 0) {
+                        break;
+                    }
+                    text.append((char) codeUnit);
+                }
+                return text.toString();
+            }
+        }
+        return null;
     }
 
     private static String safe(String value) {

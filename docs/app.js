@@ -1,10 +1,36 @@
-// Runtime diagnostics configuration. Change loggingEnabled and reload the page
-// when detailed browser-console tracing is needed.
+// Runtime diagnostics defaults. Prefer URL overrides (?debug=1&slide=2) so agents
+// and humans can debug without editing source. See docs/DEBUGGING.md.
 const RUNTIME_CONFIG = Object.freeze({
   loggingEnabled: false,
   debugCssEnabled: false,
+  hudEnabled: false,
 });
 
+function parseRuntimeQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const flag = (name) => {
+    const value = params.get(name);
+    return value === "1" || value === "true" || value === "yes";
+  };
+  const debug = flag("debug");
+  const slideRaw = params.get("slide");
+  let startSlide = null;
+  if (slideRaw !== null && slideRaw !== "") {
+    const parsed = Number(slideRaw);
+    if (Number.isFinite(parsed) && parsed > 0) {
+      startSlide = Math.floor(parsed);
+    }
+  }
+  return {
+    debug,
+    loggingEnabled: debug || flag("log") || RUNTIME_CONFIG.loggingEnabled,
+    debugCssEnabled: debug || flag("hotspots") || RUNTIME_CONFIG.debugCssEnabled,
+    hudEnabled: debug || flag("hud") || RUNTIME_CONFIG.hudEnabled,
+    startSlide,
+  };
+}
+
+const RUNTIME_QUERY = parseRuntimeQuery();
 const ASSET_CACHE_BUSTER = String(Date.now());
 
 function assetUrl(path) {
@@ -32,8 +58,13 @@ const state = {
   animationStartedNodes: new Set(),
   animationCompletedNodes: new Set(),
   currentLayerElements: new Map(),
-  debug: RUNTIME_CONFIG.debugCssEnabled,
-  logging: RUNTIME_CONFIG.loggingEnabled,
+  debug: RUNTIME_QUERY.debugCssEnabled,
+  logging: RUNTIME_QUERY.loggingEnabled,
+  hudEnabled: RUNTIME_QUERY.hudEnabled,
+  startSlideOverride: RUNTIME_QUERY.startSlide,
+  lastRenderDecision: null,
+  lastInteraction: null,
+  selectedDebugLayerId: null,
   logSequence: 0,
   loggerStartedAt: typeof performance !== "undefined" ? performance.now() : Date.now(),
   animationTimerSequence: 0,
@@ -89,6 +120,277 @@ function animationNodeInfo(node) {
   };
 }
 
+function recordInteraction(details) {
+  state.lastInteraction = {
+    at: new Date().toISOString(),
+    elapsedMs: Math.round(((typeof performance !== "undefined" ? performance.now() : Date.now()) - state.loggerStartedAt) * 10) / 10,
+    ...details,
+  };
+  runtimeLog("debug:interaction", state.lastInteraction);
+  updateDebugHud();
+}
+
+function layerTypeCounts(layers) {
+  const counts = {};
+  for (const layer of layers || []) {
+    const type = layer.type || "unknown";
+    counts[type] = (counts[type] || 0) + 1;
+  }
+  return counts;
+}
+
+function collectRuntimeProblems(screen = state.current) {
+  const problems = [];
+  if (!screen) {
+    return [{ code: "no_current_screen", severity: "high", message: "No current screen" }];
+  }
+  const layers = screen.layers || [];
+  for (const layer of layers) {
+    if (layer.wordArt && !String(layer.text || "").trim()) {
+      problems.push({
+        code: "empty_wordart_layer",
+        severity: "high",
+        message: `WordArt layer ${layer.id} has empty text`,
+        shapeId: layer.shapeId,
+      });
+    }
+    if (layer.type === "image" && layer.instancePath) {
+      // Existence is verified offline; runtime only notes the path for dumpScreen.
+    }
+    if (layer.type === "text") {
+      const run = (layer.textRuns || [])[0] || {};
+      const bg = screen.backgroundColor || "";
+      if (
+        String(layer.text || "").trim() &&
+        typeof run.fontColor === "string" &&
+        run.fontColor.toLowerCase().startsWith("#ffff") &&
+        typeof bg === "string" &&
+        bg.toLowerCase().startsWith("#fff")
+      ) {
+        problems.push({
+          code: "low_contrast_text",
+          severity: "low",
+          message: `Light text on light background for ${layer.id}`,
+          shapeId: layer.shapeId,
+        });
+      }
+    }
+  }
+  for (const hotspot of screen.hotspots || []) {
+    if (hotspot.action === "hyperlink" && hotspot.targetSlide === screen.slide) {
+      problems.push({
+        code: "self_hyperlink",
+        severity: "high",
+        message: `Hotspot ${hotspot.id} targets the same slide`,
+        hotspotId: hotspot.id,
+        shapeId: hotspot.shapeId,
+      });
+    }
+    if (hotspot.clickable && hotspot.bounds && !(hotspot.bounds.width > 0 && hotspot.bounds.height > 0)) {
+      problems.push({
+        code: "zero_area_hotspot",
+        severity: "high",
+        message: `Hotspot ${hotspot.id} is clickable but zero-area`,
+        hotspotId: hotspot.id,
+      });
+    }
+    if (hotspot.behaviorStatus === "unresolved_media" || hotspot.behaviorStatus === "missing_media_binding") {
+      problems.push({
+        code: "unresolved_media",
+        severity: "high",
+        message: `Hotspot ${hotspot.id} media unresolved (${hotspot.behaviorStatus})`,
+        hotspotId: hotspot.id,
+      });
+    }
+  }
+  if (layers.length > 0 && screenImage.hidden) {
+    const maxArea = layers.reduce((max, layer) => {
+      const bounds = layer.bounds || {};
+      return Math.max(max, (bounds.width || 0) * (bounds.height || 0));
+    }, 0);
+    if (maxArea < 0.2) {
+      problems.push({
+        code: "layers_mode_sparse",
+        severity: "medium",
+        message: "PNG hidden because layers exist, but layer coverage is sparse",
+        layerCount: layers.length,
+        maxArea,
+      });
+    }
+  }
+  return problems;
+}
+
+function dumpScreen(slideOrId) {
+  let screen = state.current;
+  if (slideOrId !== undefined && slideOrId !== null) {
+    if (typeof slideOrId === "number") {
+      screen = state.screens.get(screenId(slideOrId)) || null;
+    } else {
+      screen = state.screens.get(String(slideOrId)) || state.screens.get(screenId(Number(slideOrId))) || null;
+    }
+  }
+  if (!screen) {
+    return { error: "screen not found", requested: slideOrId };
+  }
+  const layers = screen.layers || [];
+  return {
+    screen: {
+      id: screen.id,
+      slide: screen.slide,
+      image: screen.image,
+      backgroundColor: screen.backgroundColor || null,
+      transition: screen.transition || null,
+      hotspotCount: (screen.hotspots || []).length,
+      layerCount: layers.length,
+      layerTypeCounts: layerTypeCounts(layers),
+    },
+    renderDecision: state.current && state.current.id === screen.id ? state.lastRenderDecision : null,
+    lastInteraction: state.lastInteraction,
+    runtime: {
+      imageHidden: state.current && state.current.id === screen.id ? screenImage.hidden : null,
+      imageSrc: state.current && state.current.id === screen.id ? screenImage.currentSrc || screenImage.src : null,
+      imageNatural: state.current && state.current.id === screen.id
+        ? { width: screenImage.naturalWidth, height: screenImage.naturalHeight }
+        : null,
+      stageBackground: stage.style.backgroundColor || null,
+      missingRenderHidden: missingRender.hidden,
+      missingRenderDisplay: getComputedStyle(missingRender).display,
+    },
+    layers: layers.map((layer) => ({
+      id: layer.id,
+      shapeId: layer.shapeId,
+      type: layer.type,
+      kind: layer.kind,
+      shapeType: layer.shapeType,
+      text: layer.text || "",
+      wordArt: Boolean(layer.wordArt),
+      geoText: layer.geoText || null,
+      animated: Boolean(layer.animated),
+      instancePath: layer.instancePath || null,
+      bounds: layer.bounds || null,
+      style: layer.style || null,
+    })),
+    hotspots: (screen.hotspots || []).map((hotspot) => ({
+      id: hotspot.id,
+      shapeId: hotspot.shapeId,
+      action: hotspot.action,
+      targetSlide: hotspot.targetSlide,
+      clickable: hotspot.clickable,
+      behaviorStatus: hotspot.behaviorStatus,
+      mediaBindingId: hotspot.mediaBindingId || null,
+      bounds: hotspot.bounds || null,
+      label: hotspot.label || null,
+    })),
+    animation: animationTimelineForScreen(screen),
+    problems: collectRuntimeProblems(screen),
+    snapshot: window.goblinsRpg3Debug.snapshot(),
+  };
+}
+
+function ensureDebugHud() {
+  let hud = document.getElementById("debug-hud");
+  if (hud) {
+    return hud;
+  }
+  hud = document.createElement("aside");
+  hud.id = "debug-hud";
+  hud.className = "debug-hud";
+  hud.hidden = !state.hudEnabled;
+  hud.innerHTML = `
+    <header class="debug-hud-header">
+      <strong>Debug HUD</strong>
+      <span class="debug-hud-meta">?debug=1</span>
+    </header>
+    <pre id="debug-hud-body" class="debug-hud-body">Loading…</pre>
+    <footer class="debug-hud-footer">
+      <button type="button" id="debug-hud-dump">dumpScreen()</button>
+      <button type="button" id="debug-hud-problems">listProblems()</button>
+    </footer>
+  `;
+  const shell = document.querySelector(".game-shell") || document.body;
+  shell.append(hud);
+  hud.querySelector("#debug-hud-dump")?.addEventListener("click", () => {
+    const dump = dumpScreen();
+    console.log("[GoblinsRPG3] dumpScreen", dump);
+    updateDebugHud(dump);
+  });
+  hud.querySelector("#debug-hud-problems")?.addEventListener("click", () => {
+    const problems = collectRuntimeProblems();
+    console.log("[GoblinsRPG3] listProblems", problems);
+    updateDebugHud();
+  });
+  return hud;
+}
+
+function updateDebugHud(dumpOverride = null) {
+  const hud = document.getElementById("debug-hud") || (state.hudEnabled ? ensureDebugHud() : null);
+  if (!hud) {
+    return;
+  }
+  hud.hidden = !state.hudEnabled;
+  if (!state.hudEnabled) {
+    return;
+  }
+  const body = hud.querySelector("#debug-hud-body");
+  if (!body) {
+    return;
+  }
+  const dump = dumpOverride || dumpScreen();
+  if (dump.error) {
+    body.textContent = dump.error;
+    return;
+  }
+  const problems = dump.problems || [];
+  const decision = dump.renderDecision || {};
+  const lines = [
+    `screen: ${dump.screen.id} (slide ${dump.screen.slide})`,
+    `bg: ${dump.screen.backgroundColor || "(stage default)"}`,
+    `layers: ${dump.screen.layerCount} ${JSON.stringify(dump.screen.layerTypeCounts)}`,
+    `hotspots: ${dump.screen.hotspotCount}`,
+    `png: hidden=${dump.runtime.imageHidden} natural=${dump.runtime.imageNatural?.width || 0}x${dump.runtime.imageNatural?.height || 0}`,
+    `decision: ${decision.summary || "(none yet)"}`,
+    `anim queue: ${(dump.snapshot && dump.snapshot.queuedAnimationNodes && dump.snapshot.queuedAnimationNodes.length) || 0}`,
+    `problems: ${problems.length}`,
+    ...problems.slice(0, 8).map((problem) => `  [${problem.severity}] ${problem.code}: ${problem.message}`),
+  ];
+  if (state.lastInteraction) {
+    lines.push(
+      `lastInteraction: ${state.lastInteraction.type || "?"} → ${state.lastInteraction.result || state.lastInteraction.action || "?"}`,
+    );
+  }
+  if (state.selectedDebugLayerId) {
+    const layer = (dump.layers || []).find((item) => item.id === state.selectedDebugLayerId);
+    if (layer) {
+      lines.push(`selected layer: ${layer.id}`);
+      lines.push(`  type=${layer.type} shapeType=${layer.shapeType || "?"} text=${JSON.stringify(layer.text || "")}`);
+    }
+  }
+  body.textContent = lines.join("\n");
+}
+
+function setDebugMode({ logging, css, hud } = {}) {
+  if (logging !== undefined) {
+    state.logging = Boolean(logging);
+  }
+  if (css !== undefined) {
+    state.debug = Boolean(css);
+    stage.classList.toggle("debug", state.debug);
+  }
+  if (hud !== undefined) {
+    state.hudEnabled = Boolean(hud);
+    if (state.hudEnabled) {
+      ensureDebugHud();
+    }
+    updateDebugHud();
+  }
+  return {
+    loggingEnabled: state.logging,
+    debugCssEnabled: state.debug,
+    hudEnabled: state.hudEnabled,
+  };
+}
+
 window.goblinsRpg3Debug = {
   get enabled() {
     return state.logging;
@@ -108,11 +410,29 @@ window.goblinsRpg3Debug = {
   toggle() {
     return window.goblinsRpg3Debug.setEnabled(!state.logging);
   },
+  setDebugMode,
+  goto(slideOrId) {
+    const id = typeof slideOrId === "number" ? screenId(slideOrId) : String(slideOrId);
+    recordInteraction({ type: "debug-goto", requested: slideOrId, targetId: id });
+    navigateTo(id);
+    return dumpScreen();
+  },
+  dumpScreen,
+  listProblems(slideOrId) {
+    if (slideOrId === undefined) {
+      return collectRuntimeProblems();
+    }
+    return dumpScreen(slideOrId).problems || [];
+  },
   snapshot() {
     return {
       loggingEnabled: state.logging,
       debugCssEnabled: state.debug,
+      hudEnabled: state.hudEnabled,
+      startSlideOverride: state.startSlideOverride,
       currentScreen: state.current ? { id: state.current.id, slide: state.current.slide } : null,
+      lastRenderDecision: state.lastRenderDecision,
+      lastInteraction: state.lastInteraction,
       queuedAnimationNodes: state.animationQueue.map((node) => animationNodeInfo(node)),
       trackedAnimationTimerHandles: state.animationTimers.length,
       startedAnimationNodes: state.animationStartedNodes.size,
@@ -130,11 +450,16 @@ runtimeLog("runtime:initialized", {
   url: window.location.href,
   debugCssEnabled: state.debug,
   loggingEnabled: state.logging,
-  loggingControls: "window.goblinsRpg3Debug.toggle() / setEnabled(true|false) / snapshot()",
+  hudEnabled: state.hudEnabled,
+  startSlideOverride: state.startSlideOverride,
+  loggingControls: "window.goblinsRpg3Debug.toggle() / setEnabled(true|false) / dumpScreen() / goto(n) / listProblems()",
 });
 
 if (state.debug) {
   stage.classList.add("debug");
+}
+if (state.hudEnabled) {
+  ensureDebugHud();
 }
 
 function screenId(slide) {
@@ -303,14 +628,17 @@ function updateAudioMute() {
   runtimeLog("audio:mute-changed", { muted: state.muted });
 }
 
-function navigateTo(id) {
+function navigateTo(id, interaction = null) {
   const next = state.screens.get(id);
   if (!next) {
     runtimeLog("navigation:missing-target", {
       requestedId: id,
       knownScreenCount: state.screens.size,
     }, "warn");
-    return;
+    if (interaction) {
+      recordInteraction({ ...interaction, result: "missing-target", requestedId: id });
+    }
+    return false;
   }
   clearAutoAdvanceTimer("navigation");
   runtimeLog("navigation:requested", {
@@ -318,8 +646,18 @@ function navigateTo(id) {
     to: { id: next.id, slide: next.slide },
     targetHotspotCount: (next.hotspots || []).length,
   });
+  if (interaction) {
+    const same = state.current && state.current.id === next.id;
+    recordInteraction({
+      ...interaction,
+      result: same ? "navigate-to-same-screen" : "navigated",
+      from: state.current ? { id: state.current.id, slide: state.current.slide } : null,
+      to: { id: next.id, slide: next.slide },
+    });
+  }
   state.current = next;
   renderScreen(next);
+  return true;
 }
 
 async function loadAnimations(manifest) {
@@ -364,7 +702,13 @@ function handleHotspotAction(hotspot) {
   });
   unlockAudio();
   if (hotspot.action === "hyperlink" && hotspot.targetSlide) {
-    navigateTo(screenId(hotspot.targetSlide));
+    navigateTo(screenId(hotspot.targetSlide), {
+      type: "hotspot-click",
+      action: "hyperlink",
+      hotspotId: hotspot.id,
+      shapeId: hotspot.shapeId,
+      targetSlide: hotspot.targetSlide,
+    });
     return;
   }
   if (hotspot.action === "media") {
@@ -372,10 +716,34 @@ function handleHotspotAction(hotspot) {
     runtimeLog("audio:media-hotspot-binding", { hotspotId: hotspot.id, binding });
     if (binding && binding.status === "mapped" && binding.audioSource) {
       playAudioSource(binding.audioSource, binding.startSeconds || 0, binding.cueBehavior || {});
+      recordInteraction({
+        type: "hotspot-click",
+        action: "media",
+        hotspotId: hotspot.id,
+        shapeId: hotspot.shapeId,
+        result: "media-played",
+        audioSource: binding.audioSource,
+      });
     } else {
       runtimeLog("audio:media-hotspot-unhandled", { hotspotId: hotspot.id, binding }, "warn");
+      recordInteraction({
+        type: "hotspot-click",
+        action: "media",
+        hotspotId: hotspot.id,
+        shapeId: hotspot.shapeId,
+        result: "media-unhandled",
+        binding: binding || null,
+      });
     }
+    return;
   }
+  recordInteraction({
+    type: "hotspot-click",
+    action: hotspot.action,
+    hotspotId: hotspot.id,
+    shapeId: hotspot.shapeId,
+    result: "no-handler",
+  });
 }
 
 function renderHotspots(screen) {
@@ -468,13 +836,14 @@ function applyLayerTransform(element, layer) {
 
 function applyLayerVisualStyle(element, layer) {
   const style = layer.style || {};
-  if (style.fillColor) {
+  // WordArt fill colors the glyphs; a solid box fill would hide the logo.
+  if (style.fillColor && !layer.wordArt) {
     element.style.backgroundColor = style.fillColor;
   }
-  if (style.lineColor && Number(style.lineWidth || 0) > 0) {
+  if (style.lineColor && Number(style.lineWidth || 0) > 0 && !layer.wordArt) {
     element.style.border = `${style.lineWidth}pt solid ${style.lineColor}`;
   }
-  if (style.lineDash && style.lineDash !== "SOLID") {
+  if (style.lineDash && style.lineDash !== "SOLID" && !layer.wordArt) {
     element.style.borderStyle = "dashed";
   }
 }
@@ -483,30 +852,60 @@ function applyTextLayerStyle(element, layer) {
   const textStyle = layer.textStyle || {};
   const firstRun = (layer.textRuns || [])[0] || {};
   const firstParagraph = (layer.paragraphs || [])[0] || {};
+  const wordArt = Boolean(layer.wordArt);
   element.style.display = "flex";
-  element.style.paddingLeft = pointWidthToContainer(textStyle.leftInset);
-  element.style.paddingRight = pointWidthToContainer(textStyle.rightInset);
-  element.style.paddingTop = pointHeightToContainer(textStyle.topInset);
-  element.style.paddingBottom = pointHeightToContainer(textStyle.bottomInset);
-  element.style.whiteSpace = textStyle.wordWrap === false ? "pre" : "pre-wrap";
-  element.style.overflowWrap = textStyle.wordWrap === false ? "normal" : "break-word";
-  element.style.textAlign = String(firstParagraph.textAlign || "LEFT").toLowerCase();
+  element.style.paddingLeft = pointWidthToContainer(wordArt ? 0 : textStyle.leftInset);
+  element.style.paddingRight = pointWidthToContainer(wordArt ? 0 : textStyle.rightInset);
+  element.style.paddingTop = pointHeightToContainer(wordArt ? 0 : textStyle.topInset);
+  element.style.paddingBottom = pointHeightToContainer(wordArt ? 0 : textStyle.bottomInset);
+  element.style.whiteSpace = textStyle.wordWrap === false || wordArt ? "pre" : "pre-wrap";
+  element.style.overflowWrap = textStyle.wordWrap === false || wordArt ? "normal" : "break-word";
+  element.style.textAlign = String((wordArt ? "CENTER" : firstParagraph.textAlign) || "LEFT").toLowerCase();
   element.style.alignItems =
-    textStyle.verticalAlignment === "MIDDLE" ? "center" : textStyle.verticalAlignment === "BOTTOM" ? "flex-end" : "flex-start";
-  element.style.justifyContent = "flex-start";
-  element.style.fontFamily = firstRun.fontFamily ? `"${firstRun.fontFamily}", Arial, sans-serif` : "Arial, sans-serif";
-  if (Number.isFinite(firstRun.fontSize)) {
-    element.style.fontSize = pointFontToContainer(firstRun.fontSize);
+    wordArt || textStyle.verticalAlignment === "MIDDLE"
+      ? "center"
+      : textStyle.verticalAlignment === "BOTTOM"
+        ? "flex-end"
+        : "flex-start";
+  element.style.justifyContent = wordArt ? "center" : "flex-start";
+  const fontFamily = (layer.geoText && layer.geoText.fontFamily) || firstRun.fontFamily;
+  if (wordArt) {
+    element.style.fontFamily = fontFamily
+      ? `"${fontFamily}", Impact, "Arial Black", sans-serif`
+      : 'Impact, "Arial Black", sans-serif';
+    // Fit logo text inside the WordArt shape (height-first, then shrink for width).
+    element.style.fontSize = `${Math.max(layer.bounds.height * 55, 1)}cqh`;
+    element.style.lineHeight = "0.9";
+    element.style.letterSpacing = "0.01em";
+    element.style.backgroundColor = "transparent";
+    element.style.border = "none";
+    element.style.overflow = "hidden";
+    element.style.width = "100%";
+    element.style.maxWidth = "100%";
+    // Scale glyph width into the box without clipping long titles like GOBLINSRPG3.
+    element.style.transform = `${element.dataset.baseTransform || ""} scaleX(0.92)`.trim();
+    const style = layer.style || {};
+    if (style.lineColor && String(style.lineColor).toLowerCase().startsWith("#fff")) {
+      element.style.webkitTextStroke = "1px #ffffff";
+      element.style.paintOrder = "stroke fill";
+    }
   } else {
-    element.style.fontSize = `${Math.max(layer.bounds.height * 72, 1)}cqh`;
+    element.style.fontFamily = fontFamily ? `"${fontFamily}", Arial, sans-serif` : "Arial, sans-serif";
+  }
+  if (!wordArt) {
+    if (Number.isFinite(firstRun.fontSize)) {
+      element.style.fontSize = pointFontToContainer(firstRun.fontSize);
+    } else {
+      element.style.fontSize = `${Math.max(layer.bounds.height * 72, 1)}cqh`;
+    }
   }
   if (firstRun.fontColor) {
     element.style.color = firstRun.fontColor;
   }
-  element.style.fontWeight = firstRun.bold ? "700" : "400";
+  element.style.fontWeight = firstRun.bold || wordArt ? "700" : "400";
   element.style.fontStyle = firstRun.italic ? "italic" : "normal";
   element.style.textDecoration = firstRun.underline ? "underline" : firstRun.strikethrough ? "line-through" : "none";
-  if (Number.isFinite(firstParagraph.lineSpacing) && firstParagraph.lineSpacing > 0) {
+  if (Number.isFinite(firstParagraph.lineSpacing) && firstParagraph.lineSpacing > 0 && !wordArt) {
     element.style.lineHeight = String(firstParagraph.lineSpacing / 100);
   }
 }
@@ -533,6 +932,26 @@ function renderLayers(screen) {
       applyTextLayerStyle(element, layer);
     }
     state.currentLayerElements.set(String(layer.shapeId), element);
+    if (state.debug || state.hudEnabled) {
+      element.title = `${layer.id} (${layer.type}${layer.wordArt ? ", wordArt" : ""})`;
+      element.addEventListener("click", (event) => {
+        if (!(state.debug || state.hudEnabled)) {
+          return;
+        }
+        event.stopPropagation();
+        state.selectedDebugLayerId = layer.id;
+        recordInteraction({
+          type: "debug-layer-select",
+          layerId: layer.id,
+          shapeId: layer.shapeId,
+          result: "selected",
+        });
+        for (const child of layersLayer.children) {
+          child.classList.toggle("debug-layer-selected", child.dataset.layerId === layer.id);
+        }
+        updateDebugHud();
+      });
+    }
     layersLayer.append(element);
     typeCounts[layer.type] = (typeCounts[layer.type] || 0) + 1;
     if (layer.animated) {
@@ -1304,7 +1723,13 @@ function advanceAnimation() {
 
 function renderScreen(screen) {
   const slideNumber = String(screen.slide).padStart(3, "0");
+  const layers = screen.layers || [];
   const renderedLayers = renderLayers(screen);
+  const typeCounts = layerTypeCounts(layers);
+  const maxArea = layers.reduce((max, layer) => {
+    const bounds = layer.bounds || {};
+    return Math.max(max, (bounds.width || 0) * (bounds.height || 0));
+  }, 0);
   runtimeLog("render:screen-start", {
     screen: { id: screen.id, slide: screen.slide },
     image: screen.image,
@@ -1317,11 +1742,30 @@ function renderScreen(screen) {
   screenImage.hidden = renderedLayers;
   layersLayer.hidden = !renderedLayers;
   missingRender.hidden = true;
+  stage.dataset.loading = "false";
+  // Source slide solid fill (often white). Full-bleed black shapes still paint over it.
+  stage.style.backgroundColor = screen.backgroundColor || "#070604";
+  state.lastRenderDecision = {
+    screenId: screen.id,
+    slide: screen.slide,
+    summary: renderedLayers
+      ? `layers-mode (${layers.length} layers; hide PNG)`
+      : "png-mode (no layers; show composite image)",
+    layersPresent: layers.length > 0,
+    layerTypeCounts: typeCounts,
+    maxLayerArea: maxArea,
+    hidePngBecauseLayers: Boolean(renderedLayers),
+    backgroundColor: screen.backgroundColor || null,
+    hotspotCount: (screen.hotspots || []).length,
+    transition: screen.transition || null,
+    problems: collectRuntimeProblems(screen),
+  };
+  runtimeLog("render:decision", state.lastRenderDecision);
   setupAnimations(screen);
   applySlideTransition(screen);
   scheduleAutoAdvance(screen);
   renderHotspots(screen);
-  setStatus(`Screen ${slideNumber}`);
+  setStatus(state.hudEnabled ? `Screen ${slideNumber} [debug]` : `Screen ${slideNumber}`);
   runtimeLog("render:screen-complete", {
     screen: { id: screen.id, slide: screen.slide },
     imageHidden: screenImage.hidden,
@@ -1329,6 +1773,7 @@ function renderScreen(screen) {
     queuedAnimationNodes: state.animationQueue.length,
     pendingAnimationTimers: state.animationTimers.length,
   });
+  updateDebugHud();
 }
 
 function animationTimelineForScreen(screen) {
@@ -1556,7 +2001,13 @@ stage.addEventListener("click", () => {
     queueLengthBefore: state.animationQueue.length,
   });
   unlockAudio();
-  advanceAnimation();
+  const advanced = advanceAnimation();
+  recordInteraction({
+    type: "stage-click",
+    action: "unlock-audio-and-advance",
+    result: advanced ? "animation-advanced" : "no-queued-animation",
+    queueLengthAfter: state.animationQueue.length,
+  });
 });
 
 restartButton.addEventListener("click", () => {
@@ -1597,7 +2048,22 @@ fetch(assetUrl("game-manifest.json"), { cache: "no-store" })
     });
     prepareAudio();
     updateAudioMute();
-    navigateTo(manifest.startScreen);
+    const initialId =
+      state.startSlideOverride !== null && state.screens.has(screenId(state.startSlideOverride))
+        ? screenId(state.startSlideOverride)
+        : manifest.startScreen;
+    if (state.startSlideOverride !== null && initialId !== manifest.startScreen) {
+      runtimeLog("navigation:start-override", {
+        requestedSlide: state.startSlideOverride,
+        initialId,
+        defaultStartScreen: manifest.startScreen,
+      });
+    }
+    navigateTo(initialId, {
+      type: "boot",
+      action: "start-screen",
+      requestedSlide: state.startSlideOverride,
+    });
     return loadAnimations(manifest)
       .then((animations) => {
         state.animations = animations;
@@ -1608,8 +2074,17 @@ fetch(assetUrl("game-manifest.json"), { cache: "no-store" })
         });
         if (state.current) {
           setupAnimations(state.current);
-          scheduleAutoAdvance(state.current);
+          // Deep-linked debug slides should not immediately auto-advance away.
+          if (state.startSlideOverride === null) {
+            scheduleAutoAdvance(state.current);
+          } else {
+            runtimeLog("navigation:auto-advance-suppressed", {
+              reason: "startSlideOverride active",
+              slide: state.current.slide,
+            });
+          }
         }
+        updateDebugHud();
       })
       .catch((error) => {
         runtimeLog("animation:manifest-error", { message: error.message, stack: error.stack || null }, "error");

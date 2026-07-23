@@ -8,6 +8,7 @@ The current playable build lives in `docs/`, which is suitable for GitHub Pages 
 
 Codex should commit completed, validated work locally, but should not push to GitHub unless explicitly asked.
 When explicitly asked to publish, use plain `git` rather than `gh`, ask for approval immediately before the push tool call, and honor the requested destination branch.
+If Git access to `.git` is denied, stop and request permission rather than retrying `.git\index` operations.
 
 ## Local preview
 
@@ -23,7 +24,30 @@ Then open:
 http://127.0.0.1:8765/
 ```
 
-Debug hotspot styling and structured browser-console logging are controlled by `RUNTIME_CONFIG.debugCssEnabled` and `RUNTIME_CONFIG.loggingEnabled` near the top of `docs/app.js`; set either to `true` and reload while debugging. Logging can also be toggled at runtime with `window.goblinsRpg3Debug.toggle()` or `setEnabled(true|false)`, and inspected with `snapshot()`. Log entries use the `[GoblinsRPG3]` prefix and include sequence numbers, elapsed time, current screen, navigation, transition, timer, input, audio, layer, and animation-node details.
+### Debug mode (recommended for agents and fidelity work)
+
+```text
+http://127.0.0.1:8765/?debug=1&slide=2
+```
+
+- `debug=1` enables console logging, hotspot outlines, and an on-page Debug HUD
+- `slide=N` deep-links to a screen and suppresses boot auto-advance away from it
+- Browser API: `goblinsRpg3Debug.dumpScreen()`, `goto(n)`, `listProblems()`, `snapshot()`
+
+Offline helpers:
+
+```powershell
+python tools/debug_slide.py 2
+python tools/audit_visual_risks.py
+python tools/probe_mechanic.py all --slide 2
+python tools/debug_bundle.py 2
+python tools/render_reconstructed.py --slides 2
+python tools/build_game_manifest.py --slides 2
+```
+
+Full playbook: [`docs/DEBUGGING.md`](docs/DEBUGGING.md).
+
+Defaults in `docs/app.js` (`RUNTIME_CONFIG`) still work; URL query overrides are preferred so you do not need to edit source. Log entries use the `[GoblinsRPG3]` prefix.
 
 The local server sends `no-store`/`no-cache` headers for every page and asset. The page also adds a per-load cache-busting query to scripts, styles, manifests, images, and audio, so refreshes always fetch current files.
 

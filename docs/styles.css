@@ -207,6 +207,12 @@ button:focus-visible {
   background-size: 48px 48px;
 }
 
+/* Author display:grid must not defeat the HTML hidden attribute (UA [hidden]
+   is weaker than any author stylesheet rule). */
+.missing-render[hidden] {
+  display: none;
+}
+
 .missing-render p {
   margin: 0;
   padding: 10px 14px;
@@ -239,6 +245,76 @@ button:focus-visible {
 .debug .hotspot {
   outline: 2px solid rgba(232, 199, 95, 0.85);
   background: rgba(232, 199, 95, 0.16);
+}
+
+.debug .layer {
+  outline: 1px solid rgba(120, 180, 255, 0.25);
+}
+
+.layer.debug-layer-selected {
+  outline: 2px solid #5ec8ff !important;
+  z-index: 99999 !important;
+}
+
+.debug-hud {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1000000;
+  width: min(420px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(18, 17, 15, 0.94);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.debug-hud[hidden] {
+  display: none !important;
+}
+
+.debug-hud-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.debug-hud-meta {
+  color: var(--muted);
+}
+
+.debug-hud-body {
+  margin: 0;
+  padding: 8px;
+  overflow: auto;
+  max-height: min(50vh, 420px);
+  border: 1px solid rgba(111, 95, 61, 0.45);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.debug-hud-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.debug-hud-footer button {
+  min-height: 30px;
+  padding: 0 10px;
+  font-family: inherit;
+  font-size: 11px;
 }
 
 .control-strip {

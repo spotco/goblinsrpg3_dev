@@ -1,0 +1,401 @@
+{
+  "format": "goblins-rpg3-slide-debug-v1",
+  "slide": 2,
+  "screenId": "slide-002",
+  "paths": {
+    "gameManifest": "F:/dev/goblinsrpg3_dev/docs/game-manifest.json",
+    "layers": "F:/dev/goblinsrpg3_dev/generated/layers.json",
+    "poiAudit": "F:/dev/goblinsrpg3_dev/generated/poi_audit.tsv",
+    "docsPng": "F:/dev/goblinsrpg3_dev/docs/screens/slide-002.png",
+    "generatedPng": "F:/dev/goblinsrpg3_dev/generated/reconstructed/slide-002.png"
+  },
+  "background": {
+    "fillType": 0,
+    "foregroundColor": "#ffffffff",
+    "backgroundColor": "#333399ff",
+    "picture": null
+  },
+  "backgroundColor": "#ffffffff",
+  "transition": {
+    "slide": 2,
+    "recordOffset": 375445,
+    "slideTimeMs": 0,
+    "soundRef": 0,
+    "effectDirection": 2,
+    "effectType": 0,
+    "flags": 0,
+    "flagNames": [],
+    "speed": 2,
+    "rawHex": "00000000000000000200000002b24c30"
+  },
+  "hotspots": [
+    {
+      "id": "s002-a375904",
+      "shapeId": 2056,
+      "actionCode": 4,
+      "action": "hyperlink",
+      "soundRef": 0,
+      "hyperlinkId": 1,
+      "targetSlide": 2,
+      "targetLabel": "Slide 2",
+      "flagsHex": "079f0d30",
+      "label": "Slide 2",
+      "enabled": true,
+      "clickable": true,
+      "behaviorStatus": "navigation",
+      "bounds": {
+        "raw": [
+          3024,
+          1776,
+          3360,
+          3255
+        ],
+        "x": 0.30833333333333335,
+        "y": 0.7,
+        "width": 0.275,
+        "height": 0.05347222222222222,
+        "clipped": [
+          1776,
+          3024,
+          3360,
+          3255
+        ]
+      }
+    },
+    {
+      "id": "s002-a376082",
+      "shapeId": 2066,
+      "actionCode": 6,
+      "action": "media",
+      "soundRef": 0,
+      "hyperlinkId": 0,
+      "targetSlide": null,
+      "targetLabel": null,
+      "flagsHex": "ff9f0d30",
+      "label": "media",
+      "enabled": false,
+      "clickable": true,
+      "behaviorStatus": "clickable_media",
+      "bounds": {
+        "raw": [
+          4128,
+          5568,
+          5760,
+          4320
+        ],
+        "x": 0.9666666666666667,
+        "y": 0.9555555555555556,
+        "width": 0.03333333333333333,
+        "height": 0.044444444444444446,
+        "clipped": [
+          5568,
+          4128,
+          5760,
+          4320
+        ]
+      },
+      "mediaBindingId": "slide-002-shape-2066",
+      "mediaStatus": "mapped"
+    }
+  ],
+  "layerSummary": {
+    "count": 3,
+    "typeCounts": {
+      "text": 2,
+      "image": 1
+    },
+    "animated": 1,
+    "wordArt": 1,
+    "maxArea": 0.0867
+  },
+  "layers": [
+    {
+      "id": "slide-002-shape-2052",
+      "shapeId": 2052,
+      "type": "text",
+      "kind": "HSLFAutoShape",
+      "shapeType": "TEXT_DEFLATE",
+      "name": "TextDeflate 2052",
+      "text": "GOBLINSRPG3",
+      "wordArt": true,
+      "geoText": {
+        "unicode": "GOBLINSRPG3",
+        "fontFamily": "Impact",
+        "rawUnicode": "+GOBLINSRPG3+"
+      },
+      "instancePath": null,
+      "animated": false,
+      "bounds": {
+        "x": 0.225,
+        "y": 0.16666666666666666,
+        "width": 0.43333333333333335,
+        "height": 0.2,
+        "points": {
+          "x": 162.0,
+          "y": 90.0,
+          "width": 312.0,
+          "height": 108.0
+        }
+      },
+      "style": {
+        "fillColor": "#000000ff",
+        "lineColor": "#ffffffff",
+        "lineWidth": 0.75,
+        "lineDash": "SOLID",
+        "lineCap": "FLAT",
+        "lineCompound": "SINGLE"
+      }
+    },
+    {
+      "id": "slide-002-shape-2056",
+      "shapeId": 2056,
+      "type": "text",
+      "kind": "HSLFTextBox",
+      "shapeType": "TEXT_BOX",
+      "name": "TextBox 2056",
+      "text": "Click here to start",
+      "wordArt": false,
+      "geoText": null,
+      "instancePath": null,
+      "animated": false,
+      "bounds": {
+        "x": 0.30833333333333335,
+        "y": 0.7,
+        "width": 0.275,
+        "height": 0.05347222222222222,
+        "points": {
+          "x": 222.0,
+          "y": 378.0,
+          "width": 198.0,
+          "height": 28.875
+        }
+      },
+      "style": {
+        "fillColor": null,
+        "lineColor": null,
+        "lineWidth": 0.75,
+        "lineDash": "SOLID",
+        "lineCap": "FLAT",
+        "lineCompound": "SINGLE"
+      }
+    },
+    {
+      "id": "slide-002-shape-2066",
+      "shapeId": 2066,
+      "type": "image",
+      "kind": "MovieShape",
+      "shapeType": "RECT",
+      "name": "Rectangle 2066",
+      "text": null,
+      "wordArt": null,
+      "geoText": null,
+      "instancePath": "assets/slide-assets/slide-002/shape-2066.png",
+      "animated": true,
+      "bounds": {
+        "x": 0.9666666666666667,
+        "y": 0.9555555555555556,
+        "width": 0.03333333333333333,
+        "height": 0.044444444444444446,
+        "points": {
+          "x": 696.0,
+          "y": 516.0,
+          "width": 24.0,
+          "height": 24.0
+        }
+      },
+      "style": {
+        "fillColor": "#ffffffff",
+        "lineColor": "#ffffffff",
+        "lineWidth": 0.75,
+        "lineDash": "SOLID",
+        "lineCap": "FLAT",
+        "lineCompound": "SINGLE"
+      }
+    }
+  ],
+  "poiShapes": [
+    {
+      "shapeId": 2052,
+      "kind": "HSLFAutoShape",
+      "name": "TextDeflate 2052",
+      "shapeType": "TEXT_DEFLATE",
+      "text": "",
+      "geoText": {
+        "rawUnicode": "+GOBLINSRPG3+",
+        "unicode": "GOBLINSRPG3",
+        "fontFamily": "Impact"
+      },
+      "picture": null,
+      "style": {
+        "fillColor": "#000000ff",
+        "lineColor": "#ffffffff",
+        "lineWidth": 0.75,
+        "lineDash": "SOLID"
+      },
+      "bounds": {
+        "x": 162.0,
+        "y": 90.0,
+        "width": 312.0,
+        "height": 108.0
+      }
+    },
+    {
+      "shapeId": 2056,
+      "kind": "HSLFTextBox",
+      "name": "TextBox 2056",
+      "shapeType": "TEXT_BOX",
+      "text": "Click here to start",
+      "geoText": null,
+      "picture": null,
+      "style": {
+        "fillColor": null,
+        "lineColor": null,
+        "lineWidth": 0.75,
+        "lineDash": "SOLID"
+      },
+      "bounds": {
+        "x": 222.0,
+        "y": 378.0,
+        "width": 198.0,
+        "height": 28.875
+      }
+    },
+    {
+      "shapeId": 2066,
+      "kind": "MovieShape",
+      "name": "Rectangle 2066",
+      "shapeType": "RECT",
+      "text": null,
+      "geoText": null,
+      "picture": {
+        "pictureIndex": 1,
+        "pictureType": "PNG",
+        "sourceBytes": 2495
+      },
+      "style": {
+        "fillColor": "#ffffffff",
+        "lineColor": "#ffffffff",
+        "lineWidth": 0.75,
+        "lineDash": "SOLID"
+      },
+      "bounds": {
+        "x": 696.0,
+        "y": 516.0,
+        "width": 24.0,
+        "height": 24.0
+      }
+    }
+  ],
+  "animation": {
+    "available": true,
+    "rootCount": 1,
+    "recordCounts": {
+      "RT_VisualShapeAtom": 2,
+      "RT_HashCodeAtom": 1,
+      "11009": 5,
+      "RT_BuildList": 1,
+      "RT_SlideTime10Atom": 1,
+      "RT_TimeConditionContainer": 10,
+      "RT_TimeNode": 7,
+      "RT_TimeCondition": 10,
+      "RT_TimeModifier": 1,
+      "RT_TimeBehaviorContainer": 1,
+      "RT_TimeCommandBehaviorContainer": 1,
+      "RT_TimeBehavior": 1,
+      "RT_TimeCommandBehavior": 1,
+      "RT_TimeClientVisualElement": 7,
+      "RT_TimePropertyList": 7,
+      "RT_TimeSequenceData": 1,
+      "RT_TimeVariant": 9,
+      "RT_TimeExtTimeNodeContainer": 7
+    }
+  },
+  "png": {
+    "exists": true,
+    "path": "F:/dev/goblinsrpg3_dev/docs/screens/slide-002.png",
+    "bytes": 9892,
+    "width": 720,
+    "height": 540,
+    "samples": {
+      "topLeft": [
+        255,
+        255,
+        255
+      ],
+      "center": [
+        255,
+        255,
+        255
+      ],
+      "bottomRight": [
+        255,
+        255,
+        255
+      ]
+    },
+    "nonBlackSampleRatio": 0.9771
+  },
+  "risks": [
+    {
+      "slide": 2,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 3,
+        "imageLayers": 1,
+        "nonEmptyTextLayers": 2,
+        "maxLayerArea": 0.0867
+      }
+    },
+    {
+      "slide": 2,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 2056",
+      "evidence": {
+        "shapeId": 2056,
+        "text": "Click here to start",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 2,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s002-a375904 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s002-a375904",
+        "shapeId": 2056,
+        "targetSlide": 2
+      }
+    },
+    {
+      "slide": 2,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 3,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-002.png"
+      }
+    }
+  ],
+  "riskCounts": {
+    "total": 4,
+    "high": 1,
+    "medium": 1,
+    "low": 1,
+    "info": 1
+  },
+  "suggestedTools": [
+    "python tools/debug_slide.py 2",
+    "python tools/probe_mechanic.py wordart --slide 2",
+    "python tools/probe_mechanic.py hotspots --slide 2",
+    "python tools/probe_mechanic.py animation --slide 2",
+    "python tools/probe_mechanic.py media --slide 2",
+    "python tools/probe_mechanic.py background --slide 2",
+    "http://127.0.0.1:8765/?debug=1&slide=2"
+  ]
+}

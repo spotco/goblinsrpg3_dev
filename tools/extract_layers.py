@@ -30,10 +30,25 @@ def parse_optional_string(value: str) -> str | None:
     return value if value and value.lower() != "null" else None
 
 
-def parse_poi_audit(path: Path) -> tuple[dict[str, object], dict[int, list[dict[str, object]]]]:
+def clean_geotext(value: str) -> str:
+    """Normalize WordArt geotext.unicode payloads.
+
+    Some WordArt strings are stored with surrounding '+' markers
+    (for example ``+GOBLINSRPG3+``). Strip matching outer markers only.
+    """
+    text = value.replace("\x00", "").strip()
+    if len(text) >= 2 and text.startswith("+") and text.endswith("+"):
+        text = text[1:-1]
+    return text
+
+
+def parse_poi_audit(
+    path: Path,
+) -> tuple[dict[str, object], dict[int, list[dict[str, object]]], dict[int, dict[str, object]]]:
     metadata: dict[str, object] = {}
     shapes: dict[tuple[int, int], dict[str, object]] = {}
     by_slide: dict[int, list[dict[str, object]]] = {}
+    slide_backgrounds: dict[int, dict[str, object]] = {}
 
     for line in path.read_text(encoding="utf-8-sig").splitlines():
         if not line:
@@ -43,6 +58,15 @@ def parse_poi_audit(path: Path) -> tuple[dict[str, object], dict[int, list[dict[
         if "=" in key and len(parts) == 1:
             name, value = key.split("=", 1)
             metadata[name] = value
+            continue
+        if key == "SLIDEBG":
+            slide = int(parts[1])
+            slide_backgrounds[slide] = {
+                "fillType": int(parts[2]),
+                "foregroundColor": parse_optional_string(parts[3]),
+                "backgroundColor": parse_optional_string(parts[4]),
+                "picture": parse_optional_string(parts[5]) if len(parts) > 5 else None,
+            }
             continue
         if key == "SHAPE":
             slide = int(parts[1])
@@ -110,6 +134,15 @@ def parse_poi_audit(path: Path) -> tuple[dict[str, object], dict[int, list[dict[
                     "bottom": int(parts[6]),
                     "left": int(parts[7]),
                     "units": "poi-picture-clipping-insets",
+                }
+        elif key == "GEOTEXT":
+            slide = int(parts[1])
+            shape_id = int(parts[3])
+            shape = shapes.get((slide, shape_id))
+            if shape is not None:
+                shape["geoText"] = {
+                    "unicode": "" if len(parts) < 5 or parts[4] == "null" else parts[4].replace("\\r", "\r").replace("\\n", "\n"),
+                    "fontFamily": parse_optional_string(parts[5]) if len(parts) > 5 else None,
                 }
         elif key == "TEXT":
             slide = int(parts[1])
@@ -198,7 +231,16 @@ def parse_poi_audit(path: Path) -> tuple[dict[str, object], dict[int, list[dict[
                     }
                 )
 
-    return metadata, by_slide
+    return metadata, by_slide, slide_backgrounds
+
+
+def is_word_art_shape(shape: dict[str, object]) -> bool:
+    if shape.get("geoText"):
+        return True
+    shape_type = str(shape.get("geometry", {}).get("shapeType") or shape.get("shapeType") or "")
+    if not shape_type.startswith("TEXT_"):
+        return False
+    return shape_type not in {"TEXT_BOX", "TEXT_PLAIN"}
 
 
 def normal_bounds(bounds: dict[str, float], width: float, height: float) -> dict[str, object]:
@@ -268,7 +310,7 @@ def main() -> None:
 
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     timing_tree = json.loads(args.timing_tree.read_text(encoding="utf-8"))
-    metadata, shapes_by_slide = parse_poi_audit(args.poi_audit)
+    metadata, shapes_by_slide, slide_backgrounds = parse_poi_audit(args.poi_audit)
 
     page_size = str(metadata.get("pageSize", "720x540")).split("x")
     page_width = float(page_size[0])
@@ -356,19 +398,95 @@ def main() -> None:
                 if "clip" in shape:
                     layer["clip"] = shape["clip"]
                 image_instance_count += 1
-            elif "text" in shape:
-                layer = {**base, "type": "text", "text": shape.get("text", "")}
+            elif "text" in shape or shape.get("geoText"):
+                poi_text = str(shape.get("text") or "")
+                geo = shape.get("geoText") if isinstance(shape.get("geoText"), dict) else None
+                geo_text = clean_geotext(str(geo.get("unicode") or "")) if geo else ""
+                text_value = poi_text if poi_text.strip() else geo_text
+                word_art = bool(geo_text) or is_word_art_shape(shape)
+                layer = {**base, "type": "text", "text": text_value, "wordArt": word_art}
+                if geo:
+                    layer["geoText"] = {
+                        "unicode": geo_text,
+                        "fontFamily": geo.get("fontFamily"),
+                        "rawUnicode": geo.get("unicode"),
+                    }
                 if "textStyle" in shape:
                     layer["textStyle"] = shape["textStyle"]
                 if "paragraphs" in shape:
                     layer["paragraphs"] = shape["paragraphs"]
                 if "textRuns" in shape:
                     layer["textRuns"] = shape["textRuns"]
+                # WordArt often has empty POI text runs; synthesize style from geotext + fill.
+                if word_art and text_value:
+                    fill_color = None
+                    style = shape.get("style") if isinstance(shape.get("style"), dict) else {}
+                    if isinstance(style, dict):
+                        fill_color = style.get("fillColor")
+                    font_family = (geo or {}).get("fontFamily") if geo else None
+                    if not layer.get("textRuns") or not any(str(run.get("text") or "").strip() for run in layer.get("textRuns", [])):
+                        layer["textRuns"] = [
+                            {
+                                "paragraphIndex": 0,
+                                "runIndex": 0,
+                                "start": 0,
+                                "length": len(text_value),
+                                "text": text_value,
+                                "fontFamily": font_family or "Impact",
+                                "fontSize": None,
+                                "bold": True,
+                                "italic": False,
+                                "underline": False,
+                                "strikethrough": False,
+                                "fontColor": fill_color or "#000000ff",
+                            }
+                        ]
+                    if not layer.get("paragraphs"):
+                        layer["paragraphs"] = [
+                            {
+                                "paragraphIndex": 0,
+                                "start": 0,
+                                "length": len(text_value),
+                                "textAlign": "CENTER",
+                                "fontAlign": "BASELINE",
+                                "indentLevel": 0,
+                                "leftMargin": 0.0,
+                                "rightMargin": None,
+                                "indent": 0.0,
+                                "lineSpacing": 100.0,
+                                "spaceBefore": 0.0,
+                                "spaceAfter": 0.0,
+                                "bullet": False,
+                                "bulletChar": "•",
+                                "bulletFont": "Arial",
+                                "bulletSize": 100.0,
+                            }
+                        ]
+                    if not layer.get("textStyle"):
+                        layer["textStyle"] = {
+                            "wordWrap": False,
+                            "wordWrapEx": 2,
+                            "verticalAlignment": "MIDDLE",
+                            "textDirection": "HORIZONTAL",
+                            "textRotation": None,
+                            "leftInset": 0.0,
+                            "rightInset": 0.0,
+                            "topInset": 0.0,
+                            "bottomInset": 0.0,
+                            "textHeight": float((shape.get("bounds") or {}).get("height") or 0) * 0.85,
+                        }
                 text_layer_count += 1
             else:
                 layer = {**base, "type": "shape"}
             layers.append(layer)
-        slides.append({"slide": slide, "layers": layers})
+        slide_entry: dict[str, object] = {"slide": slide, "layers": layers}
+        background = slide_backgrounds.get(slide)
+        if background:
+            slide_entry["background"] = background
+            # Prefer solid foreground fill for slide canvas color.
+            if background.get("foregroundColor"):
+                slide_entry["backgroundColor"] = background["foregroundColor"]
+        slides.append(slide_entry)
 
     report = {
         "format": "goblins-rpg3-layer-manifest-v1",

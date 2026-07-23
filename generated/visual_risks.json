@@ -1,0 +1,4961 @@
+{
+  "format": "goblins-rpg3-visual-risks-v1",
+  "summary": {
+    "slidesScanned": 201,
+    "slidesWithRisks": 123,
+    "riskTotal": 249,
+    "bySeverity": {
+      "low": 197,
+      "info": 14,
+      "medium": 7,
+      "high": 31
+    },
+    "byCode": {
+      "animation_target_missing_layer": 7,
+      "layers_mode_hides_png": 14,
+      "low_contrast_text": 197,
+      "self_hyperlink": 21,
+      "sparse_visual_coverage": 7,
+      "unresolved_media": 3
+    }
+  },
+  "queue": [
+    {
+      "slide": 7,
+      "screenId": "slide-007",
+      "riskCount": 8,
+      "high": 7,
+      "medium": 0,
+      "codes": [
+        "animation_target_missing_layer",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=7",
+      "suggestedCommand": "python tools/debug_slide.py 7"
+    },
+    {
+      "slide": 46,
+      "screenId": "slide-046",
+      "riskCount": 4,
+      "high": 3,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=46",
+      "suggestedCommand": "python tools/debug_slide.py 46"
+    },
+    {
+      "slide": 2,
+      "screenId": "slide-002",
+      "riskCount": 4,
+      "high": 1,
+      "medium": 1,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text",
+        "self_hyperlink",
+        "sparse_visual_coverage"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=2",
+      "suggestedCommand": "python tools/debug_slide.py 2"
+    },
+    {
+      "slide": 26,
+      "screenId": "slide-026",
+      "riskCount": 4,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=26",
+      "suggestedCommand": "python tools/debug_slide.py 26"
+    },
+    {
+      "slide": 29,
+      "screenId": "slide-029",
+      "riskCount": 4,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=29",
+      "suggestedCommand": "python tools/debug_slide.py 29"
+    },
+    {
+      "slide": 38,
+      "screenId": "slide-038",
+      "riskCount": 4,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=38",
+      "suggestedCommand": "python tools/debug_slide.py 38"
+    },
+    {
+      "slide": 96,
+      "screenId": "slide-096",
+      "riskCount": 4,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "unresolved_media"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=96",
+      "suggestedCommand": "python tools/debug_slide.py 96"
+    },
+    {
+      "slide": 9,
+      "screenId": "slide-009",
+      "riskCount": 3,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=9",
+      "suggestedCommand": "python tools/debug_slide.py 9"
+    },
+    {
+      "slide": 10,
+      "screenId": "slide-010",
+      "riskCount": 3,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=10",
+      "suggestedCommand": "python tools/debug_slide.py 10"
+    },
+    {
+      "slide": 15,
+      "screenId": "slide-015",
+      "riskCount": 3,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=15",
+      "suggestedCommand": "python tools/debug_slide.py 15"
+    },
+    {
+      "slide": 28,
+      "screenId": "slide-028",
+      "riskCount": 3,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=28",
+      "suggestedCommand": "python tools/debug_slide.py 28"
+    },
+    {
+      "slide": 35,
+      "screenId": "slide-035",
+      "riskCount": 3,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=35",
+      "suggestedCommand": "python tools/debug_slide.py 35"
+    },
+    {
+      "slide": 41,
+      "screenId": "slide-041",
+      "riskCount": 3,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=41",
+      "suggestedCommand": "python tools/debug_slide.py 41"
+    },
+    {
+      "slide": 56,
+      "screenId": "slide-056",
+      "riskCount": 3,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=56",
+      "suggestedCommand": "python tools/debug_slide.py 56"
+    },
+    {
+      "slide": 138,
+      "screenId": "slide-138",
+      "riskCount": 2,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=138",
+      "suggestedCommand": "python tools/debug_slide.py 138"
+    },
+    {
+      "slide": 11,
+      "screenId": "slide-011",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=11",
+      "suggestedCommand": "python tools/debug_slide.py 11"
+    },
+    {
+      "slide": 27,
+      "screenId": "slide-027",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=27",
+      "suggestedCommand": "python tools/debug_slide.py 27"
+    },
+    {
+      "slide": 39,
+      "screenId": "slide-039",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=39",
+      "suggestedCommand": "python tools/debug_slide.py 39"
+    },
+    {
+      "slide": 49,
+      "screenId": "slide-049",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=49",
+      "suggestedCommand": "python tools/debug_slide.py 49"
+    },
+    {
+      "slide": 50,
+      "screenId": "slide-050",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=50",
+      "suggestedCommand": "python tools/debug_slide.py 50"
+    },
+    {
+      "slide": 52,
+      "screenId": "slide-052",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "self_hyperlink"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=52",
+      "suggestedCommand": "python tools/debug_slide.py 52"
+    },
+    {
+      "slide": 54,
+      "screenId": "slide-054",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "unresolved_media"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=54",
+      "suggestedCommand": "python tools/debug_slide.py 54"
+    },
+    {
+      "slide": 193,
+      "screenId": "slide-193",
+      "riskCount": 1,
+      "high": 1,
+      "medium": 0,
+      "codes": [
+        "unresolved_media"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=193",
+      "suggestedCommand": "python tools/debug_slide.py 193"
+    },
+    {
+      "slide": 148,
+      "screenId": "slide-148",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 1,
+      "codes": [
+        "layers_mode_hides_png",
+        "sparse_visual_coverage"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=148",
+      "suggestedCommand": "python tools/debug_slide.py 148"
+    },
+    {
+      "slide": 166,
+      "screenId": "slide-166",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 1,
+      "codes": [
+        "layers_mode_hides_png",
+        "sparse_visual_coverage"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=166",
+      "suggestedCommand": "python tools/debug_slide.py 166"
+    },
+    {
+      "slide": 171,
+      "screenId": "slide-171",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 1,
+      "codes": [
+        "layers_mode_hides_png",
+        "sparse_visual_coverage"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=171",
+      "suggestedCommand": "python tools/debug_slide.py 171"
+    },
+    {
+      "slide": 200,
+      "screenId": "slide-200",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 1,
+      "codes": [
+        "layers_mode_hides_png",
+        "sparse_visual_coverage"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=200",
+      "suggestedCommand": "python tools/debug_slide.py 200"
+    },
+    {
+      "slide": 139,
+      "screenId": "slide-139",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 1,
+      "codes": [
+        "sparse_visual_coverage"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=139",
+      "suggestedCommand": "python tools/debug_slide.py 139"
+    },
+    {
+      "slide": 145,
+      "screenId": "slide-145",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 1,
+      "codes": [
+        "sparse_visual_coverage"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=145",
+      "suggestedCommand": "python tools/debug_slide.py 145"
+    },
+    {
+      "slide": 48,
+      "screenId": "slide-048",
+      "riskCount": 5,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=48",
+      "suggestedCommand": "python tools/debug_slide.py 48"
+    },
+    {
+      "slide": 57,
+      "screenId": "slide-057",
+      "riskCount": 5,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=57",
+      "suggestedCommand": "python tools/debug_slide.py 57"
+    },
+    {
+      "slide": 58,
+      "screenId": "slide-058",
+      "riskCount": 5,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=58",
+      "suggestedCommand": "python tools/debug_slide.py 58"
+    },
+    {
+      "slide": 198,
+      "screenId": "slide-198",
+      "riskCount": 4,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=198",
+      "suggestedCommand": "python tools/debug_slide.py 198"
+    },
+    {
+      "slide": 3,
+      "screenId": "slide-003",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=3",
+      "suggestedCommand": "python tools/debug_slide.py 3"
+    },
+    {
+      "slide": 23,
+      "screenId": "slide-023",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=23",
+      "suggestedCommand": "python tools/debug_slide.py 23"
+    },
+    {
+      "slide": 25,
+      "screenId": "slide-025",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=25",
+      "suggestedCommand": "python tools/debug_slide.py 25"
+    },
+    {
+      "slide": 31,
+      "screenId": "slide-031",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=31",
+      "suggestedCommand": "python tools/debug_slide.py 31"
+    },
+    {
+      "slide": 32,
+      "screenId": "slide-032",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=32",
+      "suggestedCommand": "python tools/debug_slide.py 32"
+    },
+    {
+      "slide": 34,
+      "screenId": "slide-034",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=34",
+      "suggestedCommand": "python tools/debug_slide.py 34"
+    },
+    {
+      "slide": 42,
+      "screenId": "slide-042",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=42",
+      "suggestedCommand": "python tools/debug_slide.py 42"
+    },
+    {
+      "slide": 47,
+      "screenId": "slide-047",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=47",
+      "suggestedCommand": "python tools/debug_slide.py 47"
+    },
+    {
+      "slide": 55,
+      "screenId": "slide-055",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=55",
+      "suggestedCommand": "python tools/debug_slide.py 55"
+    },
+    {
+      "slide": 60,
+      "screenId": "slide-060",
+      "riskCount": 3,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=60",
+      "suggestedCommand": "python tools/debug_slide.py 60"
+    },
+    {
+      "slide": 1,
+      "screenId": "slide-001",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=1",
+      "suggestedCommand": "python tools/debug_slide.py 1"
+    },
+    {
+      "slide": 5,
+      "screenId": "slide-005",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=5",
+      "suggestedCommand": "python tools/debug_slide.py 5"
+    },
+    {
+      "slide": 8,
+      "screenId": "slide-008",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=8",
+      "suggestedCommand": "python tools/debug_slide.py 8"
+    },
+    {
+      "slide": 12,
+      "screenId": "slide-012",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=12",
+      "suggestedCommand": "python tools/debug_slide.py 12"
+    },
+    {
+      "slide": 14,
+      "screenId": "slide-014",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=14",
+      "suggestedCommand": "python tools/debug_slide.py 14"
+    },
+    {
+      "slide": 17,
+      "screenId": "slide-017",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=17",
+      "suggestedCommand": "python tools/debug_slide.py 17"
+    },
+    {
+      "slide": 18,
+      "screenId": "slide-018",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=18",
+      "suggestedCommand": "python tools/debug_slide.py 18"
+    },
+    {
+      "slide": 19,
+      "screenId": "slide-019",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=19",
+      "suggestedCommand": "python tools/debug_slide.py 19"
+    },
+    {
+      "slide": 20,
+      "screenId": "slide-020",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=20",
+      "suggestedCommand": "python tools/debug_slide.py 20"
+    },
+    {
+      "slide": 30,
+      "screenId": "slide-030",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=30",
+      "suggestedCommand": "python tools/debug_slide.py 30"
+    },
+    {
+      "slide": 33,
+      "screenId": "slide-033",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=33",
+      "suggestedCommand": "python tools/debug_slide.py 33"
+    },
+    {
+      "slide": 36,
+      "screenId": "slide-036",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=36",
+      "suggestedCommand": "python tools/debug_slide.py 36"
+    },
+    {
+      "slide": 37,
+      "screenId": "slide-037",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=37",
+      "suggestedCommand": "python tools/debug_slide.py 37"
+    },
+    {
+      "slide": 40,
+      "screenId": "slide-040",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=40",
+      "suggestedCommand": "python tools/debug_slide.py 40"
+    },
+    {
+      "slide": 61,
+      "screenId": "slide-061",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=61",
+      "suggestedCommand": "python tools/debug_slide.py 61"
+    },
+    {
+      "slide": 80,
+      "screenId": "slide-080",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=80",
+      "suggestedCommand": "python tools/debug_slide.py 80"
+    },
+    {
+      "slide": 81,
+      "screenId": "slide-081",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=81",
+      "suggestedCommand": "python tools/debug_slide.py 81"
+    },
+    {
+      "slide": 82,
+      "screenId": "slide-082",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=82",
+      "suggestedCommand": "python tools/debug_slide.py 82"
+    },
+    {
+      "slide": 95,
+      "screenId": "slide-095",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=95",
+      "suggestedCommand": "python tools/debug_slide.py 95"
+    },
+    {
+      "slide": 97,
+      "screenId": "slide-097",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=97",
+      "suggestedCommand": "python tools/debug_slide.py 97"
+    },
+    {
+      "slide": 114,
+      "screenId": "slide-114",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=114",
+      "suggestedCommand": "python tools/debug_slide.py 114"
+    },
+    {
+      "slide": 116,
+      "screenId": "slide-116",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=116",
+      "suggestedCommand": "python tools/debug_slide.py 116"
+    },
+    {
+      "slide": 117,
+      "screenId": "slide-117",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=117",
+      "suggestedCommand": "python tools/debug_slide.py 117"
+    },
+    {
+      "slide": 118,
+      "screenId": "slide-118",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=118",
+      "suggestedCommand": "python tools/debug_slide.py 118"
+    },
+    {
+      "slide": 125,
+      "screenId": "slide-125",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=125",
+      "suggestedCommand": "python tools/debug_slide.py 125"
+    },
+    {
+      "slide": 126,
+      "screenId": "slide-126",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=126",
+      "suggestedCommand": "python tools/debug_slide.py 126"
+    },
+    {
+      "slide": 128,
+      "screenId": "slide-128",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=128",
+      "suggestedCommand": "python tools/debug_slide.py 128"
+    },
+    {
+      "slide": 129,
+      "screenId": "slide-129",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=129",
+      "suggestedCommand": "python tools/debug_slide.py 129"
+    },
+    {
+      "slide": 130,
+      "screenId": "slide-130",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=130",
+      "suggestedCommand": "python tools/debug_slide.py 130"
+    },
+    {
+      "slide": 134,
+      "screenId": "slide-134",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=134",
+      "suggestedCommand": "python tools/debug_slide.py 134"
+    },
+    {
+      "slide": 136,
+      "screenId": "slide-136",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=136",
+      "suggestedCommand": "python tools/debug_slide.py 136"
+    },
+    {
+      "slide": 140,
+      "screenId": "slide-140",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=140",
+      "suggestedCommand": "python tools/debug_slide.py 140"
+    },
+    {
+      "slide": 143,
+      "screenId": "slide-143",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=143",
+      "suggestedCommand": "python tools/debug_slide.py 143"
+    },
+    {
+      "slide": 144,
+      "screenId": "slide-144",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=144",
+      "suggestedCommand": "python tools/debug_slide.py 144"
+    },
+    {
+      "slide": 146,
+      "screenId": "slide-146",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=146",
+      "suggestedCommand": "python tools/debug_slide.py 146"
+    },
+    {
+      "slide": 147,
+      "screenId": "slide-147",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=147",
+      "suggestedCommand": "python tools/debug_slide.py 147"
+    },
+    {
+      "slide": 152,
+      "screenId": "slide-152",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=152",
+      "suggestedCommand": "python tools/debug_slide.py 152"
+    },
+    {
+      "slide": 155,
+      "screenId": "slide-155",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=155",
+      "suggestedCommand": "python tools/debug_slide.py 155"
+    },
+    {
+      "slide": 158,
+      "screenId": "slide-158",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=158",
+      "suggestedCommand": "python tools/debug_slide.py 158"
+    },
+    {
+      "slide": 161,
+      "screenId": "slide-161",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=161",
+      "suggestedCommand": "python tools/debug_slide.py 161"
+    },
+    {
+      "slide": 162,
+      "screenId": "slide-162",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=162",
+      "suggestedCommand": "python tools/debug_slide.py 162"
+    },
+    {
+      "slide": 163,
+      "screenId": "slide-163",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=163",
+      "suggestedCommand": "python tools/debug_slide.py 163"
+    },
+    {
+      "slide": 165,
+      "screenId": "slide-165",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=165",
+      "suggestedCommand": "python tools/debug_slide.py 165"
+    },
+    {
+      "slide": 167,
+      "screenId": "slide-167",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=167",
+      "suggestedCommand": "python tools/debug_slide.py 167"
+    },
+    {
+      "slide": 168,
+      "screenId": "slide-168",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=168",
+      "suggestedCommand": "python tools/debug_slide.py 168"
+    },
+    {
+      "slide": 170,
+      "screenId": "slide-170",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=170",
+      "suggestedCommand": "python tools/debug_slide.py 170"
+    },
+    {
+      "slide": 197,
+      "screenId": "slide-197",
+      "riskCount": 2,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=197",
+      "suggestedCommand": "python tools/debug_slide.py 197"
+    },
+    {
+      "slide": 4,
+      "screenId": "slide-004",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=4",
+      "suggestedCommand": "python tools/debug_slide.py 4"
+    },
+    {
+      "slide": 6,
+      "screenId": "slide-006",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=6",
+      "suggestedCommand": "python tools/debug_slide.py 6"
+    },
+    {
+      "slide": 13,
+      "screenId": "slide-013",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=13",
+      "suggestedCommand": "python tools/debug_slide.py 13"
+    },
+    {
+      "slide": 16,
+      "screenId": "slide-016",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=16",
+      "suggestedCommand": "python tools/debug_slide.py 16"
+    },
+    {
+      "slide": 43,
+      "screenId": "slide-043",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=43",
+      "suggestedCommand": "python tools/debug_slide.py 43"
+    },
+    {
+      "slide": 44,
+      "screenId": "slide-044",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=44",
+      "suggestedCommand": "python tools/debug_slide.py 44"
+    },
+    {
+      "slide": 59,
+      "screenId": "slide-059",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=59",
+      "suggestedCommand": "python tools/debug_slide.py 59"
+    },
+    {
+      "slide": 62,
+      "screenId": "slide-062",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=62",
+      "suggestedCommand": "python tools/debug_slide.py 62"
+    },
+    {
+      "slide": 63,
+      "screenId": "slide-063",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=63",
+      "suggestedCommand": "python tools/debug_slide.py 63"
+    },
+    {
+      "slide": 64,
+      "screenId": "slide-064",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=64",
+      "suggestedCommand": "python tools/debug_slide.py 64"
+    },
+    {
+      "slide": 79,
+      "screenId": "slide-079",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=79",
+      "suggestedCommand": "python tools/debug_slide.py 79"
+    },
+    {
+      "slide": 83,
+      "screenId": "slide-083",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=83",
+      "suggestedCommand": "python tools/debug_slide.py 83"
+    },
+    {
+      "slide": 86,
+      "screenId": "slide-086",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=86",
+      "suggestedCommand": "python tools/debug_slide.py 86"
+    },
+    {
+      "slide": 88,
+      "screenId": "slide-088",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=88",
+      "suggestedCommand": "python tools/debug_slide.py 88"
+    },
+    {
+      "slide": 90,
+      "screenId": "slide-090",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=90",
+      "suggestedCommand": "python tools/debug_slide.py 90"
+    },
+    {
+      "slide": 92,
+      "screenId": "slide-092",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=92",
+      "suggestedCommand": "python tools/debug_slide.py 92"
+    },
+    {
+      "slide": 94,
+      "screenId": "slide-094",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=94",
+      "suggestedCommand": "python tools/debug_slide.py 94"
+    },
+    {
+      "slide": 112,
+      "screenId": "slide-112",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=112",
+      "suggestedCommand": "python tools/debug_slide.py 112"
+    },
+    {
+      "slide": 113,
+      "screenId": "slide-113",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=113",
+      "suggestedCommand": "python tools/debug_slide.py 113"
+    },
+    {
+      "slide": 115,
+      "screenId": "slide-115",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=115",
+      "suggestedCommand": "python tools/debug_slide.py 115"
+    },
+    {
+      "slide": 121,
+      "screenId": "slide-121",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=121",
+      "suggestedCommand": "python tools/debug_slide.py 121"
+    },
+    {
+      "slide": 122,
+      "screenId": "slide-122",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=122",
+      "suggestedCommand": "python tools/debug_slide.py 122"
+    },
+    {
+      "slide": 124,
+      "screenId": "slide-124",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=124",
+      "suggestedCommand": "python tools/debug_slide.py 124"
+    },
+    {
+      "slide": 131,
+      "screenId": "slide-131",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=131",
+      "suggestedCommand": "python tools/debug_slide.py 131"
+    },
+    {
+      "slide": 133,
+      "screenId": "slide-133",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=133",
+      "suggestedCommand": "python tools/debug_slide.py 133"
+    },
+    {
+      "slide": 141,
+      "screenId": "slide-141",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=141",
+      "suggestedCommand": "python tools/debug_slide.py 141"
+    },
+    {
+      "slide": 149,
+      "screenId": "slide-149",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=149",
+      "suggestedCommand": "python tools/debug_slide.py 149"
+    },
+    {
+      "slide": 151,
+      "screenId": "slide-151",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=151",
+      "suggestedCommand": "python tools/debug_slide.py 151"
+    },
+    {
+      "slide": 154,
+      "screenId": "slide-154",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=154",
+      "suggestedCommand": "python tools/debug_slide.py 154"
+    },
+    {
+      "slide": 157,
+      "screenId": "slide-157",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=157",
+      "suggestedCommand": "python tools/debug_slide.py 157"
+    },
+    {
+      "slide": 160,
+      "screenId": "slide-160",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "low_contrast_text"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=160",
+      "suggestedCommand": "python tools/debug_slide.py 160"
+    },
+    {
+      "slide": 184,
+      "screenId": "slide-184",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=184",
+      "suggestedCommand": "python tools/debug_slide.py 184"
+    },
+    {
+      "slide": 201,
+      "screenId": "slide-201",
+      "riskCount": 1,
+      "high": 0,
+      "medium": 0,
+      "codes": [
+        "layers_mode_hides_png"
+      ],
+      "suggestedUrl": "http://127.0.0.1:8765/?debug=1&slide=201",
+      "suggestedCommand": "python tools/debug_slide.py 201"
+    }
+  ],
+  "byCode": {
+    "self_hyperlink": {
+      "count": 21,
+      "severity": "high",
+      "slides": [
+        2,
+        9,
+        10,
+        11,
+        15,
+        26,
+        27,
+        28,
+        29,
+        35,
+        38,
+        39,
+        41,
+        46,
+        49,
+        50,
+        52,
+        56,
+        138
+      ],
+      "examples": [
+        {
+          "slide": 2,
+          "code": "self_hyperlink",
+          "severity": "high",
+          "message": "Hotspot s002-a375904 hyperlinks to the same slide",
+          "evidence": {
+            "hotspotId": "s002-a375904",
+            "shapeId": 2056,
+            "targetSlide": 2
+          }
+        },
+        {
+          "slide": 9,
+          "code": "self_hyperlink",
+          "severity": "high",
+          "message": "Hotspot s009-a401435 hyperlinks to the same slide",
+          "evidence": {
+            "hotspotId": "s009-a401435",
+            "shapeId": 10250,
+            "targetSlide": 9
+          }
+        },
+        {
+          "slide": 10,
+          "code": "self_hyperlink",
+          "severity": "high",
+          "message": "Hotspot s010-a404831 hyperlinks to the same slide",
+          "evidence": {
+            "hotspotId": "s010-a404831",
+            "shapeId": 11271,
+            "targetSlide": 10
+          }
+        },
+        {
+          "slide": 11,
+          "code": "self_hyperlink",
+          "severity": "high",
+          "message": "Hotspot s011-a405456 hyperlinks to the same slide",
+          "evidence": {
+            "hotspotId": "s011-a405456",
+            "shapeId": 12291,
+            "targetSlide": 11
+          }
+        },
+        {
+          "slide": 15,
+          "code": "self_hyperlink",
+          "severity": "high",
+          "message": "Hotspot s015-a421744 hyperlinks to the same slide",
+          "evidence": {
+            "hotspotId": "s015-a421744",
+            "shapeId": 17424,
+            "targetSlide": 15
+          }
+        }
+      ]
+    },
+    "animation_target_missing_layer": {
+      "count": 7,
+      "severity": "high",
+      "slides": [
+        7
+      ],
+      "examples": [
+        {
+          "slide": 7,
+          "code": "animation_target_missing_layer",
+          "severity": "high",
+          "message": "Animation targets shape 1 with no layer",
+          "evidence": {
+            "shapeId": 1,
+            "nodeId": "s007-tn0009"
+          }
+        },
+        {
+          "slide": 7,
+          "code": "animation_target_missing_layer",
+          "severity": "high",
+          "message": "Animation targets shape 1 with no layer",
+          "evidence": {
+            "shapeId": 1,
+            "nodeId": "s007-tn0013"
+          }
+        },
+        {
+          "slide": 7,
+          "code": "animation_target_missing_layer",
+          "severity": "high",
+          "message": "Animation targets shape 1 with no layer",
+          "evidence": {
+            "shapeId": 1,
+            "nodeId": "s007-tn0017"
+          }
+        },
+        {
+          "slide": 7,
+          "code": "animation_target_missing_layer",
+          "severity": "high",
+          "message": "Animation targets shape 1 with no layer",
+          "evidence": {
+            "shapeId": 1,
+            "nodeId": "s007-tn0021"
+          }
+        },
+        {
+          "slide": 7,
+          "code": "animation_target_missing_layer",
+          "severity": "high",
+          "message": "Animation targets shape 1 with no layer",
+          "evidence": {
+            "shapeId": 1,
+            "nodeId": "s007-tn0025"
+          }
+        }
+      ]
+    },
+    "unresolved_media": {
+      "count": 3,
+      "severity": "high",
+      "slides": [
+        54,
+        96,
+        193
+      ],
+      "examples": [
+        {
+          "slide": 54,
+          "code": "unresolved_media",
+          "severity": "high",
+          "message": "Hotspot s054-a638920 media is unresolved",
+          "evidence": {
+            "hotspotId": "s054-a638920",
+            "behaviorStatus": "unresolved_media",
+            "mediaBindingId": "slide-054-shape-65543"
+          }
+        },
+        {
+          "slide": 96,
+          "code": "unresolved_media",
+          "severity": "high",
+          "message": "Hotspot s096-a767762 media is unresolved",
+          "evidence": {
+            "hotspotId": "s096-a767762",
+            "behaviorStatus": "unresolved_media",
+            "mediaBindingId": "slide-096-shape-111627"
+          }
+        },
+        {
+          "slide": 193,
+          "code": "unresolved_media",
+          "severity": "high",
+          "message": "Hotspot s193-a1108521 media is unresolved",
+          "evidence": {
+            "hotspotId": "s193-a1108521",
+            "behaviorStatus": "unresolved_media",
+            "mediaBindingId": "slide-193-shape-233483"
+          }
+        }
+      ]
+    },
+    "sparse_visual_coverage": {
+      "count": 7,
+      "severity": "medium",
+      "slides": [
+        2,
+        139,
+        145,
+        148,
+        166,
+        171,
+        200
+      ],
+      "examples": [
+        {
+          "slide": 2,
+          "code": "sparse_visual_coverage",
+          "severity": "medium",
+          "message": "Slide has no large image layer and only sparse text/shapes",
+          "evidence": {
+            "layerCount": 3,
+            "imageLayers": 1,
+            "nonEmptyTextLayers": 2,
+            "maxLayerArea": 0.0867
+          }
+        },
+        {
+          "slide": 139,
+          "code": "sparse_visual_coverage",
+          "severity": "medium",
+          "message": "Slide has no large image layer and only sparse text/shapes",
+          "evidence": {
+            "layerCount": 0,
+            "imageLayers": 0,
+            "nonEmptyTextLayers": 0,
+            "maxLayerArea": 0.0
+          }
+        },
+        {
+          "slide": 145,
+          "code": "sparse_visual_coverage",
+          "severity": "medium",
+          "message": "Slide has no large image layer and only sparse text/shapes",
+          "evidence": {
+            "layerCount": 0,
+            "imageLayers": 0,
+            "nonEmptyTextLayers": 0,
+            "maxLayerArea": 0.0
+          }
+        },
+        {
+          "slide": 148,
+          "code": "sparse_visual_coverage",
+          "severity": "medium",
+          "message": "Slide has no large image layer and only sparse text/shapes",
+          "evidence": {
+            "layerCount": 1,
+            "imageLayers": 0,
+            "nonEmptyTextLayers": 1,
+            "maxLayerArea": 0.0356
+          }
+        },
+        {
+          "slide": 166,
+          "code": "sparse_visual_coverage",
+          "severity": "medium",
+          "message": "Slide has no large image layer and only sparse text/shapes",
+          "evidence": {
+            "layerCount": 1,
+            "imageLayers": 0,
+            "nonEmptyTextLayers": 1,
+            "maxLayerArea": 0.1822
+          }
+        }
+      ]
+    },
+    "low_contrast_text": {
+      "count": 197,
+      "severity": "low",
+      "slides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        40,
+        41,
+        42,
+        43,
+        44,
+        46,
+        47,
+        48,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        79,
+        80,
+        81,
+        82,
+        83,
+        86,
+        88,
+        90,
+        92,
+        94,
+        95,
+        96,
+        97,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        121,
+        122,
+        124,
+        125,
+        126,
+        128,
+        129,
+        130,
+        131,
+        133,
+        134,
+        136,
+        138,
+        140,
+        141,
+        143,
+        144,
+        146,
+        147,
+        149,
+        151,
+        152,
+        154,
+        155,
+        157,
+        158,
+        160,
+        161,
+        162,
+        163,
+        165,
+        167,
+        168,
+        170,
+        197,
+        198
+      ],
+      "examples": [
+        {
+          "slide": 1,
+          "code": "low_contrast_text",
+          "severity": "low",
+          "message": "Light text on light slide background for shape 69639",
+          "evidence": {
+            "shapeId": 69639,
+            "text": "Presents",
+            "fontColor": "#ffffffff",
+            "backgroundColor": "#ffffffff"
+          }
+        },
+        {
+          "slide": 2,
+          "code": "low_contrast_text",
+          "severity": "low",
+          "message": "Light text on light slide background for shape 2056",
+          "evidence": {
+            "shapeId": 2056,
+            "text": "Click here to start",
+            "fontColor": "#ffff00ff",
+            "backgroundColor": "#ffffffff"
+          }
+        },
+        {
+          "slide": 3,
+          "code": "low_contrast_text",
+          "severity": "low",
+          "message": "Light text on light slide background for shape 3077",
+          "evidence": {
+            "shapeId": 3077,
+            "text": "It was a long lived peace in the land",
+            "fontColor": "#ffffffff",
+            "backgroundColor": "#ffffffff"
+          }
+        },
+        {
+          "slide": 3,
+          "code": "low_contrast_text",
+          "severity": "low",
+          "message": "Light text on light slide background for shape 3078",
+          "evidence": {
+            "shapeId": 3078,
+            "text": "Until\u00e0.",
+            "fontColor": "#ffffffff",
+            "backgroundColor": "#ffffffff"
+          }
+        },
+        {
+          "slide": 3,
+          "code": "low_contrast_text",
+          "severity": "low",
+          "message": "Light text on light slide background for shape 3079",
+          "evidence": {
+            "shapeId": 3079,
+            "text": "100 to 150 years ago\u00e0",
+            "fontColor": "#ffffffff",
+            "backgroundColor": "#ffffffff"
+          }
+        }
+      ]
+    },
+    "layers_mode_hides_png": {
+      "count": 14,
+      "severity": "info",
+      "slides": [
+        1,
+        2,
+        48,
+        55,
+        57,
+        58,
+        61,
+        148,
+        166,
+        171,
+        184,
+        198,
+        200,
+        201
+      ],
+      "examples": [
+        {
+          "slide": 1,
+          "code": "layers_mode_hides_png",
+          "severity": "info",
+          "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+          "evidence": {
+            "layerCount": 3,
+            "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-001.png"
+          }
+        },
+        {
+          "slide": 2,
+          "code": "layers_mode_hides_png",
+          "severity": "info",
+          "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+          "evidence": {
+            "layerCount": 3,
+            "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-002.png"
+          }
+        },
+        {
+          "slide": 48,
+          "code": "layers_mode_hides_png",
+          "severity": "info",
+          "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+          "evidence": {
+            "layerCount": 5,
+            "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-048.png"
+          }
+        },
+        {
+          "slide": 55,
+          "code": "layers_mode_hides_png",
+          "severity": "info",
+          "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+          "evidence": {
+            "layerCount": 3,
+            "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-055.png"
+          }
+        },
+        {
+          "slide": 57,
+          "code": "layers_mode_hides_png",
+          "severity": "info",
+          "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+          "evidence": {
+            "layerCount": 6,
+            "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-057.png"
+          }
+        }
+      ]
+    }
+  },
+  "risks": [
+    {
+      "slide": 2,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s002-a375904 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s002-a375904",
+        "shapeId": 2056,
+        "targetSlide": 2
+      }
+    },
+    {
+      "slide": 7,
+      "code": "animation_target_missing_layer",
+      "severity": "high",
+      "message": "Animation targets shape 1 with no layer",
+      "evidence": {
+        "shapeId": 1,
+        "nodeId": "s007-tn0009"
+      }
+    },
+    {
+      "slide": 7,
+      "code": "animation_target_missing_layer",
+      "severity": "high",
+      "message": "Animation targets shape 1 with no layer",
+      "evidence": {
+        "shapeId": 1,
+        "nodeId": "s007-tn0013"
+      }
+    },
+    {
+      "slide": 7,
+      "code": "animation_target_missing_layer",
+      "severity": "high",
+      "message": "Animation targets shape 1 with no layer",
+      "evidence": {
+        "shapeId": 1,
+        "nodeId": "s007-tn0017"
+      }
+    },
+    {
+      "slide": 7,
+      "code": "animation_target_missing_layer",
+      "severity": "high",
+      "message": "Animation targets shape 1 with no layer",
+      "evidence": {
+        "shapeId": 1,
+        "nodeId": "s007-tn0021"
+      }
+    },
+    {
+      "slide": 7,
+      "code": "animation_target_missing_layer",
+      "severity": "high",
+      "message": "Animation targets shape 1 with no layer",
+      "evidence": {
+        "shapeId": 1,
+        "nodeId": "s007-tn0025"
+      }
+    },
+    {
+      "slide": 7,
+      "code": "animation_target_missing_layer",
+      "severity": "high",
+      "message": "Animation targets shape 1 with no layer",
+      "evidence": {
+        "shapeId": 1,
+        "nodeId": "s007-tn0029"
+      }
+    },
+    {
+      "slide": 7,
+      "code": "animation_target_missing_layer",
+      "severity": "high",
+      "message": "Animation targets shape 1 with no layer",
+      "evidence": {
+        "shapeId": 1,
+        "nodeId": "s007-tn0033"
+      }
+    },
+    {
+      "slide": 9,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s009-a401435 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s009-a401435",
+        "shapeId": 10250,
+        "targetSlide": 9
+      }
+    },
+    {
+      "slide": 10,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s010-a404831 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s010-a404831",
+        "shapeId": 11271,
+        "targetSlide": 10
+      }
+    },
+    {
+      "slide": 11,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s011-a405456 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s011-a405456",
+        "shapeId": 12291,
+        "targetSlide": 11
+      }
+    },
+    {
+      "slide": 15,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s015-a421744 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s015-a421744",
+        "shapeId": 17424,
+        "targetSlide": 15
+      }
+    },
+    {
+      "slide": 26,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s026-a484502 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s026-a484502",
+        "shapeId": 33800,
+        "targetSlide": 26
+      }
+    },
+    {
+      "slide": 27,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s027-a491991 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s027-a491991",
+        "shapeId": 34823,
+        "targetSlide": 27
+      }
+    },
+    {
+      "slide": 28,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s028-a493180 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s028-a493180",
+        "shapeId": 35850,
+        "targetSlide": 28
+      }
+    },
+    {
+      "slide": 29,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s029-a499907 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s029-a499907",
+        "shapeId": 36880,
+        "targetSlide": 29
+      }
+    },
+    {
+      "slide": 35,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s035-a551369 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s035-a551369",
+        "shapeId": 45064,
+        "targetSlide": 35
+      }
+    },
+    {
+      "slide": 38,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s038-a580222 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s038-a580222",
+        "shapeId": 48135,
+        "targetSlide": 38
+      }
+    },
+    {
+      "slide": 39,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s039-a587506 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s039-a587506",
+        "shapeId": 49156,
+        "targetSlide": 39
+      }
+    },
+    {
+      "slide": 41,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s041-a594709 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s041-a594709",
+        "shapeId": 51207,
+        "targetSlide": 41
+      }
+    },
+    {
+      "slide": 46,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s046-a618003 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s046-a618003",
+        "shapeId": 56333,
+        "targetSlide": 46
+      }
+    },
+    {
+      "slide": 46,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s046-a618209 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s046-a618209",
+        "shapeId": 56334,
+        "targetSlide": 46
+      }
+    },
+    {
+      "slide": 46,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s046-a618414 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s046-a618414",
+        "shapeId": 56335,
+        "targetSlide": 46
+      }
+    },
+    {
+      "slide": 49,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s049-a633202 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s049-a633202",
+        "shapeId": 60423,
+        "targetSlide": 49
+      }
+    },
+    {
+      "slide": 50,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s050-a633861 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s050-a633861",
+        "shapeId": 61445,
+        "targetSlide": 50
+      }
+    },
+    {
+      "slide": 52,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s052-a636703 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s052-a636703",
+        "shapeId": 63495,
+        "targetSlide": 52
+      }
+    },
+    {
+      "slide": 54,
+      "code": "unresolved_media",
+      "severity": "high",
+      "message": "Hotspot s054-a638920 media is unresolved",
+      "evidence": {
+        "hotspotId": "s054-a638920",
+        "behaviorStatus": "unresolved_media",
+        "mediaBindingId": "slide-054-shape-65543"
+      }
+    },
+    {
+      "slide": 56,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s056-a646048 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s056-a646048",
+        "shapeId": 67590,
+        "targetSlide": 56
+      }
+    },
+    {
+      "slide": 96,
+      "code": "unresolved_media",
+      "severity": "high",
+      "message": "Hotspot s096-a767762 media is unresolved",
+      "evidence": {
+        "hotspotId": "s096-a767762",
+        "behaviorStatus": "unresolved_media",
+        "mediaBindingId": "slide-096-shape-111627"
+      }
+    },
+    {
+      "slide": 138,
+      "code": "self_hyperlink",
+      "severity": "high",
+      "message": "Hotspot s138-a923223 hyperlinks to the same slide",
+      "evidence": {
+        "hotspotId": "s138-a923223",
+        "shapeId": 161802,
+        "targetSlide": 138
+      }
+    },
+    {
+      "slide": 193,
+      "code": "unresolved_media",
+      "severity": "high",
+      "message": "Hotspot s193-a1108521 media is unresolved",
+      "evidence": {
+        "hotspotId": "s193-a1108521",
+        "behaviorStatus": "unresolved_media",
+        "mediaBindingId": "slide-193-shape-233483"
+      }
+    },
+    {
+      "slide": 2,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 3,
+        "imageLayers": 1,
+        "nonEmptyTextLayers": 2,
+        "maxLayerArea": 0.0867
+      }
+    },
+    {
+      "slide": 139,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 0,
+        "imageLayers": 0,
+        "nonEmptyTextLayers": 0,
+        "maxLayerArea": 0.0
+      }
+    },
+    {
+      "slide": 145,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 0,
+        "imageLayers": 0,
+        "nonEmptyTextLayers": 0,
+        "maxLayerArea": 0.0
+      }
+    },
+    {
+      "slide": 148,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 1,
+        "imageLayers": 0,
+        "nonEmptyTextLayers": 1,
+        "maxLayerArea": 0.0356
+      }
+    },
+    {
+      "slide": 166,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 1,
+        "imageLayers": 0,
+        "nonEmptyTextLayers": 1,
+        "maxLayerArea": 0.1822
+      }
+    },
+    {
+      "slide": 171,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 1,
+        "imageLayers": 0,
+        "nonEmptyTextLayers": 1,
+        "maxLayerArea": 0.15
+      }
+    },
+    {
+      "slide": 200,
+      "code": "sparse_visual_coverage",
+      "severity": "medium",
+      "message": "Slide has no large image layer and only sparse text/shapes",
+      "evidence": {
+        "layerCount": 2,
+        "imageLayers": 0,
+        "nonEmptyTextLayers": 2,
+        "maxLayerArea": 0.0444
+      }
+    },
+    {
+      "slide": 1,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 69639",
+      "evidence": {
+        "shapeId": 69639,
+        "text": "Presents",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 2,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 2056",
+      "evidence": {
+        "shapeId": 2056,
+        "text": "Click here to start",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 3,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 3077",
+      "evidence": {
+        "shapeId": 3077,
+        "text": "It was a long lived peace in the land",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 3,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 3078",
+      "evidence": {
+        "shapeId": 3078,
+        "text": "Until\u00e0.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 3,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 3079",
+      "evidence": {
+        "shapeId": 3079,
+        "text": "100 to 150 years ago\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 4,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 4105",
+      "evidence": {
+        "shapeId": 4105,
+        "text": "And then the goblins invaded\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 5,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 5125",
+      "evidence": {
+        "shapeId": 5125,
+        "text": "They Burned an pillaged the countryside\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 5,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 5127",
+      "evidence": {
+        "shapeId": 5127,
+        "text": "And there seemed no end",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 6,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 7173",
+      "evidence": {
+        "shapeId": 7173,
+        "text": "Until the \u00f4hero of time\u00f6 appeared.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 7,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 8204",
+      "evidence": {
+        "shapeId": 8204,
+        "text": "The hero of time ded them all with fell run of his spear.\n(don\u00c6t ask)",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 8,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 9222",
+      "evidence": {
+        "shapeId": 9222,
+        "text": "Peace was restored once more.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 8,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 9223",
+      "evidence": {
+        "shapeId": 9223,
+        "text": "This is 100 to 150 years later\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 9,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 10247",
+      "evidence": {
+        "shapeId": 10247,
+        "text": "You live in the small, quiet village of New Jersey.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 9,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 10248",
+      "evidence": {
+        "shapeId": 10248,
+        "text": "HINT: Click on something to talk/examine",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 10,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 11270",
+      "evidence": {
+        "shapeId": 11270,
+        "text": "Hello! Uh, I mean\u00e0 RUFF RUFF!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 10,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 11271",
+      "evidence": {
+        "shapeId": 11271,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 12,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 13324",
+      "evidence": {
+        "shapeId": 13324,
+        "text": "Okay, Okay. I give. I\u00c6m a talking dog.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 12,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 13326",
+      "evidence": {
+        "shapeId": 13326,
+        "text": "I\u00c6ll give you this if you leave me alone.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 13,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 14341",
+      "evidence": {
+        "shapeId": 14341,
+        "text": "Got the sword!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 14,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 15378",
+      "evidence": {
+        "shapeId": 15378,
+        "text": "AAA!!! The goblins are attacking!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 14,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 15386",
+      "evidence": {
+        "shapeId": 15386,
+        "text": "(Darn strait)",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 15,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 17418",
+      "evidence": {
+        "shapeId": 17418,
+        "text": "Goblin x3 attacked!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 15,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 17427",
+      "evidence": {
+        "shapeId": 17427,
+        "text": "I\u00c6m bored\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 16,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 20487",
+      "evidence": {
+        "shapeId": 20487,
+        "text": "Goblin fled of boredom\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 17,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 18442",
+      "evidence": {
+        "shapeId": 18442,
+        "text": "CAN\u00c6T ESCAPE!!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 17,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 18443",
+      "evidence": {
+        "shapeId": 18443,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 18,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 23558",
+      "evidence": {
+        "shapeId": 23558,
+        "text": "CAN\u00c6T ESCAPE!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 18,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 23559",
+      "evidence": {
+        "shapeId": 23559,
+        "text": "Click here  to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 19,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 24594",
+      "evidence": {
+        "shapeId": 24594,
+        "text": "Felled goblin!!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 19,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 24595",
+      "evidence": {
+        "shapeId": 24595,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 20,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 25607",
+      "evidence": {
+        "shapeId": 25607,
+        "text": "Felled goblin!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 20,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 25608",
+      "evidence": {
+        "shapeId": 25608,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 23,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 29706",
+      "evidence": {
+        "shapeId": 29706,
+        "text": "Goblin x3 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 23,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 29707",
+      "evidence": {
+        "shapeId": 29707,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 23,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 29708",
+      "evidence": {
+        "shapeId": 29708,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 25,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 32775",
+      "evidence": {
+        "shapeId": 32775,
+        "text": "Goblin x2 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 25,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 32776",
+      "evidence": {
+        "shapeId": 32776,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 25,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 32777",
+      "evidence": {
+        "shapeId": 32777,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 26,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 33798",
+      "evidence": {
+        "shapeId": 33798,
+        "text": "Goblin x1 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 26,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 33799",
+      "evidence": {
+        "shapeId": 33799,
+        "text": "Player takes 5 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 26,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 33800",
+      "evidence": {
+        "shapeId": 33800,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 28,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 35849",
+      "evidence": {
+        "shapeId": 35849,
+        "text": "Can\u00c6t escape!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 28,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 35850",
+      "evidence": {
+        "shapeId": 35850,
+        "text": "Click here to continue\u00e0.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 29,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 36870",
+      "evidence": {
+        "shapeId": 36870,
+        "text": "Goblin releases Fury!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 29,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 36879",
+      "evidence": {
+        "shapeId": 36879,
+        "text": "Player takes 10 damage.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 29,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 36880",
+      "evidence": {
+        "shapeId": 36880,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 30,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 37894",
+      "evidence": {
+        "shapeId": 37894,
+        "text": "You ded.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 30,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 37895",
+      "evidence": {
+        "shapeId": 37895,
+        "text": "Press esc to exit.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 31,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 38919",
+      "evidence": {
+        "shapeId": 38919,
+        "text": "Goblin x3 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 31,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 38920",
+      "evidence": {
+        "shapeId": 38920,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 31,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 38921",
+      "evidence": {
+        "shapeId": 38921,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 32,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 39942",
+      "evidence": {
+        "shapeId": 39942,
+        "text": "Goblin x2 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 32,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 39943",
+      "evidence": {
+        "shapeId": 39943,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 32,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 39944",
+      "evidence": {
+        "shapeId": 39944,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 33,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 40967",
+      "evidence": {
+        "shapeId": 40967,
+        "text": "Felled goblin!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 33,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 40968",
+      "evidence": {
+        "shapeId": 40968,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 34,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 41990",
+      "evidence": {
+        "shapeId": 41990,
+        "text": "Goblin x1 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 34,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 41991",
+      "evidence": {
+        "shapeId": 41991,
+        "text": "Player takes 5 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 34,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 41992",
+      "evidence": {
+        "shapeId": 41992,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 35,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 45063",
+      "evidence": {
+        "shapeId": 45063,
+        "text": "Felled goblin!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 35,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 45064",
+      "evidence": {
+        "shapeId": 45064,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 36,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 46094",
+      "evidence": {
+        "shapeId": 46094,
+        "text": "HAHAHAHA!!\nYAH!! TAKE THAT STUPID GOBLINS!!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 36,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 46102",
+      "evidence": {
+        "shapeId": 46102,
+        "text": "Click here to continue\u00e0.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 37,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 47110",
+      "evidence": {
+        "shapeId": 47110,
+        "text": "Can\u00c6t escape!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 37,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 47111",
+      "evidence": {
+        "shapeId": 47111,
+        "text": "Click here to continue\u00e0.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 38,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 48133",
+      "evidence": {
+        "shapeId": 48133,
+        "text": "Goblin x1 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 38,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 48134",
+      "evidence": {
+        "shapeId": 48134,
+        "text": "Player takes 5 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 38,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 48135",
+      "evidence": {
+        "shapeId": 48135,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 40,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 50183",
+      "evidence": {
+        "shapeId": 50183,
+        "text": "Felled goblin!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 40,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 50184",
+      "evidence": {
+        "shapeId": 50184,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 41,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 51206",
+      "evidence": {
+        "shapeId": 51206,
+        "text": "Can\u00c6t escape!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 41,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 51207",
+      "evidence": {
+        "shapeId": 51207,
+        "text": "Click here to continue\u00e0.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 42,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 52229",
+      "evidence": {
+        "shapeId": 52229,
+        "text": "Goblin x1 Attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 42,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 52230",
+      "evidence": {
+        "shapeId": 52230,
+        "text": "Player takes 5 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 42,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 52231",
+      "evidence": {
+        "shapeId": 52231,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 43,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 53255",
+      "evidence": {
+        "shapeId": 53255,
+        "text": "So you flee like crazy",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 44,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 54280",
+      "evidence": {
+        "shapeId": 54280,
+        "text": "\u00f4You are here\u00f6",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 46,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 56327",
+      "evidence": {
+        "shapeId": 56327,
+        "text": "Ubergoblin attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 47,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 57352",
+      "evidence": {
+        "shapeId": 57352,
+        "text": "Ubergoblin attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 47,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 57353",
+      "evidence": {
+        "shapeId": 57353,
+        "text": "Player takes 15 damage.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 47,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 57354",
+      "evidence": {
+        "shapeId": 57354,
+        "text": "Player is dead\u00e0\u00e0\u00e0\u00e0\u00e0..",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 48,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 58375",
+      "evidence": {
+        "shapeId": 58375,
+        "text": "\u00e0\u00e0\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 48,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 58376",
+      "evidence": {
+        "shapeId": 58376,
+        "text": "Am I dead?",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 48,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 58377",
+      "evidence": {
+        "shapeId": 58377,
+        "text": "\u00f4We need to talk, come to my room. It\u00c6s the one to the left.\u00f6",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 48,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 58378",
+      "evidence": {
+        "shapeId": 58378,
+        "text": "Huh what the heck?",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 55,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 66565",
+      "evidence": {
+        "shapeId": 66565,
+        "text": "So you\u00c6ve come\u00e0",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 55,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 66566",
+      "evidence": {
+        "shapeId": 66566,
+        "text": "Huh?",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 56,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 67589",
+      "evidence": {
+        "shapeId": 67589,
+        "text": "I\u00c6ve been waiting.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 56,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 67593",
+      "evidence": {
+        "shapeId": 67593,
+        "text": "Don\u00c6t just stand there\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 57,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 68615",
+      "evidence": {
+        "shapeId": 68615,
+        "text": "Who are you?",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 57,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 68616",
+      "evidence": {
+        "shapeId": 68616,
+        "text": "Don\u00c6t you know?",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 57,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 68617",
+      "evidence": {
+        "shapeId": 68617,
+        "text": "Uhhhhh\u00e0\u00e0\u00e0..Not really\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 57,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 68619",
+      "evidence": {
+        "shapeId": 68619,
+        "text": "\u00e0\u00e0\u00e0",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 58,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 70661",
+      "evidence": {
+        "shapeId": 70661,
+        "text": "Okay, well, that doesn\u00c6t really matter",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 58,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 70663",
+      "evidence": {
+        "shapeId": 70663,
+        "text": "You\u00c6re really special\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 58,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 70664",
+      "evidence": {
+        "shapeId": 70664,
+        "text": "I\u00c6ve actually called you here for a reason\u00e0",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 58,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 70665",
+      "evidence": {
+        "shapeId": 70665,
+        "text": "And what would that be?",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 59,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 71685",
+      "evidence": {
+        "shapeId": 71685,
+        "text": "We believe you\u00c6re the\n\u00f4Hero of time\u00f6",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 60,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 72711",
+      "evidence": {
+        "shapeId": 72711,
+        "text": "Far, Far to the south, There is a tower,",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 60,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 72712",
+      "evidence": {
+        "shapeId": 72712,
+        "text": "Which is believed to be the tomb of the last hero.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 60,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 72713",
+      "evidence": {
+        "shapeId": 72713,
+        "text": "There you will find your destiny\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 61,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 73733",
+      "evidence": {
+        "shapeId": 73733,
+        "text": "Why does this draw so heavily from Zelda\u00e0?",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 62,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 74758",
+      "evidence": {
+        "shapeId": 74758,
+        "text": "You must defeat them before they take over the world!!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 63,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 77829",
+      "evidence": {
+        "shapeId": 77829,
+        "text": "Take over the world!!!!!!!!!!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 64,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 78854",
+      "evidence": {
+        "shapeId": 78854,
+        "text": "She sure gets her point made\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 79,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 92173",
+      "evidence": {
+        "shapeId": 92173,
+        "text": "Mr. T attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 80,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 93191",
+      "evidence": {
+        "shapeId": 93191,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 80,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 93220",
+      "evidence": {
+        "shapeId": 93220,
+        "text": "Felled Mr. T!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 81,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 94214",
+      "evidence": {
+        "shapeId": 94214,
+        "text": "Gained a level!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 81,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 94215",
+      "evidence": {
+        "shapeId": 94215,
+        "text": "-Hp +10\n-Mp +10",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 82,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 95239",
+      "evidence": {
+        "shapeId": 95239,
+        "text": "Fled successfully!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 82,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 95240",
+      "evidence": {
+        "shapeId": 95240,
+        "text": "I pity the foo..",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 83,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 96265",
+      "evidence": {
+        "shapeId": 96265,
+        "text": "Mr. T takes 7 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 86,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 99336",
+      "evidence": {
+        "shapeId": 99336,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 88,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 101385",
+      "evidence": {
+        "shapeId": 101385,
+        "text": "Mr. T takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 90,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 103430",
+      "evidence": {
+        "shapeId": 103430,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 92,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 107526",
+      "evidence": {
+        "shapeId": 107526,
+        "text": "Slug attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 94,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 109577",
+      "evidence": {
+        "shapeId": 109577,
+        "text": "You can\u00c6t run from a slug! That\u00c6s just not cool!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 95,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 110599",
+      "evidence": {
+        "shapeId": 110599,
+        "text": "Slug takes 14 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 95,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 110600",
+      "evidence": {
+        "shapeId": 110600,
+        "text": "Felled slug!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 96,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 111622",
+      "evidence": {
+        "shapeId": 111622,
+        "text": "Gained a level!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 96,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 111623",
+      "evidence": {
+        "shapeId": 111623,
+        "text": "-Hp +10\n-Mp +10",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 96,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 111628",
+      "evidence": {
+        "shapeId": 111628,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 97,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 112645",
+      "evidence": {
+        "shapeId": 112645,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 97,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 112660",
+      "evidence": {
+        "shapeId": 112660,
+        "text": "Felled Slug!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 112,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 130057",
+      "evidence": {
+        "shapeId": 130057,
+        "text": "Goblin commander attacks!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 113,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 131081",
+      "evidence": {
+        "shapeId": 131081,
+        "text": "You can\u00c6t flee from a boss! Duhh\u00e0.\nWhy did I even include that?",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 114,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 132104",
+      "evidence": {
+        "shapeId": 132104,
+        "text": "Player casts shield!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 114,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 132110",
+      "evidence": {
+        "shapeId": 132110,
+        "text": "Defense raised by 20%!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 115,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 135185",
+      "evidence": {
+        "shapeId": 135185,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 116,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 138254",
+      "evidence": {
+        "shapeId": 138254,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 116,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 138255",
+      "evidence": {
+        "shapeId": 138255,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 117,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 140298",
+      "evidence": {
+        "shapeId": 140298,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 117,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 140315",
+      "evidence": {
+        "shapeId": 140315,
+        "text": "Goblin commander takes 25 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 118,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 141321",
+      "evidence": {
+        "shapeId": 141321,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 118,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 141322",
+      "evidence": {
+        "shapeId": 141322,
+        "text": "Click here to continue\u00e0",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 121,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 146441",
+      "evidence": {
+        "shapeId": 146441,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 122,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 147465",
+      "evidence": {
+        "shapeId": 147465,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 124,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 149513",
+      "evidence": {
+        "shapeId": 149513,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 125,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 150537",
+      "evidence": {
+        "shapeId": 150537,
+        "text": "Player takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 125,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 150538",
+      "evidence": {
+        "shapeId": 150538,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 126,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 151559",
+      "evidence": {
+        "shapeId": 151559,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 126,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 151573",
+      "evidence": {
+        "shapeId": 151573,
+        "text": "Felled goblin commander!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 128,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 153605",
+      "evidence": {
+        "shapeId": 153605,
+        "text": "Player casts shield!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 128,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 153610",
+      "evidence": {
+        "shapeId": 153610,
+        "text": "Defense raised by 20%!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 129,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 154633",
+      "evidence": {
+        "shapeId": 154633,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 129,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 154634",
+      "evidence": {
+        "shapeId": 154634,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 130,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 156677",
+      "evidence": {
+        "shapeId": 156677,
+        "text": "Player casts shield!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 130,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 156682",
+      "evidence": {
+        "shapeId": 156682,
+        "text": "Defense raised by 20%!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 131,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 158729",
+      "evidence": {
+        "shapeId": 158729,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 133,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 159753",
+      "evidence": {
+        "shapeId": 159753,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 134,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 160777",
+      "evidence": {
+        "shapeId": 160777,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 134,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 160778",
+      "evidence": {
+        "shapeId": 160778,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 136,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 164873",
+      "evidence": {
+        "shapeId": 164873,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 136,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 164875",
+      "evidence": {
+        "shapeId": 164875,
+        "text": "Felled goblin commander!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 138,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 161801",
+      "evidence": {
+        "shapeId": 161801,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 140,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 167941",
+      "evidence": {
+        "shapeId": 167941,
+        "text": "Player casts shield!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 140,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 167946",
+      "evidence": {
+        "shapeId": 167946,
+        "text": "Defense raised by 20%!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 141,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 168969",
+      "evidence": {
+        "shapeId": 168969,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 143,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 172039",
+      "evidence": {
+        "shapeId": 172039,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 143,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 172054",
+      "evidence": {
+        "shapeId": 172054,
+        "text": "Goblin commander takes 25 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 144,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 173065",
+      "evidence": {
+        "shapeId": 173065,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 144,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 173066",
+      "evidence": {
+        "shapeId": 173066,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 146,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 174087",
+      "evidence": {
+        "shapeId": 174087,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 146,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 174100",
+      "evidence": {
+        "shapeId": 174100,
+        "text": "Goblin commander takes 25 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 147,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 176137",
+      "evidence": {
+        "shapeId": 176137,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 147,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 176138",
+      "evidence": {
+        "shapeId": 176138,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 149,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 179208",
+      "evidence": {
+        "shapeId": 179208,
+        "text": "Player takes 4 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 151,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 183304",
+      "evidence": {
+        "shapeId": 183304,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 152,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 184328",
+      "evidence": {
+        "shapeId": 184328,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 152,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 184329",
+      "evidence": {
+        "shapeId": 184329,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 154,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 186376",
+      "evidence": {
+        "shapeId": 186376,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 155,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 187400",
+      "evidence": {
+        "shapeId": 187400,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 155,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 187401",
+      "evidence": {
+        "shapeId": 187401,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 157,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 189448",
+      "evidence": {
+        "shapeId": 189448,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 158,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 190472",
+      "evidence": {
+        "shapeId": 190472,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 158,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 190473",
+      "evidence": {
+        "shapeId": 190473,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 160,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 192520",
+      "evidence": {
+        "shapeId": 192520,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 161,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 193544",
+      "evidence": {
+        "shapeId": 193544,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 161,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 193545",
+      "evidence": {
+        "shapeId": 193545,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 162,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 195590",
+      "evidence": {
+        "shapeId": 195590,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 162,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 195603",
+      "evidence": {
+        "shapeId": 195603,
+        "text": "Goblin commander takes 25 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 163,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 196616",
+      "evidence": {
+        "shapeId": 196616,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 163,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 196617",
+      "evidence": {
+        "shapeId": 196617,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 165,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 198664",
+      "evidence": {
+        "shapeId": 198664,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 165,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 198666",
+      "evidence": {
+        "shapeId": 198666,
+        "text": "Felled goblin commander!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 167,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 201734",
+      "evidence": {
+        "shapeId": 201734,
+        "text": "Player charges LIMIT!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 167,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 201747",
+      "evidence": {
+        "shapeId": 201747,
+        "text": "Goblin commander takes 25 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 168,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 202760",
+      "evidence": {
+        "shapeId": 202760,
+        "text": "Player takes 10 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 168,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 202761",
+      "evidence": {
+        "shapeId": 202761,
+        "text": "Click here to continue",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 170,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 204808",
+      "evidence": {
+        "shapeId": 204808,
+        "text": "Goblin commander takes 15 damage!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 170,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 204809",
+      "evidence": {
+        "shapeId": 204809,
+        "text": "Felled goblin commander!",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 197,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 237572",
+      "evidence": {
+        "shapeId": 237572,
+        "text": "You ded.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 197,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 237573",
+      "evidence": {
+        "shapeId": 237573,
+        "text": "Press esc to exit.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 198,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 238603",
+      "evidence": {
+        "shapeId": 238603,
+        "text": "Aww, shiz\u00e0",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 198,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 238604",
+      "evidence": {
+        "shapeId": 238604,
+        "text": "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+        "fontColor": "#ffffffff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 198,
+      "code": "low_contrast_text",
+      "severity": "low",
+      "message": "Light text on light slide background for shape 238605",
+      "evidence": {
+        "shapeId": 238605,
+        "text": "Huh?",
+        "fontColor": "#ffff00ff",
+        "backgroundColor": "#ffffffff"
+      }
+    },
+    {
+      "slide": 1,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 3,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-001.png"
+      }
+    },
+    {
+      "slide": 2,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 3,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-002.png"
+      }
+    },
+    {
+      "slide": 48,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 5,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-048.png"
+      }
+    },
+    {
+      "slide": 55,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 3,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-055.png"
+      }
+    },
+    {
+      "slide": 57,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 6,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-057.png"
+      }
+    },
+    {
+      "slide": 58,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 6,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-058.png"
+      }
+    },
+    {
+      "slide": 61,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 3,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-061.png"
+      }
+    },
+    {
+      "slide": 148,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 1,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-148.png"
+      }
+    },
+    {
+      "slide": 166,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 1,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-166.png"
+      }
+    },
+    {
+      "slide": 171,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 1,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-171.png"
+      }
+    },
+    {
+      "slide": 184,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 1,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-184.png"
+      }
+    },
+    {
+      "slide": 198,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 5,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-198.png"
+      }
+    },
+    {
+      "slide": 200,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 2,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-200.png"
+      }
+    },
+    {
+      "slide": 201,
+      "code": "layers_mode_hides_png",
+      "severity": "info",
+      "message": "Runtime hides the composite PNG when any layers exist; sparse layers may look incomplete",
+      "evidence": {
+        "layerCount": 10,
+        "png": "F:/dev/goblinsrpg3_dev/docs/screens/slide-201.png"
+      }
+    }
+  ]
+}
