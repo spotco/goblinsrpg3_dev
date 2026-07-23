@@ -47,6 +47,15 @@ python tools/build_game_manifest.py --slides 2
 
 Full playbook: [`docs/DEBUGGING.md`](docs/DEBUGGING.md).
 
+Opening-ten feature gap report (for planning fidelity work):
+
+```powershell
+python tools/analyze_opening_slides.py
+# → generated/slide_1_10_feature_gaps.json
+```
+
+See `PLAN.md` section **Next steps: slides 1–10 missing PowerPoint features**.
+
 Defaults in `docs/app.js` (`RUNTIME_CONFIG`) still work; URL query overrides are preferred so you do not need to edit source. Log entries use the `[GoblinsRPG3]` prefix.
 
 The local server sends `no-store`/`no-cache` headers for every page and asset. The page also adds a per-load cache-busting query to scripts, styles, manifests, images, and audio, so refreshes always fetch current files.

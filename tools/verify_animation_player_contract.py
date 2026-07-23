@@ -89,8 +89,10 @@ def main() -> None:
             "snippets": (
                 "function evaluatePowerPointFormula",
                 "function applyAnimateBehavior",
+                "function animateMetricValues",
                 "function setMetric",
-                "transitionList([\"left\", \"top\"], timing)",
+                "function cssPropertiesForMetric",
+                "basePptX",
             ),
         },
         {
@@ -141,7 +143,14 @@ def main() -> None:
                 "setBehaviors": behavior_kinds.get("set"),
             },
             "present": "style.visibility" in variant_strings and "visible" in variant_strings,
-            "snippets": ("function applySetBehavior", "style.visibility", "element.style.visibility = visibility"),
+            "snippets": (
+                "function applySetBehavior",
+                "style.visibility",
+                "element.style.visibility = visibility",
+                "animation:set-metric",
+                "function animateMetricValues",
+                "basePptX",
+            ),
         },
         {
             "feature": "motion paths",

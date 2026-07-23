@@ -1,0 +1,607 @@
+{
+  "slides": [
+    {
+      "slide": 1,
+      "layerCount": 3,
+      "hotspotCount": 0,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 4000,
+        "flagNames": [
+          "autoAdvance"
+        ]
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 21,
+        "behaviorCount": 14,
+        "behaviorKinds": {
+          "effect": 2,
+          "animate": 6,
+          "set": 4,
+          "scale": 2
+        },
+        "effectNames": {
+          "fade": 2
+        },
+        "setProps": {
+          "visible": 2,
+          "style.visibility": 2,
+          "ppt_y": 1,
+          "ppt_x": 1
+        },
+        "animateProps": {
+          "ppt_w": 1,
+          "ppt_h": 1,
+          "ppt_y": 2,
+          "ppt_x": 2
+        },
+        "waitsClickConditions": 2,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 2000,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_BuildAtom": 1,
+          "RT_ParaBuild": 1,
+          "RT_ParaBuildAtom": 1,
+          "RT_TimeIterateData": 1,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 2
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [],
+      "visualRiskCodes": [
+        "layers_mode_hides_png",
+        "low_contrast_text"
+      ]
+    },
+    {
+      "slide": 2,
+      "layerCount": 3,
+      "hotspotCount": 2,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": []
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 7,
+        "behaviorCount": 1,
+        "behaviorKinds": {
+          "command": 1
+        },
+        "effectNames": {},
+        "setProps": {},
+        "animateProps": {},
+        "waitsClickConditions": 4,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 0,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_TimeCommandBehaviorContainer": 1,
+          "RT_TimeCommandBehavior": 1,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 1
+      },
+      "wordArt": [
+        {
+          "shapeId": 2052,
+          "text": "GOBLINSRPG3",
+          "shapeType": "TEXT_DEFLATE"
+        }
+      ],
+      "media": [
+        {
+          "id": "s002-a376082",
+          "status": "clickable_media",
+          "mediaBindingId": "slide-002-shape-2066",
+          "shapeId": 2066
+        }
+      ],
+      "gaps": [
+        {
+          "code": "click_gated_sequence",
+          "severity": "medium",
+          "detail": "4 OnNext/OnPrev conditions; only slide 1 autoplays through them"
+        },
+        {
+          "code": "wordart_geometry",
+          "severity": "medium",
+          "detail": "shape 2052 type TEXT_DEFLATE text='GOBLINSRPG3'"
+        },
+        {
+          "code": "self_hyperlink",
+          "severity": "high",
+          "detail": "hotspots=['s002-a375904']"
+        }
+      ],
+      "visualRiskCodes": [
+        "layers_mode_hides_png",
+        "low_contrast_text",
+        "self_hyperlink",
+        "sparse_visual_coverage"
+      ]
+    },
+    {
+      "slide": 3,
+      "layerCount": 4,
+      "hotspotCount": 0,
+      "transition": {
+        "effectType": 3,
+        "effectDirection": 1,
+        "slideTimeMs": 0,
+        "flagNames": [
+          "manualAdvance"
+        ]
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 17,
+        "behaviorCount": 8,
+        "behaviorKinds": {
+          "effect": 3,
+          "set": 5
+        },
+        "effectNames": {
+          "dissolve": 3
+        },
+        "setProps": {
+          "visible": 3,
+          "style.visibility": 5,
+          "hidden": 2
+        },
+        "animateProps": {},
+        "waitsClickConditions": 2,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 0,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_BuildAtom": 3,
+          "RT_ParaBuild": 3,
+          "RT_ParaBuildAtom": 3,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 3
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "click_gated_sequence",
+          "severity": "medium",
+          "detail": "2 OnNext/OnPrev conditions; only slide 1 autoplays through them"
+        },
+        {
+          "code": "on_click_child_sequence",
+          "severity": "medium",
+          "detail": "1 sequences queue children for click"
+        }
+      ],
+      "visualRiskCodes": [
+        "low_contrast_text"
+      ]
+    },
+    {
+      "slide": 4,
+      "layerCount": 4,
+      "hotspotCount": 0,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": [
+          "manualAdvance"
+        ]
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 1,
+        "behaviorCount": 0,
+        "behaviorKinds": {},
+        "effectNames": {},
+        "setProps": {},
+        "animateProps": {},
+        "waitsClickConditions": 0,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 0,
+        "interestingRecords": {
+          "RT_BuildList": 1
+        },
+        "targetShapeCount": 0
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "empty_wordart_or_text",
+          "severity": "medium",
+          "detail": "shapeIds=[4104]"
+        }
+      ],
+      "visualRiskCodes": [
+        "low_contrast_text"
+      ]
+    },
+    {
+      "slide": 5,
+      "layerCount": 4,
+      "hotspotCount": 0,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": [
+          "manualAdvance"
+        ]
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 12,
+        "behaviorCount": 6,
+        "behaviorKinds": {
+          "set": 4,
+          "effect": 2
+        },
+        "effectNames": {
+          "dissolve": 2
+        },
+        "setProps": {
+          "hidden": 2,
+          "style.visibility": 4,
+          "visible": 2
+        },
+        "animateProps": {},
+        "waitsClickConditions": 2,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 0,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_BuildAtom": 2,
+          "RT_ParaBuild": 2,
+          "RT_ParaBuildAtom": 2,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 2
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "click_gated_sequence",
+          "severity": "medium",
+          "detail": "2 OnNext/OnPrev conditions; only slide 1 autoplays through them"
+        },
+        {
+          "code": "on_click_child_sequence",
+          "severity": "medium",
+          "detail": "1 sequences queue children for click"
+        },
+        {
+          "code": "empty_wordart_or_text",
+          "severity": "medium",
+          "detail": "shapeIds=[5126]"
+        }
+      ],
+      "visualRiskCodes": [
+        "low_contrast_text"
+      ]
+    },
+    {
+      "slide": 6,
+      "layerCount": 2,
+      "hotspotCount": 0,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": [
+          "manualAdvance"
+        ]
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 7,
+        "behaviorCount": 2,
+        "behaviorKinds": {
+          "effect": 1,
+          "set": 1
+        },
+        "effectNames": {
+          "dissolve": 1
+        },
+        "setProps": {
+          "visible": 1,
+          "style.visibility": 1
+        },
+        "animateProps": {},
+        "waitsClickConditions": 2,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 0,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_BuildAtom": 1,
+          "RT_ParaBuild": 1,
+          "RT_ParaBuildAtom": 1,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 1
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "click_gated_sequence",
+          "severity": "medium",
+          "detail": "2 OnNext/OnPrev conditions; only slide 1 autoplays through them"
+        }
+      ],
+      "visualRiskCodes": [
+        "low_contrast_text"
+      ]
+    },
+    {
+      "slide": 7,
+      "layerCount": 9,
+      "hotspotCount": 0,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": [
+          "manualAdvance"
+        ]
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 35,
+        "behaviorCount": 16,
+        "behaviorKinds": {
+          "effect": 8,
+          "set": 8
+        },
+        "effectNames": {
+          "dissolve": 8
+        },
+        "setProps": {
+          "visible": 8,
+          "style.visibility": 8
+        },
+        "animateProps": {},
+        "waitsClickConditions": 2,
+        "triggerStartEnd": 7,
+        "maxDelayMs": 3500,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_BuildAtom": 1,
+          "RT_ParaBuild": 1,
+          "RT_ParaBuildAtom": 1,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 8
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "click_gated_sequence",
+          "severity": "medium",
+          "detail": "2 OnNext/OnPrev conditions; only slide 1 autoplays through them"
+        }
+      ],
+      "visualRiskCodes": [
+        "animation_target_missing_layer",
+        "low_contrast_text"
+      ]
+    },
+    {
+      "slide": 8,
+      "layerCount": 3,
+      "hotspotCount": 0,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": [
+          "manualAdvance"
+        ]
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 12,
+        "behaviorCount": 5,
+        "behaviorKinds": {
+          "effect": 2,
+          "set": 3
+        },
+        "effectNames": {
+          "dissolve": 2
+        },
+        "setProps": {
+          "visible": 2,
+          "style.visibility": 3,
+          "hidden": 1
+        },
+        "animateProps": {},
+        "waitsClickConditions": 2,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 0,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_BuildAtom": 2,
+          "RT_ParaBuild": 2,
+          "RT_ParaBuildAtom": 2,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 2
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "click_gated_sequence",
+          "severity": "medium",
+          "detail": "2 OnNext/OnPrev conditions; only slide 1 autoplays through them"
+        },
+        {
+          "code": "on_click_child_sequence",
+          "severity": "medium",
+          "detail": "1 sequences queue children for click"
+        }
+      ],
+      "visualRiskCodes": [
+        "low_contrast_text"
+      ]
+    },
+    {
+      "slide": 9,
+      "layerCount": 5,
+      "hotspotCount": 1,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": []
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 11,
+        "behaviorCount": 6,
+        "behaviorKinds": {
+          "set": 4,
+          "effect": 2
+        },
+        "effectNames": {
+          "dissolve": 2
+        },
+        "setProps": {
+          "hidden": 2,
+          "style.visibility": 4,
+          "visible": 2
+        },
+        "animateProps": {},
+        "waitsClickConditions": 2,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 2000,
+        "interestingRecords": {
+          "RT_BuildList": 1,
+          "RT_BuildAtom": 2,
+          "RT_ParaBuild": 2,
+          "RT_ParaBuildAtom": 2,
+          "RT_TimeSequenceData": 1
+        },
+        "targetShapeCount": 2
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "click_gated_sequence",
+          "severity": "medium",
+          "detail": "2 OnNext/OnPrev conditions; only slide 1 autoplays through them"
+        },
+        {
+          "code": "empty_wordart_or_text",
+          "severity": "medium",
+          "detail": "shapeIds=[10246]"
+        },
+        {
+          "code": "self_hyperlink",
+          "severity": "high",
+          "detail": "hotspots=['s009-a401435']"
+        }
+      ],
+      "visualRiskCodes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ]
+    },
+    {
+      "slide": 10,
+      "layerCount": 4,
+      "hotspotCount": 2,
+      "transition": {
+        "effectType": 0,
+        "effectDirection": 2,
+        "slideTimeMs": 0,
+        "flagNames": []
+      },
+      "backgroundColor": "#ffffffff",
+      "animation": {
+        "present": true,
+        "nodeCount": 1,
+        "behaviorCount": 0,
+        "behaviorKinds": {},
+        "effectNames": {},
+        "setProps": {},
+        "animateProps": {},
+        "waitsClickConditions": 0,
+        "triggerStartEnd": 0,
+        "maxDelayMs": 0,
+        "interestingRecords": {
+          "RT_BuildList": 1
+        },
+        "targetShapeCount": 0
+      },
+      "wordArt": [],
+      "media": [],
+      "gaps": [
+        {
+          "code": "self_hyperlink",
+          "severity": "high",
+          "detail": "hotspots=['s010-a404831']"
+        }
+      ],
+      "visualRiskCodes": [
+        "low_contrast_text",
+        "self_hyperlink"
+      ]
+    }
+  ],
+  "aggregateGaps": {
+    "click_gated_sequence": 7,
+    "self_hyperlink": 3,
+    "on_click_child_sequence": 3,
+    "empty_wordart_or_text": 3,
+    "wordart_geometry": 1
+  },
+  "featureInventory": {
+    "behavior:set": 29,
+    "set:style.visibility": 27,
+    "behavior:effect": 20,
+    "set:visible": 20,
+    "effect:dissolve": 18,
+    "solid_background": 10,
+    "set:hidden": 7,
+    "chained_triggers": 7,
+    "behavior:animate": 6,
+    "behavior:scale": 2,
+    "effect:fade": 2,
+    "animate:ppt_y": 2,
+    "animate:ppt_x": 2,
+    "scale": 1,
+    "animate:ppt_w": 1,
+    "animate:ppt_h": 1,
+    "set:ppt_y": 1,
+    "set:ppt_x": 1,
+    "autoAdvance": 1,
+    "behavior:command": 1,
+    "command": 1,
+    "media_mapped": 1,
+    "transition_effectType:3": 1
+  }
+}

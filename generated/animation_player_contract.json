@@ -17,8 +17,10 @@
       "runtimeSnippets": [
         "function evaluatePowerPointFormula",
         "function applyAnimateBehavior",
+        "function animateMetricValues",
         "function setMetric",
-        "transitionList([\"left\", \"top\"], timing)"
+        "function cssPropertiesForMetric",
+        "basePptX"
       ],
       "styleSnippets": []
     },
@@ -100,7 +102,10 @@
       "runtimeSnippets": [
         "function applySetBehavior",
         "style.visibility",
-        "element.style.visibility = visibility"
+        "element.style.visibility = visibility",
+        "animation:set-metric",
+        "function animateMetricValues",
+        "basePptX"
       ],
       "styleSnippets": []
     },

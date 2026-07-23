@@ -2,151 +2,188 @@
 
 ## Goal and acceptance criteria
 
-Turn the supplied PowerPoint game into a static site that can be hosted unchanged on GitHub Pages. The game will preserve the presentation's point-and-click navigation: the page background must **not** advance the game, and only the intended linked text/images (plus any explicitly designed in-game controls) may change state. It must work from a normal static HTTP server with no backend, database, or Office installation required by players.
+Ship a **static** browser port of `goblins3 v.1.0 LAUNCH.pps` on GitHub Pages (`docs/`), with **no changes to the PowerPoint file**.
 
-The delivered site will include the extracted/converted assets, a declarative game manifest, a small browser runtime, source extraction tools, deployment instructions, and automated navigation checks.
+**Must work from the extracted data as-is.** The port must reproduce **all PowerPoint slide-advancement methods** used by the game so the full graph is playable without editing the `.pps`.
 
-## Confirmed source inventory
+| Advancement method | Meaning in PPT | Port requirement |
+| --- | --- | --- |
+| **Hyperlink / action on shape or text** | Click control → go to a specific slide (or media/no-op) | Extract true targets; runtime navigates only on those hits |
+| **OnNext / OnPrev animation clicks** | Stage click advances the animation queue | Already partially implemented; keep as first consumer of stage clicks |
+| **Click-to-advance slide** | After builds (or with no builds), stage click goes to **next sequential slide** when the slide/show allows it (`manualAdvance` / default click advance) | **Decode + implement**; do **not** use a blanket “blank stage never advances” rule |
+| **Auto-advance** | Timer after slide time / when animations finish | Keep; schedule `max(slideTimeMs, animation timeline)` accurately |
+| **Media / other actions** | Sound, no-op, etc. | Keep mapped vs unresolved explicit |
+
+**Hard constraint:** Do not require PowerPoint authoring fixes. If the binary truly contains a self-hyperlink, reproduce that atom’s behavior **and** still allow progress via any other PPT-legal advancement method that the show provides (e.g. click-to-next). Prefer fixing **mis-parsed** targets over inventing remaps.
+
+**Deliverables:** extracted assets, `docs/game-manifest.json` + animation manifest, browser runtime, tools, automated checks. Manual playthrough/visual QA is last, not a blocker for the advancement milestone.
+
+---
+
+## Source inventory (stable)
 
 | Item | Finding |
 | --- | --- |
-| Presentation | `goblins3 v.1.0 LAUNCH.pps`, a PowerPoint 97–2003/OLE binary file (PowerPoint 2003-era), SHA-256 `5EF9EF5169B09119FD3E9CD7015FC8F25FF78BF104041CBC1EBBCA13BE45FA93` |
-| Screen scope | 201 PowerPoint `Slide` records, using a 4:3 5760×4320 presentation coordinate system |
-| Navigation | 217 interactive-action records and 194 hyperlink records; therefore the game is a navigation graph rather than a linear slide sequence |
-| Visual assets | 115 embedded PNG blips and one embedded bitmap blip in the `Pictures` stream; the slide drawing/text records must also be rendered or recreated |
-| Audio | Five embedded sound records and three supplied linked files: `titlesong.wma`, `rocksong.wma`, and `Ffvictory.mid` |
+| Presentation | `goblins3 v.1.0 LAUNCH.pps` (PPT 97–2003/OLE), SHA-256 `5EF9EF5169B09119FD3E9CD7015FC8F25FF78BF104041CBC1EBBCA13BE45FA93` |
+| Screens | 201 slides, 4:3 (5760×4320 source coords → 720×540 stage) |
+| Actions | 217 interactive-action records; 194 hyperlinks (graph, not only linear) |
+| Hyperlink graph (current extract) | ~118 forward, ~55 back, **21 self** (`target_slide == source`); most continues **work**; selfs cluster on some start/continue/image controls — see `generated/hyperlink_pattern_analysis.json` |
+| Visuals | Embedded pictures + per-slide layers; reconstructed rasters under `docs/screens/` |
+| Audio | Embedded WAVs + linked WMA/MIDI converted to MP3/Opus |
 
-The counts are an extraction baseline, not yet a statement that every record is visible or reachable in play.
+**Toolchain:** Python `olefile`/MS-PPT extractors + Apache POI audit (shapes/text/pictures/transitions; not full PP10 anim tree). No Aspose, no `python-pptx` for this binary.
 
-## Python utility decision
+**Animation data:** PP10 timing trees required (not optional). Evidence in `ANIMATION_EVALUATION.md`, `generated/timing_tree_audit.json`, `docs/animation-manifest.json`.
 
-- `olefile` plus the project’s MS-PPT record parser is the primary path. It runs in the existing Python 3.14 virtual environment and does not require Winget, the Microsoft Store, Office, or a server at runtime.
-- Apache POI is now validated as the non-Aspose reference path for the legacy `.pps`: it exposes slides, page size, pictures, picture instances, shapes, text, hyperlinks, embedded sounds, and slide transition atoms. It does not expose this deck's shape animation atoms through HSLF, so the Python OLE parser remains necessary for OfficeArt/client-data animation/action records.
-- The Aspose.Slides experiment has been retired from the repo because evaluation output is watermarked and cannot be on the critical path. The Python 3.13/Aspose temp install and tracked Aspose scripts were removed during cleanup.
-- `python-pptx` is not a solution for this input because it targets the modern OOXML `.pptx` format, not PowerPoint 97–2003 binary `.pps`.
-- LibreOffice/UNO wrappers are another conversion route, but they still require a separate office application and are not Python-only. They are not a current dependency.
+---
 
-## Updated critical path findings
+## Completed work (condensed)
 
-Complex PowerPoint animation support is now confirmed as required, not optional.
+### Extraction and assets
+- [x] Inventory, semantics, layers, pictures, text, transitions, embedded/linked audio, MIDI render path.
+- [x] PP10 animation manifest decode (nodes, triggers, sequences, modifiers, behaviors, motion/scale/set/effect/command).
+- [x] WordArt geotext recovery (Escher `geotext.unicode` / font); slide solid backgrounds; opening title entrance path improved.
+- [x] Non-watermarked reconstruct path (`tools/render_reconstructed.py` → `docs/screens/`); `RENDERING.md`.
 
-The source file contains PP10 timing-tree records in slide programmable tag binary blobs. These records are accessible with the local Python OLE/MS-PPT parser and are documented in `ANIMATION_EVALUATION.md` and `generated/timing_tree_audit.json`.
+### Browser runtime (`docs/`)
+- [x] Static stage, layers, hotspots, restart/mute, cache-busting, first-gesture audio unlock.
+- [x] Animation scheduler: OnNext queue, delays, set visibility, fade/dissolve, ppt_* animate, scale, motion endpoint, start/end triggers, transitions hooks, media `playFrom`.
+- [x] Debug tooling: `?debug=1&slide=N`, HUD/API, `tools/debug_slide.py`, `audit_visual_risks.py`, `probe_mechanic.py`, `debug_bundle.py`, `analyze_opening_slides.py`, `docs/DEBUGGING.md`.
 
-Confirmed animation data:
+### Automated verification
+- [x] Extractor/site/animation-contract/traversal/gameplay-behavior/audio/layer coverage verifiers (see `tools/verify_*.py` and README rebuild list).
 
-| Critical behavior | Confirmed data source |
+### Packaging
+- [x] Playable `docs/` tree; README for local serve and rebuild.
+
+---
+
+## NEXT MILESTONE (do this next): full PPT advancement support
+
+**Objective:** Analyze and implement every slide-advancement path so the **entire game** is traversable with **unchanged** `.pps` data.
+
+**Exit criteria:**
+- Automated graph + advancement-policy tests pass for all slides.
+- No reliance on editing the PowerPoint.
+- Stage-click policy is **data-driven** from PPT (not a global “never advance” or “always next”).
+- Hyperlink targets match the best available binary/POI (and PPT UI oracle where used for validation only).
+- Agent can complete a scripted path from slide 1 through early story and sample combat hubs without manual PPT fixes.
+
+### Phase A — Analyze advancement model (read PPT accurately)
+
+Produce a single machine-readable report (suggested: `generated/advancement_model.json`) covering **all 201 slides**:
+
+1. **Per-slide advancement profile**
+   - Transition flags: `autoAdvance`, `manualAdvance`, slide time, effect type/direction.
+   - Hyperlink/actions: targets, self vs non-self, text vs image hit, media/no-op.
+   - Animation: OnNext/OnPrev queue depth, whether progress depends on stage clicks for builds.
+   - **Classified mode(s)** e.g. `hyperlink_only` | `click_advance_after_anims` | `click_advance_always` | `auto_advance` | `mixed`.
+
+2. **Hyperlink ground truth (especially the 21 self-links)**
+   - Compare OLE `ExHyperlink` + `InteractiveInfoAtom` vs POI text/shape links.
+   - Attempt deeper target resolution (persist IDs / place-in-document) if labels alone are insufficient.
+   - Optional **read-only** PPT UI check on a sample (start, a few continues, a hub image link)—document findings; do not modify the file.
+   - Output: for each self-link, `status = confirmed_self | misparsed | needs_deeper_atom | unknown`.
+
+3. **Working patterns as fixtures**
+   - Text continues that already resolve correctly (e.g. 17→22, 18→24).
+   - Image multi-hotspot hubs (e.g. ~67, 69, 72, 102).
+   - Choice text (Attack/flee) with non-self targets.
+   - Use these as regression oracles for “do not break good edges.”
+
+4. **Stuck-graph detection**
+   - Slides with **no** non-self hyperlink **and** no autoAdvance **and** no click-to-advance classification → must be explained or fixed via correct flag/hyperlink decode.
+   - Reuse/extend `generated/hyperlink_pattern_analysis.json` and `generated/slide_1_10_feature_gaps.json`.
+
+### Phase B — Implement advancement in extractor + runtime
+
+1. **Manifest schema**
+   - [ ] Publish per-screen `advancement` (or equivalent) from extract/build: allowed stage-click effects, auto-advance delay, next sequential id when applicable.
+   - [ ] Keep hotspots as today; ensure `targetSlide` reflects best resolution.
+
+2. **Runtime stage-click continuum**
+   - [ ] On stage click (non-hotspot):  
+     1) unlock audio;  
+     2) if animation queue non-empty → `advanceAnimation()`;  
+     3) else if slide allows **click-to-advance** → `navigateTo(nextSequential)`;  
+     4) else no-op.
+   - [ ] Hotspot clicks always take precedence (`stopPropagation`).
+   - [ ] Auto-advance: keep `max(slideTimeMs, animationTimeline.durationMs)`; fix timeline underestimates if advances fire early/late.
+   - [ ] Debug deep-link `?slide=N` may still suppress auto-advance for inspection; document it.
+
+3. **Hyperlink accuracy**
+   - [ ] Fix extractor if Phase A finds mis-parsed targets.
+   - [ ] If targets are confirmed self in the binary, **do not** invent remaps in the `.pps`; ensure the player can still leave the slide via any other decoded method (click-to-advance, other controls).
+   - [ ] Never implement “global always next on blank click” without flags.
+
+4. **Related animation support needed for full-game progress**
+   - [ ] Multi-step set hidden/visible + dissolve OnNext trains (story slides).
+   - [ ] Decode/apply `RT_TimeSubEffectContainer` if it changes reveal behavior.
+   - [ ] ParaBuild/iterate: implement or document whole-shape approximation with a fixture (e.g. slide 7).
+   - [ ] Keep media bindings and unresolved cues explicit.
+
+5. **Automated tests for this milestone**
+   - [ ] Advancement-policy unit tests from `advancement_model.json` (every slide has a legal leave rule or is a true terminal).
+   - [ ] Traversal: hyperlink edges still valid; sequential click-advance edges where classified.
+   - [ ] Regression: working continue/image hub samples still resolve to same targets.
+   - [ ] Contract snippets for new runtime hooks only.
+   - [ ] Wire into verify scripts as appropriate (`verify_site`, new `verify_advancement.py`, etc.).
+
+### Phase C — After advancement works (secondary fidelity)
+
+Defer until the game is fully traversable:
+
+- WordArt geometry polish; empty text layer cleanup.
+- Motion path sampling beyond endpoint; rotation/color/filter if needed later.
+- Pixel-perfect vs PowerPoint screenshots.
+- Optional a11y labels on hotspots; audio loop/stop/replace edge cases.
+- GitHub Pages enablement if not already on.
+
+---
+
+## Later: manual testing and release QA (end of plan)
+
+Do **not** block the advancement milestone on these. Run after automated advancement support is in place.
+
+- [ ] Manual playthrough checklist for major branches/endings (use debug tools + risk queues).
+- [ ] Visual review of all screens against PowerPoint reference screenshots (`generated/visual_review_checklist.json`); annotate special behavior.
+- [ ] Browser QA: Chromium + Firefox; desktop and mobile viewports; text wrap, hitboxes, z-order, audio.
+- [ ] Spot-check start → story → combat hub paths against the original `.pps` in PowerPoint slideshow.
+- [ ] Confirm GitHub Pages deployment from `docs/` after push.
+
+---
+
+## Technical decisions (current)
+
+| Topic | Decision |
 | --- | --- |
-| Chained/nested animations | 2,407 `RT_TimeExtTimeNodeContainer` records and 2,533 `RT_TimeNode` atoms |
-| Click/next/previous animation triggering | `RT_TimeCondition` events `9` and `10` |
-| Animation-to-animation triggering | `RT_TimeCondition` events `3` and `4`, referencing start/end of time nodes |
-| Child sequence traversal | 135 `RT_TimeSequenceData` atoms |
-| Lerp/interpolation mode | 18 `RT_TimeAnimateBehavior` atoms with `calcMode = 1`, documented by Microsoft as linear interpolation |
-| Easing-style timing modifiers | 478 `RT_TimeModifier` atoms, including acceleration/deceleration/auto-reverse style modifier types |
-| Keyframe values | 35 `RT_TimeAnimationValue` atoms with times at 0 ms, 500 ms, and 1000 ms |
-| Text/image visibility and property changes | `RT_TimeVariant` strings such as `style.visibility`, `visible`, `ppt_x`, `ppt_y`, `#ppt_x`, and `#ppt_y` |
-| Motion effects | 215 `RT_TimeMotionBehaviorContainer` records |
-| Audio commands inside animations | 11 command behavior containers, 18 stop-audio trigger events, and 7 sound visual-target references |
-| Target mapping | 1,015 shape animation references, all resolved to Apache POI-known slide shape ids |
+| Source of truth | Unmodified `.pps`; port fixes extraction/runtime only |
+| Rendering | Hybrid: addressable layers + reconstructed raster fallback + transparent hotspots |
+| Audio | MP3 + Opus in `docs/assets/audio/`; no WMA at runtime |
+| Stage click | **Data-driven**: animations first, then click-to-advance **if PPT says so**; not hyperlink-only forever, not always-next |
+| Hyperlinks | Prefer accurate decode; majority of edges already work; investigate self-links before heuristics |
+| Debug | `docs/DEBUGGING.md`; `?debug=1&slide=N`; offline autopsy/risk tools |
 
-This changes the critical path: the browser port cannot rely only on slide screenshots plus hyperlink hotspots. It needs a shape/text/image/audio layer that can be independently animated, plus a JavaScript timing scheduler capable of matching the PowerPoint timing tree.
+---
 
-Critical path work added from the animation findings:
+## Reference artifacts for future agents
 
-1. Extract every image object instance on every slide as an addressable renderable layer, not only as burned-in slide screenshots. The existing `Pictures` stream extraction proves embedded bitmap payloads are available, but the port still needs per-slide placement, z-order, clipping/cropping, and reuse mapping for each image instance.
-2. Preserve text as addressable layer objects where it participates in animation. Burned-in text is acceptable only for static background reference layers; animated text needs extracted text runs, bounds, style, paragraph/character ranges, and timing targets.
-3. Decode PP10 timing trees into a normalized manifest that preserves parent/child structure, node ids, sequence rules, trigger conditions, durations, delays, fill/restart behavior, interpolation modes, modifiers, behavior type, keyframes/formulas, target shape/sound ids, and command behavior.
-4. Implement a JavaScript animation scheduler that supports PowerPoint-style parallel and sequential time nodes, `OnNext`/`OnPrev`, start/end-of-node triggers, delayed activation, acceleration/deceleration modifiers, linear interpolation, motion paths, visibility/set effects, and audio commands.
-5. Validate the decoder and player against selected PowerPoint reference slides before applying it globally. The current audit proves data availability; it does not yet prove playback fidelity.
+| Artifact | Use |
+| --- | --- |
+| `docs/DEBUGGING.md` | How to debug runtime + offline tools |
+| `generated/slide_1_10_feature_gaps.json` | Opening-ten gap snapshot (`tools/analyze_opening_slides.py`) |
+| `generated/hyperlink_pattern_analysis.json` | Continue/image/self-link patterns |
+| `generated/visual_risks.json` | Deck-wide risk queue |
+| `generated/runtime_traversal.json` | Current hotspot-edge graph |
+| `POI_EVALUATION.md` / `ANIMATION_EVALUATION.md` / `RENDERING.md` | Domain notes |
 
-## Implementation plan
+`_port_analysis_tmp/` remains disposable local research (JDK/POI/venv); not part of the published site.
 
-1. **Freeze and inventory the source**
-   - [x] Keep the `.pps` and original audio read-only as the reference copy; record the presentation hash and source stream inventory.
-   - [x] Produce a repeatable baseline OLE record/slide/sound/media inventory in `generated/inventory.json`.
-   - [x] Resolve persistent slide IDs, title/master/layout records, text runs, z-order, animation/transition records, and explicit sound-reference status in `generated/source_semantics.json`.
-   - [x] Produce a reviewable JSON report for slides, shape objects, asset inventory, and directed navigation edges (source screen, hotspot rectangle, action, target screen), including non-slide actions.
+---
 
-2. **Build a deterministic legacy-PowerPoint extractor**
-   - [x] Add `tools/extract_ppt.py`, which reads the OLE streams with `olefile`, walks the MS-PPT record tree, and writes a generated inventory.
-   - [x] Extract PNG bitmap payloads losslessly; decode/convert the single DIB image to PNG; preserve source record IDs, dimensions, and hashes.
-   - [x] Parse hyperlink/action records into stable game-screen IDs. Map each action to its owning shape and PowerPoint coordinates; do not infer a “next slide” fallback.
-   - [x] Capture PowerPoint text runs and their source shape/bounds metadata.
-   - [x] Capture per-slide image/text/shape layer metadata without Aspose using `tools/extract_layers.py`.
-   - [x] Validate Apache POI against the original `.pps` with `tools/poi/PoiAudit.java`; record the findings in `POI_EVALUATION.md`.
-   - [x] Extract first-pass slide transition and shape animation timing data with `tools/extract_timing.py`.
-   - [x] Confirm complex PP10 animation timing trees are present and accessible; record the evidence in `generated/timing_tree_audit.json` and `ANIMATION_EVALUATION.md`.
-   - [x] Extract per-slide image instances as separate addressable objects, including source asset id, bounds, z-order, and animation target id.
-   - [x] Extract text objects as separate addressable objects, including text values, bounds, z-order, and animation target id.
-   - [x] Improve layer extraction for crop/clip, transforms, fill/line style, text style, paragraph/character target ranges, and hyperlink/action binding on layers.
-   - [x] Implement a PP10 timing-tree decoder that emits a JS-ready manifest for nested time nodes, node ids, triggers, sequence data, interpolation modes, acceleration/deceleration/auto-reverse modifiers, behavior containers, keyframes/formulas, motion paths, text/image visibility changes, and sound commands.
-   - [x] Improve first-pass font, text wrapping, line geometry, and visual layering fidelity using extracted POI style/text-run metadata in the layer manifest, browser runtime, and reconstructed raster renderer.
-   - [ ] Complete full visual layering fidelity against Microsoft PowerPoint reference screenshots. The selected fallback for any unsupported legacy drawing construct is the generated per-screen raster layer from `tools/render_reconstructed.py`, with hotspots remaining as data-driven browser controls.
-   - [x] Convert the linked WMA files to browser-compatible MP3 and Opus assets in `generated/audio/` with `tools/convert_audio.py`.
-   - [x] Extract embedded PowerPoint WAV sounds and convert them to browser-compatible MP3 and Opus assets.
-   - [x] Render `Ffvictory.mid` to sampled browser audio with a selected soundfont/synth path. The selected path is the repo-local deterministic `tools/render_midi.py` additive synth (`goblins-python-additive-v1`), followed by ffmpeg MP3/Opus conversion.
-   - [x] Associate media-shape animation commands with converted embedded audio where the legacy cue id resolves to an embedded sound id; keep unresolved cue ids explicit in `mediaBindings`.
-   - [x] Associate all converted files with their original source/cue records and extracted loop/trigger behavior in `audioCues` and `mediaBindings[].cueBehavior`; keep legacy cue ids `3` and `4` explicit as unresolved because they are referenced by media commands but are not present in the embedded sound collection or recoverable linked-source inventory.
+## Immediate next actions for the next implementation run
 
-3. **Establish visual reference renders before porting gameplay**
-   - [x] Retire the watermarked Aspose renderer path and keep `tools/render_reconstructed.py` on the non-Aspose layer manifest.
-   - [x] Generate a first-pass unwatermarked reconstructed raster layer with `tools/render_reconstructed.py` and copy it into `docs/screens/` for browser playability.
-   - [x] Select a publishable non-watermarked render path: the repo-local custom layer reconstruction in `tools/render_reconstructed.py`, documented in `RENDERING.md`.
-   - [x] Render every source slide at a fixed 4:3 resolution using the selected controlled renderer and verify the outputs with `tools/verify_render_manifest.py`. Microsoft PowerPoint reference comparison remains part of the open full-fidelity item above.
-   - [x] Store only the reusable/reference assets needed for development; retain an index in `generated/reconstructed/render_manifest.json` that identifies the source slide, render settings, file size, and SHA-256 for each screen.
-   - [x] Generate `generated/visual_review_checklist.json` for all visible screens and hotspots, including branch-only screens and flags for unreachable, cyclic, animated, transformed, and non-navigation/media-action screens.
-   - [ ] Manually review all visible screens and hotspots against Microsoft PowerPoint reference screenshots, including branches that cannot be reached by straightforward play, and annotate special behavior (restart, modal-like reveal, repeated click, hidden object, or non-slide action).
-
-4. **Implement the static web game**
-   - [x] Create a dependency-light HTML/CSS/JavaScript app in `docs/` with `index.html`, an asset directory, and generated `game-manifest.json`. Use relative URLs only so the site works at a GitHub project-pages subpath.
-   - [x] Display a responsive 4:3 game stage. Render each screen at its original aspect ratio, letterbox it on wider/narrower displays, and position transparent semantic buttons from the extracted hotspot coordinates.
-   - [x] Drive basic navigation state exclusively from the manifest: load the start screen, perform only declared slide-link actions, provide restart/mute controls, and keep blank-stage clicks inert.
-   - [x] Support extracted non-slide action behavior in the browser runtime: 7 clickable mapped media actions, 1 mapped media action with zero click area, 3 unresolved media actions kept explicit, and 12 explicit no-op actions kept inert. Do not expose browser history as an in-game action unless the original game has an equivalent control.
-   - [x] Include non-Aspose layer data and per-slide image-instance files in `docs/game-manifest.json` for the browser runtime.
-   - [x] Include decoded PP10 animation timing-tree data as `docs/animation-manifest.json` and load it in the browser runtime.
-   - [x] Implement a layer renderer for separately addressable slide images, text, and shape placeholders; keep screenshot/reconstructed raster layers as static fallback/reference layers.
-   - [x] Implement the first JavaScript animation scheduler pass: decoded slide lookup, `OnNext` click queueing, delayed node execution, visibility set effects, and basic fade/dissolve opacity effects.
-   - [x] Implement first-pass numeric `ppt_x`/`ppt_y`/`ppt_w`/`ppt_h` animation playback and simple motion-path endpoint transforms from decoded PP10 variants.
-   - [x] Implement first-pass animation command audio playback for mapped media-shape `playFrom(0.0)` commands, queued until the first user gesture for browser autoplay compliance.
-   - [x] Wire extracted slide transition data into the browser manifest and apply effect-type/direction-specific browser transition hooks for the observed non-default transition types.
-   - [x] Implement first-pass acceleration/deceleration timing functions and auto-reverse handling for CSS-based opacity, property, and simple motion animations.
-   - [x] Implement first-pass start/end-of-node trigger scheduling for decoded PP10 condition events 3 and 4.
-   - [x] Implement JavaScript slide transitions and shape/text/image/audio animation playback from the decoded PP10 timing-tree manifest, using `generated/timing_manifest.json` only as the legacy/simple timing fallback.
-   - [x] Implement PowerPoint-style animation scheduling for the extracted/contract-covered features: parallel/sequential child scheduling hooks, chained start/end triggers, `OnNext`/`OnPrev`, delays, fill/restart behavior, linear interpolation, acceleration/deceleration modifiers, auto-reverse, motion paths, scale behavior, visibility/set effects, slide transition effects, and audio commands.
-   - Start or resume audio only after the first user gesture to satisfy browser autoplay rules; implement explicit loop/stop/replace behavior from the source inventory and degrade gracefully when audio is unavailable.
-   - Give invisible hotspots useful accessible labels and focus handling without adding visual controls that alter the original presentation.
-
-5. **Validate fidelity and game logic**
-   - [x] Unit-test the extractor: input hash, expected stream/slide/action/asset counts, asset decoding, and absence of unresolved slide targets.
-   - [x] Add static-server smoke validation for the generated `docs/` app, manifest, and first screen asset.
-   - [x] Add regression verification for the PP10 timing-tree audit: timing blob counts, key timing records, trigger events, modifier types, sequence data, variant strings, and absence of unresolved shape targets.
-   - [x] Add regression verification for the decoded PP10 animation manifest: nested time-node count, trigger events, behavior kinds, modifier types, interpolation modes, and layer-target alignment.
-   - [x] Add extractor regression tests for per-slide image/text object extraction, including copied image-instance files and resolved animated shape targets.
-   - [x] Add site verification for layer-rendering hooks and generated layer image files.
-   - [x] Add site verification for first-pass animation scheduler hooks.
-   - [x] Add site verification for numeric animation and simple motion playback hooks.
-   - [x] Add site verification for extracted transition data on all screens.
-   - [x] Add regression verification for embedded audio extraction/conversion and mapped media command bindings.
-   - [x] Add site verification for first-pass acceleration/deceleration and auto-reverse runtime hooks.
-   - [x] Add site verification for first-pass start/end animation trigger runtime hooks.
-   - [x] Add stricter extractor regression tests for no animated object left only in a burned-in background layer after animation playback starts using layers directly.
-   - [x] Add animation-player tests for representative timing features: linear interpolation, acceleration/deceleration modifiers, parallel/sequential child scheduling, chained start/end triggers, `OnNext`/`OnPrev` sequence traversal, visibility changes, motion paths, scale behaviors, slide transitions, and sound commands.
-   - [x] Add runtime tests that traverse every manifest edge, verify the target screen, confirm background clicks do not advance, and detect unreachable screens or accidental infinite loops.
-   - [x] Add gameplay behavior regression checks for extracted non-slide action semantics: navigation, clickable media, zero-area media, unresolved media, and explicit no-op actions.
-   - [ ] Maintain a manual playthrough checklist for major branches/endings.
-   - Perform visual regression checks at the reference 4:3 size and manual browser QA on current Chromium/Firefox, desktop and mobile viewport sizes. Check text wrapping, hitboxes, z-order, image transparency, and audio behavior.
-
-6. **Package for GitHub Pages**
-   - [x] Add a concise README covering local preview, extraction/build commands, current limitations, and GitHub Pages publishing from `docs/`.
-   - [x] Build into the repository's `docs/` publish root and verify it with a static HTTP server.
-   - [ ] Enable/deploy GitHub Pages after the repository is pushed to GitHub.
-   - Commit the source code and required generated game assets; exclude temporary environments, raw intermediate dumps, and nonessential reference renders.
-
-## Technical decisions to make after extraction
-
-- **Screen rendering:** prefer a hybrid approach—faithful per-screen raster/SVG presentation layers plus independently positioned HTML hotspots—unless the structured slide data proves simple enough to recreate losslessly in DOM/CSS. This offers predictable visual fidelity for a 2005 PowerPoint game while preserving real click regions.
-- **Audio format:** ship both Ogg/Opus and MP3 after validating browser playback and file sizes. Do not ship WMA as the playable web format.
-- **Original behavior vs. browser ergonomics:** preserve all original navigation and no-click-to-advance behavior. Any optional restart, mute, or fullscreen affordance should be deliberately minimal and documented rather than silently changing the game.
-
-## Current research workspace
-
-`_port_analysis_tmp/` is a disposable investigation area. It contains the Python virtual environment, portable JDK, Apache POI bundle, read-only inspection scripts, and the OLE record inventory used for the counts above. The retired Python 3.13/Aspose experiment was removed. This directory is not part of the future web build and should remain ignored before release.
+1. **Analyze** full-deck advancement + hyperlink ground truth → write `generated/advancement_model.json` (and docs summary if useful).  
+2. **Implement** manifest fields + runtime stage-click continuum + any extractor hyperlink fixes.  
+3. **Automate** advancement/traversal regressions.  
+4. Only then polish visuals / manual QA (later sections).

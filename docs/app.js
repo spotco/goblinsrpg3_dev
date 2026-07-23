@@ -797,10 +797,15 @@ function positionLayerElement(element, layer) {
   element.dataset.layerId = layer.id;
   element.dataset.shapeId = String(layer.shapeId);
   element.dataset.animated = String(Boolean(layer.animated));
+  // Current metrics (mutated by set/animate) and base layout metrics (#ppt_* formulas).
   element.dataset.pptX = String(bounds.x);
   element.dataset.pptY = String(bounds.y);
   element.dataset.pptW = String(bounds.width);
   element.dataset.pptH = String(bounds.height);
+  element.dataset.basePptX = String(bounds.x);
+  element.dataset.basePptY = String(bounds.y);
+  element.dataset.basePptW = String(bounds.width);
+  element.dataset.basePptH = String(bounds.height);
   applyLayerTransform(element, layer);
   applyLayerVisualStyle(element, layer);
 }
@@ -999,12 +1004,12 @@ function modifierStrength(node, modifierType) {
   return Number.isFinite(modifier.floatValue) ? modifier.floatValue : 1;
 }
 
-function metricFor(element, property) {
+function metricFor(element, property, useBase = false) {
   const key = {
-    ppt_x: "pptX",
-    ppt_y: "pptY",
-    ppt_w: "pptW",
-    ppt_h: "pptH",
+    ppt_x: useBase ? "basePptX" : "pptX",
+    ppt_y: useBase ? "basePptY" : "pptY",
+    ppt_w: useBase ? "basePptW" : "pptW",
+    ppt_h: useBase ? "basePptH" : "pptH",
   }[property];
   return key ? Number.parseFloat(element.dataset[key] || "0") : 0;
 }
@@ -1034,10 +1039,12 @@ function evaluatePowerPointFormula(expression, element) {
   if (formula.startsWith("(") && formula.endsWith(")")) {
     formula = formula.slice(1, -1);
   }
-  formula = formula.replace(/\bppt_x\b/g, String(metricFor(element, "ppt_x")));
-  formula = formula.replace(/\bppt_y\b/g, String(metricFor(element, "ppt_y")));
-  formula = formula.replace(/\bppt_w\b/g, String(metricFor(element, "ppt_w")));
-  formula = formula.replace(/\bppt_h\b/g, String(metricFor(element, "ppt_h")));
+  // #ppt_* in PowerPoint formulas refer to the authored shape anchor, not the
+  // live animated metrics (which set/animate may already have mutated).
+  formula = formula.replace(/\bppt_x\b/g, String(metricFor(element, "ppt_x", true)));
+  formula = formula.replace(/\bppt_y\b/g, String(metricFor(element, "ppt_y", true)));
+  formula = formula.replace(/\bppt_w\b/g, String(metricFor(element, "ppt_w", true)));
+  formula = formula.replace(/\bppt_h\b/g, String(metricFor(element, "ppt_h", true)));
   if (!/^[\d+\-*/(). eE]+$/.test(formula)) {
     return null;
   }
@@ -1260,22 +1267,83 @@ function transitionList(properties, timing) {
   return properties.map((property) => `${property} ${timing.duration}ms ${timing.timingFunction}`).join(", ");
 }
 
+/** Merge CSS transitions so concurrent behaviors (scale + ppt_x/ppt_y) do not clobber each other. */
+function applyCssTransition(element, properties, timing) {
+  const existing = (element.style.transition || "")
+    .split(",")
+    .map((part) => part.trim())
+    .filter((part) => part && part !== "none");
+  const filtered = existing.filter((part) => !properties.some((property) => part.startsWith(`${property} `) || part === property));
+  const addition = transitionList(properties, timing);
+  element.style.transition = [...filtered, addition].filter(Boolean).join(", ");
+}
+
+function clearCssTransition(element, properties = null) {
+  if (!properties) {
+    element.style.transition = "none";
+    return;
+  }
+  const existing = (element.style.transition || "")
+    .split(",")
+    .map((part) => part.trim())
+    .filter((part) => part && part !== "none");
+  const filtered = existing.filter((part) => !properties.some((property) => part.startsWith(`${property} `) || part === property));
+  element.style.transition = filtered.length ? filtered.join(", ") : "none";
+}
+
 function applySetBehavior(elements, strings) {
-  if (!strings.includes("style.visibility")) {
-    runtimeLog("animation:set-skipped", { strings, reason: "style.visibility not present" });
-    return;
-  }
-  const visibility = strings.includes("hidden") ? "hidden" : strings.includes("visible") ? "visible" : null;
-  if (!visibility) {
-    runtimeLog("animation:set-skipped", { strings, reason: "visibility value not recognized" }, "warn");
-    return;
-  }
-  runtimeLog("animation:set", { visibility, targetCount: elements.length, targets: elements.map(animationElementInfo) });
-  for (const element of elements) {
-    element.style.visibility = visibility;
-    if (visibility === "visible") {
-      element.style.opacity = element.style.opacity || "1";
+  let applied = false;
+  if (strings.includes("style.visibility") || strings.includes("visible") || strings.includes("hidden")) {
+    const visibility = strings.includes("hidden") ? "hidden" : strings.includes("visible") ? "visible" : null;
+    if (visibility) {
+      runtimeLog("animation:set-visibility", {
+        visibility,
+        targetCount: elements.length,
+        targets: elements.map(animationElementInfo),
+      });
+      for (const element of elements) {
+        element.style.visibility = visibility;
+        // Keep opacity=0 when a paired fade is about to run; only force-show if opacity is unset.
+        if (visibility === "visible" && element.style.opacity === "") {
+          element.style.opacity = "1";
+        }
+      }
+      applied = true;
     }
+  }
+
+  const property = propertyNameFromStrings(strings);
+  if (property) {
+    const formulas = formulaStrings(strings, property);
+    const expression = formulas.length ? formulas[formulas.length - 1] : null;
+    runtimeLog("animation:set-metric", {
+      property,
+      expression,
+      formulas,
+      targetCount: elements.length,
+      targets: elements.map(animationElementInfo),
+    });
+    for (const element of elements) {
+      if (!expression) {
+        continue;
+      }
+      const value = evaluatePowerPointFormula(expression, element);
+      if (value === null) {
+        runtimeLog(
+          "animation:set-metric-invalid",
+          { property, expression, target: animationElementInfo(element) },
+          "warn",
+        );
+        continue;
+      }
+      clearCssTransition(element, cssPropertiesForMetric(property));
+      setMetric(element, property, value);
+      applied = true;
+    }
+  }
+
+  if (!applied) {
+    runtimeLog("animation:set-skipped", { strings, reason: "no visibility or ppt_* property recognized" }, "warn");
   }
 }
 
@@ -1291,27 +1359,111 @@ function applyEffectBehavior(elements, strings, timing) {
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
-    const originalOpacity = element.style.opacity;
-    const originalVisibility = element.style.visibility;
+    // Entrance fade: force visible + opacity 0 → 1. Keep the end state unless auto-reverse.
     element.style.visibility = "visible";
-    element.style.opacity = "0";
-    element.style.transition = transitionList(["opacity"], timing);
-    window.requestAnimationFrame(() => {
-      runtimeLog("animation:effect-frame", { effect: "opacity", target: animationElementInfo(element) });
-      element.style.opacity = "1";
-    });
+    element.style.opacity = "1";
+    if (typeof element.animate === "function") {
+      try {
+        element.animate(
+          [{ opacity: 0 }, { opacity: 1 }],
+          {
+            duration: Math.max(timing.duration, 1),
+            easing: cssEasing(timing),
+            fill: "forwards",
+          },
+        );
+      } catch (_error) {
+        element.style.opacity = "1";
+      }
+    }
     if (timing.autoReverse) {
       scheduleAnimation(() => {
         runtimeLog("animation:effect-autoreverse", { target: animationElementInfo(element) });
         element.style.opacity = "0";
       }, timing.duration, "effect-auto-reverse", { target: animationElementInfo(element) });
-    } else if (!timing.holdFill) {
-      scheduleAnimation(() => {
-        runtimeLog("animation:effect-fill-reset", { target: animationElementInfo(element) });
-        element.style.opacity = originalOpacity;
-        element.style.visibility = originalVisibility;
-      }, timing.duration, "effect-fill-reset", { target: animationElementInfo(element) });
     }
+  }
+}
+
+function cssPropertiesForMetric(property) {
+  // Only the active metric — concurrent ppt_x + ppt_y animates must not clear each other.
+  if (property === "ppt_x") {
+    return ["left"];
+  }
+  if (property === "ppt_y") {
+    return ["top"];
+  }
+  if (property === "ppt_w") {
+    return ["width"];
+  }
+  if (property === "ppt_h") {
+    return ["height"];
+  }
+  return [];
+}
+
+function cssEasing(timing) {
+  if (timing.timingFunction === "ease-in-out") {
+    return "ease-in-out";
+  }
+  if (timing.timingFunction === "ease-in") {
+    return "ease-in";
+  }
+  if (timing.timingFunction === "ease-out") {
+    return "ease-out";
+  }
+  return "linear";
+}
+
+function metricToCssValue(property, value) {
+  return `${value * 100}%`;
+}
+
+function animateMetricValues(element, property, values, timing) {
+  const unique = values.filter((value, index) => index === 0 || value !== values[index - 1]);
+  if (!unique.length) {
+    return;
+  }
+  const original = metricFor(element, property);
+  const cssProperty = cssPropertiesForMetric(property)[0];
+  if (!cssProperty) {
+    return;
+  }
+
+  const keyframeValues = unique.length === 1 ? [original, unique[0]] : unique;
+  const frames = keyframeValues.map((value) => ({ [cssProperty]: metricToCssValue(property, value) }));
+  // Commit final metric immediately for layout formulas / later behaviors.
+  setMetric(element, property, keyframeValues[keyframeValues.length - 1]);
+  if (typeof element.animate === "function" && frames.length >= 2) {
+    try {
+      element.animate(frames, {
+        duration: Math.max(timing.duration, 1),
+        easing: cssEasing(timing),
+        fill: timing.holdFill || !timing.autoReverse ? "forwards" : "none",
+      });
+    } catch (_error) {
+      // Fall through to discrete set if WAAPI rejects the keyframes.
+    }
+  }
+
+  if (timing.autoReverse) {
+    scheduleAnimation(() => {
+      runtimeLog("animation:property-autoreverse", {
+        property,
+        value: keyframeValues[0],
+        target: animationElementInfo(element),
+      });
+      setMetric(element, property, keyframeValues[0]);
+    }, timing.duration, "property-auto-reverse", { property, target: animationElementInfo(element) });
+  } else if (!timing.holdFill) {
+    scheduleAnimation(() => {
+      runtimeLog("animation:property-fill-reset", {
+        property,
+        value: original,
+        target: animationElementInfo(element),
+      });
+      setMetric(element, property, original);
+    }, timing.duration, "property-fill-reset", { property, target: animationElementInfo(element) });
   }
 }
 
@@ -1322,51 +1474,37 @@ function applyAnimateBehavior(elements, strings, timing) {
     return;
   }
   const formulas = formulaStrings(strings, property);
-  const targetFormula = formulas[formulas.length - 1];
   runtimeLog("animation:animate", {
     property,
     formulas,
-    targetFormula,
     timing,
     targetCount: elements.length,
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
-    const target = evaluatePowerPointFormula(targetFormula, element);
-    if (target === null) {
-      runtimeLog("animation:animate-target-invalid", {
-        property,
-        targetFormula,
-        target: animationElementInfo(element),
-      }, "warn");
+    const values = [];
+    for (const formula of formulas) {
+      const value = evaluatePowerPointFormula(formula, element);
+      if (value === null) {
+        runtimeLog(
+          "animation:animate-target-invalid",
+          { property, formula, target: animationElementInfo(element) },
+          "warn",
+        );
+        continue;
+      }
+      values.push(value);
+    }
+    if (!values.length) {
       continue;
     }
-    const original = metricFor(element, property);
     runtimeLog("animation:animate-target", {
       property,
-      original,
-      targetValue: target,
-      targetFormula,
+      values,
+      formulas,
       element: animationElementInfo(element),
     });
-    element.style.transition =
-      property === "ppt_x" || property === "ppt_y"
-        ? transitionList(["left", "top"], timing)
-        : transitionList(["width", "height"], timing);
-    window.requestAnimationFrame(() => {
-      setMetric(element, property, target);
-    });
-    if (timing.autoReverse) {
-      scheduleAnimation(() => {
-        runtimeLog("animation:property-autoreverse", { property, value: original, target: animationElementInfo(element) });
-        setMetric(element, property, original);
-      }, timing.duration, "property-auto-reverse", { property, target: animationElementInfo(element) });
-    } else if (!timing.holdFill) {
-      scheduleAnimation(() => {
-        runtimeLog("animation:property-fill-reset", { property, value: original, target: animationElementInfo(element) });
-        setMetric(element, property, original);
-      }, timing.duration, "property-fill-reset", { property, target: animationElementInfo(element) });
-    }
+    animateMetricValues(element, property, values, timing);
   }
 }
 
@@ -1396,26 +1534,38 @@ function applyMotionBehavior(elements, strings, timing) {
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
-    const originalTransform = element.style.transform;
-    element.style.transition = transitionList(["transform"], timing);
-    window.requestAnimationFrame(() => {
-      const baseTransform = element.dataset.baseTransform || "";
-      runtimeLog("animation:motion-frame", {
-        endpoint,
-        baseTransform,
-        target: animationElementInfo(element),
-      });
-      element.style.transform = `${baseTransform} translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`.trim();
+    const baseTransform = element.dataset.baseTransform || "";
+    const endTransform = `${baseTransform} translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`.trim();
+    const startTransform = element.style.transform || baseTransform;
+    element.style.transform = endTransform;
+    runtimeLog("animation:motion-frame", {
+      endpoint,
+      baseTransform,
+      target: animationElementInfo(element),
     });
+    if (typeof element.animate === "function") {
+      try {
+        element.animate(
+          [{ transform: startTransform }, { transform: endTransform }],
+          {
+            duration: Math.max(timing.duration, 1),
+            easing: cssEasing(timing),
+            fill: "forwards",
+          },
+        );
+      } catch (_error) {
+        // Keep endTransform.
+      }
+    }
     if (timing.autoReverse) {
       scheduleAnimation(() => {
         runtimeLog("animation:motion-autoreverse", { target: animationElementInfo(element) });
-        element.style.transform = originalTransform;
+        element.style.transform = startTransform;
       }, timing.duration, "motion-auto-reverse", { target: animationElementInfo(element) });
     } else if (!timing.holdFill) {
       scheduleAnimation(() => {
         runtimeLog("animation:motion-fill-reset", { target: animationElementInfo(element) });
-        element.style.transform = originalTransform;
+        element.style.transform = baseTransform;
       }, timing.duration, "motion-fill-reset", { target: animationElementInfo(element) });
     }
   }
@@ -1463,25 +1613,36 @@ function applyScaleBehavior(elements, behavior, timing) {
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
-    const originalTransform = element.style.transform;
     const baseTransform = element.dataset.baseTransform || "";
-    element.style.transition = "none";
-    element.style.transform = `${baseTransform} scale(${scale.from.x}, ${scale.from.y})`.trim();
-    void element.offsetWidth;
-    element.style.transition = transitionList(["transform"], timing);
-    window.requestAnimationFrame(() => {
-      runtimeLog("animation:scale-frame", {
-        scale,
-        baseTransform,
-        target: animationElementInfo(element),
-      });
-      element.style.transform = `${baseTransform} scale(${scale.to.x}, ${scale.to.y})`.trim();
+    const holdTransform = `${baseTransform} scale(${scale.to.x}, ${scale.to.y})`.trim();
+    element.style.transform = holdTransform;
+    runtimeLog("animation:scale-frame", {
+      scale,
+      baseTransform,
+      target: animationElementInfo(element),
     });
-    if (timing.autoReverse || !timing.holdFill) {
+    if (typeof element.animate === "function") {
+      try {
+        element.animate(
+          [
+            { transform: `${baseTransform} scale(${scale.from.x}, ${scale.from.y})`.trim() },
+            { transform: holdTransform },
+          ],
+          {
+            duration: Math.max(timing.duration, 1),
+            easing: cssEasing(timing),
+            fill: "forwards",
+          },
+        );
+      } catch (_error) {
+        // Keep holdTransform already applied.
+      }
+    }
+    if (timing.autoReverse) {
       scheduleAnimation(() => {
-        runtimeLog("animation:scale-fill-reset", { target: animationElementInfo(element) });
-        element.style.transform = originalTransform;
-      }, timing.duration, "scale-fill-reset", { target: animationElementInfo(element) });
+        runtimeLog("animation:scale-autoreverse", { target: animationElementInfo(element) });
+        element.style.transform = `${baseTransform} scale(${scale.from.x}, ${scale.from.y})`.trim();
+      }, timing.duration, "scale-auto-reverse", { target: animationElementInfo(element) });
     }
   }
 }
@@ -1668,7 +1829,31 @@ function scheduleChildNodes(node, startDelay, autoplay = false) {
   }
 }
 
+function collectAnimatedShapeIds(slideAnimations) {
+  const shapeIds = new Set();
+  const stack = [...(slideAnimations.rootTimeNodes || [])];
+  while (stack.length) {
+    const node = stack.pop();
+    for (const target of node.targets || []) {
+      if (target.kind === "shape" && target.shapeId !== undefined) {
+        shapeIds.add(String(target.shapeId));
+      }
+    }
+    for (const behavior of node.behaviors || []) {
+      for (const target of behavior.targets || []) {
+        if (target.kind === "shape" && target.shapeId !== undefined) {
+          shapeIds.add(String(target.shapeId));
+        }
+      }
+    }
+    stack.push(...(node.children || []));
+  }
+  return shapeIds;
+}
+
 function setupAnimations(screen) {
+  // Slide 1 (and any future autoplay slides) should run OnNext-gated main sequences
+  // without requiring a click, matching the original title entrance.
   const autoplay = screen.slide === 1;
   runtimeLog("animation:setup-start", {
     screen: { id: screen.id, slide: screen.slide },
@@ -1691,9 +1876,20 @@ function setupAnimations(screen) {
     });
     return;
   }
+  // Entrance targets start hidden until a set/effect makes them visible.
+  const animatedShapeIds = collectAnimatedShapeIds(slideAnimations);
+  for (const shapeId of animatedShapeIds) {
+    const element = state.currentLayerElements.get(String(shapeId));
+    if (!element) {
+      continue;
+    }
+    element.style.visibility = "hidden";
+    element.style.opacity = "0";
+  }
   runtimeLog("animation:setup-roots", {
     screen: { id: screen.id, slide: screen.slide },
     rootCount: (slideAnimations.rootTimeNodes || []).length,
+    animatedShapeIds: Array.from(animatedShapeIds),
     roots: (slideAnimations.rootTimeNodes || []).map((node) => animationNodeInfo(node)),
   });
   for (const node of slideAnimations.rootTimeNodes || []) {
@@ -1801,6 +1997,15 @@ function scheduleAutoAdvance(screen) {
     transition: transition || null,
   });
   clearAutoAdvanceTimer("rescheduled");
+  // Deep-linked debug slides (?slide=N) must not immediately advance away.
+  if (state.startSlideOverride !== null && Number(screen.slide) === Number(state.startSlideOverride)) {
+    runtimeLog("navigation:auto-advance-not-scheduled", {
+      screen: { id: screen.id, slide: screen.slide },
+      reason: "debug startSlideOverride matches current screen",
+      startSlideOverride: state.startSlideOverride,
+    });
+    return;
+  }
   if (
     !transition ||
     !(transition.flagNames || []).includes("autoAdvance") ||
