@@ -1,0 +1,340 @@
+{
+  "format": "goblins-rpg3-promote-audit-v1",
+  "summary": {
+    "promoteCount": 24,
+    "residualSelfCount": 5,
+    "resolveMethodCounts": {
+      "binary_label": 173,
+      "combat_all_self_to_next_outcome": 3,
+      "confirmed_self_combat": 3,
+      "confirmed_self_label_match": 2,
+      "noop_continue_to_next": 3,
+      "noop_mirror_sibling_hyperlink": 5,
+      "self_continue_to_next": 9,
+      "sole_image_self_to_next": 4
+    }
+  },
+  "promotes": [
+    {
+      "slide": 2,
+      "hotspotId": "s002-a375904",
+      "shapeId": 2056,
+      "shapeText": "Click here to start",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 2,
+      "targetSlide": 3,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 9,
+      "hotspotId": "s009-a401435",
+      "shapeId": 10250,
+      "shapeText": null,
+      "resolveMethod": "sole_image_self_to_next",
+      "originalTargetSlide": 9,
+      "targetSlide": 10,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 10,
+      "hotspotId": "s010-a404831",
+      "shapeId": 11271,
+      "shapeText": "Click here to continue",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 10,
+      "targetSlide": 11,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 11,
+      "hotspotId": "s011-a405456",
+      "shapeId": 12291,
+      "shapeText": null,
+      "resolveMethod": "sole_image_self_to_next",
+      "originalTargetSlide": 11,
+      "targetSlide": 12,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 26,
+      "hotspotId": "s026-a484502",
+      "shapeId": 33800,
+      "shapeText": "Click here to continue\u2026",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 26,
+      "targetSlide": 27,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 28,
+      "hotspotId": "s028-a493180",
+      "shapeId": 35850,
+      "shapeText": "Click here to continue\u2026.",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 28,
+      "targetSlide": 29,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 29,
+      "hotspotId": "s029-a499907",
+      "shapeId": 36880,
+      "shapeText": "Click here to continue\u2026",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 29,
+      "targetSlide": 30,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 35,
+      "hotspotId": "s035-a551369",
+      "shapeId": 45064,
+      "shapeText": "Click here to continue\u2026",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 35,
+      "targetSlide": 36,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 38,
+      "hotspotId": "s038-a580222",
+      "shapeId": 48135,
+      "shapeText": "Click here to continue\u2026",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 38,
+      "targetSlide": 39,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 41,
+      "hotspotId": "s041-a594709",
+      "shapeId": 51207,
+      "shapeText": "Click here to continue\u2026.",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 41,
+      "targetSlide": 42,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 46,
+      "hotspotId": "s046-a618003",
+      "shapeId": 56333,
+      "shapeText": "-attack",
+      "resolveMethod": "combat_all_self_to_next_outcome",
+      "originalTargetSlide": 46,
+      "targetSlide": 47,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary ExHyperlink labels every combat option as this slide; no non-self leave path and no alternate outcome slides in the file. Next sequential slide is the authored fight outcome (e.g. Ubergoblin death cutscene). Partial combat selfs on other slides are not bulk-promoted."
+    },
+    {
+      "slide": 46,
+      "hotspotId": "s046-a618209",
+      "shapeId": 56334,
+      "shapeText": "-LIMIT",
+      "resolveMethod": "combat_all_self_to_next_outcome",
+      "originalTargetSlide": 46,
+      "targetSlide": 47,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary ExHyperlink labels every combat option as this slide; no non-self leave path and no alternate outcome slides in the file. Next sequential slide is the authored fight outcome (e.g. Ubergoblin death cutscene). Partial combat selfs on other slides are not bulk-promoted."
+    },
+    {
+      "slide": 46,
+      "hotspotId": "s046-a618414",
+      "shapeId": 56335,
+      "shapeText": "-flee",
+      "resolveMethod": "combat_all_self_to_next_outcome",
+      "originalTargetSlide": 46,
+      "targetSlide": 47,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary ExHyperlink labels every combat option as this slide; no non-self leave path and no alternate outcome slides in the file. Next sequential slide is the authored fight outcome (e.g. Ubergoblin death cutscene). Partial combat selfs on other slides are not bulk-promoted."
+    },
+    {
+      "slide": 49,
+      "hotspotId": "s049-a633202",
+      "shapeId": 60423,
+      "shapeText": null,
+      "resolveMethod": "sole_image_self_to_next",
+      "originalTargetSlide": 49,
+      "targetSlide": 50,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 51,
+      "hotspotId": "s051-a635208",
+      "shapeId": 62471,
+      "shapeText": "Click here to continue",
+      "resolveMethod": "noop_mirror_sibling_hyperlink",
+      "originalTargetSlide": null,
+      "targetSlide": 49,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+    },
+    {
+      "slide": 56,
+      "hotspotId": "s056-a646048",
+      "shapeId": 67590,
+      "shapeText": null,
+      "resolveMethod": "sole_image_self_to_next",
+      "originalTargetSlide": 56,
+      "targetSlide": 57,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 138,
+      "hotspotId": "s138-a923223",
+      "shapeId": 161802,
+      "shapeText": "Click here to continue",
+      "resolveMethod": "self_continue_to_next",
+      "originalTargetSlide": 138,
+      "targetSlide": 139,
+      "binarySelfLink": true,
+      "resolveRationale": null
+    },
+    {
+      "slide": 150,
+      "hotspotId": "s150-a983827",
+      "shapeId": 180228,
+      "shapeText": "-limit",
+      "resolveMethod": "noop_mirror_sibling_hyperlink",
+      "originalTargetSlide": null,
+      "targetSlide": 167,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+    },
+    {
+      "slide": 155,
+      "hotspotId": "s155-a1001260",
+      "shapeId": 187401,
+      "shapeText": "Click here to continue",
+      "resolveMethod": "noop_continue_to_next",
+      "originalTargetSlide": null,
+      "targetSlide": 156,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none with continue/start shape text and no non-self hyperlink leave on the slide; promote to next sequential so the labeled control navigates."
+    },
+    {
+      "slide": 156,
+      "hotspotId": "s156-a1005369",
+      "shapeId": 188419,
+      "shapeText": "-attack",
+      "resolveMethod": "noop_mirror_sibling_hyperlink",
+      "originalTargetSlide": null,
+      "targetSlide": 157,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+    },
+    {
+      "slide": 158,
+      "hotspotId": "s158-a1012402",
+      "shapeId": 190473,
+      "shapeText": "Click here to continue",
+      "resolveMethod": "noop_continue_to_next",
+      "originalTargetSlide": null,
+      "targetSlide": 159,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none with continue/start shape text and no non-self hyperlink leave on the slide; promote to next sequential so the labeled control navigates."
+    },
+    {
+      "slide": 159,
+      "hotspotId": "s159-a1016511",
+      "shapeId": 191491,
+      "shapeText": "-attack",
+      "resolveMethod": "noop_mirror_sibling_hyperlink",
+      "originalTargetSlide": null,
+      "targetSlide": 160,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+    },
+    {
+      "slide": 163,
+      "hotspotId": "s163-a1042986",
+      "shapeId": 196617,
+      "shapeText": "Click here to continue",
+      "resolveMethod": "noop_continue_to_next",
+      "originalTargetSlide": null,
+      "targetSlide": 164,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none with continue/start shape text and no non-self hyperlink leave on the slide; promote to next sequential so the labeled control navigates."
+    },
+    {
+      "slide": 164,
+      "hotspotId": "s164-a1047095",
+      "shapeId": 197635,
+      "shapeText": "-attack",
+      "resolveMethod": "noop_mirror_sibling_hyperlink",
+      "originalTargetSlide": null,
+      "targetSlide": 165,
+      "binarySelfLink": false,
+      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+    }
+  ],
+  "residualSelfHyperlinks": [
+    {
+      "slide": 15,
+      "hotspotId": "s015-a421744",
+      "shapeId": 17424,
+      "shapeText": "-flee",
+      "resolveMethod": "confirmed_self_combat",
+      "originalTargetSlide": 15,
+      "targetSlide": 15,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+    },
+    {
+      "slide": 27,
+      "hotspotId": "s027-a491991",
+      "shapeId": 34823,
+      "shapeText": "-flee",
+      "resolveMethod": "confirmed_self_combat",
+      "originalTargetSlide": 27,
+      "targetSlide": 27,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+    },
+    {
+      "slide": 39,
+      "hotspotId": "s039-a587506",
+      "shapeId": 49156,
+      "shapeText": "-attack",
+      "resolveMethod": "confirmed_self_combat",
+      "originalTargetSlide": 39,
+      "targetSlide": 39,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+    },
+    {
+      "slide": 50,
+      "hotspotId": "s050-a633861",
+      "shapeId": 61445,
+      "shapeText": null,
+      "resolveMethod": "confirmed_self_label_match",
+      "originalTargetSlide": 50,
+      "targetSlide": 50,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary self-hyperlink on a multi-exit hub (no shape text). Other hotspots navigate. Accepted residual \u2014 left non-clickable."
+    },
+    {
+      "slide": 52,
+      "hotspotId": "s052-a636703",
+      "shapeId": 63495,
+      "shapeText": null,
+      "resolveMethod": "confirmed_self_label_match",
+      "originalTargetSlide": 52,
+      "targetSlide": 52,
+      "binarySelfLink": true,
+      "resolveRationale": "Binary self-hyperlink on a multi-exit hub (no shape text). Other hotspots navigate. Accepted residual \u2014 left non-clickable."
+    }
+  ]
+}

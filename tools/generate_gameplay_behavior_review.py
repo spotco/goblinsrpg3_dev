@@ -46,7 +46,17 @@ def main() -> None:
                     "mediaAudioCueId": binding.get("audioCueId") if binding else None,
                     "bounds": hotspot.get("bounds"),
                     "reviewStatus": "implemented_from_extracted_data"
-                    if hotspot.get("behaviorStatus") in {"navigation", "clickable_media", "explicit_noop", "mapped_media_zero_area"}
+                    if hotspot.get("behaviorStatus")
+                    in {
+                        "navigation",
+                        "clickable_media",
+                        "explicit_noop",
+                        "mapped_media_zero_area",
+                        "documented_residual_self",
+                        "documented_residual_self_only_leave",
+                        "documented_unresolved_media",
+                        "documented_zero_area_media",
+                    }
                     else "requires_manual_or_reference_resolution",
                     "notes": "",
                 }

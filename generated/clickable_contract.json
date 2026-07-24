@@ -1,0 +1,209 @@
+{
+  "format": "goblins-rpg3-clickable-contract-v1",
+  "summary": {
+    "okCount": 204,
+    "violationCount": 0,
+    "residualSelfCount": 5,
+    "residualExplicitNoopCount": 4,
+    "orphanContinueStageClickCount": 0,
+    "passed": true
+  },
+  "violations": [],
+  "residualSelfHyperlinks": [
+    {
+      "slide": 15,
+      "hotspotId": "s015-a421744",
+      "reason": "documented_residual_self",
+      "resolveMethod": "confirmed_self_combat",
+      "shapeText": "-flee",
+      "residualKind": "partial_combat_self",
+      "clickable": false
+    },
+    {
+      "slide": 27,
+      "hotspotId": "s027-a491991",
+      "reason": "documented_residual_self",
+      "resolveMethod": "confirmed_self_combat",
+      "shapeText": "-flee",
+      "residualKind": "partial_combat_self",
+      "clickable": false
+    },
+    {
+      "slide": 39,
+      "hotspotId": "s039-a587506",
+      "reason": "documented_residual_self",
+      "resolveMethod": "confirmed_self_combat",
+      "shapeText": "-attack",
+      "residualKind": "partial_combat_self",
+      "clickable": false
+    },
+    {
+      "slide": 50,
+      "hotspotId": "s050-a633861",
+      "reason": "documented_residual_self",
+      "resolveMethod": "confirmed_self_label_match",
+      "shapeText": null,
+      "residualKind": "hub_image_self",
+      "clickable": false
+    },
+    {
+      "slide": 52,
+      "hotspotId": "s052-a636703",
+      "reason": "documented_residual_self",
+      "resolveMethod": "confirmed_self_label_match",
+      "shapeText": null,
+      "residualKind": "hub_image_self",
+      "clickable": false
+    }
+  ],
+  "residualExplicitNoops": [
+    {
+      "slide": 10,
+      "hotspotId": "s010-a404405",
+      "shapeId": 11269,
+      "shapeText": null,
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 12,
+      "hotspotId": "s012-a406065",
+      "shapeId": 13322,
+      "shapeText": null,
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 14,
+      "hotspotId": "s014-a411774",
+      "shapeId": 15380,
+      "shapeText": null,
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 36,
+      "hotspotId": "s036-a556670",
+      "shapeId": 46093,
+      "shapeText": null,
+      "note": "binary action=none without continue/combat label (decorative)"
+    }
+  ],
+  "orphanContinueStageClicks": [],
+  "okSample": [
+    {
+      "slide": 2,
+      "hotspotId": "s002-a375904",
+      "kind": "navigation",
+      "target": 3
+    },
+    {
+      "slide": 2,
+      "hotspotId": "s002-a376082",
+      "kind": "media"
+    },
+    {
+      "slide": 9,
+      "hotspotId": "s009-a401435",
+      "kind": "navigation",
+      "target": 10
+    },
+    {
+      "slide": 10,
+      "hotspotId": "s010-a404831",
+      "kind": "navigation",
+      "target": 11
+    },
+    {
+      "slide": 11,
+      "hotspotId": "s011-a405456",
+      "kind": "navigation",
+      "target": 12
+    },
+    {
+      "slide": 13,
+      "hotspotId": "s013-a409669",
+      "kind": "media"
+    },
+    {
+      "slide": 14,
+      "hotspotId": "s014-a412733",
+      "kind": "media"
+    },
+    {
+      "slide": 15,
+      "hotspotId": "s015-a421537",
+      "kind": "navigation",
+      "target": 18
+    },
+    {
+      "slide": 16,
+      "hotspotId": "s016-a424910",
+      "kind": "navigation",
+      "target": 32
+    },
+    {
+      "slide": 16,
+      "hotspotId": "s016-a425115",
+      "kind": "navigation",
+      "target": 17
+    },
+    {
+      "slide": 17,
+      "hotspotId": "s017-a427598",
+      "kind": "navigation",
+      "target": 22
+    },
+    {
+      "slide": 18,
+      "hotspotId": "s018-a435177",
+      "kind": "navigation",
+      "target": 24
+    },
+    {
+      "slide": 19,
+      "hotspotId": "s019-a442926",
+      "kind": "navigation",
+      "target": 24
+    },
+    {
+      "slide": 20,
+      "hotspotId": "s020-a448736",
+      "kind": "navigation",
+      "target": 25
+    },
+    {
+      "slide": 21,
+      "hotspotId": "s021-a454188",
+      "kind": "navigation",
+      "target": 19
+    },
+    {
+      "slide": 21,
+      "hotspotId": "s021-a454395",
+      "kind": "navigation",
+      "target": 17
+    },
+    {
+      "slide": 22,
+      "hotspotId": "s022-a455457",
+      "kind": "navigation",
+      "target": 34
+    },
+    {
+      "slide": 22,
+      "hotspotId": "s022-a455662",
+      "kind": "navigation",
+      "target": 36
+    },
+    {
+      "slide": 23,
+      "hotspotId": "s023-a457330",
+      "kind": "navigation",
+      "target": 24
+    },
+    {
+      "slide": 24,
+      "hotspotId": "s024-a472304",
+      "kind": "navigation",
+      "target": 31
+    }
+  ]
+}

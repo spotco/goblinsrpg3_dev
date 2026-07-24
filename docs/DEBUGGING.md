@@ -48,9 +48,68 @@ HUD buttons call `dumpScreen()` / `listProblems()` and also log to the console.
 
 Click a layer while debug/HUD is on to select it (cyan outline + HUD detail).
 
+## Slide advancement (runtime)
+
+Stage click policy is data-driven from each screen’s `advancement` block in `game-manifest.json`:
+
+1. Unlock audio  
+2. If OnNext animation queue non-empty → play next animation node  
+3. Else if `advancement.stageClickAdvancesSlide` (PPT `manualAdvance` bit) → go to `nextSequentialId`  
+4. Else no-op (hyperlink/media hotspots only)
+
+Rebuild policy:
+
+```powershell
+python tools/build_game_manifest.py
+python tools/build_advancement_model.py
+python tools/verify_advancement.py
+```
+
+Debug HUD shows `advancement` modes and leave paths. `?slide=N` still suppresses **auto**-advance for that slide only.
+
 ## Offline tools
 
 All commands assume the repo root as the working directory.
+
+### Prove Tier A without browser playtest
+
+Offline playability suite (PLAN Phase 1) walks the **post-resolve** graph and freezes fixtures:
+
+```powershell
+python tools/build_offline_playability.py
+python tools/verify_offline_playability.py
+```
+
+| Output | Purpose |
+| --- | --- |
+| `generated/path_walk_report.json` | BFS from seeds; Tier A summary (29 slides, death s030, loop s042→s021) |
+| `generated/chapter_entry_map.json` | Zero-inbound roots + sealed islands + `?debug=1&slide=N` hints |
+| `generated/promote_audit.json` | All port promotes + residual self hyperlinks |
+| `generated/clickable_contract.json` | Clickable hotspots must navigate, play media, or be documented residual self |
+| `generated/media_death_residuals.json` | Unresolved/zero-area media residuals + death/end terminal notes |
+
+Also useful: `python tools/analyze_start_graph.py` / `verify_start_graph.py` for the closed early-loop baseline.
+
+Chapter jumps (Tier B without title bridges):
+
+- URL: `?debug=1&slide=43` (Ubergoblin island), `?debug=1&slide=55` (midgame), `?debug=1&slide=52` (island hub orphan).
+- HUD: with `?debug=1`, use **Chapters** dropdown + **Go** (`docs/chapter-entries.json`, rebuilt by `tools/build_chapter_walks.py`).
+- Offline: `generated/chapter_walks.json` (all seeds leave-able), `generated/chapter_entry_map.json`.
+
+### Fidelity offline contracts (Phase 5.1 / 5.3 / 5.5)
+
+```powershell
+python tools/build_fidelity_reports.py
+python tools/verify_fidelity.py
+python tools/verify_runtime_traversal.py
+```
+
+| Artifact | Purpose |
+| --- | --- |
+| `generated/sequential_advance_edges.json` | 9 manualAdvance + fallback stage-click + 59 auto edges |
+| `generated/auto_advance_timing.json` | `effectiveDelayMs = max(slideTime, anim timeline)` |
+| `generated/opening_animation_trains.json` | s003–s008 / s012–s014 OnNext + behavior inventory |
+| `generated/runtime_traversal.json` | Hotspot + sequential combined graph |
 
 ### Single-slide autopsy
 

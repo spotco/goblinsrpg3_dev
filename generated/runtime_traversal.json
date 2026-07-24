@@ -1,57 +1,39 @@
 {
-  "format": "goblins-rpg3-runtime-traversal-v1",
+  "format": "goblins-rpg3-runtime-traversal-v2",
   "summary": {
     "screens": 201,
-    "edges": 194,
+    "hotspotEdges": 197,
+    "sequentialEdges": 73,
+    "manualAdvanceEdges": 9,
+    "fallbackStageClickEdges": 5,
+    "autoAdvanceEdges": 59,
+    "combinedEdges": 270,
     "startScreen": "slide-001",
-    "reachableFromStart": 1,
-    "unreachableCount": 200,
-    "terminalCount": 77,
-    "screensWithoutInboundEdgesCount": 71,
-    "cyclicScreenCount": 54
+    "reachableFromStartCombined": 29,
+    "unreachableCount": 172,
+    "terminalCount": 2
+  },
+  "sequentialAdvance": {
+    "stageClickEdgeCount": 14,
+    "manualAdvanceEdgeCount": 9,
+    "fallbackStageClickEdgeCount": 5,
+    "autoAdvanceEdgeCount": 59,
+    "totalSequentialEdges": 73
   },
   "unreachableScreens": [
-    "slide-002",
-    "slide-003",
-    "slide-004",
-    "slide-005",
-    "slide-006",
-    "slide-007",
-    "slide-008",
-    "slide-009",
-    "slide-010",
-    "slide-011",
-    "slide-012",
-    "slide-013",
-    "slide-014",
-    "slide-015",
-    "slide-016",
-    "slide-017",
-    "slide-018",
-    "slide-019",
     "slide-020",
-    "slide-021",
-    "slide-022",
     "slide-023",
-    "slide-024",
     "slide-025",
     "slide-026",
     "slide-027",
     "slide-028",
-    "slide-029",
-    "slide-030",
-    "slide-031",
-    "slide-032",
     "slide-033",
-    "slide-034",
     "slide-035",
-    "slide-036",
     "slide-037",
     "slide-038",
     "slide-039",
     "slide-040",
     "slide-041",
-    "slide-042",
     "slide-043",
     "slide-044",
     "slide-045",
@@ -213,221 +195,17 @@
     "slide-201"
   ],
   "terminalScreens": [
-    "slide-001",
-    "slide-003",
-    "slide-004",
-    "slide-005",
-    "slide-006",
-    "slide-007",
-    "slide-008",
-    "slide-012",
-    "slide-013",
-    "slide-014",
     "slide-030",
-    "slide-043",
-    "slide-044",
-    "slide-045",
-    "slide-047",
-    "slide-048",
-    "slide-055",
-    "slide-057",
-    "slide-058",
-    "slide-059",
-    "slide-060",
-    "slide-061",
-    "slide-062",
-    "slide-063",
-    "slide-064",
-    "slide-066",
-    "slide-068",
-    "slide-075",
-    "slide-076",
-    "slide-077",
-    "slide-078",
-    "slide-080",
-    "slide-085",
-    "slide-089",
-    "slide-091",
-    "slide-098",
-    "slide-100",
-    "slide-111",
-    "slide-115",
-    "slide-117",
-    "slide-121",
-    "slide-122",
-    "slide-124",
-    "slide-128",
-    "slide-130",
-    "slide-131",
-    "slide-133",
-    "slide-139",
-    "slide-140",
-    "slide-143",
-    "slide-145",
-    "slide-146",
-    "slide-148",
-    "slide-149",
-    "slide-151",
-    "slide-154",
-    "slide-155",
-    "slide-157",
-    "slide-158",
-    "slide-160",
-    "slide-162",
-    "slide-163",
-    "slide-166",
-    "slide-167",
-    "slide-171",
-    "slide-184",
-    "slide-185",
-    "slide-186",
-    "slide-187",
-    "slide-188",
-    "slide-189",
-    "slide-191",
-    "slide-192",
-    "slide-196",
-    "slide-197",
-    "slide-198",
-    "slide-199"
+    "slide-197"
   ],
-  "screensWithoutInboundEdges": [
-    "slide-001",
-    "slide-003",
-    "slide-004",
-    "slide-005",
-    "slide-006",
-    "slide-007",
-    "slide-008",
-    "slide-012",
-    "slide-013",
-    "slide-014",
-    "slide-016",
-    "slide-023",
-    "slide-033",
-    "slide-043",
-    "slide-044",
-    "slide-045",
-    "slide-047",
-    "slide-048",
-    "slide-055",
-    "slide-057",
-    "slide-058",
-    "slide-059",
-    "slide-060",
-    "slide-061",
-    "slide-062",
-    "slide-063",
-    "slide-065",
-    "slide-066",
-    "slide-070",
-    "slide-076",
-    "slide-078",
-    "slide-079",
-    "slide-081",
-    "slide-086",
-    "slide-090",
-    "slide-092",
-    "slide-101",
-    "slide-112",
-    "slide-116",
-    "slide-117",
-    "slide-119",
-    "slide-123",
-    "slide-124",
-    "slide-130",
-    "slide-132",
-    "slide-135",
-    "slide-140",
-    "slide-142",
-    "slide-146",
-    "slide-147",
-    "slide-148",
-    "slide-150",
-    "slide-152",
-    "slide-155",
-    "slide-156",
-    "slide-158",
-    "slide-159",
-    "slide-161",
-    "slide-163",
-    "slide-164",
-    "slide-166",
-    "slide-168",
-    "slide-185",
-    "slide-186",
-    "slide-187",
-    "slide-188",
-    "slide-189",
-    "slide-190",
-    "slide-193",
-    "slide-197",
-    "slide-199"
-  ],
-  "cyclicScreens": [
-    "slide-002",
-    "slide-009",
-    "slide-010",
-    "slide-011",
-    "slide-015",
-    "slide-017",
-    "slide-020",
-    "slide-021",
-    "slide-022",
-    "slide-025",
-    "slide-026",
-    "slide-027",
-    "slide-028",
-    "slide-029",
-    "slide-034",
-    "slide-035",
-    "slide-036",
-    "slide-038",
-    "slide-039",
-    "slide-041",
-    "slide-042",
-    "slide-046",
-    "slide-049",
-    "slide-050",
-    "slide-052",
-    "slide-056",
-    "slide-069",
-    "slide-071",
-    "slide-072",
-    "slide-073",
-    "slide-074",
-    "slide-102",
-    "slide-103",
-    "slide-104",
-    "slide-105",
-    "slide-106",
-    "slide-107",
-    "slide-108",
-    "slide-109",
-    "slide-110",
-    "slide-138",
-    "slide-172",
-    "slide-173",
-    "slide-174",
-    "slide-175",
-    "slide-176",
-    "slide-177",
-    "slide-178",
-    "slide-179",
-    "slide-180",
-    "slide-181",
-    "slide-182",
-    "slide-200",
-    "slide-201"
-  ],
-  "edges": [
+  "hotspotEdges": [
     {
       "source": "slide-002",
       "sourceSlide": 2,
       "hotspotId": "s002-a375904",
       "shapeId": 2056,
-      "target": "slide-002",
-      "targetSlide": 2,
+      "target": "slide-003",
+      "targetSlide": 3,
       "bounds": {
         "raw": [
           3024,
@@ -445,15 +223,16 @@
           3360,
           3255
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-009",
       "sourceSlide": 9,
       "hotspotId": "s009-a401435",
       "shapeId": 10250,
-      "target": "slide-009",
-      "targetSlide": 9,
+      "target": "slide-010",
+      "targetSlide": 10,
       "bounds": {
         "raw": [
           2064,
@@ -471,15 +250,16 @@
           5226,
           2658
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-010",
       "sourceSlide": 10,
       "hotspotId": "s010-a404831",
       "shapeId": 11271,
-      "target": "slide-010",
-      "targetSlide": 10,
+      "target": "slide-011",
+      "targetSlide": 11,
       "bounds": {
         "raw": [
           2928,
@@ -497,15 +277,16 @@
           5568,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-011",
       "sourceSlide": 11,
       "hotspotId": "s011-a405456",
       "shapeId": 12291,
-      "target": "slide-011",
-      "targetSlide": 11,
+      "target": "slide-012",
+      "targetSlide": 12,
       "bounds": {
         "raw": [
           2112,
@@ -523,7 +304,8 @@
           5226,
           2706
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-015",
@@ -549,33 +331,8 @@
           5616,
           3015
         ]
-      }
-    },
-    {
-      "source": "slide-015",
-      "sourceSlide": 15,
-      "hotspotId": "s015-a421744",
-      "shapeId": 17424,
-      "target": "slide-015",
-      "targetSlide": 15,
-      "bounds": {
-        "raw": [
-          3072,
-          3936,
-          5136,
-          3303
-        ],
-        "x": 0.6833333333333333,
-        "y": 0.7111111111111111,
-        "width": 0.20833333333333334,
-        "height": 0.05347222222222222,
-        "clipped": [
-          3936,
-          3072,
-          5136,
-          3303
-        ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-016",
@@ -601,7 +358,8 @@
           5616,
           3015
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-016",
@@ -627,7 +385,8 @@
           5136,
           3303
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-017",
@@ -653,7 +412,8 @@
           3120,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-018",
@@ -679,7 +439,8 @@
           3168,
           807
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-019",
@@ -705,7 +466,8 @@
           3024,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-020",
@@ -731,7 +493,8 @@
           3024,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-021",
@@ -757,7 +520,8 @@
           5616,
           3015
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-021",
@@ -783,7 +547,8 @@
           5136,
           3303
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-022",
@@ -809,7 +574,8 @@
           5616,
           3015
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-022",
@@ -835,7 +601,8 @@
           5136,
           3303
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-023",
@@ -861,7 +628,8 @@
           2976,
           903
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-024",
@@ -887,7 +655,8 @@
           5616,
           3015
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-024",
@@ -913,7 +682,8 @@
           5136,
           3303
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-025",
@@ -939,15 +709,16 @@
           2976,
           903
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-026",
       "sourceSlide": 26,
       "hotspotId": "s026-a484502",
       "shapeId": 33800,
-      "target": "slide-026",
-      "targetSlide": 26,
+      "target": "slide-027",
+      "targetSlide": 27,
       "bounds": {
         "raw": [
           672,
@@ -965,7 +736,8 @@
           2976,
           903
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-027",
@@ -991,41 +763,16 @@
           5520,
           3063
         ]
-      }
-    },
-    {
-      "source": "slide-027",
-      "sourceSlide": 27,
-      "hotspotId": "s027-a491991",
-      "shapeId": 34823,
-      "target": "slide-027",
-      "targetSlide": 27,
-      "bounds": {
-        "raw": [
-          3120,
-          3936,
-          5280,
-          3351
-        ],
-        "x": 0.6833333333333333,
-        "y": 0.7222222222222222,
-        "width": 0.23333333333333334,
-        "height": 0.05347222222222222,
-        "clipped": [
-          3936,
-          3120,
-          5280,
-          3351
-        ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-028",
       "sourceSlide": 28,
       "hotspotId": "s028-a493180",
       "shapeId": 35850,
-      "target": "slide-028",
-      "targetSlide": 28,
+      "target": "slide-029",
+      "targetSlide": 29,
       "bounds": {
         "raw": [
           480,
@@ -1043,15 +790,16 @@
           2784,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-029",
       "sourceSlide": 29,
       "hotspotId": "s029-a499907",
       "shapeId": 36880,
-      "target": "slide-029",
-      "targetSlide": 29,
+      "target": "slide-030",
+      "targetSlide": 30,
       "bounds": {
         "raw": [
           720,
@@ -1069,7 +817,8 @@
           2736,
           951
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-031",
@@ -1095,7 +844,8 @@
           2976,
           903
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-032",
@@ -1121,7 +871,8 @@
           2976,
           903
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-033",
@@ -1147,7 +898,8 @@
           3024,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-033",
@@ -1173,7 +925,8 @@
           3024,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-034",
@@ -1199,15 +952,16 @@
           2976,
           903
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-035",
       "sourceSlide": 35,
       "hotspotId": "s035-a551369",
       "shapeId": 45064,
-      "target": "slide-035",
-      "targetSlide": 35,
+      "target": "slide-036",
+      "targetSlide": 36,
       "bounds": {
         "raw": [
           480,
@@ -1225,7 +979,8 @@
           3024,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-036",
@@ -1251,7 +1006,8 @@
           2448,
           3572
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-037",
@@ -1277,15 +1033,16 @@
           2784,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-038",
       "sourceSlide": 38,
       "hotspotId": "s038-a580222",
       "shapeId": 48135,
-      "target": "slide-038",
-      "targetSlide": 38,
+      "target": "slide-039",
+      "targetSlide": 39,
       "bounds": {
         "raw": [
           672,
@@ -1303,33 +1060,8 @@
           2976,
           903
         ]
-      }
-    },
-    {
-      "source": "slide-039",
-      "sourceSlide": 39,
-      "hotspotId": "s039-a587506",
-      "shapeId": 49156,
-      "target": "slide-039",
-      "targetSlide": 39,
-      "bounds": {
-        "raw": [
-          2832,
-          3840,
-          5472,
-          3063
-        ],
-        "x": 0.6666666666666666,
-        "y": 0.6555555555555556,
-        "width": 0.2833333333333333,
-        "height": 0.05347222222222222,
-        "clipped": [
-          3840,
-          2832,
-          5472,
-          3063
-        ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-039",
@@ -1355,7 +1087,8 @@
           5280,
           3351
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-040",
@@ -1381,15 +1114,16 @@
           3024,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-041",
       "sourceSlide": 41,
       "hotspotId": "s041-a594709",
       "shapeId": 51207,
-      "target": "slide-041",
-      "targetSlide": 41,
+      "target": "slide-042",
+      "targetSlide": 42,
       "bounds": {
         "raw": [
           480,
@@ -1407,7 +1141,8 @@
           2784,
           711
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-042",
@@ -1433,15 +1168,16 @@
           2976,
           903
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-046",
       "sourceSlide": 46,
       "hotspotId": "s046-a618003",
       "shapeId": 56333,
-      "target": "slide-046",
-      "targetSlide": 46,
+      "target": "slide-047",
+      "targetSlide": 47,
       "bounds": {
         "raw": [
           2784,
@@ -1459,15 +1195,16 @@
           5568,
           3015
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-046",
       "sourceSlide": 46,
       "hotspotId": "s046-a618209",
       "shapeId": 56334,
-      "target": "slide-046",
-      "targetSlide": 46,
+      "target": "slide-047",
+      "targetSlide": 47,
       "bounds": {
         "raw": [
           3120,
@@ -1485,15 +1222,16 @@
           5184,
           3351
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-046",
       "sourceSlide": 46,
       "hotspotId": "s046-a618414",
       "shapeId": 56335,
-      "target": "slide-046",
-      "targetSlide": 46,
+      "target": "slide-047",
+      "targetSlide": 47,
       "bounds": {
         "raw": [
           3504,
@@ -1511,15 +1249,16 @@
           5040,
           3735
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-049",
       "sourceSlide": 49,
       "hotspotId": "s049-a633202",
       "shapeId": 60423,
-      "target": "slide-049",
-      "targetSlide": 49,
+      "target": "slide-050",
+      "targetSlide": 50,
       "bounds": {
         "raw": [
           0,
@@ -1537,33 +1276,8 @@
           2832,
           1200
         ]
-      }
-    },
-    {
-      "source": "slide-050",
-      "sourceSlide": 50,
-      "hotspotId": "s050-a633861",
-      "shapeId": 61445,
-      "target": "slide-050",
-      "targetSlide": 50,
-      "bounds": {
-        "raw": [
-          3408,
-          4704,
-          4992,
-          3648
-        ],
-        "x": 0.8166666666666667,
-        "y": 0.7888888888888889,
-        "width": 0.05,
-        "height": 0.05555555555555555,
-        "clipped": [
-          4704,
-          3408,
-          4992,
-          3648
-        ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-050",
@@ -1589,7 +1303,8 @@
           4800,
           2784
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-050",
@@ -1615,7 +1330,35 @@
           768,
           2341
         ]
-      }
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-051",
+      "sourceSlide": 51,
+      "hotspotId": "s051-a635208",
+      "shapeId": 62471,
+      "target": "slide-049",
+      "targetSlide": 49,
+      "bounds": {
+        "raw": [
+          3360,
+          3312,
+          4752,
+          3533
+        ],
+        "x": 0.575,
+        "y": 0.7777777777777778,
+        "width": 0.25,
+        "height": 0.040046296296296295,
+        "clipped": [
+          3312,
+          3360,
+          4752,
+          3533
+        ]
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-051",
@@ -1641,7 +1384,8 @@
           4752,
           3533
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-052",
@@ -1667,33 +1411,8 @@
           489,
           2670
         ]
-      }
-    },
-    {
-      "source": "slide-052",
-      "sourceSlide": 52,
-      "hotspotId": "s052-a636703",
-      "shapeId": 63495,
-      "target": "slide-052",
-      "targetSlide": 52,
-      "bounds": {
-        "raw": [
-          288,
-          1975,
-          2976,
-          2208
-        ],
-        "x": 0.3428819444444444,
-        "y": 0.06666666666666667,
-        "width": 0.17378472222222222,
-        "height": 0.4444444444444444,
-        "clipped": [
-          1975,
-          288,
-          2976,
-          2208
-        ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-052",
@@ -1719,7 +1438,8 @@
           3696,
           1872
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-053",
@@ -1745,7 +1465,8 @@
           4224,
           912
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-054",
@@ -1771,15 +1492,16 @@
           3696,
           855
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-056",
       "sourceSlide": 56,
       "hotspotId": "s056-a646048",
       "shapeId": 67590,
-      "target": "slide-056",
-      "targetSlide": 56,
+      "target": "slide-057",
+      "targetSlide": 57,
       "bounds": {
         "raw": [
           480,
@@ -1797,7 +1519,8 @@
           3072,
           2208
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-065",
@@ -1823,7 +1546,8 @@
           912,
           2592
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-065",
@@ -1849,7 +1573,8 @@
           1248,
           3888
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-067",
@@ -1875,7 +1600,8 @@
           5616,
           1488
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-067",
@@ -1901,7 +1627,8 @@
           5184,
           1383
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-067",
@@ -1927,7 +1654,8 @@
           384,
           2832
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-067",
@@ -1953,7 +1681,8 @@
           3554,
           2016
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-067",
@@ -1979,7 +1708,8 @@
           1200,
           1234
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-069",
@@ -2005,7 +1735,8 @@
           5616,
           1488
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-069",
@@ -2031,7 +1762,8 @@
           5520,
           1335
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-069",
@@ -2057,7 +1789,8 @@
           3554,
           2016
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-069",
@@ -2083,7 +1816,8 @@
           1200,
           1216
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-070",
@@ -2109,7 +1843,8 @@
           5184,
           1440
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-071",
@@ -2135,7 +1870,8 @@
           5184,
           1440
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-072",
@@ -2161,7 +1897,8 @@
           1152,
           864
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-072",
@@ -2187,7 +1924,8 @@
           5760,
           4320
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-072",
@@ -2213,7 +1951,8 @@
           3168,
           1248
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-073",
@@ -2239,7 +1978,8 @@
           4896,
           2928
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-074",
@@ -2265,7 +2005,8 @@
           3552,
           1047
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-079",
@@ -2291,7 +2032,8 @@
           5520,
           3111
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-079",
@@ -2317,7 +2059,8 @@
           5328,
           3399
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-079",
@@ -2343,7 +2086,8 @@
           5136,
           3687
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-081",
@@ -2369,7 +2113,8 @@
           3072,
           1863
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-082",
@@ -2395,7 +2140,8 @@
           5328,
           1863
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-083",
@@ -2421,7 +2167,8 @@
           2928,
           855
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-084",
@@ -2447,7 +2194,8 @@
           768,
           3216
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-086",
@@ -2473,7 +2221,8 @@
           3216,
           615
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-087",
@@ -2499,7 +2248,8 @@
           5328,
           3399
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-087",
@@ -2525,7 +2275,8 @@
           5136,
           3687
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-087",
@@ -2551,7 +2302,8 @@
           4848,
           3063
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-088",
@@ -2577,7 +2329,8 @@
           2976,
           663
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-088",
@@ -2603,7 +2356,8 @@
           2976,
           663
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-090",
@@ -2629,7 +2383,8 @@
           3216,
           615
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-092",
@@ -2655,7 +2410,8 @@
           5328,
           3015
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-092",
@@ -2681,7 +2437,8 @@
           5280,
           3303
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-092",
@@ -2707,7 +2464,8 @@
           5616,
           3591
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-093",
@@ -2733,7 +2491,8 @@
           768,
           3216
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-094",
@@ -2759,7 +2518,8 @@
           5328,
           3015
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-094",
@@ -2785,7 +2545,8 @@
           5280,
           3303
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-095",
@@ -2811,7 +2572,8 @@
           2448,
           1047
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-096",
@@ -2837,7 +2599,8 @@
           2736,
           1815
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-097",
@@ -2863,7 +2626,8 @@
           2448,
           1047
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-099",
@@ -2889,7 +2653,8 @@
           3744,
           864
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-101",
@@ -2915,7 +2680,8 @@
           5760,
           4320
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-102",
@@ -2941,7 +2707,8 @@
           5760,
           768
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-102",
@@ -2967,7 +2734,8 @@
           3648,
           1584
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-102",
@@ -2993,7 +2761,8 @@
           528,
           960
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-103",
@@ -3019,7 +2788,8 @@
           528,
           960
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-103",
@@ -3045,7 +2815,8 @@
           4128,
           384
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-104",
@@ -3071,7 +2842,8 @@
           5760,
           768
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-104",
@@ -3097,7 +2869,8 @@
           5760,
           912
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-104",
@@ -3123,7 +2896,8 @@
           576,
           1056
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-105",
@@ -3149,7 +2923,8 @@
           5280,
           1776
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-105",
@@ -3175,7 +2950,8 @@
           1584,
           480
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-106",
@@ -3201,7 +2977,8 @@
           1584,
           480
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-107",
@@ -3227,7 +3004,8 @@
           1296,
           1536
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-107",
@@ -3253,7 +3031,8 @@
           5424,
           1104
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-108",
@@ -3279,7 +3058,8 @@
           5424,
           1200
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-108",
@@ -3305,7 +3085,8 @@
           1344,
           1536
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-109",
@@ -3331,7 +3112,8 @@
           1296,
           1536
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-109",
@@ -3357,7 +3139,8 @@
           5520,
           1104
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-110",
@@ -3383,7 +3166,8 @@
           5232,
           1152
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-110",
@@ -3409,7 +3193,8 @@
           1392,
           1488
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-112",
@@ -3435,7 +3220,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-112",
@@ -3461,7 +3247,8 @@
           4944,
           3207
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-112",
@@ -3487,7 +3274,8 @@
           5088,
           3543
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-112",
@@ -3513,7 +3301,8 @@
           5040,
           3879
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-113",
@@ -3539,7 +3328,8 @@
           4944,
           3207
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-113",
@@ -3565,7 +3355,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-113",
@@ -3591,7 +3382,8 @@
           5088,
           3543
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-114",
@@ -3617,7 +3409,8 @@
           3744,
           4167
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-116",
@@ -3643,7 +3436,8 @@
           3936,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-118",
@@ -3669,7 +3463,8 @@
           3936,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-119",
@@ -3695,7 +3490,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-119",
@@ -3721,7 +3517,8 @@
           5040,
           3399
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-119",
@@ -3747,7 +3544,8 @@
           4944,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-120",
@@ -3773,7 +3571,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-120",
@@ -3799,7 +3598,8 @@
           4944,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-123",
@@ -3825,7 +3625,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-123",
@@ -3851,7 +3652,8 @@
           5040,
           3399
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-123",
@@ -3877,7 +3679,8 @@
           4944,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-125",
@@ -3903,7 +3706,8 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-126",
@@ -3929,7 +3733,8 @@
           3840,
           2535
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-127",
@@ -3955,7 +3760,8 @@
           5232,
           1152
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-129",
@@ -3981,7 +3787,8 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-132",
@@ -4007,7 +3814,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-134",
@@ -4033,7 +3841,8 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-135",
@@ -4059,7 +3868,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-136",
@@ -4085,7 +3895,8 @@
           4608,
           2900
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-137",
@@ -4111,7 +3922,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-137",
@@ -4137,15 +3949,16 @@
           4896,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-138",
       "sourceSlide": 138,
       "hotspotId": "s138-a923223",
       "shapeId": 161802,
-      "target": "slide-138",
-      "targetSlide": 138,
+      "target": "slide-139",
+      "targetSlide": 139,
       "bounds": {
         "raw": [
           2208,
@@ -4163,7 +3976,8 @@
           4848,
           2612
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-141",
@@ -4189,7 +4003,8 @@
           3984,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-142",
@@ -4215,7 +4030,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-142",
@@ -4241,7 +4057,8 @@
           4752,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-144",
@@ -4267,7 +4084,8 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-147",
@@ -4293,7 +4111,8 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-150",
@@ -4319,7 +4138,35 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-150",
+      "sourceSlide": 150,
+      "hotspotId": "s150-a983827",
+      "shapeId": 180228,
+      "target": "slide-167",
+      "targetSlide": 167,
+      "bounds": {
+        "raw": [
+          2928,
+          3936,
+          5040,
+          3159
+        ],
+        "x": 0.6833333333333333,
+        "y": 0.6777777777777778,
+        "width": 0.19166666666666668,
+        "height": 0.05347222222222222,
+        "clipped": [
+          3936,
+          2928,
+          5040,
+          3159
+        ]
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-150",
@@ -4345,7 +4192,8 @@
           5040,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-152",
@@ -4371,7 +4219,8 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-153",
@@ -4397,7 +4246,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-153",
@@ -4423,7 +4273,62 @@
           5040,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-155",
+      "sourceSlide": 155,
+      "hotspotId": "s155-a1001260",
+      "shapeId": 187401,
+      "target": "slide-156",
+      "targetSlide": 156,
+      "bounds": {
+        "raw": [
+          2112,
+          2928,
+          3888,
+          2516
+        ],
+        "x": 0.5083333333333333,
+        "y": 0.4888888888888889,
+        "width": 0.16666666666666666,
+        "height": 0.09351851851851851,
+        "clipped": [
+          2928,
+          2112,
+          3888,
+          2516
+        ]
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-156",
+      "sourceSlide": 156,
+      "hotspotId": "s156-a1005369",
+      "shapeId": 188419,
+      "target": "slide-157",
+      "targetSlide": 157,
+      "bounds": {
+        "raw": [
+          2688,
+          3936,
+          5472,
+          2919
+        ],
+        "x": 0.6833333333333333,
+        "y": 0.6222222222222222,
+        "width": 0.26666666666666666,
+        "height": 0.05347222222222222,
+        "clipped": [
+          3936,
+          2688,
+          5472,
+          2919
+        ]
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-156",
@@ -4449,7 +4354,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-156",
@@ -4475,7 +4381,62 @@
           5040,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-158",
+      "sourceSlide": 158,
+      "hotspotId": "s158-a1012402",
+      "shapeId": 190473,
+      "target": "slide-159",
+      "targetSlide": 159,
+      "bounds": {
+        "raw": [
+          2112,
+          2928,
+          3888,
+          2516
+        ],
+        "x": 0.5083333333333333,
+        "y": 0.4888888888888889,
+        "width": 0.16666666666666666,
+        "height": 0.09351851851851851,
+        "clipped": [
+          2928,
+          2112,
+          3888,
+          2516
+        ]
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-159",
+      "sourceSlide": 159,
+      "hotspotId": "s159-a1016511",
+      "shapeId": 191491,
+      "target": "slide-160",
+      "targetSlide": 160,
+      "bounds": {
+        "raw": [
+          2688,
+          3936,
+          5472,
+          2919
+        ],
+        "x": 0.6833333333333333,
+        "y": 0.6222222222222222,
+        "width": 0.26666666666666666,
+        "height": 0.05347222222222222,
+        "clipped": [
+          3936,
+          2688,
+          5472,
+          2919
+        ]
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-159",
@@ -4501,7 +4462,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-159",
@@ -4527,7 +4489,8 @@
           5040,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-161",
@@ -4553,7 +4516,62 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-163",
+      "sourceSlide": 163,
+      "hotspotId": "s163-a1042986",
+      "shapeId": 196617,
+      "target": "slide-164",
+      "targetSlide": 164,
+      "bounds": {
+        "raw": [
+          2112,
+          2928,
+          3888,
+          2516
+        ],
+        "x": 0.5083333333333333,
+        "y": 0.4888888888888889,
+        "width": 0.16666666666666666,
+        "height": 0.09351851851851851,
+        "clipped": [
+          2928,
+          2112,
+          3888,
+          2516
+        ]
+      },
+      "kind": "hotspot"
+    },
+    {
+      "source": "slide-164",
+      "sourceSlide": 164,
+      "hotspotId": "s164-a1047095",
+      "shapeId": 197635,
+      "target": "slide-165",
+      "targetSlide": 165,
+      "bounds": {
+        "raw": [
+          2688,
+          3936,
+          5472,
+          2919
+        ],
+        "x": 0.6833333333333333,
+        "y": 0.6222222222222222,
+        "width": 0.26666666666666666,
+        "height": 0.05347222222222222,
+        "clipped": [
+          3936,
+          2688,
+          5472,
+          2919
+        ]
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-164",
@@ -4579,7 +4597,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-165",
@@ -4605,7 +4624,8 @@
           5040,
           2727
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-168",
@@ -4631,7 +4651,8 @@
           3888,
           2516
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-169",
@@ -4657,7 +4678,8 @@
           5472,
           2919
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-170",
@@ -4683,7 +4705,8 @@
           5040,
           2727
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-172",
@@ -4709,7 +4732,8 @@
           4800,
           2880
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-172",
@@ -4735,7 +4759,8 @@
           2160,
           1632
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-173",
@@ -4761,7 +4786,8 @@
           4656,
           2256
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-174",
@@ -4787,7 +4813,8 @@
           4128,
           3408
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-174",
@@ -4813,7 +4840,8 @@
           3024,
           3120
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-174",
@@ -4839,7 +4867,8 @@
           3072,
           3168
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-175",
@@ -4865,7 +4894,8 @@
           5328,
           1776
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-176",
@@ -4891,7 +4921,8 @@
           4608,
           2160
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-177",
@@ -4917,7 +4948,8 @@
           4368,
           912
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-178",
@@ -4943,7 +4975,8 @@
           2208,
           2544
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-178",
@@ -4969,7 +5002,8 @@
           4368,
           912
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-179",
@@ -4995,7 +5029,8 @@
           2208,
           2544
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-179",
@@ -5021,7 +5056,8 @@
           2256,
           2496
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-179",
@@ -5047,7 +5083,8 @@
           4320,
           912
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-180",
@@ -5073,7 +5110,8 @@
           2208,
           2544
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-180",
@@ -5099,7 +5137,8 @@
           2208,
           2544
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-180",
@@ -5125,7 +5164,8 @@
           4368,
           912
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-181",
@@ -5151,7 +5191,8 @@
           2208,
           2544
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-181",
@@ -5177,7 +5218,8 @@
           4320,
           912
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-182",
@@ -5203,7 +5245,8 @@
           480,
           1248
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-182",
@@ -5229,7 +5272,8 @@
           3216,
           2016
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-183",
@@ -5255,7 +5299,8 @@
           3264,
           2448
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-190",
@@ -5281,7 +5326,8 @@
           5472,
           3159
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-190",
@@ -5307,7 +5353,8 @@
           5040,
           3351
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-190",
@@ -5333,7 +5380,8 @@
           5136,
           3543
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-193",
@@ -5359,7 +5407,8 @@
           4320,
           1172
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-194",
@@ -5385,7 +5434,8 @@
           5760,
           4320
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-195",
@@ -5411,7 +5461,8 @@
           4512,
           980
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-200",
@@ -5437,7 +5488,8 @@
           4560,
           480
         ]
-      }
+      },
+      "kind": "hotspot"
     },
     {
       "source": "slide-201",
@@ -5463,7 +5515,667 @@
           3600,
           1959
         ]
-      }
+      },
+      "kind": "hotspot"
+    }
+  ],
+  "sequentialEdges": [
+    {
+      "source": "slide-001",
+      "sourceSlide": 1,
+      "target": "slide-002",
+      "targetSlide": 2,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 4000
+    },
+    {
+      "source": "slide-003",
+      "sourceSlide": 3,
+      "target": "slide-004",
+      "targetSlide": 4,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-004",
+      "sourceSlide": 4,
+      "target": "slide-005",
+      "targetSlide": 5,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-005",
+      "sourceSlide": 5,
+      "target": "slide-006",
+      "targetSlide": 6,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-006",
+      "sourceSlide": 6,
+      "target": "slide-007",
+      "targetSlide": 7,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-007",
+      "sourceSlide": 7,
+      "target": "slide-008",
+      "targetSlide": 8,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-008",
+      "sourceSlide": 8,
+      "target": "slide-009",
+      "targetSlide": 9,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-012",
+      "sourceSlide": 12,
+      "target": "slide-013",
+      "targetSlide": 13,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-013",
+      "sourceSlide": 13,
+      "target": "slide-014",
+      "targetSlide": 14,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-014",
+      "sourceSlide": 14,
+      "target": "slide-015",
+      "targetSlide": 15,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-015",
+      "sourceSlide": 15,
+      "target": "slide-016",
+      "targetSlide": 16,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 9000
+    },
+    {
+      "source": "slide-043",
+      "sourceSlide": 43,
+      "target": "slide-044",
+      "targetSlide": 44,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-044",
+      "sourceSlide": 44,
+      "target": "slide-045",
+      "targetSlide": 45,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 7000
+    },
+    {
+      "source": "slide-045",
+      "sourceSlide": 45,
+      "target": "slide-046",
+      "targetSlide": 46,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-047",
+      "sourceSlide": 47,
+      "target": "slide-048",
+      "targetSlide": 48,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-048",
+      "sourceSlide": 48,
+      "target": "slide-049",
+      "targetSlide": 49,
+      "kind": "stage_click_advance",
+      "resolveMethod": "manualAdvance_bit",
+      "delayMs": null
+    },
+    {
+      "source": "slide-055",
+      "sourceSlide": 55,
+      "target": "slide-056",
+      "targetSlide": 56,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-057",
+      "sourceSlide": 57,
+      "target": "slide-058",
+      "targetSlide": 58,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-058",
+      "sourceSlide": 58,
+      "target": "slide-059",
+      "targetSlide": 59,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-059",
+      "sourceSlide": 59,
+      "target": "slide-060",
+      "targetSlide": 60,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-060",
+      "sourceSlide": 60,
+      "target": "slide-061",
+      "targetSlide": 61,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-061",
+      "sourceSlide": 61,
+      "target": "slide-062",
+      "targetSlide": 62,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 4000
+    },
+    {
+      "source": "slide-062",
+      "sourceSlide": 62,
+      "target": "slide-063",
+      "targetSlide": 63,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-063",
+      "sourceSlide": 63,
+      "target": "slide-064",
+      "targetSlide": 64,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-064",
+      "sourceSlide": 64,
+      "target": "slide-065",
+      "targetSlide": 65,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-066",
+      "sourceSlide": 66,
+      "target": "slide-067",
+      "targetSlide": 67,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-068",
+      "sourceSlide": 68,
+      "target": "slide-069",
+      "targetSlide": 69,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-075",
+      "sourceSlide": 75,
+      "target": "slide-076",
+      "targetSlide": 76,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-076",
+      "sourceSlide": 76,
+      "target": "slide-077",
+      "targetSlide": 77,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-077",
+      "sourceSlide": 77,
+      "target": "slide-078",
+      "targetSlide": 78,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-078",
+      "sourceSlide": 78,
+      "target": "slide-079",
+      "targetSlide": 79,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 4000
+    },
+    {
+      "source": "slide-080",
+      "sourceSlide": 80,
+      "target": "slide-081",
+      "targetSlide": 81,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-085",
+      "sourceSlide": 85,
+      "target": "slide-086",
+      "targetSlide": 86,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-089",
+      "sourceSlide": 89,
+      "target": "slide-090",
+      "targetSlide": 90,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-091",
+      "sourceSlide": 91,
+      "target": "slide-092",
+      "targetSlide": 92,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 4000
+    },
+    {
+      "source": "slide-098",
+      "sourceSlide": 98,
+      "target": "slide-099",
+      "targetSlide": 99,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-100",
+      "sourceSlide": 100,
+      "target": "slide-101",
+      "targetSlide": 101,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-111",
+      "sourceSlide": 111,
+      "target": "slide-112",
+      "targetSlide": 112,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 1000
+    },
+    {
+      "source": "slide-115",
+      "sourceSlide": 115,
+      "target": "slide-116",
+      "targetSlide": 116,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-117",
+      "sourceSlide": 117,
+      "target": "slide-118",
+      "targetSlide": 118,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-121",
+      "sourceSlide": 121,
+      "target": "slide-122",
+      "targetSlide": 122,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-122",
+      "sourceSlide": 122,
+      "target": "slide-123",
+      "targetSlide": 123,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-124",
+      "sourceSlide": 124,
+      "target": "slide-125",
+      "targetSlide": 125,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-128",
+      "sourceSlide": 128,
+      "target": "slide-129",
+      "targetSlide": 129,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-130",
+      "sourceSlide": 130,
+      "target": "slide-131",
+      "targetSlide": 131,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-131",
+      "sourceSlide": 131,
+      "target": "slide-132",
+      "targetSlide": 132,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-133",
+      "sourceSlide": 133,
+      "target": "slide-134",
+      "targetSlide": 134,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-139",
+      "sourceSlide": 139,
+      "target": "slide-140",
+      "targetSlide": 140,
+      "kind": "stage_click_advance",
+      "resolveMethod": "interstitial_stage_click",
+      "delayMs": null
+    },
+    {
+      "source": "slide-140",
+      "sourceSlide": 140,
+      "target": "slide-141",
+      "targetSlide": 141,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-143",
+      "sourceSlide": 143,
+      "target": "slide-144",
+      "targetSlide": 144,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-145",
+      "sourceSlide": 145,
+      "target": "slide-146",
+      "targetSlide": 146,
+      "kind": "stage_click_advance",
+      "resolveMethod": "interstitial_stage_click",
+      "delayMs": null
+    },
+    {
+      "source": "slide-146",
+      "sourceSlide": 146,
+      "target": "slide-147",
+      "targetSlide": 147,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-148",
+      "sourceSlide": 148,
+      "target": "slide-149",
+      "targetSlide": 149,
+      "kind": "stage_click_advance",
+      "resolveMethod": "interstitial_stage_click",
+      "delayMs": null
+    },
+    {
+      "source": "slide-149",
+      "sourceSlide": 149,
+      "target": "slide-150",
+      "targetSlide": 150,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 5000
+    },
+    {
+      "source": "slide-151",
+      "sourceSlide": 151,
+      "target": "slide-152",
+      "targetSlide": 152,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-154",
+      "sourceSlide": 154,
+      "target": "slide-155",
+      "targetSlide": 155,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-157",
+      "sourceSlide": 157,
+      "target": "slide-158",
+      "targetSlide": 158,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-160",
+      "sourceSlide": 160,
+      "target": "slide-161",
+      "targetSlide": 161,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-162",
+      "sourceSlide": 162,
+      "target": "slide-163",
+      "targetSlide": 163,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-166",
+      "sourceSlide": 166,
+      "target": "slide-167",
+      "targetSlide": 167,
+      "kind": "stage_click_advance",
+      "resolveMethod": "interstitial_stage_click",
+      "delayMs": null
+    },
+    {
+      "source": "slide-167",
+      "sourceSlide": 167,
+      "target": "slide-168",
+      "targetSlide": 168,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-171",
+      "sourceSlide": 171,
+      "target": "slide-172",
+      "targetSlide": 172,
+      "kind": "stage_click_advance",
+      "resolveMethod": "interstitial_stage_click",
+      "delayMs": null
+    },
+    {
+      "source": "slide-184",
+      "sourceSlide": 184,
+      "target": "slide-185",
+      "targetSlide": 185,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-185",
+      "sourceSlide": 185,
+      "target": "slide-186",
+      "targetSlide": 186,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 1000
+    },
+    {
+      "source": "slide-186",
+      "sourceSlide": 186,
+      "target": "slide-187",
+      "targetSlide": 187,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 1000
+    },
+    {
+      "source": "slide-187",
+      "sourceSlide": 187,
+      "target": "slide-188",
+      "targetSlide": 188,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 3000
+    },
+    {
+      "source": "slide-188",
+      "sourceSlide": 188,
+      "target": "slide-189",
+      "targetSlide": 189,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 1000
+    },
+    {
+      "source": "slide-189",
+      "sourceSlide": 189,
+      "target": "slide-190",
+      "targetSlide": 190,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 2000
+    },
+    {
+      "source": "slide-191",
+      "sourceSlide": 191,
+      "target": "slide-192",
+      "targetSlide": 192,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-192",
+      "sourceSlide": 192,
+      "target": "slide-193",
+      "targetSlide": 193,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 1000
+    },
+    {
+      "source": "slide-196",
+      "sourceSlide": 196,
+      "target": "slide-197",
+      "targetSlide": 197,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 10000
+    },
+    {
+      "source": "slide-198",
+      "sourceSlide": 198,
+      "target": "slide-199",
+      "targetSlide": 199,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 6000
+    },
+    {
+      "source": "slide-199",
+      "sourceSlide": 199,
+      "target": "slide-200",
+      "targetSlide": 200,
+      "kind": "auto_advance",
+      "resolveMethod": null,
+      "delayMs": 4000
     }
   ]
 }

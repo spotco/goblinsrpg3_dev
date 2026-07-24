@@ -1,0 +1,1458 @@
+{
+  "format": "goblins-rpg3-start-graph-analysis-v1",
+  "summary": {
+    "slideCount": 201,
+    "reachableFromStartCount": 29,
+    "reachableFromStart": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      24,
+      29,
+      30,
+      31,
+      32,
+      34,
+      36,
+      42
+    ],
+    "matchesExpectedBaseline": true,
+    "weakComponentCount": 3,
+    "weakComponents": [
+      {
+        "size": 187,
+        "min": 1,
+        "max": 201,
+        "slides": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          "...",
+          196,
+          197,
+          198,
+          199,
+          200,
+          201
+        ]
+      },
+      {
+        "size": 12,
+        "min": 43,
+        "max": 54,
+        "slides": [
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ]
+      },
+      {
+        "size": 2,
+        "min": 20,
+        "max": 25,
+        "slides": [
+          20,
+          25
+        ]
+      }
+    ],
+    "binaryExternalEdgesFromStartComponent": [],
+    "actionCodeCounts": {
+      "0": 12,
+      "4": 194,
+      "6": 11
+    },
+    "zeroInboundCount": 18,
+    "sealedIslandCount": 2,
+    "sourceLimitation": true,
+    "inventedBridgeApplied": false,
+    "conclusions": [
+      "Extractor re-check: inventory holds all interactive actions; action codes are only hyperlink(4)=194, media(6)=11, none(0)=12. No jump/macro/run actions.",
+      "ExHyperlink audit (prior + reconfirmed pattern): single friendly-name CString only; no separate slide-id target atom to mis-parse.",
+      "Directed reachability from slide 1: 29 slides (baseline 29). Early combat loop exits only to itself (s042 continue \u2192 s021 hub).",
+      "No binary hyperlink leaves the start-reachable component into mid/late game (external binary edges=0).",
+      "Sealed undirected islands under current decode: 43-54 (n=12, sealed=True), 20-25 (n=2, sealed=True)",
+      "Zero-inbound roots (not reachable except debug jump): 23, 26, 33, 38, 41, 43, 55, 66, 70, 117, 119, 124, 130, 135, 138, 142, 148, 166. Notable: s043 Ubergoblin chain root; s055 midgame story root.",
+      "This is a source graph limitation (or intentional incomplete wiring), not a missing InteractiveInfoAtom in the extract. Do not invent forward bridges without PPT UI oracle evidence or a misparse proof."
+    ]
+  },
+  "expectedStartReachable": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    24,
+    29,
+    30,
+    31,
+    32,
+    34,
+    36,
+    42
+  ],
+  "earlyLoopFrontier": [
+    {
+      "slide": 1,
+      "runtimeOut": [
+        2
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Presents"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ]
+    },
+    {
+      "slide": 2,
+      "runtimeOut": [
+        3
+      ],
+      "binaryOut": [
+        2
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "GOBLINSRPG3",
+        "Click here to start"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 3,
+      "runtimeOut": [
+        4
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "It was a long lived peace in the land",
+        "Until\u00e0.",
+        "100 to 150 years ago\u00e0"
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 4,
+      "runtimeOut": [
+        5
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "And then the goblins invaded\u00e0"
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 5,
+      "runtimeOut": [
+        6
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "They Burned an pillaged the countryside\u00e0",
+        "And there seemed no end"
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 6,
+      "runtimeOut": [
+        7
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Until the \u00f4hero of time\u00f6 appeared."
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 7,
+      "runtimeOut": [
+        8
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "The hero of time ded them all with fell run of his spear.\n(don\u00c6t ask)"
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 8,
+      "runtimeOut": [
+        9
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Peace was restored once more.",
+        "This is 100 to 150 years later\u00e0"
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 9,
+      "runtimeOut": [
+        10
+      ],
+      "binaryOut": [
+        9
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "You live in the small, quiet village of New Jersey.",
+        "HINT: Click on something to talk/examine"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 10,
+      "runtimeOut": [
+        11
+      ],
+      "binaryOut": [
+        10
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Hello! Uh, I mean\u00e0 RUFF RUFF!!",
+        "Click here to continue"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 11,
+      "runtimeOut": [
+        12
+      ],
+      "binaryOut": [
+        11
+      ],
+      "externalRuntimeOut": [],
+      "texts": [],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 12,
+      "runtimeOut": [
+        13
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Okay, Okay. I give. I\u00c6m a talking dog.",
+        "I\u00c6ll give you this if you leave me alone."
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 13,
+      "runtimeOut": [
+        14
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Got the sword!"
+      ],
+      "leavePaths": [
+        "stage_click_after_anims"
+      ]
+    },
+    {
+      "slide": 14,
+      "runtimeOut": [
+        15
+      ],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "AAA!!! The goblins are attacking!!",
+        "Yip!",
+        "(Darn strait)"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ]
+    },
+    {
+      "slide": 15,
+      "runtimeOut": [
+        15,
+        16,
+        18
+      ],
+      "binaryOut": [
+        15,
+        18
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin x3 attacked!",
+        "-Attack",
+        "-flee",
+        "I\u00c6m bored\u00e0"
+      ],
+      "leavePaths": [
+        "auto_advance",
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 16,
+      "runtimeOut": [
+        17,
+        32
+      ],
+      "binaryOut": [
+        17,
+        32
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin fled of boredom\u00e0",
+        "-Attack",
+        "-flee"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 17,
+      "runtimeOut": [
+        22
+      ],
+      "binaryOut": [
+        22
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "CAN\u00c6T ESCAPE!!!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 18,
+      "runtimeOut": [
+        24
+      ],
+      "binaryOut": [
+        24
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "CAN\u00c6T ESCAPE!!",
+        "Click here  to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 19,
+      "runtimeOut": [
+        24
+      ],
+      "binaryOut": [
+        24
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Felled goblin!!!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 21,
+      "runtimeOut": [
+        17,
+        19
+      ],
+      "binaryOut": [
+        17,
+        19
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "-Attack",
+        "-flee",
+        "15"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 22,
+      "runtimeOut": [
+        34,
+        36
+      ],
+      "binaryOut": [
+        34,
+        36
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "-Attack",
+        "-flee",
+        "15"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 24,
+      "runtimeOut": [
+        31
+      ],
+      "binaryOut": [
+        31
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "-Attack",
+        "-flee",
+        "10"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 29,
+      "runtimeOut": [
+        30
+      ],
+      "binaryOut": [
+        29
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin releases Fury!!",
+        "Player takes 10 damage.",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 30,
+      "runtimeOut": [],
+      "binaryOut": [],
+      "externalRuntimeOut": [],
+      "texts": [
+        "DED!!",
+        "You ded.",
+        "Press esc to exit."
+      ],
+      "leavePaths": [
+        "restart_only"
+      ]
+    },
+    {
+      "slide": 31,
+      "runtimeOut": [
+        29
+      ],
+      "binaryOut": [
+        29
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin x3 Attacks!",
+        "Player takes 15 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 32,
+      "runtimeOut": [
+        29
+      ],
+      "binaryOut": [
+        29
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin x2 Attacks!",
+        "Player takes 10 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 34,
+      "runtimeOut": [
+        21
+      ],
+      "binaryOut": [
+        21
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 36,
+      "runtimeOut": [
+        42
+      ],
+      "binaryOut": [
+        42
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "HAHAHAHA!!\nYAH!! TAKE THAT STUPID GOBLINS!!!",
+        "Click here to continue\u00e0."
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 42,
+      "runtimeOut": [
+        21
+      ],
+      "binaryOut": [
+        21
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    }
+  ],
+  "islandDetails": [
+    {
+      "slides": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "size": 12,
+      "sealed": true,
+      "entriesFromOutside": [],
+      "exitsToOutside": [],
+      "screens": [
+        {
+          "slide": 43,
+          "texts": [
+            "So you flee like crazy"
+          ],
+          "leavePaths": [
+            "auto_advance"
+          ],
+          "autoAdvance": true,
+          "stageClick": false,
+          "hotspots": []
+        },
+        {
+          "slide": 44,
+          "texts": [
+            "\u00f4You are here\u00f6"
+          ],
+          "leavePaths": [
+            "auto_advance"
+          ],
+          "autoAdvance": true,
+          "stageClick": false,
+          "hotspots": []
+        },
+        {
+          "slide": 45,
+          "texts": [],
+          "leavePaths": [
+            "auto_advance"
+          ],
+          "autoAdvance": true,
+          "stageClick": false,
+          "hotspots": []
+        },
+        {
+          "slide": 46,
+          "texts": [
+            "5",
+            "Ubergoblin attacks!",
+            "-attack",
+            "-LIMIT",
+            "-flee"
+          ],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 47,
+              "resolveMethod": "combat_all_self_to_next_outcome",
+              "shapeText": "-attack"
+            },
+            {
+              "action": "hyperlink",
+              "targetSlide": 47,
+              "resolveMethod": "combat_all_self_to_next_outcome",
+              "shapeText": "-LIMIT"
+            },
+            {
+              "action": "hyperlink",
+              "targetSlide": 47,
+              "resolveMethod": "combat_all_self_to_next_outcome",
+              "shapeText": "-flee"
+            }
+          ]
+        },
+        {
+          "slide": 47,
+          "texts": [
+            "Ubergoblin attacks!",
+            "Player takes 15 damage.",
+            "Player is dead\u00e0\u00e0\u00e0\u00e0\u00e0.."
+          ],
+          "leavePaths": [
+            "auto_advance"
+          ],
+          "autoAdvance": true,
+          "stageClick": false,
+          "hotspots": []
+        },
+        {
+          "slide": 48,
+          "texts": [
+            "\u00e0\u00e0\u00e0",
+            "Am I dead?",
+            "\u00f4We need to talk, come to my room. It\u00c6s the one to the left.\u00f6",
+            "Huh what the heck?"
+          ],
+          "leavePaths": [
+            "stage_click_after_anims"
+          ],
+          "autoAdvance": false,
+          "stageClick": true,
+          "hotspots": []
+        },
+        {
+          "slide": 49,
+          "texts": [],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 50,
+              "resolveMethod": "sole_image_self_to_next",
+              "shapeText": null
+            }
+          ]
+        },
+        {
+          "slide": 50,
+          "texts": [],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 50,
+              "resolveMethod": "confirmed_self_label_match",
+              "shapeText": null
+            },
+            {
+              "action": "hyperlink",
+              "targetSlide": 51,
+              "resolveMethod": "binary_label",
+              "shapeText": null
+            },
+            {
+              "action": "hyperlink",
+              "targetSlide": 54,
+              "resolveMethod": "binary_label",
+              "shapeText": null
+            }
+          ]
+        },
+        {
+          "slide": 51,
+          "texts": [
+            "ELVIS FOREVER!!!",
+            "Click here to continue"
+          ],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "none",
+              "targetSlide": null,
+              "resolveMethod": null,
+              "shapeText": "Click here to continue"
+            },
+            {
+              "action": "hyperlink",
+              "targetSlide": 49,
+              "resolveMethod": "binary_label",
+              "shapeText": "Click here to continue"
+            }
+          ]
+        },
+        {
+          "slide": 52,
+          "texts": [],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 49,
+              "resolveMethod": "binary_label",
+              "shapeText": null
+            },
+            {
+              "action": "hyperlink",
+              "targetSlide": 52,
+              "resolveMethod": "confirmed_self_label_match",
+              "shapeText": null
+            },
+            {
+              "action": "hyperlink",
+              "targetSlide": 53,
+              "resolveMethod": "binary_label",
+              "shapeText": null
+            }
+          ]
+        },
+        {
+          "slide": 53,
+          "texts": [
+            "OCCUPIED!!\n(back)"
+          ],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 51,
+              "resolveMethod": "binary_label",
+              "shapeText": "OCCUPIED!!\r(back)"
+            }
+          ]
+        },
+        {
+          "slide": 54,
+          "texts": [
+            "Got the Magic sword!",
+            "(Back)",
+            "You trash digger\u00e0."
+          ],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 51,
+              "resolveMethod": "binary_label",
+              "shapeText": "(Back)"
+            },
+            {
+              "action": "media",
+              "targetSlide": null,
+              "resolveMethod": null,
+              "shapeText": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slides": [
+        20,
+        25
+      ],
+      "size": 2,
+      "sealed": true,
+      "entriesFromOutside": [],
+      "exitsToOutside": [],
+      "screens": [
+        {
+          "slide": 20,
+          "texts": [
+            "Felled goblin!!",
+            "Click here to continue\u00e0"
+          ],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 25,
+              "resolveMethod": "binary_label",
+              "shapeText": "Click here to continue\u2026"
+            }
+          ]
+        },
+        {
+          "slide": 25,
+          "texts": [
+            "Goblin x2 Attacks!",
+            "Player takes 10 damage!",
+            "Click here to continue\u00e0"
+          ],
+          "leavePaths": [
+            "non_self_hyperlink"
+          ],
+          "autoAdvance": false,
+          "stageClick": false,
+          "hotspots": [
+            {
+              "action": "hyperlink",
+              "targetSlide": 20,
+              "resolveMethod": "binary_label",
+              "shapeText": "Click here to continue\u2026"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "zeroInboundSlides": [
+    {
+      "slide": 23,
+      "out": [
+        24
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "Goblin x3 Attacks!",
+        "Player takes 15 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 26,
+      "out": [
+        27
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 33,
+      "out": [
+        37
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "Felled goblin!!",
+        "Click here to continue\u00e0"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 38,
+      "out": [
+        39
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 41,
+      "out": [
+        42
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "Can\u00c6t escape!",
+        "Click here to continue\u00e0."
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 43,
+      "out": [
+        44
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "texts": [
+        "So you flee like crazy"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 55,
+      "out": [
+        56
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "texts": [
+        "So you\u00c6ve come\u00e0",
+        "Huh?"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 66,
+      "out": [
+        67
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "texts": [],
+      "inStartComponent": false
+    },
+    {
+      "slide": 70,
+      "out": [
+        67
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "Hey ,can I have some money mister?\n(back\u00e0)\n"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 117,
+      "out": [
+        118
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "texts": [
+        "Player charges LIMIT!",
+        "Goblin commander takes 25 damage!"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 119,
+      "out": [
+        122,
+        141,
+        145
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "-attack",
+        "-limit",
+        "-magic",
+        "20"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 124,
+      "out": [
+        125
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "texts": [
+        "Goblin commander takes 15 damage!"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 130,
+      "out": [
+        131
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "texts": [
+        "Player casts shield!",
+        "Defense raised by 20%!"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 135,
+      "out": [
+        139
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "-attack",
+        "5",
+        "00%"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 138,
+      "out": [
+        139
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "Goblin commander takes 15 damage!",
+        "Click here to continue"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 142,
+      "out": [
+        133,
+        144
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "-attack",
+        "10",
+        "00%",
+        "-limit"
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 148,
+      "out": [
+        149
+      ],
+      "leavePaths": [
+        "stage_click_interstitial"
+      ],
+      "texts": [
+        "Magic\u00c6ed battle."
+      ],
+      "inStartComponent": false
+    },
+    {
+      "slide": 166,
+      "out": [
+        167
+      ],
+      "leavePaths": [
+        "stage_click_interstitial"
+      ],
+      "texts": [
+        "If magic/limit"
+      ],
+      "inStartComponent": false
+    }
+  ],
+  "keySlides": {
+    "17": {
+      "slide": 17,
+      "texts": [
+        "CAN\u00c6T ESCAPE!!!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 22,
+          "resolveMethod": "binary_label",
+          "shapeText": "Click here to continue\u2026"
+        }
+      ]
+    },
+    "21": {
+      "slide": 21,
+      "texts": [
+        "-Attack",
+        "-flee",
+        "15"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 19,
+          "resolveMethod": "binary_label",
+          "shapeText": "-Attack"
+        },
+        {
+          "action": "hyperlink",
+          "targetSlide": 17,
+          "resolveMethod": "binary_label",
+          "shapeText": "-flee"
+        }
+      ]
+    },
+    "34": {
+      "slide": 34,
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 21,
+          "resolveMethod": "binary_label",
+          "shapeText": "Click here to continue\u2026"
+        }
+      ]
+    },
+    "36": {
+      "slide": 36,
+      "texts": [
+        "HAHAHAHA!!\nYAH!! TAKE THAT STUPID GOBLINS!!!",
+        "Click here to continue\u00e0."
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "none",
+          "targetSlide": null,
+          "resolveMethod": null,
+          "shapeText": null
+        },
+        {
+          "action": "hyperlink",
+          "targetSlide": 42,
+          "resolveMethod": "binary_label",
+          "shapeText": "Click here to continue\u2026."
+        }
+      ]
+    },
+    "42": {
+      "slide": 42,
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 21,
+          "resolveMethod": "binary_label",
+          "shapeText": "Click here to continue\u2026"
+        }
+      ]
+    },
+    "43": {
+      "slide": 43,
+      "texts": [
+        "So you flee like crazy"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "autoAdvance": true,
+      "stageClick": false,
+      "hotspots": []
+    },
+    "45": {
+      "slide": 45,
+      "texts": [],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "autoAdvance": true,
+      "stageClick": false,
+      "hotspots": []
+    },
+    "46": {
+      "slide": 46,
+      "texts": [
+        "5",
+        "Ubergoblin attacks!",
+        "-attack",
+        "-LIMIT",
+        "-flee"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 47,
+          "resolveMethod": "combat_all_self_to_next_outcome",
+          "shapeText": "-attack"
+        },
+        {
+          "action": "hyperlink",
+          "targetSlide": 47,
+          "resolveMethod": "combat_all_self_to_next_outcome",
+          "shapeText": "-LIMIT"
+        },
+        {
+          "action": "hyperlink",
+          "targetSlide": 47,
+          "resolveMethod": "combat_all_self_to_next_outcome",
+          "shapeText": "-flee"
+        }
+      ]
+    },
+    "47": {
+      "slide": 47,
+      "texts": [
+        "Ubergoblin attacks!",
+        "Player takes 15 damage.",
+        "Player is dead\u00e0\u00e0\u00e0\u00e0\u00e0.."
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "autoAdvance": true,
+      "stageClick": false,
+      "hotspots": []
+    },
+    "55": {
+      "slide": 55,
+      "texts": [
+        "So you\u00c6ve come\u00e0",
+        "Huh?"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "autoAdvance": true,
+      "stageClick": false,
+      "hotspots": []
+    },
+    "20": {
+      "slide": 20,
+      "texts": [
+        "Felled goblin!!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 25,
+          "resolveMethod": "binary_label",
+          "shapeText": "Click here to continue\u2026"
+        }
+      ]
+    },
+    "25": {
+      "slide": 25,
+      "texts": [
+        "Goblin x2 Attacks!",
+        "Player takes 10 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "autoAdvance": false,
+      "stageClick": false,
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 20,
+          "resolveMethod": "binary_label",
+          "shapeText": "Click here to continue\u2026"
+        }
+      ]
+    }
+  },
+  "policy": {
+    "doNotInventForwardBridges": true,
+    "reason": "All navigation atoms are decoded; early loop and islands match binary labels. Playability promotes (continue/self/combat-all-self) already applied; further story bridges need human PPT oracle or proven misparse."
+  }
+}

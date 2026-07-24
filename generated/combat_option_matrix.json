@@ -1,0 +1,1088 @@
+{
+  "format": "goblins-rpg3-combat-option-matrix-v1",
+  "summary": {
+    "combatSlideCount": 28,
+    "totalOptions": 66,
+    "selfOptions": 3,
+    "noopOptions": 0,
+    "navOptions": 63
+  },
+  "slides": [
+    {
+      "slide": 15,
+      "options": [
+        {
+          "shapeId": 17419,
+          "text": "-Attack",
+          "action": "hyperlink",
+          "targetSlide": 18,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 17424,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 15,
+          "isSelf": true,
+          "resolveMethod": "confirmed_self_combat",
+          "clickable": false,
+          "behaviorStatus": "documented_residual_self"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 1,
+      "noopCount": 0,
+      "navCount": 1,
+      "layerTexts": [
+        "Goblin x3 attacked!",
+        "-Attack",
+        "-flee",
+        "I\u00c6m bored\u00e0"
+      ]
+    },
+    {
+      "slide": 16,
+      "options": [
+        {
+          "shapeId": 20488,
+          "text": "-Attack",
+          "action": "hyperlink",
+          "targetSlide": 32,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 20489,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 17,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "Goblin fled of boredom\u00e0",
+        "-Attack",
+        "-flee"
+      ]
+    },
+    {
+      "slide": 21,
+      "options": [
+        {
+          "shapeId": 27655,
+          "text": "-Attack",
+          "action": "hyperlink",
+          "targetSlide": 19,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 27656,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 17,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-Attack",
+        "-flee",
+        "15"
+      ]
+    },
+    {
+      "slide": 22,
+      "options": [
+        {
+          "shapeId": 28678,
+          "text": "-Attack",
+          "action": "hyperlink",
+          "targetSlide": 34,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 28679,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 36,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-Attack",
+        "-flee",
+        "15"
+      ]
+    },
+    {
+      "slide": 24,
+      "options": [
+        {
+          "shapeId": 31752,
+          "text": "-Attack",
+          "action": "hyperlink",
+          "targetSlide": 31,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 31753,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 31,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-Attack",
+        "-flee",
+        "10"
+      ]
+    },
+    {
+      "slide": 27,
+      "options": [
+        {
+          "shapeId": 34822,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 34,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 34823,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 27,
+          "isSelf": true,
+          "resolveMethod": "confirmed_self_combat",
+          "clickable": false,
+          "behaviorStatus": "documented_residual_self"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 1,
+      "noopCount": 0,
+      "navCount": 1,
+      "layerTexts": [
+        "10",
+        "-attack",
+        "-flee"
+      ]
+    },
+    {
+      "slide": 39,
+      "options": [
+        {
+          "shapeId": 49156,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 39,
+          "isSelf": true,
+          "resolveMethod": "confirmed_self_combat",
+          "clickable": false,
+          "behaviorStatus": "documented_residual_self"
+        },
+        {
+          "shapeId": 49157,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 40,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 1,
+      "noopCount": 0,
+      "navCount": 1,
+      "layerTexts": [
+        "20",
+        "-attack",
+        "-flee"
+      ]
+    },
+    {
+      "slide": 46,
+      "options": [
+        {
+          "shapeId": 56333,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 47,
+          "isSelf": false,
+          "resolveMethod": "combat_all_self_to_next_outcome",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 56334,
+          "text": "-LIMIT",
+          "action": "hyperlink",
+          "targetSlide": 47,
+          "isSelf": false,
+          "resolveMethod": "combat_all_self_to_next_outcome",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 56335,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 47,
+          "isSelf": false,
+          "resolveMethod": "combat_all_self_to_next_outcome",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "5",
+        "Ubergoblin attacks!",
+        "-attack",
+        "-LIMIT",
+        "-flee"
+      ]
+    },
+    {
+      "slide": 79,
+      "options": [
+        {
+          "shapeId": 92174,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 83,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 92175,
+          "text": "-LIMIT",
+          "action": "hyperlink",
+          "targetSlide": 80,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 92176,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 82,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "Mr. T attacks!",
+        "-attack",
+        "-LIMIT",
+        "-flee"
+      ]
+    },
+    {
+      "slide": 87,
+      "options": [
+        {
+          "shapeId": 100359,
+          "text": "-LIMIT",
+          "action": "hyperlink",
+          "targetSlide": 80,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 100360,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 82,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 100361,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 88,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "-LIMIT",
+        "-flee",
+        "-attack",
+        "10"
+      ]
+    },
+    {
+      "slide": 92,
+      "options": [
+        {
+          "shapeId": 107528,
+          "text": "-Attack",
+          "action": "hyperlink",
+          "targetSlide": 95,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 107529,
+          "text": "-LIMIT",
+          "action": "hyperlink",
+          "targetSlide": 97,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 107530,
+          "text": "-Flee",
+          "action": "hyperlink",
+          "targetSlide": 94,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "Slug attacks!",
+        "-Attack",
+        "-LIMIT",
+        "-Flee"
+      ]
+    },
+    {
+      "slide": 94,
+      "options": [
+        {
+          "shapeId": 109574,
+          "text": "-Attack",
+          "action": "hyperlink",
+          "targetSlide": 95,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 109575,
+          "text": "-LIMIT",
+          "action": "hyperlink",
+          "targetSlide": 97,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-Attack",
+        "-LIMIT",
+        "You can\u00c6t run from a slug! That\u00c6s just not cool!"
+      ]
+    },
+    {
+      "slide": 112,
+      "options": [
+        {
+          "shapeId": 130065,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 115,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 130066,
+          "text": "-magic",
+          "action": "hyperlink",
+          "targetSlide": 114,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 130067,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 118,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 130068,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 113,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 4,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 4,
+      "layerTexts": [
+        "Goblin commander attacks!",
+        "-attack",
+        "-magic",
+        "-limit",
+        "-flee"
+      ]
+    },
+    {
+      "slide": 113,
+      "options": [
+        {
+          "shapeId": 131082,
+          "text": "-magic",
+          "action": "hyperlink",
+          "targetSlide": 114,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 131084,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 115,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 131086,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 118,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "You can\u00c6t flee from a boss! Duhh\u00e0.\nWhy did I even include that?",
+        "-magic",
+        "-attack",
+        "-limit"
+      ]
+    },
+    {
+      "slide": 119,
+      "options": [
+        {
+          "shapeId": 143365,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 122,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 143369,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 145,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 143372,
+          "text": "-magic",
+          "action": "hyperlink",
+          "targetSlide": 141,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "-attack",
+        "-limit",
+        "-magic",
+        "20"
+      ]
+    },
+    {
+      "slide": 120,
+      "options": [
+        {
+          "shapeId": 144389,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 136,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 144392,
+          "text": "-magic",
+          "action": "hyperlink",
+          "targetSlide": 131,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-attack",
+        "-magic",
+        "20"
+      ]
+    },
+    {
+      "slide": 123,
+      "options": [
+        {
+          "shapeId": 148484,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 125,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 148485,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 127,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 148486,
+          "text": "-magic",
+          "action": "hyperlink",
+          "targetSlide": 129,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "-attack",
+        "-limit",
+        "-magic",
+        "5"
+      ]
+    },
+    {
+      "slide": 132,
+      "options": [
+        {
+          "shapeId": 157700,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 134,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 1,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 1,
+      "layerTexts": [
+        "-attack",
+        "10",
+        "00%"
+      ]
+    },
+    {
+      "slide": 135,
+      "options": [
+        {
+          "shapeId": 163844,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 139,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 1,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 1,
+      "layerTexts": [
+        "-attack",
+        "5",
+        "00%"
+      ]
+    },
+    {
+      "slide": 137,
+      "options": [
+        {
+          "shapeId": 166916,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 139,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 166919,
+          "text": "-magic",
+          "action": "hyperlink",
+          "targetSlide": 128,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-attack",
+        "5",
+        "10%",
+        "-magic"
+      ]
+    },
+    {
+      "slide": 142,
+      "options": [
+        {
+          "shapeId": 171012,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 133,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 171015,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 144,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-attack",
+        "10",
+        "00%",
+        "-limit"
+      ]
+    },
+    {
+      "slide": 150,
+      "options": [
+        {
+          "shapeId": 180227,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 151,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 180228,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 167,
+          "isSelf": false,
+          "resolveMethod": "noop_mirror_sibling_hyperlink",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 180228,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 167,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "-attack",
+        "-limit",
+        "31",
+        "Round2.aftermagic",
+        "00%"
+      ]
+    },
+    {
+      "slide": 153,
+      "options": [
+        {
+          "shapeId": 185347,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 154,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 185348,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 162,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-attack",
+        "-limit",
+        "21",
+        "Round3.magic.attack",
+        "00%"
+      ]
+    },
+    {
+      "slide": 156,
+      "options": [
+        {
+          "shapeId": 188419,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 157,
+          "isSelf": false,
+          "resolveMethod": "noop_mirror_sibling_hyperlink",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 188419,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 157,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 188420,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 126,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "-attack",
+        "-limit",
+        "11",
+        "Round4.magic.attack.attack",
+        "00%"
+      ]
+    },
+    {
+      "slide": 159,
+      "options": [
+        {
+          "shapeId": 191491,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 160,
+          "isSelf": false,
+          "resolveMethod": "noop_mirror_sibling_hyperlink",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 191491,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 160,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 191492,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 126,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "-attack",
+        "-limit",
+        "1",
+        "Round5.magic.attack.attack.attack",
+        "00%"
+      ]
+    },
+    {
+      "slide": 164,
+      "options": [
+        {
+          "shapeId": 197635,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 165,
+          "isSelf": false,
+          "resolveMethod": "noop_mirror_sibling_hyperlink",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 197635,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 165,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 2,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 2,
+      "layerTexts": [
+        "-attack",
+        "11",
+        "Round4.magic.attack.limit",
+        "00%"
+      ]
+    },
+    {
+      "slide": 169,
+      "options": [
+        {
+          "shapeId": 203779,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 170,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 1,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 1,
+      "layerTexts": [
+        "-attack",
+        "21",
+        "00%"
+      ]
+    },
+    {
+      "slide": 190,
+      "options": [
+        {
+          "shapeId": 230406,
+          "text": "-attack",
+          "action": "hyperlink",
+          "targetSlide": 191,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 230407,
+          "text": "-limit",
+          "action": "hyperlink",
+          "targetSlide": 194,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        },
+        {
+          "shapeId": 230408,
+          "text": "-flee",
+          "action": "hyperlink",
+          "targetSlide": 195,
+          "isSelf": false,
+          "resolveMethod": "binary_label",
+          "clickable": true,
+          "behaviorStatus": "navigation"
+        }
+      ],
+      "optionCount": 3,
+      "selfCount": 0,
+      "noopCount": 0,
+      "navCount": 3,
+      "layerTexts": [
+        "Guardian Askook Attacks!",
+        "-attack",
+        "-limit",
+        "-flee",
+        "45"
+      ]
+    }
+  ]
+}

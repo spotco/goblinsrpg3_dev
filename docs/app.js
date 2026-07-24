@@ -178,12 +178,21 @@ function collectRuntimeProblems(screen = state.current) {
   }
   for (const hotspot of screen.hotspots || []) {
     if (hotspot.action === "hyperlink" && hotspot.targetSlide === screen.slide) {
+      const residual = hotspot.residualStatus === "accepted_source_self" ||
+        String(hotspot.behaviorStatus || "").startsWith("documented_residual_self");
       problems.push({
-        code: "self_hyperlink",
-        severity: "high",
-        message: `Hotspot ${hotspot.id} targets the same slide`,
+        code: residual ? "residual_self_hyperlink" : "self_hyperlink",
+        severity: residual ? "low" : (hotspot.resolveMethod === "confirmed_self_combat" ? "medium" : "high"),
+        message: residual
+          ? `Documented residual self ${hotspot.id}` +
+            (hotspot.clickable ? " (still clickable)" : " (non-clickable)") +
+            (hotspot.residualKind ? ` [${hotspot.residualKind}]` : "")
+          : `Hotspot ${hotspot.id} targets the same slide` +
+            (hotspot.resolveMethod ? ` (${hotspot.resolveMethod})` : ""),
         hotspotId: hotspot.id,
         shapeId: hotspot.shapeId,
+        resolveMethod: hotspot.resolveMethod || null,
+        residualStatus: hotspot.residualStatus || null,
       });
     }
     if (hotspot.clickable && hotspot.bounds && !(hotspot.bounds.width > 0 && hotspot.bounds.height > 0)) {
@@ -194,11 +203,28 @@ function collectRuntimeProblems(screen = state.current) {
         hotspotId: hotspot.id,
       });
     }
-    if (hotspot.behaviorStatus === "unresolved_media" || hotspot.behaviorStatus === "missing_media_binding") {
+    if (
+      hotspot.behaviorStatus === "unresolved_media" ||
+      hotspot.behaviorStatus === "missing_media_binding" ||
+      hotspot.behaviorStatus === "documented_unresolved_media" ||
+      hotspot.residualStatus === "accepted_unresolved_media"
+    ) {
       problems.push({
         code: "unresolved_media",
-        severity: "high",
-        message: `Hotspot ${hotspot.id} media unresolved (${hotspot.behaviorStatus})`,
+        severity: hotspot.residualStatus === "accepted_unresolved_media" ? "low" : "high",
+        message: `Hotspot ${hotspot.id} media unresolved (${hotspot.behaviorStatus})` +
+          (hotspot.clickable ? "" : " [non-clickable residual]"),
+        hotspotId: hotspot.id,
+      });
+    }
+    if (
+      hotspot.behaviorStatus === "documented_zero_area_media" ||
+      hotspot.residualStatus === "accepted_zero_area_media"
+    ) {
+      problems.push({
+        code: "zero_area_media",
+        severity: "low",
+        message: `Hotspot ${hotspot.id} mapped media has zero-area hit target (auto play may still run)`,
         hotspotId: hotspot.id,
       });
     }
@@ -241,6 +267,7 @@ function dumpScreen(slideOrId) {
       image: screen.image,
       backgroundColor: screen.backgroundColor || null,
       transition: screen.transition || null,
+      advancement: screen.advancement || null,
       hotspotCount: (screen.hotspots || []).length,
       layerCount: layers.length,
       layerTypeCounts: layerTypeCounts(layers),
@@ -303,6 +330,13 @@ function ensureDebugHud() {
       <span class="debug-hud-meta">?debug=1</span>
     </header>
     <pre id="debug-hud-body" class="debug-hud-body">Loading…</pre>
+    <div class="debug-hud-chapters">
+      <label class="debug-hud-chapters-label" for="debug-chapter-select">Chapters</label>
+      <select id="debug-chapter-select" class="debug-chapter-select" aria-label="Jump to chapter entry">
+        <option value="">Loading chapters…</option>
+      </select>
+      <button type="button" id="debug-chapter-go">Go</button>
+    </div>
     <footer class="debug-hud-footer">
       <button type="button" id="debug-hud-dump">dumpScreen()</button>
       <button type="button" id="debug-hud-problems">listProblems()</button>
@@ -320,7 +354,68 @@ function ensureDebugHud() {
     console.log("[GoblinsRPG3] listProblems", problems);
     updateDebugHud();
   });
+  const chapterSelect = hud.querySelector("#debug-chapter-select");
+  const chapterGo = hud.querySelector("#debug-chapter-go");
+  const jumpChapter = () => {
+    const raw = chapterSelect?.value;
+    if (!raw) {
+      return;
+    }
+    const slide = Number(raw);
+    if (!Number.isFinite(slide)) {
+      return;
+    }
+    runtimeLog("input:debug-chapter-jump", { slide });
+    if (window.goblinsRpg3Debug?.goto) {
+      window.goblinsRpg3Debug.goto(slide);
+    } else {
+      navigateTo(screenId(slide), { type: "debug-chapter", targetSlide: slide });
+    }
+    updateDebugHud();
+  };
+  chapterGo?.addEventListener("click", jumpChapter);
+  chapterSelect?.addEventListener("change", () => {
+    /* selection only; Go applies */
+  });
+  loadChapterEntriesIntoSelect(chapterSelect);
   return hud;
+}
+
+async function loadChapterEntriesIntoSelect(selectEl) {
+  if (!selectEl) {
+    return;
+  }
+  try {
+    const response = await fetch(`chapter-entries.json?no-cache=${Date.now()}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const data = await response.json();
+    const entries = data.entries || [];
+    selectEl.innerHTML = "";
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = entries.length ? "Jump to chapter…" : "No chapters";
+    selectEl.append(placeholder);
+    for (const entry of entries) {
+      const opt = document.createElement("option");
+      opt.value = String(entry.slide);
+      opt.textContent = entry.label || `slide ${entry.slide}`;
+      if (entry.ok === false) {
+        opt.textContent += " (!)";
+      }
+      selectEl.append(opt);
+    }
+    state.chapterEntries = entries;
+    runtimeLog("debug:chapters-loaded", { count: entries.length });
+  } catch (error) {
+    selectEl.innerHTML = "";
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "Chapters unavailable";
+    selectEl.append(opt);
+    runtimeLog("debug:chapters-load-failed", { error: String(error) }, "warn");
+  }
 }
 
 function updateDebugHud(dumpOverride = null) {
@@ -343,9 +438,12 @@ function updateDebugHud(dumpOverride = null) {
   }
   const problems = dump.problems || [];
   const decision = dump.renderDecision || {};
+  const adv = dump.screen.advancement || {};
   const lines = [
     `screen: ${dump.screen.id} (slide ${dump.screen.slide})`,
     `bg: ${dump.screen.backgroundColor || "(stage default)"}`,
+    `advancement: modes=${JSON.stringify(adv.modes || [])} stageClickSlide=${Boolean(adv.stageClickAdvancesSlide)} auto=${Boolean(adv.autoAdvance)}`,
+    `leave: ${(adv.leavePaths || []).join(",") || "(none)"} next=${adv.nextSequentialId || "—"}`,
     `layers: ${dump.screen.layerCount} ${JSON.stringify(dump.screen.layerTypeCounts)}`,
     `hotspots: ${dump.screen.hotspotCount}`,
     `png: hidden=${dump.runtime.imageHidden} natural=${dump.runtime.imageNatural?.width || 0}x${dump.runtime.imageNatural?.height || 0}`,
@@ -2200,19 +2298,81 @@ window.addEventListener("unhandledrejection", (event) => {
   }, "error");
 });
 
-stage.addEventListener("click", () => {
+function screenAllowsStageClickAdvance(screen) {
+  if (!screen) {
+    return false;
+  }
+  if (screen.advancement && typeof screen.advancement.stageClickAdvancesSlide === "boolean") {
+    return screen.advancement.stageClickAdvancesSlide;
+  }
+  // Fallback for older manifests without advancement block.
+  return Boolean(screen.transition && (screen.transition.flagNames || []).includes("manualAdvance"));
+}
+
+function nextSequentialScreenId(screen) {
+  if (!screen) {
+    return null;
+  }
+  if (screen.advancement && screen.advancement.nextSequentialId) {
+    return screen.advancement.nextSequentialId;
+  }
+  if (!Number.isFinite(screen.slide)) {
+    return null;
+  }
+  return screenId(Number(screen.slide) + 1);
+}
+
+function handleStageClick() {
   runtimeLog("input:stage-click", {
-    action: "unlock-audio-and-advance",
+    action: "unlock-audio-and-advancement-continuum",
     queueLengthBefore: state.animationQueue.length,
+    currentScreen: state.current ? { id: state.current.id, slide: state.current.slide } : null,
+    advancement: state.current ? state.current.advancement || null : null,
   });
   unlockAudio();
-  const advanced = advanceAnimation();
+  // 1) PowerPoint OnNext / OnPrev animation queue first.
+  if (advanceAnimation()) {
+    recordInteraction({
+      type: "stage-click",
+      action: "advance-animation",
+      result: "animation-advanced",
+      queueLengthAfter: state.animationQueue.length,
+    });
+    return;
+  }
+  // 2) After builds are done: only advance the slide when PPT fManualAdvance is set.
+  if (screenAllowsStageClickAdvance(state.current)) {
+    const nextId = nextSequentialScreenId(state.current);
+    if (nextId && state.screens.has(nextId)) {
+      navigateTo(nextId, {
+        type: "stage-click",
+        action: "click-advance-slide",
+        result: "navigated",
+        from: state.current ? { id: state.current.id, slide: state.current.slide } : null,
+        to: nextId,
+      });
+      return;
+    }
+    recordInteraction({
+      type: "stage-click",
+      action: "click-advance-slide",
+      result: "next-slide-missing",
+      nextId,
+    });
+    return;
+  }
+  // 3) Hyperlink-only (or media-only) slides: blank stage is inert.
   recordInteraction({
     type: "stage-click",
-    action: "unlock-audio-and-advance",
-    result: advanced ? "animation-advanced" : "no-queued-animation",
-    queueLengthAfter: state.animationQueue.length,
+    action: "no-op",
+    result: "no-queued-animation-and-no-click-advance",
+    queueLengthAfter: 0,
+    modes: state.current && state.current.advancement ? state.current.advancement.modes : null,
   });
+}
+
+stage.addEventListener("click", () => {
+  handleStageClick();
 });
 
 restartButton.addEventListener("click", () => {

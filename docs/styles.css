@@ -310,6 +310,34 @@ button:focus-visible {
   gap: 6px;
 }
 
+.debug-hud-chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.debug-hud-chapters-label {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+.debug-chapter-select {
+  flex: 1 1 8rem;
+  min-width: 0;
+  max-width: 14rem;
+  font: inherit;
+  font-size: 0.7rem;
+  background: #111;
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  padding: 0.2rem 0.3rem;
+}
+
+.debug-hud-chapters button,
 .debug-hud-footer button {
   min-height: 30px;
   padding: 0 10px;

@@ -1,0 +1,299 @@
+{
+  "format": "goblins-rpg3-media-death-residuals-v1",
+  "summary": {
+    "mediaResidualHotspotCount": 4,
+    "unresolvedBindingCount": 3,
+    "terminalSlideCount": 3,
+    "unresolvedLegacyCueIds": [
+      3,
+      4
+    ]
+  },
+  "mediaResidualHotspots": [
+    {
+      "slide": 54,
+      "hotspotId": "s054-a638920",
+      "shapeId": 65543,
+      "behaviorStatus": "documented_unresolved_media",
+      "mediaStatus": "unresolved_audio_id",
+      "mediaBindingId": "slide-054-shape-65543",
+      "residualStatus": "accepted_unresolved_media",
+      "residualKind": "missing_legacy_audio_cue",
+      "clickable": false,
+      "resolveRationale": "Media action references a legacy animation cue id that is not present in converted embedded/linked audio (known missing ids 3/4). Left non-clickable; no invented sound mapping.",
+      "bounds": {
+        "raw": [
+          0,
+          5568,
+          5760,
+          192
+        ],
+        "x": 0.9666666666666667,
+        "y": 0.0,
+        "width": 0.03333333333333333,
+        "height": 0.044444444444444446,
+        "clipped": [
+          5568,
+          0,
+          5760,
+          192
+        ]
+      }
+    },
+    {
+      "slide": 96,
+      "hotspotId": "s096-a767762",
+      "shapeId": 111627,
+      "behaviorStatus": "documented_unresolved_media",
+      "mediaStatus": "unresolved_audio_id",
+      "mediaBindingId": "slide-096-shape-111627",
+      "residualStatus": "accepted_unresolved_media",
+      "residualKind": "missing_legacy_audio_cue",
+      "clickable": false,
+      "resolveRationale": "Media action references a legacy animation cue id that is not present in converted embedded/linked audio (known missing ids 3/4). Left non-clickable; no invented sound mapping.",
+      "bounds": {
+        "raw": [
+          0,
+          5568,
+          5760,
+          192
+        ],
+        "x": 0.9666666666666667,
+        "y": 0.0,
+        "width": 0.03333333333333333,
+        "height": 0.044444444444444446,
+        "clipped": [
+          5568,
+          0,
+          5760,
+          192
+        ]
+      }
+    },
+    {
+      "slide": 104,
+      "hotspotId": "s104-a793733",
+      "shapeId": 121869,
+      "behaviorStatus": "documented_zero_area_media",
+      "mediaStatus": "mapped",
+      "mediaBindingId": "slide-104-shape-121869",
+      "residualStatus": "accepted_zero_area_media",
+      "residualKind": "zero_area_mapped_media",
+      "clickable": false,
+      "resolveRationale": "Media is mapped to a known audio cue but client-anchor bounds clamp to zero width/height. Non-clickable hit target; automatic animation playFrom may still fire from the timing tree.",
+      "bounds": {
+        "raw": [
+          1632,
+          -192,
+          0,
+          1824
+        ],
+        "x": 0.0,
+        "y": 0.37777777777777777,
+        "width": 0.0,
+        "height": 0.044444444444444446,
+        "clipped": [
+          0,
+          1632,
+          0,
+          1824
+        ]
+      }
+    },
+    {
+      "slide": 193,
+      "hotspotId": "s193-a1108521",
+      "shapeId": 233483,
+      "behaviorStatus": "documented_unresolved_media",
+      "mediaStatus": "unresolved_audio_id",
+      "mediaBindingId": "slide-193-shape-233483",
+      "residualStatus": "accepted_unresolved_media",
+      "residualKind": "missing_legacy_audio_cue",
+      "clickable": false,
+      "resolveRationale": "Media action references a legacy animation cue id that is not present in converted embedded/linked audio (known missing ids 3/4). Left non-clickable; no invented sound mapping.",
+      "bounds": {
+        "raw": [
+          1632,
+          -192,
+          0,
+          1824
+        ],
+        "x": 0.0,
+        "y": 0.37777777777777777,
+        "width": 0.0,
+        "height": 0.044444444444444446,
+        "clipped": [
+          0,
+          1632,
+          0,
+          1824
+        ]
+      }
+    }
+  ],
+  "unresolvedMediaBindings": [
+    {
+      "id": "slide-054-shape-65543",
+      "slide": 54,
+      "shapeId": 65543,
+      "actionRecordOffset": 638920,
+      "legacyCueId": 3,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "unresolved_audio_id",
+      "cueBehavior": {
+        "trigger": "animation_command",
+        "command": "playFrom",
+        "startSeconds": 0.0,
+        "loop": false,
+        "stop": false,
+        "replaceExisting": true,
+        "requiresUserGesture": true,
+        "source": "AnimationInfoAtom/TimeCommandBehavior"
+      },
+      "legacyAnimation": {
+        "recordOffset": 638876,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000030000000000000000000d30"
+      },
+      "unresolvedReason": "Legacy cue id is not present in converted embedded audio outputs. It may refer to a linked/deleted media object that needs PowerPoint reference validation."
+    },
+    {
+      "id": "slide-096-shape-111627",
+      "slide": 96,
+      "shapeId": 111627,
+      "actionRecordOffset": 767762,
+      "legacyCueId": 4,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "unresolved_audio_id",
+      "cueBehavior": {
+        "trigger": "animation_command",
+        "command": "playFrom",
+        "startSeconds": 0.0,
+        "loop": false,
+        "stop": false,
+        "replaceExisting": true,
+        "requiresUserGesture": true,
+        "source": "AnimationInfoAtom/TimeCommandBehavior"
+      },
+      "legacyAnimation": {
+        "recordOffset": 767718,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000040000000000000000000d30"
+      },
+      "unresolvedReason": "Legacy cue id is not present in converted embedded audio outputs. It may refer to a linked/deleted media object that needs PowerPoint reference validation."
+    },
+    {
+      "id": "slide-193-shape-233483",
+      "slide": 193,
+      "shapeId": 233483,
+      "actionRecordOffset": 1108521,
+      "legacyCueId": 3,
+      "command": "playFrom",
+      "startSeconds": 0.0,
+      "status": "unresolved_audio_id",
+      "cueBehavior": {
+        "trigger": "animation_command",
+        "command": "playFrom",
+        "startSeconds": 0.0,
+        "loop": false,
+        "stop": false,
+        "replaceExisting": true,
+        "requiresUserGesture": true,
+        "source": "AnimationInfoAtom/TimeCommandBehavior"
+      },
+      "legacyAnimation": {
+        "recordOffset": 1108477,
+        "flagNames": [
+          "automatic",
+          "play",
+          "synchronous"
+        ],
+        "rawHex": "00000007040500000000000000000000030000000000000000000d30"
+      },
+      "unresolvedReason": "Legacy cue id is not present in converted embedded audio outputs. It may refer to a linked/deleted media object that needs PowerPoint reference validation."
+    }
+  ],
+  "terminalSlides": [
+    {
+      "slide": 30,
+      "deathTerminal": true,
+      "terminalKind": "death",
+      "terminalNotes": "Death screen: leave via Restart control (PPT Press esc). Optional media may play.",
+      "leavePaths": [
+        "restart_only"
+      ],
+      "texts": [
+        "DED!!",
+        "You ded.",
+        "Press esc to exit."
+      ],
+      "hotspots": [
+        {
+          "action": "media",
+          "targetSlide": null,
+          "behaviorStatus": "clickable_media",
+          "clickable": true
+        }
+      ]
+    },
+    {
+      "slide": 197,
+      "deathTerminal": true,
+      "terminalKind": "death",
+      "terminalNotes": "Death screen: leave via Restart control (PPT Press esc). Optional media may play.",
+      "leavePaths": [
+        "restart_only"
+      ],
+      "texts": [
+        "DED!!",
+        "You ded.",
+        "Press esc to exit."
+      ],
+      "hotspots": [
+        {
+          "action": "media",
+          "targetSlide": null,
+          "behaviorStatus": "clickable_media",
+          "clickable": true
+        }
+      ]
+    },
+    {
+      "slide": 200,
+      "deathTerminal": true,
+      "terminalKind": "end_card",
+      "terminalNotes": "End card: hyperlink leave and/or Restart; PPT Press esc to exit.",
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "texts": [
+        "The End.",
+        "(press ESC to exit\u00e0)"
+      ],
+      "hotspots": [
+        {
+          "action": "hyperlink",
+          "targetSlide": 201,
+          "behaviorStatus": "navigation",
+          "clickable": true
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "unresolvedMedia": "non-clickable; missing embedded cue ids; no invented audio",
+    "zeroAreaMedia": "non-clickable; mapped audio may auto-play via timing",
+    "death": "restart_only leave; optional media click",
+    "end_card": "hyperlink and/or restart; terminalKind end_card"
+  }
+}

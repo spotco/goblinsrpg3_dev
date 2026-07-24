@@ -1,0 +1,542 @@
+{
+  "format": "goblins-rpg3-auto-advance-timing-v1",
+  "policy": "runtime scheduledDelayMs = max(slideTimeMs, animationTimeline.durationMs)",
+  "summary": {
+    "autoAdvanceSlideCount": 59,
+    "extendedByAnimationCount": 4,
+    "maxEffectiveDelayMs": 10000.0
+  },
+  "slides": [
+    {
+      "slide": 1,
+      "slideTimeMs": 4000.0,
+      "animationTimelineMs": 2500.0,
+      "effectiveDelayMs": 4000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 14,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 5815.0,
+      "effectiveDelayMs": 5815.0,
+      "extendedByAnimation": true,
+      "animationRootCount": 1,
+      "onNextConditionCount": 4
+    },
+    {
+      "slide": 15,
+      "slideTimeMs": 9000.0,
+      "animationTimelineMs": 4500.0,
+      "effectiveDelayMs": 9000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 43,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1000.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 44,
+      "slideTimeMs": 7000.0,
+      "animationTimelineMs": 6000.0,
+      "effectiveDelayMs": 7000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 45,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": true,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 47,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 2500.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 55,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 2000.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 57,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 4000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 58,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 3500.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 59,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 60,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 3000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 61,
+      "slideTimeMs": 4000.0,
+      "animationTimelineMs": 2000.0,
+      "effectiveDelayMs": 4000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 62,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 500.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 63,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 500.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 64,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 500.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 66,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 68,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 75,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 76,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 77,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 78,
+      "slideTimeMs": 4000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": true,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 80,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 2500.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 85,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 2001.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 89,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 2001.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 91,
+      "slideTimeMs": 4000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": true,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 98,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 2000.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 100,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 5000.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 111,
+      "slideTimeMs": 1000.0,
+      "animationTimelineMs": 1.0,
+      "effectiveDelayMs": 1000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 0
+    },
+    {
+      "slide": 115,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 117,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 4500.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 121,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 122,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 4000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 124,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 128,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 130,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 131,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 4000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 133,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 140,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 143,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 4500.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 146,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 4500.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 149,
+      "slideTimeMs": 5000.0,
+      "animationTimelineMs": 4000.0,
+      "effectiveDelayMs": 5000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 151,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 154,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 157,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 160,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1500.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 162,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 4500.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 167,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 4500.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 184,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 1.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 0
+    },
+    {
+      "slide": 185,
+      "slideTimeMs": 1000.0,
+      "animationTimelineMs": 1.0,
+      "effectiveDelayMs": 1000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 0
+    },
+    {
+      "slide": 186,
+      "slideTimeMs": 1000.0,
+      "animationTimelineMs": 1.0,
+      "effectiveDelayMs": 1000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 0
+    },
+    {
+      "slide": 187,
+      "slideTimeMs": 3000.0,
+      "animationTimelineMs": 1.0,
+      "effectiveDelayMs": 3000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 0
+    },
+    {
+      "slide": 188,
+      "slideTimeMs": 1000.0,
+      "animationTimelineMs": 1.0,
+      "effectiveDelayMs": 1000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 0
+    },
+    {
+      "slide": 189,
+      "slideTimeMs": 2000.0,
+      "animationTimelineMs": 1000.0,
+      "effectiveDelayMs": 2000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 191,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 5500.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 192,
+      "slideTimeMs": 1000.0,
+      "animationTimelineMs": 1000.0,
+      "effectiveDelayMs": 1000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 196,
+      "slideTimeMs": 10000.0,
+      "animationTimelineMs": 9000.0,
+      "effectiveDelayMs": 10000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 198,
+      "slideTimeMs": 6000.0,
+      "animationTimelineMs": 4500.0,
+      "effectiveDelayMs": 6000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    },
+    {
+      "slide": 199,
+      "slideTimeMs": 4000.0,
+      "animationTimelineMs": 500.0,
+      "effectiveDelayMs": 4000.0,
+      "extendedByAnimation": false,
+      "animationRootCount": 1,
+      "onNextConditionCount": 2
+    }
+  ]
+}

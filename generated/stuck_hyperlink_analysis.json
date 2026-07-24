@@ -1,0 +1,1053 @@
+{
+  "format": "goblins-rpg3-stuck-hyperlink-analysis-v1",
+  "summary": {
+    "stuckSlideCount": 24,
+    "selfLinkActionCount": 21,
+    "continueLikeSelfLinks": 9,
+    "noNavNoFlagsCount": 10,
+    "exHyperlinkCount": 194,
+    "exHyperlinksAllSingleSlideLabel": true,
+    "conclusion": "Self-links are confirmed at the label level: ExHyperlink stores only one UTF-16 string 'Slide N' with no second target atom. InteractiveInfoAtom uses action=hyperlink (4), jump=0. This is not a runtime bug; the port currently has no other decoded leave path on those slides. No-nav/no-flags slides (e.g. 30, 139\u2026) are hubs/returns with no outbound hyperlink and no manual/auto advance bits\u2014leave only if something else is missing from extraction."
+  },
+  "selfLinks": [
+    {
+      "slide": 2,
+      "shapeId": 2056,
+      "text": "Click here to start",
+      "hyperlinkId": 1,
+      "exHyperlinkStrings": [
+        "Slide 2"
+      ],
+      "exHyperlinkOffset": 76,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        2
+      ]
+    },
+    {
+      "slide": 9,
+      "shapeId": 10250,
+      "text": null,
+      "hyperlinkId": 13,
+      "exHyperlinkStrings": [
+        "Slide 9"
+      ],
+      "exHyperlinkOffset": 118,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        9
+      ]
+    },
+    {
+      "slide": 10,
+      "shapeId": 11271,
+      "text": "Click here to continue",
+      "hyperlinkId": 24,
+      "exHyperlinkStrings": [
+        "Slide 10"
+      ],
+      "exHyperlinkOffset": 160,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        10
+      ]
+    },
+    {
+      "slide": 11,
+      "shapeId": 12291,
+      "text": null,
+      "hyperlinkId": 26,
+      "exHyperlinkStrings": [
+        "Slide 11"
+      ],
+      "exHyperlinkOffset": 204,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        11
+      ]
+    },
+    {
+      "slide": 15,
+      "shapeId": 17424,
+      "text": "-flee",
+      "hyperlinkId": 46,
+      "exHyperlinkStrings": [
+        "Slide 15"
+      ],
+      "exHyperlinkOffset": 288,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        15
+      ]
+    },
+    {
+      "slide": 26,
+      "shapeId": 33800,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 120,
+      "exHyperlinkStrings": [
+        "Slide 26"
+      ],
+      "exHyperlinkOffset": 724,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        26
+      ]
+    },
+    {
+      "slide": 27,
+      "shapeId": 34823,
+      "text": "-flee",
+      "hyperlinkId": 122,
+      "exHyperlinkStrings": [
+        "Slide 27"
+      ],
+      "exHyperlinkOffset": 812,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        27
+      ]
+    },
+    {
+      "slide": 28,
+      "shapeId": 35850,
+      "text": "Click here to continue\u2026.",
+      "hyperlinkId": 121,
+      "exHyperlinkStrings": [
+        "Slide 28"
+      ],
+      "exHyperlinkOffset": 768,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        28,
+        37
+      ]
+    },
+    {
+      "slide": 29,
+      "shapeId": 36880,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 123,
+      "exHyperlinkStrings": [
+        "Slide 29"
+      ],
+      "exHyperlinkOffset": 856,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        29,
+        31,
+        32
+      ]
+    },
+    {
+      "slide": 35,
+      "shapeId": 45064,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 156,
+      "exHyperlinkStrings": [
+        "Slide 35"
+      ],
+      "exHyperlinkOffset": 1252,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        35,
+        40
+      ]
+    },
+    {
+      "slide": 38,
+      "shapeId": 48135,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 202,
+      "exHyperlinkStrings": [
+        "Slide 38"
+      ],
+      "exHyperlinkOffset": 1560,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        38
+      ]
+    },
+    {
+      "slide": 39,
+      "shapeId": 49156,
+      "text": "-attack",
+      "hyperlinkId": 204,
+      "exHyperlinkStrings": [
+        "Slide 39"
+      ],
+      "exHyperlinkOffset": 1604,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        39
+      ]
+    },
+    {
+      "slide": 41,
+      "shapeId": 51207,
+      "text": "Click here to continue\u2026.",
+      "hyperlinkId": 211,
+      "exHyperlinkStrings": [
+        "Slide 41"
+      ],
+      "exHyperlinkOffset": 1736,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        41
+      ]
+    },
+    {
+      "slide": 46,
+      "shapeId": 56333,
+      "text": "-attack",
+      "hyperlinkId": 381,
+      "exHyperlinkStrings": [
+        "Slide 46"
+      ],
+      "exHyperlinkOffset": 1868,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        46
+      ]
+    },
+    {
+      "slide": 46,
+      "shapeId": 56334,
+      "text": "-LIMIT",
+      "hyperlinkId": 382,
+      "exHyperlinkStrings": [
+        "Slide 46"
+      ],
+      "exHyperlinkOffset": 1912,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        46
+      ]
+    },
+    {
+      "slide": 46,
+      "shapeId": 56335,
+      "text": "-flee",
+      "hyperlinkId": 383,
+      "exHyperlinkStrings": [
+        "Slide 46"
+      ],
+      "exHyperlinkOffset": 1956,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        46
+      ]
+    },
+    {
+      "slide": 49,
+      "shapeId": 60423,
+      "text": null,
+      "hyperlinkId": 565,
+      "exHyperlinkStrings": [
+        "Slide 49"
+      ],
+      "exHyperlinkOffset": 2000,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        49,
+        51,
+        52
+      ]
+    },
+    {
+      "slide": 50,
+      "shapeId": 61445,
+      "text": null,
+      "hyperlinkId": 567,
+      "exHyperlinkStrings": [
+        "Slide 50"
+      ],
+      "exHyperlinkOffset": 2044,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        50
+      ]
+    },
+    {
+      "slide": 52,
+      "shapeId": 63495,
+      "text": null,
+      "hyperlinkId": 629,
+      "exHyperlinkStrings": [
+        "Slide 52"
+      ],
+      "exHyperlinkOffset": 2264,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        52
+      ]
+    },
+    {
+      "slide": 56,
+      "shapeId": 67590,
+      "text": null,
+      "hyperlinkId": 749,
+      "exHyperlinkStrings": [
+        "Slide 56"
+      ],
+      "exHyperlinkOffset": 2480,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        56
+      ]
+    },
+    {
+      "slide": 138,
+      "shapeId": 161802,
+      "text": "Click here to continue",
+      "hyperlinkId": 3759,
+      "exHyperlinkStrings": [
+        "Slide 138"
+      ],
+      "exHyperlinkOffset": 6506,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        138
+      ]
+    }
+  ],
+  "continueLikeSelfLinks": [
+    {
+      "slide": 2,
+      "shapeId": 2056,
+      "text": "Click here to start",
+      "hyperlinkId": 1,
+      "exHyperlinkStrings": [
+        "Slide 2"
+      ],
+      "exHyperlinkOffset": 76,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        2
+      ]
+    },
+    {
+      "slide": 10,
+      "shapeId": 11271,
+      "text": "Click here to continue",
+      "hyperlinkId": 24,
+      "exHyperlinkStrings": [
+        "Slide 10"
+      ],
+      "exHyperlinkOffset": 160,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        10
+      ]
+    },
+    {
+      "slide": 26,
+      "shapeId": 33800,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 120,
+      "exHyperlinkStrings": [
+        "Slide 26"
+      ],
+      "exHyperlinkOffset": 724,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        26
+      ]
+    },
+    {
+      "slide": 28,
+      "shapeId": 35850,
+      "text": "Click here to continue\u2026.",
+      "hyperlinkId": 121,
+      "exHyperlinkStrings": [
+        "Slide 28"
+      ],
+      "exHyperlinkOffset": 768,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        28,
+        37
+      ]
+    },
+    {
+      "slide": 29,
+      "shapeId": 36880,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 123,
+      "exHyperlinkStrings": [
+        "Slide 29"
+      ],
+      "exHyperlinkOffset": 856,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        29,
+        31,
+        32
+      ]
+    },
+    {
+      "slide": 35,
+      "shapeId": 45064,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 156,
+      "exHyperlinkStrings": [
+        "Slide 35"
+      ],
+      "exHyperlinkOffset": 1252,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        35,
+        40
+      ]
+    },
+    {
+      "slide": 38,
+      "shapeId": 48135,
+      "text": "Click here to continue\u2026",
+      "hyperlinkId": 202,
+      "exHyperlinkStrings": [
+        "Slide 38"
+      ],
+      "exHyperlinkOffset": 1560,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        38
+      ]
+    },
+    {
+      "slide": 41,
+      "shapeId": 51207,
+      "text": "Click here to continue\u2026.",
+      "hyperlinkId": 211,
+      "exHyperlinkStrings": [
+        "Slide 41"
+      ],
+      "exHyperlinkOffset": 1736,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        41
+      ]
+    },
+    {
+      "slide": 138,
+      "shapeId": 161802,
+      "text": "Click here to continue",
+      "hyperlinkId": 3759,
+      "exHyperlinkStrings": [
+        "Slide 138"
+      ],
+      "exHyperlinkOffset": 6506,
+      "interactiveAction": 4,
+      "interactiveJump": 0,
+      "status": "confirmed_self_label_match",
+      "evidence": [
+        "ExHyperlink has only one CString (friendly name), no separate target atom",
+        "All 194 ExHyperlinks are single-string Slide N labels",
+        "POI HSLFHyperlink type=DOCUMENT label matches on sampled slides",
+        "InteractiveInfoAtom action=4 jump=0 (4=hyperlink, jump 0=no jump enum)"
+      ],
+      "inboundFrom": [
+        138
+      ]
+    }
+  ],
+  "noNavNoFlagsSlides": [
+    {
+      "slide": 30,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [
+        90,
+        125,
+        129,
+        134,
+        144,
+        161
+      ],
+      "layerTexts": [
+        "DED!!",
+        "You ded.",
+        "Press esc to exit."
+      ],
+      "hotspotCount": 1,
+      "hotspots": [
+        {
+          "action": "media",
+          "targetSlide": null,
+          "behaviorStatus": "clickable_media"
+        }
+      ]
+    },
+    {
+      "slide": 139,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [
+        135,
+        137
+      ],
+      "layerTexts": [],
+      "hotspotCount": 0,
+      "hotspots": []
+    },
+    {
+      "slide": 145,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [
+        119
+      ],
+      "layerTexts": [],
+      "hotspotCount": 0,
+      "hotspots": []
+    },
+    {
+      "slide": 148,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [],
+      "layerTexts": [
+        "Magic\u00c6ed battle."
+      ],
+      "hotspotCount": 0,
+      "hotspots": []
+    },
+    {
+      "slide": 155,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [],
+      "layerTexts": [
+        "Player takes 10 damage!",
+        "Click here to continue"
+      ],
+      "hotspotCount": 1,
+      "hotspots": [
+        {
+          "action": "none",
+          "targetSlide": null,
+          "behaviorStatus": "explicit_noop"
+        }
+      ]
+    },
+    {
+      "slide": 158,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [],
+      "layerTexts": [
+        "Player takes 10 damage!",
+        "Click here to continue"
+      ],
+      "hotspotCount": 1,
+      "hotspots": [
+        {
+          "action": "none",
+          "targetSlide": null,
+          "behaviorStatus": "explicit_noop"
+        }
+      ]
+    },
+    {
+      "slide": 163,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [],
+      "layerTexts": [
+        "Player takes 10 damage!",
+        "Click here to continue"
+      ],
+      "hotspotCount": 1,
+      "hotspots": [
+        {
+          "action": "none",
+          "targetSlide": null,
+          "behaviorStatus": "explicit_noop"
+        }
+      ]
+    },
+    {
+      "slide": 166,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [],
+      "layerTexts": [
+        "If magic/limit"
+      ],
+      "hotspotCount": 0,
+      "hotspots": []
+    },
+    {
+      "slide": 171,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [
+        127
+      ],
+      "layerTexts": [
+        "After Battle"
+      ],
+      "hotspotCount": 0,
+      "hotspots": []
+    },
+    {
+      "slide": 197,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "inboundFrom": [],
+      "layerTexts": [
+        "DED!!",
+        "You ded.",
+        "Press esc to exit."
+      ],
+      "hotspotCount": 1,
+      "hotspots": [
+        {
+          "action": "media",
+          "targetSlide": null,
+          "behaviorStatus": "clickable_media"
+        }
+      ]
+    }
+  ],
+  "stuckSlides": [
+    {
+      "slide": 2,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "media"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 9,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 10,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 11,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 26,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 28,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 29,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 30,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "media"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 35,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 38,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 41,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 46,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 3,
+      "flagNames": []
+    },
+    {
+      "slide": 49,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 56,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 138,
+      "reason": "self_hyperlinks_only",
+      "modes": [
+        "self_hyperlink_only"
+      ],
+      "selfHyperlinkCount": 1,
+      "flagNames": []
+    },
+    {
+      "slide": 139,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 145,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 148,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 155,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 158,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 163,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 166,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 171,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "no_decoded_leave_path"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    },
+    {
+      "slide": 197,
+      "reason": "no_nav_hotspots_and_no_advance_flags",
+      "modes": [
+        "media"
+      ],
+      "selfHyperlinkCount": 0,
+      "flagNames": []
+    }
+  ]
+}

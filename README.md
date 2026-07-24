@@ -89,6 +89,19 @@ python tools/verify_audio_cues.py
 python tools/verify_gameplay_behavior.py
 python tools/verify_site.py
 python tools/verify_runtime_traversal.py
+python tools/build_advancement_model.py
+python tools/verify_advancement.py
+python tools/analyze_start_graph.py
+python tools/verify_start_graph.py
+python tools/scan_advancement_coverage.py
+python tools/build_offline_playability.py
+python tools/build_combat_option_matrix.py
+python tools/build_media_death_report.py
+python tools/build_chapter_walks.py
+python tools/build_fidelity_reports.py
+python tools/verify_fidelity.py
+python tools/verify_runtime_traversal.py
+python tools/verify_offline_playability.py
 ```
 
 `generated/poi_audit.tsv` is produced by `tools/poi/PoiAudit.java` using the portable JDK and Apache POI copies in `_port_analysis_tmp/`. See `POI_EVALUATION.md` for the exact toolchain notes.

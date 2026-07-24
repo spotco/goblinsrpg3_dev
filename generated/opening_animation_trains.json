@@ -1,0 +1,162 @@
+{
+  "format": "goblins-rpg3-opening-animation-trains-v1",
+  "slides": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    13,
+    14
+  ],
+  "summary": {
+    "slideCount": 9,
+    "totalOnNext": 20,
+    "slidesWithSetOrEffect": 7
+  },
+  "trains": [
+    {
+      "slide": 3,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 2,
+      "advancementOnNextCount": 2,
+      "animationTimelineMs": 500.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "effect": 3,
+        "set": 5
+      },
+      "hasSetOrEffect": true,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 4,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 0,
+      "advancementOnNextCount": 0,
+      "animationTimelineMs": 1.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {},
+      "hasSetOrEffect": false,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 5,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 2,
+      "advancementOnNextCount": 2,
+      "animationTimelineMs": 500.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "set": 4,
+        "effect": 2
+      },
+      "hasSetOrEffect": true,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 6,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 2,
+      "advancementOnNextCount": 2,
+      "animationTimelineMs": 500.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "effect": 1,
+        "set": 1
+      },
+      "hasSetOrEffect": true,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 7,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 2,
+      "advancementOnNextCount": 2,
+      "animationTimelineMs": 4000.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "effect": 8,
+        "set": 8
+      },
+      "hasSetOrEffect": true,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 8,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 2,
+      "advancementOnNextCount": 2,
+      "animationTimelineMs": 500.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "effect": 2,
+        "set": 3
+      },
+      "hasSetOrEffect": true,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 12,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 2,
+      "advancementOnNextCount": 2,
+      "animationTimelineMs": 500.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "effect": 2,
+        "set": 3
+      },
+      "hasSetOrEffect": true,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 13,
+      "stageClickAdvancesSlide": true,
+      "stageClickResolveMethod": "manualAdvance_bit",
+      "onNextConditionCount": 4,
+      "advancementOnNextCount": 4,
+      "animationTimelineMs": 4745.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "command": 1
+      },
+      "hasSetOrEffect": false,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    },
+    {
+      "slide": 14,
+      "stageClickAdvancesSlide": false,
+      "stageClickResolveMethod": null,
+      "onNextConditionCount": 4,
+      "advancementOnNextCount": 4,
+      "animationTimelineMs": 5815.0,
+      "rootCount": 1,
+      "behaviorKindCounts": {
+        "effect": 3,
+        "set": 6,
+        "animate": 6,
+        "command": 1,
+        "motion": 2
+      },
+      "hasSetOrEffect": true,
+      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+    }
+  ],
+  "runtimeSupport": {
+    "onNextQueue": true,
+    "setVisibility": true,
+    "effectFadeDissolve": true,
+    "paraBuildIterate": "whole-shape approximation (Phase 5.2 open)",
+    "subEffectContainers": "not fully expanded (Phase 5.2 open)"
+  }
+}

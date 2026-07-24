@@ -1,0 +1,111 @@
+{
+  "format": "goblins-rpg3-chapter-entries-runtime-v1",
+  "title": "Debug chapters",
+  "entries": [
+    {
+      "id": "tier-a-title",
+      "label": "s001 \u00b7 Title / early story + combat loop",
+      "slide": 1,
+      "hint": "?debug=1&slide=1",
+      "ok": true
+    },
+    {
+      "id": "island-20",
+      "label": "s020 \u00b7 Felled goblin!!",
+      "slide": 20,
+      "hint": "?debug=1&slide=20",
+      "ok": true
+    },
+    {
+      "id": "island-43",
+      "label": "s043 \u00b7 So you flee like crazy",
+      "slide": 43,
+      "hint": "?debug=1&slide=43",
+      "ok": true
+    },
+    {
+      "id": "island-orphan-52",
+      "label": "s052 \u00b7 Island orphan s052",
+      "slide": 52,
+      "hint": "?debug=1&slide=52",
+      "ok": true
+    },
+    {
+      "id": "island-orphan-53",
+      "label": "s053 \u00b7 Island orphan s053",
+      "slide": 53,
+      "hint": "?debug=1&slide=53",
+      "ok": true
+    },
+    {
+      "id": "root-26",
+      "label": "s026 \u00b7 Goblin x1 Attacks!",
+      "slide": 26,
+      "hint": "?debug=1&slide=26",
+      "ok": true
+    },
+    {
+      "id": "root-38",
+      "label": "s038 \u00b7 Goblin x1 Attacks!",
+      "slide": 38,
+      "hint": "?debug=1&slide=38",
+      "ok": true
+    },
+    {
+      "id": "root-41",
+      "label": "s041 \u00b7 Can\u00c6t escape!",
+      "slide": 41,
+      "hint": "?debug=1&slide=41",
+      "ok": true
+    },
+    {
+      "id": "root-55",
+      "label": "s055 \u00b7 So you\u00c6ve come\u00e0",
+      "slide": 55,
+      "hint": "?debug=1&slide=55",
+      "ok": true
+    },
+    {
+      "id": "root-66",
+      "label": "s066 \u00b7 Slide 66",
+      "slide": 66,
+      "hint": "?debug=1&slide=66",
+      "ok": true
+    },
+    {
+      "id": "root-70",
+      "label": "s070 \u00b7 Hey ,can I have some money mister?\n(back\u00e0)\n",
+      "slide": 70,
+      "hint": "?debug=1&slide=70",
+      "ok": true
+    },
+    {
+      "id": "root-117",
+      "label": "s117 \u00b7 Player charges LIMIT!",
+      "slide": 117,
+      "hint": "?debug=1&slide=117",
+      "ok": true
+    },
+    {
+      "id": "root-119",
+      "label": "s119 \u00b7 -attack",
+      "slide": 119,
+      "hint": "?debug=1&slide=119",
+      "ok": true
+    },
+    {
+      "id": "root-148",
+      "label": "s148 \u00b7 Magic\u00c6ed battle.",
+      "slide": 148,
+      "hint": "?debug=1&slide=148",
+      "ok": true
+    },
+    {
+      "id": "root-166",
+      "label": "s166 \u00b7 If magic/limit",
+      "slide": 166,
+      "hint": "?debug=1&slide=166",
+      "ok": true
+    }
+  ]
+}

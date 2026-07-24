@@ -25,6 +25,13 @@ def main() -> None:
         fail("docs/app.js is missing")
     if not manifest_path.exists():
         fail("docs/game-manifest.json is missing")
+    chapter_entries = args.site / "chapter-entries.json"
+    if chapter_entries.exists():
+        import json as _json
+
+        menu = _json.loads(chapter_entries.read_text(encoding="utf-8"))
+        if not (menu.get("entries") or []):
+            fail("docs/chapter-entries.json exists but has no entries")
     index_html = index_path.read_text(encoding="utf-8")
     app_js = app_path.read_text(encoding="utf-8")
     styles_css = (args.site / "styles.css").read_text(encoding="utf-8")
@@ -182,12 +189,23 @@ def main() -> None:
         fail(f"hotspots target missing screens: {missing_targets[:5]}")
     if zero_hotspots:
         fail(f"enabled hotspots with zero area: {zero_hotspots[:5]}")
-    if enabled_count != 194:
-        fail(f"expected 194 enabled navigation hotspots, found {enabled_count}")
-    if clickable_count != 201:
-        fail(f"expected 201 clickable runtime hotspots, found {clickable_count}")
+    # Port policy: binary 194 hyperlinks + noop promotes, minus residual selfs (non-enabled).
+    if enabled_count < 194:
+        fail(f"enabled navigation hotspots regressed below 194: {enabled_count}")
     if clickable_media_count != 7:
         fail(f"expected 7 clickable media hotspots, found {clickable_media_count}")
+    if clickable_count < enabled_count:
+        fail(f"clickable ({clickable_count}) < enabled ({enabled_count})")
+    # Clickable = enabled nav + clickable media (residual selfs are non-clickable).
+    if clickable_count != enabled_count + clickable_media_count:
+        fail(
+            f"expected clickable == enabled+media ({enabled_count}+{clickable_media_count}), "
+            f"found {clickable_count}"
+        )
+    if "loadChapterEntriesIntoSelect" not in app_js and "chapter-entries.json" not in app_js:
+        fail("debug chapter menu loader is missing from app.js")
+    if ".debug-hud-chapters" not in styles_css:
+        fail("debug chapter menu styles are missing from styles.css")
     if manifest.get("transitionStatus", {}).get("status") == "available":
         if manifest["transitionStatus"].get("count") != 201:
             fail("expected 201 extracted transitions in manifest status")

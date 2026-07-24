@@ -1,0 +1,1912 @@
+{
+  "format": "goblins-rpg3-chapter-walks-v1",
+  "summary": {
+    "seedCount": 21,
+    "allOk": true,
+    "failedSeeds": [],
+    "islandCount": 2,
+    "primarySeedCount": 10
+  },
+  "primarySeeds": [
+    1,
+    20,
+    43,
+    52,
+    55,
+    66,
+    70,
+    119,
+    148,
+    166
+  ],
+  "walks": [
+    {
+      "seed": 1,
+      "reachableCount": 29,
+      "reachableSlides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        24,
+        29,
+        30,
+        31,
+        32,
+        34,
+        36,
+        42
+      ],
+      "stuck": [],
+      "leaveableCount": 29,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 21,
+          "to": 17
+        },
+        {
+          "from": 21,
+          "to": 19
+        },
+        {
+          "from": 31,
+          "to": 29
+        },
+        {
+          "from": 32,
+          "to": 29
+        },
+        {
+          "from": 34,
+          "to": 21
+        },
+        {
+          "from": 42,
+          "to": 21
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=1",
+      "titleSnippet": "Presents"
+    },
+    {
+      "seed": 20,
+      "reachableCount": 2,
+      "reachableSlides": [
+        20,
+        25
+      ],
+      "stuck": [],
+      "leaveableCount": 2,
+      "terminals": [],
+      "reentryEdgesSample": [
+        {
+          "from": 25,
+          "to": 20
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "loop_or_hub",
+      "ok": true,
+      "entryHint": "?debug=1&slide=20",
+      "titleSnippet": "Felled goblin!!"
+    },
+    {
+      "seed": 23,
+      "reachableCount": 5,
+      "reachableSlides": [
+        23,
+        24,
+        29,
+        30,
+        31
+      ],
+      "stuck": [],
+      "leaveableCount": 5,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 31,
+          "to": 29
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=23",
+      "titleSnippet": "Goblin x3 Attacks!"
+    },
+    {
+      "seed": 26,
+      "reachableCount": 13,
+      "reachableSlides": [
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        29,
+        30,
+        31,
+        34,
+        36,
+        42
+      ],
+      "stuck": [],
+      "leaveableCount": 13,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 21,
+          "to": 17
+        },
+        {
+          "from": 21,
+          "to": 19
+        },
+        {
+          "from": 31,
+          "to": 29
+        },
+        {
+          "from": 34,
+          "to": 21
+        },
+        {
+          "from": 42,
+          "to": 21
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=26",
+      "titleSnippet": "Goblin x1 Attacks!"
+    },
+    {
+      "seed": 33,
+      "reachableCount": 5,
+      "reachableSlides": [
+        28,
+        29,
+        30,
+        33,
+        37
+      ],
+      "stuck": [],
+      "leaveableCount": 5,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 37,
+          "to": 28
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=33",
+      "titleSnippet": "Felled goblin!!"
+    },
+    {
+      "seed": 38,
+      "reachableCount": 15,
+      "reachableSlides": [
+        17,
+        19,
+        21,
+        22,
+        24,
+        29,
+        30,
+        31,
+        34,
+        35,
+        36,
+        38,
+        39,
+        40,
+        42
+      ],
+      "stuck": [],
+      "leaveableCount": 15,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 21,
+          "to": 17
+        },
+        {
+          "from": 21,
+          "to": 19
+        },
+        {
+          "from": 31,
+          "to": 29
+        },
+        {
+          "from": 34,
+          "to": 21
+        },
+        {
+          "from": 40,
+          "to": 35
+        },
+        {
+          "from": 42,
+          "to": 21
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=38",
+      "titleSnippet": "Goblin x1 Attacks!"
+    },
+    {
+      "seed": 41,
+      "reachableCount": 12,
+      "reachableSlides": [
+        17,
+        19,
+        21,
+        22,
+        24,
+        29,
+        30,
+        31,
+        34,
+        36,
+        41,
+        42
+      ],
+      "stuck": [],
+      "leaveableCount": 12,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 21,
+          "to": 17
+        },
+        {
+          "from": 21,
+          "to": 19
+        },
+        {
+          "from": 31,
+          "to": 29
+        },
+        {
+          "from": 34,
+          "to": 21
+        },
+        {
+          "from": 42,
+          "to": 21
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=41",
+      "titleSnippet": "Can\u00c6t escape!"
+    },
+    {
+      "seed": 43,
+      "reachableCount": 10,
+      "reachableSlides": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        54
+      ],
+      "stuck": [],
+      "leaveableCount": 10,
+      "terminals": [],
+      "reentryEdgesSample": [
+        {
+          "from": 51,
+          "to": 49
+        },
+        {
+          "from": 54,
+          "to": 51
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "loop_or_hub",
+      "ok": true,
+      "entryHint": "?debug=1&slide=43",
+      "titleSnippet": "So you flee like crazy"
+    },
+    {
+      "seed": 52,
+      "reachableCount": 6,
+      "reachableSlides": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "stuck": [],
+      "leaveableCount": 6,
+      "terminals": [],
+      "reentryEdgesSample": [
+        {
+          "from": 51,
+          "to": 49
+        },
+        {
+          "from": 52,
+          "to": 49
+        },
+        {
+          "from": 53,
+          "to": 51
+        },
+        {
+          "from": 54,
+          "to": 51
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "loop_or_hub",
+      "ok": true,
+      "entryHint": "?debug=1&slide=52",
+      "titleSnippet": "Slide 52"
+    },
+    {
+      "seed": 55,
+      "reachableCount": 118,
+      "reachableSlides": [
+        30,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        120,
+        121,
+        122,
+        123,
+        125,
+        126,
+        127,
+        128,
+        129,
+        131,
+        132,
+        134,
+        136,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "stuck": [],
+      "leaveableCount": 118,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 197,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 200,
+          "terminalKind": "end_card",
+          "leavePaths": [
+            "non_self_hyperlink"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 65,
+          "to": 64
+        },
+        {
+          "from": 87,
+          "to": 80
+        },
+        {
+          "from": 87,
+          "to": 82
+        },
+        {
+          "from": 90,
+          "to": 30
+        },
+        {
+          "from": 97,
+          "to": 96
+        },
+        {
+          "from": 101,
+          "to": 99
+        },
+        {
+          "from": 104,
+          "to": 103
+        },
+        {
+          "from": 107,
+          "to": 102
+        },
+        {
+          "from": 108,
+          "to": 102
+        },
+        {
+          "from": 109,
+          "to": 102
+        },
+        {
+          "from": 110,
+          "to": 102
+        },
+        {
+          "from": 125,
+          "to": 30
+        },
+        {
+          "from": 129,
+          "to": 30
+        },
+        {
+          "from": 134,
+          "to": 30
+        },
+        {
+          "from": 136,
+          "to": 128
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=55",
+      "titleSnippet": "So you\u00c6ve come\u00e0"
+    },
+    {
+      "seed": 66,
+      "reachableCount": 117,
+      "reachableSlides": [
+        30,
+        66,
+        67,
+        68,
+        69,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        120,
+        121,
+        122,
+        123,
+        125,
+        126,
+        127,
+        128,
+        129,
+        131,
+        132,
+        134,
+        136,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "stuck": [],
+      "leaveableCount": 117,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 197,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 200,
+          "terminalKind": "end_card",
+          "leavePaths": [
+            "non_self_hyperlink"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 71,
+          "to": 69
+        },
+        {
+          "from": 72,
+          "to": 69
+        },
+        {
+          "from": 73,
+          "to": 72
+        },
+        {
+          "from": 74,
+          "to": 72
+        },
+        {
+          "from": 87,
+          "to": 80
+        },
+        {
+          "from": 87,
+          "to": 82
+        },
+        {
+          "from": 90,
+          "to": 30
+        },
+        {
+          "from": 97,
+          "to": 96
+        },
+        {
+          "from": 101,
+          "to": 99
+        },
+        {
+          "from": 104,
+          "to": 103
+        },
+        {
+          "from": 107,
+          "to": 102
+        },
+        {
+          "from": 108,
+          "to": 102
+        },
+        {
+          "from": 109,
+          "to": 102
+        },
+        {
+          "from": 110,
+          "to": 102
+        },
+        {
+          "from": 125,
+          "to": 30
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=66",
+      "titleSnippet": "Slide 66"
+    },
+    {
+      "seed": 70,
+      "reachableCount": 117,
+      "reachableSlides": [
+        30,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        120,
+        121,
+        122,
+        123,
+        125,
+        126,
+        127,
+        128,
+        129,
+        131,
+        132,
+        134,
+        136,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "stuck": [],
+      "leaveableCount": 117,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 197,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 200,
+          "terminalKind": "end_card",
+          "leavePaths": [
+            "non_self_hyperlink"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 70,
+          "to": 67
+        },
+        {
+          "from": 71,
+          "to": 69
+        },
+        {
+          "from": 72,
+          "to": 69
+        },
+        {
+          "from": 73,
+          "to": 72
+        },
+        {
+          "from": 74,
+          "to": 72
+        },
+        {
+          "from": 87,
+          "to": 80
+        },
+        {
+          "from": 87,
+          "to": 82
+        },
+        {
+          "from": 90,
+          "to": 30
+        },
+        {
+          "from": 97,
+          "to": 96
+        },
+        {
+          "from": 101,
+          "to": 99
+        },
+        {
+          "from": 104,
+          "to": 103
+        },
+        {
+          "from": 107,
+          "to": 102
+        },
+        {
+          "from": 108,
+          "to": 102
+        },
+        {
+          "from": 109,
+          "to": 102
+        },
+        {
+          "from": 110,
+          "to": 102
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=70",
+      "titleSnippet": "Hey ,can I have some money mister?\n(back\u00e0)\n"
+    },
+    {
+      "seed": 117,
+      "reachableCount": 40,
+      "reachableSlides": [
+        30,
+        117,
+        118,
+        121,
+        122,
+        123,
+        125,
+        127,
+        129,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "stuck": [],
+      "leaveableCount": 40,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 197,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 200,
+          "terminalKind": "end_card",
+          "leavePaths": [
+            "non_self_hyperlink"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 125,
+          "to": 30
+        },
+        {
+          "from": 129,
+          "to": 30
+        },
+        {
+          "from": 173,
+          "to": 172
+        },
+        {
+          "from": 175,
+          "to": 174
+        },
+        {
+          "from": 178,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 178
+        },
+        {
+          "from": 180,
+          "to": 177
+        },
+        {
+          "from": 180,
+          "to": 179
+        },
+        {
+          "from": 181,
+          "to": 180
+        },
+        {
+          "from": 182,
+          "to": 174
+        },
+        {
+          "from": 194,
+          "to": 192
+        },
+        {
+          "from": 201,
+          "to": 200
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=117",
+      "titleSnippet": "Player charges LIMIT!"
+    },
+    {
+      "seed": 119,
+      "reachableCount": 48,
+      "reachableSlides": [
+        30,
+        119,
+        122,
+        123,
+        125,
+        127,
+        128,
+        129,
+        137,
+        139,
+        140,
+        141,
+        143,
+        144,
+        145,
+        146,
+        147,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "stuck": [],
+      "leaveableCount": 48,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 197,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 200,
+          "terminalKind": "end_card",
+          "leavePaths": [
+            "non_self_hyperlink"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 125,
+          "to": 30
+        },
+        {
+          "from": 129,
+          "to": 30
+        },
+        {
+          "from": 137,
+          "to": 128
+        },
+        {
+          "from": 144,
+          "to": 30
+        },
+        {
+          "from": 147,
+          "to": 137
+        },
+        {
+          "from": 173,
+          "to": 172
+        },
+        {
+          "from": 175,
+          "to": 174
+        },
+        {
+          "from": 178,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 178
+        },
+        {
+          "from": 180,
+          "to": 177
+        },
+        {
+          "from": 180,
+          "to": 179
+        },
+        {
+          "from": 181,
+          "to": 180
+        },
+        {
+          "from": 182,
+          "to": 174
+        },
+        {
+          "from": 194,
+          "to": 192
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=119",
+      "titleSnippet": "-attack"
+    },
+    {
+      "seed": 124,
+      "reachableCount": 3,
+      "reachableSlides": [
+        30,
+        124,
+        125
+      ],
+      "stuck": [],
+      "leaveableCount": 3,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 125,
+          "to": 30
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=124",
+      "titleSnippet": "Goblin commander takes 15 damage!"
+    },
+    {
+      "seed": 130,
+      "reachableCount": 5,
+      "reachableSlides": [
+        30,
+        130,
+        131,
+        132,
+        134
+      ],
+      "stuck": [],
+      "leaveableCount": 5,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 134,
+          "to": 30
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=130",
+      "titleSnippet": "Player casts shield!"
+    },
+    {
+      "seed": 135,
+      "reachableCount": 7,
+      "reachableSlides": [
+        30,
+        135,
+        139,
+        140,
+        141,
+        143,
+        144
+      ],
+      "stuck": [],
+      "leaveableCount": 7,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 144,
+          "to": 30
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=135",
+      "titleSnippet": "-attack"
+    },
+    {
+      "seed": 138,
+      "reachableCount": 7,
+      "reachableSlides": [
+        30,
+        138,
+        139,
+        140,
+        141,
+        143,
+        144
+      ],
+      "stuck": [],
+      "leaveableCount": 7,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 144,
+          "to": 30
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=138",
+      "titleSnippet": "Goblin commander takes 15 damage!"
+    },
+    {
+      "seed": 142,
+      "reachableCount": 5,
+      "reachableSlides": [
+        30,
+        133,
+        134,
+        142,
+        144
+      ],
+      "stuck": [],
+      "leaveableCount": 5,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 134,
+          "to": 30
+        },
+        {
+          "from": 142,
+          "to": 133
+        },
+        {
+          "from": 144,
+          "to": 30
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=142",
+      "titleSnippet": "-attack"
+    },
+    {
+      "seed": 148,
+      "reachableCount": 58,
+      "reachableSlides": [
+        30,
+        126,
+        127,
+        128,
+        129,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "stuck": [],
+      "leaveableCount": 58,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 197,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 200,
+          "terminalKind": "end_card",
+          "leavePaths": [
+            "non_self_hyperlink"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 129,
+          "to": 30
+        },
+        {
+          "from": 156,
+          "to": 126
+        },
+        {
+          "from": 159,
+          "to": 126
+        },
+        {
+          "from": 161,
+          "to": 30
+        },
+        {
+          "from": 165,
+          "to": 127
+        },
+        {
+          "from": 170,
+          "to": 127
+        },
+        {
+          "from": 173,
+          "to": 172
+        },
+        {
+          "from": 175,
+          "to": 174
+        },
+        {
+          "from": 178,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 178
+        },
+        {
+          "from": 180,
+          "to": 177
+        },
+        {
+          "from": 180,
+          "to": 179
+        },
+        {
+          "from": 181,
+          "to": 180
+        },
+        {
+          "from": 182,
+          "to": 174
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=148",
+      "titleSnippet": "Magic\u00c6ed battle."
+    },
+    {
+      "seed": 166,
+      "reachableCount": 37,
+      "reachableSlides": [
+        127,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "stuck": [],
+      "leaveableCount": 37,
+      "terminals": [
+        {
+          "slide": 197,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        },
+        {
+          "slide": 200,
+          "terminalKind": "end_card",
+          "leavePaths": [
+            "non_self_hyperlink"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 170,
+          "to": 127
+        },
+        {
+          "from": 173,
+          "to": 172
+        },
+        {
+          "from": 175,
+          "to": 174
+        },
+        {
+          "from": 178,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 177
+        },
+        {
+          "from": 179,
+          "to": 178
+        },
+        {
+          "from": 180,
+          "to": 177
+        },
+        {
+          "from": 180,
+          "to": 179
+        },
+        {
+          "from": 181,
+          "to": 180
+        },
+        {
+          "from": 182,
+          "to": 174
+        },
+        {
+          "from": 194,
+          "to": 192
+        },
+        {
+          "from": 201,
+          "to": 200
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=166",
+      "titleSnippet": "If magic/limit"
+    }
+  ],
+  "islands": [
+    {
+      "slides": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "primaryEntry": 43,
+      "entryHint": "?debug=1&slide=43",
+      "walkFromPrimary": {
+        "seed": 43,
+        "reachableCount": 10,
+        "reachableSlides": [
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          54
+        ],
+        "stuck": [],
+        "leaveableCount": 10,
+        "terminals": [],
+        "reentryEdgesSample": [
+          {
+            "from": 51,
+            "to": 49
+          },
+          {
+            "from": 54,
+            "to": 51
+          }
+        ],
+        "cyclePairsSample": [],
+        "outcome": "loop_or_hub",
+        "ok": true,
+        "entryHint": "?debug=1&slide=43",
+        "titleSnippet": "So you flee like crazy"
+      },
+      "unreachableFromPrimary": [
+        52,
+        53
+      ],
+      "orphanEntries": [
+        {
+          "slide": 52,
+          "entryHint": "?debug=1&slide=52",
+          "reason": "not_directed_reachable_from_island_primary",
+          "walkOk": true
+        },
+        {
+          "slide": 53,
+          "entryHint": "?debug=1&slide=53",
+          "reason": "not_directed_reachable_from_island_primary",
+          "walkOk": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "slides": [
+        20,
+        25
+      ],
+      "primaryEntry": 20,
+      "entryHint": "?debug=1&slide=20",
+      "walkFromPrimary": {
+        "seed": 20,
+        "reachableCount": 2,
+        "reachableSlides": [
+          20,
+          25
+        ],
+        "stuck": [],
+        "leaveableCount": 2,
+        "terminals": [],
+        "reentryEdgesSample": [
+          {
+            "from": 25,
+            "to": 20
+          }
+        ],
+        "cyclePairsSample": [],
+        "outcome": "loop_or_hub",
+        "ok": true,
+        "entryHint": "?debug=1&slide=20",
+        "titleSnippet": "Felled goblin!!"
+      },
+      "unreachableFromPrimary": [],
+      "orphanEntries": [],
+      "ok": true
+    }
+  ]
+}

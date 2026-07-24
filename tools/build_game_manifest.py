@@ -7,6 +7,17 @@ import json
 import shutil
 from pathlib import Path
 
+from advancement_lib import (
+    apply_media_residual_policy,
+    apply_residual_self_policy,
+    build_screen_advancement,
+    combat_all_self_slide_ids,
+    resolve_explicit_noop,
+    resolve_self_hyperlink,
+    shape_text_map,
+    terminal_kind_for_screen,
+)
+
 
 ACTION_NAMES = {
     0: "none",
@@ -53,67 +64,218 @@ def build_screens(
     transitions_by_slide: dict[int, dict[str, object]] | None = None,
     media_bindings_by_shape: dict[tuple[int, int], dict[str, object]] | None = None,
     slide_meta_by_slide: dict[int, dict[str, object]] | None = None,
+    animation_by_slide: dict[int, dict[str, object]] | None = None,
 ) -> list[dict[str, object]]:
     presentation = inventory["presentation"]
     width = int(presentation["width"])
     height = int(presentation["height"])
-    actions_by_slide: dict[int, list[dict[str, object]]] = {}
+    total_slides = len(inventory["slides"])
+    texts = shape_text_map(inventory, layers_by_slide)
+
+    # Count binary hyperlinks per slide (pre-resolve) for sole-image policy.
+    binary_hl_count: dict[int, int] = {}
     for action in inventory["interactive_actions"]:
-        slide = int(action["slide"])
-        bounds = action.get("bounds")
-        action_code = int(action.get("action_code", 0))
-        hotspot: dict[str, object] = {
-            "id": f"s{slide:03d}-a{action['record_offset']}",
-            "shapeId": action.get("shape_id"),
-            "actionCode": action_code,
-            "action": ACTION_NAMES.get(action_code, f"unknown_{action_code}"),
-            "soundRef": action.get("sound_ref"),
-            "hyperlinkId": action.get("hyperlink_id"),
-            "targetSlide": action.get("target_slide"),
-            "targetLabel": action.get("target_label"),
-            "flagsHex": action.get("flags_hex"),
-            "label": action.get("target_label") or ACTION_NAMES.get(action_code, "action"),
-            "enabled": bool(action.get("target_slide")),
-            "clickable": bool(action.get("target_slide")),
-            "behaviorStatus": "navigation" if action.get("target_slide") else "no_runtime_action",
-        }
-        if bounds:
-            hotspot["bounds"] = normalize_bounds(bounds, width, height)
-        if action_code == 6 and action.get("shape_id") is not None and media_bindings_by_shape is not None:
-            media_binding = media_bindings_by_shape.get((slide, int(action["shape_id"])))
-            if media_binding:
-                hotspot["mediaBindingId"] = media_binding["id"]
-                hotspot["mediaStatus"] = media_binding["status"]
-                bounds_record = hotspot.get("bounds") or {}
-                positive_area = bounds_record.get("width", 0) > 0 and bounds_record.get("height", 0) > 0
-                hotspot["behaviorStatus"] = (
-                    "clickable_media"
-                    if media_binding.get("status") == "mapped" and positive_area
-                    else "mapped_media_zero_area"
-                    if media_binding.get("status") == "mapped"
-                    else "unresolved_media"
+        if int(action.get("action_code", 0)) == 4 and action.get("target_slide") is not None:
+            binary_hl_count[int(action["slide"])] = binary_hl_count.get(int(action["slide"]), 0) + 1
+
+    # Combat menus where every option is a binary self-link (e.g. s046 Ubergoblin).
+    combat_all_self = combat_all_self_slide_ids(inventory, texts, total_slides)
+
+    # Group raw actions by slide for sibling-aware noop resolve (pass 2).
+    raw_by_slide: dict[int, list[dict[str, object]]] = {}
+    for action in inventory["interactive_actions"]:
+        raw_by_slide.setdefault(int(action["slide"]), []).append(action)
+
+    actions_by_slide: dict[int, list[dict[str, object]]] = {}
+    for slide, raw_actions in raw_by_slide.items():
+        next_slide = slide + 1 if slide < total_slides else None
+        # Pass 1: resolve hyperlinks (and media/other) so noops can mirror siblings.
+        draft: list[dict[str, object]] = []
+        for action in raw_actions:
+            bounds = action.get("bounds")
+            action_code = int(action.get("action_code", 0))
+            raw_target = action.get("target_slide")
+            shape_id = action.get("shape_id")
+            shape_text = (
+                texts.get((slide, int(shape_id))) if shape_id is not None else None
+            )
+            resolve: dict[str, object] = {}
+            target_slide = raw_target
+            action_name = ACTION_NAMES.get(action_code, f"unknown_{action_code}")
+
+            if action_code == 4 and raw_target is not None:
+                resolve = resolve_self_hyperlink(
+                    slide=slide,
+                    target_slide=int(raw_target) if raw_target is not None else None,
+                    shape_text=shape_text,
+                    sole_hyperlink_on_slide=binary_hl_count.get(slide, 0) == 1,
+                    next_slide=next_slide,
+                    combat_all_self_promote=slide in combat_all_self,
                 )
-                hotspot["clickable"] = media_binding.get("status") == "mapped" and positive_area
-            else:
-                hotspot["behaviorStatus"] = "missing_media_binding"
-        elif action_code == 0:
-            hotspot["behaviorStatus"] = "explicit_noop"
-        actions_by_slide.setdefault(slide, []).append(hotspot)
+                target_slide = resolve.get("targetSlide")
+
+            hotspot: dict[str, object] = {
+                "id": f"s{slide:03d}-a{action['record_offset']}",
+                "shapeId": shape_id,
+                "actionCode": action_code,
+                "action": action_name,
+                "soundRef": action.get("sound_ref"),
+                "hyperlinkId": action.get("hyperlink_id"),
+                "targetSlide": target_slide,
+                "targetLabel": action.get("target_label"),
+                "flagsHex": action.get("flags_hex"),
+                "label": action.get("target_label") or action_name,
+                "enabled": bool(target_slide),
+                "clickable": bool(target_slide),
+                "behaviorStatus": "navigation" if target_slide else "no_runtime_action",
+                "_rawActionCode": action_code,
+            }
+            if resolve.get("resolveMethod"):
+                hotspot["resolveMethod"] = resolve["resolveMethod"]
+            if resolve.get("originalTargetSlide") is not None:
+                hotspot["originalTargetSlide"] = resolve["originalTargetSlide"]
+            if resolve.get("binarySelfLink"):
+                hotspot["binarySelfLink"] = True
+            if resolve.get("resolveRationale"):
+                hotspot["resolveRationale"] = resolve["resolveRationale"]
+            if shape_text:
+                hotspot["shapeText"] = shape_text
+                if not hotspot.get("label") or hotspot["label"] in ACTION_NAMES.values():
+                    hotspot["label"] = shape_text
+            if bounds:
+                hotspot["bounds"] = normalize_bounds(bounds, width, height)
+            if action_code == 6 and action.get("shape_id") is not None and media_bindings_by_shape is not None:
+                media_binding = media_bindings_by_shape.get((slide, int(action["shape_id"])))
+                if media_binding:
+                    hotspot["mediaBindingId"] = media_binding["id"]
+                    hotspot["mediaStatus"] = media_binding["status"]
+                    bounds_record = hotspot.get("bounds") or {}
+                    positive_area = bounds_record.get("width", 0) > 0 and bounds_record.get("height", 0) > 0
+                    hotspot["behaviorStatus"] = (
+                        "clickable_media"
+                        if media_binding.get("status") == "mapped" and positive_area
+                        else "mapped_media_zero_area"
+                        if media_binding.get("status") == "mapped"
+                        else "unresolved_media"
+                    )
+                    hotspot["clickable"] = media_binding.get("status") == "mapped" and positive_area
+                else:
+                    hotspot["behaviorStatus"] = "missing_media_binding"
+            elif action_code == 0:
+                hotspot["behaviorStatus"] = "explicit_noop"
+            draft.append(hotspot)
+
+        # Document unresolved / zero-area media (non-clickable residuals).
+        apply_media_residual_policy(draft)
+
+        # Sibling hyperlinks after self-link promote (for noop mirror).
+        sibling_hls = [
+            {
+                "targetSlide": h.get("targetSlide"),
+                "shapeText": h.get("shapeText"),
+                "label": h.get("label"),
+            }
+            for h in draft
+            if h.get("action") == "hyperlink" and h.get("targetSlide") is not None
+        ]
+
+        # Pass 2: promote labeled explicit noops.
+        for hotspot in draft:
+            raw_code = hotspot.pop("_rawActionCode", None)
+            if raw_code != 0:
+                continue
+            shape_text = hotspot.get("shapeText")
+            noop_resolve = resolve_explicit_noop(
+                slide=slide,
+                shape_text=str(shape_text) if shape_text else None,
+                next_slide=next_slide,
+                sibling_hyperlinks=sibling_hls,
+            )
+            if noop_resolve.get("resolveMethod") and noop_resolve.get("targetSlide") is not None:
+                hotspot["action"] = "hyperlink"
+                hotspot["targetSlide"] = noop_resolve["targetSlide"]
+                hotspot["enabled"] = True
+                hotspot["clickable"] = True
+                hotspot["behaviorStatus"] = "navigation"
+                hotspot["resolveMethod"] = noop_resolve["resolveMethod"]
+                hotspot["binaryActionCode"] = 0
+                if noop_resolve.get("resolveRationale"):
+                    hotspot["resolveRationale"] = noop_resolve["resolveRationale"]
+                if shape_text:
+                    hotspot["label"] = shape_text
+
+        # Pass 3: document residual selfs; non-clickable when alternate leave exists.
+        apply_residual_self_policy(draft, slide)
+        actions_by_slide[slide] = draft
 
     screens: list[dict[str, object]] = []
     for index, _slide in enumerate(inventory["slides"], start=1):
+        hotspots = actions_by_slide.get(index, [])
+        transition = transitions_by_slide.get(index) if transitions_by_slide is not None else None
+        animation_slide = animation_by_slide.get(index) if animation_by_slide else None
+        layers = layers_by_slide.get(index, []) if layers_by_slide is not None else []
+        layer_texts = [str(L["text"]) for L in layers if L.get("text")]
+        # Also include shapeText from hotspots for death/continue detection.
+        for h in hotspots:
+            if h.get("shapeText"):
+                layer_texts.append(str(h["shapeText"]))
+        self_status = {
+            f"{index}:{h.get('shapeId')}": str(h.get("resolveMethod") or "confirmed_self_label_match")
+            for h in hotspots
+            if h.get("action") == "hyperlink" and h.get("targetSlide") == index
+        }
+        advancement = build_screen_advancement(
+            slide=index,
+            total_slides=total_slides,
+            transition=transition if isinstance(transition, dict) else None,
+            hotspots=hotspots,
+            animation_slide=animation_slide if isinstance(animation_slide, dict) else None,
+            self_link_status=self_status,
+            layer_texts=layer_texts,
+        )
+        # Runtime-facing subset (full analysis also in generated/advancement_model.json).
+        death_terminal = bool(advancement.get("deathTerminal", False))
+        terminal_kind = terminal_kind_for_screen(
+            death_terminal=death_terminal,
+            layer_texts=layer_texts,
+            leave_paths=list(advancement.get("leavePaths") or []),
+        )
+        runtime_advancement = {
+            "modes": advancement["modes"],
+            "stageClickAdvancesSlide": advancement["stageClickAdvancesSlide"],
+            "stageClickResolveMethod": advancement.get("stageClickResolveMethod"),
+            "autoAdvance": advancement["autoAdvance"],
+            "autoAdvanceDelayMs": advancement["autoAdvanceDelayMs"],
+            "nextSequentialSlide": advancement["nextSequentialSlide"],
+            "nextSequentialId": advancement["nextSequentialId"],
+            "onNextConditionCount": advancement["onNextConditionCount"],
+            "leavePaths": advancement["leavePaths"],
+            "stuckReason": advancement["stuckReason"],
+            "deathTerminal": death_terminal,
+            "terminalKind": terminal_kind,
+            "terminalNotes": (
+                "Death screen: leave via Restart control (PPT Press esc). Optional media may play."
+                if terminal_kind == "death"
+                else "End card: hyperlink leave and/or Restart; PPT Press esc to exit."
+                if terminal_kind == "end_card"
+                else "Terminal slide: no further story leave under current decode."
+                if terminal_kind
+                else None
+            ),
+        }
         screen = {
             "id": f"slide-{index:03d}",
             "slide": index,
             "image": f"{screen_dir}/slide-{index:03d}.png",
-            "hotspots": actions_by_slide.get(index, []),
+            "hotspots": hotspots,
+            "advancement": runtime_advancement,
         }
         if layers_by_slide is not None:
             screen["layers"] = layers_by_slide.get(index, [])
         if slide_meta_by_slide is not None and index in slide_meta_by_slide:
             screen.update(slide_meta_by_slide[index])
-        if transitions_by_slide is not None:
-            screen["transition"] = transitions_by_slide.get(index)
+        if transition is not None:
+            screen["transition"] = transition
         screens.append(screen)
     return screens
 
@@ -440,12 +602,27 @@ def main() -> None:
     layers_by_slide, slide_meta_by_slide, layer_status = copy_layers(args.layers, args.output)
     animation_status = copy_animation_manifest(args.animations, args.output)
     transitions_by_slide, transition_status = load_transitions(args.timing)
+    animation_by_slide: dict[int, dict[str, object]] = {}
+    if args.animations.exists():
+        animation_manifest = json.loads(args.animations.read_text(encoding="utf-8"))
+        animation_by_slide = {
+            int(slide["slide"]): slide for slide in animation_manifest.get("slides") or []
+        }
     copied_audio = copy_audio(args.audio_manifest, args.output)
     media_bindings = build_media_bindings(inventory, args.timing, copied_audio)
     media_bindings_by_shape = {
         (int(binding["slide"]), int(binding["shapeId"])): binding for binding in media_bindings
     }
     audio_cues = build_audio_cues(inventory, args.timing, copied_audio, media_bindings)
+    screens = build_screens(
+        inventory,
+        args.screen_dir,
+        layers_by_slide,
+        transitions_by_slide,
+        media_bindings_by_shape,
+        slide_meta_by_slide,
+        animation_by_slide,
+    )
     manifest = {
         "title": "Goblins RPG 3",
         "source": inventory["source"],
@@ -455,17 +632,70 @@ def main() -> None:
         "layerStatus": layer_status,
         "animationStatus": animation_status,
         "transitionStatus": transition_status,
+        "advancementPolicy": {
+            "version": 4,
+            "manualAdvance": "stage click advances to next sequential slide after OnNext queue is empty",
+            "autoAdvance": "timer max(slideTimeMs, animation timeline)",
+            "defaultWithoutFlags": "stage click does not change slides",
+            "selfContinueToNext": (
+                "binary self-hyperlinks (ExHyperlink label Slide N) with continue/start "
+                "shape text promote to next sequential slide; provenance on hotspot "
+                "(originalTargetSlide, resolveMethod=self_continue_to_next)"
+            ),
+            "soleImageSelfToNext": (
+                "sole image self-hyperlink with no shape text promotes to next "
+                "(resolveMethod=sole_image_self_to_next)"
+            ),
+            "combatAllSelfToNextOutcome": (
+                "When EVERY hyperlink on a combat menu is a binary self-link "
+                "(attack/LIMIT/flee/magic all target the same slide), promote all "
+                "options to the next sequential slide (resolveMethod="
+                "combat_all_self_to_next_outcome). Needed for s046 Ubergoblin: "
+                "binary labels only 'Slide 46', no win/flee branches exist, entry is "
+                "45 auto-advance, and s047 is the authored death cutscene "
+                "(15 dmg / player dead) before story continues. Partial combat selfs "
+                "on mixed slides (one option self, others leave) are NOT bulk-promoted. "
+                "Inventory stays binary-faithful; provenance on each hotspot."
+            ),
+            "continueTextStageClick": (
+                "slides with continue text but no leave path get stage-click-to-next"
+            ),
+            "interstitialStageClick": (
+                "empty/noop-only non-death slides with no leave path get stage-click-to-next"
+            ),
+            "noopMirrorSibling": (
+                "action=none hotspots whose shape text matches a sibling hyperlink "
+                "mirror that target (resolveMethod=noop_mirror_sibling_hyperlink)"
+            ),
+            "noopContinueToNext": (
+                "action=none with continue/start shape text promotes to next sequential "
+                "(resolveMethod=noop_continue_to_next) when it is the labeled leave control"
+            ),
+            "residualSelfNonClickable": (
+                "Binary self-hyperlinks that remain after promote policy "
+                "(partial combat options, hub image selfs) stay target=source with "
+                "residualStatus=accepted_source_self and are non-clickable when the "
+                "slide has another leave path — no invented combat/hub remaps"
+            ),
+            "unresolvedMedia": (
+                "Legacy audio cue ids missing from extract (known 3/4) stay "
+                "documented_unresolved_media non-clickable; no invented sound assets"
+            ),
+            "zeroAreaMedia": (
+                "Mapped media with zero-area bounds stay documented_zero_area_media "
+                "non-clickable; automatic playFrom may still run from timing tree"
+            ),
+            "deathTerminal": (
+                "DED/Press esc → terminalKind death, leavePaths restart_only; "
+                "end cards may also hyperlink (terminalKind end_card). "
+                "UI leave via Restart control (PPT Press esc)."
+            ),
+            "sourceUnchanged": True,
+        },
         "audio": copied_audio,
         "audioCues": audio_cues,
         "mediaBindings": media_bindings,
-        "screens": build_screens(
-            inventory,
-            args.screen_dir,
-            layers_by_slide,
-            transitions_by_slide,
-            media_bindings_by_shape,
-            slide_meta_by_slide,
-        ),
+        "screens": screens,
     }
     output_path = args.output / "game-manifest.json"
     output_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")

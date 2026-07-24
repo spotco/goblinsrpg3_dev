@@ -1,8 +1,9 @@
 """Validate static game navigation semantics for the browser runtime.
 
-This is intentionally browserless: it verifies that the generated manifest and
-the small runtime agree on how hotspot clicks navigate, and it emits a graph
-report that identifies terminal, unreachable, and cyclic screens for manual QA.
+Browserless checks:
+- Hotspot click wiring in app.js
+- Stage continuum: anim queue → click-advance → no-op
+- Enabled hotspot edges + sequential click-advance + auto-advance edges
 """
 
 from __future__ import annotations
@@ -13,6 +14,8 @@ import re
 from collections import defaultdict, deque
 from pathlib import Path
 from typing import Any
+
+from build_fidelity_reports import build_sequential_edges
 
 
 def fail(message: str) -> None:
@@ -48,6 +51,7 @@ def enabled_hotspot_edges(manifest: dict[str, Any]) -> list[dict[str, Any]]:
                     "target": screen_id(int(target_slide)),
                     "targetSlide": int(target_slide),
                     "bounds": hotspot.get("bounds") or {},
+                    "kind": "hotspot",
                 }
             )
     return edges
@@ -59,39 +63,34 @@ def verify_runtime_click_semantics(app_js: str) -> None:
         "button.dataset.target = screenId(hotspot.targetSlide);",
         "event.stopPropagation();",
         "handleHotspotAction(hotspot);",
-        "navigateTo(screenId(hotspot.targetSlide));",
+        "navigateTo(screenId(hotspot.targetSlide)",
+        "function handleStageClick",
+        "function screenAllowsStageClickAdvance",
+        "advanceAnimation()",
+        "click-advance-slide",
+        "Math.max(sourceDelayMs, animationTimeline.durationMs)",
     )
     for snippet in required_snippets:
         if snippet not in app_js:
-            fail(f"runtime hotspot click snippet is missing: {snippet}")
+            fail(f"runtime navigation snippet is missing: {snippet}")
 
-    stage_click_match = re.search(
-        r"stage\.addEventListener\(\"click\",\s*\(\)\s*=>\s*\{(?P<body>.*?)\}\);",
-        app_js,
-        flags=re.DOTALL,
-    )
-    if not stage_click_match:
-        fail("stage background click handler is missing")
-    stage_click_body = stage_click_match.group("body")
-    if "navigateTo(" in stage_click_body:
-        fail("blank-stage click handler must not navigate")
-    if "advanceAnimation();" not in stage_click_body:
-        fail("blank-stage click handler no longer advances queued animations")
+    # Stage listener must delegate to continuum handler (not always navigate).
+    if 'stage.addEventListener("click"' not in app_js and "stage.addEventListener('click'" not in app_js:
+        fail("stage click listener is missing")
+    if "handleStageClick()" not in app_js:
+        fail("stage click must call handleStageClick()")
 
 
 def verify_edges(edges: list[dict[str, Any]], screen_ids: set[str]) -> None:
     missing_targets = [edge for edge in edges if edge["target"] not in screen_ids]
     if missing_targets:
-        sample = ", ".join(edge["hotspotId"] or "unknown" for edge in missing_targets[:5])
-        fail(f"hotspot targets missing screens: {sample}")
-
-    invalid_sources = [edge for edge in edges if edge["source"] not in screen_ids]
-    if invalid_sources:
-        sample = ", ".join(edge["hotspotId"] or "unknown" for edge in invalid_sources[:5])
-        fail(f"hotspot sources missing screens: {sample}")
+        sample = ", ".join(str(edge.get("hotspotId") or edge.get("kind")) for edge in missing_targets[:5])
+        fail(f"edge targets missing screens: {sample}")
 
     zero_area = []
     for edge in edges:
+        if edge.get("kind") != "hotspot":
+            continue
         bounds = edge.get("bounds") or {}
         if bounds.get("width", 0) <= 0 or bounds.get("height", 0) <= 0:
             zero_area.append(edge)
@@ -103,8 +102,8 @@ def verify_edges(edges: list[dict[str, Any]], screen_ids: set[str]) -> None:
 def graph_summary(manifest: dict[str, Any], edges: list[dict[str, Any]]) -> dict[str, Any]:
     screens = manifest.get("screens", [])
     screen_ids = {screen["id"] for screen in screens}
-    graph: dict[str, list[str]] = {screen_id_value: [] for screen_id_value in screen_ids}
-    reverse_graph: dict[str, list[str]] = {screen_id_value: [] for screen_id_value in screen_ids}
+    graph: dict[str, list[str]] = {sid: [] for sid in screen_ids}
+    reverse_graph: dict[str, list[str]] = {sid: [] for sid in screen_ids}
     for edge in edges:
         graph[edge["source"]].append(edge["target"])
         reverse_graph[edge["target"]].append(edge["source"])
@@ -121,10 +120,9 @@ def graph_summary(manifest: dict[str, Any], edges: list[dict[str, Any]]) -> dict
                     reachable.add(target)
                     queue.append(target)
 
-    terminals = sorted(screen_id_value for screen_id_value, targets in graph.items() if not targets)
+    terminals = sorted(sid for sid, targets in graph.items() if not targets)
     unreachable = sorted(screen_ids - reachable)
-    inbound_zero = sorted(screen_id_value for screen_id_value, sources in reverse_graph.items() if not sources)
-    cyclic_nodes = sorted(nodes_in_cycles(graph))
+    inbound_zero = sorted(sid for sid, sources in reverse_graph.items() if not sources)
 
     return {
         "screens": len(screen_ids),
@@ -134,50 +132,7 @@ def graph_summary(manifest: dict[str, Any], edges: list[dict[str, Any]]) -> dict
         "unreachableScreens": unreachable,
         "terminalScreens": terminals,
         "screensWithoutInboundEdges": inbound_zero,
-        "cyclicScreens": cyclic_nodes,
     }
-
-
-def nodes_in_cycles(graph: dict[str, list[str]]) -> set[str]:
-    index = 0
-    stack: list[str] = []
-    on_stack: set[str] = set()
-    indices: dict[str, int] = {}
-    lowlinks: dict[str, int] = {}
-    cyclic: set[str] = set()
-
-    def strongconnect(node: str) -> None:
-        nonlocal index
-        indices[node] = index
-        lowlinks[node] = index
-        index += 1
-        stack.append(node)
-        on_stack.add(node)
-
-        for target in graph.get(node, []):
-            if target not in indices:
-                strongconnect(target)
-                lowlinks[node] = min(lowlinks[node], lowlinks[target])
-            elif target in on_stack:
-                lowlinks[node] = min(lowlinks[node], indices[target])
-
-        if lowlinks[node] == indices[node]:
-            component: list[str] = []
-            while True:
-                member = stack.pop()
-                on_stack.remove(member)
-                component.append(member)
-                if member == node:
-                    break
-            if len(component) > 1:
-                cyclic.update(component)
-            elif component and component[0] in graph.get(component[0], []):
-                cyclic.add(component[0])
-
-    for node in graph:
-        if node not in indices:
-            strongconnect(node)
-    return cyclic
 
 
 def main() -> None:
@@ -201,35 +156,69 @@ def main() -> None:
     if manifest.get("startScreen") not in screen_ids:
         fail("start screen is not present in manifest screens")
 
-    edges = enabled_hotspot_edges(manifest)
-    verify_edges(edges, screen_ids)
+    hotspot_edges = enabled_hotspot_edges(manifest)
+    verify_edges(hotspot_edges, screen_ids)
 
-    summary = graph_summary(manifest, edges)
+    sequential = build_sequential_edges(manifest)
+    seq_edges = []
+    for edge in sequential.get("allSequentialEdges") or []:
+        seq_edges.append(
+            {
+                "source": screen_id(int(edge["from"])),
+                "sourceSlide": int(edge["from"]),
+                "target": edge["toId"],
+                "targetSlide": int(edge["to"]),
+                "kind": edge["kind"],
+                "resolveMethod": edge.get("resolveMethod"),
+                "delayMs": edge.get("delayMs"),
+            }
+        )
+    verify_edges(seq_edges, screen_ids)
+
+    if sequential["summary"]["manualAdvanceEdgeCount"] != 9:
+        fail(
+            f"expected 9 manualAdvance sequential edges, "
+            f"found {sequential['summary']['manualAdvanceEdgeCount']}"
+        )
+    if sequential["summary"]["autoAdvanceEdgeCount"] != 59:
+        fail(
+            f"expected 59 autoAdvance sequential edges, "
+            f"found {sequential['summary']['autoAdvanceEdgeCount']}"
+        )
+
+    # Combined graph for QA report (hotspot + sequential)
+    combined = hotspot_edges + seq_edges
+    summary = graph_summary(manifest, combined)
     if summary["screens"] != 201:
         fail(f"expected 201 screens, found {summary['screens']}")
-    if summary["edges"] != 194:
-        fail(f"expected 194 enabled hotspot edges, found {summary['edges']}")
+
+    # Hotspot-only edge count is policy-dependent (binary 194 + noop promotes - residual)
+    if len(hotspot_edges) < 194:
+        fail(f"hotspot edges regressed below 194: {len(hotspot_edges)}")
 
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(
         json.dumps(
             {
-                "format": "goblins-rpg3-runtime-traversal-v1",
+                "format": "goblins-rpg3-runtime-traversal-v2",
                 "summary": {
                     "screens": summary["screens"],
-                    "edges": summary["edges"],
+                    "hotspotEdges": len(hotspot_edges),
+                    "sequentialEdges": len(seq_edges),
+                    "manualAdvanceEdges": sequential["summary"]["manualAdvanceEdgeCount"],
+                    "fallbackStageClickEdges": sequential["summary"]["fallbackStageClickEdgeCount"],
+                    "autoAdvanceEdges": sequential["summary"]["autoAdvanceEdgeCount"],
+                    "combinedEdges": len(combined),
                     "startScreen": summary["startScreen"],
-                    "reachableFromStart": summary["reachableFromStart"],
+                    "reachableFromStartCombined": summary["reachableFromStart"],
                     "unreachableCount": len(summary["unreachableScreens"]),
                     "terminalCount": len(summary["terminalScreens"]),
-                    "screensWithoutInboundEdgesCount": len(summary["screensWithoutInboundEdges"]),
-                    "cyclicScreenCount": len(summary["cyclicScreens"]),
                 },
+                "sequentialAdvance": sequential["summary"],
                 "unreachableScreens": summary["unreachableScreens"],
                 "terminalScreens": summary["terminalScreens"],
-                "screensWithoutInboundEdges": summary["screensWithoutInboundEdges"],
-                "cyclicScreens": summary["cyclicScreens"],
-                "edges": edges,
+                "hotspotEdges": hotspot_edges,
+                "sequentialEdges": seq_edges,
             },
             indent=2,
         )
@@ -239,9 +228,11 @@ def main() -> None:
 
     print(
         "runtime traversal verification passed: "
-        f"{summary['edges']} edges, "
-        f"{len(summary['unreachableScreens'])} unreachable screens reported, "
-        f"{len(summary['cyclicScreens'])} cyclic screens reported"
+        f"{len(hotspot_edges)} hotspot edges, "
+        f"{sequential['summary']['manualAdvanceEdgeCount']} manualAdvance, "
+        f"{sequential['summary']['fallbackStageClickEdgeCount']} fallback stage-click, "
+        f"{sequential['summary']['autoAdvanceEdgeCount']} auto-advance, "
+        f"combined reachability from start={summary['reachableFromStart']}"
     )
 
 

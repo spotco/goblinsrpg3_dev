@@ -1,0 +1,695 @@
+{
+  "format": "goblins-rpg3-chapter-entry-map-v1",
+  "summary": {
+    "zeroInboundCount": 19,
+    "sealedIslandCount": 2,
+    "chapterCount": 22,
+    "walksAllOk": true
+  },
+  "chapters": [
+    {
+      "id": "tier-a-title",
+      "title": "Title / early story + combat loop",
+      "entrySlide": 1,
+      "entryHint": "?debug=1&slide=1",
+      "subgraphSize": 29,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "notes": "Closed loop re-enters via s042\u2192s021; death at s030",
+      "priority": 0
+    },
+    {
+      "id": "island-20",
+      "title": "Felled goblin!!",
+      "entrySlide": 20,
+      "entryHint": "?debug=1&slide=20",
+      "subgraphSize": 2,
+      "slides": [
+        20,
+        25
+      ],
+      "outcome": "loop_or_hub",
+      "ok": true,
+      "unreachableFromPrimary": [],
+      "orphanEntries": [],
+      "notes": "Sealed undirected island; use orphanEntries if hub nodes missing from primary walk",
+      "priority": 1
+    },
+    {
+      "id": "island-43",
+      "title": "So you flee like crazy",
+      "entrySlide": 43,
+      "entryHint": "?debug=1&slide=43",
+      "subgraphSize": 10,
+      "slides": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "outcome": "loop_or_hub",
+      "ok": true,
+      "unreachableFromPrimary": [
+        52,
+        53
+      ],
+      "orphanEntries": [
+        {
+          "slide": 52,
+          "entryHint": "?debug=1&slide=52",
+          "reason": "not_directed_reachable_from_island_primary",
+          "walkOk": true
+        },
+        {
+          "slide": 53,
+          "entryHint": "?debug=1&slide=53",
+          "reason": "not_directed_reachable_from_island_primary",
+          "walkOk": true
+        }
+      ],
+      "notes": "Sealed undirected island; use orphanEntries if hub nodes missing from primary walk",
+      "priority": 1
+    },
+    {
+      "id": "island-orphan-52",
+      "title": "Island orphan s052",
+      "entrySlide": 52,
+      "entryHint": "?debug=1&slide=52",
+      "subgraphSize": null,
+      "outcome": "orphan_entry",
+      "ok": true,
+      "notes": "not_directed_reachable_from_island_primary",
+      "priority": 2
+    },
+    {
+      "id": "island-orphan-53",
+      "title": "Island orphan s053",
+      "entrySlide": 53,
+      "entryHint": "?debug=1&slide=53",
+      "subgraphSize": null,
+      "outcome": "orphan_entry",
+      "ok": true,
+      "notes": "not_directed_reachable_from_island_primary",
+      "priority": 2
+    },
+    {
+      "id": "root-26",
+      "title": "Goblin x1 Attacks!",
+      "entrySlide": 26,
+      "entryHint": "?debug=1&slide=26",
+      "subgraphSize": 13,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-38",
+      "title": "Goblin x1 Attacks!",
+      "entrySlide": 38,
+      "entryHint": "?debug=1&slide=38",
+      "subgraphSize": 15,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-41",
+      "title": "Can\u00c6t escape!",
+      "entrySlide": 41,
+      "entryHint": "?debug=1&slide=41",
+      "subgraphSize": 12,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-55",
+      "title": "So you\u00c6ve come\u00e0",
+      "entrySlide": 55,
+      "entryHint": "?debug=1&slide=55",
+      "subgraphSize": 118,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30,
+        197,
+        200
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-66",
+      "title": "Slide 66",
+      "entrySlide": 66,
+      "entryHint": "?debug=1&slide=66",
+      "subgraphSize": 117,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30,
+        197,
+        200
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-70",
+      "title": "Hey ,can I have some money mister?\n(back\u00e0)\n",
+      "entrySlide": 70,
+      "entryHint": "?debug=1&slide=70",
+      "subgraphSize": 117,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30,
+        197,
+        200
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-117",
+      "title": "Player charges LIMIT!",
+      "entrySlide": 117,
+      "entryHint": "?debug=1&slide=117",
+      "subgraphSize": 40,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30,
+        197,
+        200
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-119",
+      "title": "-attack",
+      "entrySlide": 119,
+      "entryHint": "?debug=1&slide=119",
+      "subgraphSize": 48,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30,
+        197,
+        200
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-148",
+      "title": "Magic\u00c6ed battle.",
+      "entrySlide": 148,
+      "entryHint": "?debug=1&slide=148",
+      "subgraphSize": 58,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30,
+        197,
+        200
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-166",
+      "title": "If magic/limit",
+      "entrySlide": 166,
+      "entryHint": "?debug=1&slide=166",
+      "subgraphSize": 37,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        197,
+        200
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
+      "id": "root-23",
+      "title": "Goblin x3 Attacks!",
+      "entrySlide": 23,
+      "entryHint": "?debug=1&slide=23",
+      "subgraphSize": 5,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 4
+    },
+    {
+      "id": "root-33",
+      "title": "Felled goblin!!",
+      "entrySlide": 33,
+      "entryHint": "?debug=1&slide=33",
+      "subgraphSize": 5,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 4
+    },
+    {
+      "id": "root-124",
+      "title": "Goblin commander takes 15 damage!",
+      "entrySlide": 124,
+      "entryHint": "?debug=1&slide=124",
+      "subgraphSize": 3,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 4
+    },
+    {
+      "id": "root-130",
+      "title": "Player casts shield!",
+      "entrySlide": 130,
+      "entryHint": "?debug=1&slide=130",
+      "subgraphSize": 5,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 4
+    },
+    {
+      "id": "root-135",
+      "title": "-attack",
+      "entrySlide": 135,
+      "entryHint": "?debug=1&slide=135",
+      "subgraphSize": 7,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 4
+    },
+    {
+      "id": "root-138",
+      "title": "Goblin commander takes 15 damage!",
+      "entrySlide": 138,
+      "entryHint": "?debug=1&slide=138",
+      "subgraphSize": 7,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 4
+    },
+    {
+      "id": "root-142",
+      "title": "-attack",
+      "entrySlide": 142,
+      "entryHint": "?debug=1&slide=142",
+      "subgraphSize": 5,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 4
+    }
+  ],
+  "zeroInboundRoots": [
+    {
+      "slide": 23,
+      "entryHint": "?debug=1&slide=23",
+      "texts": [
+        "Goblin x3 Attacks!",
+        "Player takes 15 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 5
+    },
+    {
+      "slide": 26,
+      "entryHint": "?debug=1&slide=26",
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 13
+    },
+    {
+      "slide": 33,
+      "entryHint": "?debug=1&slide=33",
+      "texts": [
+        "Felled goblin!!",
+        "Click here to continue\u00e0",
+        "Click here to continue\u2026"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 5
+    },
+    {
+      "slide": 38,
+      "entryHint": "?debug=1&slide=38",
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u00e0"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 15
+    },
+    {
+      "slide": 41,
+      "entryHint": "?debug=1&slide=41",
+      "texts": [
+        "Can\u00c6t escape!",
+        "Click here to continue\u00e0.",
+        "Click here to continue\u2026."
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 12
+    },
+    {
+      "slide": 43,
+      "entryHint": "?debug=1&slide=43",
+      "texts": [
+        "So you flee like crazy"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "subgraphSize": 10
+    },
+    {
+      "slide": 52,
+      "entryHint": "?debug=1&slide=52",
+      "texts": [],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 6
+    },
+    {
+      "slide": 55,
+      "entryHint": "?debug=1&slide=55",
+      "texts": [
+        "So you\u00c6ve come\u00e0",
+        "Huh?"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "subgraphSize": 118
+    },
+    {
+      "slide": 66,
+      "entryHint": "?debug=1&slide=66",
+      "texts": [],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "subgraphSize": 117
+    },
+    {
+      "slide": 70,
+      "entryHint": "?debug=1&slide=70",
+      "texts": [
+        "Hey ,can I have some money mister?\n(back\u00e0)\n",
+        "Hey ,can I have some money mister?\r(back\u2026)\r"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 117
+    },
+    {
+      "slide": 117,
+      "entryHint": "?debug=1&slide=117",
+      "texts": [
+        "Player charges LIMIT!",
+        "Goblin commander takes 25 damage!"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "subgraphSize": 40
+    },
+    {
+      "slide": 119,
+      "entryHint": "?debug=1&slide=119",
+      "texts": [
+        "-attack",
+        "-limit",
+        "-magic"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 48
+    },
+    {
+      "slide": 124,
+      "entryHint": "?debug=1&slide=124",
+      "texts": [
+        "Goblin commander takes 15 damage!"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "subgraphSize": 3
+    },
+    {
+      "slide": 130,
+      "entryHint": "?debug=1&slide=130",
+      "texts": [
+        "Player casts shield!",
+        "Defense raised by 20%!"
+      ],
+      "leavePaths": [
+        "auto_advance"
+      ],
+      "subgraphSize": 5
+    },
+    {
+      "slide": 135,
+      "entryHint": "?debug=1&slide=135",
+      "texts": [
+        "-attack",
+        "5",
+        "00%"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 7
+    },
+    {
+      "slide": 138,
+      "entryHint": "?debug=1&slide=138",
+      "texts": [
+        "Goblin commander takes 15 damage!",
+        "Click here to continue",
+        "Click here to continue"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 7
+    },
+    {
+      "slide": 142,
+      "entryHint": "?debug=1&slide=142",
+      "texts": [
+        "-attack",
+        "10",
+        "00%"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 5
+    },
+    {
+      "slide": 148,
+      "entryHint": "?debug=1&slide=148",
+      "texts": [
+        "Magic\u00c6ed battle."
+      ],
+      "leavePaths": [
+        "stage_click_interstitial"
+      ],
+      "subgraphSize": 58
+    },
+    {
+      "slide": 166,
+      "entryHint": "?debug=1&slide=166",
+      "texts": [
+        "If magic/limit"
+      ],
+      "leavePaths": [
+        "stage_click_interstitial"
+      ],
+      "subgraphSize": 37
+    }
+  ],
+  "sealedIslands": [
+    {
+      "slides": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "primaryEntry": 43,
+      "entryHint": "?debug=1&slide=43",
+      "walkFromPrimary": {
+        "seed": 43,
+        "reachableCount": 10,
+        "reachableSlides": [
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          54
+        ],
+        "stuck": [],
+        "leaveableCount": 10,
+        "terminals": [],
+        "reentryEdgesSample": [
+          {
+            "from": 51,
+            "to": 49
+          },
+          {
+            "from": 54,
+            "to": 51
+          }
+        ],
+        "cyclePairsSample": [],
+        "outcome": "loop_or_hub",
+        "ok": true,
+        "entryHint": "?debug=1&slide=43",
+        "titleSnippet": "So you flee like crazy"
+      },
+      "unreachableFromPrimary": [
+        52,
+        53
+      ],
+      "orphanEntries": [
+        {
+          "slide": 52,
+          "entryHint": "?debug=1&slide=52",
+          "reason": "not_directed_reachable_from_island_primary",
+          "walkOk": true
+        },
+        {
+          "slide": 53,
+          "entryHint": "?debug=1&slide=53",
+          "reason": "not_directed_reachable_from_island_primary",
+          "walkOk": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "slides": [
+        20,
+        25
+      ],
+      "primaryEntry": 20,
+      "entryHint": "?debug=1&slide=20",
+      "walkFromPrimary": {
+        "seed": 20,
+        "reachableCount": 2,
+        "reachableSlides": [
+          20,
+          25
+        ],
+        "stuck": [],
+        "leaveableCount": 2,
+        "terminals": [],
+        "reentryEdgesSample": [
+          {
+            "from": 25,
+            "to": 20
+          }
+        ],
+        "cyclePairsSample": [],
+        "outcome": "loop_or_hub",
+        "ok": true,
+        "entryHint": "?debug=1&slide=20",
+        "titleSnippet": "Felled goblin!!"
+      },
+      "unreachableFromPrimary": [],
+      "orphanEntries": [],
+      "ok": true
+    }
+  ],
+  "tierB": {
+    "mode": "chapter_select",
+    "titleDirectedReachable": 29,
+    "note": "Title path is closed early loop (29 slides). Full deck is playable via chapter entry points below \u2014 not invented title\u2192midgame bridges."
+  }
+}
