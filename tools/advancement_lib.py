@@ -465,6 +465,7 @@ def count_on_next_conditions(animation_slide: dict[str, Any] | None) -> int:
             parsed = condition.get("parsed") or {}
             if parsed.get("triggerEvent") in (9, 10):
                 count += 1
+        stack.extend(node.get("subEffects") or [])
         stack.extend(node.get("children") or [])
     return count
 

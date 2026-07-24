@@ -12,7 +12,7 @@ Ship a **static** browser port of `goblins3 v.1.0 LAUNCH.pps` on GitHub Pages (`
 | --- | --- | --- |
 | **A — Early loop shippable** | Title → intro → first combats → death **or** closed combat loop; offline-proven | **Near-ready** (~29 directed slides from start) |
 | **B — Full deck navigable** | From title **or** a documented chapter/entry map, all major story/combat content is reachable | **Not met** (~29/201 from title; islands + zero-inbound roots) |
-| **C — PPT-faithful feel** | Navigation + visuals + timing match original slideshow | **Partial** (nav policy v3; anim/visual fidelity open) |
+| **C — PPT-faithful feel** | Navigation + visuals + timing match original slideshow | **Partial** (nav + anim fidelity contracts + text encoding/sparse hybrid; contrast + pixel QA open) |
 
 **Near-term goal (while manual playtest may be unavailable):** lock **Tier A offline**, make **Tier B via chapter entries** (not invented title bridges), then fidelity (Tier C pieces).
 
@@ -64,7 +64,7 @@ Ship a **static** browser port of `goblins3 v.1.0 LAUNCH.pps` on GitHub Pages (`
 
 ### Browser runtime (`docs/`)
 - [x] Static stage, layers, hotspots, restart/mute, cache-busting, first-gesture audio unlock.
-- [x] Animation scheduler: OnNext queue, delays, set visibility, fade/dissolve, ppt_* animate, scale, motion endpoint, start/end triggers, transitions hooks, media `playFrom`.
+- [x] Animation scheduler: OnNext queue, delays, set visibility, fade/dissolve, ppt_* animate, scale, **motion path arc-length samples** (M/L/C), start/end triggers, transitions hooks, media `playFrom`.
 - [x] Debug tooling: `?debug=1&slide=N`, HUD/API, offline autopsy tools, `docs/DEBUGGING.md`.
 
 ### Advancement / graph (leave-path milestone)
@@ -209,18 +209,45 @@ Do **not** block Phases 1–3 on these.
 
 #### Animation / timing
 
-- [x] **5.1** Opening train **inventory + contract** — `generated/opening_animation_trains.json` for **s003–s008, s012–s014** (OnNext counts, set/effect presence, timeline ms). Runtime first-pass OnNext/set/effect confirmed. **Residual:** pixel-true multi-step dissolve sequencing still approximate (see 5.2).
-- [ ] **5.2** `RT_TimeSubEffectContainer` / ParaBuild-iterate: implement beyond whole-shape approximation (documented in opening trains `runtimeSupport`).
+- [x] **5.1** Opening train **inventory + contract** — `generated/opening_animation_trains.json` for **s003–s008, s012–s014** (OnNext counts, set/effect presence, timeline ms). Runtime first-pass OnNext/set/effect confirmed.
+- [x] **5.2** `RT_TimeSubEffectContainer` / ParaBuild decode + runtime subordinate scheduling:
+  - Extractor expands **126** SubEffects as `node.subEffects` (no longer hoisted into parent behaviors/conditions).
+  - Slide-level **`builds`**: **209** ParaBuild (**208** `asAWhole`, **1** `allAtOnce`) — whole-shape is PPT-correct for these modes.
+  - **`iterate`** on nodes: **2** `byLetter` (`TimeIterateData`) decoded.
+  - Runtime: `scheduleSubEffectNodes` runs subordinates with parent; timeline/duration includes subEffects; player contract feature added.
+  - Offline: opening trains report subEffect/paraBuild/iterate counts; `runtimeSupport` updated.
+  - **Residual → 5.2.1:** letter/word iterate stagger and multi-paragraph level builds still whole-shape (no per-glyph/per-para DOM).
+- [ ] **5.2.1** Optional text-unit stagger: implement byWord/byLetter `TimeIterateData` and any future non-`asAWhole` ParaBuild using paragraph/run splits when layer text supports it (only **2** iterate nodes deck-wide today).
 - [x] **5.3** Auto-advance timing — runtime `max(slideTimeMs, animationTimeline)`; offline `generated/auto_advance_timing.json` + `verify_fidelity.py` (59 autos; effective ≥ slideTime; 4 extended by anim estimate).
-- [ ] **5.4** Motion path sampling beyond endpoint; rotation/color/filter if needed.
+- [x] **5.4** Motion path sampling beyond endpoint:
+  - Runtime: `parseMotionPath` / `sampleMotionPath` / `densifyMotionPath` — arc-length samples for **M/L/C** (default 48 WAAPI keyframes); endpoint preserved.
+  - Offline: `tools/motion_path_lib.py` + `generated/motion_path_inventory.json` (**215** paths: **173** line, **42** cubic); sampler fixtures (line end, cubic mid-Y).
+  - Deck scan: **no** rotation / color / filter property variants — nothing to implement for those on this source.
+  - **Residual → 5.4.1** (optional): exotic path cmds if ever seen; true constant-speed vs PPT easing coupling polish.
+- [ ] **5.4.1** Optional motion polish: couple path progress to accel/decel modifiers more tightly; support rare path cmds if a future deck introduces them (none in this `.pps`).
 - [x] **5.5** Sequential advance edges — `generated/sequential_advance_edges.json` + `verify_runtime_traversal.py` v2: **9** manualAdvance, **5** fallback stage-click, **59** auto edges; opening 3–8/12–13 fixtures.
 
 #### Visual / text / audio
 
-- [ ] **5.6** WordArt geometry polish; empty text layer cleanup.
-- [ ] **5.7** Mojibake / encoding cleanup on layer text (e.g. `Æ`, `à` artifacts) where extractible.
-- [ ] **5.8** Visual risk queue: missing anim target layers (e.g. s007), sparse coverage; **refresh offline self_hyperlink risks** to use post-resolve targets (stale highs vs promoted runtime).
-- [ ] **5.9** Low-contrast text mitigation or document as source art.
+- [x] **5.6** WordArt geometry polish; empty text layer cleanup; sparse hybrid underlay:
+  - `wordArtGeometry` on layers; runtime CSS approx for **TEXT_DEFLATE** / **CURVE_UP** (4 WordArt layers deck-wide).
+  - `emptyTextPlaceholder` on empty non-WordArt text (**295**); runtime hides non-animated empties; animated targets stay for effects.
+  - **Sparse hybrid PNG underlay** when layers exist but coverage is sparse (`screenNeedsPngUnderlay`); clears former medium sparse defect queue when composite PNG exists.
+  - Offline: `generated/text_fidelity_report.json` + `verify_text_fidelity.py`.
+  - **Residual → 5.6.1:** true SVG/path WordArt warps (only CSS approx today).
+- [x] **5.7** Mojibake / encoding cleanup on layer text:
+  - `normalize_ppt_text` in `extract_layers.py`: `Æ/æ→'`, `à/Ö→…`, `ô/ö→“”`, `ù→:`.
+  - Applied to layer text, runs, geotext; **0** residual artifact chars in published layers.
+  - Rebuild: `extract_layers.py` → `build_game_manifest.py`.
+- [ ] **5.6.1** Optional: pixel-true WordArt geometry (path warps) beyond CSS scale/skew approx (only 2 non-plain geometries: DEFLATE + CURVE_UP).
+- [x] **5.8** Visual risk queue post-resolve refresh:
+  - `collect_screen_risks` classifies self-links from **game-manifest post-resolve** targets: clickable self → high; Phase 2 `accepted_source_self` → **info**; promotes → **info** provenance.
+  - Report format **v2** (`generated/visual_risks.json`) with `selfHyperlinkPostResolve` cross-check vs `promote_audit` (**0** clickable self, **5** residual, **24** promoted; match=true).
+  - Defect queue excludes info residuals; media residuals use `media_documented_residual` (info).
+  - Anim missing-layer walk includes **subEffects** + behavior targets (s007 no longer false-positive).
+  - Verifier: `tools/verify_visual_risks.py`.
+  - Sparse coverage demoted to **info** when PNG underlay policy applies (Phase 5.6); defect queue can be empty of mediums.
+- [ ] **5.9** Low-contrast text mitigation or document as source art (~197 low-severity rows in visual_risks; optional bulk accept-as-source-art).
 - [ ] **5.10** Audio loop/stop/replace edge cases; unresolved media cleanup (overlaps 2.7).
 - [ ] **5.11** Pixel-perfect vs PowerPoint screenshots (optional late).
 
@@ -265,29 +292,38 @@ Update when fixed. Severity: **P0** full-game from title · **P1** broken labels
 | M1 | P2 | ~~054, 096, 193~~ | Unresolved media → **documented non-clickable** (cue 3/4 missing) | 2.7 done |
 | M2 | P2 | ~~104~~ | Zero-area media → **documented non-clickable** | 2.8 done |
 | D1 | P2 | 030, 197, 200 | Death/end terminals documented (`terminalKind`/`terminalNotes`) | 2.9 done |
-| A1 | P2 | Opening trains | Inventory+contract done; pixel dissolve residual | 5.1 partial |
+| A1 | P2 | Opening trains | Inventory+contract done | 5.1 done |
 | A3 | P2 | Auto-advance timing | max(slide, anim) offline+runtime | 5.3 done |
 | A4 | P2 | Sequential edges | traversal v2 + fixtures | 5.5 done |
-| A2 | P2 | Builds | ParaBuild / sub-effects | 5.2 |
-| V1 | P2 | Deck-wide | Visual risks / contrast / stale self_hl audit | 5.8–5.9 |
+| A2 | P2 | Builds / sub-effects | SubEffects expanded; ParaBuild decoded (208 asAWhole + 1 allAtOnce); whole-shape correct | 5.2 done |
+| A2b | P2 | Iterate text units | 2× byLetter TimeIterateData still whole-shape | 5.2.1 |
+| A5 | P2 | Motion paths | Endpoint-only → arc-length M/L/C samples (215 paths); rot/color/filter N/A in deck | 5.4 done |
+| A5b | P3 | Motion polish | Optional easing coupling / exotic cmds | 5.4.1 |
+| V1 | P2 | Self_hl visual risks | Post-resolve v2: 0 clickable / 5 residual / 24 promoted | 5.8 done |
+| V2 | P2 | Sparse layer slides | Hybrid PNG underlay; sparse risks info when PNG exists | 5.6 done |
+| V4 | P2 | Text encoding | POI Æ/à/ô/ö repair; 0 residual in layers | 5.7 done |
+| V5 | P2 | WordArt / empty text | geometry CSS + emptyTextPlaceholder | 5.6 done |
+| V5b | P3 | True WordArt warps | CSS approx only | 5.6.1 |
+| V3 | P2 | Low-contrast text | ~197 low rows | 5.9 |
 
 ---
 
 ## How future agents should continue
 
 1. Read **Product tiers** + **Phase 0** choice (if unset, default to **A + chapter select**).  
-2. Open **Immediate next actions** (below) — Phases 1–3 + **5.1/5.3/5.5** fidelity contracts done; next deeper anim (5.2/5.4) or visual risks (5.8) or Phase 6 QA.  
+2. Open **Immediate next actions** (below) — Phases 1–3 + **5.1–5.8** fidelity/visual offline work done (text encoding + hybrid sparse); next **5.9** contrast policy, optional residuals, or Phase 6 QA.  
 3. Prefer **offline tools + `generated/*` reports** over assuming browser playtest (`verify_offline_playability.py`).  
 4. Mark checklist items `[x]` when done; add residual rows to the defect backlog.  
-5. Rebuild: see README verify list; always refresh advancement model + start graph + offline playability after manifest changes.  
+5. Rebuild: see README verify list; always refresh advancement model + start graph + offline playability after manifest changes. After layer/text changes: `extract_layers.py` → `build_game_manifest.py` → `verify_text_fidelity.py` / `verify_visual_risks.py`. After animation extractor changes: `extract_animation_manifest.py` → `build_game_manifest.py` → fidelity/player verifies.  
 6. Never invent title→midgame edges without Phase 4 evidence or explicit policy exception.
 
 ### Immediate next actions (current head of queue)
 
-1. **Phase 5.2 / 5.4** — ParaBuild/sub-effects and/or motion path sampling (deeper anim fidelity).
-2. **Phase 5.8** — refresh visual_risks self_hyperlink audit to post-resolve targets (stale highs).
-3. **Phase 6** manual QA when playtest is available (chapter menu + Tier A path).
-4. Phase 4 PPT oracle only if title-connected midgame is required.
+1. **Phase 5.9** — low-contrast text: mitigate or document as source art (~197 rows).
+2. **Phase 5.10** — audio loop/stop/replace edge cases (optional).
+3. **Phase 5.2.1 / 5.4.1 / 5.6.1** (optional/low priority) — iterate stagger; motion easing; true WordArt warps.
+4. **Phase 6** manual QA when playtest is available (title WordArt s002; dialogue ellipses/apostrophes; sparse hybrid s002/s200; Tier A path).
+5. Phase 4 PPT oracle only if title-connected midgame is required.
 
 
 ## Technical decisions (current)
@@ -318,7 +354,10 @@ Update when fixed. Severity: **P0** full-game from title · **P1** broken labels
 | `generated/advancement_coverage_scan.json` | Leave-path OK, reachability, residual selfs |
 | `generated/stuck_hyperlink_analysis.json` | ExHyperlink deep audit |
 | `generated/hyperlink_pattern_analysis.json` | Continue/image/self patterns |
-| `generated/visual_risks.json` | Deck-wide risk queue (refresh post-resolve) |
+| `generated/visual_risks.json` | Deck-wide risk queue v2 (post-resolve self_hl policy) |
+| `tools/verify_visual_risks.py` | Assert 0 clickable self / residual match promote_audit |
+| `generated/text_fidelity_report.json` | Encoding repair + WordArt + empty + sparse hybrid (5.6/5.7) |
+| `tools/verify_text_fidelity.py` | Encoding fixtures + residual artifact = 0 |
 | `generated/runtime_traversal.json` | Hotspot-edge graph |
 | `generated/gameplay_behavior_review.json` | Action behavior counts |
 | `POI_EVALUATION.md` / `ANIMATION_EVALUATION.md` / `RENDERING.md` | Domain notes |
@@ -327,5 +366,7 @@ Update when fixed. Severity: **P0** full-game from title · **P1** broken labels
 | `generated/promote_audit.json` | All port promotes + residual selfs |
 | `generated/clickable_contract.json` | Clickable hotspot contract |
 | `generated/combat_option_matrix.json` | Per-fight option targets |
+| `generated/motion_path_inventory.json` | Motion path kinds + sample fixtures (Phase 5.4) |
+| `tools/motion_path_lib.py` | Shared M/L/C parse + arc-length sample |
 
 `_port_analysis_tmp/` remains disposable local research (JDK/POI/venv); not part of the published site.

@@ -53,14 +53,14 @@
     },
     {
       "id": "root-41",
-      "label": "s041 \u00b7 Can\u00c6t escape!",
+      "label": "s041 \u00b7 Can't escape!",
       "slide": 41,
       "hint": "?debug=1&slide=41",
       "ok": true
     },
     {
       "id": "root-55",
-      "label": "s055 \u00b7 So you\u00c6ve come\u00e0",
+      "label": "s055 \u00b7 So you've come\u2026",
       "slide": 55,
       "hint": "?debug=1&slide=55",
       "ok": true
@@ -74,7 +74,7 @@
     },
     {
       "id": "root-70",
-      "label": "s070 \u00b7 Hey ,can I have some money mister?\n(back\u00e0)\n",
+      "label": "s070 \u00b7 Hey ,can I have some money mister?\n(back\u2026)\n",
       "slide": 70,
       "hint": "?debug=1&slide=70",
       "ok": true
@@ -95,7 +95,7 @@
     },
     {
       "id": "root-148",
-      "label": "s148 \u00b7 Magic\u00c6ed battle.",
+      "label": "s148 \u00b7 Magic'ed battle.",
       "slide": 148,
       "hint": "?debug=1&slide=148",
       "ok": true

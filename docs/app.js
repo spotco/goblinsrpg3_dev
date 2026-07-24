@@ -110,6 +110,7 @@ function animationNodeInfo(node) {
     delayMs: nodeDelay(node),
     durationMs: nodeDuration(node),
     behaviorCount: (node.behaviors || []).length,
+    subEffectCount: (node.subEffects || []).length,
     childCount: (node.children || []).length,
     waitsForClick: nodeWaitsForClick(node),
     triggerConditions: nodeTriggerConditions(node).map((condition) => ({
@@ -985,8 +986,25 @@ function applyTextLayerStyle(element, layer) {
     element.style.overflow = "hidden";
     element.style.width = "100%";
     element.style.maxWidth = "100%";
-    // Scale glyph width into the box without clipping long titles like GOBLINSRPG3.
-    element.style.transform = `${element.dataset.baseTransform || ""} scaleX(0.92)`.trim();
+    // Geometry-aware first pass (Phase 5.6): approximate PPT WordArt warps in CSS.
+    const geometry = String(layer.wordArtGeometry || layer.shapeType || "");
+    element.dataset.wordArtGeometry = geometry;
+    element.classList.add("wordart-layer");
+    let geometryTransform = "scaleX(0.92)";
+    if (geometry.includes("DEFLATE")) {
+      // Barrel/deflate: slightly squash mid-height and expand width.
+      geometryTransform = "scaleX(1.02) scaleY(0.82)";
+      element.style.fontSize = `${Math.max(layer.bounds.height * 62, 1)}cqh`;
+      element.classList.add("wordart-deflate");
+    } else if (geometry.includes("CURVE_UP") || geometry.includes("ARCH_UP")) {
+      geometryTransform = "scaleX(0.95) skewX(-6deg) rotate(-4deg)";
+      element.style.fontSize = `${Math.max(layer.bounds.height * 48, 1)}cqh`;
+      element.classList.add("wordart-curve-up");
+    } else if (geometry.includes("CURVE_DOWN") || geometry.includes("ARCH_DOWN")) {
+      geometryTransform = "scaleX(0.95) skewX(6deg) rotate(4deg)";
+      element.classList.add("wordart-curve-down");
+    }
+    element.style.transform = `${element.dataset.baseTransform || ""} ${geometryTransform}`.trim();
     const style = layer.style || {};
     if (style.lineColor && String(style.lineColor).toLowerCase().startsWith("#fff")) {
       element.style.webkitTextStroke = "1px #ffffff";
@@ -1013,12 +1031,32 @@ function applyTextLayerStyle(element, layer) {
   }
 }
 
+function layerArea(layer) {
+  const bounds = layer.bounds || {};
+  return (Number(bounds.width) || 0) * (Number(bounds.height) || 0);
+}
+
+/** Sparse addressable layers: keep composite PNG as underlay (Phase 5.6). */
+function screenNeedsPngUnderlay(screen) {
+  const layers = screen.layers || [];
+  if (!layers.length) {
+    return false;
+  }
+  const maxArea = layers.reduce((max, layer) => Math.max(max, layerArea(layer)), 0);
+  const largeImages = layers.filter((layer) => layer.type === "image" && layerArea(layer) >= 0.5);
+  const nonEmptyText = layers.filter(
+    (layer) => layer.type === "text" && String(layer.text || "").trim() && !layer.emptyTextPlaceholder,
+  );
+  return largeImages.length === 0 && maxArea < 0.5 && nonEmptyText.length <= 2;
+}
+
 function renderLayers(screen) {
   layersLayer.replaceChildren();
   state.currentLayerElements = new Map();
   const layers = screen.layers || [];
   const typeCounts = {};
   const animatedShapeIds = [];
+  let emptyPlaceholders = 0;
   for (const layer of layers) {
     const element = document.createElement("div");
     positionLayerElement(element, layer);
@@ -1031,8 +1069,22 @@ function renderLayers(screen) {
       image.draggable = false;
       element.append(image);
     } else if (layer.type === "text") {
-      element.textContent = layer.text || "";
-      applyTextLayerStyle(element, layer);
+      const emptyPlaceholder = Boolean(layer.emptyTextPlaceholder) || !String(layer.text || "").trim();
+      if (emptyPlaceholder && !layer.wordArt) {
+        emptyPlaceholders += 1;
+        element.classList.add("empty-text-placeholder");
+        // Keep animatable boxes in the DOM; hide non-animated decorative empties.
+        if (!layer.animated) {
+          element.style.visibility = "hidden";
+          element.style.pointerEvents = "none";
+        } else {
+          element.textContent = "";
+          element.style.backgroundColor = "transparent";
+        }
+      } else {
+        element.textContent = layer.text || "";
+        applyTextLayerStyle(element, layer);
+      }
     }
     state.currentLayerElements.set(String(layer.shapeId), element);
     if (state.debug || state.hudEnabled) {
@@ -1065,6 +1117,7 @@ function renderLayers(screen) {
     screen: { id: screen.id, slide: screen.slide },
     layerCount: layers.length,
     typeCounts,
+    emptyTextPlaceholders: emptyPlaceholders,
     animatedLayerCount: animatedShapeIds.length,
     animatedShapeIds,
   });
@@ -1352,13 +1405,19 @@ function nodeRunsSequentialChildren(node) {
 
 function subtreeDuration(node) {
   const children = node.children || [];
-  if (!children.length) {
+  const subEffects = node.subEffects || [];
+  const nested = children.concat(subEffects);
+  if (!nested.length) {
     return nodeDelay(node) + nodeDuration(node);
   }
-  if (nodeRunsSequentialChildren(node)) {
-    return children.reduce((total, child) => total + subtreeDuration(child), nodeDelay(node) + nodeDuration(node));
+  if (nodeRunsSequentialChildren(node) && children.length) {
+    const childTotal = children.reduce((total, child) => total + subtreeDuration(child), 0);
+    const subMax = subEffects.length
+      ? Math.max(...subEffects.map((child) => subtreeDuration(child)))
+      : 0;
+    return nodeDelay(node) + nodeDuration(node) + Math.max(childTotal, subMax);
   }
-  return nodeDelay(node) + Math.max(nodeDuration(node), ...children.map((child) => subtreeDuration(child)));
+  return nodeDelay(node) + Math.max(nodeDuration(node), ...nested.map((child) => subtreeDuration(child)));
 }
 
 function transitionList(properties, timing) {
@@ -1606,53 +1665,268 @@ function applyAnimateBehavior(elements, strings, timing) {
   }
 }
 
+/** Tokenize PPT/VML-style motion path (M/L/C, scientific notation). */
+function tokenizeMotionPath(path) {
+  if (typeof path !== "string") {
+    return [];
+  }
+  const tokens = [];
+  const re = /([MLCZmlcz])|([+\-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+\-]?\d+)?)/g;
+  let match = re.exec(path);
+  while (match) {
+    tokens.push(match[0]);
+    match = re.exec(path);
+  }
+  return tokens;
+}
+
+function parseMotionPath(path) {
+  const tokens = tokenizeMotionPath(path);
+  if (!tokens.length || tokens[0].toUpperCase() !== "M") {
+    return null;
+  }
+  let index = 0;
+  const segments = [];
+  let start = null;
+  let current = { x: 0, y: 0 };
+  const commands = [];
+
+  function readNumber() {
+    if (index >= tokens.length) {
+      return null;
+    }
+    const value = Number(tokens[index]);
+    if (!Number.isFinite(value)) {
+      return null;
+    }
+    index += 1;
+    return value;
+  }
+
+  function readPoint() {
+    const x = readNumber();
+    const y = readNumber();
+    if (!Number.isFinite(x) || !Number.isFinite(y)) {
+      return null;
+    }
+    return { x, y };
+  }
+
+  while (index < tokens.length) {
+    const token = tokens[index];
+    if (!/^[A-Za-z]$/.test(token)) {
+      break;
+    }
+    const cmd = token.toUpperCase();
+    index += 1;
+    commands.push(cmd);
+    if (cmd === "M") {
+      const point = readPoint();
+      if (!point) {
+        return null;
+      }
+      current = point;
+      if (!start) {
+        start = { ...point };
+      }
+      while (index < tokens.length && !/^[A-Za-z]$/.test(tokens[index])) {
+        const next = readPoint();
+        if (!next) {
+          break;
+        }
+        segments.push({ cmd: "L", from: { ...current }, to: { ...next } });
+        current = next;
+      }
+    } else if (cmd === "L") {
+      while (index < tokens.length && !/^[A-Za-z]$/.test(tokens[index])) {
+        const next = readPoint();
+        if (!next) {
+          break;
+        }
+        segments.push({ cmd: "L", from: { ...current }, to: { ...next } });
+        current = next;
+      }
+    } else if (cmd === "C") {
+      while (index < tokens.length && !/^[A-Za-z]$/.test(tokens[index])) {
+        const c1 = readPoint();
+        const c2 = readPoint();
+        const end = readPoint();
+        if (!c1 || !c2 || !end) {
+          break;
+        }
+        segments.push({
+          cmd: "C",
+          from: { ...current },
+          c1,
+          c2,
+          to: { ...end },
+        });
+        current = end;
+      }
+    } else if (cmd === "Z" && start) {
+      segments.push({ cmd: "L", from: { ...current }, to: { ...start } });
+      current = { ...start };
+    } else {
+      break;
+    }
+  }
+
+  if (!start) {
+    return null;
+  }
+  let kind = "line";
+  if (commands.includes("C")) {
+    kind = "cubic";
+  } else if (segments.length > 1) {
+    kind = "polyline";
+  }
+  return {
+    start,
+    end: { ...current },
+    segments,
+    commands,
+    kind,
+  };
+}
+
+function pointOnCubic(p0, p1, p2, p3, t) {
+  const u = 1 - t;
+  const uu = u * u;
+  const tt = t * t;
+  return {
+    x: uu * u * p0.x + 3 * uu * t * p1.x + 3 * u * tt * p2.x + tt * t * p3.x,
+    y: uu * u * p0.y + 3 * uu * t * p1.y + 3 * u * tt * p2.y + tt * t * p3.y,
+  };
+}
+
+function distance2d(a, b) {
+  const dx = b.x - a.x;
+  const dy = b.y - a.y;
+  return Math.hypot(dx, dy);
+}
+
+function densifyMotionPath(parsed, stepsPerCubic = 16) {
+  const points = [{ ...parsed.start }];
+  for (const segment of parsed.segments || []) {
+    if (segment.cmd === "L") {
+      points.push({ ...segment.to });
+    } else if (segment.cmd === "C") {
+      for (let step = 1; step <= stepsPerCubic; step += 1) {
+        points.push(pointOnCubic(segment.from, segment.c1, segment.c2, segment.to, step / stepsPerCubic));
+      }
+    }
+  }
+  return points;
+}
+
+/** Arc-length sample a PPT motion path into intermediate points (Phase 5.4). */
+function sampleMotionPath(path, sampleCount = 48) {
+  const parsed = parseMotionPath(path);
+  if (!parsed) {
+    return null;
+  }
+  const dense = densifyMotionPath(parsed, 16);
+  const count = Math.max(2, sampleCount | 0);
+  let samples;
+  if (dense.length <= 1) {
+    samples = [{ ...dense[0] }];
+  } else {
+    const lengths = [0];
+    for (let index = 1; index < dense.length; index += 1) {
+      lengths.push(lengths[index - 1] + distance2d(dense[index - 1], dense[index]));
+    }
+    const total = lengths[lengths.length - 1];
+    samples = [];
+    if (total <= 1e-12) {
+      samples = [{ ...dense[0] }, { ...dense[dense.length - 1] }];
+    } else {
+      let cursor = 0;
+      for (let index = 0; index < count; index += 1) {
+        const target = (total * index) / (count - 1);
+        while (cursor < lengths.length - 1 && lengths[cursor + 1] < target) {
+          cursor += 1;
+        }
+        if (cursor >= lengths.length - 1) {
+          samples.push({ ...dense[dense.length - 1] });
+          continue;
+        }
+        const span = lengths[cursor + 1] - lengths[cursor];
+        const t = span <= 1e-12 ? 0 : (target - lengths[cursor]) / span;
+        samples.push({
+          x: dense[cursor].x + (dense[cursor + 1].x - dense[cursor].x) * t,
+          y: dense[cursor].y + (dense[cursor + 1].y - dense[cursor].y) * t,
+        });
+      }
+    }
+  }
+  samples[samples.length - 1] = { ...parsed.end };
+  return {
+    parsed,
+    samples,
+    endpoint: { ...parsed.end },
+    kind: parsed.kind,
+  };
+}
+
 function motionEndpoint(path) {
-  if (typeof path !== "string" || !path.startsWith("M ")) {
-    return null;
-  }
-  const numbers = path.match(/[+\-]?(?:\d+\.?\d*|\.\d+)(?:E[+\-]?\d+)?/gi)?.map(Number) || [];
-  if (numbers.length < 4) {
-    return null;
-  }
-  return { x: numbers[numbers.length - 2], y: numbers[numbers.length - 1] };
+  const sampled = sampleMotionPath(path, 2);
+  return sampled ? sampled.endpoint : null;
+}
+
+function motionTranslate(baseTransform, point) {
+  return `${baseTransform} translate(${point.x * 100}cqw, ${point.y * 100}cqh)`.trim();
 }
 
 function applyMotionBehavior(elements, strings, timing) {
-  const path = strings.find((value) => value.startsWith("M "));
-  const endpoint = motionEndpoint(path);
-  if (!endpoint) {
-    runtimeLog("animation:motion-skipped", { path, strings, reason: "no valid motion endpoint" }, "warn");
+  const path = strings.find((value) => typeof value === "string" && /^M\s/i.test(value));
+  const sampled = path ? sampleMotionPath(path, 48) : null;
+  if (!sampled || !sampled.samples.length) {
+    runtimeLog("animation:motion-skipped", { path, strings, reason: "no valid motion path samples" }, "warn");
     return;
   }
+  const endpoint = sampled.endpoint;
   runtimeLog("animation:motion", {
     path,
     endpoint,
+    kind: sampled.kind,
+    sampleCount: sampled.samples.length,
     timing,
     targetCount: elements.length,
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
     const baseTransform = element.dataset.baseTransform || "";
-    const endTransform = `${baseTransform} translate(${endpoint.x * 100}cqw, ${endpoint.y * 100}cqh)`.trim();
-    const startTransform = element.style.transform || baseTransform;
+    const endTransform = motionTranslate(baseTransform, endpoint);
+    const startTransform = element.style.transform || baseTransform || "none";
     element.style.transform = endTransform;
     runtimeLog("animation:motion-frame", {
       endpoint,
+      kind: sampled.kind,
+      sampleCount: sampled.samples.length,
       baseTransform,
       target: animationElementInfo(element),
     });
     if (typeof element.animate === "function") {
       try {
-        element.animate(
-          [{ transform: startTransform }, { transform: endTransform }],
-          {
-            duration: Math.max(timing.duration, 1),
-            easing: cssEasing(timing),
-            fill: "forwards",
-          },
-        );
+        const keyframes = sampled.samples.map((point, index) => ({
+          transform: motionTranslate(baseTransform, point),
+          offset: sampled.samples.length === 1 ? 0 : index / (sampled.samples.length - 1),
+        }));
+        // Ensure first keyframe matches current visual when path start is non-zero.
+        if (keyframes.length) {
+          keyframes[0] = {
+            transform: motionTranslate(baseTransform, sampled.samples[0]),
+            offset: 0,
+          };
+        }
+        element.animate(keyframes, {
+          duration: Math.max(timing.duration, 1),
+          easing: cssEasing(timing),
+          fill: "forwards",
+        });
       } catch (_error) {
-        // Keep endTransform.
+        // Keep endTransform (endpoint jump) if WAAPI rejects multi-keyframe path.
+        runtimeLog("animation:motion-animate-failed", { path, endpoint }, "warn");
       }
     }
     if (timing.autoReverse) {
@@ -1866,6 +2140,8 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
       }
     }, startDelay, "animation-node-behaviors", nodeDetails);
   }
+  // Subordinate effects (RT_TimeSubEffectContainer) run with the parent node.
+  scheduleSubEffectNodes(node, startDelay, autoplay);
   scheduleAnimation(() => {
     state.animationCompletedNodes.add(node.id);
     runtimeLog("animation:node-completed", {
@@ -1878,9 +2154,39 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
     ...nodeDetails,
     durationMs: nodeDuration(node),
     behaviorCount: (node.behaviors || []).length,
+    subEffectCount: (node.subEffects || []).length,
     childCount: (node.children || []).length,
+    iterate: node.iterate || null,
   });
+  if (node.iterate && (node.iterate.iterateType === 1 || node.iterate.iterateType === 2)) {
+    runtimeLog(
+      "animation:iterate-whole-shape",
+      {
+        node: animationNodeInfo(node),
+        iterate: node.iterate,
+        reason: "byWord/byLetter iterate residual — whole-shape apply",
+      },
+      "info"
+    );
+  }
   scheduleChildNodes(node, startDelay, autoplay);
+}
+
+function scheduleSubEffectNodes(node, startDelay, autoplay = false) {
+  const subEffects = node.subEffects || [];
+  if (!subEffects.length) {
+    return;
+  }
+  runtimeLog("animation:subeffects-scheduled", {
+    parent: animationNodeInfo(node),
+    subEffectCount: subEffects.length,
+    startDelay,
+    children: subEffects.map((child) => animationNodeInfo(child)),
+  });
+  for (const sub of subEffects) {
+    // Sub-effects are subordinate tracks: run with parent, including triggered waits.
+    runAnimationNode(sub, startDelay, false, false, autoplay);
+  }
 }
 
 function scheduleChildNodes(node, startDelay, autoplay = false) {
@@ -1944,6 +2250,7 @@ function collectAnimatedShapeIds(slideAnimations) {
         }
       }
     }
+    stack.push(...(node.subEffects || []));
     stack.push(...(node.children || []));
   }
   return shapeIds;
@@ -2020,20 +2327,21 @@ function renderScreen(screen) {
   const layers = screen.layers || [];
   const renderedLayers = renderLayers(screen);
   const typeCounts = layerTypeCounts(layers);
-  const maxArea = layers.reduce((max, layer) => {
-    const bounds = layer.bounds || {};
-    return Math.max(max, (bounds.width || 0) * (bounds.height || 0));
-  }, 0);
+  const maxArea = layers.reduce((max, layer) => Math.max(max, layerArea(layer)), 0);
+  const pngUnderlay = renderedLayers && screenNeedsPngUnderlay(screen);
   runtimeLog("render:screen-start", {
     screen: { id: screen.id, slide: screen.slide },
     image: screen.image,
     renderedLayers,
+    pngUnderlay,
     hotspotCount: (screen.hotspots || []).length,
     transition: screen.transition || null,
   });
   screenImage.alt = `Screen ${slideNumber}`;
   screenImage.src = assetUrl(screen.image);
-  screenImage.hidden = renderedLayers;
+  // Hybrid: sparse layer stacks keep the reconstructed PNG as underlay (Phase 5.6).
+  screenImage.hidden = renderedLayers && !pngUnderlay;
+  screenImage.classList.toggle("png-underlay", Boolean(pngUnderlay));
   layersLayer.hidden = !renderedLayers;
   missingRender.hidden = true;
   stage.dataset.loading = "false";
@@ -2043,12 +2351,15 @@ function renderScreen(screen) {
     screenId: screen.id,
     slide: screen.slide,
     summary: renderedLayers
-      ? `layers-mode (${layers.length} layers; hide PNG)`
+      ? pngUnderlay
+        ? `hybrid-mode (${layers.length} sparse layers + PNG underlay)`
+        : `layers-mode (${layers.length} layers; hide PNG)`
       : "png-mode (no layers; show composite image)",
     layersPresent: layers.length > 0,
     layerTypeCounts: typeCounts,
     maxLayerArea: maxArea,
-    hidePngBecauseLayers: Boolean(renderedLayers),
+    hidePngBecauseLayers: Boolean(renderedLayers) && !pngUnderlay,
+    pngUnderlay: Boolean(pngUnderlay),
     backgroundColor: screen.backgroundColor || null,
     hotspotCount: (screen.hotspots || []).length,
     transition: screen.transition || null,

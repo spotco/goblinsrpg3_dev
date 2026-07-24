@@ -179,7 +179,16 @@ def main():
                     }
                 )
             if h.get("action") == "hyperlink" and h.get("targetSlide") == slide:
-                self_links.append(h.get("id"))
+                # Post-resolve: only clickable residual selfs are defects.
+                self_links.append(
+                    {
+                        "id": h.get("id"),
+                        "clickable": h.get("clickable"),
+                        "residualStatus": h.get("residualStatus"),
+                        "behaviorStatus": h.get("behaviorStatus"),
+                        "resolveMethod": h.get("resolveMethod"),
+                    }
+                )
 
         # Gaps relative to known runtime limitations
         gaps = []
@@ -197,8 +206,7 @@ def main():
 
         if has_motion:
             report["featureInventory"]["motion"] += 1
-            # motion is implemented but path sampling may be endpoint-only
-            gap("motion_endpoint_only", "medium", "motion paths present; runtime uses endpoint translate only")
+            # Phase 5.4 samples M/L/C paths; residual polish is optional 5.4.1
 
         if has_scale:
             report["featureInventory"]["scale"] += 1
@@ -256,8 +264,20 @@ def main():
             # title slides often sparse
             gap("sparse_or_no_fullbleed", "low", f"large image layers={large_images}, layers={len(slide_layers)}")
 
-        if self_links:
-            gap("self_hyperlink", "high", f"hotspots={self_links}")
+        clickable_self = [item for item in self_links if item.get("clickable")]
+        residual_self = [
+            item
+            for item in self_links
+            if not item.get("clickable")
+            and (
+                item.get("residualStatus") == "accepted_source_self"
+                or item.get("behaviorStatus") == "documented_residual_self"
+            )
+        ]
+        if clickable_self:
+            gap("self_hyperlink_clickable", "high", f"hotspots={clickable_self}")
+        elif residual_self:
+            gap("self_hyperlink_documented_residual", "info", f"hotspots={residual_self}")
 
         for m in media:
             if m.get("status") not in ("clickable_media", "navigation"):

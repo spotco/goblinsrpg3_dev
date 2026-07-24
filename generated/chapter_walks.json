@@ -359,7 +359,7 @@
       "outcome": "reaches_terminal",
       "ok": true,
       "entryHint": "?debug=1&slide=41",
-      "titleSnippet": "Can\u00c6t escape!"
+      "titleSnippet": "Can't escape!"
     },
     {
       "seed": 43,
@@ -647,7 +647,7 @@
       "outcome": "reaches_terminal",
       "ok": true,
       "entryHint": "?debug=1&slide=55",
-      "titleSnippet": "So you\u00c6ve come\u00e0"
+      "titleSnippet": "So you've come\u2026"
     },
     {
       "seed": 66,
@@ -1077,7 +1077,7 @@
       "outcome": "reaches_terminal",
       "ok": true,
       "entryHint": "?debug=1&slide=70",
-      "titleSnippet": "Hey ,can I have some money mister?\n(back\u00e0)\n"
+      "titleSnippet": "Hey ,can I have some money mister?\n(back\u2026)\n"
     },
     {
       "seed": 117,
@@ -1684,7 +1684,7 @@
       "outcome": "reaches_terminal",
       "ok": true,
       "entryHint": "?debug=1&slide=148",
-      "titleSnippet": "Magic\u00c6ed battle."
+      "titleSnippet": "Magic'ed battle."
     },
     {
       "seed": 166,

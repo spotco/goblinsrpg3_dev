@@ -14,7 +14,20 @@
   "summary": {
     "slideCount": 9,
     "totalOnNext": 20,
-    "slidesWithSetOrEffect": 7
+    "slidesWithSetOrEffect": 7,
+    "openingSubEffectCount": 13,
+    "openingParaBuildCount": 13,
+    "openingIterateCount": 0,
+    "deckSubEffectContainers": 126,
+    "deckParaBuildCount": 209,
+    "deckIterateDataCount": 2,
+    "deckParaBuildKinds": {
+      "allAtOnce": 1,
+      "asAWhole": 208
+    },
+    "deckIterateKinds": {
+      "byLetter": 2
+    }
   },
   "trains": [
     {
@@ -29,8 +42,13 @@
         "effect": 3,
         "set": 5
       },
+      "subEffectCount": 2,
+      "paraBuildKindCounts": {
+        "asAWhole": 3
+      },
+      "iterateDataCount": 0,
       "hasSetOrEffect": true,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "ParaBuild is asAWhole/allAtOnce \u2014 whole-shape playback matches PPT build mode; subEffects expanded and scheduled with parent."
     },
     {
       "slide": 4,
@@ -41,8 +59,11 @@
       "animationTimelineMs": 1.0,
       "rootCount": 1,
       "behaviorKindCounts": {},
+      "subEffectCount": 0,
+      "paraBuildKindCounts": {},
+      "iterateDataCount": 0,
       "hasSetOrEffect": false,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "No ParaBuild on this slide; subEffects expanded when present."
     },
     {
       "slide": 5,
@@ -53,11 +74,16 @@
       "animationTimelineMs": 500.0,
       "rootCount": 1,
       "behaviorKindCounts": {
-        "set": 4,
-        "effect": 2
+        "effect": 2,
+        "set": 4
       },
+      "subEffectCount": 2,
+      "paraBuildKindCounts": {
+        "asAWhole": 2
+      },
+      "iterateDataCount": 0,
       "hasSetOrEffect": true,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "ParaBuild is asAWhole/allAtOnce \u2014 whole-shape playback matches PPT build mode; subEffects expanded and scheduled with parent."
     },
     {
       "slide": 6,
@@ -71,8 +97,13 @@
         "effect": 1,
         "set": 1
       },
+      "subEffectCount": 0,
+      "paraBuildKindCounts": {
+        "asAWhole": 1
+      },
+      "iterateDataCount": 0,
       "hasSetOrEffect": true,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "ParaBuild is asAWhole/allAtOnce \u2014 whole-shape playback matches PPT build mode; subEffects expanded and scheduled with parent."
     },
     {
       "slide": 7,
@@ -86,8 +117,13 @@
         "effect": 8,
         "set": 8
       },
+      "subEffectCount": 7,
+      "paraBuildKindCounts": {
+        "asAWhole": 1
+      },
+      "iterateDataCount": 0,
       "hasSetOrEffect": true,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "ParaBuild is asAWhole/allAtOnce \u2014 whole-shape playback matches PPT build mode; subEffects expanded and scheduled with parent."
     },
     {
       "slide": 8,
@@ -101,8 +137,13 @@
         "effect": 2,
         "set": 3
       },
+      "subEffectCount": 1,
+      "paraBuildKindCounts": {
+        "asAWhole": 2
+      },
+      "iterateDataCount": 0,
       "hasSetOrEffect": true,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "ParaBuild is asAWhole/allAtOnce \u2014 whole-shape playback matches PPT build mode; subEffects expanded and scheduled with parent."
     },
     {
       "slide": 12,
@@ -116,8 +157,13 @@
         "effect": 2,
         "set": 3
       },
+      "subEffectCount": 1,
+      "paraBuildKindCounts": {
+        "asAWhole": 2
+      },
+      "iterateDataCount": 0,
       "hasSetOrEffect": true,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "ParaBuild is asAWhole/allAtOnce \u2014 whole-shape playback matches PPT build mode; subEffects expanded and scheduled with parent."
     },
     {
       "slide": 13,
@@ -130,8 +176,11 @@
       "behaviorKindCounts": {
         "command": 1
       },
+      "subEffectCount": 0,
+      "paraBuildKindCounts": {},
+      "iterateDataCount": 0,
       "hasSetOrEffect": false,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "No ParaBuild on this slide; subEffects expanded when present."
     },
     {
       "slide": 14,
@@ -148,15 +197,23 @@
         "command": 1,
         "motion": 2
       },
+      "subEffectCount": 0,
+      "paraBuildKindCounts": {
+        "asAWhole": 2
+      },
+      "iterateDataCount": 0,
       "hasSetOrEffect": true,
-      "approximationNote": "Runtime plays OnNext queue + set/effect/animate first-pass; multi-step dissolve trains may still approximate whole-shape."
+      "approximationNote": "ParaBuild is asAWhole/allAtOnce \u2014 whole-shape playback matches PPT build mode; subEffects expanded and scheduled with parent."
     }
   ],
   "runtimeSupport": {
     "onNextQueue": true,
     "setVisibility": true,
     "effectFadeDissolve": true,
-    "paraBuildIterate": "whole-shape approximation (Phase 5.2 open)",
-    "subEffectContainers": "not fully expanded (Phase 5.2 open)"
+    "subEffectContainers": "expanded as node.subEffects; scheduled with parent (Phase 5.2)",
+    "paraBuildAsAWhole": "decoded + whole-shape correct for TLPB_AsAWhole (Phase 5.2)",
+    "paraBuildByLevel": "decoded; multi-paragraph level builds residual (Phase 5.2.1)",
+    "timeIterateByWordLetter": "decoded; runtime whole-shape residual (Phase 5.2.1)",
+    "motionPathSampling": "arc-length M/L/C samples (Phase 5.4); rotation/color/filter absent in deck"
   }
 }

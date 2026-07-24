@@ -50,7 +50,8 @@ def collect_variant_strings(animation_manifest: dict[str, Any]) -> set[str]:
                 parsed = variant.get("parsed") or {}
                 if isinstance(parsed.get("stringValue"), str):
                     strings.add(parsed["stringValue"])
-        stack.extend(node.get("children", []))
+        stack.extend(node.get("subEffects") or [])
+        stack.extend(node.get("children") or [])
     return strings
 
 
@@ -117,6 +118,26 @@ def main() -> None:
             ),
         },
         {
+            "feature": "subEffect / ParaBuild expansion",
+            "manifestEvidence": {
+                "subEffectContainers": summary.get("subEffectContainers"),
+                "paraBuildCount": summary.get("paraBuildCount"),
+                "iterateDataCount": summary.get("iterateDataCount"),
+                "paraBuildKinds": summary.get("paraBuildKinds"),
+            },
+            "present": (
+                int(summary.get("subEffectContainers") or 0) == 126
+                and int(summary.get("paraBuildCount") or 0) == 209
+                and int(summary.get("iterateDataCount") or 0) == 2
+            ),
+            "snippets": (
+                "function scheduleSubEffectNodes",
+                "node.subEffects",
+                "animation:subeffects-scheduled",
+                "animation:iterate-whole-shape",
+            ),
+        },
+        {
             "feature": "chained start/end triggers",
             "manifestEvidence": {"conditionEvents": {key: condition_events.get(key, 0) for key in (3, 4)}},
             "present": condition_events.get(3, 0) > 0 and condition_events.get(4, 0) > 0,
@@ -156,7 +177,15 @@ def main() -> None:
             "feature": "motion paths",
             "manifestEvidence": {"motionBehaviors": behavior_kinds.get("motion")},
             "present": int(behavior_kinds.get("motion", 0)) > 0,
-            "snippets": ("function motionEndpoint", "function applyMotionBehavior", "element.style.transform"),
+            "snippets": (
+                "function motionEndpoint",
+                "function applyMotionBehavior",
+                "function sampleMotionPath",
+                "function parseMotionPath",
+                "function pointOnCubic",
+                "function densifyMotionPath",
+                "element.style.transform",
+            ),
         },
         {
             "feature": "scale behaviors",

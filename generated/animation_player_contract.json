@@ -1,7 +1,7 @@
 {
   "format": "goblins-rpg3-animation-player-contract-v1",
   "summary": {
-    "features": 10,
+    "features": 11,
     "allPassed": true,
     "timeNodeContainers": 2407,
     "mappedMediaBindings": 8
@@ -54,6 +54,25 @@
         "function nodeRunsSequentialChildren",
         "function subtreeDuration",
         "runAnimationNode(child, startDelay + childDelay"
+      ],
+      "styleSnippets": []
+    },
+    {
+      "feature": "subEffect / ParaBuild expansion",
+      "manifestEvidence": {
+        "subEffectContainers": 126,
+        "paraBuildCount": 209,
+        "iterateDataCount": 2,
+        "paraBuildKinds": {
+          "allAtOnce": 1,
+          "asAWhole": 208
+        }
+      },
+      "runtimeSnippets": [
+        "function scheduleSubEffectNodes",
+        "node.subEffects",
+        "animation:subeffects-scheduled",
+        "animation:iterate-whole-shape"
       ],
       "styleSnippets": []
     },
@@ -117,6 +136,10 @@
       "runtimeSnippets": [
         "function motionEndpoint",
         "function applyMotionBehavior",
+        "function sampleMotionPath",
+        "function parseMotionPath",
+        "function pointOnCubic",
+        "function densifyMotionPath",
         "element.style.transform"
       ],
       "styleSnippets": []

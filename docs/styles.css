@@ -69,10 +69,35 @@ button:focus-visible {
   -webkit-user-drag: none;
 }
 
+.screen.png-underlay {
+  /* Sparse layer mode: composite raster sits under addressable layers. */
+  z-index: 0;
+}
+
 .layers {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  z-index: 1;
+}
+
+.wordart-layer {
+  text-transform: none;
+}
+
+.wordart-deflate {
+  /* Soft mid-line squeeze approximation of TEXT_DEFLATE */
+  transform-origin: center center;
+}
+
+.wordart-curve-up,
+.wordart-curve-down {
+  transform-origin: center bottom;
+}
+
+.empty-text-placeholder {
+  background: transparent !important;
+  border: none !important;
 }
 
 .stage.is-transitioning .layers,

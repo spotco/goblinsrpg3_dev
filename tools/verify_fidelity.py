@@ -94,6 +94,49 @@ def main() -> None:
                     f"anim={train.get('onNextConditionCount')} "
                     f"adv={train.get('advancementOnNextCount')}"
                 )
+        if "subEffectCount" not in train:
+            fail(f"slide {train['slide']} missing subEffectCount (Phase 5.2)")
+
+    support = opening.get("runtimeSupport") or {}
+    if "expanded" not in str(support.get("subEffectContainers") or "").lower():
+        fail("runtimeSupport.subEffectContainers should report expanded (Phase 5.2)")
+    if "Phase 5.2 open" in str(support.get("paraBuildIterate") or ""):
+        fail("runtimeSupport still marks paraBuildIterate as Phase 5.2 open")
+    if "Phase 5.4" not in str(support.get("motionPathSampling") or ""):
+        fail("runtimeSupport.motionPathSampling should mention Phase 5.4")
+    for snippet in (
+        "function scheduleSubEffectNodes",
+        "animation:subeffects-scheduled",
+        "node.subEffects",
+        "function sampleMotionPath",
+        "function parseMotionPath",
+        "function densifyMotionPath",
+        "function pointOnCubic",
+    ):
+        if snippet not in app_js:
+            fail(f"runtime fidelity snippet missing: {snippet}")
+
+    motion = load_json(root / "generated" / "motion_path_inventory.json")
+    if motion.get("format") != "goblins-rpg3-motion-path-inventory-v1":
+        fail("motion_path_inventory format unexpected")
+    msum = motion.get("summary") or {}
+    if msum.get("motionPathCount") != 215:
+        fail(f"expected 215 motion paths, found {msum.get('motionPathCount')}")
+    if msum.get("cubicPathCount", 0) < 1:
+        fail("expected at least one cubic motion path")
+    if msum.get("linePathCount", 0) < 1:
+        fail("expected at least one line motion path")
+    fixtures = motion.get("fixtures") or {}
+    line_end = fixtures.get("lineEndpoint") or {}
+    if abs(float(line_end.get("x", -1)) - 1.0) > 1e-6 or abs(float(line_end.get("y", -1))) > 1e-6:
+        fail(f"line fixture endpoint wrong: {line_end}")
+    cubic_end = fixtures.get("cubicEndpoint") or {}
+    if abs(float(cubic_end.get("x", -1)) - 1.0) > 1e-6 or abs(float(cubic_end.get("y", -1))) > 1e-6:
+        fail(f"cubic fixture endpoint wrong: {cubic_end}")
+    # Mid of M 0 0 C 0 1 1 1 1 0 at t=0.5 is y=0.75 analytically.
+    mid_y = float(fixtures.get("cubicMidY") or 0)
+    if mid_y < 0.5:
+        fail(f"cubic mid Y too low for curved path (still endpoint-only?): {mid_y}")
 
     print("fidelity verification passed")
     print(
@@ -104,7 +147,14 @@ def main() -> None:
     )
     print(
         f"  opening trains onNext total={opening['summary']['totalOnNext']} "
-        f"setOrEffectSlides={opening['summary']['slidesWithSetOrEffect']}"
+        f"setOrEffectSlides={opening['summary']['slidesWithSetOrEffect']} "
+        f"openingSubEffects={opening['summary'].get('openingSubEffectCount')} "
+        f"deckSubEffects={opening['summary'].get('deckSubEffectContainers')}"
+    )
+    print(
+        f"  motionPaths={msum.get('motionPathCount')} "
+        f"line={msum.get('linePathCount')} cubic={msum.get('cubicPathCount')} "
+        f"polyline={msum.get('polylinePathCount')}"
     )
 
 

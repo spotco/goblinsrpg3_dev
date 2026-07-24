@@ -264,16 +264,45 @@ def collect_screen_risks(
     text_layers = [layer for layer in layers if layer.get("type") == "text"]
     non_empty_text = [layer for layer in text_layers if str(layer.get("text") or "").strip()]
     large_images = [layer for layer in image_layers if layer_area(layer) >= 0.5]
-    if not large_images and max_area < 0.2 and len(non_empty_text) <= 2:
+    if not large_images and max_area < 0.5 and len(non_empty_text) <= 2:
+        png_exists = bool(png_path and png_path.exists())
+        # Phase 5.6: runtime keeps composite PNG under sparse layers (hybrid underlay).
         add(
             "sparse_visual_coverage",
-            "medium",
-            "Slide has no large image layer and only sparse text/shapes",
+            "info" if png_exists else "medium",
+            (
+                "Sparse addressable layers; runtime uses PNG underlay when composite exists"
+                if png_exists
+                else "Slide has no large image layer and only sparse text/shapes"
+            ),
             {
                 "layerCount": len(layers),
                 "imageLayers": len(image_layers),
                 "nonEmptyTextLayers": len(non_empty_text),
                 "maxLayerArea": round(max_area, 4),
+                "pngUnderlayPolicy": png_exists,
+                "pngPath": png_path.as_posix() if png_path else None,
+            },
+        )
+
+    empty_placeholders = [
+        layer
+        for layer in layers
+        if layer.get("type") == "text"
+        and (
+            layer.get("emptyTextPlaceholder")
+            or (not str(layer.get("text") or "").strip() and not layer.get("wordArt"))
+        )
+    ]
+    if empty_placeholders:
+        add(
+            "empty_text_placeholders",
+            "info",
+            f"{len(empty_placeholders)} empty text placeholder layer(s) (hidden unless animated)",
+            {
+                "count": len(empty_placeholders),
+                "animatedCount": sum(1 for layer in empty_placeholders if layer.get("animated")),
+                "shapeIds": [layer.get("shapeId") for layer in empty_placeholders[:12]],
             },
         )
 
@@ -298,37 +327,120 @@ def collect_screen_risks(
                     },
                 )
 
-    # Hotspots
+    # Hotspots — post-resolve targets (game-manifest), not raw binary ExHyperlink labels.
     for hotspot in hotspots:
         target = hotspot.get("targetSlide")
-        if hotspot.get("action") == "hyperlink" and target == slide:
-            add(
-                "self_hyperlink",
-                "high",
-                f"Hotspot {hotspot.get('id')} hyperlinks to the same slide",
-                {"hotspotId": hotspot.get("id"), "shapeId": hotspot.get("shapeId"), "targetSlide": target},
+        action = hotspot.get("action")
+        resolve_method = hotspot.get("resolveMethod")
+        residual_status = hotspot.get("residualStatus")
+        behavior_status = hotspot.get("behaviorStatus")
+        clickable = bool(hotspot.get("clickable"))
+
+        if action == "hyperlink" and target == slide:
+            evidence = {
+                "hotspotId": hotspot.get("id"),
+                "shapeId": hotspot.get("shapeId"),
+                "targetSlide": target,
+                "clickable": clickable,
+                "resolveMethod": resolve_method,
+                "residualStatus": residual_status,
+                "behaviorStatus": behavior_status,
+            }
+            documented_residual = (
+                residual_status == "accepted_source_self"
+                or behavior_status == "documented_residual_self"
+                or (
+                    not clickable
+                    and resolve_method
+                    in {
+                        "confirmed_self_combat",
+                        "confirmed_self_label_match",
+                        "hub_image_self",
+                    }
+                )
             )
+            if documented_residual:
+                # Phase 2 residuals: binary self kept intentionally; not a playability defect.
+                add(
+                    "self_hyperlink_documented_residual",
+                    "info",
+                    f"Hotspot {hotspot.get('id')} is a documented residual self-link (non-clickable)",
+                    evidence,
+                )
+            elif clickable:
+                add(
+                    "self_hyperlink_clickable",
+                    "high",
+                    f"Hotspot {hotspot.get('id')} is still a clickable self-hyperlink after resolve",
+                    evidence,
+                )
+            else:
+                add(
+                    "self_hyperlink_unclassified",
+                    "medium",
+                    f"Hotspot {hotspot.get('id')} self-targets but is not classified as residual",
+                    evidence,
+                )
+        elif (
+            action == "hyperlink"
+            and target is not None
+            and target != slide
+            and resolve_method
+            and (
+                "self" in str(resolve_method)
+                or str(resolve_method).startswith("combat_all_self")
+                or str(resolve_method).startswith("noop_")
+            )
+        ):
+            # Promoted leave path — informational provenance only (not a defect).
+            add(
+                "self_hyperlink_promoted",
+                "info",
+                f"Hotspot {hotspot.get('id')} was binary-self (or noop) and resolves to slide {target}",
+                {
+                    "hotspotId": hotspot.get("id"),
+                    "shapeId": hotspot.get("shapeId"),
+                    "targetSlide": target,
+                    "resolveMethod": resolve_method,
+                    "clickable": clickable,
+                },
+            )
+
         bounds = hotspot.get("bounds") or {}
         area = float(bounds.get("width") or 0) * float(bounds.get("height") or 0)
-        if hotspot.get("clickable") and area <= 0:
+        if clickable and area <= 0:
             add(
                 "zero_area_hotspot",
                 "high",
                 f"Clickable hotspot {hotspot.get('id')} has zero area",
                 {"hotspotId": hotspot.get("id"), "bounds": bounds},
             )
-        if hotspot.get("behaviorStatus") in {"unresolved_media", "missing_media_binding"}:
+        if behavior_status in {"unresolved_media", "missing_media_binding"}:
             add(
                 "unresolved_media",
                 "high",
                 f"Hotspot {hotspot.get('id')} media is unresolved",
                 {
                     "hotspotId": hotspot.get("id"),
-                    "behaviorStatus": hotspot.get("behaviorStatus"),
+                    "behaviorStatus": behavior_status,
                     "mediaBindingId": hotspot.get("mediaBindingId"),
                 },
             )
-        if area > 0 and area < 0.0005 and hotspot.get("clickable"):
+        elif behavior_status in {
+            "documented_unresolved_media",
+            "documented_zero_area_media",
+        }:
+            add(
+                "media_documented_residual",
+                "info",
+                f"Hotspot {hotspot.get('id')} media residual is documented (non-clickable)",
+                {
+                    "hotspotId": hotspot.get("id"),
+                    "behaviorStatus": behavior_status,
+                    "mediaBindingId": hotspot.get("mediaBindingId"),
+                },
+            )
+        if area > 0 and area < 0.0005 and clickable:
             add(
                 "tiny_hotspot",
                 "low",
@@ -361,30 +473,50 @@ def collect_screen_risks(
                     {"instancePath": instance, "checked": [docs_rel.as_posix(), gen_rel.as_posix()]},
                 )
 
-    # Animation targets without layers
+    # Animation targets without layers (walk ExtTimeNode children + subEffects + behavior targets)
     if animation_slide:
         layer_shape_ids = {int(layer["shapeId"]) for layer in layers if layer.get("shapeId") is not None}
+        missing_anim_shapes: set[int] = set()
+
+        def consider_shape_target(shape_id: object, node_id: object, source: str) -> None:
+            if shape_id is None:
+                return
+            try:
+                shape_id_int = int(shape_id)
+            except (TypeError, ValueError):
+                return
+            if shape_id_int in layer_shape_ids or shape_id_int in missing_anim_shapes:
+                return
+            missing_anim_shapes.add(shape_id_int)
+            add(
+                "animation_target_missing_layer",
+                "high",
+                f"Animation targets shape {shape_id_int} with no layer",
+                {"shapeId": shape_id_int, "nodeId": node_id, "source": source},
+            )
 
         def walk(node: dict[str, Any]) -> None:
             for target in node.get("targets") or []:
-                shape_id = target.get("shapeId") if isinstance(target, dict) else None
-                if shape_id is None and isinstance(target, dict):
-                    # visual element targets sometimes use targetId / spid
-                    shape_id = target.get("targetId") or target.get("spid")
+                if not isinstance(target, dict):
+                    continue
+                if target.get("kind") == "sound":
+                    continue
+                shape_id = target.get("shapeId")
                 if shape_id is None:
+                    shape_id = target.get("targetId") or target.get("spid")
+                consider_shape_target(shape_id, node.get("id"), "node.targets")
+            for behavior in node.get("behaviors") or []:
+                if not isinstance(behavior, dict):
                     continue
-                try:
-                    shape_id_int = int(shape_id)
-                except (TypeError, ValueError):
-                    continue
-                if shape_id_int not in layer_shape_ids:
-                    add(
-                        "animation_target_missing_layer",
-                        "high",
-                        f"Animation targets shape {shape_id_int} with no layer",
-                        {"shapeId": shape_id_int, "nodeId": node.get("id")},
+                for target in behavior.get("targets") or []:
+                    if not isinstance(target, dict) or target.get("kind") == "sound":
+                        continue
+                    consider_shape_target(
+                        target.get("shapeId") or target.get("targetId"),
+                        node.get("id"),
+                        f"behavior.{behavior.get('kind')}",
                     )
-            for child in node.get("children") or []:
+            for child in list(node.get("subEffects") or []) + list(node.get("children") or []):
                 if isinstance(child, dict):
                     walk(child)
 

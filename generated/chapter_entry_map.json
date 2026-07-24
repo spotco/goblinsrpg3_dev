@@ -130,7 +130,7 @@
     },
     {
       "id": "root-41",
-      "title": "Can\u00c6t escape!",
+      "title": "Can't escape!",
       "entrySlide": 41,
       "entryHint": "?debug=1&slide=41",
       "subgraphSize": 12,
@@ -144,7 +144,7 @@
     },
     {
       "id": "root-55",
-      "title": "So you\u00c6ve come\u00e0",
+      "title": "So you've come\u2026",
       "entrySlide": 55,
       "entryHint": "?debug=1&slide=55",
       "subgraphSize": 118,
@@ -176,7 +176,7 @@
     },
     {
       "id": "root-70",
-      "title": "Hey ,can I have some money mister?\n(back\u00e0)\n",
+      "title": "Hey ,can I have some money mister?\n(back\u2026)\n",
       "entrySlide": 70,
       "entryHint": "?debug=1&slide=70",
       "subgraphSize": 117,
@@ -224,7 +224,7 @@
     },
     {
       "id": "root-148",
-      "title": "Magic\u00c6ed battle.",
+      "title": "Magic'ed battle.",
       "entrySlide": 148,
       "entryHint": "?debug=1&slide=148",
       "subgraphSize": 58,
@@ -359,7 +359,7 @@
       "texts": [
         "Goblin x3 Attacks!",
         "Player takes 15 damage!",
-        "Click here to continue\u00e0"
+        "Click here to continue\u2026"
       ],
       "leavePaths": [
         "non_self_hyperlink"
@@ -372,7 +372,7 @@
       "texts": [
         "Goblin x1 Attacks!",
         "Player takes 5 damage!",
-        "Click here to continue\u00e0"
+        "Click here to continue\u2026"
       ],
       "leavePaths": [
         "non_self_hyperlink"
@@ -384,7 +384,7 @@
       "entryHint": "?debug=1&slide=33",
       "texts": [
         "Felled goblin!!",
-        "Click here to continue\u00e0",
+        "Click here to continue\u2026",
         "Click here to continue\u2026"
       ],
       "leavePaths": [
@@ -398,7 +398,7 @@
       "texts": [
         "Goblin x1 Attacks!",
         "Player takes 5 damage!",
-        "Click here to continue\u00e0"
+        "Click here to continue\u2026"
       ],
       "leavePaths": [
         "non_self_hyperlink"
@@ -409,8 +409,8 @@
       "slide": 41,
       "entryHint": "?debug=1&slide=41",
       "texts": [
-        "Can\u00c6t escape!",
-        "Click here to continue\u00e0.",
+        "Can't escape!",
+        "Click here to continue\u2026.",
         "Click here to continue\u2026."
       ],
       "leavePaths": [
@@ -442,7 +442,7 @@
       "slide": 55,
       "entryHint": "?debug=1&slide=55",
       "texts": [
-        "So you\u00c6ve come\u00e0",
+        "So you've come\u2026",
         "Huh?"
       ],
       "leavePaths": [
@@ -463,7 +463,7 @@
       "slide": 70,
       "entryHint": "?debug=1&slide=70",
       "texts": [
-        "Hey ,can I have some money mister?\n(back\u00e0)\n",
+        "Hey ,can I have some money mister?\n(back\u2026)\n",
         "Hey ,can I have some money mister?\r(back\u2026)\r"
       ],
       "leavePaths": [
@@ -562,7 +562,7 @@
       "slide": 148,
       "entryHint": "?debug=1&slide=148",
       "texts": [
-        "Magic\u00c6ed battle."
+        "Magic'ed battle."
       ],
       "leavePaths": [
         "stage_click_interstitial"

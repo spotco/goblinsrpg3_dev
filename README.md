@@ -101,6 +101,10 @@ python tools/build_chapter_walks.py
 python tools/build_fidelity_reports.py
 python tools/verify_fidelity.py
 python tools/verify_runtime_traversal.py
+python tools/audit_visual_risks.py
+python tools/verify_visual_risks.py
+python tools/build_text_fidelity_report.py
+python tools/verify_text_fidelity.py
 python tools/verify_offline_playability.py
 ```
 

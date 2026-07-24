@@ -18,9 +18,12 @@ import olefile
 
 from audit_timing_tree import (
     TIMING_RECORD_NAMES,
+    parse_build_atom,
+    parse_para_build_atom,
     parse_time_animate_behavior_atom,
     parse_time_animation_value_atom,
     parse_time_condition_atom,
+    parse_time_iterate_data_atom,
     parse_time_modifier_atom,
     parse_time_node_atom,
     parse_time_sequence_data_atom,
@@ -46,6 +49,12 @@ BEHAVIOR_ATOM_TYPES = {
     61753: "scale",
     61754: "set",
     61755: "command",
+}
+
+# Nested timing containers: do not hoist their contents into the parent node.
+NESTED_TIME_CONTAINER_TYPES = {
+    61764,  # RT_TimeExtTimeNodeContainer
+    61765,  # RT_TimeSubEffectContainer
 }
 
 
@@ -81,12 +90,12 @@ def payload_for(blob: bytes, record: dict[str, object]) -> bytes:
     return blob[start : start + int(record["length"])]
 
 
-def iter_descendants(record: dict[str, object], stop_at_time_nodes: bool = False):
+def iter_descendants(record: dict[str, object], stop_at_nested_time: bool = False):
     for child in record.get("children", []):
-        if stop_at_time_nodes and child["type"] == 61764:
+        if stop_at_nested_time and int(child["type"]) in NESTED_TIME_CONTAINER_TYPES:
             continue
         yield child
-        yield from iter_descendants(child, stop_at_time_nodes=stop_at_time_nodes)
+        yield from iter_descendants(child, stop_at_nested_time=stop_at_nested_time)
 
 
 def parse_known_atom(blob: bytes, record: dict[str, object]) -> dict[str, object] | None:
@@ -94,6 +103,10 @@ def parse_known_atom(blob: bytes, record: dict[str, object]) -> dict[str, object
     rec_type = int(record["type"])
     if rec_type == 11003:
         return parse_visual_shape_atom(payload)
+    if rec_type == 11011:
+        return parse_build_atom(payload)
+    if rec_type == 11017:
+        return parse_para_build_atom(payload)
     if rec_type == 61735:
         return parse_time_node_atom(payload)
     if rec_type == 61736:
@@ -102,6 +115,8 @@ def parse_known_atom(blob: bytes, record: dict[str, object]) -> dict[str, object
         return parse_time_modifier_atom(payload)
     if rec_type == 61748:
         return parse_time_animate_behavior_atom(payload)
+    if rec_type == 61760:
+        return parse_time_iterate_data_atom(payload)
     if rec_type == 61761:
         return parse_time_sequence_data_atom(payload)
     if rec_type == 61762:
@@ -136,10 +151,10 @@ def collect_atoms(
     blob: bytes,
     record: dict[str, object],
     wanted_types: set[int],
-    stop_at_time_nodes: bool = True,
+    stop_at_nested_time: bool = True,
 ) -> list[dict[str, object]]:
     atoms = []
-    for descendant in iter_descendants(record, stop_at_time_nodes=stop_at_time_nodes):
+    for descendant in iter_descendants(record, stop_at_nested_time=stop_at_nested_time):
         if int(descendant["type"]) in wanted_types:
             atoms.append(compact_atom(blob, descendant))
     return atoms
@@ -148,10 +163,10 @@ def collect_atoms(
 def parse_behavior(blob: bytes, record: dict[str, object]) -> dict[str, object]:
     behavior_kind = BEHAVIOR_CONTAINER_TYPES.get(int(record["type"]), str(record["type"]))
     atom_types = set(BEHAVIOR_ATOM_TYPES)
-    atoms = collect_atoms(blob, record, atom_types, stop_at_time_nodes=True)
-    targets = collect_atoms(blob, record, {11003}, stop_at_time_nodes=True)
-    variants = collect_atoms(blob, record, {61762}, stop_at_time_nodes=True)
-    keyframes = collect_atoms(blob, record, {61763}, stop_at_time_nodes=True)
+    atoms = collect_atoms(blob, record, atom_types, stop_at_nested_time=True)
+    targets = collect_atoms(blob, record, {11003}, stop_at_nested_time=True)
+    variants = collect_atoms(blob, record, {61762}, stop_at_nested_time=True)
+    keyframes = collect_atoms(blob, record, {61763}, stop_at_nested_time=True)
     return {
         "kind": behavior_kind,
         "containerType": record["type"],
@@ -189,7 +204,16 @@ def normalize_targets(target_atoms: list[dict[str, object]]) -> list[dict[str, o
     return targets
 
 
-def parse_time_node_container(blob: bytes, record: dict[str, object], slide: int, next_id: list[int]) -> dict[str, object]:
+def parse_time_node_fields(
+    blob: bytes,
+    record: dict[str, object],
+    slide: int,
+    next_id: list[int],
+    *,
+    id_prefix: str,
+    kind: str,
+) -> dict[str, object]:
+    """Shared decode for ExtTimeNode and SubEffect containers."""
     node_id = next_id[0]
     next_id[0] += 1
     direct_children = record.get("children", [])
@@ -198,15 +222,16 @@ def parse_time_node_container(blob: bytes, record: dict[str, object], slide: int
         for child in direct_children
         if int(child["type"]) == 61735
     ]
-    condition_atoms = collect_atoms(blob, record, {61736}, stop_at_time_nodes=True)
-    modifier_atoms = collect_atoms(blob, record, {61737}, stop_at_time_nodes=True)
-    sequence_atoms = collect_atoms(blob, record, {61761}, stop_at_time_nodes=True)
-    target_atoms = collect_atoms(blob, record, {11003}, stop_at_time_nodes=True)
-    variant_atoms = collect_atoms(blob, record, {61762}, stop_at_time_nodes=True)
-    keyframe_atoms = collect_atoms(blob, record, {61763}, stop_at_time_nodes=True)
+    condition_atoms = collect_atoms(blob, record, {61736}, stop_at_nested_time=True)
+    modifier_atoms = collect_atoms(blob, record, {61737}, stop_at_nested_time=True)
+    sequence_atoms = collect_atoms(blob, record, {61761}, stop_at_nested_time=True)
+    iterate_atoms = collect_atoms(blob, record, {61760}, stop_at_nested_time=True)
+    target_atoms = collect_atoms(blob, record, {11003}, stop_at_nested_time=True)
+    variant_atoms = collect_atoms(blob, record, {61762}, stop_at_nested_time=True)
+    keyframe_atoms = collect_atoms(blob, record, {61763}, stop_at_nested_time=True)
     behavior_containers = [
         parse_behavior(blob, descendant)
-        for descendant in iter_descendants(record, stop_at_time_nodes=True)
+        for descendant in iter_descendants(record, stop_at_nested_time=True)
         if int(descendant["type"]) in BEHAVIOR_CONTAINER_TYPES
     ]
     child_nodes = [
@@ -214,28 +239,98 @@ def parse_time_node_container(blob: bytes, record: dict[str, object], slide: int
         for child in direct_children
         if int(child["type"]) == 61764
     ]
+    sub_effects = [
+        parse_sub_effect_container(blob, child, slide, next_id)
+        for child in direct_children
+        if int(child["type"]) == 61765
+    ]
     return {
-        "id": f"s{slide:03d}-tn{node_id:04d}",
+        "id": f"s{slide:03d}-{id_prefix}{node_id:04d}",
         "slide": slide,
+        "kind": kind,
         "recordOffset": record["offset"],
         "timeNode": time_node_atoms[0] if time_node_atoms else None,
         "conditions": condition_atoms,
         "modifiers": modifier_atoms,
         "sequence": sequence_atoms[0] if sequence_atoms else None,
+        "iterate": (iterate_atoms[0].get("parsed") if iterate_atoms else None),
         "targets": normalize_targets(target_atoms),
         "behaviors": behavior_containers,
         "variants": variant_atoms,
         "keyframes": keyframe_atoms,
+        "subEffects": sub_effects,
         "children": child_nodes,
     }
 
 
+def parse_time_node_container(
+    blob: bytes, record: dict[str, object], slide: int, next_id: list[int]
+) -> dict[str, object]:
+    return parse_time_node_fields(
+        blob, record, slide, next_id, id_prefix="tn", kind="extTimeNode"
+    )
+
+
+def parse_sub_effect_container(
+    blob: bytes, record: dict[str, object], slide: int, next_id: list[int]
+) -> dict[str, object]:
+    return parse_time_node_fields(
+        blob, record, slide, next_id, id_prefix="se", kind="subEffect"
+    )
+
+
 def flatten_nodes(nodes: list[dict[str, object]]) -> list[dict[str, object]]:
+    """Flatten ExtTimeNode children only (subEffects stay nested)."""
     flat = []
     for node in nodes:
         flat.append(node)
         flat.extend(flatten_nodes(node.get("children", [])))
     return flat
+
+
+def walk_all_nodes(nodes: list[dict[str, object]]):
+    """Yield every ExtTimeNode and SubEffect in document order."""
+    for node in nodes:
+        yield node
+        yield from walk_all_nodes(node.get("subEffects") or [])
+        yield from walk_all_nodes(node.get("children") or [])
+
+
+def find_records(records: list[dict[str, object]], record_type: int) -> list[dict[str, object]]:
+    found: list[dict[str, object]] = []
+    for record in records:
+        if int(record["type"]) == record_type:
+            found.append(record)
+        found.extend(find_records(record.get("children") or [], record_type))
+    return found
+
+
+def parse_build_list(blob: bytes, tree: list[dict[str, object]]) -> list[dict[str, object]]:
+    builds: list[dict[str, object]] = []
+    for build_list in find_records(tree, 11010):
+        for child in build_list.get("children") or []:
+            if int(child["type"]) != 11016:
+                continue
+            build_atom = None
+            para_atom = None
+            for atom_rec in child.get("children") or []:
+                if int(atom_rec["type"]) == 11011:
+                    build_atom = compact_atom(blob, atom_rec).get("parsed")
+                elif int(atom_rec["type"]) == 11017:
+                    para_atom = compact_atom(blob, atom_rec).get("parsed")
+            if not isinstance(build_atom, dict) and not isinstance(para_atom, dict):
+                continue
+            entry: dict[str, object] = {
+                "kind": "paraBuild",
+                "offset": child["offset"],
+            }
+            if isinstance(build_atom, dict):
+                entry["build"] = build_atom
+                entry["shapeId"] = build_atom.get("shapeId")
+            if isinstance(para_atom, dict):
+                entry["paraBuild"] = para_atom
+            builds.append(entry)
+    return builds
 
 
 def direct_time_node_containers(records: list[dict[str, object]]) -> list[dict[str, object]]:
@@ -265,10 +360,15 @@ def main() -> None:
     modifier_types: Counter[int] = Counter()
     animate_calc_modes: Counter[int] = Counter()
     behavior_kinds: Counter[str] = Counter()
+    para_build_kinds: Counter[str] = Counter()
+    iterate_kinds: Counter[str] = Counter()
     shape_targets = set()
     sound_targets = set()
     unresolved_shape_targets = []
     total_nodes = 0
+    total_sub_effects = 0
+    total_builds = 0
+    total_iterate = 0
 
     with olefile.OleFileIO(args.source) as ole:
         ppt = ole.openstream("PowerPoint Document").read()
@@ -288,11 +388,25 @@ def main() -> None:
                 parse_time_node_container(blob, node, slide, next_id)
                 for node in direct_time_node_containers(tree)
             ]
+            builds = parse_build_list(blob, tree)
+            total_builds += len(builds)
+            for build in builds:
+                para = build.get("paraBuild") or {}
+                if isinstance(para, dict):
+                    name = str(para.get("paraBuildName") or "unknown")
+                    para_build_kinds[name] += 1
             flat_nodes = flatten_nodes(roots)
             total_nodes += len(flat_nodes)
             for rec_type, count in flat_types.items():
                 record_counts[int(rec_type)] += count
-            for node in flat_nodes:
+            for node in walk_all_nodes(roots):
+                if node.get("kind") == "subEffect":
+                    total_sub_effects += 1
+                if node.get("iterate"):
+                    total_iterate += 1
+                    iterate = node["iterate"]
+                    if isinstance(iterate, dict):
+                        iterate_kinds[str(iterate.get("iterateTypeName") or "unknown")] += 1
                 for condition in node.get("conditions", []):
                     parsed = condition.get("parsed", {})
                     if isinstance(parsed, dict):
@@ -306,6 +420,16 @@ def main() -> None:
                     for atom in behavior.get("atoms", []):
                         if atom.get("type") == 61748 and isinstance(atom.get("parsed"), dict):
                             animate_calc_modes[int(atom["parsed"].get("calcMode", -1))] += 1
+                    for target in behavior.get("targets", []):
+                        if target.get("kind") == "shape":
+                            shape_id = int(target["shapeId"])
+                            shape_targets.add((slide, shape_id))
+                            if (slide, shape_id) not in known_shapes:
+                                unresolved_shape_targets.append(
+                                    {"slide": slide, "shapeId": shape_id}
+                                )
+                        elif target.get("kind") == "sound":
+                            sound_targets.add((slide, int(target["soundId"])))
                 for target in node.get("targets", []):
                     if target.get("kind") == "shape":
                         shape_id = int(target["shapeId"])
@@ -323,6 +447,7 @@ def main() -> None:
                         TIMING_RECORD_NAMES.get(rec_type, str(rec_type)): count
                         for rec_type, count in sorted(flat_types.items())
                     },
+                    "builds": builds,
                     "rootTimeNodes": roots,
                 }
             )
@@ -334,6 +459,9 @@ def main() -> None:
         "summary": {
             "slidesWithAnimations": len(slides),
             "timeNodeContainers": total_nodes,
+            "subEffectContainers": total_sub_effects,
+            "paraBuildCount": total_builds,
+            "iterateDataCount": total_iterate,
             "recordCounts": {
                 TIMING_RECORD_NAMES.get(rec_type, str(rec_type)): count
                 for rec_type, count in sorted(record_counts.items())
@@ -342,6 +470,8 @@ def main() -> None:
             "modifierTypes": dict(sorted(modifier_types.items())),
             "animateCalcModes": dict(sorted(animate_calc_modes.items())),
             "behaviorKinds": dict(sorted(behavior_kinds.items())),
+            "paraBuildKinds": dict(sorted(para_build_kinds.items())),
+            "iterateKinds": dict(sorted(iterate_kinds.items())),
             "shapeTargets": len(shape_targets),
             "soundTargets": len(sound_targets),
             "unresolvedShapeTargets": unresolved_shape_targets,
@@ -351,7 +481,9 @@ def main() -> None:
     args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(
         f"Wrote {args.output} with {len(slides)} animated slides, "
-        f"{total_nodes} time nodes, {len(shape_targets)} shape targets"
+        f"{total_nodes} time nodes, {total_sub_effects} subEffects, "
+        f"{total_builds} paraBuilds, {total_iterate} iterate, "
+        f"{len(shape_targets)} shape targets"
     )
 
 

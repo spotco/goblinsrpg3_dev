@@ -51,12 +51,17 @@ def node_runs_sequential_children(node: dict[str, Any]) -> bool:
 
 def subtree_duration(node: dict[str, Any]) -> float:
     children = node.get("children") or []
-    if not children:
+    sub_effects = node.get("subEffects") or []
+    # Sub-effects run with the parent (parallel subordinate tracks).
+    nested = list(children) + list(sub_effects)
+    if not nested:
         return node_delay(node) + node_duration(node)
-    if node_runs_sequential_children(node):
-        return node_delay(node) + node_duration(node) + sum(subtree_duration(c) for c in children)
-    child_max = max(subtree_duration(c) for c in children)
-    return node_delay(node) + max(node_duration(node), child_max)
+    if node_runs_sequential_children(node) and children:
+        child_total = sum(subtree_duration(c) for c in children)
+        sub_max = max((subtree_duration(s) for s in sub_effects), default=0.0)
+        return node_delay(node) + node_duration(node) + max(child_total, sub_max)
+    nested_max = max(subtree_duration(c) for c in nested)
+    return node_delay(node) + max(node_duration(node), nested_max)
 
 
 def slide_animation_timeline(animation_slide: dict[str, Any] | None) -> dict[str, Any]:
@@ -83,6 +88,7 @@ def count_on_next(animation_slide: dict[str, Any] | None) -> int:
             parsed = condition.get("parsed") or {}
             if parsed.get("triggerEvent") in (9, 10):
                 count += 1
+        stack.extend(node.get("subEffects") or [])
         stack.extend(node.get("children") or [])
     return count
 
@@ -97,5 +103,45 @@ def inventory_behaviors(animation_slide: dict[str, Any] | None) -> dict[str, int
         for behavior in node.get("behaviors") or []:
             kind = str(behavior.get("kind") or behavior.get("type") or "unknown")
             counts[kind] = counts.get(kind, 0) + 1
+        stack.extend(node.get("subEffects") or [])
         stack.extend(node.get("children") or [])
     return counts
+
+
+def count_sub_effects(animation_slide: dict[str, Any] | None) -> int:
+    if not animation_slide:
+        return 0
+    count = 0
+    stack = list(animation_slide.get("rootTimeNodes") or [])
+    while stack:
+        node = stack.pop()
+        subs = node.get("subEffects") or []
+        count += len(subs)
+        stack.extend(subs)
+        stack.extend(node.get("children") or [])
+    return count
+
+
+def inventory_builds(animation_slide: dict[str, Any] | None) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    if not animation_slide:
+        return counts
+    for build in animation_slide.get("builds") or []:
+        para = build.get("paraBuild") or {}
+        name = str(para.get("paraBuildName") or "unknown")
+        counts[name] = counts.get(name, 0) + 1
+    return counts
+
+
+def count_iterate(animation_slide: dict[str, Any] | None) -> int:
+    if not animation_slide:
+        return 0
+    count = 0
+    stack = list(animation_slide.get("rootTimeNodes") or [])
+    while stack:
+        node = stack.pop()
+        if node.get("iterate"):
+            count += 1
+        stack.extend(node.get("subEffects") or [])
+        stack.extend(node.get("children") or [])
+    return count

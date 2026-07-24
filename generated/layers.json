@@ -54,6 +54,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -141,6 +142,7 @@
           "type": "text",
           "text": "Presents",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -290,6 +292,8 @@
           "type": "text",
           "text": "GOBLINSRPG3",
           "wordArt": true,
+          "emptyTextPlaceholder": false,
+          "wordArtGeometry": "TEXT_DEFLATE",
           "geoText": {
             "unicode": "GOBLINSRPG3",
             "fontFamily": "Impact",
@@ -402,6 +406,7 @@
           "type": "text",
           "text": "Click here to start",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -612,6 +617,7 @@
           "type": "text",
           "text": "It was a long lived peace in the land",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -697,8 +703,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Until\u00e0.",
+          "text": "Until\u2026.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -737,7 +744,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 7,
-              "text": "Until\u00e0.",
+              "text": "Until\u2026.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -784,8 +791,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "100 to 150 years ago\u00e0",
+          "text": "100 to 150 years ago\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -824,7 +832,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 21,
-              "text": "100 to 150 years ago\u00e0",
+              "text": "100 to 150 years ago\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -985,6 +993,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -1070,8 +1079,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "And then the goblins invaded\u00e0",
+          "text": "And then the goblins invaded\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -1110,7 +1120,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 29,
-              "text": "And then the goblins invaded\u00e0",
+              "text": "And then the goblins invaded\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -1219,8 +1229,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "They Burned an pillaged the countryside\u00e0",
+          "text": "They Burned an pillaged the countryside\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -1259,7 +1270,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 40,
-              "text": "They Burned an pillaged the countryside\u00e0",
+              "text": "They Burned an pillaged the countryside\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -1308,6 +1319,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -1395,6 +1407,7 @@
           "type": "text",
           "text": "And there seemed no end",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -1542,8 +1555,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Until the \u00f4hero of time\u00f6 appeared.",
+          "text": "Until the \u201chero of time\u201d appeared.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -1582,7 +1596,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 34,
-              "text": "Until the \u00f4hero of time\u00f6 appeared.",
+              "text": "Until the \u201chero of time\u201d appeared.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -1693,6 +1707,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -1780,6 +1795,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -1867,6 +1883,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -1954,6 +1971,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -2041,6 +2059,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -2128,6 +2147,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -2215,6 +2235,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -2300,8 +2321,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "The hero of time ded them all with fell run of his spear.\n(don\u00c6t ask)",
+          "text": "The hero of time ded them all with fell run of his spear.\n(don't ask)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -2372,7 +2394,7 @@
               "runIndex": 0,
               "start": 58,
               "length": 11,
-              "text": "(don\u00c6t ask)",
+              "text": "(don't ask)",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -2483,6 +2505,7 @@
           "type": "text",
           "text": "Peace was restored once more.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -2568,8 +2591,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "This is 100 to 150 years later\u00e0",
+          "text": "This is 100 to 150 years later\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -2608,7 +2632,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 31,
-              "text": "This is 100 to 150 years later\u00e0",
+              "text": "This is 100 to 150 years later\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -2719,6 +2743,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -2806,6 +2831,7 @@
           "type": "text",
           "text": "You live in the small, quiet village of New Jersey.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -2893,6 +2919,7 @@
           "type": "text",
           "text": "HINT: Click on something to talk/examine",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -3171,8 +3198,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Hello! Uh, I mean\u00e0 RUFF RUFF!!",
+          "text": "Hello! Uh, I mean\u2026 RUFF RUFF!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -3211,7 +3239,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 30,
-              "text": "Hello! Uh, I mean\u00e0 RUFF RUFF!!",
+              "text": "Hello! Uh, I mean\u2026 RUFF RUFF!!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -3280,6 +3308,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -3620,8 +3649,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Okay, Okay. I give. I\u00c6m a talking dog.",
+          "text": "Okay, Okay. I give. I'm a talking dog.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -3660,7 +3690,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 38,
-              "text": "Okay, Okay. I give. I\u00c6m a talking dog.",
+              "text": "Okay, Okay. I give. I'm a talking dog.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -3707,8 +3737,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "I\u00c6ll give you this if you leave me alone.",
+          "text": "I'll give you this if you leave me alone.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -3747,7 +3778,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 41,
-              "text": "I\u00c6ll give you this if you leave me alone.",
+              "text": "I'll give you this if you leave me alone.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -3858,6 +3889,7 @@
           "type": "text",
           "text": "Got the sword!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -4168,6 +4200,7 @@
           "type": "text",
           "text": "AAA!!! The goblins are attacking!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -4366,6 +4399,8 @@
           "type": "text",
           "text": "Yip!",
           "wordArt": true,
+          "emptyTextPlaceholder": false,
+          "wordArtGeometry": "TEXT_CURVE_UP",
           "geoText": {
             "unicode": "Yip!",
             "fontFamily": "Arial Black",
@@ -4558,6 +4593,7 @@
           "type": "text",
           "text": "(Darn strait)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -4918,6 +4954,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5005,6 +5042,7 @@
           "type": "text",
           "text": "Goblin x3 attacked!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5112,6 +5150,7 @@
           "type": "text",
           "text": "-Attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5219,6 +5258,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5304,8 +5344,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "I\u00c6m bored\u00e0",
+          "text": "I'm bored\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5344,7 +5385,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 10,
-              "text": "I\u00c6m bored\u00e0",
+              "text": "I'm bored\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -5555,6 +5596,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5640,8 +5682,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Goblin fled of boredom\u00e0",
+          "text": "Goblin fled of boredom\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5680,7 +5723,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Goblin fled of boredom\u00e0",
+              "text": "Goblin fled of boredom\u2026",
               "fontFamily": "Arial",
               "fontSize": 24.0,
               "bold": false,
@@ -5749,6 +5792,7 @@
           "type": "text",
           "text": "-Attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5856,6 +5900,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -5943,6 +5988,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -6240,8 +6286,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "CAN\u00c6T ESCAPE!!!",
+          "text": "CAN'T ESCAPE!!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -6280,7 +6327,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 15,
-              "text": "CAN\u00c6T ESCAPE!!!",
+              "text": "CAN'T ESCAPE!!!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -6347,8 +6394,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -6387,7 +6435,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -6696,8 +6744,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "CAN\u00c6T ESCAPE!!",
+          "text": "CAN'T ESCAPE!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -6736,7 +6785,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 14,
-              "text": "CAN\u00c6T ESCAPE!!",
+              "text": "CAN'T ESCAPE!!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -6803,8 +6852,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here  to continue\u00e0",
+          "text": "Click here  to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -6843,7 +6893,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 24,
-              "text": "Click here  to continue\u00e0",
+              "text": "Click here  to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -7254,6 +7304,7 @@
           "type": "text",
           "text": "Felled goblin!!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -7359,8 +7410,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -7399,7 +7451,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -7710,6 +7762,7 @@
           "type": "text",
           "text": "Felled goblin!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -7815,8 +7868,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -7855,7 +7909,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -8066,6 +8120,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -8173,6 +8228,7 @@
           "type": "text",
           "text": "-Attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -8280,6 +8336,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -8367,6 +8424,7 @@
           "type": "text",
           "text": "15",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -8566,6 +8624,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -8673,6 +8732,7 @@
           "type": "text",
           "text": "-Attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -8780,6 +8840,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -8867,6 +8928,7 @@
           "type": "text",
           "text": "15",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -9216,6 +9278,7 @@
           "type": "text",
           "text": "Goblin x3 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -9303,6 +9366,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -9408,8 +9472,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -9448,7 +9513,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -9709,6 +9774,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -9816,6 +9882,7 @@
           "type": "text",
           "text": "-Attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -9923,6 +9990,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -10010,6 +10078,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -10097,6 +10166,7 @@
           "type": "text",
           "text": "10",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -10396,6 +10466,7 @@
           "type": "text",
           "text": "Goblin x2 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -10483,6 +10554,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -10588,8 +10660,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -10628,7 +10701,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -10839,6 +10912,7 @@
           "type": "text",
           "text": "Goblin x1 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -10926,6 +11000,7 @@
           "type": "text",
           "text": "Player takes 5 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -11031,8 +11106,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -11071,7 +11147,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -11182,6 +11258,7 @@
           "type": "text",
           "text": "10",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -11289,6 +11366,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -11396,6 +11474,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -11743,8 +11822,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Can\u00c6t escape!",
+          "text": "Can't escape!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -11783,7 +11863,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 13,
-              "text": "Can\u00c6t escape!",
+              "text": "Can't escape!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -11850,8 +11930,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0.",
+          "text": "Click here to continue\u2026.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -11890,7 +11971,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 24,
-              "text": "Click here to continue\u00e0.",
+              "text": "Click here to continue\u2026.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -12051,6 +12132,7 @@
           "type": "text",
           "text": "Goblin releases Fury!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -12188,6 +12270,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -12275,6 +12358,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -12362,6 +12446,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -12449,6 +12534,7 @@
           "type": "text",
           "text": "Player takes 10 damage.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -12554,8 +12640,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -12594,7 +12681,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -12655,6 +12742,7 @@
           "type": "text",
           "text": "DED!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -12792,6 +12880,7 @@
           "type": "text",
           "text": "You ded.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -12879,6 +12968,7 @@
           "type": "text",
           "text": "Press esc to exit.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -13289,6 +13379,7 @@
           "type": "text",
           "text": "Goblin x3 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -13376,6 +13467,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -13481,8 +13573,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -13521,7 +13614,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -13782,6 +13875,7 @@
           "type": "text",
           "text": "Goblin x2 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -13869,6 +13963,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -13974,8 +14069,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -14014,7 +14110,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -14325,6 +14421,7 @@
           "type": "text",
           "text": "Felled goblin!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -14446,8 +14543,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -14486,7 +14584,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -14697,6 +14795,7 @@
           "type": "text",
           "text": "Goblin x1 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -14784,6 +14883,7 @@
           "type": "text",
           "text": "Player takes 5 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -14889,8 +14989,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -14929,7 +15030,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -15240,6 +15341,7 @@
           "type": "text",
           "text": "Felled goblin!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -15345,8 +15447,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -15385,7 +15488,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -15707,6 +15810,7 @@
           "type": "text",
           "text": "HAHAHAHA!!\nYAH!! TAKE THAT STUPID GOBLINS!!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -16094,8 +16198,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0.",
+          "text": "Click here to continue\u2026.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -16134,7 +16239,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 24,
-              "text": "Click here to continue\u00e0.",
+              "text": "Click here to continue\u2026.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -16393,8 +16498,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Can\u00c6t escape!",
+          "text": "Can't escape!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -16433,7 +16539,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 13,
-              "text": "Can\u00c6t escape!",
+              "text": "Can't escape!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -16500,8 +16606,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0.",
+          "text": "Click here to continue\u2026.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -16540,7 +16647,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 24,
-              "text": "Click here to continue\u00e0.",
+              "text": "Click here to continue\u2026.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -16751,6 +16858,7 @@
           "type": "text",
           "text": "Goblin x1 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -16838,6 +16946,7 @@
           "type": "text",
           "text": "Player takes 5 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -16943,8 +17052,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -16983,7 +17093,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -17094,6 +17204,7 @@
           "type": "text",
           "text": "20",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -17201,6 +17312,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -17308,6 +17420,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -17707,6 +17820,7 @@
           "type": "text",
           "text": "Felled goblin!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -17812,8 +17926,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -17852,7 +17967,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -18111,8 +18226,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Can\u00c6t escape!",
+          "text": "Can't escape!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -18151,7 +18267,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 13,
-              "text": "Can\u00c6t escape!",
+              "text": "Can't escape!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -18218,8 +18334,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0.",
+          "text": "Click here to continue\u2026.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -18258,7 +18375,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 24,
-              "text": "Click here to continue\u00e0.",
+              "text": "Click here to continue\u2026.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -18469,6 +18586,7 @@
           "type": "text",
           "text": "Goblin x1 Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -18556,6 +18674,7 @@
           "type": "text",
           "text": "Player takes 5 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -18661,8 +18780,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -18701,7 +18821,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -18862,6 +18982,7 @@
           "type": "text",
           "text": "So you flee like crazy",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -19361,6 +19482,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -19448,6 +19570,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -19533,8 +19656,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "\u00f4You are here\u00f6",
+          "text": "\u201cYou are here\u201d",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -19573,7 +19697,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 14,
-              "text": "\u00f4You are here\u00f6",
+              "text": "\u201cYou are here\u201d",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -19684,6 +19808,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -19833,6 +19958,7 @@
           "type": "text",
           "text": "5",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -19970,6 +20096,7 @@
           "type": "text",
           "text": "Ubergoblin attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20057,6 +20184,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20164,6 +20292,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20271,6 +20400,7 @@
           "type": "text",
           "text": "-LIMIT",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20378,6 +20508,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20627,6 +20758,7 @@
           "type": "text",
           "text": "Ubergoblin attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20714,6 +20846,7 @@
           "type": "text",
           "text": "Player takes 15 damage.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20799,8 +20932,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Player is dead\u00e0\u00e0\u00e0\u00e0\u00e0..",
+          "text": "Player is dead\u2026\u2026\u2026\u2026\u2026..",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -20839,7 +20973,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 21,
-              "text": "Player is dead\u00e0\u00e0\u00e0\u00e0\u00e0..",
+              "text": "Player is dead\u2026\u2026\u2026\u2026\u2026..",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -20950,6 +21084,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -21035,8 +21170,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "\u00e0\u00e0\u00e0",
+          "text": "\u2026\u2026\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -21075,7 +21211,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 3,
-              "text": "\u00e0\u00e0\u00e0",
+              "text": "\u2026\u2026\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -21124,6 +21260,7 @@
           "type": "text",
           "text": "Am I dead?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -21209,8 +21346,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "\u00f4We need to talk, come to my room. It\u00c6s the one to the left.\u00f6",
+          "text": "\u201cWe need to talk, come to my room. It's the one to the left.\u201d",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -21249,7 +21387,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 61,
-              "text": "\u00f4We need to talk, come to my room. It\u00c6s the one to the left.\u00f6",
+              "text": "\u201cWe need to talk, come to my room. It's the one to the left.\u201d",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -21298,6 +21436,7 @@
           "type": "text",
           "text": "Huh what the heck?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -21447,6 +21586,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -21534,6 +21674,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -21641,6 +21782,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -21810,6 +21952,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -21917,6 +22060,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22024,6 +22168,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22173,6 +22318,7 @@
           "type": "text",
           "text": "ELVIS FOREVER!!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22289,6 +22435,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22376,6 +22523,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22463,6 +22611,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22632,6 +22781,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22739,6 +22889,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -22846,6 +22997,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23015,6 +23167,7 @@
           "type": "text",
           "text": "OCCUPIED!!\n(back)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23196,6 +23349,7 @@
           "type": "text",
           "text": "Got the Magic sword!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23303,6 +23457,7 @@
           "type": "text",
           "text": "(Back)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23449,8 +23604,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "You trash digger\u00e0.",
+          "text": "You trash digger\u2026.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23489,7 +23645,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 18,
-              "text": "You trash digger\u00e0.",
+              "text": "You trash digger\u2026.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -23550,6 +23706,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -23635,8 +23792,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "So you\u00c6ve come\u00e0",
+          "text": "So you've come\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23675,7 +23833,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 15,
-              "text": "So you\u00c6ve come\u00e0",
+              "text": "So you've come\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -23724,6 +23882,7 @@
           "type": "text",
           "text": "Huh?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23871,8 +24030,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "I\u00c6ve been waiting.",
+          "text": "I've been waiting.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -23911,7 +24071,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 18,
-              "text": "I\u00c6ve been waiting.",
+              "text": "I've been waiting.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -23980,6 +24140,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24067,6 +24228,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24152,8 +24314,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Don\u00c6t just stand there\u00e0",
+          "text": "Don't just stand there\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24192,7 +24355,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Don\u00c6t just stand there\u00e0",
+              "text": "Don't just stand there\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -24253,6 +24416,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -24340,6 +24504,7 @@
           "type": "text",
           "text": "Who are you?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24425,8 +24590,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Don\u00c6t you know?",
+          "text": "Don't you know?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24465,7 +24631,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 15,
-              "text": "Don\u00c6t you know?",
+              "text": "Don't you know?",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -24512,8 +24678,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Uhhhhh\u00e0\u00e0\u00e0..Not really\u00e0",
+          "text": "Uhhhhh\u2026\u2026\u2026..Not really\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24552,7 +24719,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 11,
-              "text": "Uhhhhh\u00e0\u00e0\u00e0..",
+              "text": "Uhhhhh\u2026\u2026\u2026..",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -24566,7 +24733,7 @@
               "runIndex": 1,
               "start": 11,
               "length": 11,
-              "text": "Not really\u00e0",
+              "text": "Not really\u2026",
               "fontFamily": "Arial",
               "fontSize": 12.0,
               "bold": false,
@@ -24629,6 +24796,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24714,8 +24882,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "\u00e0\u00e0\u00e0",
+          "text": "\u2026\u2026\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24754,7 +24923,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 3,
-              "text": "\u00e0\u00e0\u00e0",
+              "text": "\u2026\u2026\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -24815,6 +24984,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -24900,8 +25070,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Okay, well, that doesn\u00c6t really matter",
+          "text": "Okay, well, that doesn't really matter",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -24940,7 +25111,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 38,
-              "text": "Okay, well, that doesn\u00c6t really matter",
+              "text": "Okay, well, that doesn't really matter",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -24987,8 +25158,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "You\u00c6re really special\u00e0",
+          "text": "You're really special\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25027,7 +25199,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 22,
-              "text": "You\u00c6re really special\u00e0",
+              "text": "You're really special\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -25074,8 +25246,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "I\u00c6ve actually called you here for a reason\u00e0",
+          "text": "I've actually called you here for a reason\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25114,7 +25287,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 43,
-              "text": "I\u00c6ve actually called you here for a reason\u00e0",
+              "text": "I've actually called you here for a reason\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -25163,6 +25336,7 @@
           "type": "text",
           "text": "And what would that be?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25250,6 +25424,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25397,8 +25572,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "We believe you\u00c6re the\n\u00f4Hero of time\u00f6",
+          "text": "We believe you're the\n\u201cHero of time\u201d",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25455,7 +25631,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 22,
-              "text": "We believe you\u00c6re the\r",
+              "text": "We believe you're the\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -25469,7 +25645,7 @@
               "runIndex": 0,
               "start": 22,
               "length": 14,
-              "text": "\u00f4Hero of time\u00f6",
+              "text": "\u201cHero of time\u201d",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -25530,6 +25706,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25667,6 +25844,7 @@
           "type": "text",
           "text": "Far, Far to the south, There is a tower,",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25754,6 +25932,7 @@
           "type": "text",
           "text": "Which is believed to be the tomb of the last hero.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25839,8 +26018,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "There you will find your destiny\u00e0",
+          "text": "There you will find your destiny\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -25879,7 +26059,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 33,
-              "text": "There you will find your destiny\u00e0",
+              "text": "There you will find your destiny\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -25940,6 +26120,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -26025,8 +26206,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Why does this draw so heavily from Zelda\u00e0?",
+          "text": "Why does this draw so heavily from Zelda\u2026?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -26065,7 +26247,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 42,
-              "text": "Why does this draw so heavily from Zelda\u00e0?",
+              "text": "Why does this draw so heavily from Zelda\u2026?",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -26114,6 +26296,7 @@
           "type": "text",
           "text": "NOTE FROM SHINY: LETS SEE YOU COME UP WITH ANYTHING BETTER!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -26263,6 +26446,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -26350,6 +26534,7 @@
           "type": "text",
           "text": "You must defeat them before they take over the world!!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -26499,6 +26684,7 @@
           "type": "text",
           "text": "Take over the world!!!!!!!!!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -26648,6 +26834,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -26733,8 +26920,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "She sure gets her point made\u00e0",
+          "text": "She sure gets her point made\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -26773,7 +26961,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 29,
-              "text": "She sure gets her point made\u00e0",
+              "text": "She sure gets her point made\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -26884,6 +27072,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -26991,6 +27180,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -27098,6 +27288,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -27247,6 +27438,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -27416,6 +27608,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -27523,6 +27716,7 @@
           "type": "text",
           "text": "out",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -27630,6 +27824,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -27737,6 +27932,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -27844,6 +28040,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -27991,8 +28188,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "\u00e0\n",
+          "text": "\u2026\n",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -28031,7 +28229,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 2,
-              "text": "\u00e0\r",
+              "text": "\u2026\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -28162,6 +28360,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -28269,6 +28468,7 @@
           "type": "text",
           "text": "out",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -28376,6 +28576,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -28483,6 +28684,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -28650,8 +28852,9 @@
             }
           ],
           "type": "text",
-          "text": "Hey ,can I have some money mister?\n(back\u00e0)\n",
+          "text": "Hey ,can I have some money mister?\n(back\u2026)\n",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -28722,7 +28925,7 @@
               "runIndex": 0,
               "start": 35,
               "length": 7,
-              "text": "(back\u00e0)",
+              "text": "(back\u2026)",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -28865,8 +29068,9 @@
             }
           ],
           "type": "text",
-          "text": "Hey ,can I have some money, mister?\n(back\u00e0)\n",
+          "text": "Hey ,can I have some money, mister?\n(back\u2026)\n",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -28937,7 +29141,7 @@
               "runIndex": 0,
               "start": 36,
               "length": 7,
-              "text": "(back\u00e0)",
+              "text": "(back\u2026)",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -29082,6 +29286,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -29189,6 +29394,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -29296,6 +29502,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -29465,6 +29672,7 @@
           "type": "text",
           "text": "Help me!!\n\n(back)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -29739,6 +29947,7 @@
           "type": "text",
           "text": "Got the glass!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -29846,6 +30055,7 @@
           "type": "text",
           "text": "(back)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -29995,6 +30205,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -30144,6 +30355,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -30293,6 +30505,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -30442,6 +30655,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -30641,6 +30855,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -30728,6 +30943,7 @@
           "type": "text",
           "text": "Mr. T attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -30835,6 +31051,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -30942,6 +31159,7 @@
           "type": "text",
           "text": "-LIMIT",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31049,6 +31267,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31298,6 +31517,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31385,6 +31605,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31472,6 +31693,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31559,6 +31781,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31646,6 +31869,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31733,6 +31957,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31820,6 +32045,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31907,6 +32133,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -31994,6 +32221,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32081,6 +32309,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32168,6 +32397,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32255,6 +32485,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32342,6 +32573,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32429,6 +32661,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32516,6 +32749,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32603,6 +32837,7 @@
           "type": "text",
           "text": "Felled Mr. T!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32702,6 +32937,7 @@
           "type": "text",
           "text": "Gained a level",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32839,6 +33075,7 @@
           "type": "text",
           "text": "Gained a level!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -32926,6 +33163,7 @@
           "type": "text",
           "text": "-Hp +10\n-Mp +10",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -33106,6 +33344,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -33193,6 +33432,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -33300,6 +33540,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -33549,6 +33790,7 @@
           "type": "text",
           "text": "Fled successfully!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -33636,6 +33878,7 @@
           "type": "text",
           "text": "I pity the foo..",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -33741,8 +33984,9 @@
             }
           ],
           "type": "text",
-          "text": "Click to continue\u00e0",
+          "text": "Click to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -33781,7 +34025,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 18,
-              "text": "Click to continue\u00e0",
+              "text": "Click to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -34092,6 +34336,7 @@
           "type": "text",
           "text": "Mr. T takes 7 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -34199,6 +34444,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -34348,6 +34594,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -34455,6 +34702,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -34704,6 +34952,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -34791,6 +35040,8 @@
           "type": "text",
           "text": "BAM!!",
           "wordArt": true,
+          "emptyTextPlaceholder": false,
+          "wordArtGeometry": "TEXT_PLAIN_TEXT",
           "geoText": {
             "unicode": "BAM!!",
             "fontFamily": "Arial Black",
@@ -35095,6 +35346,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -35202,6 +35454,7 @@
           "type": "text",
           "text": "Click here to continue.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -35401,6 +35654,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -35508,6 +35762,7 @@
           "type": "text",
           "text": "-LIMIT",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -35615,6 +35870,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -35722,6 +35978,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -35809,6 +36066,7 @@
           "type": "text",
           "text": "10",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -36158,6 +36416,7 @@
           "type": "text",
           "text": "Mr. T takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -36281,6 +36540,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -36530,6 +36790,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -36617,6 +36878,8 @@
           "type": "text",
           "text": "BAM!!",
           "wordArt": true,
+          "emptyTextPlaceholder": false,
+          "wordArtGeometry": "TEXT_PLAIN_TEXT",
           "geoText": {
             "unicode": "BAM!!",
             "fontFamily": "Arial Black",
@@ -36921,6 +37184,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -37028,6 +37292,7 @@
           "type": "text",
           "text": "Click here to continue.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -37177,6 +37442,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -37376,6 +37642,7 @@
           "type": "text",
           "text": "Slug attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -37463,6 +37730,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -37570,6 +37838,7 @@
           "type": "text",
           "text": "-Attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -37677,6 +37946,7 @@
           "type": "text",
           "text": "-LIMIT",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -37784,6 +38054,7 @@
           "type": "text",
           "text": "-Flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -37933,6 +38204,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -38040,6 +38312,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -38239,6 +38512,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -38346,6 +38620,7 @@
           "type": "text",
           "text": "-Attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -38453,6 +38728,7 @@
           "type": "text",
           "text": "-LIMIT",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -38538,8 +38814,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "You can\u00c6t run from a slug! That\u00c6s just not cool!",
+          "text": "You can't run from a slug! That's just not cool!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -38578,7 +38855,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 48,
-              "text": "You can\u00c6t run from a slug! That\u00c6s just not cool!",
+              "text": "You can't run from a slug! That's just not cool!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -38839,6 +39116,7 @@
           "type": "text",
           "text": "Slug takes 14 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -38926,6 +39204,7 @@
           "type": "text",
           "text": "Felled slug!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39083,6 +39362,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39182,6 +39462,7 @@
           "type": "text",
           "text": "New level up",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39319,6 +39600,7 @@
           "type": "text",
           "text": "Gained a level!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39406,6 +39688,7 @@
           "type": "text",
           "text": "-Hp +10\n-Mp +10",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39525,6 +39808,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39612,6 +39896,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39780,6 +40065,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -39979,6 +40265,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40066,6 +40353,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40153,6 +40441,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40240,6 +40529,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40327,6 +40617,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40414,6 +40705,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40501,6 +40793,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40588,6 +40881,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40675,6 +40969,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40762,6 +41057,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40849,6 +41145,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -40936,6 +41233,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -41023,6 +41321,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -41110,6 +41409,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -41197,6 +41497,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -41284,6 +41585,7 @@
           "type": "text",
           "text": "Felled Slug!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -41441,6 +41743,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -41590,6 +41893,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -41759,6 +42063,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -41908,6 +42213,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -42159,6 +42465,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -42246,6 +42553,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -42353,6 +42661,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -42460,6 +42769,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -42629,6 +42939,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -42736,6 +43047,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -42905,6 +43217,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -43012,6 +43325,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -43119,6 +43433,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -43349,6 +43664,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -43456,6 +43772,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -43625,6 +43942,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -43794,6 +44112,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -43901,6 +44220,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -44470,6 +44790,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -44977,6 +45298,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -45146,6 +45468,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -45253,6 +45576,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -46122,6 +46446,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -46229,6 +46554,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -46690,6 +47016,7 @@
           "type": "text",
           "text": "Goblin commander attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -46777,6 +47104,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -46884,6 +47212,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -46991,6 +47320,7 @@
           "type": "text",
           "text": "-magic",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47098,6 +47428,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47205,6 +47536,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47354,6 +47686,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47439,8 +47772,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "You can\u00c6t flee from a boss! Duhh\u00e0.\nWhy did I even include that?",
+          "text": "You can't flee from a boss! Duhh\u2026.\nWhy did I even include that?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47497,7 +47831,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 35,
-              "text": "You can\u00c6t flee from a boss! Duhh\u00e0.\r",
+              "text": "You can't flee from a boss! Duhh\u2026.\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -47580,6 +47914,7 @@
           "type": "text",
           "text": "-magic",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47687,6 +48022,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47774,6 +48110,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -47881,6 +48218,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48130,6 +48468,7 @@
           "type": "text",
           "text": "Player casts shield!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48217,6 +48556,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48304,6 +48644,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48391,6 +48732,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48478,6 +48820,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48565,6 +48908,7 @@
           "type": "text",
           "text": "Defense raised by 20%!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48672,6 +49016,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -48871,6 +49216,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -49108,6 +49454,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -49307,6 +49654,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -49444,6 +49792,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -49581,6 +49930,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -49686,8 +50036,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -49726,7 +50077,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -49887,6 +50238,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50024,6 +50376,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50111,6 +50464,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50198,6 +50552,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50285,6 +50640,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50372,6 +50728,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50459,6 +50816,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50546,6 +50904,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50633,6 +50992,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -50720,6 +51080,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -51007,6 +51368,7 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -51206,6 +51568,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -51343,6 +51706,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -51480,6 +51844,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -51585,8 +51950,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -51625,7 +51991,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -51756,6 +52122,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -51863,6 +52230,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -51970,6 +52338,7 @@
           "type": "text",
           "text": "-magic",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -52057,6 +52426,7 @@
           "type": "text",
           "text": "20",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -52144,6 +52514,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -52313,6 +52684,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -52420,6 +52792,7 @@
           "type": "text",
           "text": "-magic",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -52507,6 +52880,7 @@
           "type": "text",
           "text": "20",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -52706,6 +53080,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -52943,6 +53318,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -53142,6 +53518,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -53279,6 +53656,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -53416,6 +53794,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -53585,6 +53964,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -53692,6 +54072,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -53799,6 +54180,7 @@
           "type": "text",
           "text": "-magic",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -53886,6 +54268,7 @@
           "type": "text",
           "text": "5",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -53973,6 +54356,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -54172,6 +54556,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -54409,6 +54794,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -54608,6 +54994,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -54745,6 +55132,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -54882,6 +55270,7 @@
           "type": "text",
           "text": "Player takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -54989,6 +55378,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55188,6 +55578,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55325,6 +55716,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55412,6 +55804,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55499,6 +55892,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55586,6 +55980,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55673,6 +56068,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55760,6 +56156,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55847,6 +56244,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -55934,6 +56332,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -56021,6 +56420,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -56308,6 +56708,7 @@
           "type": "text",
           "text": "Felled goblin commander!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -56415,6 +56816,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -56514,6 +56916,7 @@
           "type": "text",
           "text": "WIN",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -56921,6 +57324,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -57170,6 +57574,7 @@
           "type": "text",
           "text": "Player casts shield!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -57257,6 +57662,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -57344,6 +57750,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -57431,6 +57838,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -57518,6 +57926,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -57605,6 +58014,7 @@
           "type": "text",
           "text": "Defense raised by 20%!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -57804,6 +58214,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -57941,6 +58352,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -58078,6 +58490,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -58185,6 +58598,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -58434,6 +58848,7 @@
           "type": "text",
           "text": "Player casts shield!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -58521,6 +58936,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -58608,6 +59024,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -58695,6 +59112,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -58782,6 +59200,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -58869,6 +59288,7 @@
           "type": "text",
           "text": "Defense raised by 20%!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -59068,6 +59488,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -59205,6 +59626,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -59342,6 +59764,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -59511,6 +59934,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -59598,6 +60022,7 @@
           "type": "text",
           "text": "10",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -59685,6 +60110,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -59884,6 +60310,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -60121,6 +60548,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -60320,6 +60748,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -60457,6 +60886,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -60594,6 +61024,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -60701,6 +61132,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -60870,6 +61302,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -60957,6 +61390,7 @@
           "type": "text",
           "text": "5",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -61044,6 +61478,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -61243,6 +61678,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -61480,6 +61916,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -61567,6 +62004,7 @@
           "type": "text",
           "text": "Felled goblin commander!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -61674,6 +62112,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -61843,6 +62282,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -61930,6 +62370,7 @@
           "type": "text",
           "text": "5",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -62017,6 +62458,7 @@
           "type": "text",
           "text": "10%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -62124,6 +62566,7 @@
           "type": "text",
           "text": "-magic",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -62323,6 +62766,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -62560,6 +63004,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -62667,6 +63112,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -62927,6 +63373,7 @@
           "type": "text",
           "text": "Player casts shield!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63014,6 +63461,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63101,6 +63549,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63188,6 +63637,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63275,6 +63725,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63362,6 +63813,7 @@
           "type": "text",
           "text": "Defense raised by 20%!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63561,6 +64013,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63698,6 +64151,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -63835,6 +64289,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -63942,6 +64397,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64111,6 +64567,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64198,6 +64655,7 @@
           "type": "text",
           "text": "10",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64285,6 +64743,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64392,6 +64851,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64479,6 +64939,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64678,6 +65139,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64815,6 +65277,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64902,6 +65365,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -64989,6 +65453,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65076,6 +65541,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65163,6 +65629,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65250,6 +65717,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65337,6 +65805,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65424,6 +65893,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65511,6 +65981,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65798,6 +66269,7 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -65997,6 +66469,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -66134,6 +66607,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -66271,6 +66745,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -66378,6 +66853,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -66588,6 +67064,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -66725,6 +67202,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -66812,6 +67290,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -66899,6 +67378,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -66986,6 +67466,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -67073,6 +67554,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -67160,6 +67642,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -67247,6 +67730,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -67334,6 +67818,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -67421,6 +67906,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -67708,6 +68194,7 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -67907,6 +68394,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -68044,6 +68532,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -68181,6 +68670,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -68288,6 +68778,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -68385,8 +68876,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Magic\u00c6ed battle.",
+          "text": "Magic'ed battle.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -68425,7 +68917,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 16,
-              "text": "Magic\u00c6ed battle.",
+              "text": "Magic'ed battle.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -68586,6 +69078,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -68723,6 +69216,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -68860,6 +69354,7 @@
           "type": "text",
           "text": "Player takes 4 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -69029,6 +69524,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -69145,6 +69641,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -69246,6 +69743,7 @@
           "type": "text",
           "text": "31",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -69333,6 +69831,7 @@
           "type": "text",
           "text": "Round2.aftermagic",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -69420,6 +69919,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -69619,6 +70119,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -69856,6 +70357,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70055,6 +70557,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70192,6 +70695,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -70329,6 +70833,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70436,6 +70941,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70605,6 +71111,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70712,6 +71219,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70799,6 +71307,7 @@
           "type": "text",
           "text": "21",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70886,6 +71395,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -70973,6 +71483,7 @@
           "type": "text",
           "text": "Round3.magic.attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -71060,6 +71571,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -71259,6 +71771,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -71496,6 +72009,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -71695,6 +72209,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -71832,6 +72347,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -71969,6 +72485,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72067,6 +72584,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72245,6 +72763,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72366,6 +72885,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72453,6 +72973,7 @@
           "type": "text",
           "text": "11",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72540,6 +73061,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72627,6 +73149,7 @@
           "type": "text",
           "text": "Round4.magic.attack.attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72714,6 +73237,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -72913,6 +73437,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -73150,6 +73675,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -73349,6 +73875,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -73486,6 +74013,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -73623,6 +74151,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -73721,6 +74250,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -73899,6 +74429,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -74020,6 +74551,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -74107,6 +74639,7 @@
           "type": "text",
           "text": "1",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -74194,6 +74727,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -74281,6 +74815,7 @@
           "type": "text",
           "text": "Round5.magic.attack.attack.attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -74368,6 +74903,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -74567,6 +75103,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -74804,6 +75341,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75003,6 +75541,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75140,6 +75679,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -75277,6 +75817,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75384,6 +75925,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75583,6 +76125,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75720,6 +76263,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75807,6 +76351,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75894,6 +76439,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -75981,6 +76527,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -76068,6 +76615,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -76155,6 +76703,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -76242,6 +76791,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -76329,6 +76879,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -76416,6 +76967,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -76703,6 +77255,7 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -76902,6 +77455,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -77039,6 +77593,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -77176,6 +77731,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -77274,6 +77830,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -77452,6 +78009,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -77553,6 +78111,7 @@
           "type": "text",
           "text": "11",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -77640,6 +78199,7 @@
           "type": "text",
           "text": "Round4.magic.attack.limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -77727,6 +78287,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -77926,6 +78487,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78163,6 +78725,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78250,6 +78813,7 @@
           "type": "text",
           "text": "Felled goblin commander!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78357,6 +78921,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78456,6 +79021,7 @@
           "type": "text",
           "text": "If magic/limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78655,6 +79221,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78792,6 +79359,7 @@
           "type": "text",
           "text": "Player charges LIMIT!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78879,6 +79447,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -78966,6 +79535,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79053,6 +79623,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79140,6 +79711,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79227,6 +79799,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79314,6 +79887,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79401,6 +79975,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79488,6 +80063,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79775,6 +80351,7 @@
           "type": "text",
           "text": "Goblin commander takes 25 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -79974,6 +80551,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -80111,6 +80689,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -80248,6 +80827,7 @@
           "type": "text",
           "text": "Player takes 10 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -80355,6 +80935,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -80524,6 +81105,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -80611,6 +81193,7 @@
           "type": "text",
           "text": "21",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -80698,6 +81281,7 @@
           "type": "text",
           "text": "00%",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -80897,6 +81481,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -81134,6 +81719,7 @@
           "type": "text",
           "text": "Goblin commander takes 15 damage!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -81221,6 +81807,7 @@
           "type": "text",
           "text": "Felled goblin commander!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -81328,6 +81915,7 @@
           "type": "text",
           "text": "Click here to continue",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -81427,6 +82015,7 @@
           "type": "text",
           "text": "After Battle",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -81596,6 +82185,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -81703,6 +82293,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -81870,8 +82461,9 @@
             }
           ],
           "type": "text",
-          "text": "Tis\u00c6 here ye shall find th\u00c6art destiny.\n(back)",
+          "text": "Tis' here ye shall find th'art destiny.\n(back)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -81928,7 +82520,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 40,
-              "text": "Tis\u00c6 here ye shall find th\u00c6art destiny.\r",
+              "text": "Tis' here ye shall find th'art destiny.\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -82073,6 +82665,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -82180,6 +82773,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -82287,6 +82881,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -82456,6 +83051,7 @@
           "type": "text",
           "text": "What up Holmes?\n(BACK!!!)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -82657,6 +83253,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -82826,6 +83423,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -82995,6 +83593,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -83102,6 +83701,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -83221,6 +83821,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -83378,6 +83979,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -83485,6 +84087,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -83604,6 +84207,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -83761,6 +84365,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -83868,6 +84473,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -84037,6 +84643,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -84144,6 +84751,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -84313,6 +84921,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -84420,6 +85029,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -84569,6 +85179,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -84654,8 +85265,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Step into the light\u00e0 if th\u00c6art worthy\u00e0",
+          "text": "Step into the light\u2026 if th'art worthy\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -84694,7 +85306,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 38,
-              "text": "Step into the light\u00e0 if th\u00c6art worthy\u00e0",
+              "text": "Step into the light\u2026 if th'art worthy\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -84763,6 +85375,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -84862,6 +85475,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -85259,6 +85873,7 @@
           "type": "text",
           "text": "Who dares step into the light?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -85408,6 +86023,7 @@
           "type": "text",
           "text": "Guardian Askook Attacks!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -85515,6 +86131,7 @@
           "type": "text",
           "text": "-attack",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -85622,6 +86239,7 @@
           "type": "text",
           "text": "-limit",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -85729,6 +86347,7 @@
           "type": "text",
           "text": "-flee",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -85816,6 +86435,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -85903,6 +86523,7 @@
           "type": "text",
           "text": "45",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -86100,8 +86721,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Ow\u00e0",
+          "text": "Ow\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -86140,7 +86762,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 3,
-              "text": "Ow\u00e0",
+              "text": "Ow\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -86381,8 +87003,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -86421,7 +87044,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -86643,6 +87266,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -86730,6 +87354,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -86817,6 +87442,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -86904,6 +87530,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -86991,6 +87618,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -87078,6 +87706,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -87165,6 +87794,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -87252,6 +87882,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -87339,6 +87970,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -87426,6 +88058,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -87533,6 +88166,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -87730,8 +88364,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Can\u00c6t flee!",
+          "text": "Can't flee!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -87770,7 +88405,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 11,
-              "text": "Can\u00c6t flee!",
+              "text": "Can't flee!",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -87837,8 +88472,9 @@
             }
           ],
           "type": "text",
-          "text": "Click here to continue\u00e0",
+          "text": "Click here to continue\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -87877,7 +88513,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 23,
-              "text": "Click here to continue\u00e0",
+              "text": "Click here to continue\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -88038,6 +88674,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88125,6 +88762,7 @@
           "type": "text",
           "text": "Guardian Askook Unleashes INFINITY",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88240,6 +88878,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88327,6 +88966,7 @@
           "type": "text",
           "text": "Player takes 4,326,105 Damage.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88442,6 +89082,7 @@
           "type": "text",
           "text": "+12",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88541,6 +89182,7 @@
           "type": "text",
           "text": "DED!!",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88678,6 +89320,7 @@
           "type": "text",
           "text": "You ded.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88765,6 +89408,7 @@
           "type": "text",
           "text": "Press esc to exit.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -88925,6 +89569,7 @@
           "type": "text",
           "text": "",
           "wordArt": false,
+          "emptyTextPlaceholder": true,
           "textStyle": {
             "wordWrap": false,
             "wordWrapEx": 2,
@@ -89010,8 +89655,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
+          "text": "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -89050,7 +89696,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 105,
-              "text": "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
+              "text": "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -89097,8 +89743,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Aww, shiz\u00e0",
+          "text": "Aww, shiz\u2026",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -89137,7 +89784,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 10,
-              "text": "Aww, shiz\u00e0",
+              "text": "Aww, shiz\u2026",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -89184,8 +89831,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+          "text": "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -89224,7 +89872,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 67,
-              "text": "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+              "text": "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -89273,6 +89921,7 @@
           "type": "text",
           "text": "Huh?",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -89422,6 +90071,7 @@
           "type": "text",
           "text": "Hi",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -89541,6 +90191,7 @@
           "type": "text",
           "text": "The End.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -89626,8 +90277,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "(press ESC to exit\u00e0)",
+          "text": "(press ESC to exit\u2026)",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -89666,7 +90318,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 20,
-              "text": "(press ESC to exit\u00e0)",
+              "text": "(press ESC to exit\u2026)",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -90025,8 +90677,9 @@
             "lineCompound": "SINGLE"
           },
           "type": "text",
-          "text": "Credits\u00f9\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\nRock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\nVictory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
+          "text": "Credits:\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\nRock's song- \u201cTrogdor\u201d by Strong Bad.\nVictory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -90389,7 +91042,7 @@
               "runIndex": 0,
               "start": 0,
               "length": 9,
-              "text": "Credits\u00f9\r",
+              "text": "Credits:\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -90501,7 +91154,7 @@
               "runIndex": 0,
               "start": 188,
               "length": 57,
-              "text": "Theme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\r",
+              "text": "Theme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -90515,7 +91168,7 @@
               "runIndex": 0,
               "start": 245,
               "length": 38,
-              "text": "Rock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\r",
+              "text": "Rock's song- \u201cTrogdor\u201d by Strong Bad.\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -90529,7 +91182,7 @@
               "runIndex": 0,
               "start": 283,
               "length": 55,
-              "text": "Victory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\r",
+              "text": "Victory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\r",
               "fontFamily": "Arial",
               "fontSize": 18.0,
               "bold": false,
@@ -90838,6 +91491,7 @@
           "type": "text",
           "text": "Bye.",
           "wordArt": false,
+          "emptyTextPlaceholder": false,
           "textStyle": {
             "wordWrap": true,
             "wordWrapEx": 0,
@@ -90910,6 +91564,20 @@
     "paragraphs": 681,
     "textRuns": 695,
     "actionBoundLayers": 210,
-    "hyperlinkBoundLayers": 192
+    "hyperlinkBoundLayers": 192,
+    "emptyTextPlaceholders": 295,
+    "wordArtLayers": 4,
+    "textEncodingNormalization": {
+      "replacements": {
+        "\u00c6": "'",
+        "\u00e6": "'",
+        "\u00e0": "\u2026",
+        "\u00f4": "\u201c",
+        "\u00f6": "\u201d",
+        "\u00d6": "\u2026",
+        "\u00f9": ":"
+      },
+      "policy": "POI symbol mis-decode repair for apostrophe/ellipsis/quotes (Phase 5.7)"
+    }
   }
 }

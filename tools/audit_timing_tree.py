@@ -151,6 +151,85 @@ def parse_time_sequence_data_atom(payload: bytes) -> dict[str, object] | None:
     }
 
 
+def parse_time_iterate_data_atom(payload: bytes) -> dict[str, object] | None:
+    """Parse RT_TimeIterateData (MS-PPT TimeIterateDataAtom).
+
+    Interval is stored as IEEE-754 float bits in practice (percentage or ms).
+    """
+    if len(payload) < 20:
+        return None
+    interval_bits = struct.unpack_from("<I", payload, 0)[0]
+    interval_float = struct.unpack_from("<f", payload, 0)[0]
+    iterate_type, iterate_direction, iterate_interval_type, flags = struct.unpack_from(
+        "<IIII", payload, 4
+    )
+    type_names = {0: "allAtOnce", 1: "byWord", 2: "byLetter"}
+    direction_names = {0: "backwards", 1: "forwards"}
+    interval_type_names = {0: "milliseconds", 1: "percentage"}
+    return {
+        "iterateIntervalBits": interval_bits,
+        "iterateInterval": interval_float,
+        "iterateType": iterate_type,
+        "iterateTypeName": type_names.get(iterate_type, f"unknown_{iterate_type}"),
+        "iterateDirection": iterate_direction,
+        "iterateDirectionName": direction_names.get(
+            iterate_direction, f"unknown_{iterate_direction}"
+        ),
+        "iterateIntervalType": iterate_interval_type,
+        "iterateIntervalTypeName": interval_type_names.get(
+            iterate_interval_type, f"unknown_{iterate_interval_type}"
+        ),
+        "flags": flags,
+        "usesIterateDirection": bool(flags & 0x01),
+        "usesIterateType": bool(flags & 0x02),
+        "usesIterateInterval": bool(flags & 0x04),
+        "usesIterateIntervalType": bool(flags & 0x08),
+    }
+
+
+PARA_BUILD_NAMES = {
+    0: "allAtOnce",
+    1: "buildByNthLevel",
+    2: "customBuild",
+    3: "asAWhole",
+}
+
+
+def parse_para_build_atom(payload: bytes) -> dict[str, object] | None:
+    """Parse RT_ParaBuildAtom (MS-PPT ParaBuildAtom, 16-byte payload)."""
+    if len(payload) < 16:
+        return None
+    para_build, build_level = struct.unpack_from("<II", payload, 0)
+    f_anim, f_reverse, f_user, f_automatic = payload[8:12]
+    delay_time = struct.unpack_from("<I", payload, 12)[0]
+    return {
+        "paraBuild": para_build,
+        "paraBuildName": PARA_BUILD_NAMES.get(para_build, f"unknown_{para_build}"),
+        "buildLevel": build_level,
+        "fAnimBackground": bool(f_anim),
+        "fReverse": bool(f_reverse),
+        "fUserSetAnimBackground": bool(f_user),
+        "fAutomatic": bool(f_automatic),
+        "delayTimeMs": delay_time,
+    }
+
+
+def parse_build_atom(payload: bytes) -> dict[str, object] | None:
+    """Parse RT_BuildAtom (MS-PPT BuildAtom, 16-byte payload)."""
+    if len(payload) < 16:
+        return None
+    build_type, build_id, shape_id_ref = struct.unpack_from("<III", payload, 0)
+    f_expanded = payload[12]
+    f_ui_expanded = payload[13]
+    return {
+        "buildType": build_type,
+        "buildId": build_id,
+        "shapeId": shape_id_ref,
+        "fExpanded": bool(f_expanded),
+        "fUIExpanded": bool(f_ui_expanded),
+    }
+
+
 def parse_time_variant(payload: bytes) -> dict[str, object] | None:
     if not payload:
         return None

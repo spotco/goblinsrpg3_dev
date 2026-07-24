@@ -40,7 +40,7 @@
         "Goblin x3 attacked!",
         "-Attack",
         "-flee",
-        "I\u00c6m bored\u00e0"
+        "I'm bored\u2026"
       ]
     },
     {
@@ -72,7 +72,7 @@
       "noopCount": 0,
       "navCount": 2,
       "layerTexts": [
-        "Goblin fled of boredom\u00e0",
+        "Goblin fled of boredom\u2026",
         "-Attack",
         "-flee"
       ]
@@ -459,7 +459,7 @@
       "layerTexts": [
         "-Attack",
         "-LIMIT",
-        "You can\u00c6t run from a slug! That\u00c6s just not cool!"
+        "You can't run from a slug! That's just not cool!"
       ]
     },
     {
@@ -557,7 +557,7 @@
       "noopCount": 0,
       "navCount": 3,
       "layerTexts": [
-        "You can\u00c6t flee from a boss! Duhh\u00e0.\nWhy did I even include that?",
+        "You can't flee from a boss! Duhh\u2026.\nWhy did I even include that?",
         "-magic",
         "-attack",
         "-limit"

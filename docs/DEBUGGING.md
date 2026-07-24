@@ -96,11 +96,12 @@ Chapter jumps (Tier B without title bridges):
 - HUD: with `?debug=1`, use **Chapters** dropdown + **Go** (`docs/chapter-entries.json`, rebuilt by `tools/build_chapter_walks.py`).
 - Offline: `generated/chapter_walks.json` (all seeds leave-able), `generated/chapter_entry_map.json`.
 
-### Fidelity offline contracts (Phase 5.1 / 5.3 / 5.5)
+### Fidelity offline contracts (Phase 5.1–5.5)
 
 ```powershell
 python tools/build_fidelity_reports.py
 python tools/verify_fidelity.py
+python tools/verify_animation_player_contract.py
 python tools/verify_runtime_traversal.py
 ```
 
@@ -108,7 +109,8 @@ python tools/verify_runtime_traversal.py
 | --- | --- |
 | `generated/sequential_advance_edges.json` | 9 manualAdvance + fallback stage-click + 59 auto edges |
 | `generated/auto_advance_timing.json` | `effectiveDelayMs = max(slideTime, anim timeline)` |
-| `generated/opening_animation_trains.json` | s003–s008 / s012–s014 OnNext + behavior inventory |
+| `generated/opening_animation_trains.json` | s003–s008 / s012–s014 OnNext + subEffect/paraBuild inventory |
+| `generated/motion_path_inventory.json` | 215 M/L/C paths sampled offline (Phase 5.4); cubic examples |
 | `generated/runtime_traversal.json` | Hotspot + sequential combined graph |
 
 ### Single-slide autopsy
@@ -125,18 +127,35 @@ Writes `generated/debug/slide-002.json` with:
 - PNG stats
 - Risk list + suggested follow-up commands
 
-### Whole-deck risk queue
+### Text / WordArt fidelity (Phase 5.6 / 5.7)
+
+```powershell
+python tools/extract_layers.py
+python tools/build_game_manifest.py
+python tools/build_text_fidelity_report.py
+python tools/verify_text_fidelity.py
+```
+
+| Artifact | Purpose |
+| --- | --- |
+| `generated/text_fidelity_report.json` | Encoding repair inventory, WordArt list, empty placeholders, sparse hybrid slides |
+| Layer flags | `emptyTextPlaceholder`, `wordArtGeometry` |
+| Runtime | PNG underlay when sparse; WordArt DEFLATE/CURVE CSS; hide non-animated empties |
+
+### Whole-deck risk queue (Phase 5.8 post-resolve)
 
 ```powershell
 python tools/audit_visual_risks.py
+python tools/verify_visual_risks.py
 python tools/audit_visual_risks.py --slides 1-20
 ```
 
-Writes `generated/visual_risks.json`:
+Writes `generated/visual_risks.json` (**v2**):
 
-- `queue` — slides sorted by severity (start here)
-- `byCode` — grouped issue types
-- `risks` — flat list
+- Uses **post-resolve** `docs/game-manifest.json` hotspot targets (not raw binary self-labels)
+- `selfHyperlinkPostResolve` — clickable vs documented residual vs promoted counts (must match `promote_audit`)
+- `queue` — slides with **high/medium defects only** (info residuals excluded from defect queue)
+- `byCode` / `risks` — full inventory including `self_hyperlink_promoted` (info) and `self_hyperlink_documented_residual` (info)
 
 ### Mechanic probes
 

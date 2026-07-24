@@ -1,0 +1,73 @@
+{
+  "format": "goblins-rpg3-text-fidelity-v1",
+  "policy": {
+    "encoding": "normalize_ppt_text in extract_layers (Phase 5.7)",
+    "emptyText": "emptyTextPlaceholder flag; runtime hides non-animated empties (Phase 5.6)",
+    "wordArt": "wordArtGeometry + CSS approx for DEFLATE/CURVE (Phase 5.6)",
+    "sparse": "hybrid PNG underlay when sparse layers (Phase 5.6)"
+  },
+  "replacements": {
+    "\u00c6": "'",
+    "\u00e6": "'",
+    "\u00e0": "\u2026",
+    "\u00f4": "\u201c",
+    "\u00f6": "\u201d",
+    "\u00d6": "\u2026",
+    "\u00f9": ":"
+  },
+  "summary": {
+    "emptyTextPlaceholders": 295,
+    "emptyTextAnimated": 149,
+    "wordArtCount": 4,
+    "sparseHybridSlideCount": 6,
+    "residualArtifactLayerCount": 0,
+    "fixedExampleCount": 0
+  },
+  "sparseHybridSlides": [
+    2,
+    148,
+    166,
+    171,
+    200,
+    201
+  ],
+  "wordArt": [
+    {
+      "slide": 2,
+      "shapeId": 2052,
+      "geometry": "TEXT_DEFLATE",
+      "text": "GOBLINSRPG3",
+      "fontFamily": "Impact"
+    },
+    {
+      "slide": 14,
+      "shapeId": 15382,
+      "geometry": "TEXT_CURVE_UP",
+      "text": "Yip!",
+      "fontFamily": "Arial Black"
+    },
+    {
+      "slide": 85,
+      "shapeId": 98313,
+      "geometry": "TEXT_PLAIN_TEXT",
+      "text": "BAM!!",
+      "fontFamily": "Arial Black"
+    },
+    {
+      "slide": 89,
+      "shapeId": 102406,
+      "geometry": "TEXT_PLAIN_TEXT",
+      "text": "BAM!!",
+      "fontFamily": "Arial Black"
+    }
+  ],
+  "fixedExamples": [],
+  "residualArtifacts": [],
+  "runtimeSnippets": [
+    "function screenNeedsPngUnderlay",
+    "pngUnderlay",
+    "wordArtGeometry",
+    "empty-text-placeholder",
+    "wordart-deflate"
+  ]
+}

@@ -39,7 +39,56 @@ def clean_geotext(value: str) -> str:
     text = value.replace("\x00", "").strip()
     if len(text) >= 2 and text.startswith("+") and text.endswith("+"):
         text = text[1:-1]
-    return text
+    return normalize_ppt_text(text)
+
+
+# POI HSLF text for this deck consistently mis-decodes a small set of Windows
+# symbol characters (smart quotes / ellipsis / apostrophe). Map them back to the
+# intended punctuation used throughout the adventure text.
+PPT_TEXT_ARTIFACT_REPLACEMENTS = {
+    "Æ": "'",  # don't / I'm / CAN'T
+    "æ": "'",
+    "à": "…",  # trailing ellipsis (continue…, ago…)
+    "ô": "\u201c",  # opening double quote
+    "ö": "\u201d",  # closing double quote
+    "Ö": "…",  # mid-sentence ellipsis (credits/end card)
+    "ù": ":",  # Credits: title separator
+}
+PPT_TEXT_MOJIBAKE_MAP = str.maketrans(PPT_TEXT_ARTIFACT_REPLACEMENTS)
+
+
+def normalize_ppt_text(value: str | None) -> str:
+    """Fix known POI encoding artifacts; leave other Unicode unchanged."""
+    if not value:
+        return ""
+    text = str(value).replace("\x00", "")
+    return text.translate(PPT_TEXT_MOJIBAKE_MAP)
+
+
+def normalize_text_runs(runs: list[dict[str, object]] | None) -> list[dict[str, object]]:
+    if not runs:
+        return []
+    out: list[dict[str, object]] = []
+    for run in runs:
+        item = dict(run)
+        if "text" in item:
+            item["text"] = normalize_ppt_text(str(item.get("text") or ""))
+            item["length"] = len(str(item["text"]))
+        out.append(item)
+    return out
+
+
+def normalize_paragraphs(paragraphs: list[dict[str, object]] | None) -> list[dict[str, object]]:
+    if not paragraphs:
+        return []
+    out: list[dict[str, object]] = []
+    for para in paragraphs:
+        item = dict(para)
+        # paragraphs may only store indices; text field is rare
+        if "text" in item and item["text"] is not None:
+            item["text"] = normalize_ppt_text(str(item["text"]))
+        out.append(item)
+    return out
 
 
 def parse_poi_audit(
@@ -399,12 +448,26 @@ def main() -> None:
                     layer["clip"] = shape["clip"]
                 image_instance_count += 1
             elif "text" in shape or shape.get("geoText"):
-                poi_text = str(shape.get("text") or "")
+                poi_text = normalize_ppt_text(str(shape.get("text") or ""))
                 geo = shape.get("geoText") if isinstance(shape.get("geoText"), dict) else None
-                geo_text = clean_geotext(str(geo.get("unicode") or "")) if geo else ""
+                raw_geo = str(geo.get("unicode") or "") if geo else ""
+                geo_text = clean_geotext(raw_geo) if geo else ""
                 text_value = poi_text if poi_text.strip() else geo_text
                 word_art = bool(geo_text) or is_word_art_shape(shape)
-                layer = {**base, "type": "text", "text": text_value, "wordArt": word_art}
+                empty_placeholder = not str(text_value).strip() and not word_art
+                layer = {
+                    **base,
+                    "type": "text",
+                    "text": text_value,
+                    "wordArt": word_art,
+                    "emptyTextPlaceholder": empty_placeholder,
+                }
+                if word_art:
+                    layer["wordArtGeometry"] = str(
+                        shape.get("geometry", {}).get("shapeType")
+                        or shape.get("shapeType")
+                        or "TEXT_PLAIN_TEXT"
+                    )
                 if geo:
                     layer["geoText"] = {
                         "unicode": geo_text,
@@ -414,9 +477,9 @@ def main() -> None:
                 if "textStyle" in shape:
                     layer["textStyle"] = shape["textStyle"]
                 if "paragraphs" in shape:
-                    layer["paragraphs"] = shape["paragraphs"]
+                    layer["paragraphs"] = normalize_paragraphs(shape["paragraphs"])
                 if "textRuns" in shape:
-                    layer["textRuns"] = shape["textRuns"]
+                    layer["textRuns"] = normalize_text_runs(shape["textRuns"])
                 # WordArt often has empty POI text runs; synthesize style from geotext + fill.
                 if word_art and text_value:
                     fill_color = None
@@ -424,7 +487,9 @@ def main() -> None:
                     if isinstance(style, dict):
                         fill_color = style.get("fillColor")
                     font_family = (geo or {}).get("fontFamily") if geo else None
-                    if not layer.get("textRuns") or not any(str(run.get("text") or "").strip() for run in layer.get("textRuns", [])):
+                    if not layer.get("textRuns") or not any(
+                        str(run.get("text") or "").strip() for run in layer.get("textRuns", [])
+                    ):
                         layer["textRuns"] = [
                             {
                                 "paragraphIndex": 0,
@@ -475,6 +540,25 @@ def main() -> None:
                             "bottomInset": 0.0,
                             "textHeight": float((shape.get("bounds") or {}).get("height") or 0) * 0.85,
                         }
+                # Schema stability for empty decorative text shapes (still animatable).
+                if empty_placeholder:
+                    layer.setdefault("textRuns", [])
+                    layer.setdefault("paragraphs", [])
+                    layer.setdefault(
+                        "textStyle",
+                        {
+                            "wordWrap": True,
+                            "wordWrapEx": 0,
+                            "verticalAlignment": "TOP",
+                            "textDirection": "HORIZONTAL",
+                            "textRotation": None,
+                            "leftInset": 0.0,
+                            "rightInset": 0.0,
+                            "topInset": 0.0,
+                            "bottomInset": 0.0,
+                            "textHeight": 0.0,
+                        },
+                    )
                 text_layer_count += 1
             else:
                 layer = {**base, "type": "shape"}
@@ -523,6 +607,19 @@ def main() -> None:
             "hyperlinkBoundLayers": sum(
                 1 for slide in slides for layer in slide["layers"] if "hyperlinks" in layer
             ),
+            "emptyTextPlaceholders": sum(
+                1
+                for slide in slides
+                for layer in slide["layers"]
+                if layer.get("emptyTextPlaceholder")
+            ),
+            "wordArtLayers": sum(
+                1 for slide in slides for layer in slide["layers"] if layer.get("wordArt")
+            ),
+            "textEncodingNormalization": {
+                "replacements": dict(PPT_TEXT_ARTIFACT_REPLACEMENTS),
+                "policy": "POI symbol mis-decode repair for apostrophe/ellipsis/quotes (Phase 5.7)",
+            },
         },
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

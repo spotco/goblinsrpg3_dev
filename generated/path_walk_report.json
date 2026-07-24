@@ -147,8 +147,8 @@
           "deathTerminal": false,
           "texts": [
             "It was a long lived peace in the land",
-            "Until\u00e0.",
-            "100 to 150 years ago\u00e0"
+            "Until\u2026.",
+            "100 to 150 years ago\u2026"
           ],
           "choices": [
             {
@@ -172,7 +172,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "And then the goblins invaded\u00e0"
+            "And then the goblins invaded\u2026"
           ],
           "choices": [
             {
@@ -196,7 +196,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "They Burned an pillaged the countryside\u00e0",
+            "They Burned an pillaged the countryside\u2026",
             "And there seemed no end"
           ],
           "choices": [
@@ -221,7 +221,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Until the \u00f4hero of time\u00f6 appeared."
+            "Until the \u201chero of time\u201d appeared."
           ],
           "choices": [
             {
@@ -245,7 +245,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "The hero of time ded them all with fell run of his spear.\n(don\u00c6t ask)"
+            "The hero of time ded them all with fell run of his spear.\n(don't ask)"
           ],
           "choices": [
             {
@@ -270,7 +270,7 @@
           "deathTerminal": false,
           "texts": [
             "Peace was restored once more.",
-            "This is 100 to 150 years later\u00e0"
+            "This is 100 to 150 years later\u2026"
           ],
           "choices": [
             {
@@ -322,7 +322,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Hello! Uh, I mean\u00e0 RUFF RUFF!!",
+            "Hello! Uh, I mean\u2026 RUFF RUFF!!",
             "Click here to continue",
             "Click here to continue"
           ],
@@ -376,8 +376,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Okay, Okay. I give. I\u00c6m a talking dog.",
-            "I\u00c6ll give you this if you leave me alone."
+            "Okay, Okay. I give. I'm a talking dog.",
+            "I'll give you this if you leave me alone."
           ],
           "choices": [
             {
@@ -470,7 +470,7 @@
             "Goblin x3 attacked!",
             "-Attack",
             "-flee",
-            "I\u00c6m bored\u00e0"
+            "I'm bored\u2026"
           ],
           "choices": [
             {
@@ -512,7 +512,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Goblin fled of boredom\u00e0",
+            "Goblin fled of boredom\u2026",
             "-Attack",
             "-flee",
             "-Attack"
@@ -551,8 +551,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "CAN\u00c6T ESCAPE!!!",
-            "Click here to continue\u00e0",
+            "CAN'T ESCAPE!!!",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -580,8 +580,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "CAN\u00c6T ESCAPE!!",
-            "Click here  to continue\u00e0",
+            "CAN'T ESCAPE!!",
+            "Click here  to continue\u2026",
             "Click here  to continue\u2026"
           ],
           "choices": [
@@ -610,7 +610,7 @@
           "deathTerminal": false,
           "texts": [
             "Felled goblin!!!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -748,7 +748,7 @@
           "texts": [
             "Goblin releases Fury!!",
             "Player takes 10 damage.",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -808,7 +808,7 @@
           "texts": [
             "Goblin x3 Attacks!",
             "Player takes 15 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -838,7 +838,7 @@
           "texts": [
             "Goblin x2 Attacks!",
             "Player takes 10 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -868,7 +868,7 @@
           "texts": [
             "Goblin x1 Attacks!",
             "Player takes 5 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -897,7 +897,7 @@
           "deathTerminal": false,
           "texts": [
             "HAHAHAHA!!\nYAH!! TAKE THAT STUPID GOBLINS!!!",
-            "Click here to continue\u00e0.",
+            "Click here to continue\u2026.",
             "Click here to continue\u2026."
           ],
           "choices": [
@@ -927,7 +927,7 @@
           "texts": [
             "Goblin x1 Attacks!",
             "Player takes 5 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -968,7 +968,7 @@
           "deathTerminal": false,
           "texts": [
             "Felled goblin!!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -998,7 +998,7 @@
           "texts": [
             "Goblin x2 Attacks!",
             "Player takes 10 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -1070,7 +1070,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "\u00f4You are here\u00f6"
+            "\u201cYou are here\u201d"
           ],
           "choices": [
             {
@@ -1148,7 +1148,7 @@
           "texts": [
             "Ubergoblin attacks!",
             "Player takes 15 damage.",
-            "Player is dead\u00e0\u00e0\u00e0\u00e0\u00e0.."
+            "Player is dead\u2026\u2026\u2026\u2026\u2026.."
           ],
           "choices": [
             {
@@ -1172,9 +1172,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "\u00e0\u00e0\u00e0",
+            "\u2026\u2026\u2026",
             "Am I dead?",
-            "\u00f4We need to talk, come to my room. It\u00c6s the one to the left.\u00f6",
+            "\u201cWe need to talk, come to my room. It's the one to the left.\u201d",
             "Huh what the heck?"
           ],
           "choices": [
@@ -1300,7 +1300,7 @@
           "texts": [
             "Got the Magic sword!",
             "(Back)",
-            "You trash digger\u00e0.",
+            "You trash digger\u2026.",
             "(Back)"
           ],
           "choices": [
@@ -1499,7 +1499,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "So you\u00c6ve come\u00e0",
+            "So you've come\u2026",
             "Huh?"
           ],
           "choices": [
@@ -1524,8 +1524,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "I\u00c6ve been waiting.",
-            "Don\u00c6t just stand there\u00e0"
+            "I've been waiting.",
+            "Don't just stand there\u2026"
           ],
           "choices": [
             {
@@ -1553,9 +1553,9 @@
           "deathTerminal": false,
           "texts": [
             "Who are you?",
-            "Don\u00c6t you know?",
-            "Uhhhhh\u00e0\u00e0\u00e0..Not really\u00e0",
-            "\u00e0\u00e0\u00e0"
+            "Don't you know?",
+            "Uhhhhh\u2026\u2026\u2026..Not really\u2026",
+            "\u2026\u2026\u2026"
           ],
           "choices": [
             {
@@ -1579,9 +1579,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Okay, well, that doesn\u00c6t really matter",
-            "You\u00c6re really special\u00e0",
-            "I\u00c6ve actually called you here for a reason\u00e0",
+            "Okay, well, that doesn't really matter",
+            "You're really special\u2026",
+            "I've actually called you here for a reason\u2026",
             "And what would that be?"
           ],
           "choices": [
@@ -1606,7 +1606,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "We believe you\u00c6re the\n\u00f4Hero of time\u00f6"
+            "We believe you're the\n\u201cHero of time\u201d"
           ],
           "choices": [
             {
@@ -1632,7 +1632,7 @@
           "texts": [
             "Far, Far to the south, There is a tower,",
             "Which is believed to be the tomb of the last hero.",
-            "There you will find your destiny\u00e0"
+            "There you will find your destiny\u2026"
           ],
           "choices": [
             {
@@ -1656,7 +1656,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Why does this draw so heavily from Zelda\u00e0?",
+            "Why does this draw so heavily from Zelda\u2026?",
             "NOTE FROM SHINY: LETS SEE YOU COME UP WITH ANYTHING BETTER!!"
           ],
           "choices": [
@@ -1729,7 +1729,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "She sure gets her point made\u00e0"
+            "She sure gets her point made\u2026"
           ],
           "choices": [
             {
@@ -1943,7 +1943,7 @@
           "texts": [
             "Fled successfully!",
             "I pity the foo..",
-            "Click to continue\u00e0",
+            "Click to continue\u2026",
             "Click to continue\u2026"
           ],
           "choices": [
@@ -2306,7 +2306,7 @@
           "texts": [
             "-Attack",
             "-LIMIT",
-            "You can\u00c6t run from a slug! That\u00c6s just not cool!",
+            "You can't run from a slug! That's just not cool!",
             "-Attack"
           ],
           "choices": [
@@ -2905,7 +2905,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "You can\u00c6t flee from a boss! Duhh\u00e0.\nWhy did I even include that?",
+            "You can't flee from a boss! Duhh\u2026.\nWhy did I even include that?",
             "-magic",
             "-attack",
             "-limit"
@@ -3008,7 +3008,7 @@
           "deathTerminal": false,
           "texts": [
             "Player takes 15 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -3037,7 +3037,7 @@
           "deathTerminal": false,
           "texts": [
             "Player takes 15 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -4131,7 +4131,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Tis\u00c6 here ye shall find th\u00c6art destiny.\n(back)",
+            "Tis' here ye shall find th'art destiny.\n(back)",
             "Tis\u2019 here ye shall find th\u2019art destiny.\r(back)"
           ],
           "choices": [
@@ -4459,7 +4459,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Step into the light\u00e0 if th\u00c6art worthy\u00e0"
+            "Step into the light\u2026 if th'art worthy\u2026"
           ],
           "choices": [
             {
@@ -4668,7 +4668,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Ow\u00e0"
+            "Ow\u2026"
           ],
           "choices": [
             {
@@ -4715,7 +4715,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -4768,8 +4768,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Can\u00c6t flee!",
-            "Click here to continue\u00e0",
+            "Can't flee!",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -4853,9 +4853,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
-            "Aww, shiz\u00e0",
-            "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+            "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
+            "Aww, shiz\u2026",
+            "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
             "Huh?"
           ],
           "choices": [
@@ -4905,7 +4905,7 @@
           "deathTerminal": true,
           "texts": [
             "The End.",
-            "(press ESC to exit\u00e0)",
+            "(press ESC to exit\u2026)",
             "The End."
           ],
           "choices": [
@@ -4937,7 +4937,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Credits\u00f9\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\nRock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\nVictory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
+            "Credits:\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\nRock's song- \u201cTrogdor\u201d by Strong Bad.\nVictory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
             "Bye.",
             "Bye."
           ],
@@ -5213,7 +5213,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "\u00e0\n"
+            "\u2026\n"
           ],
           "choices": [
             {
@@ -5283,7 +5283,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Hey ,can I have some money, mister?\n(back\u00e0)\n",
+            "Hey ,can I have some money, mister?\n(back\u2026)\n",
             "Hey ,can I have some money, mister?\r(back\u2026)\r"
           ],
           "choices": [
@@ -5618,7 +5618,7 @@
           "texts": [
             "Fled successfully!",
             "I pity the foo..",
-            "Click to continue\u00e0",
+            "Click to continue\u2026",
             "Click to continue\u2026"
           ],
           "choices": [
@@ -5981,7 +5981,7 @@
           "texts": [
             "-Attack",
             "-LIMIT",
-            "You can\u00c6t run from a slug! That\u00c6s just not cool!",
+            "You can't run from a slug! That's just not cool!",
             "-Attack"
           ],
           "choices": [
@@ -6580,7 +6580,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "You can\u00c6t flee from a boss! Duhh\u00e0.\nWhy did I even include that?",
+            "You can't flee from a boss! Duhh\u2026.\nWhy did I even include that?",
             "-magic",
             "-attack",
             "-limit"
@@ -6683,7 +6683,7 @@
           "deathTerminal": false,
           "texts": [
             "Player takes 15 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -6712,7 +6712,7 @@
           "deathTerminal": false,
           "texts": [
             "Player takes 15 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -7806,7 +7806,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Tis\u00c6 here ye shall find th\u00c6art destiny.\n(back)",
+            "Tis' here ye shall find th'art destiny.\n(back)",
             "Tis\u2019 here ye shall find th\u2019art destiny.\r(back)"
           ],
           "choices": [
@@ -8134,7 +8134,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Step into the light\u00e0 if th\u00c6art worthy\u00e0"
+            "Step into the light\u2026 if th'art worthy\u2026"
           ],
           "choices": [
             {
@@ -8343,7 +8343,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Ow\u00e0"
+            "Ow\u2026"
           ],
           "choices": [
             {
@@ -8390,7 +8390,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -8443,8 +8443,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Can\u00c6t flee!",
-            "Click here to continue\u00e0",
+            "Can't flee!",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -8528,9 +8528,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
-            "Aww, shiz\u00e0",
-            "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+            "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
+            "Aww, shiz\u2026",
+            "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
             "Huh?"
           ],
           "choices": [
@@ -8580,7 +8580,7 @@
           "deathTerminal": true,
           "texts": [
             "The End.",
-            "(press ESC to exit\u00e0)",
+            "(press ESC to exit\u2026)",
             "The End."
           ],
           "choices": [
@@ -8612,7 +8612,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Credits\u00f9\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\nRock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\nVictory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
+            "Credits:\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\nRock's song- \u201cTrogdor\u201d by Strong Bad.\nVictory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
             "Bye.",
             "Bye."
           ],
@@ -8866,7 +8866,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "\u00e0\n"
+            "\u2026\n"
           ],
           "choices": [
             {
@@ -8936,7 +8936,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Hey ,can I have some money mister?\n(back\u00e0)\n",
+            "Hey ,can I have some money mister?\n(back\u2026)\n",
             "Hey ,can I have some money mister?\r(back\u2026)\r"
           ],
           "choices": [
@@ -8964,7 +8964,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Hey ,can I have some money, mister?\n(back\u00e0)\n",
+            "Hey ,can I have some money, mister?\n(back\u2026)\n",
             "Hey ,can I have some money, mister?\r(back\u2026)\r"
           ],
           "choices": [
@@ -9299,7 +9299,7 @@
           "texts": [
             "Fled successfully!",
             "I pity the foo..",
-            "Click to continue\u00e0",
+            "Click to continue\u2026",
             "Click to continue\u2026"
           ],
           "choices": [
@@ -9662,7 +9662,7 @@
           "texts": [
             "-Attack",
             "-LIMIT",
-            "You can\u00c6t run from a slug! That\u00c6s just not cool!",
+            "You can't run from a slug! That's just not cool!",
             "-Attack"
           ],
           "choices": [
@@ -10261,7 +10261,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "You can\u00c6t flee from a boss! Duhh\u00e0.\nWhy did I even include that?",
+            "You can't flee from a boss! Duhh\u2026.\nWhy did I even include that?",
             "-magic",
             "-attack",
             "-limit"
@@ -10364,7 +10364,7 @@
           "deathTerminal": false,
           "texts": [
             "Player takes 15 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -10393,7 +10393,7 @@
           "deathTerminal": false,
           "texts": [
             "Player takes 15 damage!",
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -11487,7 +11487,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Tis\u00c6 here ye shall find th\u00c6art destiny.\n(back)",
+            "Tis' here ye shall find th'art destiny.\n(back)",
             "Tis\u2019 here ye shall find th\u2019art destiny.\r(back)"
           ],
           "choices": [
@@ -11815,7 +11815,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Step into the light\u00e0 if th\u00c6art worthy\u00e0"
+            "Step into the light\u2026 if th'art worthy\u2026"
           ],
           "choices": [
             {
@@ -12024,7 +12024,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Ow\u00e0"
+            "Ow\u2026"
           ],
           "choices": [
             {
@@ -12071,7 +12071,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -12124,8 +12124,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Can\u00c6t flee!",
-            "Click here to continue\u00e0",
+            "Can't flee!",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -12209,9 +12209,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
-            "Aww, shiz\u00e0",
-            "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+            "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
+            "Aww, shiz\u2026",
+            "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
             "Huh?"
           ],
           "choices": [
@@ -12261,7 +12261,7 @@
           "deathTerminal": true,
           "texts": [
             "The End.",
-            "(press ESC to exit\u00e0)",
+            "(press ESC to exit\u2026)",
             "The End."
           ],
           "choices": [
@@ -12293,7 +12293,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Credits\u00f9\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\nRock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\nVictory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
+            "Credits:\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\nRock's song- \u201cTrogdor\u201d by Strong Bad.\nVictory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
             "Bye.",
             "Bye."
           ],
@@ -12956,7 +12956,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Tis\u00c6 here ye shall find th\u00c6art destiny.\n(back)",
+            "Tis' here ye shall find th'art destiny.\n(back)",
             "Tis\u2019 here ye shall find th\u2019art destiny.\r(back)"
           ],
           "choices": [
@@ -13284,7 +13284,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Step into the light\u00e0 if th\u00c6art worthy\u00e0"
+            "Step into the light\u2026 if th'art worthy\u2026"
           ],
           "choices": [
             {
@@ -13493,7 +13493,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Ow\u00e0"
+            "Ow\u2026"
           ],
           "choices": [
             {
@@ -13540,7 +13540,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -13593,8 +13593,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Can\u00c6t flee!",
-            "Click here to continue\u00e0",
+            "Can't flee!",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -13678,9 +13678,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
-            "Aww, shiz\u00e0",
-            "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+            "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
+            "Aww, shiz\u2026",
+            "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
             "Huh?"
           ],
           "choices": [
@@ -13730,7 +13730,7 @@
           "deathTerminal": true,
           "texts": [
             "The End.",
-            "(press ESC to exit\u00e0)",
+            "(press ESC to exit\u2026)",
             "The End."
           ],
           "choices": [
@@ -13762,7 +13762,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Credits\u00f9\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\nRock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\nVictory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
+            "Credits:\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\nRock's song- \u201cTrogdor\u201d by Strong Bad.\nVictory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
             "Bye.",
             "Bye."
           ],
@@ -14013,7 +14013,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Magic\u00c6ed battle."
+            "Magic'ed battle."
           ],
           "choices": [
             {
@@ -14715,7 +14715,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Tis\u00c6 here ye shall find th\u00c6art destiny.\n(back)",
+            "Tis' here ye shall find th'art destiny.\n(back)",
             "Tis\u2019 here ye shall find th\u2019art destiny.\r(back)"
           ],
           "choices": [
@@ -15043,7 +15043,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Step into the light\u00e0 if th\u00c6art worthy\u00e0"
+            "Step into the light\u2026 if th'art worthy\u2026"
           ],
           "choices": [
             {
@@ -15252,7 +15252,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Ow\u00e0"
+            "Ow\u2026"
           ],
           "choices": [
             {
@@ -15299,7 +15299,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -15352,8 +15352,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Can\u00c6t flee!",
-            "Click here to continue\u00e0",
+            "Can't flee!",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -15437,9 +15437,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
-            "Aww, shiz\u00e0",
-            "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+            "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
+            "Aww, shiz\u2026",
+            "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
             "Huh?"
           ],
           "choices": [
@@ -15489,7 +15489,7 @@
           "deathTerminal": true,
           "texts": [
             "The End.",
-            "(press ESC to exit\u00e0)",
+            "(press ESC to exit\u2026)",
             "The End."
           ],
           "choices": [
@@ -15521,7 +15521,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Credits\u00f9\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\nRock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\nVictory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
+            "Credits:\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\nRock's song- \u201cTrogdor\u201d by Strong Bad.\nVictory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
             "Bye.",
             "Bye."
           ],
@@ -15829,7 +15829,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Tis\u00c6 here ye shall find th\u00c6art destiny.\n(back)",
+            "Tis' here ye shall find th'art destiny.\n(back)",
             "Tis\u2019 here ye shall find th\u2019art destiny.\r(back)"
           ],
           "choices": [
@@ -16157,7 +16157,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Step into the light\u00e0 if th\u00c6art worthy\u00e0"
+            "Step into the light\u2026 if th'art worthy\u2026"
           ],
           "choices": [
             {
@@ -16366,7 +16366,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Ow\u00e0"
+            "Ow\u2026"
           ],
           "choices": [
             {
@@ -16413,7 +16413,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Click here to continue\u00e0",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -16466,8 +16466,8 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Can\u00c6t flee!",
-            "Click here to continue\u00e0",
+            "Can't flee!",
+            "Click here to continue\u2026",
             "Click here to continue\u2026"
           ],
           "choices": [
@@ -16551,9 +16551,9 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "So the legends are true\u00e0You are the Hero of time\u00d6\u00e0 it is, now your destiny to kill every stinkin\u00c6 goblin.",
-            "Aww, shiz\u00e0",
-            "Don\u00c6t worry\u00e0 if you die now, your stuff will end up in some museum.",
+            "So the legends are true\u2026You are the Hero of time\u2026\u2026 it is, now your destiny to kill every stinkin' goblin.",
+            "Aww, shiz\u2026",
+            "Don't worry\u2026 if you die now, your stuff will end up in some museum.",
             "Huh?"
           ],
           "choices": [
@@ -16603,7 +16603,7 @@
           "deathTerminal": true,
           "texts": [
             "The End.",
-            "(press ESC to exit\u00e0)",
+            "(press ESC to exit\u2026)",
             "The End."
           ],
           "choices": [
@@ -16635,7 +16635,7 @@
           "stuckReason": null,
           "deathTerminal": false,
           "texts": [
-            "Credits\u00f9\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u00f4Jesu, joy of man\u00c6s desire\u00f6 by Baby Einstein\nRock\u00c6s song- \u00f4Trogdor\u00f6 by Strong Bad.\nVictory song- \u00f4FF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
+            "Credits:\nExecutive Producer-Shiny Yang\nMain programmer- Shiny Yang\nArt director- Shiny Yang\nMonster Design- Shiny Yang\nEthics Director- Brian Goddard\nBattle Programmer- Shiny Yang\n-Music-\nTheme song- \u201cJesu, joy of man's desire\u201d by Baby Einstein\nRock's song- \u201cTrogdor\u201d by Strong Bad.\nVictory song- \u201cFF1 fanfare by anonymous at Vgmusic.com\nSpecial thanks-\nDavid, Brian and Mr. Mullins.\nMay 20th, 2005, SPOTCO\n-=Thanks 4 Playing=-\n\n\n\n ",
             "Bye.",
             "Bye."
           ],
