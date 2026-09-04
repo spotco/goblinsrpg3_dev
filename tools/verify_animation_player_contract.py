@@ -178,6 +178,26 @@ def main() -> None:
             ),
         },
         {
+            "feature": "AfterEffect hide-on-next-click",
+            "manifestEvidence": {
+                "subEffectContainers": summary.get("subEffectContainers"),
+                "variantStrings": sorted(variant_strings.intersection({"style.visibility", "hidden"})),
+            },
+            "present": (
+                int(summary.get("subEffectContainers") or 0) == 126
+                and "hidden" in variant_strings
+                and "style.visibility" in variant_strings
+            ),
+            "snippets": (
+                "function isAfterEffectNode",
+                "function isHideOnNextClickAfterEffect",
+                "function queueHideOnNextClickAfterEffect",
+                "function flushPendingAfterEffectHides",
+                "pendingAfterEffectHides",
+                "Hide on Next Mouse Click",
+            ),
+        },
+        {
             "feature": "motion paths",
             "manifestEvidence": {"motionBehaviors": behavior_kinds.get("motion")},
             "present": int(behavior_kinds.get("motion", 0)) > 0,

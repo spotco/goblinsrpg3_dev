@@ -151,7 +151,8 @@ def build_opening_trains(game: dict, animations: dict) -> dict:
         elif para_names and para_names <= {"asAWhole", "allAtOnce"}:
             approx = (
                 "ParaBuild is asAWhole/allAtOnce — whole-shape playback matches PPT build mode; "
-                "subEffects expanded and scheduled with parent."
+                "AfterEffect Hide-on-Next-Click subEffects defer to next OnNext; "
+                "other subEffects schedule with parent / OnEnd triggers."
             )
         elif para_names:
             approx = (

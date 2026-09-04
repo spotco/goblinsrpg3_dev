@@ -133,6 +133,18 @@ Writes `generated/debug/slide-002.json` with:
 - PNG stats
 - Risk list + suggested follow-up commands
 
+### AfterEffect / text disappear (Hide on Next Click)
+
+PPT stores “After Animation → Hide on Next Mouse Click” as a `RT_TimeSubEffectContainer` with:
+
+- TimeProperty **AfterEffect** (variant instance 13) = true
+- **Display** (instance 2) = 1
+- Behavior: `SET style.visibility = hidden`
+
+Runtime defers these until the next OnNext via `pendingAfterEffectHides` (see HUD `afterEffect pending`). OnEnd-gated after-effects keep normal trigger waits.
+
+QA: `?debug=1&slide=3` — click through OnNext; prior caption must hide before/as the next appears (shapes 3079 → 3077 → 3078 share nearly the same bounds).
+
 ### Text / WordArt fidelity (Phase 5.6 / 5.7)
 
 ```powershell

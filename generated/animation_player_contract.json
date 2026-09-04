@@ -1,7 +1,7 @@
 {
   "format": "goblins-rpg3-animation-player-contract-v1",
   "summary": {
-    "features": 11,
+    "features": 12,
     "allPassed": true,
     "timeNodeContainers": 2407,
     "mappedMediaBindings": 8
@@ -129,6 +129,25 @@
         "animation:set-metric",
         "function animateMetricValues",
         "basePptX"
+      ],
+      "styleSnippets": []
+    },
+    {
+      "feature": "AfterEffect hide-on-next-click",
+      "manifestEvidence": {
+        "subEffectContainers": 126,
+        "variantStrings": [
+          "hidden",
+          "style.visibility"
+        ]
+      },
+      "runtimeSnippets": [
+        "function isAfterEffectNode",
+        "function isHideOnNextClickAfterEffect",
+        "function queueHideOnNextClickAfterEffect",
+        "function flushPendingAfterEffectHides",
+        "pendingAfterEffectHides",
+        "Hide on Next Mouse Click"
       ],
       "styleSnippets": []
     },

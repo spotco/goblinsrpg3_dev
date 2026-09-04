@@ -53,6 +53,7 @@ const state = {
   animations: null,
   animationSlides: new Map(),
   animationQueue: [],
+  pendingAfterEffectHides: [],
   animationTimers: [],
   animationTriggerWaiters: new Map(),
   animationStartedNodes: new Set(),
@@ -113,6 +114,8 @@ function animationNodeInfo(node) {
     subEffectCount: (node.subEffects || []).length,
     childCount: (node.children || []).length,
     waitsForClick: nodeWaitsForClick(node),
+    afterEffect: isAfterEffectNode(node),
+    hideOnNextClick: isHideOnNextClickAfterEffect(node),
     triggerConditions: nodeTriggerConditions(node).map((condition) => ({
       triggerEvent: condition.triggerEvent,
       targetId: condition.targetId,
@@ -450,6 +453,7 @@ function updateDebugHud(dumpOverride = null) {
     `png: hidden=${dump.runtime.imageHidden} natural=${dump.runtime.imageNatural?.width || 0}x${dump.runtime.imageNatural?.height || 0}`,
     `decision: ${decision.summary || "(none yet)"}`,
     `anim queue: ${(dump.snapshot && dump.snapshot.queuedAnimationNodes && dump.snapshot.queuedAnimationNodes.length) || 0}`,
+    `afterEffect pending: ${(dump.snapshot && dump.snapshot.pendingAfterEffectHides && dump.snapshot.pendingAfterEffectHides.length) || 0}`,
     `autoTimer: ${
       state.autoAdvanceTimer
         ? `${state.autoAdvanceTimer.delayMs}ms → ${state.autoAdvanceTimer.toScreen.id}`
@@ -538,6 +542,7 @@ window.goblinsRpg3Debug = {
       lastRenderDecision: state.lastRenderDecision,
       lastInteraction: state.lastInteraction,
       queuedAnimationNodes: state.animationQueue.map((node) => animationNodeInfo(node)),
+      pendingAfterEffectHides: state.pendingAfterEffectHides.map((node) => animationNodeInfo(node)),
       trackedAnimationTimerHandles: state.animationTimers.length,
       startedAnimationNodes: state.animationStartedNodes.size,
       completedAnimationNodes: state.animationCompletedNodes.size,
@@ -695,6 +700,7 @@ function clearAnimationTimers() {
   }
   state.animationTimers = [];
   state.animationQueue = [];
+  state.pendingAfterEffectHides = [];
   state.animationTriggerWaiters = new Map();
   state.animationStartedNodes = new Set();
   state.animationCompletedNodes = new Set();
@@ -2634,6 +2640,54 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
   scheduleChildNodes(node, startDelay, autoplay, activeIterate);
 }
 
+
+/** PPT TimePropertyID TL_TPID_AfterEffect (instance 13). */
+function isAfterEffectNode(node) {
+  return (node.variants || []).some((variant) => {
+    const parsed = variant.parsed;
+    return variant.instance === 13 && parsed && parsed.boolValue === true;
+  });
+}
+
+/**
+ * "Hide on Next Mouse Click" after-effects are TimeSubEffectContainers that set
+ * style.visibility=hidden with AfterEffect=true and no OnBegin/OnEnd trigger.
+ * (MasterPos=2 in the extract; OnEnd-gated after-effects keep their conditions.)
+ * They must not run with the parent entrance — defer until the next OnNext click.
+ */
+function isHideOnNextClickAfterEffect(node) {
+  return isAfterEffectNode(node) && nodeTriggerConditions(node).length === 0;
+}
+
+function queueHideOnNextClickAfterEffect(node) {
+  if (state.pendingAfterEffectHides.some((pending) => pending.id === node.id)) {
+    return;
+  }
+  state.pendingAfterEffectHides.push(node);
+  runtimeLog("animation:aftereffect-queued", {
+    node: animationNodeInfo(node),
+    reason: "Hide on Next Mouse Click (AfterEffect set hidden)",
+    pendingCount: state.pendingAfterEffectHides.length,
+    targets: (node.targets || []).map((target) => ({ kind: target.kind, shapeId: target.shapeId })),
+  });
+}
+
+function flushPendingAfterEffectHides() {
+  if (!state.pendingAfterEffectHides.length) {
+    return;
+  }
+  const pending = state.pendingAfterEffectHides.slice();
+  state.pendingAfterEffectHides = [];
+  runtimeLog("animation:aftereffect-flush", {
+    count: pending.length,
+    nodes: pending.map((node) => animationNodeInfo(node)),
+  });
+  for (const node of pending) {
+    // Force-run: apply SET hidden now (skip click/trigger gates).
+    runAnimationNode(node, 0, true, true);
+  }
+}
+
 function scheduleSubEffectNodes(node, startDelay, autoplay = false, iterateContext = null) {
   const subEffects = node.subEffects || [];
   if (!subEffects.length) {
@@ -2646,7 +2700,13 @@ function scheduleSubEffectNodes(node, startDelay, autoplay = false, iterateConte
     children: subEffects.map((child) => animationNodeInfo(child)),
   });
   for (const sub of subEffects) {
-    // Sub-effects are subordinate tracks: run with parent, including triggered waits.
+    // AfterEffect "Hide on Next Click": defer until the next OnNext advance.
+    if (isHideOnNextClickAfterEffect(sub)) {
+      queueHideOnNextClickAfterEffect(sub);
+      continue;
+    }
+    // Other sub-effects (e.g. OnEnd-gated hide-after-animation) run with parent /
+    // register trigger waits as usual.
     runAnimationNode(sub, startDelay, false, false, autoplay, iterateContext);
   }
 }
@@ -2769,6 +2829,9 @@ function setupAnimations(screen) {
 }
 
 function advanceAnimation() {
+  // PPT After Animation → Hide on Next Mouse Click fires on this click,
+  // before (or as) the next OnNext build starts — prevents stacked text.
+  flushPendingAfterEffectHides();
   const node = state.animationQueue.shift();
   if (!node) {
     runtimeLog("input:animation-advance", {
