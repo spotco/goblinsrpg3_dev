@@ -868,10 +868,26 @@ function renderHotspots(screen) {
     }
     button.setAttribute(
       "aria-label",
-      hotspot.label || (hotspot.targetSlide ? `Go to slide ${hotspot.targetSlide}` : `Run ${hotspot.action} action`),
+      hotspot.shapeText ||
+        hotspot.label ||
+        (hotspot.targetSlide ? `Go to slide ${hotspot.targetSlide}` : `Run ${hotspot.action} action`),
     );
     button.addEventListener("click", (event) => {
       event.stopPropagation();
+      unlockAudio();
+      // PPT continuum: pending OnNext/OnPrev builds consume the click before
+      // hyperlink/media actions (same ordering as blank-stage clicks).
+      if (advanceAnimation()) {
+        recordInteraction({
+          type: "hotspot-click",
+          action: "advance-animation",
+          result: "animation-advanced",
+          hotspotId: hotspot.id,
+          shapeId: hotspot.shapeId,
+          queueLengthAfter: state.animationQueue.length,
+        });
+        return;
+      }
       handleHotspotAction(hotspot);
     });
     hotspotsLayer.append(button);
@@ -1081,6 +1097,7 @@ function applyHybridPngTextPolicy(screen) {
   }
   // Composite PNG already includes static text/WordArt; overlaying live text
   // causes title-screen double-draw. Keep animated layers for entrance/media.
+  // Visual-only hide: never disable clickable hotspots (separate #hotspots layer).
   for (const layer of screen.layers || []) {
     if (layer.type !== "text" || layer.animated) {
       continue;
@@ -1091,6 +1108,9 @@ function applyHybridPngTextPolicy(screen) {
     }
     element.classList.add("hybrid-png-text-hidden");
     element.dataset.hybridHiddenText = "true";
+    // Ensure a hybrid-hidden text box cannot intercept hits meant for hotspots /
+    // stage OnNext continuum (defense in depth; CSS also sets pointer-events).
+    element.style.pointerEvents = "none";
   }
 }
 

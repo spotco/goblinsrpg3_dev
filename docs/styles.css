@@ -100,7 +100,8 @@ button:focus-visible {
   border: none !important;
 }
 
-/* Static text already present in the PNG underlay (hybrid mode). */
+/* Static text already present in the PNG underlay (hybrid mode).
+   Visual-only: must not disable #hotspots hit targets for the same shapes. */
 .layer.hybrid-png-text-hidden {
   visibility: hidden !important;
   pointer-events: none !important;
