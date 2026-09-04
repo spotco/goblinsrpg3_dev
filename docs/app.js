@@ -450,6 +450,11 @@ function updateDebugHud(dumpOverride = null) {
     `png: hidden=${dump.runtime.imageHidden} natural=${dump.runtime.imageNatural?.width || 0}x${dump.runtime.imageNatural?.height || 0}`,
     `decision: ${decision.summary || "(none yet)"}`,
     `anim queue: ${(dump.snapshot && dump.snapshot.queuedAnimationNodes && dump.snapshot.queuedAnimationNodes.length) || 0}`,
+    `autoTimer: ${
+      state.autoAdvanceTimer
+        ? `${state.autoAdvanceTimer.delayMs}ms → ${state.autoAdvanceTimer.toScreen.id}`
+        : "none"
+    }`,
     `problems: ${problems.length}`,
     ...problems.slice(0, 8).map((problem) => `  [${problem.severity}] ${problem.code}: ${problem.message}`),
   ];
@@ -2861,51 +2866,73 @@ function animationTimelineForScreen(screen) {
   };
 }
 
+function screenAllowsAutoAdvance(screen) {
+  if (!screen) {
+    return false;
+  }
+  // Prefer advancement block (build_advancement_model); fall back to transition flags.
+  if (screen.advancement && typeof screen.advancement.autoAdvance === "boolean") {
+    return screen.advancement.autoAdvance;
+  }
+  return Boolean(screen.transition && (screen.transition.flagNames || []).includes("autoAdvance"));
+}
+
+function autoAdvanceSourceDelayMs(screen) {
+  if (!screen) {
+    return null;
+  }
+  const advDelay = screen.advancement && screen.advancement.autoAdvanceDelayMs;
+  if (Number.isFinite(advDelay) && advDelay > 0) {
+    return advDelay;
+  }
+  const slideTimeMs = screen.transition && screen.transition.slideTimeMs;
+  if (Number.isFinite(slideTimeMs) && slideTimeMs > 0) {
+    return slideTimeMs;
+  }
+  return null;
+}
+
 function scheduleAutoAdvance(screen) {
   const transition = screen.transition;
+  const advancement = screen.advancement || null;
   runtimeLog("navigation:auto-advance-evaluate", {
     screen: { id: screen.id, slide: screen.slide },
+    advancement,
     transition: transition || null,
+    startSlideOverride: state.startSlideOverride,
   });
   clearAutoAdvanceTimer("rescheduled");
-  // Deep-linked debug slides (?slide=N) must not immediately advance away.
-  if (state.startSlideOverride !== null && Number(screen.slide) === Number(state.startSlideOverride)) {
+  // ?slide=N only selects the boot slide. Auto-advance still follows advancement
+  // policy after max(slideTime, animation timeline) so the PPT continuum works
+  // under the usual QA URL (?debug=1&slide=1). Non-auto slides never schedule.
+  if (!screenAllowsAutoAdvance(screen)) {
     runtimeLog("navigation:auto-advance-not-scheduled", {
       screen: { id: screen.id, slide: screen.slide },
-      reason: "debug startSlideOverride matches current screen",
-      startSlideOverride: state.startSlideOverride,
+      reason: "advancement.autoAdvance is false (or transition autoAdvance flag missing)",
     });
     return;
   }
-  if (
-    !transition ||
-    !(transition.flagNames || []).includes("autoAdvance") ||
-    !Number.isFinite(transition.slideTimeMs) ||
-    transition.slideTimeMs <= 0
-  ) {
+  const sourceDelayMs = autoAdvanceSourceDelayMs(screen);
+  if (!Number.isFinite(sourceDelayMs) || sourceDelayMs <= 0) {
     runtimeLog("navigation:auto-advance-not-scheduled", {
       screen: { id: screen.id, slide: screen.slide },
-      reason: !transition
-        ? "no transition"
-        : !(transition.flagNames || []).includes("autoAdvance")
-          ? "autoAdvance flag missing"
-          : !Number.isFinite(transition.slideTimeMs)
-            ? "slideTimeMs is not finite"
-            : "slideTimeMs is not positive",
+      reason: "autoAdvanceDelayMs / slideTimeMs missing or not positive",
+      advancementDelayMs: advancement ? advancement.autoAdvanceDelayMs : null,
+      transitionSlideTimeMs: transition ? transition.slideTimeMs : null,
     });
     return;
   }
-  const nextScreen = state.screens.get(screenId(Number(screen.slide) + 1));
+  const nextId = nextSequentialScreenId(screen);
+  const nextScreen = nextId ? state.screens.get(nextId) : null;
   if (!nextScreen) {
     runtimeLog("navigation:auto-advance-not-scheduled", {
       screen: { id: screen.id, slide: screen.slide },
       reason: "next sequential screen missing",
-      requestedNextId: screenId(Number(screen.slide) + 1),
+      requestedNextId: nextId,
     }, "warn");
     return;
   }
   const animationTimeline = animationTimelineForScreen(screen);
-  const sourceDelayMs = transition.slideTimeMs;
   const scheduledDelayMs = Math.max(sourceDelayMs, animationTimeline.durationMs);
   const timerId = ++state.autoAdvanceSequence;
   const fromScreen = { id: screen.id, slide: screen.slide };
@@ -2917,8 +2944,9 @@ function scheduleAutoAdvance(screen) {
     sourceDelayMs,
     animationTimeline,
     scheduledDelayMs,
-    sourceRecordOffset: transition.recordOffset ?? null,
-    sourceRawHex: transition.rawHex ?? null,
+    startSlideOverride: state.startSlideOverride,
+    sourceRecordOffset: transition ? transition.recordOffset ?? null : null,
+    sourceRawHex: transition ? transition.rawHex ?? null : null,
     reason: animationTimeline.durationMs > sourceDelayMs
       ? "wait for the longer of PowerPoint slide time and decoded animation timeline"
       : "PowerPoint autoAdvance slide time; animation timeline completes before it",
@@ -2952,6 +2980,7 @@ function scheduleAutoAdvance(screen) {
     navigateTo(nextScreen.id);
   }, scheduledDelayMs);
   state.autoAdvanceTimer = timerRecord;
+  updateDebugHud();
 }
 
 function transitionDuration(screen) {
@@ -3213,15 +3242,9 @@ fetch(assetUrl("game-manifest.json"), { cache: "no-store" })
         if (state.current) {
           setupAnimations(state.current);
           applyHybridPngTextPolicy(state.current);
-          // Deep-linked debug slides should not immediately auto-advance away.
-          if (state.startSlideOverride === null) {
-            scheduleAutoAdvance(state.current);
-          } else {
-            runtimeLog("navigation:auto-advance-suppressed", {
-              reason: "startSlideOverride active",
-              slide: state.current.slide,
-            });
-          }
+          // Reschedule with animation timeline now that manifests are loaded.
+          // ?slide=N does not suppress: delay is already max(slideTime, timeline).
+          scheduleAutoAdvance(state.current);
         }
         updateDebugHud();
       })

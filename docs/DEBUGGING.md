@@ -26,7 +26,7 @@ http://127.0.0.1:8765/?debug=1&slide=2
 | Query | Effect |
 |---|---|
 | `debug=1` | Logging + hotspot outlines + on-page Debug HUD |
-| `slide=N` | Jump straight to slide N (skips boot auto-advance away from it) |
+| `slide=N` | Jump straight to slide N as the start screen (auto-advance still follows `advancement` after max(slideTime, anim timeline)) |
 | `log=1` | Logging only |
 | `hotspots=1` | Hotspot outline CSS only |
 | `hud=1` | HUD only |
@@ -50,7 +50,11 @@ Click a layer while debug/HUD is on to select it (cyan outline + HUD detail).
 
 ## Slide advancement (runtime)
 
-Stage click policy is data-driven from each screen’s `advancement` block in `game-manifest.json`:
+Advancement is data-driven from each screen’s `advancement` block in `game-manifest.json` (59 auto-advance slides; others click/hotspot only):
+
+**Auto-advance** (when `advancement.autoAdvance`): after `max(autoAdvanceDelayMs, animation timeline)` → `nextSequentialId`. No slide-number hardcodes.
+
+**Stage click continuum**:
 
 1. Unlock audio  
 2. If OnNext animation queue non-empty → play next animation node  
@@ -65,7 +69,9 @@ python tools/build_advancement_model.py
 python tools/verify_advancement.py
 ```
 
-Debug HUD shows `advancement` modes and leave paths. `?slide=N` still suppresses **auto**-advance for that slide only.
+Debug HUD shows `advancement` modes, leave paths, and `autoTimer` when a slide is scheduled to auto-advance.
+
+`?slide=N` only selects the boot slide — it does **not** freeze auto-advance. Slides with `advancement.autoAdvance` still navigate to `nextSequentialId` after `max(autoAdvanceDelayMs, animation timeline)`, matching PowerPoint. Slides without auto (e.g. title `slide=2`) stay until hotspot / stage-click policy says otherwise. Use a non-auto slide, or pause in DevTools, when you need to inspect an auto slide without leaving.
 
 ## Offline tools
 
