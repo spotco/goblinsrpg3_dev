@@ -1416,6 +1416,372 @@ function nodeWaitsForClick(node) {
   });
 }
 
+
+function iterateKind(iterate) {
+  if (!iterate || typeof iterate !== "object") {
+    return null;
+  }
+  if (iterate.iterateType === 2 || iterate.iterateTypeName === "byLetter") {
+    return "byLetter";
+  }
+  if (iterate.iterateType === 1 || iterate.iterateTypeName === "byWord") {
+    return "byWord";
+  }
+  return null;
+}
+
+function iterateIntervalMs(iterate, effectDurationMs) {
+  if (!iterate) {
+    return 0;
+  }
+  const interval = Number(iterate.iterateInterval);
+  if (!Number.isFinite(interval)) {
+    return 0;
+  }
+  if (iterate.iterateIntervalType === 1 || iterate.iterateIntervalTypeName === "percentage") {
+    return (interval / 100) * Math.max(effectDurationMs || 1, 1);
+  }
+  return Math.max(interval, 0);
+}
+
+function splitIterateText(text, kind) {
+  const value = String(text || "");
+  if (!value) {
+    return [];
+  }
+  if (kind === "byWord") {
+    const parts = value.match(/\S+|\s+/g);
+    return parts && parts.length ? parts : [value];
+  }
+  return Array.from(value);
+}
+
+function iterateIsBackwards(iterate) {
+  return Boolean(
+    iterate && (iterate.iterateDirection === 2 || iterate.iterateDirectionName === "backwards"),
+  );
+}
+
+function ensureIterateUnits(element, iterate) {
+  const kind = iterateKind(iterate);
+  if (!kind || !element) {
+    return null;
+  }
+  if (element.dataset.iteratePrepared === kind) {
+    const existing = Array.from(element.querySelectorAll(":scope > .anim-iterate-unit"));
+    if (!existing.length) {
+      return null;
+    }
+    return iterateIsBackwards(iterate) ? existing.slice().reverse() : existing;
+  }
+  if (element.querySelector("img")) {
+    return null;
+  }
+  const text = element.textContent || "";
+  const parts = splitIterateText(text, kind);
+  if (!parts.length) {
+    return null;
+  }
+  element.textContent = "";
+  element.classList.add("anim-iterate-host");
+  element.dataset.iteratePrepared = kind;
+  const units = [];
+  for (const part of parts) {
+    const span = document.createElement("span");
+    span.className = "anim-iterate-unit";
+    span.textContent = part;
+    span.style.opacity = "0";
+    span.style.transform = "scale(1)";
+    span.style.transformOrigin = "center center";
+    if (/^\s+$/.test(part)) {
+      span.style.whiteSpace = "pre";
+    }
+    element.append(span);
+    units.push(span);
+  }
+  return iterateIsBackwards(iterate) ? units.slice().reverse() : units;
+}
+
+function buildIterateContext(node) {
+  const iterate = node && node.iterate;
+  if (!iterateKind(iterate)) {
+    return null;
+  }
+  let effectDurationMs = 0;
+  for (const child of node.children || []) {
+    effectDurationMs = Math.max(effectDurationMs, nodeDuration(child));
+  }
+  if (effectDurationMs <= 1) {
+    effectDurationMs = 500;
+  }
+  return {
+    iterate,
+    effectDurationMs,
+    hostUnits: new Map(),
+  };
+}
+
+function collectIterateShapeIds(node) {
+  const shapeIds = new Set();
+  for (const child of node.children || []) {
+    for (const target of child.targets || []) {
+      if (target.kind === "shape" && target.shapeId !== undefined) {
+        shapeIds.add(String(target.shapeId));
+      }
+    }
+    for (const behavior of child.behaviors || []) {
+      for (const target of behavior.targets || []) {
+        if (target.kind === "shape" && target.shapeId !== undefined) {
+          shapeIds.add(String(target.shapeId));
+        }
+      }
+    }
+  }
+  return shapeIds;
+}
+
+function prepareIterateTargets(node, iterateContext) {
+  if (!iterateContext) {
+    return;
+  }
+  for (const shapeId of collectIterateShapeIds(node)) {
+    const element = state.currentLayerElements.get(shapeId);
+    if (!element) {
+      continue;
+    }
+    const units = ensureIterateUnits(element, iterateContext.iterate);
+    if (units && units.length) {
+      iterateContext.hostUnits.set(shapeId, units);
+      runtimeLog("animation:iterate-prepared", {
+        shapeId,
+        kind: iterateKind(iterateContext.iterate),
+        unitCount: units.length,
+        intervalMs: iterateIntervalMs(iterateContext.iterate, iterateContext.effectDurationMs),
+        effectDurationMs: iterateContext.effectDurationMs,
+      });
+    }
+  }
+}
+
+function iterateExtraDuration(node) {
+  const iterate = node && node.iterate;
+  if (!iterateKind(iterate)) {
+    return 0;
+  }
+  let effectDurationMs = 0;
+  for (const child of node.children || []) {
+    effectDurationMs = Math.max(effectDurationMs, nodeDuration(child));
+  }
+  if (effectDurationMs <= 1) {
+    effectDurationMs = 500;
+  }
+  const interval = iterateIntervalMs(iterate, effectDurationMs);
+  let maxUnits = 1;
+  for (const shapeId of collectIterateShapeIds(node)) {
+    const element = state.currentLayerElements.get(shapeId);
+    if (!element) {
+      continue;
+    }
+    const text = element.dataset.iteratePrepared
+      ? Array.from(element.querySelectorAll(":scope > .anim-iterate-unit"))
+          .map((unit) => unit.textContent || "")
+          .join("")
+      : element.textContent || "";
+    maxUnits = Math.max(maxUnits, splitIterateText(text, iterateKind(iterate)).length || 1);
+  }
+  return interval * Math.max(maxUnits - 1, 0);
+}
+
+function iterateContextStaggerExtra(iterateContext) {
+  if (!iterateContext || !iterateKind(iterateContext.iterate)) {
+    return 0;
+  }
+  const interval = iterateIntervalMs(iterateContext.iterate, iterateContext.effectDurationMs);
+  let maxUnits = 1;
+  for (const units of iterateContext.hostUnits.values()) {
+    maxUnits = Math.max(maxUnits, (units && units.length) || 1);
+  }
+  return interval * Math.max(maxUnits - 1, 0);
+}
+
+function resetIterateHost(element) {
+  if (!element || !element.dataset.iteratePrepared) {
+    return;
+  }
+  const text = Array.from(element.querySelectorAll(":scope > .anim-iterate-unit"))
+    .map((unit) => unit.textContent || "")
+    .join("");
+  element.textContent = text;
+  delete element.dataset.iteratePrepared;
+  element.classList.remove("anim-iterate-host");
+}
+
+function animateIterateUnitFade(unit, timing) {
+  unit.style.visibility = "visible";
+  unit.style.opacity = "0";
+  if (typeof unit.animate === "function") {
+    try {
+      const animation = unit.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: Math.max(timing.duration, 1),
+        easing: cssEasing(timing),
+        fill: "forwards",
+      });
+      animation.addEventListener("finish", () => {
+        unit.style.opacity = "1";
+      });
+      return;
+    } catch (_error) {
+      // Fall through.
+    }
+  }
+  unit.style.opacity = "1";
+}
+
+function animateIterateUnitScale(unit, startScale, timing) {
+  const from = Number.isFinite(startScale) ? Math.max(startScale, 0.01) : 0.1;
+  if (unit.dataset.iterScaleStarted === "1") {
+    return;
+  }
+  unit.dataset.iterScaleStarted = "1";
+  unit.style.transformOrigin = "center center";
+  if (typeof unit.animate === "function") {
+    try {
+      const animation = unit.animate(
+        [{ transform: `scale(${from})` }, { transform: "scale(1)" }],
+        {
+          duration: Math.max(timing.duration, 1),
+          easing: cssEasing(timing),
+          fill: "forwards",
+        },
+      );
+      animation.addEventListener("finish", () => {
+        unit.style.transform = "scale(1)";
+      });
+      return;
+    } catch (_error) {
+      // Fall through.
+    }
+  }
+  unit.style.transform = "scale(1)";
+}
+
+function applyBehaviorToIterateUnits(node, behavior, hostElements, strings, timing, iterateContext) {
+  const kind = iterateKind(iterateContext.iterate);
+  const interval = iterateIntervalMs(iterateContext.iterate, iterateContext.effectDurationMs);
+  let unitTotal = 0;
+  for (const host of hostElements) {
+    const shapeId = host.dataset.shapeId;
+    let units = iterateContext.hostUnits.get(shapeId);
+    if (!units || !units.length) {
+      units = ensureIterateUnits(host, iterateContext.iterate);
+      if (units && units.length) {
+        iterateContext.hostUnits.set(shapeId, units);
+      }
+    }
+    if (!units || !units.length) {
+      runtimeLog(
+        "animation:iterate-whole-shape",
+        {
+          node: animationNodeInfo(node),
+          iterate: iterateContext.iterate,
+          reason: "no text units available — whole-shape apply",
+          shapeId,
+        },
+        "info",
+      );
+      if (behavior.kind === "set") {
+        applySetBehavior([host], strings);
+      } else if (behavior.kind === "effect") {
+        applyEffectBehavior([host], strings, timing);
+      } else if (behavior.kind === "animate") {
+        applyAnimateBehavior([host], strings, timing);
+      } else if (behavior.kind === "motion") {
+        applyMotionBehavior([host], strings, timing);
+      } else if (behavior.kind === "scale") {
+        applyScaleBehavior([host], behavior, timing);
+      }
+      continue;
+    }
+
+    // Container holds letters; letters own opacity/visibility for stagger.
+    host.style.visibility = "visible";
+    if (host.style.opacity === "0" || host.style.opacity === "") {
+      host.style.opacity = "1";
+    }
+
+    for (let index = 0; index < units.length; index += 1) {
+      const unit = units[index];
+      const delay = index * interval;
+      unitTotal += 1;
+      scheduleAnimation(
+        () => {
+          if (behavior.kind === "set") {
+            const visibility = strings.includes("hidden")
+              ? "hidden"
+              : strings.includes("visible") || strings.includes("style.visibility")
+                ? "visible"
+                : null;
+            if (visibility) {
+              unit.style.visibility = visibility;
+              if (visibility === "visible" && unit.style.opacity === "") {
+                unit.style.opacity = "0";
+              }
+            }
+            return;
+          }
+          if (behavior.kind === "effect") {
+            if (strings.some((value) => value === "fade" || value === "dissolve")) {
+              animateIterateUnitFade(unit, timing);
+            }
+            return;
+          }
+          if (behavior.kind === "animate") {
+            const property = propertyNameFromStrings(strings);
+            if (property === "ppt_w" || property === "ppt_h") {
+              const formulas = formulaStrings(strings, property);
+              const values = [];
+              for (const formula of formulas) {
+                const value = evaluatePowerPointFormula(formula, host);
+                if (value !== null) {
+                  values.push(value);
+                }
+              }
+              const base = metricFor(host, property, true);
+              const start = values.length && base > 0 ? values[0] / base : 0.1;
+              animateIterateUnitScale(unit, start, timing);
+            }
+            // Position metrics (ppt_x/ppt_y) stay shape-level; letter stagger uses fade+grow.
+            return;
+          }
+          if (behavior.kind === "scale") {
+            animateIterateUnitScale(unit, 0.1, timing);
+          }
+        },
+        delay,
+        "animation-iterate-unit",
+        {
+          node: animationNodeInfo(node),
+          kind,
+          unitIndex: index,
+          unitCount: units.length,
+          delayMs: delay,
+          behaviorKind: behavior.kind,
+          shapeId,
+        },
+      );
+    }
+  }
+  runtimeLog("animation:iterate-units", {
+    node: animationNodeInfo(node),
+    kind,
+    behaviorKind: behavior.kind,
+    intervalMs: interval,
+    effectDurationMs: iterateContext.effectDurationMs,
+    unitApplications: unitTotal,
+    strings,
+  });
+}
+
 function targetsFor(node, behavior) {
   const targets = behavior.targets && behavior.targets.length ? behavior.targets : node.targets || [];
   return targets
@@ -1493,17 +1859,18 @@ function subtreeDuration(node) {
   const children = node.children || [];
   const subEffects = node.subEffects || [];
   const nested = children.concat(subEffects);
+  const iterateExtra = iterateExtraDuration(node);
   if (!nested.length) {
-    return nodeDelay(node) + nodeDuration(node);
+    return nodeDelay(node) + nodeDuration(node) + iterateExtra;
   }
   if (nodeRunsSequentialChildren(node) && children.length) {
     const childTotal = children.reduce((total, child) => total + subtreeDuration(child), 0);
     const subMax = subEffects.length
       ? Math.max(...subEffects.map((child) => subtreeDuration(child)))
       : 0;
-    return nodeDelay(node) + nodeDuration(node) + Math.max(childTotal, subMax);
+    return nodeDelay(node) + nodeDuration(node) + Math.max(childTotal, subMax) + iterateExtra;
   }
-  return nodeDelay(node) + Math.max(nodeDuration(node), ...nested.map((child) => subtreeDuration(child)));
+  return nodeDelay(node) + Math.max(nodeDuration(node), ...nested.map((child) => subtreeDuration(child))) + iterateExtra;
 }
 
 function transitionList(properties, timing) {
@@ -2141,7 +2508,7 @@ function applyCommandBehavior(node, behavior, strings) {
   }
 }
 
-function applyBehavior(node, behavior) {
+function applyBehavior(node, behavior, iterateContext = null) {
   const strings = parsedStrings(behavior.variants);
   const timing = nodeTiming(node);
   runtimeLog("animation:behavior", {
@@ -2149,6 +2516,7 @@ function applyBehavior(node, behavior) {
     kind: behavior.kind,
     strings,
     timing,
+    iterate: iterateContext ? iterateContext.iterate : null,
     targets: (behavior.targets && behavior.targets.length ? behavior.targets : node.targets || []).map((target) => ({
       kind: target.kind,
       shapeId: target.shapeId,
@@ -2168,6 +2536,10 @@ function applyBehavior(node, behavior) {
     }, "warn");
     return;
   }
+  if (iterateContext && iterateKind(iterateContext.iterate)) {
+    applyBehaviorToIterateUnits(node, behavior, elements, strings, timing, iterateContext);
+    return;
+  }
   if (behavior.kind === "set") {
     applySetBehavior(elements, strings);
   } else if (behavior.kind === "effect") {
@@ -2183,7 +2555,7 @@ function applyBehavior(node, behavior) {
   }
 }
 
-function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTriggeredNode = false, autoplay = false) {
+function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTriggeredNode = false, autoplay = false, iterateContext = null) {
   runtimeLog("animation:node-evaluate", {
     node: animationNodeInfo(node),
     baseDelay,
@@ -2212,6 +2584,11 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
   }
   const startDelay = baseDelay + nodeDelay(node);
   const nodeDetails = { node: animationNodeInfo(node), startDelay, baseDelay };
+  const localIterate = buildIterateContext(node);
+  const activeIterate = localIterate || iterateContext;
+  if (localIterate) {
+    prepareIterateTargets(node, localIterate);
+  }
   scheduleAnimation(() => {
     state.animationStartedNodes.add(node.id);
     runtimeLog("animation:node-started", {
@@ -2227,12 +2604,12 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
         behaviorCount: node.behaviors.length,
       });
       for (const behavior of node.behaviors) {
-        applyBehavior(node, behavior);
+        applyBehavior(node, behavior, activeIterate);
       }
     }, startDelay, "animation-node-behaviors", nodeDetails);
   }
   // Subordinate effects (RT_TimeSubEffectContainer) run with the parent node.
-  scheduleSubEffectNodes(node, startDelay, autoplay);
+  scheduleSubEffectNodes(node, startDelay, autoplay, activeIterate);
   scheduleAnimation(() => {
     state.animationCompletedNodes.add(node.id);
     runtimeLog("animation:node-completed", {
@@ -2240,7 +2617,7 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
       completedCount: state.animationCompletedNodes.size,
     });
     emitAnimationTrigger(4, node);
-  }, startDelay + nodeDuration(node), "animation-node-complete", nodeDetails);
+  }, startDelay + nodeDuration(node) + (activeIterate ? (localIterate ? iterateExtraDuration(node) : iterateContextStaggerExtra(activeIterate)) : 0), "animation-node-complete", nodeDetails);
   runtimeLog("animation:node-scheduled", {
     ...nodeDetails,
     durationMs: nodeDuration(node),
@@ -2249,21 +2626,10 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
     childCount: (node.children || []).length,
     iterate: node.iterate || null,
   });
-  if (node.iterate && (node.iterate.iterateType === 1 || node.iterate.iterateType === 2)) {
-    runtimeLog(
-      "animation:iterate-whole-shape",
-      {
-        node: animationNodeInfo(node),
-        iterate: node.iterate,
-        reason: "byWord/byLetter iterate residual — whole-shape apply",
-      },
-      "info"
-    );
-  }
-  scheduleChildNodes(node, startDelay, autoplay);
+  scheduleChildNodes(node, startDelay, autoplay, activeIterate);
 }
 
-function scheduleSubEffectNodes(node, startDelay, autoplay = false) {
+function scheduleSubEffectNodes(node, startDelay, autoplay = false, iterateContext = null) {
   const subEffects = node.subEffects || [];
   if (!subEffects.length) {
     return;
@@ -2276,11 +2642,11 @@ function scheduleSubEffectNodes(node, startDelay, autoplay = false) {
   });
   for (const sub of subEffects) {
     // Sub-effects are subordinate tracks: run with parent, including triggered waits.
-    runAnimationNode(sub, startDelay, false, false, autoplay);
+    runAnimationNode(sub, startDelay, false, false, autoplay, iterateContext);
   }
 }
 
-function scheduleChildNodes(node, startDelay, autoplay = false) {
+function scheduleChildNodes(node, startDelay, autoplay = false, iterateContext = null) {
   const children = node.children || [];
   if (!children.length) {
     runtimeLog("animation:children-none", { node: animationNodeInfo(node) });
@@ -2308,7 +2674,7 @@ function scheduleChildNodes(node, startDelay, autoplay = false) {
         mode: "sequential",
         startDelay: startDelay + childDelay,
       });
-      runAnimationNode(child, startDelay + childDelay, false, false, autoplay);
+      runAnimationNode(child, startDelay + childDelay, false, false, autoplay, iterateContext);
       childDelay += subtreeDuration(child);
     }
     return;
@@ -2319,8 +2685,9 @@ function scheduleChildNodes(node, startDelay, autoplay = false) {
       child: animationNodeInfo(child),
       mode: "parallel",
       startDelay,
+      iterate: iterateContext ? iterateContext.iterate : null,
     });
-    runAnimationNode(child, startDelay, false, false, autoplay);
+    runAnimationNode(child, startDelay, false, false, autoplay, iterateContext);
   }
 }
 
@@ -2361,6 +2728,7 @@ function setupAnimations(screen) {
   for (const element of state.currentLayerElements.values()) {
     element.classList.remove("hybrid-png-text-hidden");
     delete element.dataset.hybridHiddenText;
+    resetIterateHost(element);
     element.style.visibility = "";
     element.style.opacity = "";
     element.style.transition = "";

@@ -213,7 +213,7 @@
     "subEffectContainers": "expanded as node.subEffects; scheduled with parent (Phase 5.2)",
     "paraBuildAsAWhole": "decoded + whole-shape correct for TLPB_AsAWhole (Phase 5.2)",
     "paraBuildByLevel": "decoded; multi-paragraph level builds residual (Phase 5.2.1)",
-    "timeIterateByWordLetter": "decoded; runtime whole-shape residual (Phase 5.2.1)",
+    "timeIterateByWordLetter": "decoded; runtime byLetter/byWord unit stagger with fade/grow (Phase 5.2.1)",
     "motionPathSampling": "arc-length M/L/C samples (Phase 5.4); rotation/color/filter absent in deck"
   }
 }

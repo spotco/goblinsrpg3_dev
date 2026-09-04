@@ -222,6 +222,16 @@ button:focus-visible {
   line-height: 1.05;
 }
 
+.anim-iterate-host {
+  /* Letter/word units are flex/flow children of the text layer. */
+}
+
+.anim-iterate-unit {
+  display: inline-block;
+  white-space: pre;
+  transform-origin: center center;
+}
+
 .layer-shape {
   background: transparent;
 }

@@ -216,8 +216,8 @@ Do **not** block Phases 1–3 on these.
   - **`iterate`** on nodes: **2** `byLetter` (`TimeIterateData`) decoded.
   - Runtime: `scheduleSubEffectNodes` runs subordinates with parent; timeline/duration includes subEffects; player contract feature added.
   - Offline: opening trains report subEffect/paraBuild/iterate counts; `runtimeSupport` updated.
-  - **Residual → 5.2.1:** letter/word iterate stagger and multi-paragraph level builds still whole-shape (no per-glyph/per-para DOM).
-- [ ] **5.2.1** Optional text-unit stagger: implement byWord/byLetter `TimeIterateData` and any future non-`asAWhole` ParaBuild using paragraph/run splits when layer text supports it (only **2** iterate nodes deck-wide today).
+  - **5.2.1 (partial):** byLetter/byWord `TimeIterateData` now splits text into unit spans and staggers fade/grow (slide 1 "Presents", slide 183). Multi-paragraph ParaBuild level builds remain residual.
+- [x] **5.2.1** Text-unit stagger for byWord/byLetter `TimeIterateData` (2 nodes deck-wide). Remaining: non-`asAWhole` ParaBuild paragraph/run splits if authored later.
 - [x] **5.3** Auto-advance timing — runtime `max(slideTimeMs, animationTimeline)`; offline `generated/auto_advance_timing.json` + `verify_fidelity.py` (59 autos; effective ≥ slideTime; 4 extended by anim estimate).
 - [x] **5.4** Motion path sampling beyond endpoint:
   - Runtime: `parseMotionPath` / `sampleMotionPath` / `densifyMotionPath` — arc-length samples for **M/L/C** (default 48 WAAPI keyframes); endpoint preserved.
@@ -296,7 +296,7 @@ Update when fixed. Severity: **P0** full-game from title · **P1** broken labels
 | A3 | P2 | Auto-advance timing | max(slide, anim) offline+runtime | 5.3 done |
 | A4 | P2 | Sequential edges | traversal v2 + fixtures | 5.5 done |
 | A2 | P2 | Builds / sub-effects | SubEffects expanded; ParaBuild decoded (208 asAWhole + 1 allAtOnce); whole-shape correct | 5.2 done |
-| A2b | P2 | Iterate text units | 2× byLetter TimeIterateData still whole-shape | 5.2.1 |
+| A2b | P2 | Iterate text units | 2× byLetter TimeIterateData unit stagger (fade/grow) | 5.2.1 done |
 | A5 | P2 | Motion paths | Endpoint-only → arc-length M/L/C samples (215 paths); rot/color/filter N/A in deck | 5.4 done |
 | A5b | P3 | Motion polish | Optional easing coupling / exotic cmds | 5.4.1 |
 | V1 | P2 | Self_hl visual risks | Post-resolve v2: 0 clickable / 5 residual / 24 promoted | 5.8 done |
