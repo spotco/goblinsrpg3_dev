@@ -532,6 +532,8 @@ def copy_layers(
         meta: dict[str, object] = {}
         if slide.get("backgroundColor"):
             meta["backgroundColor"] = slide["backgroundColor"]
+        if slide.get("backgroundColorSource"):
+            meta["backgroundColorSource"] = slide["backgroundColorSource"]
         if slide.get("background"):
             meta["background"] = slide["background"]
         if meta:

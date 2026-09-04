@@ -917,6 +917,21 @@ function pointHeightToContainer(value) {
   return `${(Number(value || 0) / 540) * 100}cqh`;
 }
 
+
+function isOpaqueCssColor(value) {
+  if (!value || typeof value !== "string") {
+    return false;
+  }
+  const hex = value.trim().replace(/^#/, "");
+  if (/^[0-9a-fA-F]{6}$/.test(hex)) {
+    return true;
+  }
+  if (/^[0-9a-fA-F]{8}$/.test(hex)) {
+    return Number.parseInt(hex.slice(6, 8), 16) >= 250;
+  }
+  return false;
+}
+
 function pointFontToContainer(value) {
   return `${(Number(value || 1) / 540) * 100}cqh`;
 }
@@ -938,16 +953,38 @@ function applyLayerTransform(element, layer) {
   element.style.transformOrigin = "center center";
 }
 
+
+function cssColorFromPpt(value) {
+  if (!value || typeof value !== "string") {
+    return value;
+  }
+  const trimmed = value.trim();
+  const hex = trimmed.replace(/^#/, "");
+  // Prefer #RRGGBB when alpha is opaque — widest CSS support.
+  if (/^[0-9a-fA-F]{8}$/.test(hex) && hex.slice(6, 8).toLowerCase() === "ff") {
+    return `#${hex.slice(0, 6)}`;
+  }
+  if (/^[0-9a-fA-F]{8}$/.test(hex)) {
+    const r = Number.parseInt(hex.slice(0, 2), 16);
+    const g = Number.parseInt(hex.slice(2, 4), 16);
+    const b = Number.parseInt(hex.slice(4, 6), 16);
+    const a = Number.parseInt(hex.slice(6, 8), 16) / 255;
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+  }
+  return trimmed;
+}
+
 function applyLayerVisualStyle(element, layer) {
   const style = layer.style || {};
   // WordArt fill colors the glyphs; a solid box fill would hide the logo.
-  if (style.fillColor && !layer.wordArt) {
-    element.style.backgroundColor = style.fillColor;
+  // Picture shapes often carry a POI white fill that should not paint behind the bitmap.
+  if (style.fillColor && !layer.wordArt && layer.type !== "image") {
+    element.style.backgroundColor = cssColorFromPpt(style.fillColor);
   }
-  if (style.lineColor && Number(style.lineWidth || 0) > 0 && !layer.wordArt) {
-    element.style.border = `${style.lineWidth}pt solid ${style.lineColor}`;
+  if (style.lineColor && Number(style.lineWidth || 0) > 0 && !layer.wordArt && layer.type !== "image") {
+    element.style.border = `${style.lineWidth}pt solid ${cssColorFromPpt(style.lineColor)}`;
   }
-  if (style.lineDash && style.lineDash !== "SOLID" && !layer.wordArt) {
+  if (style.lineDash && style.lineDash !== "SOLID" && !layer.wordArt && layer.type !== "image") {
     element.style.borderStyle = "dashed";
   }
 }
@@ -1037,6 +1074,26 @@ function layerArea(layer) {
 }
 
 /** Sparse addressable layers: keep composite PNG as underlay (Phase 5.6). */
+
+function applyHybridPngTextPolicy(screen) {
+  if (!screenNeedsPngUnderlay(screen)) {
+    return;
+  }
+  // Composite PNG already includes static text/WordArt; overlaying live text
+  // causes title-screen double-draw. Keep animated layers for entrance/media.
+  for (const layer of screen.layers || []) {
+    if (layer.type !== "text" || layer.animated) {
+      continue;
+    }
+    const element = state.currentLayerElements.get(String(layer.shapeId));
+    if (!element) {
+      continue;
+    }
+    element.classList.add("hybrid-png-text-hidden");
+    element.dataset.hybridHiddenText = "true";
+  }
+}
+
 function screenNeedsPngUnderlay(screen) {
   const layers = screen.layers || [];
   if (!layers.length) {
@@ -1072,14 +1129,23 @@ function renderLayers(screen) {
       const emptyPlaceholder = Boolean(layer.emptyTextPlaceholder) || !String(layer.text || "").trim();
       if (emptyPlaceholder && !layer.wordArt) {
         emptyPlaceholders += 1;
-        element.classList.add("empty-text-placeholder");
-        // Keep animatable boxes in the DOM; hide non-animated decorative empties.
-        if (!layer.animated) {
-          element.style.visibility = "hidden";
-          element.style.pointerEvents = "none";
-        } else {
+        const fill = layer.style && layer.style.fillColor;
+        const hasOpaqueFill = isOpaqueCssColor(fill);
+        // Filled empty AutoShapes are slide plates (e.g. black intro field), not
+        // hollow text boxes — keep the solid fill visible.
+        if (hasOpaqueFill) {
+          element.classList.add("filled-empty-shape");
           element.textContent = "";
-          element.style.backgroundColor = "transparent";
+        } else {
+          element.classList.add("empty-text-placeholder");
+          // Keep animatable boxes in the DOM; hide non-animated decorative empties.
+          if (!layer.animated) {
+            element.style.visibility = "hidden";
+            element.style.pointerEvents = "none";
+          } else {
+            element.textContent = "";
+            element.style.backgroundColor = "transparent";
+          }
         }
       } else {
         element.textContent = layer.text || "";
@@ -1518,10 +1584,10 @@ function applyEffectBehavior(elements, strings, timing) {
   for (const element of elements) {
     // Entrance fade: force visible + opacity 0 → 1. Keep the end state unless auto-reverse.
     element.style.visibility = "visible";
-    element.style.opacity = "1";
+    element.style.opacity = "0";
     if (typeof element.animate === "function") {
       try {
-        element.animate(
+        const animation = element.animate(
           [{ opacity: 0 }, { opacity: 1 }],
           {
             duration: Math.max(timing.duration, 1),
@@ -1529,9 +1595,14 @@ function applyEffectBehavior(elements, strings, timing) {
             fill: "forwards",
           },
         );
+        animation.addEventListener("finish", () => {
+          element.style.opacity = "1";
+        });
       } catch (_error) {
         element.style.opacity = "1";
       }
+    } else {
+      element.style.opacity = "1";
     }
     if (timing.autoReverse) {
       scheduleAnimation(() => {
@@ -2257,9 +2328,9 @@ function collectAnimatedShapeIds(slideAnimations) {
 }
 
 function setupAnimations(screen) {
-  // Slide 1 (and any future autoplay slides) should run OnNext-gated main sequences
-  // without requiring a click, matching the original title entrance.
-  const autoplay = screen.slide === 1;
+  // Auto-advance slides (e.g. spotco intro) should run OnNext-gated main sequences
+  // without requiring a click, matching the original entrance timeline.
+  const autoplay = Boolean(screen.advancement && screen.advancement.autoAdvance);
   runtimeLog("animation:setup-start", {
     screen: { id: screen.id, slide: screen.slide },
     layerElementCount: state.currentLayerElements.size,
@@ -2268,6 +2339,8 @@ function setupAnimations(screen) {
   });
   clearAnimationTimers();
   for (const element of state.currentLayerElements.values()) {
+    element.classList.remove("hybrid-png-text-hidden");
+    delete element.dataset.hybridHiddenText;
     element.style.visibility = "";
     element.style.opacity = "";
     element.style.transition = "";
@@ -2346,7 +2419,7 @@ function renderScreen(screen) {
   missingRender.hidden = true;
   stage.dataset.loading = "false";
   // Source slide solid fill (often white). Full-bleed black shapes still paint over it.
-  stage.style.backgroundColor = screen.backgroundColor || "#070604";
+  stage.style.backgroundColor = cssColorFromPpt(screen.backgroundColor) || "#070604";
   state.lastRenderDecision = {
     screenId: screen.id,
     slide: screen.slide,
@@ -2367,6 +2440,7 @@ function renderScreen(screen) {
   };
   runtimeLog("render:decision", state.lastRenderDecision);
   setupAnimations(screen);
+  applyHybridPngTextPolicy(screen);
   applySlideTransition(screen);
   scheduleAutoAdvance(screen);
   renderHotspots(screen);
@@ -2750,6 +2824,7 @@ fetch(assetUrl("game-manifest.json"), { cache: "no-store" })
         });
         if (state.current) {
           setupAnimations(state.current);
+          applyHybridPngTextPolicy(state.current);
           // Deep-linked debug slides should not immediately auto-advance away.
           if (state.startSlideOverride === null) {
             scheduleAutoAdvance(state.current);

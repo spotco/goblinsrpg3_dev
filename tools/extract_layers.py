@@ -283,6 +283,67 @@ def parse_poi_audit(
     return metadata, by_slide, slide_backgrounds
 
 
+
+def color_alpha(value: str | None) -> int | None:
+    """Return 0-255 alpha for #RRGGBB / #RRGGBBAA, else None."""
+    if not value or not isinstance(value, str):
+        return None
+    text = value.lstrip("#")
+    if len(text) == 6:
+        return 255
+    if len(text) == 8:
+        try:
+            return int(text[6:8], 16)
+        except ValueError:
+            return None
+    return None
+
+
+def is_opaque_fill(value: str | None) -> bool:
+    alpha = color_alpha(value)
+    return alpha is not None and alpha >= 250
+
+
+def layer_fill_color(layer: dict[str, object]) -> str | None:
+    style = layer.get("style")
+    if not isinstance(style, dict):
+        return None
+    fill = style.get("fillColor")
+    return fill if isinstance(fill, str) and fill else None
+
+
+def promote_full_bleed_background(slide_entry: dict[str, object]) -> None:
+    """POI SLIDEBG is often unused follow-master white.
+
+    Authored dark (or other) slide fields are frequently full-bleed AutoShapes
+    with solid fills. Promote the bottom-most opaque full-bleed fill to
+    backgroundColor so stage/reconstruct pick it up for every slide.
+    """
+    layers = slide_entry.get("layers")
+    if not isinstance(layers, list):
+        return
+    for layer in layers:
+        if not isinstance(layer, dict):
+            continue
+        bounds = layer.get("bounds") if isinstance(layer.get("bounds"), dict) else {}
+        width = float(bounds.get("width") or 0.0)
+        height = float(bounds.get("height") or 0.0)
+        if width < 0.99 or height < 0.99:
+            continue
+        fill = layer_fill_color(layer)
+        if not is_opaque_fill(fill):
+            continue
+        # Skip white fills that merely duplicate the POI default canvas.
+        if fill and fill.lower().startswith("#ffffff"):
+            continue
+        slide_entry["backgroundColor"] = fill
+        slide_entry["backgroundColorSource"] = {
+            "kind": "full_bleed_shape_fill",
+            "shapeId": layer.get("shapeId"),
+            "layerId": layer.get("id"),
+        }
+        break
+
 def is_word_art_shape(shape: dict[str, object]) -> bool:
     if shape.get("geoText"):
         return True
@@ -570,6 +631,9 @@ def main() -> None:
             # Prefer solid foreground fill for slide canvas color.
             if background.get("foregroundColor"):
                 slide_entry["backgroundColor"] = background["foregroundColor"]
+        # Override follow-master / default white when a full-bleed solid shape
+        # is the authored field color (e.g. slide 1 / 55 / 198 black plates).
+        promote_full_bleed_background(slide_entry)
         slides.append(slide_entry)
 
     report = {

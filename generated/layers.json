@@ -249,7 +249,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 69637,
+        "layerId": "slide-001-shape-69637"
+      }
     },
     {
       "slide": 2,
@@ -21493,7 +21498,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 58374,
+        "layerId": "slide-048-shape-58374"
+      }
     },
     {
       "slide": 49,
@@ -23939,7 +23949,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 66564,
+        "layerId": "slide-055-shape-66564"
+      }
     },
     {
       "slide": 56,
@@ -24941,7 +24956,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 68614,
+        "layerId": "slide-057-shape-68614"
+      }
     },
     {
       "slide": 58,
@@ -25481,7 +25501,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 70660,
+        "layerId": "slide-058-shape-70660"
+      }
     },
     {
       "slide": 59,
@@ -26353,7 +26378,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 73732,
+        "layerId": "slide-061-shape-73732"
+      }
     },
     {
       "slide": 62,
@@ -85532,7 +85562,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 224260,
+        "layerId": "slide-184-shape-224260"
+      }
     },
     {
       "slide": 185,
@@ -89139,7 +89174,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#ff3300ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 236557,
+        "layerId": "slide-196-shape-236557"
+      }
     },
     {
       "slide": 197,
@@ -89978,7 +90018,12 @@
         "backgroundColor": "#333399ff",
         "picture": null
       },
-      "backgroundColor": "#ffffffff"
+      "backgroundColor": "#000000ff",
+      "backgroundColorSource": {
+        "kind": "full_bleed_shape_fill",
+        "shapeId": 238600,
+        "layerId": "slide-198-shape-238600"
+      }
     },
     {
       "slide": 199,

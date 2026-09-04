@@ -147,11 +147,20 @@ def wrap_text_for_box(value: str, font: ImageFont.FreeTypeFont | ImageFont.Image
 def render_text_layer(layer: dict[str, object], box: tuple[int, int, int, int], scale: float) -> Image.Image | None:
     _x, _y, w, h = box
     value = str(layer.get("text", "")).replace("\x00", "").replace("\r", "")
+    word_art = bool(layer.get("wordArt"))
     if not value.strip():
-        return None
+        # Empty AutoShapes are often solid field fills (e.g. black intro plate).
+        if word_art:
+            return None
+        style = layer.get("style") if isinstance(layer.get("style"), dict) else {}
+        fill = hex_color(style.get("fillColor") if isinstance(style, dict) else None, (0, 0, 0, 0))
+        if fill[3] <= 0:
+            return None
+        layer_image = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+        draw_layer_box(ImageDraw.Draw(layer_image), layer, (0, 0, w, h), scale)
+        return layer_image
     layer_image = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     layer_draw = ImageDraw.Draw(layer_image)
-    word_art = bool(layer.get("wordArt"))
     # WordArt fill colors the glyphs, not a rectangular plate behind them.
     if not word_art:
         draw_layer_box(layer_draw, layer, (0, 0, w, h), scale)

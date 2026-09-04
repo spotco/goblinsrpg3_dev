@@ -100,6 +100,12 @@ button:focus-visible {
   border: none !important;
 }
 
+/* Static text already present in the PNG underlay (hybrid mode). */
+.layer.hybrid-png-text-hidden {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .stage.is-transitioning .layers,
 .stage.is-transitioning .screen {
   animation: slide-fade-in var(--transition-duration, 400ms) ease-out both;
