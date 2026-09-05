@@ -1250,15 +1250,18 @@ function applyTextLayerStyle(element, layer) {
     element.style.fontFamily = fontFamily
       ? `"${fontFamily}", Impact, "Arial Black", sans-serif`
       : 'Impact, "Arial Black", sans-serif';
-    // Fit logo text inside the WordArt shape (height-first, then shrink for width).
-    element.style.fontSize = `${Math.max(layer.bounds.height * 55, 1)}cqh`;
+    // Fit glyphs inside the authored WordArt bounds. Never rewrite left/width —
+    // width:100% was stretching the layer across the stage so centered text
+    // (e.g. s014 "Yip!") appeared over the wrong house roof.
+    const boundsH = Number(layer.bounds.height) || 0;
+    const boundsW = Number(layer.bounds.width) || 0;
+    element.style.fontSize = `${Math.max(Math.min(boundsH * 55, boundsW * 90 || boundsH * 55), 1)}cqh`;
     element.style.lineHeight = "0.9";
     element.style.letterSpacing = "0.01em";
     element.style.backgroundColor = "transparent";
     element.style.border = "none";
-    element.style.overflow = "hidden";
-    element.style.width = "100%";
-    element.style.maxWidth = "100%";
+    // Let outline stroke extend slightly past glyph boxes.
+    element.style.overflow = "visible";
     // Geometry-aware first pass (Phase 5.6): approximate PPT WordArt warps in CSS.
     const geometry = String(layer.wordArtGeometry || layer.shapeType || "");
     element.dataset.wordArtGeometry = geometry;
@@ -1267,20 +1270,32 @@ function applyTextLayerStyle(element, layer) {
     if (geometry.includes("DEFLATE")) {
       // Barrel/deflate: slightly squash mid-height and expand width.
       geometryTransform = "scaleX(1.02) scaleY(0.82)";
-      element.style.fontSize = `${Math.max(layer.bounds.height * 62, 1)}cqh`;
+      element.style.fontSize = `${Math.max(Math.min(boundsH * 62, boundsW * 90 || boundsH * 62), 1)}cqh`;
       element.classList.add("wordart-deflate");
     } else if (geometry.includes("CURVE_UP") || geometry.includes("ARCH_UP")) {
-      geometryTransform = "scaleX(0.95) skewX(-6deg) rotate(-4deg)";
-      element.style.fontSize = `${Math.max(layer.bounds.height * 48, 1)}cqh`;
+      // Short phrases (s014 "Yip!") are nearly flat in PPT; keep a light lift only.
+      geometryTransform = "scaleX(0.96) rotate(-1deg)";
+      element.style.fontSize = `${Math.max(Math.min(boundsH * 48, boundsW * 85 || boundsH * 48), 1)}cqh`;
       element.classList.add("wordart-curve-up");
     } else if (geometry.includes("CURVE_DOWN") || geometry.includes("ARCH_DOWN")) {
-      geometryTransform = "scaleX(0.95) skewX(6deg) rotate(4deg)";
+      geometryTransform = "scaleX(0.96) rotate(1deg)";
       element.classList.add("wordart-curve-down");
     }
-    element.style.transform = `${element.dataset.baseTransform || ""} ${geometryTransform}`.trim();
+    // Bake geometry into baseTransform so setupAnimations / motion / scale
+    // resets preserve the WordArt warp instead of wiping it.
+    const composed = `${element.dataset.baseTransform || ""} ${geometryTransform}`.trim();
+    element.dataset.baseTransform = composed;
+    element.dataset.wordArtTransform = geometryTransform;
+    element.style.transform = composed;
     const style = layer.style || {};
-    if (style.lineColor && String(style.lineColor).toLowerCase().startsWith("#fff")) {
-      element.style.webkitTextStroke = "1px #ffffff";
+    const fillColor = style.fillColor || firstRun.fontColor;
+    if (fillColor) {
+      element.style.color = cssColorFromPpt(fillColor);
+    }
+    if (style.lineColor && Number(style.lineWidth || 0) > 0) {
+      // PPT lineWidth is points; thicken slightly so outlines read at stage scale.
+      const strokePx = Math.max(Number(style.lineWidth) * 2.25, 2);
+      element.style.webkitTextStroke = `${strokePx}px ${cssColorFromPpt(style.lineColor)}`;
       element.style.paintOrder = "stroke fill";
     }
   } else {
@@ -1293,10 +1308,10 @@ function applyTextLayerStyle(element, layer) {
       element.style.fontSize = `${Math.max(layer.bounds.height * 72, 1)}cqh`;
     }
   }
-  if (firstRun.fontColor) {
-    element.style.color = firstRun.fontColor;
+  if (!wordArt && firstRun.fontColor) {
+    element.style.color = cssColorFromPpt(firstRun.fontColor);
   }
-  element.style.fontWeight = firstRun.bold || wordArt ? "700" : "400";
+  element.style.fontWeight = wordArt ? "900" : firstRun.bold ? "700" : "400";
   element.style.fontStyle = firstRun.italic ? "italic" : "normal";
   element.style.textDecoration = firstRun.underline ? "underline" : firstRun.strikethrough ? "line-through" : "none";
   if (Number.isFinite(firstParagraph.lineSpacing) && firstParagraph.lineSpacing > 0 && !wordArt) {
