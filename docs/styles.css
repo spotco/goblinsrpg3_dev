@@ -86,8 +86,13 @@ button:focus-visible {
 }
 
 .wordart-deflate {
-  /* Soft mid-line squeeze approximation of TEXT_DEFLATE */
+  /* Dual-path SVG warp lives in .wordart-deflate-svg; keep overflow for stroke. */
   transform-origin: center center;
+  overflow: visible;
+}
+
+.wordart-deflate-svg text {
+  paint-order: stroke fill;
 }
 
 .wordart-curve-up,

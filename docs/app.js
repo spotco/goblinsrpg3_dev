@@ -1232,19 +1232,31 @@ const WORDART_WARP_AV1 = {
   TEXT_CURVE_DOWN: 45977,
   TEXT_ARCH_UP: 10800000,
   TEXT_ARCH_DOWN: 0,
+  // textDeflate / textInflate family default adj (0–100000).
+  TEXT_DEFLATE: 18750,
 };
 
 /**
- * True path warp for WordArt Curve/Arch presets via SVG textPath.
- * Visual intent (textCurveUp): glyphs follow an upward-arching path between
- * warped top/bottom guides — NOT a flat CSS rotate.
- * Refs: Microsoft Learn TextShapeValues textCurveUp; OOXML a:prstTxWarp;
- * PresetTextWrap dual-path warp algorithm; pptx-svg generate_warp_path.
+ * True path warp for WordArt Curve/Arch/Deflate presets via SVG.
+ * Curve/Arch: glyphs follow a single guide via SVG textPath.
+ * Deflate: OOXML dual-path (top+bottom) pinch — per-glyph scaleY from local
+ * guide gap (not a flat CSS scaleY on the whole string).
+ * Refs:
+ * - Microsoft Learn TextShapeValues.TextDeflate → textDeflate
+ * - Microsoft Learn PresetTextWrap dual-path warp (top+bottom guides)
+ * - OOXML a:prstTxWarp / ST_TextShapeType textDeflate
+ * - pptx-svg generate_warp_path textDeflate (adj default 18750):
+ *   mid cubic M 0,cy C w/3,cy+dip 2w/3,cy+dip w,cy
  */
 function wordArtWarpPathD(geometry, w, h, av1) {
   const geo = String(geometry || "").toUpperCase();
   const cx = w / 2;
   const cy = h / 2;
+  if (geo.includes("DEFLATE")) {
+    const dip = (h * (Number.isFinite(av1) ? av1 : WORDART_WARP_AV1.TEXT_DEFLATE)) / 100000;
+    // Centerline used by textPath fallback / debug; dual-path uses guides below.
+    return `M 0,${cy} C ${w / 3},${cy + dip} ${(2 * w) / 3},${cy + dip} ${w},${cy}`;
+  }
   const adj = (h * (Number.isFinite(av1) ? av1 : 45977)) / 100000;
   if (geo.includes("CURVE_DOWN")) {
     return `M 0,${cy - adj} Q ${cx},${cy + adj} ${w},${cy - adj}`;
@@ -1265,6 +1277,48 @@ function wordArtWarpPathD(geometry, w, h, av1) {
   return `M 0,${cy} L ${w},${cy}`;
 }
 
+/** OOXML-style dual guides for textDeflate (top dips down, bottom rises up). */
+function wordArtDeflateGuides(w, h, av1) {
+  const dip = (h * (Number.isFinite(av1) ? av1 : WORDART_WARP_AV1.TEXT_DEFLATE)) / 100000;
+  const top0 = h * 0.06;
+  const bot0 = h * 0.94;
+  // Pinch strength: default adj 18750 → clear mid squeeze matching WordArt Deflate.
+  const pinch = Math.min(dip * 2.8, (bot0 - top0) * 0.48);
+  const topMid = top0 + pinch;
+  const botMid = bot0 - pinch;
+  return {
+    top0,
+    bot0,
+    top: `M 0,${top0} C ${w / 3},${topMid} ${(2 * w) / 3},${topMid} ${w},${top0}`,
+    bottom: `M 0,${bot0} C ${w / 3},${botMid} ${(2 * w) / 3},${botMid} ${w},${bot0}`,
+    // Cubic control points for sampling (same as path strings).
+    topCtrl: [
+      [0, top0],
+      [w / 3, topMid],
+      [(2 * w) / 3, topMid],
+      [w, top0],
+    ],
+    botCtrl: [
+      [0, bot0],
+      [w / 3, botMid],
+      [(2 * w) / 3, botMid],
+      [w, bot0],
+    ],
+  };
+}
+
+function cubicBezierPoint(ctrl, t) {
+  const mt = 1 - t;
+  const a = mt * mt * mt;
+  const b = 3 * mt * mt * t;
+  const c = 3 * mt * t * t;
+  const d = t * t * t;
+  return {
+    x: a * ctrl[0][0] + b * ctrl[1][0] + c * ctrl[2][0] + d * ctrl[3][0],
+    y: a * ctrl[0][1] + b * ctrl[1][1] + c * ctrl[2][1] + d * ctrl[3][1],
+  };
+}
+
 function mountWordArtPathWarp(element, layer, geometry) {
   const text = String(layer.text || (layer.geoText && layer.geoText.unicode) || "");
   if (!text) {
@@ -1273,8 +1327,11 @@ function mountWordArtPathWarp(element, layer, geometry) {
   const geo = String(geometry || "").toUpperCase();
   const vbW = 1000;
   const vbH = 1000;
+  const isDeflate = geo.includes("DEFLATE");
   let av1 = 45977;
-  if (geo.includes("CURVE")) {
+  if (isDeflate) {
+    av1 = WORDART_WARP_AV1.TEXT_DEFLATE;
+  } else if (geo.includes("CURVE")) {
     av1 = WORDART_WARP_AV1.TEXT_CURVE_UP;
   } else if (geo.includes("ARCH")) {
     av1 = WORDART_WARP_AV1.TEXT_ARCH_UP;
@@ -1292,28 +1349,108 @@ function mountWordArtPathWarp(element, layer, geometry) {
   const fontFamily = (layer.geoText && layer.geoText.fontFamily) || firstRun.fontFamily || "Arial Black";
   const pathId = `wordart-warp-${layer.shapeId || layer.id || "x"}`;
   const isArch = geo.includes("ARCH");
-  // Fit short phrases (Yip!) along the arc; spacingAndGlyphs stretches to path.
-  const fontSize = isArch ? 220 : 280;
-  const startOffset = "50%";
-  const textAnchor = "middle";
 
   element.textContent = "";
   element.dataset.wordArtText = text;
-  element.dataset.wordArtWarp = geo.includes("CURVE_DOWN")
-    ? "curve-down"
-    : geo.includes("CURVE_UP")
-      ? "curve-up"
-      : geo.includes("ARCH_DOWN")
-        ? "arch-down"
-        : "arch-up";
+  element.dataset.wordArtWarp = isDeflate
+    ? "deflate"
+    : geo.includes("CURVE_DOWN")
+      ? "curve-down"
+      : geo.includes("CURVE_UP")
+        ? "curve-up"
+        : geo.includes("ARCH_DOWN")
+          ? "arch-down"
+          : "arch-up";
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("class", "wordart-curve-svg");
+  svg.setAttribute("class", isDeflate ? "wordart-curve-svg wordart-deflate-svg" : "wordart-curve-svg");
   svg.setAttribute("viewBox", `0 0 ${vbW} ${vbH}`);
   svg.setAttribute("width", "100%");
   svg.setAttribute("height", "100%");
   svg.setAttribute("preserveAspectRatio", "none");
   svg.setAttribute("aria-hidden", "true");
+
+  if (isDeflate) {
+    // Dual-path Deflate: sample top/bottom cubics and scale each glyph's height
+    // by the local guide gap (PresetTextWrap algorithm intent).
+    // Match viewBox aspect to authored bounds so preserveAspectRatio=none does not
+    // horizontally squash a square coordinate system into a wide title box.
+    const boundsW = Math.max(Number(layer.bounds && layer.bounds.width) || 0.5, 0.05);
+    const boundsH = Math.max(Number(layer.bounds && layer.bounds.height) || 0.2, 0.05);
+    const deflateVbW = 1000;
+    const deflateVbH = Math.max(Math.round(deflateVbW * (boundsH / boundsW)), 220);
+    svg.setAttribute("viewBox", `0 0 ${deflateVbW} ${deflateVbH}`);
+
+    const guides = wordArtDeflateGuides(deflateVbW, deflateVbH, av1);
+    const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+    const topPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    topPath.setAttribute("id", `${pathId}-top`);
+    topPath.setAttribute("d", guides.top);
+    topPath.setAttribute("fill", "none");
+    const botPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    botPath.setAttribute("id", `${pathId}-bot`);
+    botPath.setAttribute("d", guides.bottom);
+    botPath.setAttribute("fill", "none");
+    defs.append(topPath, botPath);
+
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    g.setAttribute("fill", fillColor);
+    g.setAttribute("font-family", `"${fontFamily}", Impact, "Arial Black", sans-serif`);
+    g.setAttribute("font-weight", "900");
+    g.style.paintOrder = "stroke fill";
+    // Stroke scales with viewBox height so outlines stay readable on wide titles.
+    const deflateStroke = strokeColor
+      ? Math.max(Number(style.lineWidth || 1) * (deflateVbH / 120), 8)
+      : 0;
+    if (strokeColor) {
+      g.setAttribute("stroke", strokeColor);
+      g.setAttribute("stroke-width", String(deflateStroke));
+      g.setAttribute("stroke-linejoin", "round");
+      g.setAttribute("stroke-linecap", "round");
+    }
+
+    const chars = Array.from(text);
+    const n = Math.max(chars.length, 1);
+    const fullGap = guides.bot0 - guides.top0;
+    const padX = deflateVbW * 0.02;
+    const usableW = deflateVbW - padX * 2;
+    const slot = usableW / n;
+    // Prefer vertical fill (WordArt Deflate fills box height at ends). Allow
+    // modest overlap vs PPT dense Impact packing in this wide/short title box.
+    const baseFont = Math.min(fullGap * 0.84, slot * 1.55);
+
+    chars.forEach((ch, i) => {
+      const t = n === 1 ? 0.5 : (i + 0.5) / n;
+      const topPt = cubicBezierPoint(guides.topCtrl, t);
+      const botPt = cubicBezierPoint(guides.botCtrl, t);
+      const gap = Math.max(botPt.y - topPt.y, 1);
+      const scaleY = Math.max(gap / fullGap, 0.32);
+      const x = padX + slot * (i + 0.5);
+      const y = (topPt.y + botPt.y) / 2;
+      const glyph = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      glyph.setAttribute("x", String(x));
+      glyph.setAttribute("y", String(y));
+      glyph.setAttribute("text-anchor", "middle");
+      glyph.setAttribute("dominant-baseline", "middle");
+      glyph.setAttribute("font-size", String(baseFont));
+      // Vertical pinch only — Deflate keeps horizontal advance; scale about center.
+      glyph.setAttribute(
+        "transform",
+        `translate(${x} ${y}) scale(1 ${scaleY.toFixed(4)}) translate(${-x} ${-y})`,
+      );
+      glyph.textContent = ch;
+      g.append(glyph);
+    });
+
+    svg.append(defs, g);
+    element.append(svg);
+    return true;
+  }
+
+  // Fit short phrases (Yip!) along the arc; spacingAndGlyphs stretches to path.
+  const fontSize = isArch ? 220 : 280;
+  const startOffset = "50%";
+  const textAnchor = "middle";
 
   const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -1358,6 +1495,7 @@ function mountWordArtPathWarp(element, layer, geometry) {
   return true;
 }
 
+
 function applyTextLayerStyle(element, layer) {
   const textStyle = layer.textStyle || {};
   const firstRun = (layer.textRuns || [])[0] || {};
@@ -1401,26 +1539,34 @@ function applyTextLayerStyle(element, layer) {
     element.classList.add("wordart-layer");
     let geometryTransform = "scaleX(0.92)";
     let pathWarped = false;
-    if (geometry.includes("DEFLATE")) {
-      // Barrel/deflate: slightly squash mid-height and expand width.
-      geometryTransform = "scaleX(1.02) scaleY(0.82)";
-      element.style.fontSize = `${Math.max(Math.min(boundsH * 62, boundsW * 90 || boundsH * 62), 1)}cqh`;
-      element.classList.add("wordart-deflate");
-    } else if (
+    if (
+      geometry.includes("DEFLATE") ||
       geometry.includes("CURVE_UP") ||
       geometry.includes("CURVE_DOWN") ||
       geometry.includes("ARCH_UP") ||
       geometry.includes("ARCH_DOWN")
     ) {
-      // Real textPath warp (not flat rotate). Keeps authored bounds from 32c503a.
+      // Real SVG path / dual-path warp (not flat CSS scaleY). Keeps authored bounds.
       geometryTransform = "";
       element.style.fontSize = `${Math.max(Math.min(boundsH * 48, boundsW * 85 || boundsH * 48), 1)}cqh`;
-      if (geometry.includes("CURVE_DOWN") || geometry.includes("ARCH_DOWN")) {
+      if (geometry.includes("DEFLATE")) {
+        element.classList.add("wordart-deflate");
+        element.style.fontSize = `${Math.max(Math.min(boundsH * 55, boundsW * 88 || boundsH * 55), 1)}cqh`;
+      } else if (geometry.includes("CURVE_DOWN") || geometry.includes("ARCH_DOWN")) {
         element.classList.add("wordart-curve-down");
       } else {
         element.classList.add("wordart-curve-up");
       }
       pathWarped = mountWordArtPathWarp(element, layer, geometry);
+      if (pathWarped) {
+        // Cover PNG-underlay ink in-bounds so hybrid slides do not double-draw
+        // baked WordArt under the live SVG warp (s002 title).
+        const bg =
+          cssColorFromPpt((state.current && state.current.backgroundColor) || null) ||
+          (typeof stage !== "undefined" && stage.style.backgroundColor) ||
+          "#ffffff";
+        element.style.backgroundColor = bg;
+      }
     }
     // Bake geometry into baseTransform so setupAnimations / motion / scale
     // resets preserve the WordArt warp instead of wiping it.
@@ -1467,15 +1613,34 @@ function layerArea(layer) {
 
 /** Sparse addressable layers: keep composite PNG as underlay (Phase 5.6). */
 
+function isPathWarpedWordArt(layer) {
+  if (!layer || !layer.wordArt) {
+    return false;
+  }
+  const geometry = String(layer.wordArtGeometry || layer.shapeType || "").toUpperCase();
+  return (
+    geometry.includes("DEFLATE") ||
+    geometry.includes("CURVE_UP") ||
+    geometry.includes("CURVE_DOWN") ||
+    geometry.includes("ARCH_UP") ||
+    geometry.includes("ARCH_DOWN")
+  );
+}
+
 function applyHybridPngTextPolicy(screen) {
   if (!screenNeedsPngUnderlay(screen)) {
     return;
   }
   // Composite PNG already includes static text/WordArt; overlaying live text
   // causes title-screen double-draw. Keep animated layers for entrance/media.
+  // Path-warped WordArt (Deflate/Curve/Arch) stays live so SVG warp is visible
+  // instead of the baked PNG approx — glyphs cover the PNG ink in-bounds.
   // Visual-only hide: never disable clickable hotspots (separate #hotspots layer).
   for (const layer of screen.layers || []) {
     if (layer.type !== "text" || layer.animated) {
+      continue;
+    }
+    if (isPathWarpedWordArt(layer)) {
       continue;
     }
     const element = state.currentLayerElements.get(String(layer.shapeId));
@@ -2887,7 +3052,7 @@ function applyCommandBehavior(node, behavior, strings) {
     return;
   }
   const targets = behavior.targets && behavior.targets.length ? behavior.targets : node.targets || [];
-  const startMatch = strings.find((value) => value.startsWith("playFrom"))?.match(/playFrom\\(([-+\\d.]+)\\)/);
+  const startMatch = strings.find((value) => value.startsWith("playFrom"))?.match(/playFrom\(([-+\d.]+)\)/);
   const startSeconds = startMatch ? Number.parseFloat(startMatch[1]) : 0;
   runtimeLog("animation:command", {
     node: animationNodeInfo(node),

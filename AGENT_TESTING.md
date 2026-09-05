@@ -106,9 +106,41 @@ Claim verdicts: extraction OK; web anim/render broken; progression partial (hots
 
 ### Residual
 - Font: Arial Black may substitute; glyph outlines are textPath-along-tangent, not full OOXML dual-path mesh warp.
-- `TEXT_DEFLATE` (s002 title) still CSS scale approx.
+- `TEXT_DEFLATE` (s002 title): now dual-path SVG warp (see section below).
+
+## WordArt TEXT_DEFLATE (2026-09-05)
+
+### References (OOXML / Office)
+- Microsoft Learn `TextShapeValues.TextDeflate` → serialized `textDeflate`: https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.drawing.textshapevalues
+- Microsoft Learn `PresetTextWrap` (`a:prstTxWarp`) **dual-path** warp (top+bottom guides): https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.drawing.presettextwrap
+- OOXML `prstTxWarp` / `ST_TextShapeType` `textDeflate`: https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TextShapeType_topic_ID0EQTSOB.html — https://c-rex.net/samples/ooxml/e1/part4/OOXML_P4_DOCX_prstTxWarp_topic_ID0EBMJNB.html
+- Practical path defaults: [pptx-svg `generate_warp_path` textDeflate](https://github.com/t-ujiie-g/pptx-svg) adj default **18750**; mid cubic `M 0,cy C w/3,cy+dip 2w/3,cy+dip w,cy`
+
+**Visual intent:** letters stay on a horizontal centerline but **pinch vertically in the middle** (top guide dips down, bottom guide rises up). **Not** a uniform CSS `scaleY` on the whole string.
+
+### Inventory (slides 1–14 authored WordArt)
+| Slide | Shape | Text | Geometry | Runtime |
+| --- | --- | --- | --- | --- |
+| 2 | 2052 | GOBLINSRPG3 | `TEXT_DEFLATE` | dual-path SVG (this section) |
+| 14 | 15382 | Yip! | `TEXT_CURVE_UP` | SVG textPath (prior) |
+| — | — | — | other ST_TextShapeType | **not authored** on focus slides |
+
+### Runtime
+- `docs/app.js`: `mountWordArtPathWarp` + `wordArtDeflateGuides` / `cubicBezierPoint` — per-glyph `scaleY` from local top/bottom gap; aspect-matched viewBox.
+- Hybrid policy: path-warped WordArt stays live (not `hybrid-png-text-hidden`); layer background covers PNG ink in-bounds to avoid double-draw.
+- Fixture: slide 2 shape **2052** “GOBLINSRPG3” — verify `http://127.0.0.1:8765/?debug=1&slide=2` (title visible immediately; no click needed).
+- Screenshots: `/workspace/goblins-gapfix-deflate-s2.png`, `-stage.png`, `-crop.png`.
+
+### Also fixed
+- `applyCommandBehavior` `playFrom(...)` regex was over-escaped (`\\(` / `\\d`) and never matched; start offset always fell back to `0`. Now parses `playFrom(N)` correctly for s002/s013/s014 bindings.
+
+### Residual
+- Glyph mesh is per-character vertical scale, not full OOXML outline dual-path deformation of each glyph contour.
+- Linked title BGM (`titlesong` / `rocksong`) still has empty `mediaBindings` in extract — not invented here.
+- Shadow/glow: no extract fields on focus layers — deferred.
 
 ## Gap catalog — slides 1–3, 5, 7, 11–14 (+ title/start, captions, explosions, pre-battle)
+
 
 Categorized **unimplemented or approximate** viewer gaps still relevant on these slides:
 
@@ -116,9 +148,9 @@ Categorized **unimplemented or approximate** viewer gaps still relevant on these
 | Status | Item |
 | --- | --- |
 | **Done (path)** | `TEXT_CURVE_UP` (s014 Yip!) via SVG textPath; `CURVE_DOWN` / `ARCH_*` wired same helper |
-| **Approx** | `TEXT_DEFLATE` (s002 GOBLINSRPG3) — CSS scaleY squeeze only |
+| **Done (dual-path)** | `TEXT_DEFLATE` (s002 GOBLINSRPG3) — SVG per-glyph pinch from top/bottom guides |
 | **Unused in deck / not implemented** | Other ST_TextShapeType presets (wave, inflate, chevron, fade, cascade, can, ring, stop, …) |
-| **Residual** | True dual-path outline warp; WordArt 3D/bevel/extrusion (none authored on focus slides) |
+| **Residual** | Full glyph-contour dual-path mesh; WordArt 3D/bevel/extrusion (none authored on focus slides) |
 
 ### B. Builds / text animation
 | Status | Item |
@@ -139,7 +171,7 @@ Categorized **unimplemented or approximate** viewer gaps still relevant on these
 | Status | Item |
 | --- | --- |
 | **Implemented** | IRREGULAR_SEAL_1 clip-path “explosions” (s007); geometric AutoShapes; hybrid PNG underlay for sparse slides |
-| **Gap** | Shadow / glow / soft-edge / reflection (no extract fields on focus layers today) |
+| **Deferred** | Shadow / glow / soft-edge / reflection (no extract fields on focus layers today) |
 | **Gap** | OLE / embedded object reactivation (source is legacy `.pps`; media via extracted assets + `playFrom` commands) |
 | **Residual** | Caption/dialogue typography (apostrophes/ellipses), low-contrast text warnings, PNG vs live-layer double-draw policy on hybrid slides |
 | **Pre-battle s014** | Motion + dissolve mostly wired; timing/click continuum still easy to desync vs PPT |
@@ -147,7 +179,7 @@ Categorized **unimplemented or approximate** viewer gaps still relevant on these
 ### E. Audio / commands
 | Status | Item |
 | --- | --- |
-| **Partial** | `command` / `playFrom(0.0)` present (title/start media) — depends on extracted audio binding |
+| **Improved** | `playFrom(N)` parse fixed; mapped embedded cues (s002/s013/s014) bind; linked `titlesong`/`rocksong` still unbound |
 | **Gap** | Full PPT sound timeline / overlapping cue fidelity |
 
 Use `?debug=1&slide=N` + `goblinsRpg3Debug.dumpScreen()` when claiming fixes.
