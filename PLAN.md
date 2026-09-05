@@ -231,17 +231,17 @@ Do **not** block Phases 1–3 on these.
 #### Visual / text / audio
 
 - [x] **5.6** WordArt geometry polish; empty text layer cleanup; sparse hybrid underlay:
-  - `wordArtGeometry` on layers; runtime CSS approx for **TEXT_DEFLATE** / **CURVE_UP** (4 WordArt layers deck-wide).
+  - `wordArtGeometry` on layers; runtime **SVG textPath** for **TEXT_CURVE_UP** (s014 Yip!); CSS approx remains for **TEXT_DEFLATE** (s002).
   - `emptyTextPlaceholder` on empty non-WordArt text (**110** plate/textbox empties); runtime hides non-animated empties; animated targets stay for effects.
   - **Geometric AutoShapes** (clip-art seals/arrows/ellipses/lines…): empty non-RECT presets classified `type=shape` (**185**); runtime applies OOXML preset **clip-path** (IRREGULAR_SEAL_1/2 explosions on **s007**, etc.) + SVG strokes for LINE. Fixes fade-in explosions rendering as yellow rectangles.
   - **Sparse hybrid PNG underlay** when layers exist but coverage is sparse (`screenNeedsPngUnderlay`); clears former medium sparse defect queue when composite PNG exists.
   - Offline: `generated/text_fidelity_report.json` + `verify_text_fidelity.py`.
-  - **Residual → 5.6.1:** true SVG/path WordArt warps (only CSS approx today).
+  - **Residual → 5.6.1:** `TEXT_DEFLATE` still CSS approx; other prstTxWarp presets unused; dual-path mesh warp residual (textPath tangent follow).
 - [x] **5.7** Mojibake / encoding cleanup on layer text:
   - `normalize_ppt_text` in `extract_layers.py`: `Æ/æ→'`, `à/Ö→…`, `ô/ö→“”`, `ù→:`.
   - Applied to layer text, runs, geotext; **0** residual artifact chars in published layers.
   - Rebuild: `extract_layers.py` → `build_game_manifest.py`.
-- [ ] **5.6.1** Optional: pixel-true WordArt geometry (path warps) beyond CSS scale/skew approx (only 2 non-plain geometries: DEFLATE + CURVE_UP).
+- [x] **5.6.1 (partial)** SVG textPath for CURVE_UP/CURVE_DOWN (+ Arch); DEFLATE still CSS. Optional: dual-path mesh + remaining presets.
 - [x] **5.8** Visual risk queue post-resolve refresh:
   - `collect_screen_risks` classifies self-links from **game-manifest post-resolve** targets: clickable self → high; Phase 2 `accepted_source_self` → **info**; promotes → **info** provenance.
   - Report format **v2** (`generated/visual_risks.json`) with `selfHyperlinkPostResolve` cross-check vs `promote_audit` (**0** clickable self, **5** residual, **24** promoted; match=true).
@@ -305,7 +305,7 @@ Update when fixed. Severity: **P0** full-game from title · **P1** broken labels
 | V2 | P2 | Sparse layer slides | Hybrid PNG underlay; sparse risks info when PNG exists | 5.6 done |
 | V4 | P2 | Text encoding | POI Æ/à/ô/ö repair; 0 residual in layers | 5.7 done |
 | V5 | P2 | WordArt / empty text | geometry CSS + emptyTextPlaceholder | 5.6 done |
-| V5b | P3 | True WordArt warps | CSS approx only | 5.6.1 |
+| V5b | P3 | True WordArt warps | CURVE_UP textPath done; DEFLATE CSS | 5.6.1 partial |
 | V3 | P2 | Low-contrast text | ~197 low rows | 5.9 |
 
 ---

@@ -13,3 +13,8 @@
 
 - Inspect the worktree and intended scope, then commit intentionally before push.
 - Push destination for ongoing agent work: `grokbot-dev` (not `master`).
+
+## 2026-09-05 WordArt curve-up
+
+- Implemented SVG `textPath` warp for `TEXT_CURVE_UP` (see `AGENT_TESTING.md`).
+- Push target remains `grokbot-dev` only.

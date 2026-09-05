@@ -1225,6 +1225,139 @@ function applyLayerVisualStyle(element, layer) {
   }
 }
 
+
+/** OOXML prstTxWarp defaults (pptx-svg / ECMA-376 style adj). */
+const WORDART_WARP_AV1 = {
+  TEXT_CURVE_UP: 45977,
+  TEXT_CURVE_DOWN: 45977,
+  TEXT_ARCH_UP: 10800000,
+  TEXT_ARCH_DOWN: 0,
+};
+
+/**
+ * True path warp for WordArt Curve/Arch presets via SVG textPath.
+ * Visual intent (textCurveUp): glyphs follow an upward-arching path between
+ * warped top/bottom guides — NOT a flat CSS rotate.
+ * Refs: Microsoft Learn TextShapeValues textCurveUp; OOXML a:prstTxWarp;
+ * PresetTextWrap dual-path warp algorithm; pptx-svg generate_warp_path.
+ */
+function wordArtWarpPathD(geometry, w, h, av1) {
+  const geo = String(geometry || "").toUpperCase();
+  const cx = w / 2;
+  const cy = h / 2;
+  const adj = (h * (Number.isFinite(av1) ? av1 : 45977)) / 100000;
+  if (geo.includes("CURVE_DOWN")) {
+    return `M 0,${cy - adj} Q ${cx},${cy + adj} ${w},${cy - adj}`;
+  }
+  if (geo.includes("CURVE_UP")) {
+    return `M 0,${cy + adj} Q ${cx},${cy - adj} ${w},${cy + adj}`;
+  }
+  if (geo.includes("ARCH_DOWN")) {
+    const rx = cx;
+    const ry = Math.max(cy * 0.95, 1);
+    return `M ${cx + rx},${cy} A ${rx},${ry} 0 1 1 ${cx - rx},${cy}`;
+  }
+  if (geo.includes("ARCH_UP")) {
+    const rx = cx;
+    const ry = Math.max(cy * 0.95, 1);
+    return `M ${cx - rx},${cy} A ${rx},${ry} 0 1 1 ${cx + rx},${cy}`;
+  }
+  return `M 0,${cy} L ${w},${cy}`;
+}
+
+function mountWordArtPathWarp(element, layer, geometry) {
+  const text = String(layer.text || (layer.geoText && layer.geoText.unicode) || "");
+  if (!text) {
+    return false;
+  }
+  const geo = String(geometry || "").toUpperCase();
+  const vbW = 1000;
+  const vbH = 1000;
+  let av1 = 45977;
+  if (geo.includes("CURVE")) {
+    av1 = WORDART_WARP_AV1.TEXT_CURVE_UP;
+  } else if (geo.includes("ARCH")) {
+    av1 = WORDART_WARP_AV1.TEXT_ARCH_UP;
+  }
+  const pathD = wordArtWarpPathD(geometry, vbW, vbH, av1);
+  const style = layer.style || {};
+  const firstRun = (layer.textRuns || [])[0] || {};
+  const fillColor = cssColorFromPpt(style.fillColor || firstRun.fontColor || "#808080");
+  const strokeColor =
+    style.lineColor && Number(style.lineWidth || 0) > 0
+      ? cssColorFromPpt(style.lineColor)
+      : null;
+  // viewBox units: ~2–4 keeps a readable outline at WordArt stage scale.
+  const strokeWidth = strokeColor ? Math.max(Number(style.lineWidth || 1) * 2.5, 18) : 0;
+  const fontFamily = (layer.geoText && layer.geoText.fontFamily) || firstRun.fontFamily || "Arial Black";
+  const pathId = `wordart-warp-${layer.shapeId || layer.id || "x"}`;
+  const isArch = geo.includes("ARCH");
+  // Fit short phrases (Yip!) along the arc; spacingAndGlyphs stretches to path.
+  const fontSize = isArch ? 220 : 280;
+  const startOffset = "50%";
+  const textAnchor = "middle";
+
+  element.textContent = "";
+  element.dataset.wordArtText = text;
+  element.dataset.wordArtWarp = geo.includes("CURVE_DOWN")
+    ? "curve-down"
+    : geo.includes("CURVE_UP")
+      ? "curve-up"
+      : geo.includes("ARCH_DOWN")
+        ? "arch-down"
+        : "arch-up";
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "wordart-curve-svg");
+  svg.setAttribute("viewBox", `0 0 ${vbW} ${vbH}`);
+  svg.setAttribute("width", "100%");
+  svg.setAttribute("height", "100%");
+  svg.setAttribute("preserveAspectRatio", "none");
+  svg.setAttribute("aria-hidden", "true");
+
+  const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("id", pathId);
+  path.setAttribute("d", pathD);
+  path.setAttribute("fill", "none");
+  defs.append(path);
+
+  const svgText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  svgText.setAttribute("fill", fillColor);
+  svgText.setAttribute("font-family", `"${fontFamily}", Impact, "Arial Black", sans-serif`);
+  svgText.setAttribute("font-weight", "900");
+  svgText.setAttribute("font-size", String(fontSize));
+  svgText.setAttribute("dominant-baseline", "middle");
+  svgText.style.paintOrder = "stroke fill";
+  if (strokeColor) {
+    svgText.setAttribute("stroke", strokeColor);
+    svgText.setAttribute("stroke-width", String(strokeWidth));
+    svgText.setAttribute("stroke-linejoin", "round");
+    svgText.setAttribute("stroke-linecap", "round");
+  }
+
+  const textPath = document.createElementNS("http://www.w3.org/2000/svg", "textPath");
+  textPath.setAttribute("href", `#${pathId}`);
+  // Legacy Safari
+  textPath.setAttributeNS("http://www.w3.org/1999/xlink", "href", `#${pathId}`);
+  textPath.setAttribute("startOffset", startOffset);
+  textPath.setAttribute("text-anchor", textAnchor);
+  textPath.setAttribute("method", "align");
+  textPath.setAttribute("spacing", "auto");
+  // Approximate quadratic path length for Curve presets so glyphs fill the arc.
+  if (!isArch) {
+    const approxLen = Math.hypot(vbW / 2, (vbH * av1) / 100000) * 2 * 0.85;
+    textPath.setAttribute("textLength", String(Math.round(approxLen * 0.72)));
+    textPath.setAttribute("lengthAdjust", "spacingAndGlyphs");
+  }
+  textPath.textContent = text;
+
+  svgText.append(textPath);
+  svg.append(defs, svgText);
+  element.append(svg);
+  return true;
+}
+
 function applyTextLayerStyle(element, layer) {
   const textStyle = layer.textStyle || {};
   const firstRun = (layer.textRuns || [])[0] || {};
@@ -1262,24 +1395,32 @@ function applyTextLayerStyle(element, layer) {
     element.style.border = "none";
     // Let outline stroke extend slightly past glyph boxes.
     element.style.overflow = "visible";
-    // Geometry-aware first pass (Phase 5.6): approximate PPT WordArt warps in CSS.
+    // Geometry-aware WordArt: true SVG path warp for Curve/Arch; CSS approx for Deflate.
     const geometry = String(layer.wordArtGeometry || layer.shapeType || "");
     element.dataset.wordArtGeometry = geometry;
     element.classList.add("wordart-layer");
     let geometryTransform = "scaleX(0.92)";
+    let pathWarped = false;
     if (geometry.includes("DEFLATE")) {
       // Barrel/deflate: slightly squash mid-height and expand width.
       geometryTransform = "scaleX(1.02) scaleY(0.82)";
       element.style.fontSize = `${Math.max(Math.min(boundsH * 62, boundsW * 90 || boundsH * 62), 1)}cqh`;
       element.classList.add("wordart-deflate");
-    } else if (geometry.includes("CURVE_UP") || geometry.includes("ARCH_UP")) {
-      // Short phrases (s014 "Yip!") are nearly flat in PPT; keep a light lift only.
-      geometryTransform = "scaleX(0.96) rotate(-1deg)";
+    } else if (
+      geometry.includes("CURVE_UP") ||
+      geometry.includes("CURVE_DOWN") ||
+      geometry.includes("ARCH_UP") ||
+      geometry.includes("ARCH_DOWN")
+    ) {
+      // Real textPath warp (not flat rotate). Keeps authored bounds from 32c503a.
+      geometryTransform = "";
       element.style.fontSize = `${Math.max(Math.min(boundsH * 48, boundsW * 85 || boundsH * 48), 1)}cqh`;
-      element.classList.add("wordart-curve-up");
-    } else if (geometry.includes("CURVE_DOWN") || geometry.includes("ARCH_DOWN")) {
-      geometryTransform = "scaleX(0.96) rotate(1deg)";
-      element.classList.add("wordart-curve-down");
+      if (geometry.includes("CURVE_DOWN") || geometry.includes("ARCH_DOWN")) {
+        element.classList.add("wordart-curve-down");
+      } else {
+        element.classList.add("wordart-curve-up");
+      }
+      pathWarped = mountWordArtPathWarp(element, layer, geometry);
     }
     // Bake geometry into baseTransform so setupAnimations / motion / scale
     // resets preserve the WordArt warp instead of wiping it.
@@ -1292,7 +1433,7 @@ function applyTextLayerStyle(element, layer) {
     if (fillColor) {
       element.style.color = cssColorFromPpt(fillColor);
     }
-    if (style.lineColor && Number(style.lineWidth || 0) > 0) {
+    if (!pathWarped && style.lineColor && Number(style.lineWidth || 0) > 0) {
       // PPT lineWidth is points; thicken slightly so outlines read at stage scale.
       const strokePx = Math.max(Number(style.lineWidth) * 2.25, 2);
       element.style.webkitTextStroke = `${strokePx}px ${cssColorFromPpt(style.lineColor)}`;
@@ -1716,10 +1857,10 @@ function ensureIterateUnits(element, iterate) {
     }
     return iterateIsBackwards(iterate) ? existing.slice().reverse() : existing;
   }
-  if (element.querySelector("img")) {
+  if (element.querySelector("img") || element.querySelector("svg.wordart-curve-svg")) {
     return null;
   }
-  const text = element.textContent || "";
+  const text = element.dataset.wordArtText || element.textContent || "";
   const parts = splitIterateText(text, kind);
   if (!parts.length) {
     return null;

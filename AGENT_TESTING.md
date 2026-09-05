@@ -87,3 +87,67 @@ Served at `http://127.0.0.1:8765/?debug=1&slide=N`. No uncaught JS errors on sli
 | 32 | Similar sparse scene; attack imagery/anims absent |
 
 Claim verdicts: extraction OK; web anim/render broken; progression partial (hotspots yes, anim-driven no); first combat controls broken at runtime.
+
+## WordArt TEXT_CURVE_UP (2026-09-05)
+
+### References (OOXML / Office)
+- Microsoft Learn `TextShapeValues.TextCurveUp` → serialized `textCurveUp`: https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.drawing.textshapevalues
+- Microsoft Learn `PresetTextWrap` (`a:prstTxWarp`) dual-path warp algorithm (top+bottom guides): https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.drawing.presettextwrap
+- OOXML `prstTxWarp` / `ST_TextShapeType` including `textCurveUp` / `textCurveDown`: https://c-rex.net/samples/ooxml/e1/part4/OOXML_P4_DOCX_prstTxWarp_topic_ID0EBMJNB.html — https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TextShapeType_topic_ID0EQTSOB.html
+- VBA `msoTextEffectShapeCurveUp` (=17): Office WordArt Transform “Curve Up”
+- Practical SVG path defaults (CurveUp quadratic): [pptx-svg renderer_warp](https://github.com/t-ujiie-g/pptx-svg) `textCurveUp`: `M 0,cy+adj Q cx,cy-adj w,cy+adj` (adj≈h·0.46)
+
+**Visual intent:** letters follow an **upward-arching path / warp between top&bottom curves** (middle higher, ends lower). **Not** a flat CSS rotate.
+
+### Runtime
+- `docs/app.js`: `mountWordArtPathWarp` + SVG `textPath` for `TEXT_CURVE_UP` / `TEXT_CURVE_DOWN` (and Arch siblings). Keeps fill/stroke/bounds from `32c503a`.
+- Fixture: slide 14 shape **15382** “Yip!” — verify `?debug=1&slide=14` after stage-click + ~1.5s (delay+dissolve).
+- Screenshots: `/workspace/goblins-yip-curve-*.png` (crop/stage/reconstructed).
+
+### Residual
+- Font: Arial Black may substitute; glyph outlines are textPath-along-tangent, not full OOXML dual-path mesh warp.
+- `TEXT_DEFLATE` (s002 title) still CSS scale approx.
+
+## Gap catalog — slides 1–3, 5, 7, 11–14 (+ title/start, captions, explosions, pre-battle)
+
+Categorized **unimplemented or approximate** viewer gaps still relevant on these slides:
+
+### A. WordArt / DrawingML text warp (`prstTxWarp`)
+| Status | Item |
+| --- | --- |
+| **Done (path)** | `TEXT_CURVE_UP` (s014 Yip!) via SVG textPath; `CURVE_DOWN` / `ARCH_*` wired same helper |
+| **Approx** | `TEXT_DEFLATE` (s002 GOBLINSRPG3) — CSS scaleY squeeze only |
+| **Unused in deck / not implemented** | Other ST_TextShapeType presets (wave, inflate, chevron, fade, cascade, can, ring, stop, …) |
+| **Residual** | True dual-path outline warp; WordArt 3D/bevel/extrusion (none authored on focus slides) |
+
+### B. Builds / text animation
+| Status | Item |
+| --- | --- |
+| **OK-ish** | ParaBuild `asAWhole` (many on s001/s003/s005/s007/s012/s014) — whole-shape entrances work without special splitter |
+| **Partial** | `TimeIterateData` byWord/byLetter (s001 “Presents”) — unit stagger exists; multi-paragraph level builds unused |
+| **Gap** | Dedicated ParaBuild scheduling UI/semantics beyond whole-shape (no `paraBuild` branch in `app.js`) |
+
+### C. Entrance / emphasis effects
+| Status | Item |
+| --- | --- |
+| **Implemented** | dissolve (dominant on focus slides), fade, visibility set, basic scale, line motion paths (s014 knock-off / fly) |
+| **Approx / limited** | Slide transition `effectType=3` on s003 (wipe-class) — CSS transition subset only |
+| **Not seen authored** | Complex presets (wheel, zoom, color pulse, spiral, …) on these slides |
+| **Gap** | Richer effect filter graph / subEffect fidelity beyond fade+dissolve pairing |
+
+### D. Geometry / media / composite
+| Status | Item |
+| --- | --- |
+| **Implemented** | IRREGULAR_SEAL_1 clip-path “explosions” (s007); geometric AutoShapes; hybrid PNG underlay for sparse slides |
+| **Gap** | Shadow / glow / soft-edge / reflection (no extract fields on focus layers today) |
+| **Gap** | OLE / embedded object reactivation (source is legacy `.pps`; media via extracted assets + `playFrom` commands) |
+| **Residual** | Caption/dialogue typography (apostrophes/ellipses), low-contrast text warnings, PNG vs live-layer double-draw policy on hybrid slides |
+| **Pre-battle s014** | Motion + dissolve mostly wired; timing/click continuum still easy to desync vs PPT |
+
+### E. Audio / commands
+| Status | Item |
+| --- | --- |
+| **Partial** | `command` / `playFrom(0.0)` present (title/start media) — depends on extracted audio binding |
+| **Gap** | Full PPT sound timeline / overlapping cue fidelity |
+
+Use `?debug=1&slide=N` + `goblinsRpg3Debug.dumpScreen()` when claiming fixes.
