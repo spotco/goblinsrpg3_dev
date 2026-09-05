@@ -215,7 +215,7 @@ Do **not** block Phases 1–3 on these.
   - Slide-level **`builds`**: **209** ParaBuild (**208** `asAWhole`, **1** `allAtOnce`) — whole-shape is PPT-correct for these modes.
   - **`iterate`** on nodes: **2** `byLetter` (`TimeIterateData`) decoded.
   - Runtime: `scheduleSubEffectNodes` runs subordinates with parent; timeline/duration includes subEffects; player contract feature added.
-  - **AfterEffect Hide on Next Click:** subEffects with `TL_TPID_AfterEffect` + `SET style.visibility=hidden` and no OnEnd condition are deferred to the next OnNext (`pendingAfterEffectHides` / `flushPendingAfterEffectHides`) so narrative text does not stack (e.g. s003/s005).
+  - **AfterEffect Hide on Next Click:** subEffects with `TL_TPID_AfterEffect` + `SET style.visibility=hidden` and no OnEnd condition are deferred to the next OnNext then applied sync (`pendingAfterEffectHides` / `applyHideOnNextClickAfterEffectNow`); slide-transition cleanup uses `transitionTimers` so late anim boot cannot leave `#layers` at opacity 0 on deep links (e.g. s003/s005).
   - Offline: opening trains report subEffect/paraBuild/iterate counts; `runtimeSupport` updated.
   - **5.2.1 (partial):** byLetter/byWord `TimeIterateData` now splits text into unit spans and staggers fade/grow (slide 1 "Presents", slide 183). Multi-paragraph ParaBuild level builds remain residual.
 - [x] **5.2.1** Text-unit stagger for byWord/byLetter `TimeIterateData` (2 nodes deck-wide). Remaining: non-`asAWhole` ParaBuild paragraph/run splits if authored later.

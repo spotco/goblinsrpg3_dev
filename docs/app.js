@@ -55,6 +55,7 @@ const state = {
   animationQueue: [],
   pendingAfterEffectHides: [],
   animationTimers: [],
+  transitionTimers: [],
   animationTriggerWaiters: new Map(),
   animationStartedNodes: new Set(),
   animationCompletedNodes: new Set(),
@@ -704,6 +705,52 @@ function clearAnimationTimers() {
   state.animationTriggerWaiters = new Map();
   state.animationStartedNodes = new Set();
   state.animationCompletedNodes = new Set();
+}
+
+/** Slide-transition cleanup must survive setupAnimations() clears (boot race). */
+function clearTransitionTimers() {
+  for (const timer of state.transitionTimers) {
+    window.clearTimeout(timer);
+  }
+  state.transitionTimers = [];
+}
+
+function scheduleTransitionTimer(callback, delayMs = 0, label = "slide-transition", details = {}) {
+  const timerId = ++state.animationTimerSequence;
+  const normalizedDelayMs = Math.max(delayMs, 0);
+  runtimeLog("transition:timer-scheduled", {
+    timerId,
+    label,
+    delayMs: normalizedDelayMs,
+    ...details,
+  });
+  const timer = window.setTimeout(() => {
+    runtimeLog("transition:timer-fired", {
+      timerId,
+      label,
+      scheduledDelayMs: normalizedDelayMs,
+      ...details,
+    });
+    state.transitionTimers = state.transitionTimers.filter((handle) => handle !== timer);
+    callback();
+  }, normalizedDelayMs);
+  state.transitionTimers.push(timer);
+  return timer;
+}
+
+function finishSlideTransition(reason = "completed") {
+  clearTransitionTimers();
+  stage.classList.remove("is-transitioning");
+  clearSlideTransitionClasses();
+  // Drop fill-mode residue (reversed push/fade can end at opacity 0 / translateX).
+  layersLayer.style.opacity = "";
+  layersLayer.style.transform = "";
+  screenImage.style.opacity = "";
+  screenImage.style.transform = "";
+  runtimeLog("transition:finished", {
+    reason,
+    screen: state.current ? { id: state.current.id, slide: state.current.slide } : null,
+  });
 }
 
 function scheduleAnimation(callback, delayMs = 0, label = "anonymous", details = {}) {
@@ -2672,6 +2719,44 @@ function queueHideOnNextClickAfterEffect(node) {
   });
 }
 
+function cancelElementAnimations(element) {
+  if (!element || typeof element.getAnimations !== "function") {
+    return;
+  }
+  try {
+    for (const animation of element.getAnimations()) {
+      animation.cancel();
+    }
+  } catch (_error) {
+    // Ignore browsers without full WAAPI cancel support.
+  }
+}
+
+/**
+ * Apply Hide-on-Next AfterEffect immediately (sync).
+ * Scheduling via setTimeout raced the next entrance dissolve and could leave a
+ * WAAPI fill:forwards opacity composite ghosting under the new caption.
+ */
+function applyHideOnNextClickAfterEffectNow(node) {
+  const behavior = (node.behaviors || []).find((item) => item.kind === "set") || (node.behaviors || [])[0] || null;
+  const elements = behavior
+    ? targetsFor(node, behavior)
+    : targetsFor(node, { targets: node.targets || [] });
+  runtimeLog("animation:aftereffect-apply", {
+    node: animationNodeInfo(node),
+    targetCount: elements.length,
+    targets: elements.map(animationElementInfo),
+  });
+  for (const element of elements) {
+    cancelElementAnimations(element);
+    element.style.visibility = "hidden";
+    element.style.opacity = "0";
+    element.style.transition = "none";
+  }
+  state.animationStartedNodes.add(node.id);
+  state.animationCompletedNodes.add(node.id);
+}
+
 function flushPendingAfterEffectHides() {
   if (!state.pendingAfterEffectHides.length) {
     return;
@@ -2683,8 +2768,7 @@ function flushPendingAfterEffectHides() {
     nodes: pending.map((node) => animationNodeInfo(node)),
   });
   for (const node of pending) {
-    // Force-run: apply SET hidden now (skip click/trigger gates).
-    runAnimationNode(node, 0, true, true);
+    applyHideOnNextClickAfterEffectNow(node);
   }
 }
 
@@ -2852,6 +2936,8 @@ function advanceAnimation() {
 }
 
 function renderScreen(screen) {
+  // End any in-flight slide transition from the previous screen before rebuilding.
+  finishSlideTransition("render-screen");
   const slideNumber = String(screen.slide).padStart(3, "0");
   const layers = screen.layers || [];
   const renderedLayers = renderLayers(screen);
@@ -3116,10 +3202,9 @@ function applySlideTransition(screen) {
     screen: { id: screen.id, slide: screen.slide },
     classList: Array.from(stage.classList),
   });
-  scheduleAnimation(() => {
-    stage.classList.remove("is-transitioning");
-    clearSlideTransitionClasses();
-    runtimeLog("transition:completed", { screen: { id: screen.id, slide: screen.slide } });
+  clearTransitionTimers();
+  scheduleTransitionTimer(() => {
+    finishSlideTransition("completed");
   }, durationMs, "slide-transition-cleanup", {
     screen: { id: screen.id, slide: screen.slide },
     effectType: transition.effectType,
@@ -3303,6 +3388,8 @@ fetch(assetUrl("game-manifest.json"), { cache: "no-store" })
           currentScreen: state.current ? { id: state.current.id, slide: state.current.slide } : null,
         });
         if (state.current) {
+          // setupAnimations clears animationTimers only — transitionTimers keep
+          // slide-transition cleanup alive across this late boot re-setup.
           setupAnimations(state.current);
           applyHybridPngTextPolicy(state.current);
           // Reschedule with animation timeline now that manifests are loaded.

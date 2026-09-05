@@ -145,8 +145,11 @@
         "function isAfterEffectNode",
         "function isHideOnNextClickAfterEffect",
         "function queueHideOnNextClickAfterEffect",
+        "function applyHideOnNextClickAfterEffectNow",
         "function flushPendingAfterEffectHides",
         "pendingAfterEffectHides",
+        "transitionTimers",
+        "function finishSlideTransition",
         "Hide on Next Mouse Click"
       ],
       "styleSnippets": []

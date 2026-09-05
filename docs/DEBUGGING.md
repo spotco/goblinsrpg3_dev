@@ -139,11 +139,14 @@ PPT stores “After Animation → Hide on Next Mouse Click” as a `RT_TimeSubEf
 
 - TimeProperty **AfterEffect** (variant instance 13) = true
 - **Display** (instance 2) = 1
+- **MasterPos** (instance 5) = 2 (hide on next click)
 - Behavior: `SET style.visibility = hidden`
 
-Runtime defers these until the next OnNext via `pendingAfterEffectHides` (see HUD `afterEffect pending`). OnEnd-gated after-effects keep normal trigger waits.
+Runtime defers these until the next OnNext via `pendingAfterEffectHides` (see HUD `afterEffect pending`), then applies the hide **synchronously** (cancel WAAPI + `visibility:hidden` + `opacity:0`) before the next entrance starts. OnEnd-gated after-effects keep normal trigger waits.
 
-QA: `?debug=1&slide=3` — click through OnNext; prior caption must hide before/as the next appears (shapes 3079 → 3077 → 3078 share nearly the same bounds).
+Also: slide-transition cleanup uses a separate `transitionTimers` bucket so late `setupAnimations` (animation manifest boot) cannot cancel it — otherwise reversed push/fade fill-mode left `#layers` at opacity 0 on `?slide=N` deep links.
+
+QA: `?debug=1&slide=3` — wait for landscape to appear, then click through OnNext; prior caption must hide before/as the next appears (shapes 3079 → 3077 → 3078 share nearly the same bounds). Only one stacked line visible at a time.
 
 ### Text / WordArt fidelity (Phase 5.6 / 5.7)
 

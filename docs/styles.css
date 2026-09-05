@@ -194,8 +194,14 @@ button:focus-visible {
   }
 }
 
-.stage.is-transitioning.transition-direction-1 .layers,
-.stage.is-transitioning.transition-direction-1 .screen {
+/* effectDirection reverses wipe geometry only — do NOT reverse fade/push/dissolve
+   or fill-mode leaves #layers at opacity 0 (visible as blank stage / missing captions). */
+.stage.is-transitioning.transition-direction-1.transition-effect-22 .layers,
+.stage.is-transitioning.transition-direction-1.transition-effect-22 .screen,
+.stage.is-transitioning.transition-direction-1.transition-effect-21 .layers,
+.stage.is-transitioning.transition-direction-1.transition-effect-21 .screen,
+.stage.is-transitioning.transition-direction-1.transition-effect-27 .layers,
+.stage.is-transitioning.transition-direction-1.transition-effect-27 .screen {
   animation-direction: reverse;
 }
 
