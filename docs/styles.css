@@ -339,17 +339,102 @@ button:focus-visible {
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
   font-size: 12px;
   line-height: 1.35;
+  /* Keep chrome above stage so collapse control stays tappable on phones. */
+  pointer-events: auto;
 }
 
 .debug-hud[hidden] {
   display: none !important;
 }
 
+.debug-hud.is-collapsed {
+  width: auto;
+  max-width: calc(100vw - 24px);
+  max-height: none;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .debug-hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 44px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: -2px 0 0;
+}
+
+.debug-hud.is-collapsed .debug-hud-header {
+  margin: 0;
+  padding: 0 4px 0 0;
+  cursor: pointer;
+}
+
+.debug-hud-title {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.debug-hud.is-collapsed .debug-hud-title {
+  display: none;
+}
+
+.debug-hud-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgba(232, 199, 95, 0.55);
+  border-radius: 8px;
+  background: rgba(40, 34, 24, 0.95);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  flex: 0 0 auto;
+}
+
+.debug-hud-toggle:hover,
+.debug-hud-toggle:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-color: rgba(232, 199, 95, 0.95);
+}
+
+.debug-hud.is-collapsed .debug-hud-toggle {
+  min-width: 72px;
+  border-radius: 8px;
+}
+
+.debug-hud-toggle-glyph {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.debug-hud-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+.debug-hud.is-collapsed .debug-hud-panel {
+  display: none !important;
 }
 
 .debug-hud-meta {

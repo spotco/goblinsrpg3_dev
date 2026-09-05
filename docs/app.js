@@ -320,6 +320,69 @@ function dumpScreen(slideOrId) {
   };
 }
 
+const DEBUG_HUD_COLLAPSED_KEY = "goblinsRpg3.debugHudCollapsed";
+
+function readHudCollapsedPreference() {
+  try {
+    return sessionStorage.getItem(DEBUG_HUD_COLLAPSED_KEY) === "1";
+  } catch (_error) {
+    return false;
+  }
+}
+
+function writeHudCollapsedPreference(collapsed) {
+  try {
+    sessionStorage.setItem(DEBUG_HUD_COLLAPSED_KEY, collapsed ? "1" : "0");
+  } catch (_error) {
+    /* private mode / blocked storage — ignore */
+  }
+}
+
+function applyHudCollapsedState(hud, collapsed) {
+  if (!hud) {
+    return;
+  }
+  hud.classList.toggle("is-collapsed", collapsed);
+  hud.setAttribute("data-collapsed", collapsed ? "1" : "0");
+  const toggle = hud.querySelector("#debug-hud-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    toggle.setAttribute(
+      "aria-label",
+      collapsed ? "Expand Debug HUD" : "Collapse Debug HUD",
+    );
+    toggle.title = collapsed ? "Expand Debug HUD" : "Collapse Debug HUD";
+    const glyph = toggle.querySelector(".debug-hud-toggle-glyph");
+    const label = toggle.querySelector(".debug-hud-toggle-label");
+    if (glyph) {
+      glyph.textContent = collapsed ? "▸" : "✕";
+    }
+    if (label) {
+      label.textContent = collapsed ? "Debug" : "Hide";
+    }
+  }
+  writeHudCollapsedPreference(collapsed);
+}
+
+function setHudCollapsed(collapsed) {
+  const hud = document.getElementById("debug-hud") || (state.hudEnabled ? ensureDebugHud() : null);
+  if (!hud) {
+    return false;
+  }
+  applyHudCollapsedState(hud, Boolean(collapsed));
+  runtimeLog("debug:hud-collapsed", { collapsed: Boolean(collapsed) });
+  return Boolean(collapsed);
+}
+
+function toggleHudCollapsed() {
+  const hud = document.getElementById("debug-hud") || (state.hudEnabled ? ensureDebugHud() : null);
+  if (!hud) {
+    return false;
+  }
+  const next = !hud.classList.contains("is-collapsed");
+  return setHudCollapsed(next);
+}
+
 function ensureDebugHud() {
   let hud = document.getElementById("debug-hud");
   if (hud) {
@@ -330,25 +393,50 @@ function ensureDebugHud() {
   hud.className = "debug-hud";
   hud.hidden = !state.hudEnabled;
   hud.innerHTML = `
-    <header class="debug-hud-header">
-      <strong>Debug HUD</strong>
-      <span class="debug-hud-meta">?debug=1</span>
+    <header class="debug-hud-header" id="debug-hud-header">
+      <button type="button" id="debug-hud-toggle" class="debug-hud-toggle" aria-controls="debug-hud-panel" aria-expanded="true">
+        <span class="debug-hud-toggle-glyph" aria-hidden="true">✕</span>
+        <span class="debug-hud-toggle-label">Hide</span>
+      </button>
+      <div class="debug-hud-title">
+        <strong>Debug HUD</strong>
+        <span class="debug-hud-meta">?debug=1</span>
+      </div>
     </header>
-    <pre id="debug-hud-body" class="debug-hud-body">Loading…</pre>
-    <div class="debug-hud-chapters">
-      <label class="debug-hud-chapters-label" for="debug-chapter-select">Chapters</label>
-      <select id="debug-chapter-select" class="debug-chapter-select" aria-label="Jump to chapter entry">
-        <option value="">Loading chapters…</option>
-      </select>
-      <button type="button" id="debug-chapter-go">Go</button>
+    <div id="debug-hud-panel" class="debug-hud-panel">
+      <pre id="debug-hud-body" class="debug-hud-body">Loading…</pre>
+      <div class="debug-hud-chapters">
+        <label class="debug-hud-chapters-label" for="debug-chapter-select">Chapters</label>
+        <select id="debug-chapter-select" class="debug-chapter-select" aria-label="Jump to chapter entry">
+          <option value="">Loading chapters…</option>
+        </select>
+        <button type="button" id="debug-chapter-go">Go</button>
+      </div>
+      <footer class="debug-hud-footer">
+        <button type="button" id="debug-hud-dump">dumpScreen()</button>
+        <button type="button" id="debug-hud-problems">listProblems()</button>
+      </footer>
     </div>
-    <footer class="debug-hud-footer">
-      <button type="button" id="debug-hud-dump">dumpScreen()</button>
-      <button type="button" id="debug-hud-problems">listProblems()</button>
-    </footer>
   `;
   const shell = document.querySelector(".game-shell") || document.body;
   shell.append(hud);
+  const toggle = hud.querySelector("#debug-hud-toggle");
+  const header = hud.querySelector("#debug-hud-header");
+  const onToggle = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleHudCollapsed();
+  };
+  toggle?.addEventListener("click", onToggle);
+  // Whole sticky header is a large phone-friendly hit target when collapsed.
+  header?.addEventListener("click", (event) => {
+    if (event.target.closest("#debug-hud-toggle")) {
+      return;
+    }
+    if (hud.classList.contains("is-collapsed")) {
+      onToggle(event);
+    }
+  });
   hud.querySelector("#debug-hud-dump")?.addEventListener("click", () => {
     const dump = dumpScreen();
     console.log("[GoblinsRPG3] dumpScreen", dump);
@@ -383,6 +471,7 @@ function ensureDebugHud() {
     /* selection only; Go applies */
   });
   loadChapterEntriesIntoSelect(chapterSelect);
+  applyHudCollapsedState(hud, readHudCollapsedPreference());
   return hud;
 }
 
@@ -520,6 +609,8 @@ window.goblinsRpg3Debug = {
     return window.goblinsRpg3Debug.setEnabled(!state.logging);
   },
   setDebugMode,
+  setHudCollapsed,
+  toggleHudCollapsed,
   goto(slideOrId) {
     const id = typeof slideOrId === "number" ? screenId(slideOrId) : String(slideOrId);
     recordInteraction({ type: "debug-goto", requested: slideOrId, targetId: id });

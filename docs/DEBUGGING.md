@@ -42,9 +42,19 @@ http://127.0.0.1:8765/?debug=1&slide=2
 | `listProblems()` | Heuristic problems for the current screen |
 | `snapshot()` | Animation queue / timers / last interaction |
 | `setDebugMode({ logging, css, hud })` | Toggle features live |
+| `toggleHudCollapsed()` / `setHudCollapsed(bool)` | Collapse/expand on-page Debug HUD |
 | `toggle()` / `setEnabled(true)` | Console logging only |
 
 HUD buttons call `dumpScreen()` / `listProblems()` and also log to the console.
+
+### Collapsing the Debug HUD (phone-friendly)
+
+With `?debug=1` / `?hud=1`, the on-page Debug HUD can cover most of a phone screen. Use the sticky header control:
+
+- **Expanded:** tap **✕ Hide** (≥44px hit target) in the HUD header to collapse.
+- **Collapsed:** a small **▸ Debug** chip remains in the top-right; tap it (or the chip bar) to expand again.
+- Collapsed state is remembered for the tab in `sessionStorage` (`goblinsRpg3.debugHudCollapsed`).
+- Console: `goblinsRpg3Debug.toggleHudCollapsed()` / `setHudCollapsed(true|false)`.
 
 Click a layer while debug/HUD is on to select it (cyan outline + HUD detail).
 
