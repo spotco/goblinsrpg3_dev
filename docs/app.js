@@ -2128,6 +2128,19 @@ function clearCssTransition(element, properties = null) {
   element.style.transition = filtered.length ? filtered.join(", ") : "none";
 }
 
+
+/** Reveal a layer that was pre-hidden for entrance; used by set/motion/animate. */
+function revealAnimationElement(element) {
+  if (!element) {
+    return;
+  }
+  element.style.visibility = "visible";
+  // setupAnimations pre-hides with opacity "0"; clear that unless a fade will re-zero it.
+  if (element.style.opacity === "" || element.style.opacity === "0") {
+    element.style.opacity = "1";
+  }
+}
+
 function applySetBehavior(elements, strings) {
   let applied = false;
   if (strings.includes("style.visibility") || strings.includes("visible") || strings.includes("hidden")) {
@@ -2139,10 +2152,12 @@ function applySetBehavior(elements, strings) {
         targets: elements.map(animationElementInfo),
       });
       for (const element of elements) {
-        element.style.visibility = visibility;
-        // Keep opacity=0 when a paired fade is about to run; only force-show if opacity is unset.
-        if (visibility === "visible" && element.style.opacity === "") {
-          element.style.opacity = "1";
+        if (visibility === "visible") {
+          // Paired fade/dissolve re-zeros opacity in applyEffectBehavior (same tick).
+          revealAnimationElement(element);
+        } else {
+          element.style.visibility = visibility;
+          element.style.opacity = "0";
         }
       }
       applied = true;
@@ -2346,6 +2361,9 @@ function applyAnimateBehavior(elements, strings, timing) {
       formulas,
       element: animationElementInfo(element),
     });
+    // Fly in/out (ppt_x/ppt_y) often pairs with set-visible; also reveal here so
+    // metric motion is visible even if set was skipped or opacity stayed at 0.
+    revealAnimationElement(element);
     animateMetricValues(element, property, values, timing);
   }
 }
@@ -2580,6 +2598,9 @@ function applyMotionBehavior(elements, strings, timing) {
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
+    // Motion paths are not preceded by set-visible in this deck (e.g. s014 goblin hop /
+    // knock-off composite). Reveal so the path reads instead of animating opacity 0.
+    revealAnimationElement(element);
     const baseTransform = element.dataset.baseTransform || "";
     const endTransform = motionTranslate(baseTransform, endpoint);
     const startTransform = element.style.transform || baseTransform || "none";
