@@ -992,6 +992,77 @@ function pointHeightToContainer(value) {
 }
 
 
+
+/** OOXML DrawingML preset geometries as CSS clip-paths (viewBox 21600). */
+const AUTOSHAPE_CLIP_PATHS = {
+  IRREGULAR_SEAL_1:
+    "polygon(50% 26.852%, 67.231% 0%, 65.532% 24.653%, 85.093% 20.634%, 77.324% 33.866%, 97.671% 37.671%, 81.514% 48.495%, 100% 61.528%, 77.949% 59.917%, 84.005% 83.773%, 64.907% 66.931%, 61.329% 91.375%, 48.759% 69.144%, 39.282% 100%, 35.718% 72.347%, 22.046% 81.56%, 26.236% 64.523%, 0.625% 67.532%, 17.231% 54.514%, 0% 39.884%, 21.421% 35.264%, 1.713% 10.625%, 33.852% 29.259%, 38.667% 10.625%)",
+  IRREGULAR_SEAL_2:
+    "polygon(53.065% 20.102%, 68.472% 0%, 67.245% 26.745%, 83.366% 14.685%, 75.833% 30.241%, 100% 30.764%, 78.634% 43.528%, 84.583% 52.269%, 75.833% 56.991%, 87.394% 72.37%, 67.778% 66.435%, 69.176% 80.417%, 56.389% 73.773%, 53.759% 87.231%, 45.704% 80.417%, 40.278% 91.259%, 34.847% 83.912%, 22.764% 100%, 22.245% 84.444%, 5.949% 82.523%, 15.417% 71.157%, 0% 59.616%, 18.218% 53.667%, 5.426% 38.287%, 24.87% 36.19%, 20.843% 16.782%, 39.583% 29.546%, 45.009% 8.736%)",
+  ELLIPSE: "ellipse(50% 50% at 50% 50%)",
+  OVAL: "ellipse(50% 50% at 50% 50%)",
+  STAR_4: "polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%)",
+  RIGHT_ARROW:
+    "polygon(0% 25%, 60% 25%, 60% 0%, 100% 50%, 60% 100%, 60% 75%, 0% 75%)",
+  LEFT_ARROW:
+    "polygon(40% 0%, 0% 50%, 40% 100%, 40% 75%, 100% 75%, 100% 25%, 40% 25%)",
+  DOWN_ARROW:
+    "polygon(25% 0%, 75% 0%, 75% 60%, 100% 60%, 50% 100%, 0% 60%, 25% 60%)",
+  UP_ARROW:
+    "polygon(50% 0%, 100% 40%, 75% 40%, 75% 100%, 25% 100%, 25% 40%, 0% 40%)",
+  TRIANGLE: "polygon(50% 0%, 100% 100%, 0% 100%)",
+  DIAMOND: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+  PENTAGON: "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)",
+  HEXAGON: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+  PLUS: "polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%)",
+  CROSS: "polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%)",
+};
+
+function autoShapeClipPath(shapeType) {
+  if (!shapeType) {
+    return null;
+  }
+  const key = String(shapeType).toUpperCase();
+  return AUTOSHAPE_CLIP_PATHS[key] || null;
+}
+
+function applyAutoShapeGeometry(element, layer) {
+  const shapeType = String(layer.shapeType || "");
+  const clip = autoShapeClipPath(shapeType);
+  if (clip) {
+    element.style.clipPath = clip;
+    element.style.webkitClipPath = clip;
+    element.dataset.autoShapeClip = shapeType;
+  }
+  if (shapeType === "LINE") {
+    // PPT line AutoShapes are stroked diagonals in their bounding box.
+    element.classList.add("layer-line");
+    element.textContent = "";
+    element.style.backgroundColor = "transparent";
+    element.style.border = "none";
+    const style = layer.style || {};
+    const stroke = cssColorFromPpt(style.lineColor) || "#ffff00";
+    const widthPt = Number(style.lineWidth || 1.5);
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 100 100");
+    svg.setAttribute("preserveAspectRatio", "none");
+    svg.classList.add("layer-line-svg");
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", "0");
+    line.setAttribute("y1", "0");
+    line.setAttribute("x2", "100");
+    line.setAttribute("y2", "100");
+    line.setAttribute("stroke", stroke);
+    line.setAttribute("stroke-width", String(Math.max(widthPt * 1.2, 1)));
+    line.setAttribute("vector-effect", "non-scaling-stroke");
+    if (style.lineDash && style.lineDash !== "SOLID") {
+      line.setAttribute("stroke-dasharray", "6 4");
+    }
+    svg.append(line);
+    element.append(svg);
+  }
+}
+
 function isOpaqueCssColor(value) {
   if (!value || typeof value !== "string") {
     return false;
@@ -1203,6 +1274,11 @@ function renderLayers(screen) {
       image.decoding = "async";
       image.draggable = false;
       element.append(image);
+    } else if (layer.type === "shape") {
+      // Geometric AutoShapes (clip-art seals, arrows, ellipses, lines…).
+      element.classList.add("geometric-autoshape");
+      element.textContent = "";
+      applyAutoShapeGeometry(element, layer);
     } else if (layer.type === "text") {
       const emptyPlaceholder = Boolean(layer.emptyTextPlaceholder) || !String(layer.text || "").trim();
       if (emptyPlaceholder && !layer.wordArt) {
@@ -1214,6 +1290,8 @@ function renderLayers(screen) {
         if (hasOpaqueFill) {
           element.classList.add("filled-empty-shape");
           element.textContent = "";
+          // Legacy path: still apply clip-path if a geometric type slipped through.
+          applyAutoShapeGeometry(element, layer);
         } else {
           element.classList.add("empty-text-placeholder");
           // Keep animatable boxes in the DOM; hide non-animated decorative empties.

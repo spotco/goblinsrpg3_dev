@@ -59,7 +59,7 @@ def collect_layer_maps(game_manifest: dict[str, Any]) -> tuple[dict[tuple[int, i
 def verify_runtime_uses_layers(app_js: str) -> None:
     required_snippets = (
         "const renderedLayers = renderLayers(screen);",
-        "screenImage.hidden = renderedLayers;",
+        "screenImage.hidden = renderedLayers && !pngUnderlay;",
         "layersLayer.hidden = !renderedLayers;",
         "state.currentLayerElements.set(String(layer.shapeId), element);",
     )

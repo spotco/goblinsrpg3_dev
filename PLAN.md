@@ -232,7 +232,8 @@ Do **not** block Phases 1–3 on these.
 
 - [x] **5.6** WordArt geometry polish; empty text layer cleanup; sparse hybrid underlay:
   - `wordArtGeometry` on layers; runtime CSS approx for **TEXT_DEFLATE** / **CURVE_UP** (4 WordArt layers deck-wide).
-  - `emptyTextPlaceholder` on empty non-WordArt text (**295**); runtime hides non-animated empties; animated targets stay for effects.
+  - `emptyTextPlaceholder` on empty non-WordArt text (**110** plate/textbox empties); runtime hides non-animated empties; animated targets stay for effects.
+  - **Geometric AutoShapes** (clip-art seals/arrows/ellipses/lines…): empty non-RECT presets classified `type=shape` (**185**); runtime applies OOXML preset **clip-path** (IRREGULAR_SEAL_1/2 explosions on **s007**, etc.) + SVG strokes for LINE. Fixes fade-in explosions rendering as yellow rectangles.
   - **Sparse hybrid PNG underlay** when layers exist but coverage is sparse (`screenNeedsPngUnderlay`); clears former medium sparse defect queue when composite PNG exists.
   - Offline: `generated/text_fidelity_report.json` + `verify_text_fidelity.py`.
   - **Residual → 5.6.1:** true SVG/path WordArt warps (only CSS approx today).

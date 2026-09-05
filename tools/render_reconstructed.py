@@ -98,6 +98,36 @@ def transformed_layer_image(layer_image: Image.Image, layer: dict[str, object]) 
     return result
 
 
+
+# Normalized (0..1) polygons for common PPT AutoShapes (OOXML presets).
+AUTOSHAPE_POLYGONS = {
+    "IRREGULAR_SEAL_1": [
+        (0.5, 0.26852), (0.67231, 0.0), (0.65532, 0.24653), (0.85093, 0.20634),
+        (0.77324, 0.33866), (0.97671, 0.37671), (0.81514, 0.48495), (1.0, 0.61528),
+        (0.77949, 0.59917), (0.84005, 0.83773), (0.64907, 0.66931), (0.61329, 0.91375),
+        (0.48759, 0.69144), (0.39282, 1.0), (0.35718, 0.72347), (0.22046, 0.8156),
+        (0.26236, 0.64523), (0.00625, 0.67532), (0.17231, 0.54514), (0.0, 0.39884),
+        (0.21421, 0.35264), (0.01713, 0.10625), (0.33852, 0.29259), (0.38667, 0.10625),
+    ],
+    "IRREGULAR_SEAL_2": [
+        (0.53065, 0.20102), (0.68472, 0.0), (0.67245, 0.26745), (0.83366, 0.14685),
+        (0.75833, 0.30241), (1.0, 0.30764), (0.78634, 0.43528), (0.84583, 0.52269),
+        (0.75833, 0.56991), (0.87394, 0.7237), (0.67778, 0.66435), (0.69176, 0.80417),
+        (0.56389, 0.73773), (0.53759, 0.87231), (0.45704, 0.80417), (0.40278, 0.91259),
+        (0.34847, 0.83912), (0.22764, 1.0), (0.22245, 0.84444), (0.05949, 0.82523),
+        (0.15417, 0.71157), (0.0, 0.59616), (0.18218, 0.53667), (0.05426, 0.38287),
+        (0.2487, 0.3619), (0.20843, 0.16782), (0.39583, 0.29546), (0.45009, 0.08736),
+    ],
+    "STAR_4": [(0.5, 0.0), (0.62, 0.38), (1.0, 0.5), (0.62, 0.62), (0.5, 1.0), (0.38, 0.62), (0.0, 0.5), (0.38, 0.38)],
+    "RIGHT_ARROW": [(0.0, 0.25), (0.6, 0.25), (0.6, 0.0), (1.0, 0.5), (0.6, 1.0), (0.6, 0.75), (0.0, 0.75)],
+    "LEFT_ARROW": [(0.4, 0.0), (0.0, 0.5), (0.4, 1.0), (0.4, 0.75), (1.0, 0.75), (1.0, 0.25), (0.4, 0.25)],
+    "DOWN_ARROW": [(0.25, 0.0), (0.75, 0.0), (0.75, 0.6), (1.0, 0.6), (0.5, 1.0), (0.0, 0.6), (0.25, 0.6)],
+    "UP_ARROW": [(0.5, 0.0), (1.0, 0.4), (0.75, 0.4), (0.75, 1.0), (0.25, 1.0), (0.25, 0.4), (0.0, 0.4)],
+    "TRIANGLE": [(0.5, 0.0), (1.0, 1.0), (0.0, 1.0)],
+    "DIAMOND": [(0.5, 0.0), (1.0, 0.5), (0.5, 1.0), (0.0, 0.5)],
+}
+
+
 def paste_centered(screen: Image.Image, layer_image: Image.Image, box: tuple[int, int, int, int]) -> None:
     x, y, w, h = box
     cx = x + w / 2
@@ -115,6 +145,25 @@ def draw_layer_box(draw: ImageDraw.ImageDraw, layer: dict[str, object], box: tup
     fill = hex_color(style.get("fillColor") if isinstance(style.get("fillColor"), str) else None, (0, 0, 0, 0))
     line = hex_color(style.get("lineColor") if isinstance(style.get("lineColor"), str) else None, (0, 0, 0, 0))
     line_width = max(round(float(style.get("lineWidth") or 0) * scale), 1)
+    shape_type = str(layer.get("shapeType") or "").upper()
+    if shape_type == "ELLIPSE" or shape_type == "OVAL":
+        if fill[3] > 0:
+            draw.ellipse((x, y, x + w, y + h), fill=fill)
+        if line[3] > 0 and float(style.get("lineWidth") or 0) > 0:
+            draw.ellipse((x, y, x + w, y + h), outline=line, width=line_width)
+        return
+    if shape_type == "LINE":
+        if line[3] > 0:
+            draw.line((x, y, x + w, y + h), fill=line, width=max(line_width, 1))
+        return
+    poly = AUTOSHAPE_POLYGONS.get(shape_type)
+    if poly:
+        points = [(round(x + px * w), round(y + py * h)) for px, py in poly]
+        if fill[3] > 0:
+            draw.polygon(points, fill=fill)
+        if line[3] > 0 and float(style.get("lineWidth") or 0) > 0:
+            draw.polygon(points, outline=line)
+        return
     if fill[3] > 0:
         draw.rectangle((x, y, x + w, y + h), fill=fill)
     if line[3] > 0 and float(style.get("lineWidth") or 0) > 0:

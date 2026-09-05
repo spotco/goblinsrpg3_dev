@@ -18,20 +18,22 @@ def main() -> None:
     assert summary["slides"] == 201
     assert summary["layers"] == 1182
     assert summary["imageInstances"] == 532
-    assert summary["textLayers"] == 650
+    assert summary["textLayers"] == 465
+    assert summary["shapeLayers"] == 185
     assert summary["animatedShapeTargets"] == 567
     assert summary["animatedLayers"] == 567
     assert summary["styledLayers"] == 1182
     assert summary["transformLayers"] == 1182
-    assert summary["textStyleLayers"] == 650
-    assert summary["paragraphs"] == 681
-    assert summary["textRuns"] == 695
+    assert summary["textStyleLayers"] == 465
+    assert summary["paragraphs"] == 496
+    assert summary["textRuns"] == 510
     assert summary["actionBoundLayers"] == 210
     assert summary["hyperlinkBoundLayers"] == 192
 
     image_layers = []
     animated_images = 0
     animated_text = 0
+    animated_shape = 0
     action_bound_layers = 0
     hyperlink_bound_layers = 0
     for slide in manifest["slides"]:
@@ -60,6 +62,8 @@ def main() -> None:
                 animated_images += 1
             if layer["animated"] and layer["type"] == "text":
                 animated_text += 1
+            if layer["animated"] and layer["type"] == "shape":
+                animated_shape += 1
             if layer["type"] == "image":
                 assert "clip" in layer
                 image_layers.append(layer)
@@ -75,6 +79,7 @@ def main() -> None:
     assert len(image_layers) == 532
     assert animated_images > 0
     assert animated_text > 0
+    assert animated_shape > 0
     assert action_bound_layers == 210
     assert hyperlink_bound_layers == 192
     print("layer manifest verification passed")

@@ -344,6 +344,30 @@ def promote_full_bleed_background(slide_entry: dict[str, object]) -> None:
         }
         break
 
+
+
+# Empty AutoShapes with real PPT preset geometry (seals, arrows, stars, …)
+# must not be typed as text placeholders — the runtime needs type=shape so it
+# can apply clip-path / stroke rendering. RECT/ROUND_RECT/TEXT_* stay as text
+# plates / captions (filled-empty rectangles are intentional for slide fields).
+TEXT_OR_PLATE_SHAPE_TYPES = frozenset(
+    {
+        "TEXT_BOX",
+        "TEXT_PLAIN",
+        "TEXT_PLAIN_TEXT",
+        "RECT",
+        "RECTANGLE",
+        "ROUND_RECT",
+        "ROUND_RECTANGLE",
+    }
+)
+
+
+def is_geometric_autoshape(shape_type: str | None) -> bool:
+    if not shape_type:
+        return False
+    return shape_type.upper() not in TEXT_OR_PLATE_SHAPE_TYPES and not shape_type.upper().startswith("TEXT_")
+
 def is_word_art_shape(shape: dict[str, object]) -> bool:
     if shape.get("geoText"):
         return True
@@ -451,6 +475,7 @@ def main() -> None:
     slides: list[dict[str, object]] = []
     image_instance_count = 0
     text_layer_count = 0
+    shape_layer_count = 0
     animated_layer_count = 0
 
     for slide in range(1, int(metadata.get("slides", len(shapes_by_slide))) + 1):
@@ -516,6 +541,26 @@ def main() -> None:
                 text_value = poi_text if poi_text.strip() else geo_text
                 word_art = bool(geo_text) or is_word_art_shape(shape)
                 empty_placeholder = not str(text_value).strip() and not word_art
+                shape_type_name = str(
+                    shape.get("geometry", {}).get("shapeType")
+                    or shape.get("shapeType")
+                    or base.get("shapeType")
+                    or ""
+                )
+                # Geometric clip-art AutoShapes (explosions, arrows, ellipses…)
+                # with no authored text are vector shapes, not empty text boxes.
+                if empty_placeholder and is_geometric_autoshape(shape_type_name):
+                    layer = {
+                        **base,
+                        "type": "shape",
+                        "text": "",
+                        "wordArt": False,
+                        "emptyTextPlaceholder": False,
+                        "geometricAutoShape": True,
+                    }
+                    shape_layer_count += 1
+                    layers.append(layer)
+                    continue
                 layer = {
                     **base,
                     "type": "text",
@@ -622,7 +667,8 @@ def main() -> None:
                     )
                 text_layer_count += 1
             else:
-                layer = {**base, "type": "shape"}
+                layer = {**base, "type": "shape", "geometricAutoShape": is_geometric_autoshape(str(base.get("shapeType") or ""))}
+                shape_layer_count += 1
             layers.append(layer)
         slide_entry: dict[str, object] = {"slide": slide, "layers": layers}
         background = slide_backgrounds.get(slide)
@@ -648,6 +694,7 @@ def main() -> None:
             "layers": sum(len(slide["layers"]) for slide in slides),
             "imageInstances": image_instance_count,
             "textLayers": text_layer_count,
+            "shapeLayers": shape_layer_count,
             "animatedLayers": animated_layer_count,
             "animatedShapeTargets": sum(len(targets) for targets in animation_targets.values()),
             "styledLayers": sum(
@@ -690,7 +737,7 @@ def main() -> None:
     args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(
         f"Wrote {args.output} with {image_instance_count} image instances, "
-        f"{text_layer_count} text layers, {animated_layer_count} animated layers"
+        f"{text_layer_count} text layers, {shape_layer_count} shape layers, {animated_layer_count} animated layers"
     )
 
 
