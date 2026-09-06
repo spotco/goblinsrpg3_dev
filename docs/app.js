@@ -1964,6 +1964,37 @@ function nodeWaitsForClick(node) {
   });
 }
 
+/** True if this node or any descendant has a behavior the player can run. */
+function nodeSubtreeHasBehaviors(node) {
+  if (!node) {
+    return false;
+  }
+  if ((node.behaviors || []).length > 0) {
+    return true;
+  }
+  for (const sub of node.subEffects || []) {
+    if (nodeSubtreeHasBehaviors(sub)) {
+      return true;
+    }
+  }
+  for (const child of node.children || []) {
+    if (nodeSubtreeHasBehaviors(child)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * OnNext/OnPrev queue entries with zero runnable behaviors (common PPT media
+ * AfterEffect placeholders: Display/MediaVolume variants, no command/set/effect
+ * atoms). Consuming a full user click for these is a port UX bug — skip/drain
+ * them without counting as a meaningful build advance.
+ */
+function isEmptyClickAdvanceNode(node) {
+  return Boolean(node) && !nodeSubtreeHasBehaviors(node);
+}
+
 
 function iterateKind(iterate) {
   if (!iterate || typeof iterate !== "object") {
@@ -3427,13 +3458,33 @@ function advanceAnimation() {
   // PPT After Animation → Hide on Next Mouse Click fires on this click,
   // before (or as) the next OnNext build starts — prevents stacked text.
   flushPendingAfterEffectHides();
+  // Drain empty interactive placeholders (no subtree behaviors) so they do not
+  // burn a full click before a real build or hotspot hyperlink/media action.
+  const skippedEmpty = [];
+  while (state.animationQueue.length && isEmptyClickAdvanceNode(state.animationQueue[0])) {
+    const emptyNode = state.animationQueue.shift();
+    skippedEmpty.push(emptyNode);
+    runtimeLog("input:animation-advance-skip-empty", {
+      action: "advance-animation",
+      result: "skipped empty OnNext node (no subtree behaviors)",
+      node: animationNodeInfo(emptyNode),
+      queueLengthAfterShift: state.animationQueue.length,
+    });
+    // Still run so start/complete triggers and completed-set stay consistent.
+    runAnimationNode(emptyNode, 0, true);
+  }
   const node = state.animationQueue.shift();
   if (!node) {
     runtimeLog("input:animation-advance", {
       action: "advance-animation",
-      result: "no queued animation node",
+      result: skippedEmpty.length
+        ? "only empty OnNext nodes drained"
+        : "no queued animation node",
       queueLength: 0,
+      skippedEmptyCount: skippedEmpty.length,
+      skippedEmpty: skippedEmpty.map((item) => animationNodeInfo(item)),
     });
+    // Returning false lets hotspot continuum fall through to hyperlink/media.
     return false;
   }
   runtimeLog("input:animation-advance", {
@@ -3441,6 +3492,8 @@ function advanceAnimation() {
     result: "running queued animation node",
     node: animationNodeInfo(node),
     queueLengthAfterShift: state.animationQueue.length,
+    skippedEmptyCount: skippedEmpty.length,
+    skippedEmpty: skippedEmpty.map((item) => animationNodeInfo(item)),
   });
   runAnimationNode(node, 0, true);
   return true;
