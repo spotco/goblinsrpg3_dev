@@ -28,3 +28,12 @@
 - Deck-wide scan of `docs/animation-manifest.json`: **11** empty OnNext nodes (waits triggerEvent 9/10, zero subtree behaviors), all root-time-node siblings:
   s002-tn0007, s013-tn0007, s014-tn0040, s030-tn0013, s054-tn0018, s074-tn0014, s081-tn0017, s096-tn0018, s104-tn0007, s193-tn0011, s197-tn0013.
 - Playwright spot-check: s002 leaves in **2** hotspot clicks (empty drained on same click as hyperlink). s013: click1 advances media build, click2 drains empty `s013-tn0007` and falls through to media action (not stuck). s014 empty exists in manifest; slide autoAdvance may run sequences without parking it in the click queue — hotspot/stage clicks still not stuck on dead empties.
+
+## 2026-09-06 First goblin×3 combat HUD / hotspot clicks
+
+- Symptom: with `?debug=1`, Attack/Flee on combat menus (bottom-right OPTION) looked drawn but were not clickable; gold hotspot outlines sat under the Debug HUD. Blue debug outlines on goblin *layers* were easy to misread as the hit targets (s021 Attack→19 / flee→17 is the real wiring).
+- Extract/manifest check (inventory + POI TEXTLINK + `combat_option_matrix` + start-graph): early combat targets are binary-faithful (including s015 Attack→18 CAN'T ESCAPE, s015 flee residual self non-clickable, loop s042→s021). No invent-bridge remaps.
+- Runtime fix: `docs/styles.css` Debug HUD
+  - `pointer-events: none` on the HUD shell; only `button`/`select` (and collapsed header) re-enable hits
+  - Cap HUD `max-height: min(48vh, calc(100vh - 120px))` and shrink body so chapters/footer stay above OPTION
+- Verify: Playwright across viewports — s015 Attack→18, s021 Attack→19 / flee→17 with `?debug=1`; continue/loop edges without debug. Screenshots `/workspace/goblins-combat-*.png`.
