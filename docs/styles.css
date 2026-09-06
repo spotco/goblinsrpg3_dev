@@ -554,3 +554,45 @@ button:focus-visible {
     flex-wrap: wrap;
   }
 }
+
+
+/* Compact combat/slide annotation on stage — never captures hits (OPTION safe). */
+.combat-debug-overlay {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  z-index: 40;
+  max-width: min(46%, 280px);
+  padding: 4px 6px;
+  border: 1px solid rgba(232, 199, 95, 0.45);
+  border-radius: 4px;
+  background: rgba(8, 7, 5, 0.72);
+  color: #f2ead8;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 10px;
+  line-height: 1.3;
+  pointer-events: none;
+  white-space: pre-wrap;
+}
+
+.combat-debug-overlay[hidden] {
+  display: none !important;
+}
+
+.combat-debug-overlay-body {
+  margin: 0;
+  font: inherit;
+  white-space: pre-wrap;
+}
+
+
+/* Animated-shape hyperlinks: inert until the layer is revealed. */
+.hotspot.hotspot-awaiting-reveal {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.debug .hotspot.hotspot-awaiting-reveal {
+  outline-color: rgba(232, 199, 95, 0.25);
+  background: rgba(232, 199, 95, 0.05);
+}

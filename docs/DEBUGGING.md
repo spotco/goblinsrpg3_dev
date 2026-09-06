@@ -58,6 +58,25 @@ With `?debug=1` / `?hud=1`, the on-page Debug HUD can cover most of a phone scre
 
 Click a layer while debug/HUD is on to select it (cyan outline + HUD detail).
 
+
+### Combat slide annotations (`?debug=1`)
+
+When the Debug HUD is on, the runtime adds **combat/progression annotations**:
+
+| Field | Source |
+|---|---|
+| `role` | Heuristic from layer text + advancement (`menu`, `menu-boredom`, `pre-battle`, `flee-fail`, `damage`, `victory`, `death`, `continue`, …) |
+| `hp/text` | Numbers / "takes N damage" / `Goblin xN` plus short layer text samples |
+| `hotspots` | `shapeText→targetSlide` (`*` = non-clickable residual) |
+| `anim` | Behavior counts from the animation timing tree (`motion`, dissolve/fade, set, animate, cmd) |
+
+Also drawn as a **compact stage overlay** (top-left on `#stage`, `pointer-events: none`) so OPTION stays clickable. Overlay follows HUD enablement (`?debug=1` / `?hud=1`). HUD collapse preference remains `sessionStorage` key `goblinsRpg3.debugHudCollapsed`.
+
+Console: `goblinsRpg3Debug.combatAnnot()` / `combatAnnot(15)`; `dumpScreen()` includes `combatAnnot`.
+
+Animated-shape hyperlinks (e.g. combat **Click here to continue**) stay `pointer-events: none` until `revealAnimationElement` / set-visible runs for that shape, so early clicks hit the stage and advance OnNext instead of skipping the dissolve. Non-animated OPTION labels (Attack/Flee) stay immediately clickable. Late animation-manifest boot re-runs `renderHotspots` after `setupAnimations` so the gate applies.
+
+
 ## Slide advancement (runtime)
 
 Advancement is data-driven from each screen’s `advancement` block in `game-manifest.json` (59 auto-advance slides; others click/hotspot only):

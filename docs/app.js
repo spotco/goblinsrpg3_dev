@@ -313,12 +313,251 @@ function dumpScreen(slideOrId) {
       mediaBindingId: hotspot.mediaBindingId || null,
       bounds: hotspot.bounds || null,
       label: hotspot.label || null,
+      shapeText: hotspot.shapeText || null,
+      targetLabel: hotspot.targetLabel || null,
     })),
+    combatAnnot: buildCombatSlideAnnotation(screen),
     animation: animationTimelineForScreen(screen),
     problems: collectRuntimeProblems(screen),
     snapshot: window.goblinsRpg3Debug.snapshot(),
   };
 }
+
+
+/** Infer a coarse slide role for combat / progression QA annotations. */
+function inferSlideRole(screen) {
+  if (!screen) {
+    return "unknown";
+  }
+  const texts = (screen.layers || [])
+    .map((layer) => String(layer.text || "").replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  const joined = texts.join(" | ").toLowerCase();
+  const modes = (screen.advancement && screen.advancement.modes) || [];
+  if (modes.includes("terminal_death") || /\bded!!|\byou ded\b/.test(joined)) {
+    return "death";
+  }
+  if (/can'?t escape/.test(joined)) {
+    return "flee-fail";
+  }
+  if (/felled goblin|take that|haha/.test(joined)) {
+    return "victory";
+  }
+  if (/takes\s+\d+\s+damage|releases fury/.test(joined)) {
+    return "damage";
+  }
+  const hasAttack = texts.some((text) => /^-?\s*attack$/i.test(text));
+  const hasFlee = texts.some((text) => /^-?\s*flee$/i.test(text));
+  if (hasAttack || hasFlee) {
+    if (/fled of boredom/.test(joined)) {
+      return "menu-boredom";
+    }
+    return "menu";
+  }
+  if (/attacking|aaa!!!|\byip!/.test(joined)) {
+    return "pre-battle";
+  }
+  if (texts.some((text) => /click here/i.test(text))) {
+    return "continue";
+  }
+  return "other";
+}
+
+function extractSlideHpHints(screen) {
+  const texts = (screen.layers || [])
+    .map((layer) => String(layer.text || "").replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  const hints = [];
+  for (const text of texts) {
+    const damage = text.match(/takes\s+(\d+)\s+damage/i);
+    if (damage) {
+      hints.push(`dmg ${damage[1]}`);
+    }
+    const goblins = text.match(/goblin\s*x\s*(\d+)/i);
+    if (goblins) {
+      hints.push(`goblin×${goblins[1]}`);
+    }
+    if (/^\d{1,3}$/.test(text)) {
+      hints.push(`hp? ${text}`);
+    }
+  }
+  return [...new Set(hints)];
+}
+
+function hotspotOptionSummary(screen) {
+  return (screen.hotspots || []).map((hotspot) => {
+    const label = String(hotspot.shapeText || hotspot.label || hotspot.action || "?").replace(/\s+/g, " ").trim();
+    let target = "—";
+    if (hotspot.action === "media") {
+      target = "media";
+    } else if (hotspot.targetSlide) {
+      target = String(hotspot.targetSlide);
+    } else if (hotspot.action) {
+      target = hotspot.action;
+    }
+    const mark = hotspot.clickable === false ? "*" : "";
+    return `${label}→${target}${mark}`;
+  });
+}
+
+function walkAnimationBehaviorKinds(node, counts) {
+  if (!node) {
+    return counts;
+  }
+  for (const behavior of node.behaviors || []) {
+    const kind = String(behavior.kind || "unknown");
+    counts[kind] = (counts[kind] || 0) + 1;
+    const strings = parsedStrings(behavior.variants).map((value) => String(value).toLowerCase());
+    if (strings.some((value) => value === "fade" || value === "dissolve")) {
+      counts.dissolve = (counts.dissolve || 0) + 1;
+    }
+    if (strings.some((value) => /^m\s/i.test(value))) {
+      counts.motionPath = (counts.motionPath || 0) + 1;
+    }
+    if (strings.some((value) => value.includes("visibility") || value === "hidden" || value === "visible")) {
+      counts.visibility = (counts.visibility || 0) + 1;
+    }
+  }
+  for (const child of node.children || []) {
+    walkAnimationBehaviorKinds(child, counts);
+  }
+  for (const sub of node.subEffects || []) {
+    walkAnimationBehaviorKinds(sub, counts);
+  }
+  return counts;
+}
+
+function animationBehaviorSummary(screen) {
+  if (!screen || !state.animationSlides) {
+    return { available: false, total: 0, kinds: {}, summary: "anim: (manifest not loaded)" };
+  }
+  const slideAnimations = state.animationSlides.get(screen.slide);
+  if (!slideAnimations) {
+    return { available: false, total: 0, kinds: {}, summary: "anim: none" };
+  }
+  const counts = {};
+  for (const root of slideAnimations.rootTimeNodes || []) {
+    walkAnimationBehaviorKinds(root, counts);
+  }
+  const total = Object.entries(counts).reduce((sum, [key, value]) => {
+    if (key === "dissolve" || key === "motionPath" || key === "visibility") {
+      return sum;
+    }
+    return sum + value;
+  }, 0);
+  const parts = [];
+  if (counts.motion) {
+    parts.push(`motion ${counts.motion}`);
+  }
+  if (counts.motionPath) {
+    parts.push(`paths ${counts.motionPath}`);
+  }
+  if (counts.effect || counts.dissolve) {
+    parts.push(`dissolve/fade ${(counts.dissolve || counts.effect || 0)}`);
+  }
+  if (counts.set) {
+    parts.push(`set ${counts.set}`);
+  }
+  if (counts.animate) {
+    parts.push(`animate ${counts.animate}`);
+  }
+  if (counts.command) {
+    parts.push(`cmd ${counts.command}`);
+  }
+  if (counts.visibility) {
+    parts.push(`vis ${counts.visibility}`);
+  }
+  return {
+    available: true,
+    total,
+    kinds: counts,
+    summary: parts.length ? `anim: ${parts.join(", ")} (n=${total})` : `anim: none (n=0)`,
+  };
+}
+
+function buildCombatSlideAnnotation(screen) {
+  if (!screen) {
+    return null;
+  }
+  const role = inferSlideRole(screen);
+  const hpHints = extractSlideHpHints(screen);
+  const hotspots = hotspotOptionSummary(screen);
+  const anim = animationBehaviorSummary(screen);
+  const texts = (screen.layers || [])
+    .map((layer) => String(layer.text || "").replace(/\s+/g, " ").trim())
+    .filter(Boolean)
+    .slice(0, 6);
+  const adv = screen.advancement || {};
+  return {
+    slide: screen.slide,
+    id: screen.id,
+    role,
+    hpHints,
+    texts,
+    advancementModes: adv.modes || [],
+    autoAdvance: Boolean(adv.autoAdvance),
+    stageClickAdvancesSlide: Boolean(adv.stageClickAdvancesSlide),
+    leavePaths: adv.leavePaths || [],
+    nextSequentialId: adv.nextSequentialId || null,
+    hotspots,
+    anim,
+  };
+}
+
+function formatCombatAnnotationLines(annot) {
+  if (!annot) {
+    return [];
+  }
+  const lines = [
+    `role: ${annot.role}`,
+    `hp/text: ${(annot.hpHints || []).join(", ") || "(none)"} | ${(annot.texts || []).slice(0, 3).join(" · ") || ""}`,
+    `hotspots: ${(annot.hotspots || []).join(" | ") || "(none)"}`,
+    annot.anim && annot.anim.summary ? annot.anim.summary : "anim: ?",
+  ];
+  return lines;
+}
+
+function ensureCombatDebugOverlay() {
+  let overlay = document.getElementById("combat-debug-overlay");
+  if (overlay) {
+    return overlay;
+  }
+  overlay = document.createElement("div");
+  overlay.id = "combat-debug-overlay";
+  overlay.className = "combat-debug-overlay";
+  overlay.setAttribute("aria-hidden", "true");
+  overlay.innerHTML = '<pre class="combat-debug-overlay-body"></pre>';
+  stage.append(overlay);
+  return overlay;
+}
+
+function updateCombatDebugOverlay(annot) {
+  if (!state.hudEnabled) {
+    const existing = document.getElementById("combat-debug-overlay");
+    if (existing) {
+      existing.hidden = true;
+    }
+    return;
+  }
+  const overlay = ensureCombatDebugOverlay();
+  const body = overlay.querySelector(".combat-debug-overlay-body");
+  if (!annot) {
+    overlay.hidden = true;
+    return;
+  }
+  overlay.hidden = false;
+  const queueLen = (state.animationQueue || []).length;
+  const compact = [
+    `#${annot.slide} ${annot.role}` + (queueLen ? ` · OnNext×${queueLen}` : ""),
+    (annot.hpHints || []).join(" ") || "",
+    (annot.hotspots || []).slice(0, 4).join(" · "),
+    annot.anim && annot.anim.summary ? annot.anim.summary.replace(/^anim:\s*/, "") : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+  body.textContent = compact;
+}
+
 
 const DEBUG_HUD_COLLAPSED_KEY = "goblinsRpg3.debugHudCollapsed";
 
@@ -533,9 +772,11 @@ function updateDebugHud(dumpOverride = null) {
   const problems = dump.problems || [];
   const decision = dump.renderDecision || {};
   const adv = dump.screen.advancement || {};
+  const annot = dump.combatAnnot || buildCombatSlideAnnotation(state.current && state.current.id === dump.screen.id ? state.current : (state.screens.get(dump.screen.id) || null));
   const lines = [
     `screen: ${dump.screen.id} (slide ${dump.screen.slide})`,
     `bg: ${dump.screen.backgroundColor || "(stage default)"}`,
+    ...formatCombatAnnotationLines(annot),
     `advancement: modes=${JSON.stringify(adv.modes || [])} stageClickSlide=${Boolean(adv.stageClickAdvancesSlide)} auto=${Boolean(adv.autoAdvance)}`,
     `leave: ${(adv.leavePaths || []).join(",") || "(none)"} next=${adv.nextSequentialId || "—"}`,
     `layers: ${dump.screen.layerCount} ${JSON.stringify(dump.screen.layerTypeCounts)}`,
@@ -552,6 +793,7 @@ function updateDebugHud(dumpOverride = null) {
     `problems: ${problems.length}`,
     ...problems.slice(0, 8).map((problem) => `  [${problem.severity}] ${problem.code}: ${problem.message}`),
   ];
+  updateCombatDebugOverlay(annot);
   if (state.lastInteraction) {
     lines.push(
       `lastInteraction: ${state.lastInteraction.type || "?"} → ${state.lastInteraction.result || state.lastInteraction.action || "?"}`,
@@ -618,6 +860,14 @@ window.goblinsRpg3Debug = {
     return dumpScreen();
   },
   dumpScreen,
+  combatAnnot(slideOrId) {
+    if (slideOrId === undefined) {
+      return buildCombatSlideAnnotation(state.current);
+    }
+    const id = typeof slideOrId === "number" ? screenId(slideOrId) : String(slideOrId);
+    const screen = state.screens.get(id) || state.screens.get(screenId(Number(slideOrId))) || null;
+    return buildCombatSlideAnnotation(screen);
+  },
   listProblems(slideOrId) {
     if (slideOrId === undefined) {
       return collectRuntimeProblems();
@@ -1012,6 +1262,9 @@ function renderHotspots(screen) {
     button.style.width = `${bounds.width * 100}%`;
     button.style.height = `${bounds.height * 100}%`;
     button.dataset.action = hotspot.action;
+    if (hotspot.shapeId !== undefined && hotspot.shapeId !== null) {
+      button.dataset.shapeId = String(hotspot.shapeId);
+    }
     if (hotspot.targetSlide) {
       button.dataset.target = screenId(hotspot.targetSlide);
     }
@@ -1021,6 +1274,22 @@ function renderHotspots(screen) {
         hotspot.label ||
         (hotspot.targetSlide ? `Go to slide ${hotspot.targetSlide}` : `Run ${hotspot.action} action`),
     );
+    const layerMeta = (screen.layers || []).find((layer) => layer.shapeId === hotspot.shapeId);
+    let awaitingReveal = false;
+    let revealVisible = true;
+    if (layerMeta && layerMeta.animated) {
+      const layerEl = state.currentLayerElements.get(String(hotspot.shapeId));
+      const slideAnimations = state.animationSlides && state.animationSlides.get(screen.slide);
+      const animatedIds = slideAnimations ? collectAnimatedShapeIds(slideAnimations) : null;
+      const inTimingTree = animatedIds ? animatedIds.has(String(hotspot.shapeId)) : false;
+      // Gate only when the runtime is actually entrance-hiding this shape (timing tree
+      // known), so late anim-manifest boot does not permanently disable menu hotspots.
+      if (inTimingTree || (layerEl && !layerElementLooksRevealed(layerEl))) {
+        button.dataset.awaitsReveal = "1";
+        awaitingReveal = true;
+        revealVisible = layerElementLooksRevealed(layerEl);
+      }
+    }
     button.addEventListener("click", (event) => {
       event.stopPropagation();
       unlockAudio();
@@ -1040,6 +1309,9 @@ function renderHotspots(screen) {
       handleHotspotAction(hotspot);
     });
     hotspotsLayer.append(button);
+    if (awaitingReveal) {
+      syncHotspotsForShapeVisibility(hotspot.shapeId, revealVisible);
+    }
     renderedCount += 1;
   }
   runtimeLog("render:hotspots", {
@@ -2482,6 +2754,57 @@ function clearCssTransition(element, properties = null) {
 
 
 /** Reveal a layer that was pre-hidden for entrance; used by set/motion/animate. */
+function hotspotButtonsForShape(shapeId) {
+  if (shapeId === undefined || shapeId === null || !hotspotsLayer) {
+    return [];
+  }
+  return [...hotspotsLayer.querySelectorAll(`button.hotspot[data-shape-id="${String(shapeId)}"]`)];
+}
+
+/**
+ * PPT hyperlinks live on shapes: if the shape is still entrance-hidden, the
+ * hotspot must not steal clicks (combat "Click here to continue" otherwise
+ * navigates before dissolve text appears). Stage clicks still advance OnNext.
+ */
+function syncHotspotsForShapeVisibility(shapeId, visible) {
+  for (const button of hotspotButtonsForShape(shapeId)) {
+    if (button.dataset.awaitsReveal !== "1") {
+      continue;
+    }
+    button.classList.toggle("hotspot-awaiting-reveal", !visible);
+    button.style.visibility = visible ? "visible" : "hidden";
+    button.style.pointerEvents = visible ? "auto" : "none";
+    button.tabIndex = visible ? 0 : -1;
+    button.setAttribute("aria-hidden", visible ? "false" : "true");
+  }
+}
+
+function layerElementLooksRevealed(element) {
+  if (!element) {
+    return false;
+  }
+  // setupAnimations uses inline visibility/opacity; empty means not entrance-hidden.
+  if (element.style.visibility === "hidden") {
+    return false;
+  }
+  if (element.style.opacity === "0") {
+    return false;
+  }
+  return true;
+}
+
+/** Re-sync after setupAnimations (including late boot anim-manifest load). */
+function syncAllAnimatedHotspots() {
+  if (!hotspotsLayer) {
+    return;
+  }
+  for (const button of hotspotsLayer.querySelectorAll('button.hotspot[data-awaits-reveal="1"]')) {
+    const shapeId = button.dataset.shapeId;
+    const layerEl = state.currentLayerElements.get(String(shapeId));
+    syncHotspotsForShapeVisibility(shapeId, layerElementLooksRevealed(layerEl));
+  }
+}
+
 function revealAnimationElement(element) {
   if (!element) {
     return;
@@ -2490,6 +2813,9 @@ function revealAnimationElement(element) {
   // setupAnimations pre-hides with opacity "0"; clear that unless a fade will re-zero it.
   if (element.style.opacity === "" || element.style.opacity === "0") {
     element.style.opacity = "1";
+  }
+  if (element.dataset && element.dataset.shapeId) {
+    syncHotspotsForShapeVisibility(element.dataset.shapeId, true);
   }
 }
 
@@ -2510,6 +2836,9 @@ function applySetBehavior(elements, strings) {
         } else {
           element.style.visibility = visibility;
           element.style.opacity = "0";
+          if (element.dataset && element.dataset.shapeId) {
+            syncHotspotsForShapeVisibility(element.dataset.shapeId, false);
+          }
         }
       }
       applied = true;
@@ -3294,6 +3623,9 @@ function applyHideOnNextClickAfterEffectNow(node) {
     element.style.visibility = "hidden";
     element.style.opacity = "0";
     element.style.transition = "none";
+    if (element.dataset && element.dataset.shapeId) {
+      syncHotspotsForShapeVisibility(element.dataset.shapeId, false);
+    }
   }
   state.animationStartedNodes.add(node.id);
   state.animationCompletedNodes.add(node.id);
@@ -3452,6 +3784,8 @@ function setupAnimations(screen) {
   for (const node of slideAnimations.rootTimeNodes || []) {
     runAnimationNode(node, 0, false, false, autoplay);
   }
+  // Hotspots may already exist (late anim-manifest boot re-setup) — gate them now.
+  syncAllAnimatedHotspots();
 }
 
 function advanceAnimation() {
@@ -3956,6 +4290,9 @@ fetch(assetUrl("game-manifest.json"), { cache: "no-store" })
           // slide-transition cleanup alive across this late boot re-setup.
           setupAnimations(state.current);
           applyHybridPngTextPolicy(state.current);
+          // Re-bind hotspots now that entrance-hidden shapes are known (gates
+          // animated "continue" links that were clickable during the gap).
+          renderHotspots(state.current);
           // Reschedule with animation timeline now that manifests are loaded.
           // ?slide=N does not suppress: delay is already max(slideTime, timeline).
           scheduleAutoAdvance(state.current);

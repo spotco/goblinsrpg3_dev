@@ -37,3 +37,10 @@
   - `pointer-events: none` on the HUD shell; only `button`/`select` (and collapsed header) re-enable hits
   - Cap HUD `max-height: min(48vh, calc(100vh - 120px))` and shrink body so chapters/footer stay above OPTION
 - Verify: Playwright across viewports — s015 Attack→18, s021 Attack→19 / flee→17 with `?debug=1`; continue/loop edges without debug. Screenshots `/workspace/goblins-combat-*.png`.
+
+
+## 2026-09-06 Combat playthrough annotations + continue gate
+
+- Debug HUD/overlay: per-slide role, hp/text hints, hotspot shapeText->target, anim behavior counts; stage overlay top-left (pointer-events:none); `goblinsRpg3Debug.combatAnnot()`.
+- Fix: animated continue hotspots gated until reveal (late anim-manifest boot re-renderHotspots); Attack/Flee stay immediate.
+- Playthrough (Playwright): Attack 15->18->24->31->29->30; boredom 15->16->32/17->22; 21 Attack/flee; 22->34/36->42->21 loop; s014 auto->15. Anims OK after full timeline waits; early missing text was delay.
