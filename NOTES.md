@@ -21,7 +21,10 @@
 
 ## 2026-09-06 Start hotspot empty OnNext
 
-- Slide 2 queued `s002-tn0002` (media `playFrom`) then empty AfterEffect `s002-tn0007` (0 behaviors/children; Display/MediaVolume variants only).
+- Slide 2 queued `s002-tn0002` (media `playFrom`) then empty media placeholder `s002-tn0007` (0 behaviors/children; Display/MediaVolume variants only — NOTES historically called these AfterEffect placeholders; they are OnNext-gated root siblings with variant instances 2/22, not TL_TPID_AfterEffect=13).
 - Prior continuum needed 3 hotspot clicks: build → empty no-op → hyperlink. Not RDP double-fire (1 mousedown/up/click per physical press).
-- Fix: `advanceAnimation` skips empty interactive OnNext nodes (`!nodeSubtreeHasBehaviors`) and returns false when only empties drained so hyperlink can fire on the same click.
-- Expected: click1 starts media; click2 leaves to slide 3. Same pattern on ~11 media AfterEffect placeholders deck-wide.
+- Fix (61e35cc+): `advanceAnimation` drains empty interactive OnNext nodes via `isEmptyClickAdvanceNode` / `!nodeSubtreeHasBehaviors` and returns false when only empties drained so hyperlink/media can fire on the same click. Skip applies generally to any queued empty OnNext/OnPrev node, not slide-2-only.
+- Expected: click1 starts media; click2 leaves to slide 3.
+- Deck-wide scan of `docs/animation-manifest.json`: **11** empty OnNext nodes (waits triggerEvent 9/10, zero subtree behaviors), all root-time-node siblings:
+  s002-tn0007, s013-tn0007, s014-tn0040, s030-tn0013, s054-tn0018, s074-tn0014, s081-tn0017, s096-tn0018, s104-tn0007, s193-tn0011, s197-tn0013.
+- Playwright spot-check: s002 leaves in **2** hotspot clicks (empty drained on same click as hyperlink). s013: click1 advances media build, click2 drains empty `s013-tn0007` and falls through to media action (not stuck). s014 empty exists in manifest; slide autoAdvance may run sequences without parking it in the click queue — hotspot/stage clicks still not stuck on dead empties.
