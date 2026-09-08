@@ -44,3 +44,11 @@
 - Debug HUD/overlay: per-slide role, hp/text hints, hotspot shapeText->target, anim behavior counts; stage overlay top-left (pointer-events:none); `goblinsRpg3Debug.combatAnnot()`.
 - Fix: animated continue hotspots gated until reveal (late anim-manifest boot re-renderHotspots); Attack/Flee stay immediate.
 - Playthrough (Playwright): Attack 15->18->24->31->29->30; boredom 15->16->32/17->22; 21 Attack/flee; 22->34/36->42->21 loop; s014 auto->15. Anims OK after full timeline waits; early missing text was delay.
+
+
+## 2026-09-08 Title 1-click + combat empty phase + debug history
+
+- **Debug history:** `?debug=1` HUD shows a playthrough ring buffer; `goblinsRpg3Debug.history()` / `clearHistory()`; persisted `sessionStorage` key `goblinsRpg3.debugHistory`.
+- **Title 1-click:** Navigation hyperlinks bypass the OnNext continuum. Media-command-only OnNext (`playFrom`) is non-gating and sync-fired (or autoplayed on enter for continue-like slides including “Click here to start”), so BGM unlocks/plays on the same press that leaves to slide 3 — no separate media click.
+- **Combat empty phase:** Attack/Flee hyperlinks were previously consumable by pending OnNext (e.g. s016 boredom title). Result slides (CAN'T ESCAPE / damage / felled) started entrance-hidden until a stage click — looked dead/empty after Attack. Fix: hyperlink bypass + autoplay OnNext on continue/media-only slides (not menu slides).
+- Verify: Playwright title 1-click → s3 with `audio:play`; s015→18, s016→32, s021→19 settle with visible continue; flee 21→17→22. Screenshots `/workspace/goblins-fix2-*.png`.

@@ -40,7 +40,8 @@ http://127.0.0.1:8765/?debug=1&slide=2
 | `goto(2)` / `goto("slide-002")` | Navigate and return a dump |
 | `dumpScreen()` / `dumpScreen(2)` | Full runtime dump (layers, hotspots, render decision, problems) |
 | `listProblems()` | Heuristic problems for the current screen |
-| `snapshot()` | Animation queue / timers / last interaction |
+| `snapshot()` | Animation queue / timers / last interaction / playthrough history |
+| `history(n)` / `clearHistory()` | Ring buffer of clicks/hotspots/nav/slide enters (also in HUD) |
 | `setDebugMode({ logging, css, hud })` | Toggle features live |
 | `toggleHudCollapsed()` / `setHudCollapsed(bool)` | Collapse/expand on-page Debug HUD |
 | `toggle()` / `setEnabled(true)` | Console logging only |
@@ -73,6 +74,22 @@ When the Debug HUD is on, the runtime adds **combat/progression annotations**:
 Also drawn as a **compact stage overlay** (top-left on `#stage`, `pointer-events: none`) so OPTION stays clickable. Overlay follows HUD enablement (`?debug=1` / `?hud=1`). HUD collapse preference remains `sessionStorage` key `goblinsRpg3.debugHudCollapsed`.
 
 Console: `goblinsRpg3Debug.combatAnnot()` / `combatAnnot(15)`; `dumpScreen()` includes `combatAnnot`.
+
+### Playthrough history trail (`?debug=1`)
+
+Ring buffer (100) of stage/hotspot clicks, hyperlink navigations, and slide enters:
+
+- Shown in the Debug HUD (`history (last N): …`)
+- Persisted for the tab in `sessionStorage` (`goblinsRpg3.debugHistory`)
+- Console: `goblinsRpg3Debug.history()` / `history(20)` / `clearHistory()`; also on `snapshot().playthroughHistory`
+
+Use this when a live browser session cannot be recovered — reproduce the path and read the trail for empty/dead phases (wrong slide, stolen OnNext click, blank continue beat).
+
+### Click continuum notes (title + combat)
+
+- **Navigation hyperlinks** (title start, Attack/Flee) do **not** get stolen by pending OnNext builds. Empty placeholders and **media-command-only** nodes (`playFrom` BGM) drain as side effects on the same click.
+- **Continue-only / media-only result slides** autoplay their OnNext entrance so Attack→result is not a blank dead phase; menu slides keep click-gated builds.
+- Animated-shape continue hotspots still gate until reveal.
 
 Animated-shape hyperlinks (e.g. combat **Click here to continue**) stay `pointer-events: none` until `revealAnimationElement` / set-visible runs for that shape, so early clicks hit the stage and advance OnNext instead of skipping the dissolve. Non-animated OPTION labels (Attack/Flee) stay immediately clickable. Late animation-manifest boot re-runs `renderHotspots` after `setupAnimations` so the gate applies.
 

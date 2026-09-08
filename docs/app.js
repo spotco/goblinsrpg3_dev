@@ -66,6 +66,7 @@ const state = {
   startSlideOverride: RUNTIME_QUERY.startSlide,
   lastRenderDecision: null,
   lastInteraction: null,
+  playthroughHistory: [],
   selectedDebugLayerId: null,
   logSequence: 0,
   loggerStartedAt: typeof performance !== "undefined" ? performance.now() : Date.now(),
@@ -125,6 +126,81 @@ function animationNodeInfo(node) {
   };
 }
 
+const PLAYTHROUGH_HISTORY_KEY = "goblinsRpg3.debugHistory";
+const PLAYTHROUGH_HISTORY_LIMIT = 100;
+
+function loadPlaythroughHistory() {
+  try {
+    const raw = sessionStorage.getItem(PLAYTHROUGH_HISTORY_KEY);
+    if (!raw) {
+      return [];
+    }
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.slice(-PLAYTHROUGH_HISTORY_LIMIT) : [];
+  } catch (_error) {
+    return [];
+  }
+}
+
+function persistPlaythroughHistory() {
+  if (!state.hudEnabled && !state.logging) {
+    return;
+  }
+  try {
+    sessionStorage.setItem(PLAYTHROUGH_HISTORY_KEY, JSON.stringify(state.playthroughHistory.slice(-PLAYTHROUGH_HISTORY_LIMIT)));
+  } catch (_error) {
+    // Ignore quota / private-mode failures.
+  }
+}
+
+function pushPlaythroughEvent(details) {
+  const entry = {
+    at: new Date().toISOString(),
+    elapsedMs: Math.round(((typeof performance !== "undefined" ? performance.now() : Date.now()) - state.loggerStartedAt) * 10) / 10,
+    slide: state.current ? state.current.slide : null,
+    screenId: state.current ? state.current.id : null,
+    queueLen: state.animationQueue.length,
+    ...details,
+  };
+  state.playthroughHistory.push(entry);
+  if (state.playthroughHistory.length > PLAYTHROUGH_HISTORY_LIMIT) {
+    state.playthroughHistory.splice(0, state.playthroughHistory.length - PLAYTHROUGH_HISTORY_LIMIT);
+  }
+  persistPlaythroughHistory();
+  return entry;
+}
+
+function clearPlaythroughHistory() {
+  state.playthroughHistory = [];
+  try {
+    sessionStorage.removeItem(PLAYTHROUGH_HISTORY_KEY);
+  } catch (_error) {
+    // ignore
+  }
+  updateDebugHud();
+  return [];
+}
+
+function getPlaythroughHistory(limit = PLAYTHROUGH_HISTORY_LIMIT) {
+  const n = Number(limit);
+  const max = Number.isFinite(n) && n > 0 ? Math.floor(n) : PLAYTHROUGH_HISTORY_LIMIT;
+  return state.playthroughHistory.slice(-max);
+}
+
+function formatHistoryLine(entry) {
+  if (!entry) {
+    return "";
+  }
+  const slide = entry.slide != null ? `s${String(entry.slide).padStart(3, "0")}` : "s???";
+  const kind = entry.kind || entry.type || "?";
+  const detail = entry.detail || entry.result || entry.action || "";
+  const extra = entry.targetSlide != null
+    ? `→s${String(entry.targetSlide).padStart(3, "0")}`
+    : (entry.to && entry.to.slide != null ? `→s${String(entry.to.slide).padStart(3, "0")}` : "");
+  const ms = entry.elapsedMs != null ? `${Math.round(entry.elapsedMs)}ms` : "";
+  return [ms, slide, kind, detail, extra].filter(Boolean).join(" ");
+}
+
 function recordInteraction(details) {
   state.lastInteraction = {
     at: new Date().toISOString(),
@@ -132,6 +208,18 @@ function recordInteraction(details) {
     ...details,
   };
   runtimeLog("debug:interaction", state.lastInteraction);
+  pushPlaythroughEvent({
+    kind: details.type || "interaction",
+    detail: details.result || details.action || null,
+    action: details.action || null,
+    result: details.result || null,
+    hotspotId: details.hotspotId || null,
+    shapeId: details.shapeId || null,
+    targetSlide: details.targetSlide || (details.to && details.to.slide) || null,
+    to: details.to || null,
+    from: details.from || null,
+    queueLengthAfter: details.queueLengthAfter,
+  });
   updateDebugHud();
 }
 
@@ -799,6 +887,13 @@ function updateDebugHud(dumpOverride = null) {
       `lastInteraction: ${state.lastInteraction.type || "?"} → ${state.lastInteraction.result || state.lastInteraction.action || "?"}`,
     );
   }
+  const history = getPlaythroughHistory(8);
+  if (history.length) {
+    lines.push(`history (last ${history.length}):`);
+    for (const entry of history) {
+      lines.push(`  ${formatHistoryLine(entry)}`);
+    }
+  }
   if (state.selectedDebugLayerId) {
     const layer = (dump.layers || []).find((item) => item.id === state.selectedDebugLayerId);
     if (layer) {
@@ -868,6 +963,12 @@ window.goblinsRpg3Debug = {
     const screen = state.screens.get(id) || state.screens.get(screenId(Number(slideOrId))) || null;
     return buildCombatSlideAnnotation(screen);
   },
+  history(limit) {
+    return getPlaythroughHistory(limit);
+  },
+  clearHistory() {
+    return clearPlaythroughHistory();
+  },
   listProblems(slideOrId) {
     if (slideOrId === undefined) {
       return collectRuntimeProblems();
@@ -883,6 +984,7 @@ window.goblinsRpg3Debug = {
       currentScreen: state.current ? { id: state.current.id, slide: state.current.slide } : null,
       lastRenderDecision: state.lastRenderDecision,
       lastInteraction: state.lastInteraction,
+      playthroughHistory: getPlaythroughHistory(),
       queuedAnimationNodes: state.animationQueue.map((node) => animationNodeInfo(node)),
       pendingAfterEffectHides: state.pendingAfterEffectHides.map((node) => animationNodeInfo(node)),
       trackedAnimationTimerHandles: state.animationTimers.length,
@@ -903,11 +1005,14 @@ runtimeLog("runtime:initialized", {
   loggingEnabled: state.logging,
   hudEnabled: state.hudEnabled,
   startSlideOverride: state.startSlideOverride,
-  loggingControls: "window.goblinsRpg3Debug.toggle() / setEnabled(true|false) / dumpScreen() / goto(n) / listProblems()",
+  loggingControls: "window.goblinsRpg3Debug.toggle() / dumpScreen() / goto(n) / history() / listProblems()",
 });
 
 if (state.debug) {
   stage.classList.add("debug");
+}
+if (state.hudEnabled || state.logging) {
+  state.playthroughHistory = loadPlaythroughHistory();
 }
 if (state.hudEnabled) {
   ensureDebugHud();
@@ -1293,8 +1398,30 @@ function renderHotspots(screen) {
     button.addEventListener("click", (event) => {
       event.stopPropagation();
       unlockAudio();
-      // PPT continuum: pending OnNext/OnPrev builds consume the click before
-      // hyperlink/media actions (same ordering as blank-stage clicks).
+      // Navigation hyperlinks are shape actions: they must not be stolen by a
+      // pending OnNext build (title start, Attack/Flee). Fire non-gating media
+      // (BGM playFrom) as a side effect, then navigate on this same click.
+      if (hotspot.action === "hyperlink" && hotspot.targetSlide) {
+        const drained = drainNonGatingAnimationNodes("hotspot-hyperlink");
+        if (drained.length) {
+          runtimeLog("input:hotspot-media-sidefire", {
+            hotspotId: hotspot.id,
+            drained: drained.map((node) => animationNodeInfo(node)),
+          });
+        }
+        pushPlaythroughEvent({
+          kind: "hotspot",
+          detail: "hyperlink",
+          hotspotId: hotspot.id,
+          shapeId: hotspot.shapeId,
+          label: hotspot.shapeText || hotspot.label || null,
+          targetSlide: hotspot.targetSlide,
+          drainedNonGating: drained.length,
+        });
+        handleHotspotAction(hotspot);
+        return;
+      }
+      // Non-nav hotspots (media) still honor the OnNext continuum first.
       if (advanceAnimation()) {
         recordInteraction({
           type: "hotspot-click",
@@ -2266,6 +2393,141 @@ function nodeSubtreeHasBehaviors(node) {
 function isEmptyClickAdvanceNode(node) {
   return Boolean(node) && !nodeSubtreeHasBehaviors(node);
 }
+
+/** Collect behavior kinds present anywhere under a timing node. */
+function collectSubtreeBehaviorKinds(node, kinds = new Set()) {
+  if (!node) {
+    return kinds;
+  }
+  for (const behavior of node.behaviors || []) {
+    kinds.add(String(behavior.kind || "unknown"));
+  }
+  for (const sub of node.subEffects || []) {
+    collectSubtreeBehaviorKinds(sub, kinds);
+  }
+  for (const child of node.children || []) {
+    collectSubtreeBehaviorKinds(child, kinds);
+  }
+  return kinds;
+}
+
+/**
+ * True when the only runnable behaviors under this OnNext node are media
+ * command atoms (playFrom / play / pause / stop). Visual builds (set/effect/
+ * motion/animate) still gate the click continuum; BGM must not.
+ */
+function isMediaCommandOnlyNode(node) {
+  if (!node || isEmptyClickAdvanceNode(node)) {
+    return false;
+  }
+  const kinds = collectSubtreeBehaviorKinds(node);
+  if (!kinds.size) {
+    return false;
+  }
+  for (const kind of kinds) {
+    if (kind !== "command") {
+      return false;
+    }
+  }
+  return true;
+}
+
+function isNonGatingClickAdvanceNode(node) {
+  return isEmptyClickAdvanceNode(node) || isMediaCommandOnlyNode(node);
+}
+
+/**
+ * Synchronously run media command atoms under a node. Timed scheduleAnimation
+ * paths are cancelled by navigate→setupAnimations clearAnimationTimers, so
+ * title BGM must fire inline with the hyperlink click.
+ */
+function fireMediaCommandsInSubtree(node) {
+  if (!node) {
+    return;
+  }
+  for (const behavior of node.behaviors || []) {
+    if (behavior.kind === "command") {
+      applyCommandBehavior(node, behavior, parsedStrings(behavior.variants));
+    }
+  }
+  for (const sub of node.subEffects || []) {
+    fireMediaCommandsInSubtree(sub);
+  }
+  for (const child of node.children || []) {
+    fireMediaCommandsInSubtree(child);
+  }
+  state.animationStartedNodes.add(node.id);
+  state.animationCompletedNodes.add(node.id);
+}
+
+/**
+ * Fire/drain empty + media-command-only OnNext nodes without consuming the
+ * click as a visual build advance. Used by hyperlink hotspots and by
+ * advanceAnimation before evaluating a real build.
+ */
+function drainNonGatingAnimationNodes(reason = "drain-non-gating") {
+  const drained = [];
+  while (state.animationQueue.length && isNonGatingClickAdvanceNode(state.animationQueue[0])) {
+    const node = state.animationQueue.shift();
+    drained.push(node);
+    const mediaOnly = isMediaCommandOnlyNode(node);
+    runtimeLog("input:animation-advance-non-gating", {
+      reason,
+      node: animationNodeInfo(node),
+      mediaOnly,
+      empty: isEmptyClickAdvanceNode(node),
+      queueLengthAfterShift: state.animationQueue.length,
+    });
+    if (mediaOnly) {
+      fireMediaCommandsInSubtree(node);
+    } else {
+      // Empty placeholders: keep start/complete bookkeeping consistent.
+      runAnimationNode(node, 0, true);
+    }
+  }
+  return drained;
+}
+
+function hotspotLooksLikeMenuOption(hotspot) {
+  const text = String(hotspot.shapeText || hotspot.label || "").toLowerCase().trim();
+  if (/\battack\b|\bflee\b|\bitem\b|\bmagic\b|\bdefend\b|\brun\b/.test(text)) {
+    return true;
+  }
+  return text.startsWith("-");
+}
+
+function hotspotLooksLikeContinueOrMedia(hotspot) {
+  if (!hotspot) {
+    return false;
+  }
+  if (hotspot.action === "media") {
+    return true;
+  }
+  const text = String(hotspot.shapeText || hotspot.label || "").toLowerCase();
+  return /click here|continue/.test(text);
+}
+
+/**
+ * Autoplay OnNext entrance when PPT would otherwise leave a blank result beat
+ * after Attack/Flee navigation. Menu slides keep click-gated builds.
+ */
+function screenShouldAutoplayAnimations(screen) {
+  if (!screen) {
+    return false;
+  }
+  if (screen.advancement && screen.advancement.autoAdvance) {
+    return true;
+  }
+  const clickable = (screen.hotspots || []).filter((hotspot) => hotspot.clickable);
+  if (!clickable.length) {
+    return false;
+  }
+  if (clickable.some(hotspotLooksLikeMenuOption)) {
+    return false;
+  }
+  return clickable.every(hotspotLooksLikeContinueOrMedia);
+}
+
 
 
 function iterateKind(iterate) {
@@ -3738,9 +4000,10 @@ function collectAnimatedShapeIds(slideAnimations) {
 }
 
 function setupAnimations(screen) {
-  // Auto-advance slides (e.g. spotco intro) should run OnNext-gated main sequences
-  // without requiring a click, matching the original entrance timeline.
-  const autoplay = Boolean(screen.advancement && screen.advancement.autoAdvance);
+  // Auto-advance slides (e.g. spotco intro) and continue-only result beats should
+  // run OnNext-gated entrance sequences without a dead blank-stage click.
+  // Menu slides (Attack/Flee) keep click-gated builds.
+  const autoplay = screenShouldAutoplayAnimations(screen);
   runtimeLog("animation:setup-start", {
     screen: { id: screen.id, slide: screen.slide },
     layerElementCount: state.currentLayerElements.size,
@@ -3792,31 +4055,19 @@ function advanceAnimation() {
   // PPT After Animation → Hide on Next Mouse Click fires on this click,
   // before (or as) the next OnNext build starts — prevents stacked text.
   flushPendingAfterEffectHides();
-  // Drain empty interactive placeholders (no subtree behaviors) so they do not
-  // burn a full click before a real build or hotspot hyperlink/media action.
-  const skippedEmpty = [];
-  while (state.animationQueue.length && isEmptyClickAdvanceNode(state.animationQueue[0])) {
-    const emptyNode = state.animationQueue.shift();
-    skippedEmpty.push(emptyNode);
-    runtimeLog("input:animation-advance-skip-empty", {
-      action: "advance-animation",
-      result: "skipped empty OnNext node (no subtree behaviors)",
-      node: animationNodeInfo(emptyNode),
-      queueLengthAfterShift: state.animationQueue.length,
-    });
-    // Still run so start/complete triggers and completed-set stay consistent.
-    runAnimationNode(emptyNode, 0, true);
-  }
+  // Drain empty placeholders and media-command-only OnNext nodes (BGM playFrom)
+  // so they do not burn a full click before a real build or hyperlink.
+  const skippedNonGating = drainNonGatingAnimationNodes("advanceAnimation");
   const node = state.animationQueue.shift();
   if (!node) {
     runtimeLog("input:animation-advance", {
       action: "advance-animation",
-      result: skippedEmpty.length
-        ? "only empty OnNext nodes drained"
+      result: skippedNonGating.length
+        ? "only non-gating OnNext nodes drained (empty/media)"
         : "no queued animation node",
       queueLength: 0,
-      skippedEmptyCount: skippedEmpty.length,
-      skippedEmpty: skippedEmpty.map((item) => animationNodeInfo(item)),
+      skippedNonGatingCount: skippedNonGating.length,
+      skippedNonGating: skippedNonGating.map((item) => animationNodeInfo(item)),
     });
     // Returning false lets hotspot continuum fall through to hyperlink/media.
     return false;
@@ -3826,8 +4077,8 @@ function advanceAnimation() {
     result: "running queued animation node",
     node: animationNodeInfo(node),
     queueLengthAfterShift: state.animationQueue.length,
-    skippedEmptyCount: skippedEmpty.length,
-    skippedEmpty: skippedEmpty.map((item) => animationNodeInfo(item)),
+    skippedNonGatingCount: skippedNonGating.length,
+    skippedNonGating: skippedNonGating.map((item) => animationNodeInfo(item)),
   });
   runAnimationNode(node, 0, true);
   return true;
@@ -3891,6 +4142,15 @@ function renderScreen(screen) {
     layersHidden: layersLayer.hidden,
     queuedAnimationNodes: state.animationQueue.length,
     pendingAnimationTimers: state.animationTimers.length,
+    autoplayAnimations: screenShouldAutoplayAnimations(screen),
+  });
+  pushPlaythroughEvent({
+    kind: "slide",
+    detail: "enter",
+    targetSlide: screen.slide,
+    hotspots: (screen.hotspots || []).filter((hotspot) => hotspot.clickable).length,
+    queueLen: state.animationQueue.length,
+    autoplay: screenShouldAutoplayAnimations(screen),
   });
   updateDebugHud();
 }
