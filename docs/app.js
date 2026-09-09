@@ -3817,7 +3817,7 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
     childCount: (node.children || []).length,
     iterate: node.iterate || null,
   });
-  scheduleChildNodes(node, startDelay, autoplay, activeIterate);
+  scheduleChildNodes(node, startDelay, autoplay, activeIterate, allowClickNode);
 }
 
 
@@ -3931,13 +3931,32 @@ function scheduleSubEffectNodes(node, startDelay, autoplay = false, iterateConte
   }
 }
 
-function scheduleChildNodes(node, startDelay, autoplay = false, iterateContext = null) {
+function scheduleChildNodes(node, startDelay, autoplay = false, iterateContext = null, allowClickNode = false) {
   const children = node.children || [];
   if (!children.length) {
     runtimeLog("animation:children-none", { node: animationNodeInfo(node) });
     return;
   }
   if (nodeChildrenRunOnClick(node) && !autoplay) {
+    // PPT: the click that opens a click-sequence also plays the first build.
+    // Without this, the first stage click only enqueues children and shows
+    // nothing (dead click) — e.g. s003 post-title story beats.
+    if (allowClickNode && children.length) {
+      for (let index = 1; index < children.length; index += 1) {
+        state.animationQueue.push(children[index]);
+      }
+      runtimeLog("animation:children-queued", {
+        node: animationNodeInfo(node),
+        reason: "sequence opened by click; first child runs now",
+        childCount: children.length,
+        remainingQueued: children.length - 1,
+        queueLength: state.animationQueue.length,
+        firstChild: animationNodeInfo(children[0]),
+        children: children.map((child) => animationNodeInfo(child)),
+      });
+      runAnimationNode(children[0], startDelay, true, false, autoplay, iterateContext);
+      return;
+    }
     for (const child of children) {
       state.animationQueue.push(child);
     }

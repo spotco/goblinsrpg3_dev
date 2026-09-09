@@ -183,3 +183,6 @@ Categorized **unimplemented or approximate** viewer gaps still relevant on these
 | **Gap** | Full PPT sound timeline / overlapping cue fidelity |
 
 Use `?debug=1&slide=N` + `goblinsRpg3Debug.dumpScreen()` when claiming fixes.
+
+## Fresh test tab policy
+After every fix ready for user testing: close all old Chrome tabs on the agent computer and open **exactly one** new hard-refreshed tab on the latest `http://127.0.0.1:8765/` build (appropriate `?debug=1&slide=N`). Never leave stale cached tabs.
