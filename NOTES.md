@@ -58,3 +58,12 @@
 - **User history recovered** (`goblinsRpg3Debug.history()` / `sessionStorage`): s015 hotspot `-Attack` (shape 17419) → **slide 18** (not flee 17). Slide 18 is PPT `CAN'T ESCAPE!!` and combatAnnot role `flee-fail`, which is why Attack felt like a flee outcome. Binary/inventory confirms Attack→18 / flee residual self→15 (non-clickable). No remapping.
 - **Why Playwright missed “wrong option” risks:** prior tests called `button.hotspot.click()` / aria substring `Attack`, which always hits the Attack DOM node. They never clicked the **visual OPTION text center**, and `/attack/i` can match “Goblin x3 attacked!”. Added `tools/verify_combat_visual_options.py` — mouse-clicks exact `^-?\s*attack$` / flee layer|button centers; fails if Attack navigates to a *distinct* flee target. Battle playthrough updated to use the same visual centers.
 - **s003 post-title dead first click:** OnNext sequence `s003-tn0002` (`nextAction` click children) consumed click1 only to enqueue builds with no visible text. Fix: when a click opens that sequence, run the **first child on the same click** (`scheduleChildNodes(..., allowClickNode)`). Expected: click1 → “100 to 150 years ago…”, click2 peace, click3 Until…, click4 → s4. Builds are real (not empty); `fAutomatic:false` kept.
+
+## 2026-09-11 First combat menu (s015) Attack/Flee + goblin flash
+
+- **User report:** Attack/Flee stacked/broken; only Attack clickable; auto-advance and 3rd goblin disappears.
+- **Extract/PPT:** Attack→18 (CAN'T ESCAPE); flee=self residual (`accepted_source_self`, non-clickable); `autoAdvance` 9000ms →16 boredom (2 goblins — authored). Bounds do **not** overlap (Attack y≈0.644, flee y≈0.711).
+- **Flee “broken” UX:** PPT draws `-flee` underlined, but playability keeps it non-clickable (no invent flee bridge). Fix: `applyResidualCombatOptionStyle` mutes residual OPTION text (`.residual-combat-option`, no underline, opacity 0.45, title=rationale) so UI matches dead hit.
+- **“3rd goblin disappears”:** (1) waiting out s015 auto→16 is the boredom leave (one goblin fled) — faithful. (2) Attack→18 standing goblin was invisible: parent effect-group `durationMs=0` emitted OnEnd at 1ms so AfterEffect Hide-After-Animation ran before the 500ms motion child — empty debug bounds. Fix: `nodeOnEndDelayMs` waits for **children** (not OnEnd-waiting subEffects) before emitting OnEnd. Goblin visible ~motion duration then hides.
+- Verify: `tools/verify_combat_visual_options.py`; Playwright s015 Attack→18→24 continue; auto→16; screenshots `/workspace/goblins-menu15-*.png`.
+

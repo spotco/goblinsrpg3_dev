@@ -126,6 +126,14 @@ button:focus-visible {
   pointer-events: none !important;
 }
 
+/* Non-clickable residual combat OPTION (s015 flee, etc.): look inert, keep text. */
+.layer.residual-combat-option {
+  opacity: 0.45;
+  text-decoration: none !important;
+  cursor: default;
+  pointer-events: none;
+}
+
 .stage.is-transitioning .layers,
 .stage.is-transitioning .screen {
   animation: slide-fade-in var(--transition-duration, 400ms) ease-out both;

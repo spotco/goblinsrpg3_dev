@@ -2026,6 +2026,37 @@ function isPathWarpedWordArt(layer) {
   );
 }
 
+/**
+ * Documented residual self combat options (e.g. s015 -flee) stay non-clickable
+ * per playability policy, but PPT still draws them as underlined hyperlinks.
+ * Mute the live text so the UI matches "dead" hit behavior without inventing a flee bridge.
+ */
+function applyResidualCombatOptionStyle(screen) {
+  for (const hotspot of screen.hotspots || []) {
+    if (hotspot.clickable !== false) {
+      continue;
+    }
+    const residual =
+      hotspot.residualStatus === "accepted_source_self" ||
+      String(hotspot.behaviorStatus || "").startsWith("documented_residual_self");
+    if (!residual) {
+      continue;
+    }
+    const element = state.currentLayerElements.get(String(hotspot.shapeId));
+    if (!element) {
+      continue;
+    }
+    element.classList.add("residual-combat-option");
+    element.style.textDecoration = "none";
+    element.dataset.residualCombatOption = "true";
+    if (hotspot.resolveRationale) {
+      element.title = hotspot.resolveRationale;
+    } else {
+      element.title = "Unavailable (source self-link residual)";
+    }
+  }
+}
+
 function applyHybridPngTextPolicy(screen) {
   if (!screenNeedsPngUnderlay(screen)) {
     return;
@@ -2986,6 +3017,25 @@ function subtreeDuration(node) {
   return nodeDelay(node) + Math.max(nodeDuration(node), ...nested.map((child) => subtreeDuration(child))) + iterateExtra;
 }
 
+/**
+ * Time from node start until OnEnd should fire.
+ * Parallel/sequential *children* extend the parent; subordinate AfterEffects that
+ * wait on this node's OnEnd must NOT be included (circular). Without this,
+ * duration-0 effect groups emit OnEnd at 1ms and Hide-After-Animation immediately
+ * kills motion-path goblins (s018 CAN'T ESCAPE standing goblin, etc.).
+ */
+function nodeOnEndDelayMs(node, iterateExtraMs = 0) {
+  const children = node.children || [];
+  if (!children.length) {
+    return nodeDuration(node) + iterateExtraMs;
+  }
+  if (nodeRunsSequentialChildren(node)) {
+    const childTotal = children.reduce((total, child) => total + subtreeDuration(child), 0);
+    return nodeDuration(node) + childTotal + iterateExtraMs;
+  }
+  return Math.max(nodeDuration(node), ...children.map((child) => subtreeDuration(child))) + iterateExtraMs;
+}
+
 function transitionList(properties, timing) {
   return properties.map((property) => `${property} ${timing.duration}ms ${timing.timingFunction}`).join(", ");
 }
@@ -3801,14 +3851,20 @@ function runAnimationNode(node, baseDelay = 0, allowClickNode = false, allowTrig
   }
   // Subordinate effects (RT_TimeSubEffectContainer) run with the parent node.
   scheduleSubEffectNodes(node, startDelay, autoplay, activeIterate);
+  const onEndIterateExtra = activeIterate
+    ? localIterate
+      ? iterateExtraDuration(node)
+      : iterateContextStaggerExtra(activeIterate)
+    : 0;
   scheduleAnimation(() => {
     state.animationCompletedNodes.add(node.id);
     runtimeLog("animation:node-completed", {
       ...nodeDetails,
       completedCount: state.animationCompletedNodes.size,
+      onEndDelayMs: nodeOnEndDelayMs(node, onEndIterateExtra),
     });
     emitAnimationTrigger(4, node);
-  }, startDelay + nodeDuration(node) + (activeIterate ? (localIterate ? iterateExtraDuration(node) : iterateContextStaggerExtra(activeIterate)) : 0), "animation-node-complete", nodeDetails);
+  }, startDelay + nodeOnEndDelayMs(node, onEndIterateExtra), "animation-node-complete", nodeDetails);
   runtimeLog("animation:node-scheduled", {
     ...nodeDetails,
     durationMs: nodeDuration(node),
@@ -4151,6 +4207,7 @@ function renderScreen(screen) {
   runtimeLog("render:decision", state.lastRenderDecision);
   setupAnimations(screen);
   applyHybridPngTextPolicy(screen);
+  applyResidualCombatOptionStyle(screen);
   applySlideTransition(screen);
   scheduleAutoAdvance(screen);
   renderHotspots(screen);
