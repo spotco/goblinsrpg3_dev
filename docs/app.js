@@ -2027,9 +2027,8 @@ function isPathWarpedWordArt(layer) {
 }
 
 /**
- * Documented residual self combat options (e.g. s015 -flee) stay non-clickable
- * per playability policy, but PPT still draws them as underlined hyperlinks.
- * Mute the live text so the UI matches "dead" hit behavior without inventing a flee bridge.
+ * Non-clickable residual selfs (hub image self-links) stay visually muted.
+ * Combat selfs (e.g. s015 -flee) are clickable and reload the slide — do not mute them.
  */
 function applyResidualCombatOptionStyle(screen) {
   for (const hotspot of screen.hotspots || []) {
@@ -2539,24 +2538,17 @@ function hotspotLooksLikeContinueOrMedia(hotspot) {
 }
 
 /**
- * Autoplay OnNext entrance when PPT would otherwise leave a blank result beat
- * after Attack/Flee navigation. Menu slides keep click-gated builds.
+ * Autoplay OnNext only when the slide itself has authored PPT autoAdvance.
+ * Continue/result beats (29/30/31, CAN'T ESCAPE, etc.) stay click-gated like a
+ * real slideshow — autoplaying their OnNext made them look like they were
+ * advancing slides by themselves. Hyperlink arrival still shows the initial
+ * state until the player clicks (PPT-faithful); Attack/Flee bypass OnNext.
  */
 function screenShouldAutoplayAnimations(screen) {
   if (!screen) {
     return false;
   }
-  if (screen.advancement && screen.advancement.autoAdvance) {
-    return true;
-  }
-  const clickable = (screen.hotspots || []).filter((hotspot) => hotspot.clickable);
-  if (!clickable.length) {
-    return false;
-  }
-  if (clickable.some(hotspotLooksLikeMenuOption)) {
-    return false;
-  }
-  return clickable.every(hotspotLooksLikeContinueOrMedia);
+  return Boolean(screen.advancement && screen.advancement.autoAdvance);
 }
 
 
@@ -4075,9 +4067,8 @@ function collectAnimatedShapeIds(slideAnimations) {
 }
 
 function setupAnimations(screen) {
-  // Auto-advance slides (e.g. spotco intro) and continue-only result beats should
-  // run OnNext-gated entrance sequences without a dead blank-stage click.
-  // Menu slides (Attack/Flee) keep click-gated builds.
+  // Auto-advance slides (authored PPT timer) autoplay their OnNext continuum.
+  // Continue/result beats stay click-gated like PowerPoint — do not autoplay.
   const autoplay = screenShouldAutoplayAnimations(screen);
   runtimeLog("animation:setup-start", {
     screen: { id: screen.id, slide: screen.slide },

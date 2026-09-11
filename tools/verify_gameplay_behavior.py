@@ -54,8 +54,10 @@ def main() -> None:
     )
     if zero_area_n != 1:
         fail(f"expected 1 zero-area media hotspot, found {zero_area_n}")
-    residual_behavior = behavior_counts.get("documented_residual_self", 0) + behavior_counts.get(
-        "documented_residual_self_only_leave", 0
+    residual_behavior = (
+        behavior_counts.get("documented_residual_self", 0)
+        + behavior_counts.get("documented_residual_self_only_leave", 0)
+        + behavior_counts.get("residual_self_reload", 0)
     )
     nav_n = behavior_counts.get("navigation", 0)
     if nav_n + residual_behavior != hyperlink_n:
@@ -70,12 +72,22 @@ def main() -> None:
     residual_selfs = [
         h for h in hotspots if h.get("residualStatus") == "accepted_source_self"
     ]
+    # Combat residual selfs are clickable (PPT self-hyperlink reload).
+    # Non-combat hub image residual selfs stay non-clickable when a leave exists.
     residual_clickable = [h for h in residual_selfs if h.get("clickable")]
-    if residual_clickable:
+    residual_reload = [
+        h for h in residual_clickable if h.get("behaviorStatus") == "residual_self_reload"
+    ]
+    residual_bad = [
+        h for h in residual_clickable if h.get("behaviorStatus") != "residual_self_reload"
+    ]
+    if residual_bad:
         fail(
-            f"accepted residual selfs must be non-clickable when slide has leave paths: "
-            f"{[(h.get('id'), h.get('slide')) for h in residual_clickable[:5]]}"
+            f"non-combat residual selfs must be non-clickable when slide has leave paths: "
+            f"{[(h.get('id'), h.get('behaviorStatus')) for h in residual_bad[:5]]}"
         )
+    if not residual_reload:
+        fail("expected clickable residual_self_reload combat options (e.g. s015 flee)")
     # Navigable hyperlinks (non-self or promoted) + clickable media
     clickable_nav = [
         h
@@ -87,16 +99,6 @@ def main() -> None:
             str(h.get("id") or "s000").split("-")[0][1:] or 0
         )
     ]
-    # Prefer counting via residual: all clickable hyperlinks should not be residual self
-    clickable_self = [
-        h
-        for h in clickable
-        if h.get("action") == "hyperlink"
-        and h.get("targetSlide") is not None
-        and h.get("residualStatus") == "accepted_source_self"
-    ]
-    if clickable_self:
-        fail("clickable residual selfs present")
     if len(clickable_media) != 7:
         fail(f"expected 7 clickable media actions, found {len(clickable_media)}")
     if any(hotspot.get("clickable") for hotspot in hotspots if hotspot.get("action") == "none"):

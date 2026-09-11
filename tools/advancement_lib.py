@@ -117,12 +117,13 @@ def terminal_kind_for_screen(
 
 
 def apply_residual_self_policy(hotspots: list[dict[str, Any]], slide: int) -> list[dict[str, Any]]:
-    """Document binary residual selfs and disable click when the slide can still leave.
+    """Document binary residual selfs; combat selfs stay clickable (slide reload).
 
-    Partial combat selfs (e.g. flee self while attack navigates) and image selfs on
-    multi-exit hubs stay at target==source in the manifest (inventory-faithful) but
-    become non-clickable so players use working leave paths. Provenance fields:
-    residualStatus, resolveRationale, behaviorStatus=documented_residual_self.
+    Partial combat selfs (e.g. s015 -flee while Attack navigates) keep target==source
+    (inventory-faithful, no invented flee bridge). In PPT a self-hyperlink reloads
+    the current slide (anims / auto-advance timer reset) — keep them clickable with
+    behaviorStatus=residual_self_reload. Non-combat hub image selfs stay non-clickable
+    when another leave path exists. Provenance: residualStatus, resolveRationale.
     """
     has_leave = False
     for h in hotspots:
@@ -162,15 +163,21 @@ def apply_residual_self_policy(hotspots: list[dict[str, Any]], slide: int) -> li
             if is_combat:
                 h["resolveRationale"] = (
                     "Binary ExHyperlink labels this combat option as this slide. "
-                    "Other options or auto-advance still leave. Accepted residual — "
-                    "do not invent flee/attack targets without PPT UI oracle."
+                    "Clicking reloads the current slide (PPT self-hyperlink) — "
+                    "do not invent flee/attack targets. Other options or auto-advance "
+                    "still provide leave paths."
                 )
             else:
                 h["resolveRationale"] = (
                     "Binary self-hyperlink on a multi-exit hub (no shape text). "
                     "Other hotspots navigate. Accepted residual — left non-clickable."
                 )
-        if has_leave:
+        if is_combat:
+            # PPT self-hyperlink → reload this slide (anims + boredom timer).
+            h["clickable"] = True
+            h["enabled"] = True
+            h["behaviorStatus"] = "residual_self_reload"
+        elif has_leave:
             h["clickable"] = False
             h["enabled"] = False
             h["behaviorStatus"] = "documented_residual_self"

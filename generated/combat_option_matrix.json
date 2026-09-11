@@ -28,8 +28,8 @@
           "targetSlide": 15,
           "isSelf": true,
           "resolveMethod": "confirmed_self_combat",
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self"
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload"
         }
       ],
       "optionCount": 2,
@@ -199,8 +199,8 @@
           "targetSlide": 27,
           "isSelf": true,
           "resolveMethod": "confirmed_self_combat",
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self"
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload"
         }
       ],
       "optionCount": 2,
@@ -223,8 +223,8 @@
           "targetSlide": 39,
           "isSelf": true,
           "resolveMethod": "confirmed_self_combat",
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self"
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload"
         },
         {
           "shapeId": 49157,

@@ -3,7 +3,7 @@
   "summary": {
     "zeroInboundCount": 19,
     "sealedIslandCount": 2,
-    "chapterCount": 22,
+    "chapterCount": 23,
     "walksAllOk": true
   },
   "chapters": [
@@ -16,6 +16,17 @@
       "outcome": "reaches_terminal",
       "ok": true,
       "notes": "Closed loop re-enters via s042\u2192s021; death at s030",
+      "priority": 0
+    },
+    {
+      "id": "first-goblin-battle",
+      "title": "First goblin x3 battle (pre-menu)",
+      "entrySlide": 14,
+      "entryHint": "?debug=1&slide=14",
+      "subgraphSize": null,
+      "outcome": "combat_debug",
+      "ok": true,
+      "notes": "s014 auto\u2192s015 Attack/Flee menu; debug jump for first combat",
       "priority": 0
     },
     {

@@ -10,6 +10,13 @@
       "ok": true
     },
     {
+      "id": "first-goblin-battle",
+      "label": "s014 \u00b7 First goblin x3 battle (pre-menu)",
+      "slide": 14,
+      "hint": "?debug=1&slide=14",
+      "ok": true
+    },
+    {
       "id": "island-20",
       "label": "s020 \u00b7 Felled goblin!!",
       "slide": 20,

@@ -211,7 +211,18 @@ def build_chapters(
             "ok": next((w["ok"] for w in walks if w["seed"] == 1), False),
             "notes": "Closed loop re-enters via s042→s021; death at s030",
             "priority": 0,
-        }
+        },
+        {
+            "id": "first-goblin-battle",
+            "title": "First goblin x3 battle (pre-menu)",
+            "entrySlide": 14,
+            "entryHint": "?debug=1&slide=14",
+            "subgraphSize": None,
+            "outcome": "combat_debug",
+            "ok": True,
+            "notes": "s014 auto→s015 Attack/Flee menu; debug jump for first combat",
+            "priority": 0,
+        },
     ]
     for isl in islands:
         w = isl["walkFromPrimary"]

@@ -986,9 +986,9 @@
           "targetLabel": "Slide 15",
           "flagsHex": "079f0d30",
           "label": "Slide 15",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload",
           "resolveMethod": "confirmed_self_combat",
           "originalTargetSlide": 15,
           "binarySelfLink": true,
@@ -1013,7 +1013,7 @@
           },
           "residualStatus": "accepted_source_self",
           "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
         }
       ],
       "advancement": {
@@ -1039,7 +1039,7 @@
             "shapeId": 17424,
             "targetSlide": 15,
             "label": "Slide 15",
-            "clickable": false,
+            "clickable": true,
             "resolveMethod": "confirmed_self_combat",
             "originalTargetSlide": 15,
             "status": "confirmed_self_combat"
@@ -2062,9 +2062,9 @@
           "targetLabel": "Slide 27",
           "flagsHex": "079f0d30",
           "label": "Slide 27",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload",
           "resolveMethod": "confirmed_self_combat",
           "originalTargetSlide": 27,
           "binarySelfLink": true,
@@ -2089,7 +2089,7 @@
           },
           "residualStatus": "accepted_source_self",
           "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
         }
       ],
       "advancement": {
@@ -2112,7 +2112,7 @@
             "shapeId": 34823,
             "targetSlide": 27,
             "label": "Slide 27",
-            "clickable": false,
+            "clickable": true,
             "resolveMethod": "confirmed_self_combat",
             "originalTargetSlide": 27,
             "status": "confirmed_self_combat"
@@ -3026,9 +3026,9 @@
           "targetLabel": "Slide 39",
           "flagsHex": "079f0d30",
           "label": "Slide 39",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload",
           "resolveMethod": "confirmed_self_combat",
           "originalTargetSlide": 39,
           "binarySelfLink": true,
@@ -3053,7 +3053,7 @@
           },
           "residualStatus": "accepted_source_self",
           "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
         },
         {
           "id": "s039-a587711",
@@ -3112,7 +3112,7 @@
             "shapeId": 49156,
             "targetSlide": 39,
             "label": "Slide 39",
-            "clickable": false,
+            "clickable": true,
             "resolveMethod": "confirmed_self_combat",
             "originalTargetSlide": 39,
             "status": "confirmed_self_combat"

@@ -1,7 +1,7 @@
 {
   "format": "goblins-rpg3-clickable-contract-v1",
   "summary": {
-    "okCount": 204,
+    "okCount": 207,
     "violationCount": 0,
     "residualSelfCount": 5,
     "residualExplicitNoopCount": 4,
@@ -13,29 +13,29 @@
     {
       "slide": 15,
       "hotspotId": "s015-a421744",
-      "reason": "documented_residual_self",
+      "reason": "residual_self_reload",
       "resolveMethod": "confirmed_self_combat",
       "shapeText": "-flee",
       "residualKind": "partial_combat_self",
-      "clickable": false
+      "clickable": true
     },
     {
       "slide": 27,
       "hotspotId": "s027-a491991",
-      "reason": "documented_residual_self",
+      "reason": "residual_self_reload",
       "resolveMethod": "confirmed_self_combat",
       "shapeText": "-flee",
       "residualKind": "partial_combat_self",
-      "clickable": false
+      "clickable": true
     },
     {
       "slide": 39,
       "hotspotId": "s039-a587506",
-      "reason": "documented_residual_self",
+      "reason": "residual_self_reload",
       "resolveMethod": "confirmed_self_combat",
       "shapeText": "-attack",
       "residualKind": "partial_combat_self",
-      "clickable": false
+      "clickable": true
     },
     {
       "slide": 50,
@@ -134,6 +134,12 @@
       "target": 18
     },
     {
+      "slide": 15,
+      "hotspotId": "s015-a421744",
+      "kind": "residual_self_reload",
+      "target": 15
+    },
+    {
       "slide": 16,
       "hotspotId": "s016-a424910",
       "kind": "navigation",
@@ -198,12 +204,6 @@
       "hotspotId": "s023-a457330",
       "kind": "navigation",
       "target": 24
-    },
-    {
-      "slide": 24,
-      "hotspotId": "s024-a472304",
-      "kind": "navigation",
-      "target": 31
     }
   ]
 }

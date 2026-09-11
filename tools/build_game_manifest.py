@@ -673,11 +673,11 @@ def main() -> None:
                 "action=none with continue/start shape text promotes to next sequential "
                 "(resolveMethod=noop_continue_to_next) when it is the labeled leave control"
             ),
-            "residualSelfNonClickable": (
-                "Binary self-hyperlinks that remain after promote policy "
-                "(partial combat options, hub image selfs) stay target=source with "
-                "residualStatus=accepted_source_self and are non-clickable when the "
-                "slide has another leave path — no invented combat/hub remaps"
+            "residualSelfPolicy": (
+                "Binary self-hyperlinks stay target=source (no invented remaps). "
+                "Combat option selfs (e.g. s015 -flee) are clickable residual_self_reload "
+                "(PPT self-hyperlink reloads the slide). Hub image selfs stay "
+                "non-clickable when another leave path exists."
             ),
             "unresolvedMedia": (
                 "Legacy audio cue ids missing from extract (known 3/4) stay "

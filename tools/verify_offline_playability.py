@@ -170,10 +170,20 @@ def main() -> None:
         if not residuals:
             fail(f"slide {slide} missing accepted residual self ({kind} {text!r})")
         for h in residuals:
-            if h.get("clickable"):
-                fail(f"slide {slide} residual self still clickable: {h.get('id')}")
-            if h.get("behaviorStatus") != "documented_residual_self":
-                fail(f"slide {slide} residual missing documented_residual_self status")
+            if kind == "partial_combat_self":
+                # Combat self-hyperlink reloads the slide (PPT-faithful); no invent-bridge.
+                if not h.get("clickable"):
+                    fail(f"slide {slide} combat residual self should be clickable reload: {h.get('id')}")
+                if h.get("behaviorStatus") != "residual_self_reload":
+                    fail(
+                        f"slide {slide} combat residual expected residual_self_reload, "
+                        f"got {h.get('behaviorStatus')}"
+                    )
+            else:
+                if h.get("clickable"):
+                    fail(f"slide {slide} residual self still clickable: {h.get('id')}")
+                if h.get("behaviorStatus") != "documented_residual_self":
+                    fail(f"slide {slide} residual missing documented_residual_self status")
             if h.get("residualKind") != kind:
                 fail(f"slide {slide} residualKind {h.get('residualKind')} != {kind}")
         # Slide must still leave

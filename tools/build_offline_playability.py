@@ -316,22 +316,46 @@ def evaluate_clickable_contract(screens: list[dict]) -> dict:
             method = hotspot.get("resolveMethod")
             hid = hotspot.get("id")
 
-            # Documented residual selfs must be non-clickable when accepted.
+            # Residual selfs: combat reload is clickable OK; hub image selfs stay mute.
             if (
                 hotspot.get("residualStatus") == "accepted_source_self"
-                or status == "documented_residual_self"
+                or status
+                in (
+                    "documented_residual_self",
+                    "documented_residual_self_only_leave",
+                    "residual_self_reload",
+                )
             ):
                 entry = {
                     "slide": slide,
                     "hotspotId": hid,
-                    "reason": "documented_residual_self",
+                    "reason": status or "documented_residual_self",
                     "resolveMethod": method,
                     "shapeText": hotspot.get("shapeText"),
                     "residualKind": hotspot.get("residualKind"),
                     "clickable": bool(hotspot.get("clickable")),
                 }
                 residuals.append(entry)
-                if hotspot.get("clickable"):
+                if status == "residual_self_reload":
+                    if hotspot.get("clickable") and target is not None and int(target) == slide:
+                        ok.append(
+                            {
+                                "slide": slide,
+                                "hotspotId": hid,
+                                "kind": "residual_self_reload",
+                                "target": slide,
+                            }
+                        )
+                    else:
+                        violations.append(
+                            {
+                                "slide": slide,
+                                "hotspotId": hid,
+                                "reason": "residual_self_reload_invalid",
+                                "resolveMethod": method,
+                            }
+                        )
+                elif hotspot.get("clickable"):
                     violations.append(
                         {
                             "slide": slide,

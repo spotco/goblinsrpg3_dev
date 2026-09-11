@@ -290,7 +290,7 @@
       "originalTargetSlide": 15,
       "targetSlide": 15,
       "binarySelfLink": true,
-      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
     },
     {
       "slide": 27,
@@ -301,7 +301,7 @@
       "originalTargetSlide": 27,
       "targetSlide": 27,
       "binarySelfLink": true,
-      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
     },
     {
       "slide": 39,
@@ -312,7 +312,7 @@
       "originalTargetSlide": 39,
       "targetSlide": 39,
       "binarySelfLink": true,
-      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+      "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
     },
     {
       "slide": 50,

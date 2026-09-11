@@ -18,17 +18,18 @@
       "slides": 201,
       "layers": 1182,
       "imageInstances": 532,
-      "textLayers": 650,
+      "textLayers": 465,
+      "shapeLayers": 185,
       "animatedLayers": 567,
       "animatedShapeTargets": 567,
       "styledLayers": 1182,
       "transformLayers": 1182,
-      "textStyleLayers": 650,
-      "paragraphs": 681,
-      "textRuns": 695,
+      "textStyleLayers": 465,
+      "paragraphs": 496,
+      "textRuns": 510,
       "actionBoundLayers": 210,
       "hyperlinkBoundLayers": 192,
-      "emptyTextPlaceholders": 295,
+      "emptyTextPlaceholders": 110,
       "wordArtLayers": 4,
       "textEncodingNormalization": {
         "replacements": {
@@ -146,7 +147,7 @@
     "interstitialStageClick": "empty/noop-only non-death slides with no leave path get stage-click-to-next",
     "noopMirrorSibling": "action=none hotspots whose shape text matches a sibling hyperlink mirror that target (resolveMethod=noop_mirror_sibling_hyperlink)",
     "noopContinueToNext": "action=none with continue/start shape text promotes to next sequential (resolveMethod=noop_continue_to_next) when it is the labeled leave control",
-    "residualSelfNonClickable": "Binary self-hyperlinks that remain after promote policy (partial combat options, hub image selfs) stay target=source with residualStatus=accepted_source_self and are non-clickable when the slide has another leave path \u2014 no invented combat/hub remaps",
+    "residualSelfPolicy": "Binary self-hyperlinks stay target=source (no invented remaps). Combat option selfs (e.g. s015 -flee) are clickable residual_self_reload (PPT self-hyperlink reloads the slide). Hub image selfs stay non-clickable when another leave path exists.",
     "unresolvedMedia": "Legacy audio cue ids missing from extract (known 3/4) stay documented_unresolved_media non-clickable; no invented sound assets",
     "zeroAreaMedia": "Mapped media with zero-area bounds stay documented_zero_area_media non-clickable; automatic playFrom may still run from timing tree",
     "deathTerminal": "DED/Press esc \u2192 terminalKind death, leavePaths restart_only; end cards may also hyperlink (terminalKind end_card). UI leave via Restart control (PPT Press esc).",
@@ -6882,9 +6883,9 @@
           "targetLabel": "Slide 15",
           "flagsHex": "079f0d30",
           "label": "Slide 15",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload",
           "resolveMethod": "confirmed_self_combat",
           "originalTargetSlide": 15,
           "binarySelfLink": true,
@@ -6909,7 +6910,7 @@
           },
           "residualStatus": "accepted_source_self",
           "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
         }
       ],
       "advancement": {
@@ -14377,9 +14378,9 @@
           "targetLabel": "Slide 27",
           "flagsHex": "079f0d30",
           "label": "Slide 27",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload",
           "resolveMethod": "confirmed_self_combat",
           "originalTargetSlide": 27,
           "binarySelfLink": true,
@@ -14404,7 +14405,7 @@
           },
           "residualStatus": "accepted_source_self",
           "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
         }
       ],
       "advancement": {
@@ -21111,9 +21112,9 @@
           "targetLabel": "Slide 39",
           "flagsHex": "079f0d30",
           "label": "Slide 39",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "residual_self_reload",
           "resolveMethod": "confirmed_self_combat",
           "originalTargetSlide": 39,
           "binarySelfLink": true,
@@ -21138,7 +21139,7 @@
           },
           "residualStatus": "accepted_source_self",
           "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Other options or auto-advance still leave. Accepted residual \u2014 do not invent flee/attack targets without PPT UI oracle."
+          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
         },
         {
           "id": "s039-a587711",

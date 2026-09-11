@@ -67,3 +67,11 @@
 - **“3rd goblin disappears”:** (1) waiting out s015 auto→16 is the boredom leave (one goblin fled) — faithful. (2) Attack→18 standing goblin was invisible: parent effect-group `durationMs=0` emitted OnEnd at 1ms so AfterEffect Hide-After-Animation ran before the 500ms motion child — empty debug bounds. Fix: `nodeOnEndDelayMs` waits for **children** (not OnEnd-waiting subEffects) before emitting OnEnd. Goblin visible ~motion duration then hides.
 - Verify: `tools/verify_combat_visual_options.py`; Playwright s015 Attack→18→24 continue; auto→16; screenshots `/workspace/goblins-menu15-*.png`.
 
+## 2026-09-11 Click-gated result beats + s015 flee self-reload
+
+- **User report:** 29→30→31 advancing automatically; Flee broken / wrong slides / goblins vanish.
+- **29/30/31 auto-feel:** Not authored `autoAdvance` (flags clean). Runtime `screenShouldAutoplayAnimations` treated continue-only result beats as autoplay, so OnNext builds ran without clicks and felt like free slide advances. Fix: autoplay **only** when `advancement.autoAdvance` (PPT timer slides). Continue/result beats stay click-gated; stage click runs OnNext, then continue hyperlink leaves.
+- **s015 -flee self:** Binary ExHyperlink target is Slide 15 (self) — intentional residual, not unimplemented. Prior mute/non-clickable UX diverged from PPT (self-hyperlink reloads the slide). Fix: `residual_self_reload` stays clickable → re-enter s015 (anims + 9s boredom timer reset). **No invent-bridge to 17.** Attack still →18; boredom auto →16.
+- **Chapter jump:** Debug Chapters menu adds **First goblin x3 battle (pre-menu)** → s014 (`?debug=1&slide=14`).
+- Verify: `tools/verify_click_advance_combat.py` (no auto-nav 29/30/31; click-gated continue; flee reload; Attack/boredom); offline/gameplay/advancement verifies.
+
