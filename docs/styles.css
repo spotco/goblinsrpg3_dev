@@ -342,6 +342,23 @@ button:focus-visible {
   outline: 1px solid rgba(120, 180, 255, 0.25);
 }
 
+/* Extracted pictures that are ~100% Office transparent-green — hide so they
+   do not paint solid green boxes (PPT chroma). Survives anim style resets. */
+.layer.pure-green-placeholder {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  outline: none !important;
+}
+
+
+/* Entrance-hidden layers: skip outlines so empty "green boxes" on grass
+   are not mistaken for missing art when content is still pre-reveal. */
+.debug .layer[style*="visibility: hidden"],
+.debug .layer[style*="visibility:hidden"] {
+  outline: none;
+}
+
 .layer.debug-layer-selected {
   outline: 2px solid #5ec8ff !important;
   z-index: 99999 !important;

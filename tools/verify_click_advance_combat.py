@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Regression: continue/result slides stay click-gated; combat self-flee reloads.
+"""Regression: result beats autoplay entrances; slide nav stays click-gated; flee reloads.
 
-Discovered 2026-09-11:
-  - User saw 29→30→31 "advancing automatically". Root cause: screenShouldAutoplayAnimations
-    treated continue-only slides as autoplay, so OnNext builds ran without clicks and
-    felt like free slide advances. Fix: autoplay only when advancement.autoAdvance.
-  - s015 -flee is a binary self-hyperlink. Muting it as non-clickable diverged from PPT
-    (self-link reloads the slide). Fix: residual_self_reload stays clickable → same slide.
+Discovered 2026-09-11 / overturned 2026-09-12:
+  - s015 Attack→18 (PPT CAN'T ESCAPE + motion paths). With autoplay disabled on
+    continue-only slides, Attack landed on entrance-hidden layers (empty debug
+    outlines / "green boxes") until a stage click. Restore continue-only OnNext
+    autoplay so attack motion/text play on arrival. Slide *navigation* still
+    requires the continue hyperlink (29/30/31 must not auto-nav).
+  - s015 -flee is a binary self-hyperlink (residual_self_reload): clickable reload
+    replays slide anims — do not invent flee→17.
 
 This script fails if those regressions return.
 """
@@ -122,19 +124,17 @@ def assert_no_auto_nav(page, slide: int, seconds: float = 5.0) -> None:
 def assert_click_gated_continue(page, slide: int, expected_target: int) -> None:
     goto(page, slide)
     page.wait_for_timeout(300)
-    if autoplay_flag(page):
-        fail(f"s{slide:03d} should NOT autoplay OnNext (continue/result beat)")
-    # OnNext should be queued (or become visible after stage clicks).
-    q0 = queue_len(page)
-    # Stage click should consume animation, not leave the slide.
-    page.click("#stage", position={"x": 40, "y": 40})
-    page.wait_for_timeout(400)
+    # Continue/result beats SHOULD autoplay in-slide OnNext (so Attack→result is not blank),
+    # but must NOT auto-navigate to another slide.
     if cur(page) != slide:
-        fail(f"s{slide:03d} left on stage click (expected OnNext only); now {cur(page)}")
+        fail(f"s{slide:03d} left immediately on enter → {cur(page)}")
         return
-    # Keep clicking stage until continue hotspot is hittable (cap ~8s of builds).
+    if not autoplay_flag(page):
+        # Soft signal: entrance may stay blank without autoplay.
+        print(f"WARN s{slide:03d} autoplay=false (continue/result usually autoplays entrances)")
+    # Wait for autoplay to reveal continue (or stage-click if still gated).
     enabled = False
-    for _ in range(20):
+    for i in range(24):
         info = page.evaluate(
             """() => {
           const btn = [...document.querySelectorAll('#hotspots button.hotspot')].find((b) =>
@@ -151,13 +151,15 @@ def assert_click_gated_continue(page, slide: int, expected_target: int) -> None:
         if info and info.get("pe") != "none" and not info.get("disabled"):
             enabled = True
             break
-        page.click("#stage", position={"x": 40, "y": 40})
+        # If still awaiting reveal after autoplay window, try a stage click (multi-beat).
+        if i >= 8:
+            page.click("#stage", position={"x": 40, "y": 40})
         page.wait_for_timeout(350)
         if cur(page) != slide:
-            fail(f"s{slide:03d} left during OnNext stage clicks → {cur(page)}")
+            fail(f"s{slide:03d} auto-navigated while waiting for continue → {cur(page)}")
             return
     if not enabled:
-        fail(f"s{slide:03d} continue hotspot never enabled after stage clicks (q0={q0})")
+        fail(f"s{slide:03d} continue hotspot never enabled (autoplay/stage)")
         return
     before = cur(page)
     click_layer_center(page, CONTINUE_RE)
@@ -203,18 +205,66 @@ def assert_flee_reloads(page) -> None:
     )
     if jumped_17:
         fail("s015 flee invented navigation to slide 17")
+        return
+    # Reload must re-enter and replay entrance (title text briefly re-hides / fades).
+    replayed = page.evaluate(
+        """() => {
+          const h = goblinsRpg3Debug.history() || [];
+          const same = h.filter((e) => e.result === 'navigate-to-same-screen' || e.detail === 'navigate-to-same-screen');
+          const enters = h.filter((e) => e.kind === 'slide' && e.detail === 'enter' && e.targetSlide === 15);
+          return { same: same.length, enters: enters.length };
+        }"""
+    )
+    if replayed.get("same", 0) < 1 or replayed.get("enters", 0) < 2:
+        fail(f"s015 flee did not visibly re-enter slide (history={replayed})")
     else:
-        print("OK s015 flee reloads self (no invent-bridge to 17)")
+        print("OK s015 flee reloads self (no invent-bridge to 17; slide re-entered)")
+
+
+def assert_attack_shows_anim(page) -> None:
+    """Attack→18 must show motion/text without an extra stage click (not empty green boxes)."""
+    goto(page, 15)
+    page.wait_for_timeout(400)
+    click_layer_center(page, OPTION_ATTACK)
+    page.wait_for_timeout(200)
+    if cur(page) != 18:
+        fail(f"s015 Attack expected →18, got {cur(page)}")
+        return
+    if not autoplay_flag(page):
+        fail("s018 after Attack should autoplay OnNext entrances (else blank/green-box phase)")
+        return
+    # Within ~1.5s some attack motion target or result text must be visible.
+    seen = False
+    for _ in range(8):
+        page.wait_for_timeout(250)
+        info = page.evaluate(
+            """() => {
+          const layers = [...document.querySelectorAll('#layers .layer')].map((el) => ({
+            id: el.dataset.shapeId,
+            text: (el.textContent || '').trim(),
+            vis: getComputedStyle(el).visibility,
+            op: parseFloat(getComputedStyle(el).opacity || '0'),
+          }));
+          // Motion-path cast (23555/23556) or result caption — not static props.
+          const motion = layers.filter((l) => (l.id === '23555' || l.id === '23556') && l.vis === 'visible' && l.op > 0.15);
+          const visibleText = layers.filter((l) => l.text && l.vis === 'visible' && l.op > 0.2);
+          return { motion: motion.map((l) => l.id), visibleText: visibleText.map((l) => l.text), slide: goblinsRpg3Debug.snapshot().currentScreen.slide };
+        }"""
+        )
+        if info.get("slide") != 18:
+            fail(f"left s018 during attack anim wait → {info.get('slide')}")
+            return
+        if info.get("motion") or info.get("visibleText"):
+            seen = True
+            break
+    if not seen:
+        fail("s018 after Attack stayed empty (no visible motion/text within ~2s; green-box regression)")
+    else:
+        print(f"OK s015 Attack → 18 with visible entrance (autoplay)")
 
 
 def assert_attack_and_boredom(page) -> None:
-    goto(page, 15)
-    page.wait_for_timeout(300)
-    click_layer_center(page, OPTION_ATTACK)
-    if cur(page) != 18:
-        fail(f"s015 Attack expected →18, got {cur(page)}")
-    else:
-        print("OK s015 Attack → 18")
+    assert_attack_shows_anim(page)
 
     goto(page, 15)
     # Boredom auto-advance is authored (9s). Allow generous margin.

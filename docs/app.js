@@ -2097,6 +2097,60 @@ function screenNeedsPngUnderlay(screen) {
   return largeImages.length === 0 && maxArea < 0.5 && nonEmptyText.length <= 2;
 }
 
+/**
+ * Some extracted pictures are 100% Office palette green (0,128,0) — PPT treated
+ * that as transparent, so they should not paint solid green boxes. Only hide
+ * near-pure-green placeholders; never key mixed sprite/background art (hills
+ * share that green).
+ */
+function hideIfPureOfficeGreenPlaceholder(image, hostElement) {
+  if (!image || image.dataset.greenPlaceholderChecked === "1") {
+    return;
+  }
+  const inspect = () => {
+    try {
+      const w = image.naturalWidth;
+      const h = image.naturalHeight;
+      if (!w || !h) {
+        return;
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      if (!ctx) {
+        return;
+      }
+      ctx.drawImage(image, 0, 0);
+      const data = ctx.getImageData(0, 0, w, h).data;
+      let opaque = 0;
+      let pureGreen = 0;
+      for (let i = 0; i < data.length; i += 4) {
+        if (data[i + 3] < 8) {
+          continue;
+        }
+        opaque += 1;
+        if (data[i] === 0 && data[i + 1] === 128 && data[i + 2] === 0) {
+          pureGreen += 1;
+        }
+      }
+      image.dataset.greenPlaceholderChecked = "1";
+      if (opaque > 0 && pureGreen / opaque >= 0.98) {
+        // Class survives setupAnimations style resets.
+        hostElement.classList.add("pure-green-placeholder");
+        hostElement.dataset.pureGreenPlaceholder = "true";
+      }
+    } catch (err) {
+      runtimeLog("render:green-placeholder-check-failed", { error: String(err) }, "warn");
+    }
+  };
+  if (image.complete && image.naturalWidth) {
+    inspect();
+  } else {
+    image.addEventListener("load", inspect, { once: true });
+  }
+}
+
 function renderLayers(screen) {
   layersLayer.replaceChildren();
   state.currentLayerElements = new Map();
@@ -2114,6 +2168,7 @@ function renderLayers(screen) {
       image.alt = "";
       image.decoding = "async";
       image.draggable = false;
+      hideIfPureOfficeGreenPlaceholder(image, element);
       element.append(image);
     } else if (layer.type === "shape") {
       // Geometric AutoShapes (clip-art seals, arrows, ellipses, lines…).
@@ -2538,17 +2593,30 @@ function hotspotLooksLikeContinueOrMedia(hotspot) {
 }
 
 /**
- * Autoplay OnNext only when the slide itself has authored PPT autoAdvance.
- * Continue/result beats (29/30/31, CAN'T ESCAPE, etc.) stay click-gated like a
- * real slideshow — autoplaying their OnNext made them look like they were
- * advancing slides by themselves. Hyperlink arrival still shows the initial
- * state until the player clicks (PPT-faithful); Attack/Flee bypass OnNext.
+ * Autoplay OnNext entrance when landing on continue/result beats (Attack→18
+ * motion, felled goblin, damage text, etc.). Without this, animated shapes stay
+ * entrance-hidden and ?debug=1 shows empty layer outlines ("green boxes") until
+ * a stage click — which feels like a broken Attack. Menu slides (Attack/Flee)
+ * keep click-gated builds. Authored autoAdvance slides also autoplay.
+ *
+ * Slide *navigation* stays click-gated via continue hyperlinks (29→30 etc.);
+ * autoplay only runs in-slide OnNext timing, it does not change slides.
  */
 function screenShouldAutoplayAnimations(screen) {
   if (!screen) {
     return false;
   }
-  return Boolean(screen.advancement && screen.advancement.autoAdvance);
+  if (screen.advancement && screen.advancement.autoAdvance) {
+    return true;
+  }
+  const clickable = (screen.hotspots || []).filter((hotspot) => hotspot.clickable);
+  if (!clickable.length) {
+    return false;
+  }
+  if (clickable.some(hotspotLooksLikeMenuOption)) {
+    return false;
+  }
+  return clickable.every(hotspotLooksLikeContinueOrMedia);
 }
 
 
@@ -4067,8 +4135,8 @@ function collectAnimatedShapeIds(slideAnimations) {
 }
 
 function setupAnimations(screen) {
-  // Auto-advance slides (authored PPT timer) autoplay their OnNext continuum.
-  // Continue/result beats stay click-gated like PowerPoint — do not autoplay.
+  // Auto-advance slides and continue-only result beats autoplay OnNext entrances
+  // (Attack→motion/text). Menu slides keep click-gated builds.
   const autoplay = screenShouldAutoplayAnimations(screen);
   runtimeLog("animation:setup-start", {
     screen: { id: screen.id, slide: screen.slide },

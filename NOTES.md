@@ -75,3 +75,11 @@
 - **Chapter jump:** Debug Chapters menu adds **First goblin x3 battle (pre-menu)** → s014 (`?debug=1&slide=14`).
 - Verify: `tools/verify_click_advance_combat.py` (no auto-nav 29/30/31; click-gated continue; flee reload; Attack/boredom); offline/gameplay/advancement verifies.
 
+
+## 2026-09-12 s015 Flee “does nothing” + Attack empty green boxes
+
+- **Repro (f6186e0):** Flee hotspot fires `navigate-to-same-screen` and re-enters s015 (dissolve on “Goblin x3 attacked!” does replay) — feels like no-op because PPT binary target is self (not flee-fail 17). Attack→18 is binary-correct; slide 18 text is authored `CAN'T ESCAPE!!` (combatAnnot role flee-fail) **with** motion paths on 23555/23556.
+- **Root cause of empty green boxes:** f6186e0 disabled continue-only OnNext autoplay. Attack landed on entrance-hidden layers; `?debug=1` outlined those hidden bounds on the grass. Stage click then played the attack motion — extra click felt broken.
+- **Fix:** Restore continue-only `screenShouldAutoplayAnimations` (menu stays click-gated; result/continue autoplays in-slide entrances). Slide nav still requires continue hyperlink (29/30/31 must not auto-nav). Hide debug outlines on `visibility:hidden` layers. Tests: `verify_click_advance_combat.py` asserts Attack shows motion/text without stage click; flee re-enter; no invent→17.
+- **Not overturned:** Attack→18 and flee self-reload remain PPT-faithful (no invent edges).
+- **Green boxes nuance:** (1) `?debug=1` layer outlines on entrance-hidden shapes (fixed: no outline while `visibility:hidden`). (2) A few extracted pictures are ~100% Office palette green `(0,128,0)` placeholders (PPT chroma) — hidden via `.pure-green-placeholder`. Do **not** chroma-key mixed hill/sprite art (same green paints the grass).
