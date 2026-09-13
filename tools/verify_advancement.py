@@ -103,14 +103,21 @@ def main() -> None:
     if "manualAdvance" not in flags and s17["advancement"].get("stageClickAdvancesSlide"):
         fail("slide 17 should not stage-click advance without manualAdvance bit")
 
-    # Working hyperlink fixture still present.
+    # Flee-fail Continue: user-authorized remap →32 (keep ×2); binary original 22.
     cont = [
         h
         for h in s17.get("hotspots") or []
-        if h.get("action") == "hyperlink" and h.get("targetSlide") == 22
+        if h.get("action") == "hyperlink" and h.get("targetSlide") == 32
     ]
     if not cont:
-        fail("slide 17 hyperlink to slide 22 missing (regression oracle)")
+        fail("slide 17 Continue →32 missing (flee-fail keep-count override)")
+    if cont[0].get("originalTargetSlide") != 22:
+        fail("slide 17 Continue must retain binary originalTargetSlide=22")
+    if cont[0].get("resolveMethod") != "user_authorized_target_override":
+        fail(
+            "slide 17 Continue resolveMethod must be user_authorized_target_override, "
+            f"got {cont[0].get('resolveMethod')}"
+        )
 
     # Slide 2: binary self promoted to next (start continue policy).
     s2 = screens[1]

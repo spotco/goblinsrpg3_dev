@@ -90,3 +90,42 @@
 - **Live exact repro:** start `?debug=1&slide=15`, allow authored 9s boredom auto→16, then click the visual Flee center once. History records `s016-a425115` →17 and slide enter 17. After the full 4.25s motion/text train the page remains on 17 with `CAN'T ESCAPE!!!` and `Click here to continue…`; it does not race/self-reload/auto-advance to s022.
 - **Observed “run-away then 1 goblin” explanation:** s017 itself animates the player's failed escape before showing `CAN'T ESCAPE!!!`; the one-goblin state is s022, reachable only through s017's explicit Continue hyperlink. No extract supports remapping s016 Flee to an attack/damage slide, so no connection was invented.
 - **Regression:** `tools/verify_combat_visual_options.py` now covers the full s015 boredom→s016 two-goblin state, visual-pointer hit target, Flee→17 history, visible failure caption, and a long settle proving one click cannot continue to s022.
+
+
+## 2026-09-13 — flee-fail keep goblin count (s017→32)
+
+### User rule (authorized override)
+Flee-fail must **not** reduce goblin count. After CAN'T ESCAPE on s017, Continue goes to **Goblin x2 Attacks (s032)** instead of binary **s022** (1-goblin menu).
+
+### Implementation (rebuild-safe)
+- `tools/advancement_lib.py`: `USER_AUTHORIZED_TARGET_OVERRIDES[(17,22)] → 32` with
+  `resolveMethod=user_authorized_target_override`; `originalTargetSlide=22` kept.
+- Applied every `tools/build_game_manifest.py` rebuild (Pass 4).
+- Both Flee entries to s017 are two-goblin menus (s016 boredom, s021 loop; asset-013 ×2),
+  so a single Continue→32 keeps count for both — no entry-aware branch needed.
+
+### First goblin battle — goblin-count map (extract + override)
+
+Standing goblins = picture `asset-013` on grass menus. Attack sprites = `asset-025`.
+
+| From | Action | To | Goblin count | Notes |
+|------|--------|----|--------------|-------|
+| s015 (×3) | Boredom auto 9s | s016 | **3→2** | Authored “Goblin fled of boredom…” |
+| s015 (×3) | Attack | s018 CAN'T ESCAPE → s024 | **3→3** | Attack fail; s024 still ×3, HP 10 |
+| s015 (×3) | Flee | s015 self-reload | **3→3** | Binary residual; feels like no-op (timer/anims reset). No invent→17. |
+| s016 (×2) | Attack | s032 Goblin x2 Attacks | **2→2** | Counterattack same count → s029 Fury → death |
+| s016 (×2) | Flee | s017 → **s032** | **2→2** | **User override** (binary was →s022 ×1) |
+| s021 (×2) | Attack | s019 Felled → s024 | text “Felled”; lands ×3 menu | Extract quirk — not a clean 2→1 kill path |
+| s021 (×2) | Flee | s017 → **s032** | **2→2** | Same override as s016 |
+| s022 (×1) | Attack / Flee | s034 / s036 | ×1 paths | Orphaned from flee-fail after override (only inbound was s017) |
+| s024 (×3) | Attack or Flee | s031 ×3 Attacks | **3→3** | Both options → death chain |
+
+**Attack does not implement a clean one-hit 3→2→1 kill ladder** in this opening fight.
+The only authored count drop 3→2 is boredom. “Felled goblin” slides exist (s019/s020/s033/s035)
+but their continues do not consistently land on the next-lower standing-goblin menu.
+
+### s015 Flee residual
+Self-reload remains PPT-faithful. Making flee-fail “feel real” via invent→17 would need a
+*three*-goblin same-count continue (e.g. →s031 ×3 Attacks), which the user did **not**
+authorize — leave residual policy alone.
+

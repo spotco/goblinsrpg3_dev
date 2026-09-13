@@ -9,8 +9,8 @@ Fails if Attack navigates to the Flee target (or any wrong slide).
 The s016 regression deliberately goes beyond an immediate target check: after the
 authored s015 boredom auto-advance leaves two goblins, one Flee click must enter
 s017, visibly settle on CAN'T ESCAPE, and remain there until its explicit Continue
-hotspot is clicked. This catches a self-reload, timer race, click-through, or
-accidental jump to the one-goblin s022 menu.
+hotspot is clicked. Continue must then go to s032 (Goblin x2 Attacks) — user
+override keeping goblin count — NOT the binary one-goblin s022 menu.
 """
 from __future__ import annotations
 
@@ -70,6 +70,67 @@ def goto(page, slide: int):
 
 def cur(page) -> int:
     return page.evaluate("() => goblinsRpg3Debug.snapshot().currentScreen.slide")
+
+
+
+def standing_goblin_count(slide: int) -> int:
+    screen = next(s for s in GM["screens"] if s["slide"] == slide)
+    return sum(1 for L in screen.get("layers") or [] if L.get("assetId") == "asset-013")
+
+
+def assert_first_goblin_count_edges(failures, notes) -> None:
+    """Static regressions: Attack/Flee count transitions for the opening fight."""
+    # Boredom authored 3→2
+    if standing_goblin_count(15) != 3:
+        failures.append(f"s015 expected 3 standing goblins, got {standing_goblin_count(15)}")
+    if standing_goblin_count(16) != 2:
+        failures.append(f"s016 expected 2 standing goblins, got {standing_goblin_count(16)}")
+    if standing_goblin_count(21) != 2:
+        failures.append(f"s021 expected 2 standing goblins, got {standing_goblin_count(21)}")
+    if standing_goblin_count(22) != 1:
+        failures.append(f"s022 expected 1 standing goblin, got {standing_goblin_count(22)}")
+    if standing_goblin_count(24) != 3:
+        failures.append(f"s024 expected 3 standing goblins, got {standing_goblin_count(24)}")
+
+    def hyperlink(slide: int, shape_text_re: str):
+        import re
+        screen = next(s for s in GM["screens"] if s["slide"] == slide)
+        rx = re.compile(shape_text_re, re.I)
+        for h in screen.get("hotspots") or []:
+            if h.get("action") == "hyperlink" and rx.search(str(h.get("shapeText") or "")):
+                return h
+        return None
+
+    # Attack fail keeps ×3: s015→18→24
+    atk15 = hyperlink(15, r"^-?\s*attack\s*$")
+    if not atk15 or atk15.get("targetSlide") != 18:
+        failures.append(f"s015 Attack must →18 (fail/CAN'T ESCAPE), got {atk15}")
+    cont18 = hyperlink(18, r"continue")
+    if not cont18 or cont18.get("targetSlide") != 24:
+        failures.append(f"s018 Continue must →24 (still ×3), got {cont18}")
+
+    # Flee-fail keep ×2: s017 Continue →32 (override), not 22
+    cont17 = hyperlink(17, r"continue")
+    if not cont17 or cont17.get("targetSlide") != 32:
+        failures.append(f"s017 Continue must →32 (keep ×2), got {cont17}")
+    if cont17 and cont17.get("originalTargetSlide") != 22:
+        failures.append(f"s017 binary original must stay 22, got {cont17}")
+
+    # s016 Attack already same-count →32
+    atk16 = hyperlink(16, r"^-?\s*attack\s*$")
+    if not atk16 or atk16.get("targetSlide") != 32:
+        failures.append(f"s016 Attack must →32 (×2 attacks), got {atk16}")
+
+    # s015 Flee residual self (no invent count drop / bridge)
+    flee15 = hyperlink(15, r"^-?\s*flee\s*$")
+    if not flee15 or flee15.get("targetSlide") != 15:
+        failures.append(f"s015 Flee must remain self-reload, got {flee15}")
+
+    notes.append(
+        "count edges: s015×3 Attack→18→24×3; boredom→16×2; "
+        "s017 Continue→32 (not 22); s015 Flee self; s016 Attack→32"
+    )
+    print(notes[-1], flush=True)
 
 
 def exact_two_goblin_flee_regression(page, failures, notes) -> None:
@@ -143,6 +204,102 @@ def exact_two_goblin_flee_regression(page, failures, notes) -> None:
     notes.append(line)
     print(line, flush=True)
 
+    # User override: s017 Continue →32 (x2 attacks), NOT binary →22 (1-goblin).
+    # Assert manifest provenance so rebuilds cannot silently lose the remap.
+    screen17 = next(s for s in GM["screens"] if s["slide"] == 17)
+    cont = next(
+        (h for h in screen17.get("hotspots") or [] if h.get("action") == "hyperlink"),
+        None,
+    )
+    if not cont or cont.get("targetSlide") != 32:
+        failures.append(
+            f"manifest s017 Continue target must be 32 (keep count), got {cont}"
+        )
+    if cont and cont.get("originalTargetSlide") != 22:
+        failures.append(
+            f"manifest s017 originalTargetSlide must remain binary 22, got {cont}"
+        )
+    if cont and cont.get("resolveMethod") != "user_authorized_target_override":
+        failures.append(
+            f"s017 Continue resolveMethod expected user_authorized_target_override, "
+            f"got {cont and cont.get('resolveMethod')}"
+        )
+
+    cont_btn = page.evaluate(
+        """() => {
+      const btn = [...document.querySelectorAll('#hotspots button.hotspot')]
+        .find((b) => (b.dataset.target || '') === 'slide-032'
+          || /continue/i.test(b.getAttribute('aria-label') || ''));
+      if (!btn) return null;
+      const r = btn.getBoundingClientRect();
+      return { x: r.x + r.width / 2, y: r.y + r.height / 2, target: btn.dataset.target };
+    }"""
+    )
+    if not cont_btn:
+        failures.append("s017 missing Continue hotspot button for →32")
+        return
+    if cont_btn.get("target") != "slide-032":
+        failures.append(f"s017 Continue DOM target expected slide-032, got {cont_btn}")
+    page.mouse.click(cont_btn["x"], cont_btn["y"])
+    page.wait_for_timeout(800)
+    after_cont = cur(page)
+    visible_after = page.evaluate(
+        r"""() => [...document.querySelectorAll('#layers .layer')]
+          .filter((el) => {
+            const cs = getComputedStyle(el);
+            return cs.visibility !== 'hidden' && Number(cs.opacity) > 0.2;
+          })
+          .map((el) => (el.textContent || '').replace(/\s+/g, ' ').trim())
+          .filter(Boolean)"""
+    )
+    if after_cont != 32:
+        failures.append(
+            f"s017 Continue must go to s032 (x2 attacks, keep count), got s{after_cont:03d}"
+        )
+    if after_cont == 22:
+        failures.append("s017 Continue must NOT land on one-goblin s022")
+    if not any("x2" in t.lower() and "attack" in t.lower() for t in visible_after):
+        # Allow brief entrance delay; still require not being on 1-goblin menu options.
+        if any(t.strip().lower() in ("-attack", "-flee") for t in visible_after) and after_cont == 22:
+            failures.append(f"landed on 1-goblin menu texts: {visible_after}")
+    cont_line = (
+        f"s017 Continue→{after_cont} (expect 32 / not 22); visible={visible_after}"
+    )
+    notes.append(cont_line)
+    print(cont_line, flush=True)
+
+    # s021 is also a two-goblin Flee→17 entry; same Continue must keep count →32.
+    goto(page, 21)
+    page.evaluate("() => goblinsRpg3Debug.clearHistory()")
+    info21 = visual_option_center(page, "flee")
+    if not info21:
+        failures.append("s021 missing visual Flee")
+        return
+    page.mouse.click(info21["x"], info21["y"])
+    page.wait_for_timeout(4250)
+    if cur(page) != 17:
+        failures.append(f"s021 Flee must enter s017, got s{cur(page):03d}")
+        return
+    cont_btn2 = page.evaluate(
+        """() => {
+      const btn = [...document.querySelectorAll('#hotspots button.hotspot')]
+        .find((b) => (b.dataset.target || '') === 'slide-032');
+      if (!btn) return null;
+      const r = btn.getBoundingClientRect();
+      return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+    }"""
+    )
+    if not cont_btn2:
+        failures.append("s017 Continue (via s021) missing →32 button")
+        return
+    page.mouse.click(cont_btn2["x"], cont_btn2["y"])
+    page.wait_for_timeout(800)
+    after21 = cur(page)
+    if after21 != 32:
+        failures.append(f"s021→17 Continue must keep count →32, got s{after21:03d}")
+    notes.append(f"s021 Flee→17 Continue→{after21} (expect 32)")
+    print(notes[-1], flush=True)
+
 
 def visual_option_center(page, option: str):
     """Center of the OPTION text layer whose text exactly matches Attack/flee."""
@@ -194,6 +351,8 @@ def main() -> int:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page(viewport={"width": 1280, "height": 900})
         page.on("pageerror", lambda err: notes.append(f"PAGEERROR {err}"))
+
+        assert_first_goblin_count_edges(failures, notes)
 
         for slide, option, expect, note in CASES:
             goto(page, slide)

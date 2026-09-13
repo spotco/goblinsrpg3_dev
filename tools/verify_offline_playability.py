@@ -36,8 +36,9 @@ def main() -> None:
     tier = path_report.get("tierA") or {}
     if not tier.get("matchesStartBaseline"):
         fail(
-            f"Tier A reachability does not match baseline 29 "
-            f"(count={tier.get('reachableCount')})"
+            f"Tier A reachability does not match EXPECTED_START_REACHABLE "
+            f"(count={tier.get('reachableCount')}, "
+            f"expected={len(EXPECTED_START_REACHABLE)})"
         )
     if tier.get("reachableCount") != len(EXPECTED_START_REACHABLE):
         fail(f"Tier A reachableCount {tier.get('reachableCount')} != {len(EXPECTED_START_REACHABLE)}")

@@ -45,6 +45,13 @@
       "ok": true
     },
     {
+      "id": "root-22",
+      "label": "s022 \u00b7 -Attack",
+      "slide": 22,
+      "hint": "?debug=1&slide=22",
+      "ok": true
+    },
+    {
       "id": "root-26",
       "label": "s026 \u00b7 Goblin x1 Attacks!",
       "slide": 26,

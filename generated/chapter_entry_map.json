@@ -1,9 +1,9 @@
 {
   "format": "goblins-rpg3-chapter-entry-map-v1",
   "summary": {
-    "zeroInboundCount": 19,
+    "zeroInboundCount": 20,
     "sealedIslandCount": 2,
-    "chapterCount": 23,
+    "chapterCount": 24,
     "walksAllOk": true
   },
   "chapters": [
@@ -12,7 +12,7 @@
       "title": "Title / early story + combat loop",
       "entrySlide": 1,
       "entryHint": "?debug=1&slide=1",
-      "subgraphSize": 29,
+      "subgraphSize": 23,
       "outcome": "reaches_terminal",
       "ok": true,
       "notes": "Closed loop re-enters via s042\u2192s021; death at s030",
@@ -112,11 +112,25 @@
       "priority": 2
     },
     {
+      "id": "root-22",
+      "title": "-Attack",
+      "entrySlide": 22,
+      "entryHint": "?debug=1&slide=22",
+      "subgraphSize": 12,
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "terminals": [
+        30
+      ],
+      "notes": "Zero-inbound or primary catalog seed",
+      "priority": 3
+    },
+    {
       "id": "root-26",
       "title": "Goblin x1 Attacks!",
       "entrySlide": 26,
       "entryHint": "?debug=1&slide=26",
-      "subgraphSize": 13,
+      "subgraphSize": 11,
       "outcome": "reaches_terminal",
       "ok": true,
       "terminals": [
@@ -130,7 +144,7 @@
       "title": "Goblin x1 Attacks!",
       "entrySlide": 38,
       "entryHint": "?debug=1&slide=38",
-      "subgraphSize": 15,
+      "subgraphSize": 14,
       "outcome": "reaches_terminal",
       "ok": true,
       "terminals": [
@@ -144,7 +158,7 @@
       "title": "Can't escape!",
       "entrySlide": 41,
       "entryHint": "?debug=1&slide=41",
-      "subgraphSize": 12,
+      "subgraphSize": 10,
       "outcome": "reaches_terminal",
       "ok": true,
       "terminals": [
@@ -365,6 +379,19 @@
   ],
   "zeroInboundRoots": [
     {
+      "slide": 22,
+      "entryHint": "?debug=1&slide=22",
+      "texts": [
+        "-Attack",
+        "-flee",
+        "15"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ],
+      "subgraphSize": 12
+    },
+    {
       "slide": 23,
       "entryHint": "?debug=1&slide=23",
       "texts": [
@@ -388,7 +415,7 @@
       "leavePaths": [
         "non_self_hyperlink"
       ],
-      "subgraphSize": 13
+      "subgraphSize": 11
     },
     {
       "slide": 33,
@@ -414,7 +441,7 @@
       "leavePaths": [
         "non_self_hyperlink"
       ],
-      "subgraphSize": 15
+      "subgraphSize": 14
     },
     {
       "slide": 41,
@@ -427,7 +454,7 @@
       "leavePaths": [
         "non_self_hyperlink"
       ],
-      "subgraphSize": 12
+      "subgraphSize": 10
     },
     {
       "slide": 43,
@@ -700,7 +727,7 @@
   ],
   "tierB": {
     "mode": "chapter_select",
-    "titleDirectedReachable": 29,
+    "titleDirectedReachable": 23,
     "note": "Title path is closed early loop (29 slides). Full deck is playable via chapter entry points below \u2014 not invented title\u2192midgame bridges."
   }
 }

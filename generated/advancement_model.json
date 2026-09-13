@@ -1183,14 +1183,14 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 77,
-          "targetSlide": 22,
+          "targetSlide": 32,
           "targetLabel": "Slide 22",
           "flagsHex": "079f0d30",
-          "label": "Slide 22",
+          "label": "Click here to continue\u2026",
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "binary_label",
+          "resolveMethod": "user_authorized_target_override",
           "originalTargetSlide": 22,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
@@ -1210,7 +1210,8 @@
               3120,
               711
             ]
-          }
+          },
+          "resolveRationale": "User override 2026-09-13: flee-fail Continue must keep the same goblin count. Binary s017\u219222 drops into the one-goblin menu, but both Flee entries (s016 boredom, s021 loop) show two standing goblins. Remap Continue \u2192 s032 (Goblin x2 Attacks!) so fail does not reduce count. PPT binary remains in originalTargetSlide."
         }
       ],
       "advancement": {

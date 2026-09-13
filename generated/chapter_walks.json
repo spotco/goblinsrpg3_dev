@@ -1,7 +1,7 @@
 {
   "format": "goblins-rpg3-chapter-walks-v1",
   "summary": {
-    "seedCount": 21,
+    "seedCount": 22,
     "allOk": true,
     "failedSeeds": [],
     "islandCount": 2,
@@ -22,7 +22,7 @@
   "walks": [
     {
       "seed": 1,
-      "reachableCount": 29,
+      "reachableCount": 23,
       "reachableSlides": [
         1,
         2,
@@ -42,6 +42,66 @@
         16,
         17,
         18,
+        24,
+        29,
+        30,
+        31,
+        32
+      ],
+      "stuck": [],
+      "leaveableCount": 23,
+      "terminals": [
+        {
+          "slide": 30,
+          "terminalKind": "death",
+          "leavePaths": [
+            "restart_only"
+          ]
+        }
+      ],
+      "reentryEdgesSample": [
+        {
+          "from": 31,
+          "to": 29
+        },
+        {
+          "from": 32,
+          "to": 29
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "reaches_terminal",
+      "ok": true,
+      "entryHint": "?debug=1&slide=1",
+      "titleSnippet": "Presents"
+    },
+    {
+      "seed": 20,
+      "reachableCount": 2,
+      "reachableSlides": [
+        20,
+        25
+      ],
+      "stuck": [],
+      "leaveableCount": 2,
+      "terminals": [],
+      "reentryEdgesSample": [
+        {
+          "from": 25,
+          "to": 20
+        }
+      ],
+      "cyclePairsSample": [],
+      "outcome": "loop_or_hub",
+      "ok": true,
+      "entryHint": "?debug=1&slide=20",
+      "titleSnippet": "Felled goblin!!"
+    },
+    {
+      "seed": 22,
+      "reachableCount": 12,
+      "reachableSlides": [
+        17,
         19,
         21,
         22,
@@ -55,7 +115,7 @@
         42
       ],
       "stuck": [],
-      "leaveableCount": 29,
+      "leaveableCount": 12,
       "terminals": [
         {
           "slide": 30,
@@ -94,30 +154,8 @@
       "cyclePairsSample": [],
       "outcome": "reaches_terminal",
       "ok": true,
-      "entryHint": "?debug=1&slide=1",
-      "titleSnippet": "Presents"
-    },
-    {
-      "seed": 20,
-      "reachableCount": 2,
-      "reachableSlides": [
-        20,
-        25
-      ],
-      "stuck": [],
-      "leaveableCount": 2,
-      "terminals": [],
-      "reentryEdgesSample": [
-        {
-          "from": 25,
-          "to": 20
-        }
-      ],
-      "cyclePairsSample": [],
-      "outcome": "loop_or_hub",
-      "ok": true,
-      "entryHint": "?debug=1&slide=20",
-      "titleSnippet": "Felled goblin!!"
+      "entryHint": "?debug=1&slide=22",
+      "titleSnippet": "-Attack"
     },
     {
       "seed": 23,
@@ -154,24 +192,22 @@
     },
     {
       "seed": 26,
-      "reachableCount": 13,
+      "reachableCount": 11,
       "reachableSlides": [
         17,
         19,
         21,
-        22,
         24,
         26,
         27,
         29,
         30,
         31,
-        34,
-        36,
-        42
+        32,
+        34
       ],
       "stuck": [],
-      "leaveableCount": 13,
+      "leaveableCount": 11,
       "terminals": [
         {
           "slide": 30,
@@ -195,11 +231,11 @@
           "to": 29
         },
         {
-          "from": 34,
-          "to": 21
+          "from": 32,
+          "to": 29
         },
         {
-          "from": 42,
+          "from": 34,
           "to": 21
         }
       ],
@@ -244,17 +280,16 @@
     },
     {
       "seed": 38,
-      "reachableCount": 15,
+      "reachableCount": 14,
       "reachableSlides": [
         17,
         19,
         21,
-        22,
         24,
         29,
         30,
         31,
-        34,
+        32,
         35,
         36,
         38,
@@ -263,7 +298,7 @@
         42
       ],
       "stuck": [],
-      "leaveableCount": 15,
+      "leaveableCount": 14,
       "terminals": [
         {
           "slide": 30,
@@ -287,8 +322,8 @@
           "to": 29
         },
         {
-          "from": 34,
-          "to": 21
+          "from": 32,
+          "to": 29
         },
         {
           "from": 40,
@@ -307,23 +342,21 @@
     },
     {
       "seed": 41,
-      "reachableCount": 12,
+      "reachableCount": 10,
       "reachableSlides": [
         17,
         19,
         21,
-        22,
         24,
         29,
         30,
         31,
-        34,
-        36,
+        32,
         41,
         42
       ],
       "stuck": [],
-      "leaveableCount": 12,
+      "leaveableCount": 10,
       "terminals": [
         {
           "slide": 30,
@@ -347,8 +380,8 @@
           "to": 29
         },
         {
-          "from": 34,
-          "to": 21
+          "from": 32,
+          "to": 29
         },
         {
           "from": 42,

@@ -3,14 +3,14 @@
   "slideCount": 201,
   "tierA": {
     "seed": 1,
-    "reachableCount": 29,
+    "reachableCount": 23,
     "matchesStartBaseline": true,
     "includesStoryBeats": true,
     "includesVillage": true,
     "includesCombat": true,
     "deathReachable": true,
     "loopEdge042to021": true,
-    "startBaselineSize": 29
+    "startBaselineSize": 23
   },
   "seeds": [
     1,
@@ -26,7 +26,7 @@
   "walks": [
     {
       "seed": 1,
-      "reachableCount": 29,
+      "reachableCount": 23,
       "reachableSlides": [
         1,
         2,
@@ -46,17 +46,11 @@
         16,
         17,
         18,
-        19,
-        21,
-        22,
         24,
         29,
         30,
         31,
-        32,
-        34,
-        36,
-        42
+        32
       ],
       "endings": [
         {
@@ -64,16 +58,7 @@
           "kind": "death_or_restart"
         }
       ],
-      "reentryEdgesSample": [
-        {
-          "from": 34,
-          "to": 21
-        },
-        {
-          "from": 42,
-          "to": 21
-        }
-      ],
+      "reentryEdgesSample": [],
       "nodes": [
         {
           "slide": 1,
@@ -558,15 +543,15 @@
           "choices": [
             {
               "kind": "hyperlink",
-              "targetSlide": 22,
+              "targetSlide": 32,
               "shapeText": "Click here to continue\u2026",
-              "resolveMethod": "binary_label",
+              "resolveMethod": "user_authorized_target_override",
               "isSelf": false,
               "clickable": true
             }
           ],
           "outbound": [
-            22
+            32
           ]
         },
         {
@@ -596,113 +581,6 @@
           ],
           "outbound": [
             24
-          ]
-        },
-        {
-          "slide": 19,
-          "leavePaths": [
-            "non_self_hyperlink"
-          ],
-          "modes": [
-            "hyperlink"
-          ],
-          "stuckReason": null,
-          "deathTerminal": false,
-          "texts": [
-            "Felled goblin!!!",
-            "Click here to continue\u2026",
-            "Click here to continue\u2026"
-          ],
-          "choices": [
-            {
-              "kind": "hyperlink",
-              "targetSlide": 24,
-              "shapeText": "Click here to continue\u2026",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            }
-          ],
-          "outbound": [
-            24
-          ]
-        },
-        {
-          "slide": 21,
-          "leavePaths": [
-            "non_self_hyperlink"
-          ],
-          "modes": [
-            "hyperlink"
-          ],
-          "stuckReason": null,
-          "deathTerminal": false,
-          "texts": [
-            "-Attack",
-            "-flee",
-            "15",
-            "-Attack"
-          ],
-          "choices": [
-            {
-              "kind": "hyperlink",
-              "targetSlide": 19,
-              "shapeText": "-Attack",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            },
-            {
-              "kind": "hyperlink",
-              "targetSlide": 17,
-              "shapeText": "-flee",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            }
-          ],
-          "outbound": [
-            17,
-            19
-          ]
-        },
-        {
-          "slide": 22,
-          "leavePaths": [
-            "non_self_hyperlink"
-          ],
-          "modes": [
-            "hyperlink"
-          ],
-          "stuckReason": null,
-          "deathTerminal": false,
-          "texts": [
-            "-Attack",
-            "-flee",
-            "15",
-            "-Attack"
-          ],
-          "choices": [
-            {
-              "kind": "hyperlink",
-              "targetSlide": 34,
-              "shapeText": "-Attack",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            },
-            {
-              "kind": "hyperlink",
-              "targetSlide": 36,
-              "shapeText": "-flee",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            }
-          ],
-          "outbound": [
-            34,
-            36
           ]
         },
         {
@@ -853,95 +731,6 @@
           ],
           "outbound": [
             29
-          ]
-        },
-        {
-          "slide": 34,
-          "leavePaths": [
-            "non_self_hyperlink"
-          ],
-          "modes": [
-            "hyperlink"
-          ],
-          "stuckReason": null,
-          "deathTerminal": false,
-          "texts": [
-            "Goblin x1 Attacks!",
-            "Player takes 5 damage!",
-            "Click here to continue\u2026",
-            "Click here to continue\u2026"
-          ],
-          "choices": [
-            {
-              "kind": "hyperlink",
-              "targetSlide": 21,
-              "shapeText": "Click here to continue\u2026",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            }
-          ],
-          "outbound": [
-            21
-          ]
-        },
-        {
-          "slide": 36,
-          "leavePaths": [
-            "non_self_hyperlink"
-          ],
-          "modes": [
-            "hyperlink"
-          ],
-          "stuckReason": null,
-          "deathTerminal": false,
-          "texts": [
-            "HAHAHAHA!!\nYAH!! TAKE THAT STUPID GOBLINS!!!",
-            "Click here to continue\u2026.",
-            "Click here to continue\u2026."
-          ],
-          "choices": [
-            {
-              "kind": "hyperlink",
-              "targetSlide": 42,
-              "shapeText": "Click here to continue\u2026.",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            }
-          ],
-          "outbound": [
-            42
-          ]
-        },
-        {
-          "slide": 42,
-          "leavePaths": [
-            "non_self_hyperlink"
-          ],
-          "modes": [
-            "hyperlink"
-          ],
-          "stuckReason": null,
-          "deathTerminal": false,
-          "texts": [
-            "Goblin x1 Attacks!",
-            "Player takes 5 damage!",
-            "Click here to continue\u2026",
-            "Click here to continue\u2026"
-          ],
-          "choices": [
-            {
-              "kind": "hyperlink",
-              "targetSlide": 21,
-              "shapeText": "Click here to continue\u2026",
-              "resolveMethod": "binary_label",
-              "isSelf": false,
-              "clickable": true
-            }
-          ],
-          "outbound": [
-            21
           ]
         }
       ]

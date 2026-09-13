@@ -4,14 +4,15 @@
     "promoteCount": 24,
     "residualSelfCount": 5,
     "resolveMethodCounts": {
-      "binary_label": 173,
+      "binary_label": 172,
       "combat_all_self_to_next_outcome": 3,
       "confirmed_self_combat": 3,
       "confirmed_self_label_match": 2,
       "noop_continue_to_next": 3,
       "noop_mirror_sibling_hyperlink": 5,
       "self_continue_to_next": 9,
-      "sole_image_self_to_next": 4
+      "sole_image_self_to_next": 4,
+      "user_authorized_target_override": 1
     }
   },
   "promotes": [
