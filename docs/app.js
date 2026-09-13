@@ -2096,8 +2096,8 @@ function applyPngUnderlayWordArtHoles(screen) {
     clearPngUnderlayWordArtHoles();
     return;
   }
-  // Title redesign (slide-002): scenic PNG carries baked logo; do not punch
-  // underlay holes for live WordArt (CSS hides the WordArt layer on this slide).
+  // Title redesign (slide-002): landscape PNG carries baked logo/CTA; do not
+  // punch underlay holes for live WordArt (CSS hides WordArt + start text).
   if (screen && screen.id === "slide-002") {
     clearPngUnderlayWordArtHoles();
     return;
