@@ -5,6 +5,12 @@ Prior playthroughs used button.hotspot.click() / aria-label substrings, which al
 hit the Attack DOM node even if bounds/z-order would send a real pointer to Flee.
 This clicks the center of the matching OPTION text layer and asserts navigation.
 Fails if Attack navigates to the Flee target (or any wrong slide).
+
+The s016 regression deliberately goes beyond an immediate target check: after the
+authored s015 boredom auto-advance leaves two goblins, one Flee click must enter
+s017, visibly settle on CAN'T ESCAPE, and remain there until its explicit Continue
+hotspot is clicked. This catches a self-reload, timer race, click-through, or
+accidental jump to the one-goblin s022 menu.
 """
 from __future__ import annotations
 
@@ -64,6 +70,78 @@ def goto(page, slide: int):
 
 def cur(page) -> int:
     return page.evaluate("() => goblinsRpg3Debug.snapshot().currentScreen.slide")
+
+
+def exact_two_goblin_flee_regression(page, failures, notes) -> None:
+    """Exercise the reported s015 boredom → s016 Flee failure end to end."""
+    goto(page, 15)
+    page.evaluate("() => goblinsRpg3Debug.clearHistory()")
+    page.wait_for_function(
+        "() => goblinsRpg3Debug.snapshot().currentScreen.slide === 16",
+        timeout=15000,
+    )
+    page.wait_for_timeout(250)
+
+    # Extracted s016 has two goblin picture layers: shapes 20483 and 20485.
+    # Keep the assertion evidence-based rather than inferring entities from pixels.
+    goblin_shapes = page.evaluate(
+        """() => [...document.querySelectorAll('#layers .layer')]
+          .filter((el) => ['20483', '20485'].includes(el.dataset.shapeId))
+          .filter((el) => {
+            const cs = getComputedStyle(el);
+            return cs.visibility !== 'hidden' && Number(cs.opacity) > 0.1;
+          })
+          .map((el) => el.dataset.shapeId)"""
+    )
+    if set(goblin_shapes) != {"20483", "20485"}:
+        failures.append(f"s016 expected two visible goblins 20483/20485, got {goblin_shapes}")
+
+    info = visual_option_center(page, "flee")
+    if not info:
+        failures.append("s016 exact regression: missing visual Flee option")
+        return
+    if info.get("btnTarget") != "slide-017":
+        failures.append(f"s016 Flee DOM target expected slide-017, got {info.get('btnTarget')}")
+    if (info.get("top") or {}).get("aria", "").lower() != "-flee":
+        failures.append(f"s016 Flee center not covered by Flee hotspot: {info.get('top')}")
+
+    page.mouse.click(info["x"], info["y"])
+    # Wait beyond the full s017 motion/text train. It must not self-advance or
+    # click through to s022's authored one-goblin menu.
+    page.wait_for_timeout(4250)
+    after = cur(page)
+    visible_text = page.evaluate(
+        r"""() => [...document.querySelectorAll('#layers .layer')]
+          .filter((el) => {
+            const cs = getComputedStyle(el);
+            return cs.visibility !== 'hidden' && Number(cs.opacity) > 0.2;
+          })
+          .map((el) => (el.textContent || '').replace(/\s+/g, ' ').trim())
+          .filter(Boolean)"""
+    )
+    history = page.evaluate("() => goblinsRpg3Debug.history()")
+    flee_events = [
+        event for event in history
+        if event.get("hotspotId") == "s016-a425115" and event.get("targetSlide") == 17
+    ]
+    if after != 17:
+        failures.append(f"one s016 Flee click must remain on s017, got s{after:03d}")
+    if not any("CAN'T ESCAPE" in text.upper() for text in visible_text):
+        failures.append(f"s017 did not visibly settle on CAN'T ESCAPE: {visible_text}")
+    if not flee_events:
+        failures.append(f"history missing s016-a425115 →17: {history[-6:]}")
+    if any(event.get("targetSlide") == 22 for event in history):
+        failures.append("one s016 Flee click unexpectedly continued to one-goblin s022")
+
+    shot = OUT / "goblins-exact-s016-two-goblins-flee.png"
+    page.screenshot(path=str(shot), full_page=False)
+    line = (
+        f"exact boredom path: s015 auto→16 ({len(goblin_shapes)} goblins), "
+        f"one visual Flee→{after}, visible={visible_text}, "
+        f"historyTargets={[event.get('targetSlide') for event in flee_events]}"
+    )
+    notes.append(line)
+    print(line, flush=True)
 
 
 def visual_option_center(page, option: str):
@@ -152,6 +230,8 @@ def main() -> int:
                 failures.append(
                     f"s{slide} Attack navigated to flee target {flee_tgt} (coverage bug)"
                 )
+
+        exact_two_goblin_flee_regression(page, failures, notes)
 
         browser.close()
 

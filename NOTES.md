@@ -83,3 +83,10 @@
 - **Fix:** Restore continue-only `screenShouldAutoplayAnimations` (menu stays click-gated; result/continue autoplays in-slide entrances). Slide nav still requires continue hyperlink (29/30/31 must not auto-nav). Hide debug outlines on `visibility:hidden` layers. Tests: `verify_click_advance_combat.py` asserts Attack shows motion/text without stage click; flee re-enter; no invent→17.
 - **Not overturned:** Attack→18 and flee self-reload remain PPT-faithful (no invent edges).
 - **Green boxes nuance:** (1) `?debug=1` layer outlines on entrance-hidden shapes (fixed: no outline while `visibility:hidden`). (2) A few extracted pictures are ~100% Office palette green `(0,128,0)` placeholders (PPT chroma) — hidden via `.pure-green-placeholder`. Do **not** chroma-key mixed hill/sprite art (same green paints the grass).
+
+### 2026-09-13 — exact two-goblin Flee regression
+
+- **Extract evidence:** s016 (`Goblin fled of boredom…`) contains goblin picture shapes 20483/20485. Its binary hyperlinks are Attack shape 20488 →32 and Flee shape 20489 (`s016-a425115`) →17. s016 has no autoAdvance flag. s017 is authored `CAN'T ESCAPE!!!`, with Continue →22; s022 is the authored one-goblin menu.
+- **Live exact repro:** start `?debug=1&slide=15`, allow authored 9s boredom auto→16, then click the visual Flee center once. History records `s016-a425115` →17 and slide enter 17. After the full 4.25s motion/text train the page remains on 17 with `CAN'T ESCAPE!!!` and `Click here to continue…`; it does not race/self-reload/auto-advance to s022.
+- **Observed “run-away then 1 goblin” explanation:** s017 itself animates the player's failed escape before showing `CAN'T ESCAPE!!!`; the one-goblin state is s022, reachable only through s017's explicit Continue hyperlink. No extract supports remapping s016 Flee to an attack/damage slide, so no connection was invented.
+- **Regression:** `tools/verify_combat_visual_options.py` now covers the full s015 boredom→s016 two-goblin state, visual-pointer hit target, Flee→17 history, visible failure caption, and a long settle proving one click cannot continue to s022.
