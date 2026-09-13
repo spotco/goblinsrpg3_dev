@@ -2238,7 +2238,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -6004,7 +6006,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -6815,7 +6819,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -16423,7 +16429,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -28343,7 +28351,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         },
         {
           "id": "slide-054-shape-65544",
@@ -35387,7 +35397,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         },
         {
           "id": "slide-074-shape-87045",
@@ -38378,7 +38390,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         },
         {
           "id": "slide-081-shape-94217",
@@ -45649,7 +45663,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         },
         {
           "id": "slide-096-shape-111628",
@@ -49055,7 +49071,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -95132,7 +95150,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -97275,7 +97295,9 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          }
+          },
+          "hideDuringShow": true,
+          "mediaDisplay": false
         }
       ],
       "backgroundColor": "#ffffffff",

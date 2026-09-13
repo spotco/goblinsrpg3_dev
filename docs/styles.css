@@ -392,6 +392,16 @@ button:focus-visible {
 
 /* Extracted pictures that are ~100% Office transparent-green — hide so they
    do not paint solid green boxes (PPT chroma). Survives anim style resets. */
+
+/* PowerPoint media/sound icons (MovieShape). OOXML cMediaNode display="0"
+   hides them during slideshow; edit mode still shows the yellow speaker. */
+.layer.media-icon-hidden-during-show {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  outline: none !important;
+}
+
 .layer.pure-green-placeholder {
   visibility: hidden !important;
   opacity: 0 !important;

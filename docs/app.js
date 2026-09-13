@@ -1090,7 +1090,11 @@ function prepareAudio() {
       runtimeLog("audio:skip-entry", { source: entry.source, reason: "no outputs" }, "warn");
       continue;
     }
-    const preferred = entry.outputs.find((output) => output.type === "opus") || entry.outputs[0];
+    // Prefer mp3 for Safari/iOS and GitHub Pages; opus remains as fallback.
+    const preferred =
+      entry.outputs.find((output) => output.type === "mp3") ||
+      entry.outputs.find((output) => output.type === "opus") ||
+      entry.outputs[0];
     const element = new Audio(assetUrl(preferred.path));
     element.preload = "auto";
     state.audioElements.set(entry.source, element);
@@ -2294,6 +2298,23 @@ function hideIfPureOfficeGreenPlaceholder(image, hostElement) {
   }
 }
 
+
+/**
+ * PowerPoint media/sound icons (MovieShape / p:pic + audioFile). In the OOXML
+ * timing tree every cMediaNode uses display="0" — icons show in edit mode only,
+ * not during slideshow. Match that: keep the layer element for media command
+ * targeting, but never paint the yellow speaker bitmap.
+ */
+function isSlideshowHiddenMediaIcon(layer) {
+  if (!layer) {
+    return false;
+  }
+  if (layer.hideDuringShow === true || layer.mediaDisplay === false) {
+    return true;
+  }
+  return String(layer.kind || "") === "MovieShape";
+}
+
 function renderLayers(screen) {
   layersLayer.replaceChildren();
   state.currentLayerElements = new Map();
@@ -2301,10 +2322,21 @@ function renderLayers(screen) {
   const typeCounts = {};
   const animatedShapeIds = [];
   let emptyPlaceholders = 0;
+  let hiddenMediaIcons = 0;
   for (const layer of layers) {
     const element = document.createElement("div");
     positionLayerElement(element, layer);
-    if (layer.type === "image" && layer.instancePath) {
+    const hideMediaIcon = isSlideshowHiddenMediaIcon(layer);
+    if (hideMediaIcon) {
+      // PPT slideshow: display="0" on cMediaNode — do not show speaker/media art.
+      element.classList.add("media-icon-hidden-during-show");
+      element.dataset.hideDuringShow = "true";
+      element.style.visibility = "hidden";
+      element.style.opacity = "0";
+      element.style.pointerEvents = "none";
+      hiddenMediaIcons += 1;
+      // Skip bitmap so yellow speaker never flashes before CSS applies.
+    } else if (layer.type === "image" && layer.instancePath) {
       const image = document.createElement("img");
       image.className = "layer-image";
       image.src = assetUrl(layer.instancePath);
@@ -2379,6 +2411,7 @@ function renderLayers(screen) {
     layerCount: layers.length,
     typeCounts,
     emptyTextPlaceholders: emptyPlaceholders,
+    hiddenMediaIcons,
     animatedLayerCount: animatedShapeIds.length,
     animatedShapeIds,
   });
@@ -3327,6 +3360,10 @@ function syncAllAnimatedHotspots() {
 
 function revealAnimationElement(element) {
   if (!element) {
+    return;
+  }
+  // Media icons stay slideshow-hidden (PPT display="0") even if a set/effect targets them.
+  if (element.classList && element.classList.contains("media-icon-hidden-during-show")) {
     return;
   }
   element.style.visibility = "visible";
