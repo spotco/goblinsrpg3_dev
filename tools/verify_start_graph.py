@@ -46,8 +46,8 @@ def main() -> None:
         )
 
     # Early loop still re-enters combat hub.
-    if 21 not in outbound.get(42, set()):
-        fail("s042 should still hyperlink/resolve to s021 (early loop re-entry)")
+    if 22 not in outbound.get(42, set()):
+        fail("s042 should hyperlink/resolve to s022 (1-goblin menu; slideId-resolved)")
 
     # No edge from baseline set into sealed islands (binary+runtime).
     for island in EXPECTED_SEALED_ISLANDS:
@@ -56,17 +56,17 @@ def main() -> None:
             if leaked:
                 fail(f"unexpected edge from start component s{slide} into island {sorted(leaked)}")
 
-    # Island internals still leave-able (s046 combat promote etc.).
+    # s046 boss options resolve via slideId directly to s047 (stale labels were self).
     s46 = screens[45]
     if s46["advancement"].get("stuckReason"):
-        fail("s046 should remain leave-able after combat promote")
+        fail("s046 should leave to s047 (slideId-resolved combat options)")
     combat = [
         h
         for h in s46.get("hotspots") or []
-        if h.get("resolveMethod") == "combat_all_self_to_next_outcome" and h.get("targetSlide") == 47
+        if h.get("action") == "hyperlink" and h.get("targetSlide") == 47 and h.get("clickable")
     ]
     if len(combat) < 3:
-        fail("s046 combat_all_self_to_next_outcome → 47 missing")
+        fail("s046 expected 3 clickable options → 47 after slideId resolve")
 
     analysis = load_json(analysis_path)
     summary = analysis.get("summary") or {}
@@ -79,9 +79,9 @@ def main() -> None:
     if not summary.get("matchesExpectedBaseline"):
         fail("analysis baseline match flag false")
 
-    # s043 / s055 remain zero-inbound roots in analysis.
+    # Zero-inbound roots after slideId resolve (debug-jump only).
     zero = {int(z["slide"]) for z in analysis.get("zeroInboundSlides") or []}
-    for root in (43, 55):
+    for root in (31, 34, 135):
         if root not in zero:
             fail(f"expected zero-inbound root s{root:03d} still present")
 

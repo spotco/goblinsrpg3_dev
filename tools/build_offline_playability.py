@@ -127,7 +127,7 @@ def build_path_walk(
         "includesVillage": bool(seed1 and 9 in seed1["reachableSlides"] and 10 in seed1["reachableSlides"]),
         "includesCombat": bool(seed1 and 15 in seed1["reachableSlides"]),
         "deathReachable": bool(seed1 and 30 in seed1["reachableSlides"]),
-        "loopEdge042to021": bool(seed1 and 21 in outbound.get(42, set())),
+        "loopEdge042to022": bool(seed1 and 22 in outbound.get(42, set())),
         "startBaselineSize": len(EXPECTED_START_REACHABLE),
     }
 
@@ -202,7 +202,7 @@ def build_chapter_map(
             "entrySlide": 1,
             "entryHint": "?debug=1&slide=1 (or default start)",
             "subgraphSize": len(EXPECTED_START_REACHABLE),
-            "notes": "Closed loop re-enters via s042→s021; death at s030",
+            "notes": "1-goblin damage continue s042→s022 (slideId-resolved; stale label was Slide 21); death at s030",
         }
     ]
     for island in islands:
@@ -528,7 +528,7 @@ def build_all(
     tier = path_report["tierA"]
     print(
         f"TierA reachable={tier['reachableCount']} baselineMatch={tier['matchesStartBaseline']} "
-        f"death={tier['deathReachable']} loop042to021={tier['loopEdge042to021']}"
+        f"death={tier['deathReachable']} loop042to022={tier['loopEdge042to022']}"
     )
     print(
         f"chapters={chapter_map['summary']['chapterCount']} "

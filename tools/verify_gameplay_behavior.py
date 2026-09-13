@@ -72,8 +72,9 @@ def main() -> None:
     residual_selfs = [
         h for h in hotspots if h.get("residualStatus") == "accepted_source_self"
     ]
-    # Combat residual selfs are clickable (PPT self-hyperlink reload).
-    # Non-combat hub image residual selfs stay non-clickable when a leave exists.
+    # After DocSummary slideId resolution, stale "Slide N" self-labels resolve away;
+    # zero accepted_source_self is expected (and good). Keep the clickable policy check
+    # if any residual selfs remain.
     residual_clickable = [h for h in residual_selfs if h.get("clickable")]
     residual_reload = [
         h for h in residual_clickable if h.get("behaviorStatus") == "residual_self_reload"
@@ -86,8 +87,6 @@ def main() -> None:
             f"non-combat residual selfs must be non-clickable when slide has leave paths: "
             f"{[(h.get('id'), h.get('behaviorStatus')) for h in residual_bad[:5]]}"
         )
-    if not residual_reload:
-        fail("expected clickable residual_self_reload combat options (e.g. s015 flee)")
     # Navigable hyperlinks (non-self or promoted) + clickable media
     clickable_nav = [
         h
@@ -110,8 +109,8 @@ def main() -> None:
         in ("unresolved_media", "documented_unresolved_media", "documented_zero_area_media")
     ):
         fail("unresolved/zero-area media actions must not be clickable")
-    if len(residual_selfs) < 5:
-        fail(f"expected >=5 accepted residual selfs (combat+image), found {len(residual_selfs)}")
+    if residual_selfs:
+        print(f"note: {len(residual_selfs)} residual selfs remain after slideId resolve")
 
     # Promoted noops must keep provenance
     promoted_noops = [

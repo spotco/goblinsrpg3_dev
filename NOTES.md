@@ -1,5 +1,27 @@
 # Maintenance notes
 
+## 2026-09-13 DocSummary slideId hyperlink resolve (overturns "irreducible" combat)
+
+**Misread:** ExHyperlink CString `"Slide N"` is a *stale friendly name*. Real destinations
+live in `\x05DocumentSummaryInformation` as UTF-16 `slideId,staleNum,Slide staleNum`,
+paired 1:1 with ExHyperlink order, mapped through SlideListWithText `slideId` →
+presentation order. 75/194 labels were stale.
+
+**First combat (matches modern PPT on .pps + pptx debug lens):**
+- Attack 15→**19** (Felled)→25 (x2 Attacks)→21 (×2 menu) — one fewer goblin
+- Flee 15→**17** (CAN'T ESCAPE)→23 (x3 Attacks)→24 (×3 menu) — same count
+- Boredom auto 15→16 still authored (asset-013 ×2); narrative "fled" ≠ Attack kill
+
+**Also fixed by same resolve:** s002 start→3; s042→22 (not 21); s046→47 native (no
+combat_all_self promote); start reachability 29→**193**; sealed islands → 0.
+
+**Transitions:** CSS remapped SSSlideInfoAtom types to OOXML names used in deck:
+3=checker, 11=zoom, 21=comb, 22=newsflash (s015), 23=fade, 27=circle. Prior CSS
+wrongly mapped 22→wipe / 11→push.
+
+**Policy:** still no target overrides / invent-bridges — this is extract fidelity.
+
+
 ## Agent / Grok Bot workflow (enforced)
 
 - Default work happens on the agent cloud computer (`/workspace/goblinsrpg3_dev`), not the user's local PC, unless the user explicitly asks for local-machine work.

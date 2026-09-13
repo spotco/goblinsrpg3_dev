@@ -139,28 +139,36 @@ button:focus-visible {
   animation: slide-fade-in var(--transition-duration, 400ms) ease-out both;
 }
 
-.stage.is-transitioning.transition-effect-22 .layers,
-.stage.is-transitioning.transition-effect-22 .screen {
-  animation-name: slide-wipe-horizontal;
+/* SSSlideInfoAtom effectType → OOXML names used in this deck:
+   3=checker, 11=zoom, 21=comb, 22=newsflash, 23=fade, 27=circle */
+.stage.is-transitioning.transition-effect-3 .layers,
+.stage.is-transitioning.transition-effect-3 .screen {
+  animation-name: slide-checker-in;
+}
+
+.stage.is-transitioning.transition-effect-11 .layers,
+.stage.is-transitioning.transition-effect-11 .screen {
+  animation-name: slide-zoom-in;
 }
 
 .stage.is-transitioning.transition-effect-21 .layers,
-.stage.is-transitioning.transition-effect-21 .screen,
-.stage.is-transitioning.transition-effect-27 .layers,
-.stage.is-transitioning.transition-effect-27 .screen {
-  animation-name: slide-wipe-vertical;
+.stage.is-transitioning.transition-effect-21 .screen {
+  animation-name: slide-comb-in;
 }
 
-.stage.is-transitioning.transition-effect-3 .layers,
-.stage.is-transitioning.transition-effect-3 .screen,
-.stage.is-transitioning.transition-effect-11 .layers,
-.stage.is-transitioning.transition-effect-11 .screen {
-  animation-name: slide-push-in;
+.stage.is-transitioning.transition-effect-22 .layers,
+.stage.is-transitioning.transition-effect-22 .screen {
+  animation-name: slide-newsflash-in;
 }
 
 .stage.is-transitioning.transition-effect-23 .layers,
 .stage.is-transitioning.transition-effect-23 .screen {
-  animation-name: slide-dissolve-in;
+  animation-name: slide-fade-in;
+}
+
+.stage.is-transitioning.transition-effect-27 .layers,
+.stage.is-transitioning.transition-effect-27 .screen {
+  animation-name: slide-circle-in;
 }
 
 @keyframes slide-fade-in {
@@ -173,63 +181,101 @@ button:focus-visible {
   }
 }
 
-@keyframes slide-wipe-horizontal {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes slide-wipe-vertical {
-  from {
-    clip-path: inset(100% 0 0 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes slide-push-in {
-  from {
-    opacity: 0;
-    transform: translateX(4%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-dissolve-in {
+@keyframes slide-newsflash-in {
   0% {
     opacity: 0;
-    filter: contrast(180%);
+    transform: scale(0.35) rotate(-12deg);
   }
 
-  50% {
-    opacity: 0.65;
+  55% {
+    opacity: 1;
+    transform: scale(1.08) rotate(3deg);
   }
 
   100% {
     opacity: 1;
-    filter: contrast(100%);
+    transform: scale(1) rotate(0deg);
   }
 }
 
-/* effectDirection reverses wipe geometry only — do NOT reverse fade/push/dissolve
-   or fill-mode leaves #layers at opacity 0 (visible as blank stage / missing captions). */
-.stage.is-transitioning.transition-direction-1.transition-effect-22 .layers,
-.stage.is-transitioning.transition-direction-1.transition-effect-22 .screen,
+@keyframes slide-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-circle-in {
+  from {
+    clip-path: circle(0% at 50% 50%);
+  }
+
+  to {
+    clip-path: circle(75% at 50% 50%);
+  }
+}
+
+@keyframes slide-comb-in {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 0.85;
+  }
+
+  50% {
+    clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-checker-in {
+  0% {
+    opacity: 0;
+    filter: contrast(200%) brightness(1.25);
+    transform: scale(1.02);
+  }
+
+  40% {
+    opacity: 0.55;
+    filter: contrast(140%);
+  }
+
+  100% {
+    opacity: 1;
+    filter: contrast(100%) brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* Do not reverse fade/newsflash/zoom with animation-direction — fill-mode can leave
+   #layers at opacity 0 (blank stage). Directional flips are baked into comb only. */
 .stage.is-transitioning.transition-direction-1.transition-effect-21 .layers,
-.stage.is-transitioning.transition-direction-1.transition-effect-21 .screen,
-.stage.is-transitioning.transition-direction-1.transition-effect-27 .layers,
-.stage.is-transitioning.transition-direction-1.transition-effect-27 .screen {
-  animation-direction: reverse;
+.stage.is-transitioning.transition-direction-1.transition-effect-21 .screen {
+  animation-name: slide-comb-in-vertical;
+}
+
+@keyframes slide-comb-in-vertical {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0.85;
+  }
+
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 0 45%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
 }
 
 .layer {

@@ -1870,6 +1870,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -1897,9 +1898,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 2,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 3,
           "shapeText": "Click here to start",
           "bounds": {
             "raw": [
@@ -2255,6 +2255,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -2615,6 +2616,7 @@
         "soundRef": 0,
         "effectDirection": 1,
         "effectType": 3,
+        "effectName": "checker",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -2939,6 +2941,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -3301,6 +3304,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -3487,6 +3491,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -3992,6 +3997,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -4266,6 +4272,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -4293,9 +4300,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "sole_image_self_to_next",
-          "originalTargetSlide": 9,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 10,
           "bounds": {
             "raw": [
               2064,
@@ -4735,6 +4741,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -4793,9 +4800,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 10,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 11,
           "shapeText": "Click here to continue",
           "bounds": {
             "raw": [
@@ -5159,6 +5165,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -5184,9 +5191,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "sole_image_self_to_next",
-          "originalTargetSlide": 11,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 12,
           "bounds": {
             "raw": [
               2112,
@@ -5362,6 +5368,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -5729,6 +5736,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -6013,6 +6021,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -6823,6 +6832,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -6843,7 +6853,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 62,
-          "targetSlide": 18,
+          "targetSlide": 19,
           "targetLabel": "Slide 18",
           "flagsHex": "079f0d30",
           "label": "Slide 18",
@@ -6851,7 +6861,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 18,
+          "originalTargetSlide": 19,
           "shapeText": "-Attack",
           "bounds": {
             "raw": [
@@ -6879,16 +6889,15 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 46,
-          "targetSlide": 15,
+          "targetSlide": 17,
           "targetLabel": "Slide 15",
           "flagsHex": "079f0d30",
           "label": "Slide 15",
           "enabled": true,
           "clickable": true,
-          "behaviorStatus": "residual_self_reload",
-          "resolveMethod": "confirmed_self_combat",
-          "originalTargetSlide": 15,
-          "binarySelfLink": true,
+          "behaviorStatus": "navigation",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 17,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -6907,10 +6916,7 @@
               5136,
               3303
             ]
-          },
-          "residualStatus": "accepted_source_self",
-          "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
+          }
         }
       ],
       "advancement": {
@@ -7630,6 +7636,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 22,
+        "effectName": "newsflash",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -7650,7 +7657,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 146,
-          "targetSlide": 32,
+          "targetSlide": 33,
           "targetLabel": "Slide 32",
           "flagsHex": "079f0d30",
           "label": "Slide 32",
@@ -7658,7 +7665,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 32,
+          "originalTargetSlide": 33,
           "shapeText": "-Attack",
           "bounds": {
             "raw": [
@@ -7686,7 +7693,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 191,
-          "targetSlide": 17,
+          "targetSlide": 18,
           "targetLabel": "Slide 17",
           "flagsHex": "079f0d30",
           "label": "Slide 17",
@@ -7694,7 +7701,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 17,
+          "originalTargetSlide": 18,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -8381,6 +8388,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -8399,7 +8407,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 77,
-          "targetSlide": 22,
+          "targetSlide": 23,
           "targetLabel": "Slide 22",
           "flagsHex": "079f0d30",
           "label": "Slide 22",
@@ -8407,7 +8415,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 22,
+          "originalTargetSlide": 23,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -8910,6 +8918,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -8928,7 +8937,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 92,
-          "targetSlide": 24,
+          "targetSlide": 25,
           "targetLabel": "Slide 24",
           "flagsHex": "079f0d30",
           "label": "Slide 24",
@@ -8936,7 +8945,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 24,
+          "originalTargetSlide": 25,
           "shapeText": "Click here  to continue\u2026",
           "bounds": {
             "raw": [
@@ -9489,6 +9498,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -9507,7 +9517,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 84,
-          "targetSlide": 24,
+          "targetSlide": 25,
           "targetLabel": "Slide 24",
           "flagsHex": "079f0d30",
           "label": "Slide 24",
@@ -9515,7 +9525,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 24,
+          "originalTargetSlide": 25,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -10018,6 +10028,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -10036,7 +10047,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 118,
-          "targetSlide": 25,
+          "targetSlide": 26,
           "targetLabel": "Slide 25",
           "flagsHex": "079f0d30",
           "label": "Slide 25",
@@ -10044,7 +10055,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 25,
+          "originalTargetSlide": 26,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -10547,6 +10558,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -10565,7 +10577,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 67,
-          "targetSlide": 19,
+          "targetSlide": 20,
           "targetLabel": "Slide 19",
           "flagsHex": "079f0d30",
           "label": "Slide 19",
@@ -10573,7 +10585,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 19,
+          "originalTargetSlide": 20,
           "shapeText": "-Attack",
           "bounds": {
             "raw": [
@@ -10601,7 +10613,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 68,
-          "targetSlide": 17,
+          "targetSlide": 18,
           "targetLabel": "Slide 17",
           "flagsHex": "079f0d30",
           "label": "Slide 17",
@@ -10609,7 +10621,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 17,
+          "originalTargetSlide": 18,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -11208,6 +11220,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -11226,7 +11239,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 154,
-          "targetSlide": 34,
+          "targetSlide": 35,
           "targetLabel": "Slide 34",
           "flagsHex": "079f0d30",
           "label": "Slide 34",
@@ -11234,7 +11247,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 34,
+          "originalTargetSlide": 35,
           "shapeText": "-Attack",
           "bounds": {
             "raw": [
@@ -11262,7 +11275,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 190,
-          "targetSlide": 36,
+          "targetSlide": 37,
           "targetLabel": "Slide 36",
           "flagsHex": "079f0d30",
           "label": "Slide 36",
@@ -11270,7 +11283,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 36,
+          "originalTargetSlide": 37,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -11819,6 +11832,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -12436,6 +12450,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -12454,7 +12469,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 138,
-          "targetSlide": 31,
+          "targetSlide": 32,
           "targetLabel": "Slide 31",
           "flagsHex": "079f0d30",
           "label": "Slide 31",
@@ -12462,7 +12477,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 31,
+          "originalTargetSlide": 32,
           "shapeText": "-Attack",
           "bounds": {
             "raw": [
@@ -12490,7 +12505,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 139,
-          "targetSlide": 31,
+          "targetSlide": 32,
           "targetLabel": "Slide 31",
           "flagsHex": "079f0d30",
           "label": "Slide 31",
@@ -12498,7 +12513,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 31,
+          "originalTargetSlide": 32,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -13235,6 +13250,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -13253,7 +13269,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 132,
-          "targetSlide": 20,
+          "targetSlide": 21,
           "targetLabel": "Slide 20",
           "flagsHex": "079f0d30",
           "label": "Slide 20",
@@ -13261,7 +13277,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 20,
+          "originalTargetSlide": 21,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -13802,6 +13818,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -13827,9 +13844,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 26,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 27,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -14320,6 +14336,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -14338,7 +14355,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 157,
-          "targetSlide": 34,
+          "targetSlide": 35,
           "targetLabel": "Slide 34",
           "flagsHex": "079f0d30",
           "label": "Slide 34",
@@ -14346,7 +14363,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 34,
+          "originalTargetSlide": 35,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -14374,16 +14391,15 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 122,
-          "targetSlide": 27,
+          "targetSlide": 28,
           "targetLabel": "Slide 27",
           "flagsHex": "079f0d30",
           "label": "Slide 27",
           "enabled": true,
           "clickable": true,
-          "behaviorStatus": "residual_self_reload",
-          "resolveMethod": "confirmed_self_combat",
-          "originalTargetSlide": 27,
-          "binarySelfLink": true,
+          "behaviorStatus": "navigation",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 28,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -14402,10 +14418,7 @@
               5280,
               3351
             ]
-          },
-          "residualStatus": "accepted_source_self",
-          "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
+          }
         }
       ],
       "advancement": {
@@ -14847,6 +14860,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -14872,9 +14886,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 28,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 29,
           "shapeText": "Click here to continue\u2026.",
           "bounds": {
             "raw": [
@@ -15327,6 +15340,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -15352,9 +15366,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 29,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 30,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -15968,6 +15981,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -16426,6 +16440,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -16444,7 +16459,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 128,
-          "targetSlide": 29,
+          "targetSlide": 30,
           "targetLabel": "Slide 29",
           "flagsHex": "079f0d30",
           "label": "Slide 29",
@@ -16452,7 +16467,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 29,
+          "originalTargetSlide": 30,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -17043,6 +17058,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -17061,7 +17077,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 137,
-          "targetSlide": 29,
+          "targetSlide": 30,
           "targetLabel": "Slide 29",
           "flagsHex": "079f0d30",
           "label": "Slide 29",
@@ -17069,7 +17085,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 29,
+          "originalTargetSlide": 30,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -17610,6 +17626,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -17628,7 +17645,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 196,
-          "targetSlide": 37,
+          "targetSlide": 38,
           "targetLabel": "Slide 37",
           "flagsHex": "079f0d30",
           "label": "Slide 37",
@@ -17636,7 +17653,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 37,
+          "originalTargetSlide": 38,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -17664,7 +17681,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 197,
-          "targetSlide": 37,
+          "targetSlide": 38,
           "targetLabel": "Slide 37",
           "flagsHex": "079f0d30",
           "label": "Slide 37",
@@ -17672,7 +17689,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 37,
+          "originalTargetSlide": 38,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -18191,6 +18208,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -18209,7 +18227,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 150,
-          "targetSlide": 21,
+          "targetSlide": 22,
           "targetLabel": "Slide 21",
           "flagsHex": "079f0d30",
           "label": "Slide 21",
@@ -18217,7 +18235,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 21,
+          "originalTargetSlide": 22,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -18708,6 +18726,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -18733,9 +18752,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 35,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 36,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -19238,6 +19256,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -19289,7 +19308,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 337,
-          "targetSlide": 42,
+          "targetSlide": 43,
           "targetLabel": "Slide 42",
           "flagsHex": "079f0d30",
           "label": "Slide 42",
@@ -19297,7 +19316,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 42,
+          "originalTargetSlide": 43,
           "shapeText": "Click here to continue\u2026.",
           "bounds": {
             "raw": [
@@ -20093,6 +20112,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -20111,7 +20131,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 189,
-          "targetSlide": 28,
+          "targetSlide": 29,
           "targetLabel": "Slide 28",
           "flagsHex": "079f0d30",
           "label": "Slide 28",
@@ -20119,7 +20139,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 28,
+          "originalTargetSlide": 29,
           "shapeText": "Click here to continue\u2026.",
           "bounds": {
             "raw": [
@@ -20572,6 +20592,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -20597,9 +20618,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 38,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 39,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -21090,6 +21110,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -21108,16 +21129,15 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 204,
-          "targetSlide": 39,
+          "targetSlide": 40,
           "targetLabel": "Slide 39",
           "flagsHex": "079f0d30",
           "label": "Slide 39",
           "enabled": true,
           "clickable": true,
-          "behaviorStatus": "residual_self_reload",
-          "resolveMethod": "confirmed_self_combat",
-          "originalTargetSlide": 39,
-          "binarySelfLink": true,
+          "behaviorStatus": "navigation",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 40,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -21136,10 +21156,7 @@
               5472,
               3063
             ]
-          },
-          "residualStatus": "accepted_source_self",
-          "residualKind": "partial_combat_self",
-          "resolveRationale": "Binary ExHyperlink labels this combat option as this slide. Clicking reloads the current slide (PPT self-hyperlink) \u2014 do not invent flee/attack targets. Other options or auto-advance still provide leave paths."
+          }
         },
         {
           "id": "s039-a587711",
@@ -21148,7 +21165,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 209,
-          "targetSlide": 40,
+          "targetSlide": 41,
           "targetLabel": "Slide 40",
           "flagsHex": "079f0d30",
           "label": "Slide 40",
@@ -21156,7 +21173,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 40,
+          "originalTargetSlide": 41,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -21617,6 +21634,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -21635,7 +21653,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 206,
-          "targetSlide": 35,
+          "targetSlide": 36,
           "targetLabel": "Slide 35",
           "flagsHex": "079f0d30",
           "label": "Slide 35",
@@ -21643,7 +21661,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 35,
+          "originalTargetSlide": 36,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -22146,6 +22164,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -22171,9 +22190,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 41,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 42,
           "shapeText": "Click here to continue\u2026.",
           "bounds": {
             "raw": [
@@ -22626,6 +22644,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -22644,7 +22663,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 213,
-          "targetSlide": 21,
+          "targetSlide": 22,
           "targetLabel": "Slide 21",
           "flagsHex": "079f0d30",
           "label": "Slide 21",
@@ -22652,7 +22671,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 21,
+          "originalTargetSlide": 22,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -23143,6 +23162,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -23727,6 +23747,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -23995,6 +24016,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -24134,6 +24156,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -24161,10 +24184,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "combat_all_self_to_next_outcome",
-          "originalTargetSlide": 46,
-          "binarySelfLink": true,
-          "resolveRationale": "Binary ExHyperlink labels every combat option as this slide; no non-self leave path and no alternate outcome slides in the file. Next sequential slide is the authored fight outcome (e.g. Ubergoblin death cutscene). Partial combat selfs on other slides are not bulk-promoted.",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 47,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -24199,10 +24220,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "combat_all_self_to_next_outcome",
-          "originalTargetSlide": 46,
-          "binarySelfLink": true,
-          "resolveRationale": "Binary ExHyperlink labels every combat option as this slide; no non-self leave path and no alternate outcome slides in the file. Next sequential slide is the authored fight outcome (e.g. Ubergoblin death cutscene). Partial combat selfs on other slides are not bulk-promoted.",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 47,
           "shapeText": "-LIMIT",
           "bounds": {
             "raw": [
@@ -24237,10 +24256,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "combat_all_self_to_next_outcome",
-          "originalTargetSlide": 46,
-          "binarySelfLink": true,
-          "resolveRationale": "Binary ExHyperlink labels every combat option as this slide; no non-self leave path and no alternate outcome slides in the file. Next sequential slide is the authored fight outcome (e.g. Ubergoblin death cutscene). Partial combat selfs on other slides are not bulk-promoted.",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 47,
           "shapeText": "-flee",
           "bounds": {
             "raw": [
@@ -24938,6 +24955,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 22,
+        "effectName": "newsflash",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -25448,6 +25466,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -25941,6 +25960,7 @@
         "soundRef": 0,
         "effectDirection": 1,
         "effectType": 11,
+        "effectName": "zoom",
         "flags": 1,
         "flagNames": [
           "manualAdvance"
@@ -25968,9 +25988,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "sole_image_self_to_next",
-          "originalTargetSlide": 49,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 50,
           "bounds": {
             "raw": [
               0,
@@ -26360,6 +26379,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 11,
+        "effectName": "zoom",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -26378,16 +26398,15 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 567,
-          "targetSlide": 50,
+          "targetSlide": 51,
           "targetLabel": "Slide 50",
           "flagsHex": "079f0d30",
           "label": "Slide 50",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
-          "resolveMethod": "confirmed_self_label_match",
-          "originalTargetSlide": 50,
-          "binarySelfLink": true,
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 51,
           "bounds": {
             "raw": [
               3408,
@@ -26405,10 +26424,7 @@
               4992,
               3648
             ]
-          },
-          "residualStatus": "accepted_source_self",
-          "residualKind": "hub_image_self",
-          "resolveRationale": "Binary self-hyperlink on a multi-exit hub (no shape text). Other hotspots navigate. Accepted residual \u2014 left non-clickable."
+          }
         },
         {
           "id": "s050-a634137",
@@ -26417,7 +26433,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 624,
-          "targetSlide": 51,
+          "targetSlide": 52,
           "targetLabel": "Slide 51",
           "flagsHex": "079f0d30",
           "label": "Slide 51",
@@ -26425,7 +26441,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 51,
+          "originalTargetSlide": 52,
           "bounds": {
             "raw": [
               192,
@@ -26452,7 +26468,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 635,
-          "targetSlide": 54,
+          "targetSlide": 55,
           "targetLabel": "Slide 54",
           "flagsHex": "079f0d30",
           "label": "Slide 54",
@@ -26460,7 +26476,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 54,
+          "originalTargetSlide": 55,
           "bounds": {
             "raw": [
               192,
@@ -26796,6 +26812,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -26814,7 +26831,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 0,
-          "targetSlide": 49,
+          "targetSlide": 50,
           "targetLabel": null,
           "flagsHex": "079f0d30",
           "label": "Click here to continue",
@@ -26851,7 +26868,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 574,
-          "targetSlide": 49,
+          "targetSlide": 50,
           "targetLabel": "Slide 49",
           "flagsHex": "079f0d30",
           "label": "Slide 49",
@@ -26859,7 +26876,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 49,
+          "originalTargetSlide": 50,
           "shapeText": "Click here to continue",
           "bounds": {
             "raw": [
@@ -27253,6 +27270,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -27271,7 +27289,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 626,
-          "targetSlide": 49,
+          "targetSlide": 50,
           "targetLabel": "Slide 49",
           "flagsHex": "079f0d30",
           "label": "Slide 49",
@@ -27279,7 +27297,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 49,
+          "originalTargetSlide": 50,
           "bounds": {
             "raw": [
               48,
@@ -27306,16 +27324,15 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 629,
-          "targetSlide": 52,
+          "targetSlide": 53,
           "targetLabel": "Slide 52",
           "flagsHex": "079f0d30",
           "label": "Slide 52",
-          "enabled": false,
-          "clickable": false,
-          "behaviorStatus": "documented_residual_self",
-          "resolveMethod": "confirmed_self_label_match",
-          "originalTargetSlide": 52,
-          "binarySelfLink": true,
+          "enabled": true,
+          "clickable": true,
+          "behaviorStatus": "navigation",
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 53,
           "bounds": {
             "raw": [
               288,
@@ -27333,10 +27350,7 @@
               2976,
               2208
             ]
-          },
-          "residualStatus": "accepted_source_self",
-          "residualKind": "hub_image_self",
-          "resolveRationale": "Binary self-hyperlink on a multi-exit hub (no shape text). Other hotspots navigate. Accepted residual \u2014 left non-clickable."
+          }
         },
         {
           "id": "s052-a637043",
@@ -27345,7 +27359,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 631,
-          "targetSlide": 53,
+          "targetSlide": 54,
           "targetLabel": "Slide 53",
           "flagsHex": "079f0d30",
           "label": "Slide 53",
@@ -27353,7 +27367,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 53,
+          "originalTargetSlide": 54,
           "bounds": {
             "raw": [
               912,
@@ -27642,6 +27656,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -27660,7 +27675,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 627,
-          "targetSlide": 51,
+          "targetSlide": 52,
           "targetLabel": "Slide 51",
           "flagsHex": "079f0d30",
           "label": "Slide 51",
@@ -27668,7 +27683,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 51,
+          "originalTargetSlide": 52,
           "shapeText": "OCCUPIED!!\r(back)",
           "bounds": {
             "raw": [
@@ -27915,6 +27930,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -27933,7 +27949,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 632,
-          "targetSlide": 51,
+          "targetSlide": 52,
           "targetLabel": "Slide 51",
           "flagsHex": "079f0d30",
           "label": "Slide 51",
@@ -27941,7 +27957,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 51,
+          "originalTargetSlide": 52,
           "shapeText": "(Back)",
           "bounds": {
             "raw": [
@@ -28432,6 +28448,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -28747,6 +28764,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -28774,9 +28792,8 @@
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "sole_image_self_to_next",
-          "originalTargetSlide": 56,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 57,
           "bounds": {
             "raw": [
               480,
@@ -29207,6 +29224,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -29814,6 +29832,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -30395,6 +30414,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -30613,6 +30633,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -31063,6 +31084,7 @@
         "soundRef": 0,
         "effectDirection": 1,
         "effectType": 21,
+        "effectName": "comb",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -31380,6 +31402,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -31654,6 +31677,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -31840,6 +31864,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -32067,6 +32092,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 27,
+        "effectName": "circle",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -32087,7 +32113,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 923,
-          "targetSlide": 64,
+          "targetSlide": 66,
           "targetLabel": "Slide 64",
           "flagsHex": "079f0d30",
           "label": "Slide 64",
@@ -32095,7 +32121,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 64,
+          "originalTargetSlide": 66,
           "bounds": {
             "raw": [
               2400,
@@ -32399,6 +32425,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -32536,6 +32563,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -32662,7 +32690,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 1111,
-          "targetSlide": 69,
+          "targetSlide": 70,
           "targetLabel": "Slide 69",
           "flagsHex": "079f0d30",
           "label": "Slide 69",
@@ -32670,7 +32698,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 69,
+          "originalTargetSlide": 70,
           "bounds": {
             "raw": [
               1340,
@@ -33163,6 +33191,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -33347,6 +33376,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -33878,6 +33908,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -34165,6 +34196,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -34452,6 +34484,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -34884,6 +34917,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -35189,6 +35223,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -35615,6 +35650,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -35752,6 +35788,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -35891,6 +35928,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -36030,6 +36068,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -36169,6 +36208,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -36879,6 +36919,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 22,
+        "effectName": "newsflash",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -37825,6 +37866,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -38543,6 +38585,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -39060,6 +39103,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -39589,6 +39633,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -39823,6 +39868,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -40154,6 +40200,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -40635,6 +40682,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -41343,6 +41391,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -41924,6 +41973,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -42255,6 +42305,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -42736,6 +42787,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -42873,6 +42925,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -43583,6 +43636,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 22,
+        "effectName": "newsflash",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -43817,6 +43871,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -44381,6 +44436,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -44998,6 +45054,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -45717,6 +45774,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -46808,6 +46866,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -46945,6 +47004,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -47187,6 +47247,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -47324,6 +47385,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -47478,6 +47540,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -47998,6 +48061,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -48381,6 +48445,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -49007,6 +49072,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -49390,6 +49456,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -49630,6 +49697,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -50413,6 +50481,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -51196,6 +51265,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -51829,6 +51899,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -52662,6 +52733,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -53008,6 +53080,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -53100,7 +53173,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3445,
-          "targetSlide": 118,
+          "targetSlide": 117,
           "targetLabel": "Slide 118",
           "flagsHex": "079f0d30",
           "label": "Slide 118",
@@ -53108,7 +53181,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 118,
+          "originalTargetSlide": 117,
           "shapeText": "-limit",
           "bounds": {
             "raw": [
@@ -53812,6 +53885,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 22,
+        "effectName": "newsflash",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -53902,7 +53976,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3446,
-          "targetSlide": 118,
+          "targetSlide": 117,
           "targetLabel": "Slide 118",
           "flagsHex": "079f0d30",
           "label": "Slide 118",
@@ -53910,7 +53984,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 118,
+          "originalTargetSlide": 117,
           "shapeText": "-limit",
           "bounds": {
             "raw": [
@@ -54543,6 +54617,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -55271,6 +55346,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -55743,6 +55819,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -55763,7 +55840,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3452,
-          "targetSlide": 120,
+          "targetSlide": 119,
           "targetLabel": "Slide 120",
           "flagsHex": "079f0d30",
           "label": "Slide 120",
@@ -55771,7 +55848,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 120,
+          "originalTargetSlide": 119,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -56353,6 +56430,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -57341,6 +57419,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -57361,7 +57440,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3585,
-          "targetSlide": 121,
+          "targetSlide": 120,
           "targetLabel": "Slide 121",
           "flagsHex": "079f0d30",
           "label": "Slide 121",
@@ -57369,7 +57448,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 121,
+          "originalTargetSlide": 120,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
             "raw": [
@@ -57951,6 +58030,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -57969,7 +58049,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3586,
-          "targetSlide": 122,
+          "targetSlide": 121,
           "targetLabel": "Slide 122",
           "flagsHex": "079f0d30",
           "label": "Slide 122",
@@ -57977,7 +58057,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 122,
+          "originalTargetSlide": 121,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -58005,7 +58085,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3771,
-          "targetSlide": 145,
+          "targetSlide": 146,
           "targetLabel": "Slide 145",
           "flagsHex": "079f0d30",
           "label": "Slide 145",
@@ -58013,7 +58093,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 145,
+          "originalTargetSlide": 146,
           "shapeText": "-limit",
           "bounds": {
             "raw": [
@@ -58041,7 +58121,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3761,
-          "targetSlide": 141,
+          "targetSlide": 140,
           "targetLabel": "Slide 141",
           "flagsHex": "079f0d30",
           "label": "Slide 141",
@@ -58049,7 +58129,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 141,
+          "originalTargetSlide": 140,
           "shapeText": "-magic",
           "bounds": {
             "raw": [
@@ -58609,6 +58689,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -58627,7 +58708,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3605,
-          "targetSlide": 136,
+          "targetSlide": 138,
           "targetLabel": "Slide 136",
           "flagsHex": "079f0d30",
           "label": "Slide 136",
@@ -58635,7 +58716,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 136,
+          "originalTargetSlide": 138,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -58663,7 +58744,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3600,
-          "targetSlide": 131,
+          "targetSlide": 130,
           "targetLabel": "Slide 131",
           "flagsHex": "079f0d30",
           "label": "Slide 131",
@@ -58671,7 +58752,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 131,
+          "originalTargetSlide": 130,
           "shapeText": "-magic",
           "bounds": {
             "raw": [
@@ -59082,6 +59163,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -59554,6 +59636,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -60019,6 +60102,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -60039,7 +60123,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3593,
-          "targetSlide": 125,
+          "targetSlide": 124,
           "targetLabel": "Slide 125",
           "flagsHex": "079f0d30",
           "label": "Slide 125",
@@ -60047,7 +60131,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 125,
+          "originalTargetSlide": 124,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -60075,7 +60159,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3594,
-          "targetSlide": 127,
+          "targetSlide": 126,
           "targetLabel": "Slide 127",
           "flagsHex": "079f0d30",
           "label": "Slide 127",
@@ -60083,7 +60167,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 127,
+          "originalTargetSlide": 126,
           "shapeText": "-limit",
           "bounds": {
             "raw": [
@@ -60111,7 +60195,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3599,
-          "targetSlide": 129,
+          "targetSlide": 128,
           "targetLabel": "Slide 129",
           "flagsHex": "079f0d30",
           "label": "Slide 129",
@@ -60119,7 +60203,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 129,
+          "originalTargetSlide": 128,
           "shapeText": "-magic",
           "bounds": {
             "raw": [
@@ -60679,6 +60763,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -61151,6 +61236,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -61761,6 +61847,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -61779,7 +61866,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3595,
-          "targetSlide": 128,
+          "targetSlide": 127,
           "targetLabel": "Slide 128",
           "flagsHex": "079f0d30",
           "label": "Slide 128",
@@ -61787,7 +61874,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 128,
+          "originalTargetSlide": 127,
           "shapeText": "Click here to continue",
           "bounds": {
             "raw": [
@@ -62894,6 +62981,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -62912,7 +63000,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 4464,
-          "targetSlide": 171,
+          "targetSlide": 172,
           "targetLabel": "Slide 171",
           "flagsHex": "079f0d30",
           "label": "Slide 171",
@@ -62920,7 +63008,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 171,
+          "originalTargetSlide": 172,
           "bounds": {
             "raw": [
               0,
@@ -63472,6 +63560,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -64055,6 +64144,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -64665,6 +64755,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -65248,6 +65339,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -65713,6 +65805,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -65733,7 +65826,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3602,
-          "targetSlide": 134,
+          "targetSlide": 133,
           "targetLabel": "Slide 134",
           "flagsHex": "079f0d30",
           "label": "Slide 134",
@@ -65741,7 +65834,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 134,
+          "originalTargetSlide": 133,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -66132,6 +66225,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -66604,6 +66698,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -67214,6 +67309,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -67232,7 +67328,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3608,
-          "targetSlide": 139,
+          "targetSlide": 136,
           "targetLabel": "Slide 139",
           "flagsHex": "079f0d30",
           "label": "Slide 139",
@@ -67240,7 +67336,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 139,
+          "originalTargetSlide": 136,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -67631,6 +67727,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -67649,7 +67746,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3609,
-          "targetSlide": 128,
+          "targetSlide": 127,
           "targetLabel": "Slide 128",
           "flagsHex": "079f0d30",
           "label": "Slide 128",
@@ -67657,7 +67754,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 128,
+          "originalTargetSlide": 127,
           "shapeText": "Click here to continue",
           "bounds": {
             "raw": [
@@ -68336,6 +68433,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -68354,7 +68452,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3756,
-          "targetSlide": 139,
+          "targetSlide": 136,
           "targetLabel": "Slide 139",
           "flagsHex": "079f0d30",
           "label": "Slide 139",
@@ -68362,7 +68460,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 139,
+          "originalTargetSlide": 136,
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -68897,6 +68995,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -68915,16 +69014,15 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3759,
-          "targetSlide": 139,
+          "targetSlide": 137,
           "targetLabel": "Slide 138",
           "flagsHex": "079f0d30",
           "label": "Slide 138",
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "self_continue_to_next",
-          "originalTargetSlide": 138,
-          "binarySelfLink": true,
+          "resolveMethod": "binary_label",
+          "originalTargetSlide": 137,
           "shapeText": "Click here to continue",
           "bounds": {
             "raw": [
@@ -69515,6 +69613,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -69560,6 +69659,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -70143,6 +70243,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -70163,7 +70264,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3764,
-          "targetSlide": 143,
+          "targetSlide": 142,
           "targetLabel": "Slide 143",
           "flagsHex": "079f0d30",
           "label": "Slide 143",
@@ -70171,7 +70272,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 143,
+          "originalTargetSlide": 142,
           "shapeText": "Click here to continue",
           "bounds": {
             "raw": [
@@ -70753,6 +70854,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -70807,7 +70909,7 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 3769,
-          "targetSlide": 144,
+          "targetSlide": 143,
           "targetLabel": "Slide 144",
           "flagsHex": "079f0d30",
           "label": "Slide 144",
@@ -70815,7 +70917,7 @@
           "clickable": true,
           "behaviorStatus": "navigation",
           "resolveMethod": "binary_label",
-          "originalTargetSlide": 144,
+          "originalTargetSlide": 143,
           "shapeText": "-limit",
           "bounds": {
             "raw": [
@@ -71355,6 +71457,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -72343,6 +72446,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -72953,6 +73057,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -72998,6 +73103,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -73986,6 +74092,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -74596,6 +74703,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -74730,6 +74838,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -75193,6 +75302,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -75904,6 +76014,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -76376,6 +76487,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -76986,6 +77098,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -77676,6 +77789,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -78148,6 +78262,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -78750,6 +78865,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -79500,6 +79616,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -79972,6 +80089,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -80574,6 +80692,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -81324,6 +81443,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -81796,6 +81916,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -82406,6 +82527,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -83394,6 +83516,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -83996,6 +84119,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -84561,6 +84685,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -85266,6 +85391,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -85400,6 +85526,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -86388,6 +86515,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -86998,6 +87126,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -87415,6 +87544,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -88120,6 +88250,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -88254,6 +88385,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -88637,6 +88769,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -88910,6 +89043,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -89436,6 +89570,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -89709,6 +89844,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -89949,6 +90085,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -90189,6 +90326,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -90572,6 +90710,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -91098,6 +91237,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -91624,6 +91764,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -92007,6 +92148,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -92390,6 +92532,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -92806,6 +92949,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -92945,6 +93089,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -93043,6 +93188,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -93141,6 +93287,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -93239,6 +93386,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -93337,6 +93485,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -93523,6 +93672,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 23,
+        "effectName": "fade",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -94271,6 +94421,7 @@
         "soundRef": 0,
         "effectDirection": 0,
         "effectType": 22,
+        "effectName": "newsflash",
         "flags": 0,
         "flagNames": [],
         "speed": 0,
@@ -94505,6 +94656,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -94653,6 +94805,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -94996,6 +95149,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -95696,6 +95850,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -96075,6 +96230,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -96675,6 +96831,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -97135,6 +97292,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -97626,6 +97784,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -97812,6 +97971,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 1024,
         "flagNames": [
           "autoAdvance"
@@ -98093,6 +98253,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,
@@ -99376,6 +99537,7 @@
         "soundRef": 0,
         "effectDirection": 2,
         "effectType": 0,
+        "effectName": "cut",
         "flags": 0,
         "flagNames": [],
         "speed": 2,

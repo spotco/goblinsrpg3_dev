@@ -6179,972 +6179,1942 @@
     {
       "id": 1,
       "label": "Slide 2",
-      "record_offset": 76
+      "record_offset": 76,
+      "slideId": 257,
+      "labelSlideNumber": 2,
+      "target_slide": 3,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 13,
       "label": "Slide 9",
-      "record_offset": 118
+      "record_offset": 118,
+      "slideId": 264,
+      "labelSlideNumber": 9,
+      "target_slide": 10,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 24,
       "label": "Slide 10",
-      "record_offset": 160
+      "record_offset": 160,
+      "slideId": 265,
+      "labelSlideNumber": 10,
+      "target_slide": 11,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 26,
       "label": "Slide 11",
-      "record_offset": 204
+      "record_offset": 204,
+      "slideId": 266,
+      "labelSlideNumber": 11,
+      "target_slide": 12,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 46,
       "label": "Slide 15",
-      "record_offset": 288
+      "record_offset": 288,
+      "slideId": 270,
+      "labelSlideNumber": 15,
+      "target_slide": 17,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 62,
       "label": "Slide 18",
-      "record_offset": 372
+      "record_offset": 372,
+      "slideId": 273,
+      "labelSlideNumber": 18,
+      "target_slide": 19,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 67,
       "label": "Slide 19",
-      "record_offset": 416
+      "record_offset": 416,
+      "slideId": 274,
+      "labelSlideNumber": 19,
+      "target_slide": 20,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 68,
       "label": "Slide 17",
-      "record_offset": 460
+      "record_offset": 460,
+      "slideId": 272,
+      "labelSlideNumber": 17,
+      "target_slide": 18,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 77,
       "label": "Slide 22",
-      "record_offset": 504
+      "record_offset": 504,
+      "slideId": 277,
+      "labelSlideNumber": 22,
+      "target_slide": 23,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 81,
       "label": "Slide 24",
-      "record_offset": 548
+      "record_offset": 548,
+      "slideId": 279,
+      "labelSlideNumber": 24,
+      "target_slide": 24,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 84,
       "label": "Slide 24",
-      "record_offset": 592
+      "record_offset": 592,
+      "slideId": 280,
+      "labelSlideNumber": 24,
+      "target_slide": 25,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 92,
       "label": "Slide 24",
-      "record_offset": 636
+      "record_offset": 636,
+      "slideId": 280,
+      "labelSlideNumber": 24,
+      "target_slide": 25,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 118,
       "label": "Slide 25",
-      "record_offset": 680
+      "record_offset": 680,
+      "slideId": 281,
+      "labelSlideNumber": 25,
+      "target_slide": 26,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 120,
       "label": "Slide 26",
-      "record_offset": 724
+      "record_offset": 724,
+      "slideId": 282,
+      "labelSlideNumber": 26,
+      "target_slide": 27,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 121,
       "label": "Slide 28",
-      "record_offset": 768
+      "record_offset": 768,
+      "slideId": 284,
+      "labelSlideNumber": 28,
+      "target_slide": 29,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 122,
       "label": "Slide 27",
-      "record_offset": 812
+      "record_offset": 812,
+      "slideId": 283,
+      "labelSlideNumber": 27,
+      "target_slide": 28,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 123,
       "label": "Slide 29",
-      "record_offset": 856
+      "record_offset": 856,
+      "slideId": 285,
+      "labelSlideNumber": 29,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 128,
       "label": "Slide 29",
-      "record_offset": 900
+      "record_offset": 900,
+      "slideId": 285,
+      "labelSlideNumber": 29,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 132,
       "label": "Slide 20",
-      "record_offset": 944
+      "record_offset": 944,
+      "slideId": 275,
+      "labelSlideNumber": 20,
+      "target_slide": 21,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 137,
       "label": "Slide 29",
-      "record_offset": 988
+      "record_offset": 988,
+      "slideId": 285,
+      "labelSlideNumber": 29,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 138,
       "label": "Slide 31",
-      "record_offset": 1032
+      "record_offset": 1032,
+      "slideId": 287,
+      "labelSlideNumber": 31,
+      "target_slide": 32,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 139,
       "label": "Slide 31",
-      "record_offset": 1076
+      "record_offset": 1076,
+      "slideId": 287,
+      "labelSlideNumber": 31,
+      "target_slide": 32,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 146,
       "label": "Slide 32",
-      "record_offset": 1120
+      "record_offset": 1120,
+      "slideId": 288,
+      "labelSlideNumber": 32,
+      "target_slide": 33,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 150,
       "label": "Slide 21",
-      "record_offset": 1164
+      "record_offset": 1164,
+      "slideId": 276,
+      "labelSlideNumber": 21,
+      "target_slide": 22,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 154,
       "label": "Slide 34",
-      "record_offset": 1208
+      "record_offset": 1208,
+      "slideId": 290,
+      "labelSlideNumber": 34,
+      "target_slide": 35,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 156,
       "label": "Slide 35",
-      "record_offset": 1252
+      "record_offset": 1252,
+      "slideId": 291,
+      "labelSlideNumber": 35,
+      "target_slide": 36,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 157,
       "label": "Slide 34",
-      "record_offset": 1296
+      "record_offset": 1296,
+      "slideId": 290,
+      "labelSlideNumber": 34,
+      "target_slide": 35,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 189,
       "label": "Slide 28",
-      "record_offset": 1340
+      "record_offset": 1340,
+      "slideId": 284,
+      "labelSlideNumber": 28,
+      "target_slide": 29,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 190,
       "label": "Slide 36",
-      "record_offset": 1384
+      "record_offset": 1384,
+      "slideId": 292,
+      "labelSlideNumber": 36,
+      "target_slide": 37,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 191,
       "label": "Slide 17",
-      "record_offset": 1428
+      "record_offset": 1428,
+      "slideId": 272,
+      "labelSlideNumber": 17,
+      "target_slide": 18,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 196,
       "label": "Slide 37",
-      "record_offset": 1472
+      "record_offset": 1472,
+      "slideId": 293,
+      "labelSlideNumber": 37,
+      "target_slide": 38,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 197,
       "label": "Slide 37",
-      "record_offset": 1516
+      "record_offset": 1516,
+      "slideId": 293,
+      "labelSlideNumber": 37,
+      "target_slide": 38,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 202,
       "label": "Slide 38",
-      "record_offset": 1560
+      "record_offset": 1560,
+      "slideId": 294,
+      "labelSlideNumber": 38,
+      "target_slide": 39,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 204,
       "label": "Slide 39",
-      "record_offset": 1604
+      "record_offset": 1604,
+      "slideId": 295,
+      "labelSlideNumber": 39,
+      "target_slide": 40,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 206,
       "label": "Slide 35",
-      "record_offset": 1648
+      "record_offset": 1648,
+      "slideId": 291,
+      "labelSlideNumber": 35,
+      "target_slide": 36,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 209,
       "label": "Slide 40",
-      "record_offset": 1692
+      "record_offset": 1692,
+      "slideId": 296,
+      "labelSlideNumber": 40,
+      "target_slide": 41,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 211,
       "label": "Slide 41",
-      "record_offset": 1736
+      "record_offset": 1736,
+      "slideId": 297,
+      "labelSlideNumber": 41,
+      "target_slide": 42,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 213,
       "label": "Slide 21",
-      "record_offset": 1780
+      "record_offset": 1780,
+      "slideId": 276,
+      "labelSlideNumber": 21,
+      "target_slide": 22,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 337,
       "label": "Slide 42",
-      "record_offset": 1824
+      "record_offset": 1824,
+      "slideId": 298,
+      "labelSlideNumber": 42,
+      "target_slide": 43,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 381,
       "label": "Slide 46",
-      "record_offset": 1868
+      "record_offset": 1868,
+      "slideId": 302,
+      "labelSlideNumber": 46,
+      "target_slide": 47,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 382,
       "label": "Slide 46",
-      "record_offset": 1912
+      "record_offset": 1912,
+      "slideId": 302,
+      "labelSlideNumber": 46,
+      "target_slide": 47,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 383,
       "label": "Slide 46",
-      "record_offset": 1956
+      "record_offset": 1956,
+      "slideId": 302,
+      "labelSlideNumber": 46,
+      "target_slide": 47,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 565,
       "label": "Slide 49",
-      "record_offset": 2000
+      "record_offset": 2000,
+      "slideId": 305,
+      "labelSlideNumber": 49,
+      "target_slide": 50,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 567,
       "label": "Slide 50",
-      "record_offset": 2044
+      "record_offset": 2044,
+      "slideId": 306,
+      "labelSlideNumber": 50,
+      "target_slide": 51,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 574,
       "label": "Slide 49",
-      "record_offset": 2088
+      "record_offset": 2088,
+      "slideId": 305,
+      "labelSlideNumber": 49,
+      "target_slide": 50,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 624,
       "label": "Slide 51",
-      "record_offset": 2132
+      "record_offset": 2132,
+      "slideId": 307,
+      "labelSlideNumber": 51,
+      "target_slide": 52,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 626,
       "label": "Slide 49",
-      "record_offset": 2176
+      "record_offset": 2176,
+      "slideId": 305,
+      "labelSlideNumber": 49,
+      "target_slide": 50,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 627,
       "label": "Slide 51",
-      "record_offset": 2220
+      "record_offset": 2220,
+      "slideId": 307,
+      "labelSlideNumber": 51,
+      "target_slide": 52,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 629,
       "label": "Slide 52",
-      "record_offset": 2264
+      "record_offset": 2264,
+      "slideId": 308,
+      "labelSlideNumber": 52,
+      "target_slide": 53,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 631,
       "label": "Slide 53",
-      "record_offset": 2308
+      "record_offset": 2308,
+      "slideId": 309,
+      "labelSlideNumber": 53,
+      "target_slide": 54,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 632,
       "label": "Slide 51",
-      "record_offset": 2352
+      "record_offset": 2352,
+      "slideId": 307,
+      "labelSlideNumber": 51,
+      "target_slide": 52,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 635,
       "label": "Slide 54",
-      "record_offset": 2436
+      "record_offset": 2436,
+      "slideId": 310,
+      "labelSlideNumber": 54,
+      "target_slide": 55,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 749,
       "label": "Slide 56",
-      "record_offset": 2480
+      "record_offset": 2480,
+      "slideId": 312,
+      "labelSlideNumber": 56,
+      "target_slide": 57,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 923,
       "label": "Slide 64",
-      "record_offset": 2524
+      "record_offset": 2524,
+      "slideId": 320,
+      "labelSlideNumber": 64,
+      "target_slide": 66,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 1045,
       "label": "Slide 68",
-      "record_offset": 2568
+      "record_offset": 2568,
+      "slideId": 324,
+      "labelSlideNumber": 68,
+      "target_slide": 68,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1111,
       "label": "Slide 69",
-      "record_offset": 2612
+      "record_offset": 2612,
+      "slideId": 325,
+      "labelSlideNumber": 69,
+      "target_slide": 70,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 1118,
       "label": "Slide 67",
-      "record_offset": 2656
+      "record_offset": 2656,
+      "slideId": 323,
+      "labelSlideNumber": 67,
+      "target_slide": 67,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1124,
       "label": "Slide 69",
-      "record_offset": 2700
+      "record_offset": 2700,
+      "slideId": 326,
+      "labelSlideNumber": 69,
+      "target_slide": 69,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1128,
       "label": "Slide 71",
-      "record_offset": 2744
+      "record_offset": 2744,
+      "slideId": 327,
+      "labelSlideNumber": 71,
+      "target_slide": 71,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1130,
       "label": "Slide 72",
-      "record_offset": 2788
+      "record_offset": 2788,
+      "slideId": 328,
+      "labelSlideNumber": 72,
+      "target_slide": 72,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1137,
       "label": "Slide 72",
-      "record_offset": 2832
+      "record_offset": 2832,
+      "slideId": 328,
+      "labelSlideNumber": 72,
+      "target_slide": 72,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1139,
       "label": "Slide 69",
-      "record_offset": 2876
+      "record_offset": 2876,
+      "slideId": 326,
+      "labelSlideNumber": 69,
+      "target_slide": 69,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1141,
       "label": "Slide 73",
-      "record_offset": 2920
+      "record_offset": 2920,
+      "slideId": 329,
+      "labelSlideNumber": 73,
+      "target_slide": 73,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1142,
       "label": "Slide 72",
-      "record_offset": 2964
+      "record_offset": 2964,
+      "slideId": 328,
+      "labelSlideNumber": 72,
+      "target_slide": 72,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1145,
       "label": "Slide 74",
-      "record_offset": 3048
+      "record_offset": 3048,
+      "slideId": 330,
+      "labelSlideNumber": 74,
+      "target_slide": 74,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1146,
       "label": "Slide 72",
-      "record_offset": 3092
+      "record_offset": 3092,
+      "slideId": 328,
+      "labelSlideNumber": 72,
+      "target_slide": 72,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1219,
       "label": "Slide 75",
-      "record_offset": 3136
+      "record_offset": 3136,
+      "slideId": 331,
+      "labelSlideNumber": 75,
+      "target_slide": 75,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1220,
       "label": "Slide 75",
-      "record_offset": 3180
+      "record_offset": 3180,
+      "slideId": 331,
+      "labelSlideNumber": 75,
+      "target_slide": 75,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1222,
       "label": "Slide 75",
-      "record_offset": 3224
+      "record_offset": 3224,
+      "slideId": 331,
+      "labelSlideNumber": 75,
+      "target_slide": 75,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1223,
       "label": "Slide 75",
-      "record_offset": 3268
+      "record_offset": 3268,
+      "slideId": 331,
+      "labelSlideNumber": 75,
+      "target_slide": 75,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1229,
       "label": "Slide 77",
-      "record_offset": 3312
+      "record_offset": 3312,
+      "slideId": 333,
+      "labelSlideNumber": 77,
+      "target_slide": 77,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1458,
       "label": "Slide 80",
-      "record_offset": 3356
+      "record_offset": 3356,
+      "slideId": 336,
+      "labelSlideNumber": 80,
+      "target_slide": 80,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1613,
       "label": "Slide 82",
-      "record_offset": 3400
+      "record_offset": 3400,
+      "slideId": 338,
+      "labelSlideNumber": 82,
+      "target_slide": 82,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1770,
       "label": "Slide 83",
-      "record_offset": 3444
+      "record_offset": 3444,
+      "slideId": 339,
+      "labelSlideNumber": 83,
+      "target_slide": 83,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1771,
       "label": "Slide 84",
-      "record_offset": 3488
+      "record_offset": 3488,
+      "slideId": 340,
+      "labelSlideNumber": 84,
+      "target_slide": 84,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1772,
       "label": "Slide 85",
-      "record_offset": 3532
+      "record_offset": 3532,
+      "slideId": 341,
+      "labelSlideNumber": 85,
+      "target_slide": 85,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1854,
       "label": "Slide 87",
-      "record_offset": 3576
+      "record_offset": 3576,
+      "slideId": 343,
+      "labelSlideNumber": 87,
+      "target_slide": 87,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1855,
       "label": "Slide 80",
-      "record_offset": 3620
+      "record_offset": 3620,
+      "slideId": 336,
+      "labelSlideNumber": 80,
+      "target_slide": 80,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1856,
       "label": "Slide 82",
-      "record_offset": 3664
+      "record_offset": 3664,
+      "slideId": 338,
+      "labelSlideNumber": 82,
+      "target_slide": 82,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1857,
       "label": "Slide 88",
-      "record_offset": 3708
+      "record_offset": 3708,
+      "slideId": 344,
+      "labelSlideNumber": 88,
+      "target_slide": 88,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1859,
       "label": "Slide 89",
-      "record_offset": 3752
+      "record_offset": 3752,
+      "slideId": 345,
+      "labelSlideNumber": 89,
+      "target_slide": 89,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1860,
       "label": "Slide 89",
-      "record_offset": 3796
+      "record_offset": 3796,
+      "slideId": 345,
+      "labelSlideNumber": 89,
+      "target_slide": 89,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1863,
       "label": "Slide 30",
-      "record_offset": 3840
+      "record_offset": 3840,
+      "slideId": 285,
+      "labelSlideNumber": 30,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1869,
       "label": "Slide 91",
-      "record_offset": 3964
+      "record_offset": 3964,
+      "slideId": 347,
+      "labelSlideNumber": 91,
+      "target_slide": 91,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1876,
       "label": "Slide 93",
-      "record_offset": 4008
+      "record_offset": 4008,
+      "slideId": 349,
+      "labelSlideNumber": 93,
+      "target_slide": 93,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1969,
       "label": "Slide 94",
-      "record_offset": 4052
+      "record_offset": 4052,
+      "slideId": 351,
+      "labelSlideNumber": 94,
+      "target_slide": 94,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1971,
       "label": "Slide 95",
-      "record_offset": 4096
+      "record_offset": 4096,
+      "slideId": 352,
+      "labelSlideNumber": 95,
+      "target_slide": 95,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1972,
       "label": "Slide 95",
-      "record_offset": 4140
+      "record_offset": 4140,
+      "slideId": 352,
+      "labelSlideNumber": 95,
+      "target_slide": 95,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1974,
       "label": "Slide 96",
-      "record_offset": 4184
+      "record_offset": 4184,
+      "slideId": 353,
+      "labelSlideNumber": 96,
+      "target_slide": 96,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1975,
       "label": "Slide 97",
-      "record_offset": 4228
+      "record_offset": 4228,
+      "slideId": 354,
+      "labelSlideNumber": 97,
+      "target_slide": 97,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 1976,
       "label": "Slide 97",
-      "record_offset": 4272
+      "record_offset": 4272,
+      "slideId": 354,
+      "labelSlideNumber": 97,
+      "target_slide": 97,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2075,
       "label": "Slide 96",
-      "record_offset": 4316
+      "record_offset": 4316,
+      "slideId": 353,
+      "labelSlideNumber": 96,
+      "target_slide": 96,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2077,
       "label": "Slide 98",
-      "record_offset": 4400
+      "record_offset": 4400,
+      "slideId": 355,
+      "labelSlideNumber": 98,
+      "target_slide": 98,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2079,
       "label": "Slide 100",
-      "record_offset": 4444
+      "record_offset": 4444,
+      "slideId": 357,
+      "labelSlideNumber": 100,
+      "target_slide": 100,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2081,
       "label": "Slide 99",
-      "record_offset": 4490
+      "record_offset": 4490,
+      "slideId": 356,
+      "labelSlideNumber": 99,
+      "target_slide": 99,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2186,
       "label": "Slide 102",
-      "record_offset": 4534
+      "record_offset": 4534,
+      "slideId": 359,
+      "labelSlideNumber": 102,
+      "target_slide": 102,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2292,
       "label": "Slide 103",
-      "record_offset": 4580
+      "record_offset": 4580,
+      "slideId": 360,
+      "labelSlideNumber": 103,
+      "target_slide": 103,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2303,
       "label": "Slide 104",
-      "record_offset": 4626
+      "record_offset": 4626,
+      "slideId": 361,
+      "labelSlideNumber": 104,
+      "target_slide": 104,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2415,
       "label": "Slide 103",
-      "record_offset": 4672
+      "record_offset": 4672,
+      "slideId": 360,
+      "labelSlideNumber": 103,
+      "target_slide": 103,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2417,
       "label": "Slide 103",
-      "record_offset": 4718
+      "record_offset": 4718,
+      "slideId": 360,
+      "labelSlideNumber": 103,
+      "target_slide": 103,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2421,
       "label": "Slide 105",
-      "record_offset": 4764
+      "record_offset": 4764,
+      "slideId": 362,
+      "labelSlideNumber": 105,
+      "target_slide": 105,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2423,
       "label": "Slide 105",
-      "record_offset": 4810
+      "record_offset": 4810,
+      "slideId": 362,
+      "labelSlideNumber": 105,
+      "target_slide": 105,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2425,
       "label": "Slide 106",
-      "record_offset": 4856
+      "record_offset": 4856,
+      "slideId": 363,
+      "labelSlideNumber": 106,
+      "target_slide": 106,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2539,
       "label": "Slide 107",
-      "record_offset": 4902
+      "record_offset": 4902,
+      "slideId": 364,
+      "labelSlideNumber": 107,
+      "target_slide": 107,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2546,
       "label": "Slide 107",
-      "record_offset": 4948
+      "record_offset": 4948,
+      "slideId": 364,
+      "labelSlideNumber": 107,
+      "target_slide": 107,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2548,
       "label": "Slide 102",
-      "record_offset": 4994
+      "record_offset": 4994,
+      "slideId": 359,
+      "labelSlideNumber": 102,
+      "target_slide": 102,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2555,
       "label": "Slide 108",
-      "record_offset": 5040
+      "record_offset": 5040,
+      "slideId": 365,
+      "labelSlideNumber": 108,
+      "target_slide": 108,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2557,
       "label": "Slide 108",
-      "record_offset": 5086
+      "record_offset": 5086,
+      "slideId": 365,
+      "labelSlideNumber": 108,
+      "target_slide": 108,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2559,
       "label": "Slide 102",
-      "record_offset": 5132
+      "record_offset": 5132,
+      "slideId": 359,
+      "labelSlideNumber": 102,
+      "target_slide": 102,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2561,
       "label": "Slide 102",
-      "record_offset": 5178
+      "record_offset": 5178,
+      "slideId": 359,
+      "labelSlideNumber": 102,
+      "target_slide": 102,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2563,
       "label": "Slide 109",
-      "record_offset": 5224
+      "record_offset": 5224,
+      "slideId": 366,
+      "labelSlideNumber": 109,
+      "target_slide": 109,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2565,
       "label": "Slide 102",
-      "record_offset": 5270
+      "record_offset": 5270,
+      "slideId": 359,
+      "labelSlideNumber": 102,
+      "target_slide": 102,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2809,
       "label": "Slide 110",
-      "record_offset": 5316
+      "record_offset": 5316,
+      "slideId": 367,
+      "labelSlideNumber": 110,
+      "target_slide": 110,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 2933,
       "label": "Slide 102",
-      "record_offset": 5362
+      "record_offset": 5362,
+      "slideId": 359,
+      "labelSlideNumber": 102,
+      "target_slide": 102,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3058,
       "label": "Slide 111",
-      "record_offset": 5408
+      "record_offset": 5408,
+      "slideId": 368,
+      "labelSlideNumber": 111,
+      "target_slide": 111,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3307,
       "label": "Slide 113",
-      "record_offset": 5454
+      "record_offset": 5454,
+      "slideId": 370,
+      "labelSlideNumber": 113,
+      "target_slide": 113,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3308,
       "label": "Slide 114",
-      "record_offset": 5500
+      "record_offset": 5500,
+      "slideId": 371,
+      "labelSlideNumber": 114,
+      "target_slide": 114,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3309,
       "label": "Slide 114",
-      "record_offset": 5546
+      "record_offset": 5546,
+      "slideId": 371,
+      "labelSlideNumber": 114,
+      "target_slide": 114,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3310,
       "label": "Slide 115",
-      "record_offset": 5592
+      "record_offset": 5592,
+      "slideId": 372,
+      "labelSlideNumber": 115,
+      "target_slide": 115,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3311,
       "label": "Slide 115",
-      "record_offset": 5638
+      "record_offset": 5638,
+      "slideId": 372,
+      "labelSlideNumber": 115,
+      "target_slide": 115,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3445,
       "label": "Slide 118",
-      "record_offset": 5684
+      "record_offset": 5684,
+      "slideId": 375,
+      "labelSlideNumber": 118,
+      "target_slide": 117,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3446,
       "label": "Slide 118",
-      "record_offset": 5730
+      "record_offset": 5730,
+      "slideId": 375,
+      "labelSlideNumber": 118,
+      "target_slide": 117,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3452,
       "label": "Slide 120",
-      "record_offset": 5776
+      "record_offset": 5776,
+      "slideId": 377,
+      "labelSlideNumber": 120,
+      "target_slide": 119,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3585,
       "label": "Slide 121",
-      "record_offset": 5822
+      "record_offset": 5822,
+      "slideId": 378,
+      "labelSlideNumber": 121,
+      "target_slide": 120,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3586,
       "label": "Slide 122",
-      "record_offset": 5868
+      "record_offset": 5868,
+      "slideId": 379,
+      "labelSlideNumber": 122,
+      "target_slide": 121,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3592,
       "label": "Slide 30",
-      "record_offset": 5914
+      "record_offset": 5914,
+      "slideId": 285,
+      "labelSlideNumber": 30,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3593,
       "label": "Slide 125",
-      "record_offset": 5958
+      "record_offset": 5958,
+      "slideId": 382,
+      "labelSlideNumber": 125,
+      "target_slide": 124,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3594,
       "label": "Slide 127",
-      "record_offset": 6004
+      "record_offset": 6004,
+      "slideId": 384,
+      "labelSlideNumber": 127,
+      "target_slide": 126,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3595,
       "label": "Slide 128",
-      "record_offset": 6050
+      "record_offset": 6050,
+      "slideId": 385,
+      "labelSlideNumber": 128,
+      "target_slide": 127,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3598,
       "label": "Slide 30",
-      "record_offset": 6096
+      "record_offset": 6096,
+      "slideId": 285,
+      "labelSlideNumber": 30,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3599,
       "label": "Slide 129",
-      "record_offset": 6140
+      "record_offset": 6140,
+      "slideId": 386,
+      "labelSlideNumber": 129,
+      "target_slide": 128,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3600,
       "label": "Slide 131",
-      "record_offset": 6186
+      "record_offset": 6186,
+      "slideId": 388,
+      "labelSlideNumber": 131,
+      "target_slide": 130,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3601,
       "label": "Slide 30",
-      "record_offset": 6232
+      "record_offset": 6232,
+      "slideId": 285,
+      "labelSlideNumber": 30,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3602,
       "label": "Slide 134",
-      "record_offset": 6276
+      "record_offset": 6276,
+      "slideId": 391,
+      "labelSlideNumber": 134,
+      "target_slide": 133,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3605,
       "label": "Slide 136",
-      "record_offset": 6322
+      "record_offset": 6322,
+      "slideId": 393,
+      "labelSlideNumber": 136,
+      "target_slide": 138,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3608,
       "label": "Slide 139",
-      "record_offset": 6368
+      "record_offset": 6368,
+      "slideId": 396,
+      "labelSlideNumber": 139,
+      "target_slide": 136,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3609,
       "label": "Slide 128",
-      "record_offset": 6414
+      "record_offset": 6414,
+      "slideId": 385,
+      "labelSlideNumber": 128,
+      "target_slide": 127,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3756,
       "label": "Slide 139",
-      "record_offset": 6460
+      "record_offset": 6460,
+      "slideId": 396,
+      "labelSlideNumber": 139,
+      "target_slide": 136,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3759,
       "label": "Slide 138",
-      "record_offset": 6506
+      "record_offset": 6506,
+      "slideId": 397,
+      "labelSlideNumber": 138,
+      "target_slide": 137,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3760,
       "label": "Slide 128",
-      "record_offset": 6552
+      "record_offset": 6552,
+      "slideId": 386,
+      "labelSlideNumber": 128,
+      "target_slide": 128,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3761,
       "label": "Slide 141",
-      "record_offset": 6598
+      "record_offset": 6598,
+      "slideId": 398,
+      "labelSlideNumber": 141,
+      "target_slide": 140,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3764,
       "label": "Slide 143",
-      "record_offset": 6644
+      "record_offset": 6644,
+      "slideId": 401,
+      "labelSlideNumber": 143,
+      "target_slide": 142,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3767,
       "label": "Slide 133",
-      "record_offset": 6690
+      "record_offset": 6690,
+      "slideId": 391,
+      "labelSlideNumber": 133,
+      "target_slide": 133,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3769,
       "label": "Slide 144",
-      "record_offset": 6736
+      "record_offset": 6736,
+      "slideId": 402,
+      "labelSlideNumber": 144,
+      "target_slide": 143,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3770,
       "label": "Slide 30",
-      "record_offset": 6782
+      "record_offset": 6782,
+      "slideId": 285,
+      "labelSlideNumber": 30,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3771,
       "label": "Slide 145",
-      "record_offset": 6826
+      "record_offset": 6826,
+      "slideId": 404,
+      "labelSlideNumber": 145,
+      "target_slide": 146,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 3774,
       "label": "Slide 137",
-      "record_offset": 6872
+      "record_offset": 6872,
+      "slideId": 397,
+      "labelSlideNumber": 137,
+      "target_slide": 137,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 3932,
       "label": "Slide 149",
-      "record_offset": 6918
+      "record_offset": 6918,
+      "slideId": 408,
+      "labelSlideNumber": 149,
+      "target_slide": 149,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4255,
       "label": "Slide 151",
-      "record_offset": 6964
+      "record_offset": 6964,
+      "slideId": 410,
+      "labelSlideNumber": 151,
+      "target_slide": 151,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4260,
       "label": "Slide 153",
-      "record_offset": 7010
+      "record_offset": 7010,
+      "slideId": 412,
+      "labelSlideNumber": 153,
+      "target_slide": 153,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4264,
       "label": "Slide 154",
-      "record_offset": 7056
+      "record_offset": 7056,
+      "slideId": 413,
+      "labelSlideNumber": 154,
+      "target_slide": 154,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4267,
       "label": "Slide 157",
-      "record_offset": 7102
+      "record_offset": 7102,
+      "slideId": 416,
+      "labelSlideNumber": 157,
+      "target_slide": 157,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4270,
       "label": "Slide 30",
-      "record_offset": 7148
+      "record_offset": 7148,
+      "slideId": 285,
+      "labelSlideNumber": 30,
+      "target_slide": 30,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4271,
       "label": "Slide 160",
-      "record_offset": 7192
+      "record_offset": 7192,
+      "slideId": 419,
+      "labelSlideNumber": 160,
+      "target_slide": 160,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4272,
       "label": "Slide 126",
-      "record_offset": 7238
+      "record_offset": 7238,
+      "slideId": 384,
+      "labelSlideNumber": 126,
+      "target_slide": 126,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4273,
       "label": "Slide 126",
-      "record_offset": 7284
+      "record_offset": 7284,
+      "slideId": 384,
+      "labelSlideNumber": 126,
+      "target_slide": 126,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4275,
       "label": "Slide 162",
-      "record_offset": 7330
+      "record_offset": 7330,
+      "slideId": 421,
+      "labelSlideNumber": 162,
+      "target_slide": 162,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4279,
       "label": "Slide 127",
-      "record_offset": 7376
+      "record_offset": 7376,
+      "slideId": 385,
+      "labelSlideNumber": 127,
+      "target_slide": 127,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4281,
       "label": "Slide 165",
-      "record_offset": 7422
+      "record_offset": 7422,
+      "slideId": 424,
+      "labelSlideNumber": 165,
+      "target_slide": 165,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4283,
       "label": "Slide 167",
-      "record_offset": 7468
+      "record_offset": 7468,
+      "slideId": 426,
+      "labelSlideNumber": 167,
+      "target_slide": 167,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4287,
       "label": "Slide 127",
-      "record_offset": 7514
+      "record_offset": 7514,
+      "slideId": 385,
+      "labelSlideNumber": 127,
+      "target_slide": 127,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4288,
       "label": "Slide 169",
-      "record_offset": 7560
+      "record_offset": 7560,
+      "slideId": 428,
+      "labelSlideNumber": 169,
+      "target_slide": 169,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4290,
       "label": "Slide 170",
-      "record_offset": 7606
+      "record_offset": 7606,
+      "slideId": 429,
+      "labelSlideNumber": 170,
+      "target_slide": 170,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4464,
       "label": "Slide 171",
-      "record_offset": 7652
+      "record_offset": 7652,
+      "slideId": 430,
+      "labelSlideNumber": 171,
+      "target_slide": 172,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": true
     },
     {
       "id": 4638,
       "label": "Slide 172",
-      "record_offset": 7698
+      "record_offset": 7698,
+      "slideId": 430,
+      "labelSlideNumber": 172,
+      "target_slide": 172,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4640,
       "label": "Slide 173",
-      "record_offset": 7744
+      "record_offset": 7744,
+      "slideId": 432,
+      "labelSlideNumber": 173,
+      "target_slide": 173,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 4998,
       "label": "Slide 174",
-      "record_offset": 7790
+      "record_offset": 7790,
+      "slideId": 433,
+      "labelSlideNumber": 174,
+      "target_slide": 174,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5176,
       "label": "Slide 174",
-      "record_offset": 7836
+      "record_offset": 7836,
+      "slideId": 433,
+      "labelSlideNumber": 174,
+      "target_slide": 174,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5178,
       "label": "Slide 175",
-      "record_offset": 7882
+      "record_offset": 7882,
+      "slideId": 434,
+      "labelSlideNumber": 175,
+      "target_slide": 175,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5364,
       "label": "Slide 176",
-      "record_offset": 7928
+      "record_offset": 7928,
+      "slideId": 435,
+      "labelSlideNumber": 176,
+      "target_slide": 176,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5366,
       "label": "Slide 176",
-      "record_offset": 7974
+      "record_offset": 7974,
+      "slideId": 435,
+      "labelSlideNumber": 176,
+      "target_slide": 176,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5368,
       "label": "Slide 177",
-      "record_offset": 8020
+      "record_offset": 8020,
+      "slideId": 436,
+      "labelSlideNumber": 177,
+      "target_slide": 177,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5552,
       "label": "Slide 178",
-      "record_offset": 8066
+      "record_offset": 8066,
+      "slideId": 437,
+      "labelSlideNumber": 178,
+      "target_slide": 178,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5554,
       "label": "Slide 177",
-      "record_offset": 8112
+      "record_offset": 8112,
+      "slideId": 436,
+      "labelSlideNumber": 177,
+      "target_slide": 177,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5558,
       "label": "Slide 177",
-      "record_offset": 8158
+      "record_offset": 8158,
+      "slideId": 436,
+      "labelSlideNumber": 177,
+      "target_slide": 177,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5560,
       "label": "Slide 179",
-      "record_offset": 8204
+      "record_offset": 8204,
+      "slideId": 439,
+      "labelSlideNumber": 179,
+      "target_slide": 179,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5561,
       "label": "Slide 177",
-      "record_offset": 8250
+      "record_offset": 8250,
+      "slideId": 436,
+      "labelSlideNumber": 177,
+      "target_slide": 177,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5563,
       "label": "Slide 178",
-      "record_offset": 8296
+      "record_offset": 8296,
+      "slideId": 437,
+      "labelSlideNumber": 178,
+      "target_slide": 178,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5565,
       "label": "Slide 180",
-      "record_offset": 8342
+      "record_offset": 8342,
+      "slideId": 440,
+      "labelSlideNumber": 180,
+      "target_slide": 180,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5567,
       "label": "Slide 179",
-      "record_offset": 8388
+      "record_offset": 8388,
+      "slideId": 439,
+      "labelSlideNumber": 179,
+      "target_slide": 179,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5571,
       "label": "Slide 181",
-      "record_offset": 8434
+      "record_offset": 8434,
+      "slideId": 441,
+      "labelSlideNumber": 181,
+      "target_slide": 181,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5573,
       "label": "Slide 180",
-      "record_offset": 8480
+      "record_offset": 8480,
+      "slideId": 440,
+      "labelSlideNumber": 180,
+      "target_slide": 180,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5576,
       "label": "Slide 182",
-      "record_offset": 8526
+      "record_offset": 8526,
+      "slideId": 442,
+      "labelSlideNumber": 182,
+      "target_slide": 182,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5962,
       "label": "Slide 174",
-      "record_offset": 8572
+      "record_offset": 8572,
+      "slideId": 433,
+      "labelSlideNumber": 174,
+      "target_slide": 174,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5964,
       "label": "Slide 183",
-      "record_offset": 8618
+      "record_offset": 8618,
+      "slideId": 443,
+      "labelSlideNumber": 183,
+      "target_slide": 183,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 5966,
       "label": "Slide 184",
-      "record_offset": 8664
+      "record_offset": 8664,
+      "slideId": 444,
+      "labelSlideNumber": 184,
+      "target_slide": 184,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6357,
       "label": "Slide 191",
-      "record_offset": 8710
+      "record_offset": 8710,
+      "slideId": 451,
+      "labelSlideNumber": 191,
+      "target_slide": 191,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6361,
       "label": "Slide 192",
-      "record_offset": 8756
+      "record_offset": 8756,
+      "slideId": 452,
+      "labelSlideNumber": 192,
+      "target_slide": 192,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6362,
       "label": "Slide 194",
-      "record_offset": 8802
+      "record_offset": 8802,
+      "slideId": 454,
+      "labelSlideNumber": 194,
+      "target_slide": 194,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6363,
       "label": "Slide 195",
-      "record_offset": 8848
+      "record_offset": 8848,
+      "slideId": 455,
+      "labelSlideNumber": 195,
+      "target_slide": 195,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6364,
       "label": "Slide 196",
-      "record_offset": 8894
+      "record_offset": 8894,
+      "slideId": 456,
+      "labelSlideNumber": 196,
+      "target_slide": 196,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6568,
       "label": "Slide 198",
-      "record_offset": 8980
+      "record_offset": 8980,
+      "slideId": 458,
+      "labelSlideNumber": 198,
+      "target_slide": 198,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6979,
       "label": "Slide 200",
-      "record_offset": 9026
+      "record_offset": 9026,
+      "slideId": 460,
+      "labelSlideNumber": 200,
+      "target_slide": 200,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     },
     {
       "id": 6980,
       "label": "Slide 201",
-      "record_offset": 9072
+      "record_offset": 9072,
+      "slideId": 461,
+      "labelSlideNumber": 201,
+      "target_slide": 201,
+      "resolveMethod": "docsum_slide_id",
+      "labelStale": false
     }
   ],
   "objects": [
@@ -21342,7 +22312,11 @@
       "sound_ref": 0,
       "hyperlink_id": 1,
       "target_label": "Slide 2",
-      "target_slide": 2,
+      "target_slide": 3,
+      "target_slide_id": 257,
+      "label_slide_number": 2,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21360,6 +22334,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -21376,7 +22354,11 @@
       "sound_ref": 0,
       "hyperlink_id": 13,
       "target_label": "Slide 9",
-      "target_slide": 9,
+      "target_slide": 10,
+      "target_slide_id": 264,
+      "label_slide_number": 9,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21394,6 +22376,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -21410,7 +22396,11 @@
       "sound_ref": 0,
       "hyperlink_id": 24,
       "target_label": "Slide 10",
-      "target_slide": 10,
+      "target_slide": 11,
+      "target_slide_id": 265,
+      "label_slide_number": 10,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21427,7 +22417,11 @@
       "sound_ref": 0,
       "hyperlink_id": 26,
       "target_label": "Slide 11",
-      "target_slide": 11,
+      "target_slide": 12,
+      "target_slide_id": 266,
+      "label_slide_number": 11,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21445,6 +22439,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -21462,6 +22460,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -21479,6 +22481,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -21496,6 +22502,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -21512,7 +22522,11 @@
       "sound_ref": 0,
       "hyperlink_id": 62,
       "target_label": "Slide 18",
-      "target_slide": 18,
+      "target_slide": 19,
+      "target_slide_id": 273,
+      "label_slide_number": 18,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21529,7 +22543,11 @@
       "sound_ref": 0,
       "hyperlink_id": 46,
       "target_label": "Slide 15",
-      "target_slide": 15,
+      "target_slide": 17,
+      "target_slide_id": 270,
+      "label_slide_number": 15,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21546,7 +22564,11 @@
       "sound_ref": 0,
       "hyperlink_id": 146,
       "target_label": "Slide 32",
-      "target_slide": 32,
+      "target_slide": 33,
+      "target_slide_id": 288,
+      "label_slide_number": 32,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21563,7 +22585,11 @@
       "sound_ref": 0,
       "hyperlink_id": 191,
       "target_label": "Slide 17",
-      "target_slide": 17,
+      "target_slide": 18,
+      "target_slide_id": 272,
+      "label_slide_number": 17,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21580,7 +22606,11 @@
       "sound_ref": 0,
       "hyperlink_id": 77,
       "target_label": "Slide 22",
-      "target_slide": 22,
+      "target_slide": 23,
+      "target_slide_id": 277,
+      "label_slide_number": 22,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21597,7 +22627,11 @@
       "sound_ref": 0,
       "hyperlink_id": 92,
       "target_label": "Slide 24",
-      "target_slide": 24,
+      "target_slide": 25,
+      "target_slide_id": 280,
+      "label_slide_number": 24,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21614,7 +22648,11 @@
       "sound_ref": 0,
       "hyperlink_id": 84,
       "target_label": "Slide 24",
-      "target_slide": 24,
+      "target_slide": 25,
+      "target_slide_id": 280,
+      "label_slide_number": 24,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21631,7 +22669,11 @@
       "sound_ref": 0,
       "hyperlink_id": 118,
       "target_label": "Slide 25",
-      "target_slide": 25,
+      "target_slide": 26,
+      "target_slide_id": 281,
+      "label_slide_number": 25,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21648,7 +22690,11 @@
       "sound_ref": 0,
       "hyperlink_id": 67,
       "target_label": "Slide 19",
-      "target_slide": 19,
+      "target_slide": 20,
+      "target_slide_id": 274,
+      "label_slide_number": 19,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21665,7 +22711,11 @@
       "sound_ref": 0,
       "hyperlink_id": 68,
       "target_label": "Slide 17",
-      "target_slide": 17,
+      "target_slide": 18,
+      "target_slide_id": 272,
+      "label_slide_number": 17,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21682,7 +22732,11 @@
       "sound_ref": 0,
       "hyperlink_id": 154,
       "target_label": "Slide 34",
-      "target_slide": 34,
+      "target_slide": 35,
+      "target_slide_id": 290,
+      "label_slide_number": 34,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21699,7 +22753,11 @@
       "sound_ref": 0,
       "hyperlink_id": 190,
       "target_label": "Slide 36",
-      "target_slide": 36,
+      "target_slide": 37,
+      "target_slide_id": 292,
+      "label_slide_number": 36,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21717,6 +22775,10 @@
       "hyperlink_id": 81,
       "target_label": "Slide 24",
       "target_slide": 24,
+      "target_slide_id": 279,
+      "label_slide_number": 24,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21733,7 +22795,11 @@
       "sound_ref": 0,
       "hyperlink_id": 138,
       "target_label": "Slide 31",
-      "target_slide": 31,
+      "target_slide": 32,
+      "target_slide_id": 287,
+      "label_slide_number": 31,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21750,7 +22816,11 @@
       "sound_ref": 0,
       "hyperlink_id": 139,
       "target_label": "Slide 31",
-      "target_slide": 31,
+      "target_slide": 32,
+      "target_slide_id": 287,
+      "label_slide_number": 31,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21767,7 +22837,11 @@
       "sound_ref": 0,
       "hyperlink_id": 132,
       "target_label": "Slide 20",
-      "target_slide": 20,
+      "target_slide": 21,
+      "target_slide_id": 275,
+      "label_slide_number": 20,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21784,7 +22858,11 @@
       "sound_ref": 0,
       "hyperlink_id": 120,
       "target_label": "Slide 26",
-      "target_slide": 26,
+      "target_slide": 27,
+      "target_slide_id": 282,
+      "label_slide_number": 26,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21801,7 +22879,11 @@
       "sound_ref": 0,
       "hyperlink_id": 157,
       "target_label": "Slide 34",
-      "target_slide": 34,
+      "target_slide": 35,
+      "target_slide_id": 290,
+      "label_slide_number": 34,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21818,7 +22900,11 @@
       "sound_ref": 0,
       "hyperlink_id": 122,
       "target_label": "Slide 27",
-      "target_slide": 27,
+      "target_slide": 28,
+      "target_slide_id": 283,
+      "label_slide_number": 27,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21835,7 +22921,11 @@
       "sound_ref": 0,
       "hyperlink_id": 121,
       "target_label": "Slide 28",
-      "target_slide": 28,
+      "target_slide": 29,
+      "target_slide_id": 284,
+      "label_slide_number": 28,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21852,7 +22942,11 @@
       "sound_ref": 0,
       "hyperlink_id": 123,
       "target_label": "Slide 29",
-      "target_slide": 29,
+      "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 29,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21870,6 +22964,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -21886,7 +22984,11 @@
       "sound_ref": 0,
       "hyperlink_id": 128,
       "target_label": "Slide 29",
-      "target_slide": 29,
+      "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 29,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21903,7 +23005,11 @@
       "sound_ref": 0,
       "hyperlink_id": 137,
       "target_label": "Slide 29",
-      "target_slide": 29,
+      "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 29,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21920,7 +23026,11 @@
       "sound_ref": 0,
       "hyperlink_id": 196,
       "target_label": "Slide 37",
-      "target_slide": 37,
+      "target_slide": 38,
+      "target_slide_id": 293,
+      "label_slide_number": 37,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21937,7 +23047,11 @@
       "sound_ref": 0,
       "hyperlink_id": 197,
       "target_label": "Slide 37",
-      "target_slide": 37,
+      "target_slide": 38,
+      "target_slide_id": 293,
+      "label_slide_number": 37,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21954,7 +23068,11 @@
       "sound_ref": 0,
       "hyperlink_id": 150,
       "target_label": "Slide 21",
-      "target_slide": 21,
+      "target_slide": 22,
+      "target_slide_id": 276,
+      "label_slide_number": 21,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21971,7 +23089,11 @@
       "sound_ref": 0,
       "hyperlink_id": 156,
       "target_label": "Slide 35",
-      "target_slide": 35,
+      "target_slide": 36,
+      "target_slide_id": 291,
+      "label_slide_number": 35,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -21989,6 +23111,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -22005,7 +23131,11 @@
       "sound_ref": 0,
       "hyperlink_id": 337,
       "target_label": "Slide 42",
-      "target_slide": 42,
+      "target_slide": 43,
+      "target_slide_id": 298,
+      "label_slide_number": 42,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22022,7 +23152,11 @@
       "sound_ref": 0,
       "hyperlink_id": 189,
       "target_label": "Slide 28",
-      "target_slide": 28,
+      "target_slide": 29,
+      "target_slide_id": 284,
+      "label_slide_number": 28,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22039,7 +23173,11 @@
       "sound_ref": 0,
       "hyperlink_id": 202,
       "target_label": "Slide 38",
-      "target_slide": 38,
+      "target_slide": 39,
+      "target_slide_id": 294,
+      "label_slide_number": 38,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22056,7 +23194,11 @@
       "sound_ref": 0,
       "hyperlink_id": 204,
       "target_label": "Slide 39",
-      "target_slide": 39,
+      "target_slide": 40,
+      "target_slide_id": 295,
+      "label_slide_number": 39,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22073,7 +23215,11 @@
       "sound_ref": 0,
       "hyperlink_id": 209,
       "target_label": "Slide 40",
-      "target_slide": 40,
+      "target_slide": 41,
+      "target_slide_id": 296,
+      "label_slide_number": 40,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22090,7 +23236,11 @@
       "sound_ref": 0,
       "hyperlink_id": 206,
       "target_label": "Slide 35",
-      "target_slide": 35,
+      "target_slide": 36,
+      "target_slide_id": 291,
+      "label_slide_number": 35,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22107,7 +23257,11 @@
       "sound_ref": 0,
       "hyperlink_id": 211,
       "target_label": "Slide 41",
-      "target_slide": 41,
+      "target_slide": 42,
+      "target_slide_id": 297,
+      "label_slide_number": 41,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22124,7 +23278,11 @@
       "sound_ref": 0,
       "hyperlink_id": 213,
       "target_label": "Slide 21",
-      "target_slide": 21,
+      "target_slide": 22,
+      "target_slide_id": 276,
+      "label_slide_number": 21,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22141,7 +23299,11 @@
       "sound_ref": 0,
       "hyperlink_id": 381,
       "target_label": "Slide 46",
-      "target_slide": 46,
+      "target_slide": 47,
+      "target_slide_id": 302,
+      "label_slide_number": 46,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22158,7 +23320,11 @@
       "sound_ref": 0,
       "hyperlink_id": 382,
       "target_label": "Slide 46",
-      "target_slide": 46,
+      "target_slide": 47,
+      "target_slide_id": 302,
+      "label_slide_number": 46,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22175,7 +23341,11 @@
       "sound_ref": 0,
       "hyperlink_id": 383,
       "target_label": "Slide 46",
-      "target_slide": 46,
+      "target_slide": 47,
+      "target_slide_id": 302,
+      "label_slide_number": 46,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22192,7 +23362,11 @@
       "sound_ref": 0,
       "hyperlink_id": 565,
       "target_label": "Slide 49",
-      "target_slide": 49,
+      "target_slide": 50,
+      "target_slide_id": 305,
+      "label_slide_number": 49,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22209,7 +23383,11 @@
       "sound_ref": 0,
       "hyperlink_id": 567,
       "target_label": "Slide 50",
-      "target_slide": 50,
+      "target_slide": 51,
+      "target_slide_id": 306,
+      "label_slide_number": 50,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22226,7 +23404,11 @@
       "sound_ref": 0,
       "hyperlink_id": 624,
       "target_label": "Slide 51",
-      "target_slide": 51,
+      "target_slide": 52,
+      "target_slide_id": 307,
+      "label_slide_number": 51,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22243,7 +23425,11 @@
       "sound_ref": 0,
       "hyperlink_id": 635,
       "target_label": "Slide 54",
-      "target_slide": 54,
+      "target_slide": 55,
+      "target_slide_id": 310,
+      "label_slide_number": 54,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22261,6 +23447,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -22277,7 +23467,11 @@
       "sound_ref": 0,
       "hyperlink_id": 574,
       "target_label": "Slide 49",
-      "target_slide": 49,
+      "target_slide": 50,
+      "target_slide_id": 305,
+      "label_slide_number": 49,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22294,7 +23488,11 @@
       "sound_ref": 0,
       "hyperlink_id": 626,
       "target_label": "Slide 49",
-      "target_slide": 49,
+      "target_slide": 50,
+      "target_slide_id": 305,
+      "label_slide_number": 49,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22311,7 +23509,11 @@
       "sound_ref": 0,
       "hyperlink_id": 629,
       "target_label": "Slide 52",
-      "target_slide": 52,
+      "target_slide": 53,
+      "target_slide_id": 308,
+      "label_slide_number": 52,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22328,7 +23530,11 @@
       "sound_ref": 0,
       "hyperlink_id": 631,
       "target_label": "Slide 53",
-      "target_slide": 53,
+      "target_slide": 54,
+      "target_slide_id": 309,
+      "label_slide_number": 53,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22345,7 +23551,11 @@
       "sound_ref": 0,
       "hyperlink_id": 627,
       "target_label": "Slide 51",
-      "target_slide": 51,
+      "target_slide": 52,
+      "target_slide_id": 307,
+      "label_slide_number": 51,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22362,7 +23572,11 @@
       "sound_ref": 0,
       "hyperlink_id": 632,
       "target_label": "Slide 51",
-      "target_slide": 51,
+      "target_slide": 52,
+      "target_slide_id": 307,
+      "label_slide_number": 51,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22380,6 +23594,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -22396,7 +23614,11 @@
       "sound_ref": 0,
       "hyperlink_id": 749,
       "target_label": "Slide 56",
-      "target_slide": 56,
+      "target_slide": 57,
+      "target_slide_id": 312,
+      "label_slide_number": 56,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22413,7 +23635,11 @@
       "sound_ref": 0,
       "hyperlink_id": 923,
       "target_label": "Slide 64",
-      "target_slide": 64,
+      "target_slide": 66,
+      "target_slide_id": 320,
+      "label_slide_number": 64,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22431,6 +23657,10 @@
       "hyperlink_id": 1229,
       "target_label": "Slide 77",
       "target_slide": 77,
+      "target_slide_id": 333,
+      "label_slide_number": 77,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22448,6 +23678,10 @@
       "hyperlink_id": 1219,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22465,6 +23699,10 @@
       "hyperlink_id": 1220,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22482,6 +23720,10 @@
       "hyperlink_id": 1045,
       "target_label": "Slide 68",
       "target_slide": 68,
+      "target_slide_id": 324,
+      "label_slide_number": 68,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22498,7 +23740,11 @@
       "sound_ref": 0,
       "hyperlink_id": 1111,
       "target_label": "Slide 69",
-      "target_slide": 69,
+      "target_slide": 70,
+      "target_slide_id": 325,
+      "label_slide_number": 69,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22516,6 +23762,10 @@
       "hyperlink_id": 1130,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22533,6 +23783,10 @@
       "hyperlink_id": 1222,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22550,6 +23804,10 @@
       "hyperlink_id": 1223,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22567,6 +23825,10 @@
       "hyperlink_id": 1128,
       "target_label": "Slide 71",
       "target_slide": 71,
+      "target_slide_id": 327,
+      "label_slide_number": 71,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22584,6 +23846,10 @@
       "hyperlink_id": 1137,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22601,6 +23867,10 @@
       "hyperlink_id": 1118,
       "target_label": "Slide 67",
       "target_slide": 67,
+      "target_slide_id": 323,
+      "label_slide_number": 67,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22618,6 +23888,10 @@
       "hyperlink_id": 1124,
       "target_label": "Slide 69",
       "target_slide": 69,
+      "target_slide_id": 326,
+      "label_slide_number": 69,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22635,6 +23909,10 @@
       "hyperlink_id": 1139,
       "target_label": "Slide 69",
       "target_slide": 69,
+      "target_slide_id": 326,
+      "label_slide_number": 69,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22652,6 +23930,10 @@
       "hyperlink_id": 1141,
       "target_label": "Slide 73",
       "target_slide": 73,
+      "target_slide_id": 329,
+      "label_slide_number": 73,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22669,6 +23951,10 @@
       "hyperlink_id": 1145,
       "target_label": "Slide 74",
       "target_slide": 74,
+      "target_slide_id": 330,
+      "label_slide_number": 74,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22686,6 +23972,10 @@
       "hyperlink_id": 1142,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22703,6 +23993,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -22720,6 +24014,10 @@
       "hyperlink_id": 1146,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22737,6 +24035,10 @@
       "hyperlink_id": 1770,
       "target_label": "Slide 83",
       "target_slide": 83,
+      "target_slide_id": 339,
+      "label_slide_number": 83,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22754,6 +24056,10 @@
       "hyperlink_id": 1458,
       "target_label": "Slide 80",
       "target_slide": 80,
+      "target_slide_id": 336,
+      "label_slide_number": 80,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22771,6 +24077,10 @@
       "hyperlink_id": 1613,
       "target_label": "Slide 82",
       "target_slide": 82,
+      "target_slide_id": 338,
+      "label_slide_number": 82,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22788,6 +24098,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -22805,6 +24119,10 @@
       "hyperlink_id": 1876,
       "target_label": "Slide 93",
       "target_slide": 93,
+      "target_slide_id": 349,
+      "label_slide_number": 93,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22822,6 +24140,10 @@
       "hyperlink_id": 1771,
       "target_label": "Slide 84",
       "target_slide": 84,
+      "target_slide_id": 340,
+      "label_slide_number": 84,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22839,6 +24161,10 @@
       "hyperlink_id": 1772,
       "target_label": "Slide 85",
       "target_slide": 85,
+      "target_slide_id": 341,
+      "label_slide_number": 85,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22856,6 +24182,10 @@
       "hyperlink_id": 1869,
       "target_label": "Slide 91",
       "target_slide": 91,
+      "target_slide_id": 347,
+      "label_slide_number": 91,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22873,6 +24203,10 @@
       "hyperlink_id": 1854,
       "target_label": "Slide 87",
       "target_slide": 87,
+      "target_slide_id": 343,
+      "label_slide_number": 87,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22890,6 +24224,10 @@
       "hyperlink_id": 1855,
       "target_label": "Slide 80",
       "target_slide": 80,
+      "target_slide_id": 336,
+      "label_slide_number": 80,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22907,6 +24245,10 @@
       "hyperlink_id": 1856,
       "target_label": "Slide 82",
       "target_slide": 82,
+      "target_slide_id": 338,
+      "label_slide_number": 82,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22924,6 +24266,10 @@
       "hyperlink_id": 1857,
       "target_label": "Slide 88",
       "target_slide": 88,
+      "target_slide_id": 344,
+      "label_slide_number": 88,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22941,6 +24287,10 @@
       "hyperlink_id": 1859,
       "target_label": "Slide 89",
       "target_slide": 89,
+      "target_slide_id": 345,
+      "label_slide_number": 89,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22958,6 +24308,10 @@
       "hyperlink_id": 1860,
       "target_label": "Slide 89",
       "target_slide": 89,
+      "target_slide_id": 345,
+      "label_slide_number": 89,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22975,6 +24329,10 @@
       "hyperlink_id": 1863,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -22992,6 +24350,10 @@
       "hyperlink_id": 1971,
       "target_label": "Slide 95",
       "target_slide": 95,
+      "target_slide_id": 352,
+      "label_slide_number": 95,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23009,6 +24371,10 @@
       "hyperlink_id": 1975,
       "target_label": "Slide 97",
       "target_slide": 97,
+      "target_slide_id": 354,
+      "label_slide_number": 97,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23026,6 +24392,10 @@
       "hyperlink_id": 1969,
       "target_label": "Slide 94",
       "target_slide": 94,
+      "target_slide_id": 351,
+      "label_slide_number": 94,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23043,6 +24413,10 @@
       "hyperlink_id": 2079,
       "target_label": "Slide 100",
       "target_slide": 100,
+      "target_slide_id": 357,
+      "label_slide_number": 100,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23060,6 +24434,10 @@
       "hyperlink_id": 1972,
       "target_label": "Slide 95",
       "target_slide": 95,
+      "target_slide_id": 352,
+      "label_slide_number": 95,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23077,6 +24455,10 @@
       "hyperlink_id": 1976,
       "target_label": "Slide 97",
       "target_slide": 97,
+      "target_slide_id": 354,
+      "label_slide_number": 97,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23094,6 +24476,10 @@
       "hyperlink_id": 1974,
       "target_label": "Slide 96",
       "target_slide": 96,
+      "target_slide_id": 353,
+      "label_slide_number": 96,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23111,6 +24497,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -23128,6 +24518,10 @@
       "hyperlink_id": 2077,
       "target_label": "Slide 98",
       "target_slide": 98,
+      "target_slide_id": 355,
+      "label_slide_number": 98,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23145,6 +24539,10 @@
       "hyperlink_id": 2075,
       "target_label": "Slide 96",
       "target_slide": 96,
+      "target_slide_id": 353,
+      "label_slide_number": 96,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23162,6 +24560,10 @@
       "hyperlink_id": 2186,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23179,6 +24581,10 @@
       "hyperlink_id": 2081,
       "target_label": "Slide 99",
       "target_slide": 99,
+      "target_slide_id": 356,
+      "label_slide_number": 99,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23196,6 +24602,10 @@
       "hyperlink_id": 2292,
       "target_label": "Slide 103",
       "target_slide": 103,
+      "target_slide_id": 360,
+      "label_slide_number": 103,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23213,6 +24623,10 @@
       "hyperlink_id": 2303,
       "target_label": "Slide 104",
       "target_slide": 104,
+      "target_slide_id": 361,
+      "label_slide_number": 104,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23230,6 +24644,10 @@
       "hyperlink_id": 2421,
       "target_label": "Slide 105",
       "target_slide": 105,
+      "target_slide_id": 362,
+      "label_slide_number": 105,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23247,6 +24665,10 @@
       "hyperlink_id": 2557,
       "target_label": "Slide 108",
       "target_slide": 108,
+      "target_slide_id": 365,
+      "label_slide_number": 108,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23264,6 +24686,10 @@
       "hyperlink_id": 2563,
       "target_label": "Slide 109",
       "target_slide": 109,
+      "target_slide_id": 366,
+      "label_slide_number": 109,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23281,6 +24707,10 @@
       "hyperlink_id": 2415,
       "target_label": "Slide 103",
       "target_slide": 103,
+      "target_slide_id": 360,
+      "label_slide_number": 103,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23298,6 +24728,10 @@
       "hyperlink_id": 2417,
       "target_label": "Slide 103",
       "target_slide": 103,
+      "target_slide_id": 360,
+      "label_slide_number": 103,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23315,6 +24749,10 @@
       "hyperlink_id": 2423,
       "target_label": "Slide 105",
       "target_slide": 105,
+      "target_slide_id": 362,
+      "label_slide_number": 105,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23332,6 +24770,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -23349,6 +24791,10 @@
       "hyperlink_id": 2425,
       "target_label": "Slide 106",
       "target_slide": 106,
+      "target_slide_id": 363,
+      "label_slide_number": 106,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23366,6 +24812,10 @@
       "hyperlink_id": 2539,
       "target_label": "Slide 107",
       "target_slide": 107,
+      "target_slide_id": 364,
+      "label_slide_number": 107,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23383,6 +24833,10 @@
       "hyperlink_id": 2546,
       "target_label": "Slide 107",
       "target_slide": 107,
+      "target_slide_id": 364,
+      "label_slide_number": 107,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23400,6 +24854,10 @@
       "hyperlink_id": 2548,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23417,6 +24875,10 @@
       "hyperlink_id": 2555,
       "target_label": "Slide 108",
       "target_slide": 108,
+      "target_slide_id": 365,
+      "label_slide_number": 108,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23434,6 +24896,10 @@
       "hyperlink_id": 2565,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23451,6 +24917,10 @@
       "hyperlink_id": 2809,
       "target_label": "Slide 110",
       "target_slide": 110,
+      "target_slide_id": 367,
+      "label_slide_number": 110,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23468,6 +24938,10 @@
       "hyperlink_id": 2559,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23485,6 +24959,10 @@
       "hyperlink_id": 2561,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23502,6 +24980,10 @@
       "hyperlink_id": 2933,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23519,6 +25001,10 @@
       "hyperlink_id": 3058,
       "target_label": "Slide 111",
       "target_slide": 111,
+      "target_slide_id": 368,
+      "label_slide_number": 111,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23536,6 +25022,10 @@
       "hyperlink_id": 3310,
       "target_label": "Slide 115",
       "target_slide": 115,
+      "target_slide_id": 372,
+      "label_slide_number": 115,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23553,6 +25043,10 @@
       "hyperlink_id": 3308,
       "target_label": "Slide 114",
       "target_slide": 114,
+      "target_slide_id": 371,
+      "label_slide_number": 114,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23569,7 +25063,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3445,
       "target_label": "Slide 118",
-      "target_slide": 118,
+      "target_slide": 117,
+      "target_slide_id": 375,
+      "label_slide_number": 118,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23587,6 +25085,10 @@
       "hyperlink_id": 3307,
       "target_label": "Slide 113",
       "target_slide": 113,
+      "target_slide_id": 370,
+      "label_slide_number": 113,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23604,6 +25106,10 @@
       "hyperlink_id": 3309,
       "target_label": "Slide 114",
       "target_slide": 114,
+      "target_slide_id": 371,
+      "label_slide_number": 114,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23621,6 +25127,10 @@
       "hyperlink_id": 3311,
       "target_label": "Slide 115",
       "target_slide": 115,
+      "target_slide_id": 372,
+      "label_slide_number": 115,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23637,7 +25147,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3446,
       "target_label": "Slide 118",
-      "target_slide": 118,
+      "target_slide": 117,
+      "target_slide_id": 375,
+      "label_slide_number": 118,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23655,6 +25169,10 @@
       "hyperlink_id": 3932,
       "target_label": "Slide 149",
       "target_slide": 149,
+      "target_slide_id": 408,
+      "label_slide_number": 149,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23671,7 +25189,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3452,
       "target_label": "Slide 120",
-      "target_slide": 120,
+      "target_slide": 119,
+      "target_slide_id": 377,
+      "label_slide_number": 120,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23688,7 +25210,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3585,
       "target_label": "Slide 121",
-      "target_slide": 121,
+      "target_slide": 120,
+      "target_slide_id": 378,
+      "label_slide_number": 121,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23705,7 +25231,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3586,
       "target_label": "Slide 122",
-      "target_slide": 122,
+      "target_slide": 121,
+      "target_slide_id": 379,
+      "label_slide_number": 122,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23722,7 +25252,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3771,
       "target_label": "Slide 145",
-      "target_slide": 145,
+      "target_slide": 146,
+      "target_slide_id": 404,
+      "label_slide_number": 145,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23739,7 +25273,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3761,
       "target_label": "Slide 141",
-      "target_slide": 141,
+      "target_slide": 140,
+      "target_slide_id": 398,
+      "label_slide_number": 141,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23756,7 +25294,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3605,
       "target_label": "Slide 136",
-      "target_slide": 136,
+      "target_slide": 138,
+      "target_slide_id": 393,
+      "label_slide_number": 136,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23773,7 +25315,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3600,
       "target_label": "Slide 131",
-      "target_slide": 131,
+      "target_slide": 130,
+      "target_slide_id": 388,
+      "label_slide_number": 131,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23790,7 +25336,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3593,
       "target_label": "Slide 125",
-      "target_slide": 125,
+      "target_slide": 124,
+      "target_slide_id": 382,
+      "label_slide_number": 125,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23807,7 +25357,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3594,
       "target_label": "Slide 127",
-      "target_slide": 127,
+      "target_slide": 126,
+      "target_slide_id": 384,
+      "label_slide_number": 127,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23824,7 +25378,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3599,
       "target_label": "Slide 129",
-      "target_slide": 129,
+      "target_slide": 128,
+      "target_slide_id": 386,
+      "label_slide_number": 129,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23842,6 +25400,10 @@
       "hyperlink_id": 3592,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23858,7 +25420,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3595,
       "target_label": "Slide 128",
-      "target_slide": 128,
+      "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 128,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23875,7 +25441,11 @@
       "sound_ref": 0,
       "hyperlink_id": 4464,
       "target_label": "Slide 171",
-      "target_slide": 171,
+      "target_slide": 172,
+      "target_slide_id": 430,
+      "label_slide_number": 171,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23893,6 +25463,10 @@
       "hyperlink_id": 3598,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23909,7 +25483,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3602,
       "target_label": "Slide 134",
-      "target_slide": 134,
+      "target_slide": 133,
+      "target_slide_id": 391,
+      "label_slide_number": 134,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23927,6 +25505,10 @@
       "hyperlink_id": 3601,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23943,7 +25525,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3608,
       "target_label": "Slide 139",
-      "target_slide": 139,
+      "target_slide": 136,
+      "target_slide_id": 396,
+      "label_slide_number": 139,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23960,7 +25546,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3609,
       "target_label": "Slide 128",
-      "target_slide": 128,
+      "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 128,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23977,7 +25567,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3756,
       "target_label": "Slide 139",
-      "target_slide": 139,
+      "target_slide": 136,
+      "target_slide_id": 396,
+      "label_slide_number": 139,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -23995,6 +25589,10 @@
       "hyperlink_id": 3760,
       "target_label": "Slide 128",
       "target_slide": 128,
+      "target_slide_id": 386,
+      "label_slide_number": 128,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24011,7 +25609,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3759,
       "target_label": "Slide 138",
-      "target_slide": 138,
+      "target_slide": 137,
+      "target_slide_id": 397,
+      "label_slide_number": 138,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24028,7 +25630,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3764,
       "target_label": "Slide 143",
-      "target_slide": 143,
+      "target_slide": 142,
+      "target_slide_id": 401,
+      "label_slide_number": 143,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24046,6 +25652,10 @@
       "hyperlink_id": 3767,
       "target_label": "Slide 133",
       "target_slide": 133,
+      "target_slide_id": 391,
+      "label_slide_number": 133,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24062,7 +25672,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3769,
       "target_label": "Slide 144",
-      "target_slide": 144,
+      "target_slide": 143,
+      "target_slide_id": 402,
+      "label_slide_number": 144,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24080,6 +25694,10 @@
       "hyperlink_id": 3770,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24097,6 +25715,10 @@
       "hyperlink_id": 3774,
       "target_label": "Slide 137",
       "target_slide": 137,
+      "target_slide_id": 397,
+      "label_slide_number": 137,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24114,6 +25736,10 @@
       "hyperlink_id": 4255,
       "target_label": "Slide 151",
       "target_slide": 151,
+      "target_slide_id": 410,
+      "label_slide_number": 151,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24131,6 +25757,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -24148,6 +25778,10 @@
       "hyperlink_id": 4283,
       "target_label": "Slide 167",
       "target_slide": 167,
+      "target_slide_id": 426,
+      "label_slide_number": 167,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24165,6 +25799,10 @@
       "hyperlink_id": 4260,
       "target_label": "Slide 153",
       "target_slide": 153,
+      "target_slide_id": 412,
+      "label_slide_number": 153,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24182,6 +25820,10 @@
       "hyperlink_id": 4264,
       "target_label": "Slide 154",
       "target_slide": 154,
+      "target_slide_id": 413,
+      "label_slide_number": 154,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24199,6 +25841,10 @@
       "hyperlink_id": 4275,
       "target_label": "Slide 162",
       "target_slide": 162,
+      "target_slide_id": 421,
+      "label_slide_number": 162,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24216,6 +25862,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -24233,6 +25883,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -24250,6 +25904,10 @@
       "hyperlink_id": 4267,
       "target_label": "Slide 157",
       "target_slide": 157,
+      "target_slide_id": 416,
+      "label_slide_number": 157,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24267,6 +25925,10 @@
       "hyperlink_id": 4273,
       "target_label": "Slide 126",
       "target_slide": 126,
+      "target_slide_id": 384,
+      "label_slide_number": 126,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24284,6 +25946,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -24301,6 +25967,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -24318,6 +25988,10 @@
       "hyperlink_id": 4271,
       "target_label": "Slide 160",
       "target_slide": 160,
+      "target_slide_id": 419,
+      "label_slide_number": 160,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24335,6 +26009,10 @@
       "hyperlink_id": 4272,
       "target_label": "Slide 126",
       "target_slide": 126,
+      "target_slide_id": 384,
+      "label_slide_number": 126,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24352,6 +26030,10 @@
       "hyperlink_id": 4270,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24369,6 +26051,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -24386,6 +26072,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 0,
       "flags_hex": "079f0d30"
     },
@@ -24403,6 +26093,10 @@
       "hyperlink_id": 4281,
       "target_label": "Slide 165",
       "target_slide": 165,
+      "target_slide_id": 424,
+      "label_slide_number": 165,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24420,6 +26114,10 @@
       "hyperlink_id": 4279,
       "target_label": "Slide 127",
       "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 127,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24437,6 +26135,10 @@
       "hyperlink_id": 4288,
       "target_label": "Slide 169",
       "target_slide": 169,
+      "target_slide_id": 428,
+      "label_slide_number": 169,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24454,6 +26156,10 @@
       "hyperlink_id": 4290,
       "target_label": "Slide 170",
       "target_slide": 170,
+      "target_slide_id": 429,
+      "label_slide_number": 170,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24471,6 +26177,10 @@
       "hyperlink_id": 4287,
       "target_label": "Slide 127",
       "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 127,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24488,6 +26198,10 @@
       "hyperlink_id": 4640,
       "target_label": "Slide 173",
       "target_slide": 173,
+      "target_slide_id": 432,
+      "label_slide_number": 173,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24505,6 +26219,10 @@
       "hyperlink_id": 4998,
       "target_label": "Slide 174",
       "target_slide": 174,
+      "target_slide_id": 433,
+      "label_slide_number": 174,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24522,6 +26240,10 @@
       "hyperlink_id": 4638,
       "target_label": "Slide 172",
       "target_slide": 172,
+      "target_slide_id": 430,
+      "label_slide_number": 172,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24539,6 +26261,10 @@
       "hyperlink_id": 5178,
       "target_label": "Slide 175",
       "target_slide": 175,
+      "target_slide_id": 434,
+      "label_slide_number": 175,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24556,6 +26282,10 @@
       "hyperlink_id": 5364,
       "target_label": "Slide 176",
       "target_slide": 176,
+      "target_slide_id": 435,
+      "label_slide_number": 176,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24573,6 +26303,10 @@
       "hyperlink_id": 5366,
       "target_label": "Slide 176",
       "target_slide": 176,
+      "target_slide_id": 435,
+      "label_slide_number": 176,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24590,6 +26324,10 @@
       "hyperlink_id": 5176,
       "target_label": "Slide 174",
       "target_slide": 174,
+      "target_slide_id": 433,
+      "label_slide_number": 174,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24607,6 +26345,10 @@
       "hyperlink_id": 5368,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24624,6 +26366,10 @@
       "hyperlink_id": 5552,
       "target_label": "Slide 178",
       "target_slide": 178,
+      "target_slide_id": 437,
+      "label_slide_number": 178,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24641,6 +26387,10 @@
       "hyperlink_id": 5554,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24658,6 +26408,10 @@
       "hyperlink_id": 5560,
       "target_label": "Slide 179",
       "target_slide": 179,
+      "target_slide_id": 439,
+      "label_slide_number": 179,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24675,6 +26429,10 @@
       "hyperlink_id": 5558,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24692,6 +26450,10 @@
       "hyperlink_id": 5563,
       "target_label": "Slide 178",
       "target_slide": 178,
+      "target_slide_id": 437,
+      "label_slide_number": 178,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24709,6 +26471,10 @@
       "hyperlink_id": 5565,
       "target_label": "Slide 180",
       "target_slide": 180,
+      "target_slide_id": 440,
+      "label_slide_number": 180,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24726,6 +26492,10 @@
       "hyperlink_id": 5561,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24743,6 +26513,10 @@
       "hyperlink_id": 5567,
       "target_label": "Slide 179",
       "target_slide": 179,
+      "target_slide_id": 439,
+      "label_slide_number": 179,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24760,6 +26534,10 @@
       "hyperlink_id": 5571,
       "target_label": "Slide 181",
       "target_slide": 181,
+      "target_slide_id": 441,
+      "label_slide_number": 181,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24777,6 +26555,10 @@
       "hyperlink_id": 5573,
       "target_label": "Slide 180",
       "target_slide": 180,
+      "target_slide_id": 440,
+      "label_slide_number": 180,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24794,6 +26576,10 @@
       "hyperlink_id": 5576,
       "target_label": "Slide 182",
       "target_slide": 182,
+      "target_slide_id": 442,
+      "label_slide_number": 182,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24811,6 +26597,10 @@
       "hyperlink_id": 5962,
       "target_label": "Slide 174",
       "target_slide": 174,
+      "target_slide_id": 433,
+      "label_slide_number": 174,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24828,6 +26618,10 @@
       "hyperlink_id": 5964,
       "target_label": "Slide 183",
       "target_slide": 183,
+      "target_slide_id": 443,
+      "label_slide_number": 183,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24845,6 +26639,10 @@
       "hyperlink_id": 5966,
       "target_label": "Slide 184",
       "target_slide": 184,
+      "target_slide_id": 444,
+      "label_slide_number": 184,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24862,6 +26660,10 @@
       "hyperlink_id": 6357,
       "target_label": "Slide 191",
       "target_slide": 191,
+      "target_slide_id": 451,
+      "label_slide_number": 191,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24879,6 +26681,10 @@
       "hyperlink_id": 6362,
       "target_label": "Slide 194",
       "target_slide": 194,
+      "target_slide_id": 454,
+      "label_slide_number": 194,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24896,6 +26702,10 @@
       "hyperlink_id": 6363,
       "target_label": "Slide 195",
       "target_slide": 195,
+      "target_slide_id": 455,
+      "label_slide_number": 195,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24913,6 +26723,10 @@
       "hyperlink_id": 6568,
       "target_label": "Slide 198",
       "target_slide": 198,
+      "target_slide_id": 458,
+      "label_slide_number": 198,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24930,6 +26744,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -24947,6 +26765,10 @@
       "hyperlink_id": 6361,
       "target_label": "Slide 192",
       "target_slide": 192,
+      "target_slide_id": 452,
+      "label_slide_number": 192,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24964,6 +26786,10 @@
       "hyperlink_id": 6364,
       "target_label": "Slide 196",
       "target_slide": 196,
+      "target_slide_id": 456,
+      "label_slide_number": 196,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -24981,6 +26807,10 @@
       "hyperlink_id": 0,
       "target_label": null,
       "target_slide": null,
+      "target_slide_id": null,
+      "label_slide_number": null,
+      "label_stale": false,
+      "resolve_method": null,
       "action_code": 6,
       "flags_hex": "ff9f0d30"
     },
@@ -24998,6 +26828,10 @@
       "hyperlink_id": 6980,
       "target_label": "Slide 201",
       "target_slide": 201,
+      "target_slide_id": 461,
+      "label_slide_number": 201,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25015,6 +26849,10 @@
       "hyperlink_id": 6979,
       "target_label": "Slide 200",
       "target_slide": 200,
+      "target_slide_id": 460,
+      "label_slide_number": 200,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     }
@@ -25033,7 +26871,11 @@
       "sound_ref": 0,
       "hyperlink_id": 1,
       "target_label": "Slide 2",
-      "target_slide": 2,
+      "target_slide": 3,
+      "target_slide_id": 257,
+      "label_slide_number": 2,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25050,7 +26892,11 @@
       "sound_ref": 0,
       "hyperlink_id": 13,
       "target_label": "Slide 9",
-      "target_slide": 9,
+      "target_slide": 10,
+      "target_slide_id": 264,
+      "label_slide_number": 9,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25067,7 +26913,11 @@
       "sound_ref": 0,
       "hyperlink_id": 24,
       "target_label": "Slide 10",
-      "target_slide": 10,
+      "target_slide": 11,
+      "target_slide_id": 265,
+      "label_slide_number": 10,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25084,7 +26934,11 @@
       "sound_ref": 0,
       "hyperlink_id": 26,
       "target_label": "Slide 11",
-      "target_slide": 11,
+      "target_slide": 12,
+      "target_slide_id": 266,
+      "label_slide_number": 11,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25101,7 +26955,11 @@
       "sound_ref": 0,
       "hyperlink_id": 62,
       "target_label": "Slide 18",
-      "target_slide": 18,
+      "target_slide": 19,
+      "target_slide_id": 273,
+      "label_slide_number": 18,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25118,7 +26976,11 @@
       "sound_ref": 0,
       "hyperlink_id": 46,
       "target_label": "Slide 15",
-      "target_slide": 15,
+      "target_slide": 17,
+      "target_slide_id": 270,
+      "label_slide_number": 15,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25135,7 +26997,11 @@
       "sound_ref": 0,
       "hyperlink_id": 146,
       "target_label": "Slide 32",
-      "target_slide": 32,
+      "target_slide": 33,
+      "target_slide_id": 288,
+      "label_slide_number": 32,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25152,7 +27018,11 @@
       "sound_ref": 0,
       "hyperlink_id": 191,
       "target_label": "Slide 17",
-      "target_slide": 17,
+      "target_slide": 18,
+      "target_slide_id": 272,
+      "label_slide_number": 17,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25169,7 +27039,11 @@
       "sound_ref": 0,
       "hyperlink_id": 77,
       "target_label": "Slide 22",
-      "target_slide": 22,
+      "target_slide": 23,
+      "target_slide_id": 277,
+      "label_slide_number": 22,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25186,7 +27060,11 @@
       "sound_ref": 0,
       "hyperlink_id": 92,
       "target_label": "Slide 24",
-      "target_slide": 24,
+      "target_slide": 25,
+      "target_slide_id": 280,
+      "label_slide_number": 24,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25203,7 +27081,11 @@
       "sound_ref": 0,
       "hyperlink_id": 84,
       "target_label": "Slide 24",
-      "target_slide": 24,
+      "target_slide": 25,
+      "target_slide_id": 280,
+      "label_slide_number": 24,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25220,7 +27102,11 @@
       "sound_ref": 0,
       "hyperlink_id": 118,
       "target_label": "Slide 25",
-      "target_slide": 25,
+      "target_slide": 26,
+      "target_slide_id": 281,
+      "label_slide_number": 25,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25237,7 +27123,11 @@
       "sound_ref": 0,
       "hyperlink_id": 67,
       "target_label": "Slide 19",
-      "target_slide": 19,
+      "target_slide": 20,
+      "target_slide_id": 274,
+      "label_slide_number": 19,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25254,7 +27144,11 @@
       "sound_ref": 0,
       "hyperlink_id": 68,
       "target_label": "Slide 17",
-      "target_slide": 17,
+      "target_slide": 18,
+      "target_slide_id": 272,
+      "label_slide_number": 17,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25271,7 +27165,11 @@
       "sound_ref": 0,
       "hyperlink_id": 154,
       "target_label": "Slide 34",
-      "target_slide": 34,
+      "target_slide": 35,
+      "target_slide_id": 290,
+      "label_slide_number": 34,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25288,7 +27186,11 @@
       "sound_ref": 0,
       "hyperlink_id": 190,
       "target_label": "Slide 36",
-      "target_slide": 36,
+      "target_slide": 37,
+      "target_slide_id": 292,
+      "label_slide_number": 36,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25306,6 +27208,10 @@
       "hyperlink_id": 81,
       "target_label": "Slide 24",
       "target_slide": 24,
+      "target_slide_id": 279,
+      "label_slide_number": 24,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25322,7 +27228,11 @@
       "sound_ref": 0,
       "hyperlink_id": 138,
       "target_label": "Slide 31",
-      "target_slide": 31,
+      "target_slide": 32,
+      "target_slide_id": 287,
+      "label_slide_number": 31,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25339,7 +27249,11 @@
       "sound_ref": 0,
       "hyperlink_id": 139,
       "target_label": "Slide 31",
-      "target_slide": 31,
+      "target_slide": 32,
+      "target_slide_id": 287,
+      "label_slide_number": 31,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25356,7 +27270,11 @@
       "sound_ref": 0,
       "hyperlink_id": 132,
       "target_label": "Slide 20",
-      "target_slide": 20,
+      "target_slide": 21,
+      "target_slide_id": 275,
+      "label_slide_number": 20,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25373,7 +27291,11 @@
       "sound_ref": 0,
       "hyperlink_id": 120,
       "target_label": "Slide 26",
-      "target_slide": 26,
+      "target_slide": 27,
+      "target_slide_id": 282,
+      "label_slide_number": 26,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25390,7 +27312,11 @@
       "sound_ref": 0,
       "hyperlink_id": 157,
       "target_label": "Slide 34",
-      "target_slide": 34,
+      "target_slide": 35,
+      "target_slide_id": 290,
+      "label_slide_number": 34,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25407,7 +27333,11 @@
       "sound_ref": 0,
       "hyperlink_id": 122,
       "target_label": "Slide 27",
-      "target_slide": 27,
+      "target_slide": 28,
+      "target_slide_id": 283,
+      "label_slide_number": 27,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25424,7 +27354,11 @@
       "sound_ref": 0,
       "hyperlink_id": 121,
       "target_label": "Slide 28",
-      "target_slide": 28,
+      "target_slide": 29,
+      "target_slide_id": 284,
+      "label_slide_number": 28,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25441,7 +27375,11 @@
       "sound_ref": 0,
       "hyperlink_id": 123,
       "target_label": "Slide 29",
-      "target_slide": 29,
+      "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 29,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25458,7 +27396,11 @@
       "sound_ref": 0,
       "hyperlink_id": 128,
       "target_label": "Slide 29",
-      "target_slide": 29,
+      "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 29,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25475,7 +27417,11 @@
       "sound_ref": 0,
       "hyperlink_id": 137,
       "target_label": "Slide 29",
-      "target_slide": 29,
+      "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 29,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25492,7 +27438,11 @@
       "sound_ref": 0,
       "hyperlink_id": 196,
       "target_label": "Slide 37",
-      "target_slide": 37,
+      "target_slide": 38,
+      "target_slide_id": 293,
+      "label_slide_number": 37,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25509,7 +27459,11 @@
       "sound_ref": 0,
       "hyperlink_id": 197,
       "target_label": "Slide 37",
-      "target_slide": 37,
+      "target_slide": 38,
+      "target_slide_id": 293,
+      "label_slide_number": 37,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25526,7 +27480,11 @@
       "sound_ref": 0,
       "hyperlink_id": 150,
       "target_label": "Slide 21",
-      "target_slide": 21,
+      "target_slide": 22,
+      "target_slide_id": 276,
+      "label_slide_number": 21,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25543,7 +27501,11 @@
       "sound_ref": 0,
       "hyperlink_id": 156,
       "target_label": "Slide 35",
-      "target_slide": 35,
+      "target_slide": 36,
+      "target_slide_id": 291,
+      "label_slide_number": 35,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25560,7 +27522,11 @@
       "sound_ref": 0,
       "hyperlink_id": 337,
       "target_label": "Slide 42",
-      "target_slide": 42,
+      "target_slide": 43,
+      "target_slide_id": 298,
+      "label_slide_number": 42,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25577,7 +27543,11 @@
       "sound_ref": 0,
       "hyperlink_id": 189,
       "target_label": "Slide 28",
-      "target_slide": 28,
+      "target_slide": 29,
+      "target_slide_id": 284,
+      "label_slide_number": 28,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25594,7 +27564,11 @@
       "sound_ref": 0,
       "hyperlink_id": 202,
       "target_label": "Slide 38",
-      "target_slide": 38,
+      "target_slide": 39,
+      "target_slide_id": 294,
+      "label_slide_number": 38,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25611,7 +27585,11 @@
       "sound_ref": 0,
       "hyperlink_id": 204,
       "target_label": "Slide 39",
-      "target_slide": 39,
+      "target_slide": 40,
+      "target_slide_id": 295,
+      "label_slide_number": 39,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25628,7 +27606,11 @@
       "sound_ref": 0,
       "hyperlink_id": 209,
       "target_label": "Slide 40",
-      "target_slide": 40,
+      "target_slide": 41,
+      "target_slide_id": 296,
+      "label_slide_number": 40,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25645,7 +27627,11 @@
       "sound_ref": 0,
       "hyperlink_id": 206,
       "target_label": "Slide 35",
-      "target_slide": 35,
+      "target_slide": 36,
+      "target_slide_id": 291,
+      "label_slide_number": 35,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25662,7 +27648,11 @@
       "sound_ref": 0,
       "hyperlink_id": 211,
       "target_label": "Slide 41",
-      "target_slide": 41,
+      "target_slide": 42,
+      "target_slide_id": 297,
+      "label_slide_number": 41,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25679,7 +27669,11 @@
       "sound_ref": 0,
       "hyperlink_id": 213,
       "target_label": "Slide 21",
-      "target_slide": 21,
+      "target_slide": 22,
+      "target_slide_id": 276,
+      "label_slide_number": 21,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25696,7 +27690,11 @@
       "sound_ref": 0,
       "hyperlink_id": 381,
       "target_label": "Slide 46",
-      "target_slide": 46,
+      "target_slide": 47,
+      "target_slide_id": 302,
+      "label_slide_number": 46,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25713,7 +27711,11 @@
       "sound_ref": 0,
       "hyperlink_id": 382,
       "target_label": "Slide 46",
-      "target_slide": 46,
+      "target_slide": 47,
+      "target_slide_id": 302,
+      "label_slide_number": 46,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25730,7 +27732,11 @@
       "sound_ref": 0,
       "hyperlink_id": 383,
       "target_label": "Slide 46",
-      "target_slide": 46,
+      "target_slide": 47,
+      "target_slide_id": 302,
+      "label_slide_number": 46,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25747,7 +27753,11 @@
       "sound_ref": 0,
       "hyperlink_id": 565,
       "target_label": "Slide 49",
-      "target_slide": 49,
+      "target_slide": 50,
+      "target_slide_id": 305,
+      "label_slide_number": 49,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25764,7 +27774,11 @@
       "sound_ref": 0,
       "hyperlink_id": 567,
       "target_label": "Slide 50",
-      "target_slide": 50,
+      "target_slide": 51,
+      "target_slide_id": 306,
+      "label_slide_number": 50,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25781,7 +27795,11 @@
       "sound_ref": 0,
       "hyperlink_id": 624,
       "target_label": "Slide 51",
-      "target_slide": 51,
+      "target_slide": 52,
+      "target_slide_id": 307,
+      "label_slide_number": 51,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25798,7 +27816,11 @@
       "sound_ref": 0,
       "hyperlink_id": 635,
       "target_label": "Slide 54",
-      "target_slide": 54,
+      "target_slide": 55,
+      "target_slide_id": 310,
+      "label_slide_number": 54,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25815,7 +27837,11 @@
       "sound_ref": 0,
       "hyperlink_id": 574,
       "target_label": "Slide 49",
-      "target_slide": 49,
+      "target_slide": 50,
+      "target_slide_id": 305,
+      "label_slide_number": 49,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25832,7 +27858,11 @@
       "sound_ref": 0,
       "hyperlink_id": 626,
       "target_label": "Slide 49",
-      "target_slide": 49,
+      "target_slide": 50,
+      "target_slide_id": 305,
+      "label_slide_number": 49,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25849,7 +27879,11 @@
       "sound_ref": 0,
       "hyperlink_id": 629,
       "target_label": "Slide 52",
-      "target_slide": 52,
+      "target_slide": 53,
+      "target_slide_id": 308,
+      "label_slide_number": 52,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25866,7 +27900,11 @@
       "sound_ref": 0,
       "hyperlink_id": 631,
       "target_label": "Slide 53",
-      "target_slide": 53,
+      "target_slide": 54,
+      "target_slide_id": 309,
+      "label_slide_number": 53,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25883,7 +27921,11 @@
       "sound_ref": 0,
       "hyperlink_id": 627,
       "target_label": "Slide 51",
-      "target_slide": 51,
+      "target_slide": 52,
+      "target_slide_id": 307,
+      "label_slide_number": 51,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25900,7 +27942,11 @@
       "sound_ref": 0,
       "hyperlink_id": 632,
       "target_label": "Slide 51",
-      "target_slide": 51,
+      "target_slide": 52,
+      "target_slide_id": 307,
+      "label_slide_number": 51,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25917,7 +27963,11 @@
       "sound_ref": 0,
       "hyperlink_id": 749,
       "target_label": "Slide 56",
-      "target_slide": 56,
+      "target_slide": 57,
+      "target_slide_id": 312,
+      "label_slide_number": 56,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25934,7 +27984,11 @@
       "sound_ref": 0,
       "hyperlink_id": 923,
       "target_label": "Slide 64",
-      "target_slide": 64,
+      "target_slide": 66,
+      "target_slide_id": 320,
+      "label_slide_number": 64,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25952,6 +28006,10 @@
       "hyperlink_id": 1229,
       "target_label": "Slide 77",
       "target_slide": 77,
+      "target_slide_id": 333,
+      "label_slide_number": 77,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25969,6 +28027,10 @@
       "hyperlink_id": 1219,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -25986,6 +28048,10 @@
       "hyperlink_id": 1220,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26003,6 +28069,10 @@
       "hyperlink_id": 1045,
       "target_label": "Slide 68",
       "target_slide": 68,
+      "target_slide_id": 324,
+      "label_slide_number": 68,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26019,7 +28089,11 @@
       "sound_ref": 0,
       "hyperlink_id": 1111,
       "target_label": "Slide 69",
-      "target_slide": 69,
+      "target_slide": 70,
+      "target_slide_id": 325,
+      "label_slide_number": 69,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26037,6 +28111,10 @@
       "hyperlink_id": 1130,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26054,6 +28132,10 @@
       "hyperlink_id": 1222,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26071,6 +28153,10 @@
       "hyperlink_id": 1223,
       "target_label": "Slide 75",
       "target_slide": 75,
+      "target_slide_id": 331,
+      "label_slide_number": 75,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26088,6 +28174,10 @@
       "hyperlink_id": 1128,
       "target_label": "Slide 71",
       "target_slide": 71,
+      "target_slide_id": 327,
+      "label_slide_number": 71,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26105,6 +28195,10 @@
       "hyperlink_id": 1137,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26122,6 +28216,10 @@
       "hyperlink_id": 1118,
       "target_label": "Slide 67",
       "target_slide": 67,
+      "target_slide_id": 323,
+      "label_slide_number": 67,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26139,6 +28237,10 @@
       "hyperlink_id": 1124,
       "target_label": "Slide 69",
       "target_slide": 69,
+      "target_slide_id": 326,
+      "label_slide_number": 69,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26156,6 +28258,10 @@
       "hyperlink_id": 1139,
       "target_label": "Slide 69",
       "target_slide": 69,
+      "target_slide_id": 326,
+      "label_slide_number": 69,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26173,6 +28279,10 @@
       "hyperlink_id": 1141,
       "target_label": "Slide 73",
       "target_slide": 73,
+      "target_slide_id": 329,
+      "label_slide_number": 73,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26190,6 +28300,10 @@
       "hyperlink_id": 1145,
       "target_label": "Slide 74",
       "target_slide": 74,
+      "target_slide_id": 330,
+      "label_slide_number": 74,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26207,6 +28321,10 @@
       "hyperlink_id": 1142,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26224,6 +28342,10 @@
       "hyperlink_id": 1146,
       "target_label": "Slide 72",
       "target_slide": 72,
+      "target_slide_id": 328,
+      "label_slide_number": 72,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26241,6 +28363,10 @@
       "hyperlink_id": 1770,
       "target_label": "Slide 83",
       "target_slide": 83,
+      "target_slide_id": 339,
+      "label_slide_number": 83,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26258,6 +28384,10 @@
       "hyperlink_id": 1458,
       "target_label": "Slide 80",
       "target_slide": 80,
+      "target_slide_id": 336,
+      "label_slide_number": 80,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26275,6 +28405,10 @@
       "hyperlink_id": 1613,
       "target_label": "Slide 82",
       "target_slide": 82,
+      "target_slide_id": 338,
+      "label_slide_number": 82,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26292,6 +28426,10 @@
       "hyperlink_id": 1876,
       "target_label": "Slide 93",
       "target_slide": 93,
+      "target_slide_id": 349,
+      "label_slide_number": 93,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26309,6 +28447,10 @@
       "hyperlink_id": 1771,
       "target_label": "Slide 84",
       "target_slide": 84,
+      "target_slide_id": 340,
+      "label_slide_number": 84,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26326,6 +28468,10 @@
       "hyperlink_id": 1772,
       "target_label": "Slide 85",
       "target_slide": 85,
+      "target_slide_id": 341,
+      "label_slide_number": 85,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26343,6 +28489,10 @@
       "hyperlink_id": 1869,
       "target_label": "Slide 91",
       "target_slide": 91,
+      "target_slide_id": 347,
+      "label_slide_number": 91,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26360,6 +28510,10 @@
       "hyperlink_id": 1854,
       "target_label": "Slide 87",
       "target_slide": 87,
+      "target_slide_id": 343,
+      "label_slide_number": 87,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26377,6 +28531,10 @@
       "hyperlink_id": 1855,
       "target_label": "Slide 80",
       "target_slide": 80,
+      "target_slide_id": 336,
+      "label_slide_number": 80,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26394,6 +28552,10 @@
       "hyperlink_id": 1856,
       "target_label": "Slide 82",
       "target_slide": 82,
+      "target_slide_id": 338,
+      "label_slide_number": 82,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26411,6 +28573,10 @@
       "hyperlink_id": 1857,
       "target_label": "Slide 88",
       "target_slide": 88,
+      "target_slide_id": 344,
+      "label_slide_number": 88,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26428,6 +28594,10 @@
       "hyperlink_id": 1859,
       "target_label": "Slide 89",
       "target_slide": 89,
+      "target_slide_id": 345,
+      "label_slide_number": 89,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26445,6 +28615,10 @@
       "hyperlink_id": 1860,
       "target_label": "Slide 89",
       "target_slide": 89,
+      "target_slide_id": 345,
+      "label_slide_number": 89,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26462,6 +28636,10 @@
       "hyperlink_id": 1863,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26479,6 +28657,10 @@
       "hyperlink_id": 1971,
       "target_label": "Slide 95",
       "target_slide": 95,
+      "target_slide_id": 352,
+      "label_slide_number": 95,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26496,6 +28678,10 @@
       "hyperlink_id": 1975,
       "target_label": "Slide 97",
       "target_slide": 97,
+      "target_slide_id": 354,
+      "label_slide_number": 97,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26513,6 +28699,10 @@
       "hyperlink_id": 1969,
       "target_label": "Slide 94",
       "target_slide": 94,
+      "target_slide_id": 351,
+      "label_slide_number": 94,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26530,6 +28720,10 @@
       "hyperlink_id": 2079,
       "target_label": "Slide 100",
       "target_slide": 100,
+      "target_slide_id": 357,
+      "label_slide_number": 100,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26547,6 +28741,10 @@
       "hyperlink_id": 1972,
       "target_label": "Slide 95",
       "target_slide": 95,
+      "target_slide_id": 352,
+      "label_slide_number": 95,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26564,6 +28762,10 @@
       "hyperlink_id": 1976,
       "target_label": "Slide 97",
       "target_slide": 97,
+      "target_slide_id": 354,
+      "label_slide_number": 97,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26581,6 +28783,10 @@
       "hyperlink_id": 1974,
       "target_label": "Slide 96",
       "target_slide": 96,
+      "target_slide_id": 353,
+      "label_slide_number": 96,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26598,6 +28804,10 @@
       "hyperlink_id": 2077,
       "target_label": "Slide 98",
       "target_slide": 98,
+      "target_slide_id": 355,
+      "label_slide_number": 98,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26615,6 +28825,10 @@
       "hyperlink_id": 2075,
       "target_label": "Slide 96",
       "target_slide": 96,
+      "target_slide_id": 353,
+      "label_slide_number": 96,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26632,6 +28846,10 @@
       "hyperlink_id": 2186,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26649,6 +28867,10 @@
       "hyperlink_id": 2081,
       "target_label": "Slide 99",
       "target_slide": 99,
+      "target_slide_id": 356,
+      "label_slide_number": 99,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26666,6 +28888,10 @@
       "hyperlink_id": 2292,
       "target_label": "Slide 103",
       "target_slide": 103,
+      "target_slide_id": 360,
+      "label_slide_number": 103,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26683,6 +28909,10 @@
       "hyperlink_id": 2303,
       "target_label": "Slide 104",
       "target_slide": 104,
+      "target_slide_id": 361,
+      "label_slide_number": 104,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26700,6 +28930,10 @@
       "hyperlink_id": 2421,
       "target_label": "Slide 105",
       "target_slide": 105,
+      "target_slide_id": 362,
+      "label_slide_number": 105,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26717,6 +28951,10 @@
       "hyperlink_id": 2557,
       "target_label": "Slide 108",
       "target_slide": 108,
+      "target_slide_id": 365,
+      "label_slide_number": 108,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26734,6 +28972,10 @@
       "hyperlink_id": 2563,
       "target_label": "Slide 109",
       "target_slide": 109,
+      "target_slide_id": 366,
+      "label_slide_number": 109,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26751,6 +28993,10 @@
       "hyperlink_id": 2415,
       "target_label": "Slide 103",
       "target_slide": 103,
+      "target_slide_id": 360,
+      "label_slide_number": 103,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26768,6 +29014,10 @@
       "hyperlink_id": 2417,
       "target_label": "Slide 103",
       "target_slide": 103,
+      "target_slide_id": 360,
+      "label_slide_number": 103,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26785,6 +29035,10 @@
       "hyperlink_id": 2423,
       "target_label": "Slide 105",
       "target_slide": 105,
+      "target_slide_id": 362,
+      "label_slide_number": 105,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26802,6 +29056,10 @@
       "hyperlink_id": 2425,
       "target_label": "Slide 106",
       "target_slide": 106,
+      "target_slide_id": 363,
+      "label_slide_number": 106,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26819,6 +29077,10 @@
       "hyperlink_id": 2539,
       "target_label": "Slide 107",
       "target_slide": 107,
+      "target_slide_id": 364,
+      "label_slide_number": 107,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26836,6 +29098,10 @@
       "hyperlink_id": 2546,
       "target_label": "Slide 107",
       "target_slide": 107,
+      "target_slide_id": 364,
+      "label_slide_number": 107,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26853,6 +29119,10 @@
       "hyperlink_id": 2548,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26870,6 +29140,10 @@
       "hyperlink_id": 2555,
       "target_label": "Slide 108",
       "target_slide": 108,
+      "target_slide_id": 365,
+      "label_slide_number": 108,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26887,6 +29161,10 @@
       "hyperlink_id": 2565,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26904,6 +29182,10 @@
       "hyperlink_id": 2809,
       "target_label": "Slide 110",
       "target_slide": 110,
+      "target_slide_id": 367,
+      "label_slide_number": 110,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26921,6 +29203,10 @@
       "hyperlink_id": 2559,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26938,6 +29224,10 @@
       "hyperlink_id": 2561,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26955,6 +29245,10 @@
       "hyperlink_id": 2933,
       "target_label": "Slide 102",
       "target_slide": 102,
+      "target_slide_id": 359,
+      "label_slide_number": 102,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26972,6 +29266,10 @@
       "hyperlink_id": 3058,
       "target_label": "Slide 111",
       "target_slide": 111,
+      "target_slide_id": 368,
+      "label_slide_number": 111,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -26989,6 +29287,10 @@
       "hyperlink_id": 3310,
       "target_label": "Slide 115",
       "target_slide": 115,
+      "target_slide_id": 372,
+      "label_slide_number": 115,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27006,6 +29308,10 @@
       "hyperlink_id": 3308,
       "target_label": "Slide 114",
       "target_slide": 114,
+      "target_slide_id": 371,
+      "label_slide_number": 114,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27022,7 +29328,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3445,
       "target_label": "Slide 118",
-      "target_slide": 118,
+      "target_slide": 117,
+      "target_slide_id": 375,
+      "label_slide_number": 118,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27040,6 +29350,10 @@
       "hyperlink_id": 3307,
       "target_label": "Slide 113",
       "target_slide": 113,
+      "target_slide_id": 370,
+      "label_slide_number": 113,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27057,6 +29371,10 @@
       "hyperlink_id": 3309,
       "target_label": "Slide 114",
       "target_slide": 114,
+      "target_slide_id": 371,
+      "label_slide_number": 114,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27074,6 +29392,10 @@
       "hyperlink_id": 3311,
       "target_label": "Slide 115",
       "target_slide": 115,
+      "target_slide_id": 372,
+      "label_slide_number": 115,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27090,7 +29412,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3446,
       "target_label": "Slide 118",
-      "target_slide": 118,
+      "target_slide": 117,
+      "target_slide_id": 375,
+      "label_slide_number": 118,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27108,6 +29434,10 @@
       "hyperlink_id": 3932,
       "target_label": "Slide 149",
       "target_slide": 149,
+      "target_slide_id": 408,
+      "label_slide_number": 149,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27124,7 +29454,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3452,
       "target_label": "Slide 120",
-      "target_slide": 120,
+      "target_slide": 119,
+      "target_slide_id": 377,
+      "label_slide_number": 120,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27141,7 +29475,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3585,
       "target_label": "Slide 121",
-      "target_slide": 121,
+      "target_slide": 120,
+      "target_slide_id": 378,
+      "label_slide_number": 121,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27158,7 +29496,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3586,
       "target_label": "Slide 122",
-      "target_slide": 122,
+      "target_slide": 121,
+      "target_slide_id": 379,
+      "label_slide_number": 122,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27175,7 +29517,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3771,
       "target_label": "Slide 145",
-      "target_slide": 145,
+      "target_slide": 146,
+      "target_slide_id": 404,
+      "label_slide_number": 145,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27192,7 +29538,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3761,
       "target_label": "Slide 141",
-      "target_slide": 141,
+      "target_slide": 140,
+      "target_slide_id": 398,
+      "label_slide_number": 141,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27209,7 +29559,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3605,
       "target_label": "Slide 136",
-      "target_slide": 136,
+      "target_slide": 138,
+      "target_slide_id": 393,
+      "label_slide_number": 136,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27226,7 +29580,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3600,
       "target_label": "Slide 131",
-      "target_slide": 131,
+      "target_slide": 130,
+      "target_slide_id": 388,
+      "label_slide_number": 131,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27243,7 +29601,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3593,
       "target_label": "Slide 125",
-      "target_slide": 125,
+      "target_slide": 124,
+      "target_slide_id": 382,
+      "label_slide_number": 125,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27260,7 +29622,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3594,
       "target_label": "Slide 127",
-      "target_slide": 127,
+      "target_slide": 126,
+      "target_slide_id": 384,
+      "label_slide_number": 127,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27277,7 +29643,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3599,
       "target_label": "Slide 129",
-      "target_slide": 129,
+      "target_slide": 128,
+      "target_slide_id": 386,
+      "label_slide_number": 129,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27295,6 +29665,10 @@
       "hyperlink_id": 3592,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27311,7 +29685,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3595,
       "target_label": "Slide 128",
-      "target_slide": 128,
+      "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 128,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27328,7 +29706,11 @@
       "sound_ref": 0,
       "hyperlink_id": 4464,
       "target_label": "Slide 171",
-      "target_slide": 171,
+      "target_slide": 172,
+      "target_slide_id": 430,
+      "label_slide_number": 171,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27346,6 +29728,10 @@
       "hyperlink_id": 3598,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27362,7 +29748,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3602,
       "target_label": "Slide 134",
-      "target_slide": 134,
+      "target_slide": 133,
+      "target_slide_id": 391,
+      "label_slide_number": 134,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27380,6 +29770,10 @@
       "hyperlink_id": 3601,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27396,7 +29790,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3608,
       "target_label": "Slide 139",
-      "target_slide": 139,
+      "target_slide": 136,
+      "target_slide_id": 396,
+      "label_slide_number": 139,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27413,7 +29811,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3609,
       "target_label": "Slide 128",
-      "target_slide": 128,
+      "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 128,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27430,7 +29832,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3756,
       "target_label": "Slide 139",
-      "target_slide": 139,
+      "target_slide": 136,
+      "target_slide_id": 396,
+      "label_slide_number": 139,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27448,6 +29854,10 @@
       "hyperlink_id": 3760,
       "target_label": "Slide 128",
       "target_slide": 128,
+      "target_slide_id": 386,
+      "label_slide_number": 128,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27464,7 +29874,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3759,
       "target_label": "Slide 138",
-      "target_slide": 138,
+      "target_slide": 137,
+      "target_slide_id": 397,
+      "label_slide_number": 138,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27481,7 +29895,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3764,
       "target_label": "Slide 143",
-      "target_slide": 143,
+      "target_slide": 142,
+      "target_slide_id": 401,
+      "label_slide_number": 143,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27499,6 +29917,10 @@
       "hyperlink_id": 3767,
       "target_label": "Slide 133",
       "target_slide": 133,
+      "target_slide_id": 391,
+      "label_slide_number": 133,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27515,7 +29937,11 @@
       "sound_ref": 0,
       "hyperlink_id": 3769,
       "target_label": "Slide 144",
-      "target_slide": 144,
+      "target_slide": 143,
+      "target_slide_id": 402,
+      "label_slide_number": 144,
+      "label_stale": true,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27533,6 +29959,10 @@
       "hyperlink_id": 3770,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27550,6 +29980,10 @@
       "hyperlink_id": 3774,
       "target_label": "Slide 137",
       "target_slide": 137,
+      "target_slide_id": 397,
+      "label_slide_number": 137,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27567,6 +30001,10 @@
       "hyperlink_id": 4255,
       "target_label": "Slide 151",
       "target_slide": 151,
+      "target_slide_id": 410,
+      "label_slide_number": 151,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27584,6 +30022,10 @@
       "hyperlink_id": 4283,
       "target_label": "Slide 167",
       "target_slide": 167,
+      "target_slide_id": 426,
+      "label_slide_number": 167,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27601,6 +30043,10 @@
       "hyperlink_id": 4260,
       "target_label": "Slide 153",
       "target_slide": 153,
+      "target_slide_id": 412,
+      "label_slide_number": 153,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27618,6 +30064,10 @@
       "hyperlink_id": 4264,
       "target_label": "Slide 154",
       "target_slide": 154,
+      "target_slide_id": 413,
+      "label_slide_number": 154,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27635,6 +30085,10 @@
       "hyperlink_id": 4275,
       "target_label": "Slide 162",
       "target_slide": 162,
+      "target_slide_id": 421,
+      "label_slide_number": 162,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27652,6 +30106,10 @@
       "hyperlink_id": 4267,
       "target_label": "Slide 157",
       "target_slide": 157,
+      "target_slide_id": 416,
+      "label_slide_number": 157,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27669,6 +30127,10 @@
       "hyperlink_id": 4273,
       "target_label": "Slide 126",
       "target_slide": 126,
+      "target_slide_id": 384,
+      "label_slide_number": 126,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27686,6 +30148,10 @@
       "hyperlink_id": 4271,
       "target_label": "Slide 160",
       "target_slide": 160,
+      "target_slide_id": 419,
+      "label_slide_number": 160,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27703,6 +30169,10 @@
       "hyperlink_id": 4272,
       "target_label": "Slide 126",
       "target_slide": 126,
+      "target_slide_id": 384,
+      "label_slide_number": 126,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27720,6 +30190,10 @@
       "hyperlink_id": 4270,
       "target_label": "Slide 30",
       "target_slide": 30,
+      "target_slide_id": 285,
+      "label_slide_number": 30,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27737,6 +30211,10 @@
       "hyperlink_id": 4281,
       "target_label": "Slide 165",
       "target_slide": 165,
+      "target_slide_id": 424,
+      "label_slide_number": 165,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27754,6 +30232,10 @@
       "hyperlink_id": 4279,
       "target_label": "Slide 127",
       "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 127,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27771,6 +30253,10 @@
       "hyperlink_id": 4288,
       "target_label": "Slide 169",
       "target_slide": 169,
+      "target_slide_id": 428,
+      "label_slide_number": 169,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27788,6 +30274,10 @@
       "hyperlink_id": 4290,
       "target_label": "Slide 170",
       "target_slide": 170,
+      "target_slide_id": 429,
+      "label_slide_number": 170,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27805,6 +30295,10 @@
       "hyperlink_id": 4287,
       "target_label": "Slide 127",
       "target_slide": 127,
+      "target_slide_id": 385,
+      "label_slide_number": 127,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27822,6 +30316,10 @@
       "hyperlink_id": 4640,
       "target_label": "Slide 173",
       "target_slide": 173,
+      "target_slide_id": 432,
+      "label_slide_number": 173,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27839,6 +30337,10 @@
       "hyperlink_id": 4998,
       "target_label": "Slide 174",
       "target_slide": 174,
+      "target_slide_id": 433,
+      "label_slide_number": 174,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27856,6 +30358,10 @@
       "hyperlink_id": 4638,
       "target_label": "Slide 172",
       "target_slide": 172,
+      "target_slide_id": 430,
+      "label_slide_number": 172,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27873,6 +30379,10 @@
       "hyperlink_id": 5178,
       "target_label": "Slide 175",
       "target_slide": 175,
+      "target_slide_id": 434,
+      "label_slide_number": 175,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27890,6 +30400,10 @@
       "hyperlink_id": 5364,
       "target_label": "Slide 176",
       "target_slide": 176,
+      "target_slide_id": 435,
+      "label_slide_number": 176,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27907,6 +30421,10 @@
       "hyperlink_id": 5366,
       "target_label": "Slide 176",
       "target_slide": 176,
+      "target_slide_id": 435,
+      "label_slide_number": 176,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27924,6 +30442,10 @@
       "hyperlink_id": 5176,
       "target_label": "Slide 174",
       "target_slide": 174,
+      "target_slide_id": 433,
+      "label_slide_number": 174,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27941,6 +30463,10 @@
       "hyperlink_id": 5368,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27958,6 +30484,10 @@
       "hyperlink_id": 5552,
       "target_label": "Slide 178",
       "target_slide": 178,
+      "target_slide_id": 437,
+      "label_slide_number": 178,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27975,6 +30505,10 @@
       "hyperlink_id": 5554,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -27992,6 +30526,10 @@
       "hyperlink_id": 5560,
       "target_label": "Slide 179",
       "target_slide": 179,
+      "target_slide_id": 439,
+      "label_slide_number": 179,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28009,6 +30547,10 @@
       "hyperlink_id": 5558,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28026,6 +30568,10 @@
       "hyperlink_id": 5563,
       "target_label": "Slide 178",
       "target_slide": 178,
+      "target_slide_id": 437,
+      "label_slide_number": 178,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28043,6 +30589,10 @@
       "hyperlink_id": 5565,
       "target_label": "Slide 180",
       "target_slide": 180,
+      "target_slide_id": 440,
+      "label_slide_number": 180,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28060,6 +30610,10 @@
       "hyperlink_id": 5561,
       "target_label": "Slide 177",
       "target_slide": 177,
+      "target_slide_id": 436,
+      "label_slide_number": 177,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28077,6 +30631,10 @@
       "hyperlink_id": 5567,
       "target_label": "Slide 179",
       "target_slide": 179,
+      "target_slide_id": 439,
+      "label_slide_number": 179,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28094,6 +30652,10 @@
       "hyperlink_id": 5571,
       "target_label": "Slide 181",
       "target_slide": 181,
+      "target_slide_id": 441,
+      "label_slide_number": 181,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28111,6 +30673,10 @@
       "hyperlink_id": 5573,
       "target_label": "Slide 180",
       "target_slide": 180,
+      "target_slide_id": 440,
+      "label_slide_number": 180,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28128,6 +30694,10 @@
       "hyperlink_id": 5576,
       "target_label": "Slide 182",
       "target_slide": 182,
+      "target_slide_id": 442,
+      "label_slide_number": 182,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28145,6 +30715,10 @@
       "hyperlink_id": 5962,
       "target_label": "Slide 174",
       "target_slide": 174,
+      "target_slide_id": 433,
+      "label_slide_number": 174,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28162,6 +30736,10 @@
       "hyperlink_id": 5964,
       "target_label": "Slide 183",
       "target_slide": 183,
+      "target_slide_id": 443,
+      "label_slide_number": 183,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28179,6 +30757,10 @@
       "hyperlink_id": 5966,
       "target_label": "Slide 184",
       "target_slide": 184,
+      "target_slide_id": 444,
+      "label_slide_number": 184,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28196,6 +30778,10 @@
       "hyperlink_id": 6357,
       "target_label": "Slide 191",
       "target_slide": 191,
+      "target_slide_id": 451,
+      "label_slide_number": 191,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28213,6 +30799,10 @@
       "hyperlink_id": 6362,
       "target_label": "Slide 194",
       "target_slide": 194,
+      "target_slide_id": 454,
+      "label_slide_number": 194,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28230,6 +30820,10 @@
       "hyperlink_id": 6363,
       "target_label": "Slide 195",
       "target_slide": 195,
+      "target_slide_id": 455,
+      "label_slide_number": 195,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28247,6 +30841,10 @@
       "hyperlink_id": 6568,
       "target_label": "Slide 198",
       "target_slide": 198,
+      "target_slide_id": 458,
+      "label_slide_number": 198,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28264,6 +30862,10 @@
       "hyperlink_id": 6361,
       "target_label": "Slide 192",
       "target_slide": 192,
+      "target_slide_id": 452,
+      "label_slide_number": 192,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28281,6 +30883,10 @@
       "hyperlink_id": 6364,
       "target_label": "Slide 196",
       "target_slide": 196,
+      "target_slide_id": 456,
+      "label_slide_number": 196,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28298,6 +30904,10 @@
       "hyperlink_id": 6980,
       "target_label": "Slide 201",
       "target_slide": 201,
+      "target_slide_id": 461,
+      "label_slide_number": 201,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     },
@@ -28315,10 +30925,22 @@
       "hyperlink_id": 6979,
       "target_label": "Slide 200",
       "target_slide": 200,
+      "target_slide_id": 460,
+      "label_slide_number": 200,
+      "label_stale": false,
+      "resolve_method": "docsum_slide_id",
       "action_code": 4,
       "flags_hex": "079f0d30"
     }
   ],
+  "hyperlink_resolution": {
+    "method": "docsum_slide_id",
+    "slideIdMapSize": 201,
+    "docsumDestinationCount": 194,
+    "exHyperlinkCount": 194,
+    "staleFriendlyLabelCount": 75,
+    "note": "ExHyperlink CString 'Slide N' is a stale friendly name. Targets resolve via DocumentSummaryInformation 'slideId,N,Slide N' paired 1:1 with ExHyperlink order, mapped through SlideListWithText slideId → presentation order."
+  },
   "sounds": [
     {
       "offset": 10078,
@@ -28461,8 +31083,8 @@
       "width": 8,
       "height": 8,
       "mode": "RGBA",
-      "bytes": 98,
-      "sha256": "559cbd5b3f3cf7a855d59890006faa07865ab77fdbc6e8808b45051d101f5354"
+      "bytes": 99,
+      "sha256": "ad311bf60c0f0fc6c8a0a3c1fae9468ee61feb8ff20de3acedcbd10be52f5fe3"
     },
     {
       "id": "asset-006",

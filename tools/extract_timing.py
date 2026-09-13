@@ -33,6 +33,17 @@ TRANSITION_FLAG_BITS = {
     0x1000: "cursorVisible",
 }
 
+# SSSlideInfoAtom effectType values used in this deck (validated vs pptx OOXML).
+TRANSITION_EFFECT_NAMES = {
+    0: "cut",
+    3: "checker",
+    11: "zoom",
+    21: "comb",
+    22: "newsflash",
+    23: "fade",
+    27: "circle",
+}
+
 ANIMATION_FLAG_BITS = {
     0x0001: "reverse",
     0x0004: "automatic",
@@ -62,6 +73,7 @@ def parse_transition(payload: bytes) -> dict[str, object]:
         "soundRef": sound_ref,
         "effectDirection": direction,
         "effectType": effect_type,
+        "effectName": TRANSITION_EFFECT_NAMES.get(effect_type, f"unknown_{effect_type}"),
         "flags": transition_flags,
         "flagNames": flags(transition_flags, TRANSITION_FLAG_BITS),
         "speed": speed,

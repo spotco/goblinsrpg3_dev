@@ -37,6 +37,17 @@ TEXT_BYTES = 4008
 OFFICEART_SP_CONTAINER = 0xF004
 OFFICEART_SP = 0xF00A
 OFFICEART_CLIENT_ANCHOR = 0xF010
+SLIDE_LIST_WITH_TEXT = 4080
+SLIDE_PERSIST_ATOM = 1011
+CSTRING = 4026
+
+# PowerPoint DocSummary hyperlink destinations use "slideId,staleNum,Slide staleNum".
+# ExHyperlink CString labels are often STALE after slides are reordered; modern PPT
+# and pptx re-export resolve by slideId via SlideListWithText presentation order.
+DOCSUM_HLINK_RE = re.compile(
+    rb"(?:[\x30-\x39]\x00)+,\x00(?:[\x30-\x39]\x00)+,\x00"
+    rb"S\x00l\x00i\x00d\x00e\x00 \x00(?:[\x30-\x39]\x00)+"
+)
 
 
 def iter_records(
@@ -205,6 +216,103 @@ def extract_pictures(pictures: bytes, output_dir: Path) -> list[dict[str, object
     return assets
 
 
+
+def build_slide_id_to_presentation_order(ppt: bytes, records: list[dict[str, int]]) -> dict[int, int]:
+    """Map SlidePersistAtom.slideId -> 1-based presentation order (SlideListWithText inst 0)."""
+
+    mapping: dict[int, int] = {}
+    for container in records:
+        if container["type"] != SLIDE_LIST_WITH_TEXT or container["instance"] != 0:
+            continue
+        start = container["offset"] + RECORD_HEADER.size
+        end = start + container["length"]
+        order = 0
+        for record in records:
+            if record["type"] != SLIDE_PERSIST_ATOM:
+                continue
+            if not (start <= record["offset"] < end):
+                continue
+            payload = ppt[
+                record["offset"] + RECORD_HEADER.size : record["offset"] + RECORD_HEADER.size + record["length"]
+            ]
+            if len(payload) < 20:
+                continue
+            _psr_id, _reserved, _num_texts, slide_id, _flags = struct.unpack_from("<iiiii", payload)
+            order += 1
+            mapping[slide_id] = order
+        break
+    return mapping
+
+
+def parse_docsum_hyperlink_destinations(ole: olefile.OleFileIO) -> list[dict[str, object]]:
+    """Ordered DocSummary destinations: slideId + stale friendly Slide N label."""
+
+    try:
+        docsum = ole.openstream(["\x05DocumentSummaryInformation"]).read()
+    except OSError:
+        return []
+    destinations: list[dict[str, object]] = []
+    for match in DOCSUM_HLINK_RE.finditer(docsum):
+        raw = match.group().decode("utf-16-le")
+        parts = raw.split(",", 2)
+        if len(parts) != 3:
+            continue
+        try:
+            slide_id = int(parts[0])
+            stale_num = int(parts[1])
+        except ValueError:
+            continue
+        label = parts[2]
+        destinations.append(
+            {
+                "slideId": slide_id,
+                "staleSlideNumber": stale_num,
+                "label": label,
+                "raw": raw,
+            }
+        )
+    return destinations
+
+
+def resolve_hyperlink_targets(
+    hyperlinks_ordered: list[dict[str, object]],
+    docsum_destinations: list[dict[str, object]],
+    slide_id_to_order: dict[int, int],
+) -> None:
+    """Mutate hyperlink dicts with slideId-resolved target_slide (PPT-faithful)."""
+
+    if len(docsum_destinations) != len(hyperlinks_ordered):
+        # Fall back to stale label numbers if DocSummary is missing/mismatched.
+        for link in hyperlinks_ordered:
+            match = re.fullmatch(r"Slide (\d+)", str(link.get("label") or ""))
+            link["target_slide"] = int(match.group(1)) if match else None
+            link["resolveMethod"] = "friendly_label_fallback"
+            link["labelStale"] = False
+        return
+
+    stale_count = 0
+    for link, dest in zip(hyperlinks_ordered, docsum_destinations):
+        label = str(link.get("label") or "")
+        if dest["label"] != label:
+            # Keep pairing by order (both tables are append-ordered); note mismatch.
+            link["docsumLabelMismatch"] = dest["label"]
+        slide_id = int(dest["slideId"])
+        resolved = slide_id_to_order.get(slide_id)
+        stale_num = int(dest["staleSlideNumber"])
+        label_match = re.fullmatch(r"Slide (\d+)", label)
+        label_num = int(label_match.group(1)) if label_match else stale_num
+        link["slideId"] = slide_id
+        link["labelSlideNumber"] = label_num
+        link["target_slide"] = resolved
+        link["resolveMethod"] = "docsum_slide_id"
+        link["labelStale"] = bool(resolved is not None and resolved != label_num)
+        if link["labelStale"]:
+            stale_count += 1
+    # stash summary on first link for callers; also return via side channel below
+    if hyperlinks_ordered:
+        hyperlinks_ordered[0]["_staleLabelCount"] = stale_count
+
+
 def stream_inventory(ole: olefile.OleFileIO) -> list[dict[str, object]]:
     streams = []
     for parts in ole.listdir(streams=True, storages=False):
@@ -240,7 +348,8 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
             for record in records
             if record["type"] in (SOUND, SOUND_DATA)
         ]
-        hyperlinks: dict[int, dict[str, object]] = {}
+        # ExHyperlink containers are append-ordered; DocSummary destinations pair 1:1.
+        hyperlinks_ordered: list[dict[str, object]] = []
         for event in contextual_records:
             if event["type"] != EX_HYPERLINK:
                 continue
@@ -254,15 +363,24 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
                 child_payload = ppt[child + RECORD_HEADER.size : child + RECORD_HEADER.size + child_length]
                 if child_type == EX_HYPERLINK_ATOM and len(child_payload) >= 4:
                     link_id = struct.unpack_from("<I", child_payload)[0]
-                elif child_type == 4026:
+                elif child_type == CSTRING:
                     label = child_payload.decode("utf-16le", "ignore")
                 child += RECORD_HEADER.size + child_length
             if link_id is not None:
-                hyperlinks[link_id] = {
-                    "id": link_id,
-                    "label": label,
-                    "record_offset": event["offset"],
-                }
+                hyperlinks_ordered.append(
+                    {
+                        "id": link_id,
+                        "label": label,
+                        "record_offset": event["offset"],
+                    }
+                )
+        slide_id_to_order = build_slide_id_to_presentation_order(ppt, records)
+        docsum_destinations = parse_docsum_hyperlink_destinations(ole)
+        resolve_hyperlink_targets(hyperlinks_ordered, docsum_destinations, slide_id_to_order)
+        hyperlinks: dict[int, dict[str, object]] = {
+            int(link["id"]): link for link in hyperlinks_ordered
+        }
+        stale_label_count = sum(1 for link in hyperlinks_ordered if link.get("labelStale"))
         objects = []
         text_runs = []
         interactive_actions = []
@@ -304,7 +422,14 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
             action_code = payload[8]
             target = hyperlinks.get(hyperlink_id)
             label = target["label"] if target else None
-            match = re.fullmatch(r"Slide (\d+)", label or "")
+            # Prefer DocSummary slideId → presentation order (stale "Slide N" labels lie).
+            if target and target.get("target_slide") is not None:
+                target_slide = int(target["target_slide"])
+                resolve_method = target.get("resolveMethod")
+            else:
+                match = re.fullmatch(r"Slide (\d+)", label or "")
+                target_slide = int(match.group(1)) if match else None
+                resolve_method = "friendly_label_fallback" if match else None
             interactive_actions.append(
                 {
                     "record_offset": event["offset"],
@@ -314,7 +439,11 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
                     "sound_ref": sound_ref,
                     "hyperlink_id": hyperlink_id,
                     "target_label": label,
-                    "target_slide": int(match.group(1)) if match else None,
+                    "target_slide": target_slide,
+                    "target_slide_id": target.get("slideId") if target else None,
+                    "label_slide_number": target.get("labelSlideNumber") if target else None,
+                    "label_stale": bool(target.get("labelStale")) if target else False,
+                    "resolve_method": resolve_method,
                     "action_code": action_code,
                     "flags_hex": payload[12:].hex(),
                 }
@@ -343,11 +472,27 @@ def build_inventory(source: Path, output_dir: Path) -> dict[str, object]:
             "record_type_counts": {str(key): value for key, value in sorted(counts.items())},
             "slides": slides,
             "actions": actions,
-            "hyperlinks": sorted(hyperlinks.values(), key=lambda item: int(item["id"])),
+            "hyperlinks": sorted(
+                ({k: v for k, v in link.items() if not str(k).startswith("_")} for link in hyperlinks.values()),
+                key=lambda item: int(item["id"]),
+            ),
             "objects": objects,
             "text_runs": text_runs,
             "interactive_actions": interactive_actions,
             "navigation_edges": navigation_edges,
+            "hyperlink_resolution": {
+                "method": "docsum_slide_id",
+                "slideIdMapSize": len(slide_id_to_order),
+                "docsumDestinationCount": len(docsum_destinations),
+                "exHyperlinkCount": len(hyperlinks_ordered),
+                "staleFriendlyLabelCount": stale_label_count,
+                "note": (
+                    "ExHyperlink CString 'Slide N' is a stale friendly name. "
+                    "Targets resolve via DocumentSummaryInformation "
+                    "'slideId,N,Slide N' paired 1:1 with ExHyperlink order, "
+                    "mapped through SlideListWithText slideId → presentation order."
+                ),
+            },
             "sounds": sounds,
             "embedded_assets": assets,
             "source_audio": source_audio,

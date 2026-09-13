@@ -1,61 +1,15 @@
 {
   "format": "goblins-rpg3-clickable-contract-v1",
   "summary": {
-    "okCount": 207,
+    "okCount": 209,
     "violationCount": 0,
-    "residualSelfCount": 5,
+    "residualSelfCount": 0,
     "residualExplicitNoopCount": 4,
     "orphanContinueStageClickCount": 0,
     "passed": true
   },
   "violations": [],
-  "residualSelfHyperlinks": [
-    {
-      "slide": 15,
-      "hotspotId": "s015-a421744",
-      "reason": "residual_self_reload",
-      "resolveMethod": "confirmed_self_combat",
-      "shapeText": "-flee",
-      "residualKind": "partial_combat_self",
-      "clickable": true
-    },
-    {
-      "slide": 27,
-      "hotspotId": "s027-a491991",
-      "reason": "residual_self_reload",
-      "resolveMethod": "confirmed_self_combat",
-      "shapeText": "-flee",
-      "residualKind": "partial_combat_self",
-      "clickable": true
-    },
-    {
-      "slide": 39,
-      "hotspotId": "s039-a587506",
-      "reason": "residual_self_reload",
-      "resolveMethod": "confirmed_self_combat",
-      "shapeText": "-attack",
-      "residualKind": "partial_combat_self",
-      "clickable": true
-    },
-    {
-      "slide": 50,
-      "hotspotId": "s050-a633861",
-      "reason": "documented_residual_self",
-      "resolveMethod": "confirmed_self_label_match",
-      "shapeText": null,
-      "residualKind": "hub_image_self",
-      "clickable": false
-    },
-    {
-      "slide": 52,
-      "hotspotId": "s052-a636703",
-      "reason": "documented_residual_self",
-      "resolveMethod": "confirmed_self_label_match",
-      "shapeText": null,
-      "residualKind": "hub_image_self",
-      "clickable": false
-    }
-  ],
+  "residualSelfHyperlinks": [],
   "residualExplicitNoops": [
     {
       "slide": 10,
@@ -131,73 +85,73 @@
       "slide": 15,
       "hotspotId": "s015-a421537",
       "kind": "navigation",
-      "target": 18
+      "target": 19
     },
     {
       "slide": 15,
       "hotspotId": "s015-a421744",
-      "kind": "residual_self_reload",
-      "target": 15
+      "kind": "navigation",
+      "target": 17
     },
     {
       "slide": 16,
       "hotspotId": "s016-a424910",
       "kind": "navigation",
-      "target": 32
+      "target": 33
     },
     {
       "slide": 16,
       "hotspotId": "s016-a425115",
       "kind": "navigation",
-      "target": 17
+      "target": 18
     },
     {
       "slide": 17,
       "hotspotId": "s017-a427598",
       "kind": "navigation",
-      "target": 32
+      "target": 23
     },
     {
       "slide": 18,
       "hotspotId": "s018-a435177",
       "kind": "navigation",
-      "target": 24
+      "target": 25
     },
     {
       "slide": 19,
       "hotspotId": "s019-a442926",
       "kind": "navigation",
-      "target": 24
+      "target": 25
     },
     {
       "slide": 20,
       "hotspotId": "s020-a448736",
       "kind": "navigation",
-      "target": 25
+      "target": 26
     },
     {
       "slide": 21,
       "hotspotId": "s021-a454188",
       "kind": "navigation",
-      "target": 19
+      "target": 20
     },
     {
       "slide": 21,
       "hotspotId": "s021-a454395",
       "kind": "navigation",
-      "target": 17
+      "target": 18
     },
     {
       "slide": 22,
       "hotspotId": "s022-a455457",
       "kind": "navigation",
-      "target": 34
+      "target": 35
     },
     {
       "slide": 22,
       "hotspotId": "s022-a455662",
       "kind": "navigation",
-      "target": 36
+      "target": 37
     },
     {
       "slide": 23,

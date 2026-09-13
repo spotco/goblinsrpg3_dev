@@ -17,59 +17,31 @@
       "ok": true
     },
     {
-      "id": "island-20",
+      "id": "root-20",
       "label": "s020 \u00b7 Felled goblin!!",
       "slide": 20,
       "hint": "?debug=1&slide=20",
       "ok": true
     },
     {
-      "id": "island-43",
+      "id": "root-34",
+      "label": "s034 \u00b7 Goblin x1 Attacks!",
+      "slide": 34,
+      "hint": "?debug=1&slide=34",
+      "ok": true
+    },
+    {
+      "id": "root-43",
       "label": "s043 \u00b7 So you flee like crazy",
       "slide": 43,
       "hint": "?debug=1&slide=43",
       "ok": true
     },
     {
-      "id": "island-orphan-52",
-      "label": "s052 \u00b7 Island orphan s052",
+      "id": "root-52",
+      "label": "s052 \u00b7 Slide 52",
       "slide": 52,
       "hint": "?debug=1&slide=52",
-      "ok": true
-    },
-    {
-      "id": "island-orphan-53",
-      "label": "s053 \u00b7 Island orphan s053",
-      "slide": 53,
-      "hint": "?debug=1&slide=53",
-      "ok": true
-    },
-    {
-      "id": "root-22",
-      "label": "s022 \u00b7 -Attack",
-      "slide": 22,
-      "hint": "?debug=1&slide=22",
-      "ok": true
-    },
-    {
-      "id": "root-26",
-      "label": "s026 \u00b7 Goblin x1 Attacks!",
-      "slide": 26,
-      "hint": "?debug=1&slide=26",
-      "ok": true
-    },
-    {
-      "id": "root-38",
-      "label": "s038 \u00b7 Goblin x1 Attacks!",
-      "slide": 38,
-      "hint": "?debug=1&slide=38",
-      "ok": true
-    },
-    {
-      "id": "root-41",
-      "label": "s041 \u00b7 Can't escape!",
-      "slide": 41,
-      "hint": "?debug=1&slide=41",
       "ok": true
     },
     {
@@ -94,17 +66,24 @@
       "ok": true
     },
     {
-      "id": "root-117",
-      "label": "s117 \u00b7 Player charges LIMIT!",
-      "slide": 117,
-      "hint": "?debug=1&slide=117",
-      "ok": true
-    },
-    {
       "id": "root-119",
       "label": "s119 \u00b7 -attack",
       "slide": 119,
       "hint": "?debug=1&slide=119",
+      "ok": true
+    },
+    {
+      "id": "root-135",
+      "label": "s135 \u00b7 -attack",
+      "slide": 135,
+      "hint": "?debug=1&slide=135",
+      "ok": true
+    },
+    {
+      "id": "root-145",
+      "label": "s145 \u00b7 Slide 145",
+      "slide": 145,
+      "hint": "?debug=1&slide=145",
       "ok": true
     },
     {
@@ -119,6 +98,13 @@
       "label": "s166 \u00b7 If magic/limit",
       "slide": 166,
       "hint": "?debug=1&slide=166",
+      "ok": true
+    },
+    {
+      "id": "root-171",
+      "label": "s171 \u00b7 After Battle",
+      "slide": 171,
+      "hint": "?debug=1&slide=171",
       "ok": true
     }
   ]

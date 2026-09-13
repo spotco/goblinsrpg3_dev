@@ -50,8 +50,8 @@ def main() -> None:
         fail("Tier A missing combat slide 15")
     if not tier.get("deathReachable"):
         fail("Tier A: death slide 30 not reachable from title")
-    if not tier.get("loopEdge042to021"):
-        fail("Tier A: expected loop edge s042 → s021")
+    if not tier.get("loopEdge042to022"):
+        fail("Tier A: expected edge s042 → s022 (1-goblin menu; slideId-resolved)")
 
     # Seed-1 walk exists and has no stuck endings
     walk1 = next((w for w in path_report.get("walks") or [] if w.get("seed") == 1), None)
@@ -85,28 +85,13 @@ def main() -> None:
         fail("promote_audit format unexpected")
     methods = {p.get("resolveMethod") for p in promotes.get("promotes") or []}
     for required_method in (
-        "self_continue_to_next",
-        "sole_image_self_to_next",
-        "combat_all_self_to_next_outcome",
         "noop_continue_to_next",
         "noop_mirror_sibling_hyperlink",
     ):
         if required_method not in methods:
             fail(f"promote audit missing method {required_method}")
-    combat_promotes = [
-        p
-        for p in promotes.get("promotes") or []
-        if p.get("slide") == 46 and p.get("resolveMethod") == "combat_all_self_to_next_outcome"
-    ]
-    if len(combat_promotes) < 3:
-        fail("expected 3 s046 combat promotes in audit")
-    start_promote = [
-        p
-        for p in promotes.get("promotes") or []
-        if p.get("slide") == 2 and p.get("targetSlide") == 3
-    ]
-    if not start_promote:
-        fail("expected s002 start promote → 3 in audit")
+    # Self-link promotes (self_continue / combat_all_self / sole_image_self) are no longer
+    # required: DocSummary slideId resolve yields the real targets (e.g. s046→47, s002→3).
 
     # Clickable contract
     if not clickable.get("summary", {}).get("passed"):
@@ -145,54 +130,39 @@ def main() -> None:
         if not mirrored:
             fail(f"slide {slide} expected noop_mirror for {text!r} → {target}")
 
-    # Phase 2.4–2.5: residual selfs accepted + non-clickable
-    residual_fixtures = [
-        (15, "partial_combat_self", "-flee"),
-        (27, "partial_combat_self", "-flee"),
-        (39, "partial_combat_self", "-attack"),
-        (50, "hub_image_self", None),
-        (52, "hub_image_self", None),
+    # Phase 2.4–2.5: former "residual selfs" were stale ExHyperlink labels.
+    # After DocSummary slideId resolve they navigate (no accepted_source_self).
+    former_self_fixtures = [
+        (15, "-flee", 17),
+        (27, "-flee", 28),
+        (39, "-attack", 40),
     ]
-    for slide, kind, text in residual_fixtures:
+    for slide, text, target in former_self_fixtures:
         screen = game["screens"][slide - 1]
-        residuals = [
+        hits = [
             h
             for h in screen.get("hotspots") or []
-            if h.get("residualStatus") == "accepted_source_self"
-            and h.get("targetSlide") == slide
+            if h.get("action") == "hyperlink"
+            and str(h.get("shapeText") or "").lower().replace(" ", "")
+            == text.lower().replace(" ", "")
+            and h.get("targetSlide") == target
+            and h.get("clickable")
         ]
-        if text:
-            residuals = [
-                h
-                for h in residuals
-                if str(h.get("shapeText") or "").lower().replace(" ", "")
-                == text.lower().replace(" ", "")
-            ]
-        if not residuals:
-            fail(f"slide {slide} missing accepted residual self ({kind} {text!r})")
-        for h in residuals:
-            if kind == "partial_combat_self":
-                # Combat self-hyperlink reloads the slide (PPT-faithful); no invent-bridge.
-                if not h.get("clickable"):
-                    fail(f"slide {slide} combat residual self should be clickable reload: {h.get('id')}")
-                if h.get("behaviorStatus") != "residual_self_reload":
-                    fail(
-                        f"slide {slide} combat residual expected residual_self_reload, "
-                        f"got {h.get('behaviorStatus')}"
-                    )
-            else:
-                if h.get("clickable"):
-                    fail(f"slide {slide} residual self still clickable: {h.get('id')}")
-                if h.get("behaviorStatus") != "documented_residual_self":
-                    fail(f"slide {slide} residual missing documented_residual_self status")
-            if h.get("residualKind") != kind:
-                fail(f"slide {slide} residualKind {h.get('residualKind')} != {kind}")
-        # Slide must still leave
+        if not hits:
+            fail(f"slide {slide} {text!r} must navigate →{target} after slideId resolve")
         if not (screen.get("advancement") or {}).get("leavePaths"):
-            fail(f"slide {slide} residual self slide lost leave paths")
+            fail(f"slide {slide} lost leave paths")
 
-    if clickable.get("summary", {}).get("residualSelfCount", 0) < 5:
-        fail("clickable contract should list >=5 residual selfs")
+    # Hub image slides also leave via slideId-native hyperlinks (not residual self).
+    for slide in (50, 52):
+        screen = game["screens"][slide - 1]
+        nav = [
+            h
+            for h in screen.get("hotspots") or []
+            if h.get("clickable") and h.get("targetSlide") and h.get("targetSlide") != slide
+        ]
+        if not nav:
+            fail(f"hub slide {slide} expected outbound hyperlinks after slideId resolve")
 
     # Game manifest still 201 screens
     if len(game.get("screens") or []) != 201:
@@ -272,8 +242,9 @@ def main() -> None:
             fail(f"primary chapter seed {seed} walk missing or not ok")
     # Island 43 primary leaveable; orphan 52 if present ok
     islands = walks.get("islands") or []
-    if len(islands) < 2:
-        fail("expected 2 sealed island reports")
+    # After slideId resolve, undirected graph is one component (no sealed islands).
+    if len(islands) != 0:
+        fail(f"expected 0 sealed island reports after slideId resolve, got {len(islands)}")
     for isl in islands:
         if not isl.get("ok"):
             fail(f"island {isl.get('slides')} integrity failed")
@@ -295,7 +266,7 @@ def main() -> None:
     print("offline playability verification passed")
     print(
         f"  TierA={tier['reachableCount']} slides "
-        f"death={tier['deathReachable']} loop042→021={tier['loopEdge042to021']}"
+        f"death={tier['deathReachable']} loop042→022={tier['loopEdge042to022']}"
     )
     print(
         f"  chapters={chapters['summary']['chapterCount']} "

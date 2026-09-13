@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""Regression: result beats autoplay entrances; slide nav stays click-gated; flee reloads.
+"""Regression: result beats autoplay entrances; slide nav stays click-gated.
 
-Discovered 2026-09-11 / overturned 2026-09-12:
-  - s015 Attack→18 (PPT CAN'T ESCAPE + motion paths). With autoplay disabled on
-    continue-only slides, Attack landed on entrance-hidden layers (empty debug
-    outlines / "green boxes") until a stage click. Restore continue-only OnNext
-    autoplay so attack motion/text play on arrival. Slide *navigation* still
-    requires the continue hyperlink (29/30/31 must not auto-nav).
-  - s015 -flee is a binary self-hyperlink (residual_self_reload): clickable reload
-    replays slide anims — do not invent flee→17.
+DocSummary slideId resolution (2026-09-13):
+  - s015 Attack→19 (Felled) with autoplay OnNext entrances on result beats.
+  - s015 Flee→17 (CAN'T ESCAPE) — not residual self; stale label "Slide 15" lied.
+  - Slide *navigation* still requires continue hyperlink (29/30/31 must not auto-nav).
 
 This script fails if those regressions return.
 """
@@ -48,6 +44,10 @@ def goto(page, slide: int) -> None:
     page.goto(f"{BASE}/?debug=1&slide={slide}", wait_until="domcontentloaded")
     wait_ready(page)
     page.evaluate("() => { try { goblinsRpg3Debug.setHudCollapsed(true); } catch (e) {} }")
+    page.wait_for_function(
+        "() => !document.getElementById('stage')?.classList.contains('is-transitioning')",
+        timeout=5000,
+    )
 
 
 def cur(page) -> int:
@@ -170,14 +170,13 @@ def assert_click_gated_continue(page, slide: int, expected_target: int) -> None:
         print(f"OK s{slide:03d} click-gated continue → {expected_target}")
 
 
-def assert_flee_reloads(page) -> None:
+def assert_flee_to_cant_escape(page) -> None:
     goto(page, 15)
     page.wait_for_timeout(400)
-    # Flee must be a rendered clickable hotspot targeting self.
     meta = page.evaluate(
-        """() => {
+        r"""() => {
       const btn = [...document.querySelectorAll('#hotspots button.hotspot')].find((b) =>
-        /^\\s*-?\\s*flee\\s*$/i.test(b.getAttribute('aria-label') || '')
+        /^\s*-?\s*flee\s*$/i.test(b.getAttribute('aria-label') || '')
       );
       return btn
         ? {
@@ -189,49 +188,29 @@ def assert_flee_reloads(page) -> None:
     }"""
     )
     if not meta:
-        fail("s015 flee hotspot missing (should be residual_self_reload clickable)")
+        fail("s015 flee hotspot missing")
         return
-    if meta.get("target") != "slide-015":
-        fail(f"s015 flee target should be slide-015, got {meta.get('target')}")
+    if meta.get("target") != "slide-017":
+        fail(f"s015 flee target should be slide-017, got {meta.get('target')}")
     click_layer_center(page, OPTION_FLEE)
-    page.wait_for_timeout(300)
-    if cur(page) != 15:
-        fail(f"s015 flee should reload slide 15, navigated to {cur(page)}")
-        return
-    # Must not invent flee→17
-    hist = page.evaluate("() => (goblinsRpg3Debug.history() || []).slice(-6)")
-    jumped_17 = any(
-        (h.get("targetSlide") == 17) or ((h.get("to") or {}).get("slide") == 17) for h in hist
-    )
-    if jumped_17:
-        fail("s015 flee invented navigation to slide 17")
-        return
-    # Reload must re-enter and replay entrance (title text briefly re-hides / fades).
-    replayed = page.evaluate(
-        """() => {
-          const h = goblinsRpg3Debug.history() || [];
-          const same = h.filter((e) => e.result === 'navigate-to-same-screen' || e.detail === 'navigate-to-same-screen');
-          const enters = h.filter((e) => e.kind === 'slide' && e.detail === 'enter' && e.targetSlide === 15);
-          return { same: same.length, enters: enters.length };
-        }"""
-    )
-    if replayed.get("same", 0) < 1 or replayed.get("enters", 0) < 2:
-        fail(f"s015 flee did not visibly re-enter slide (history={replayed})")
+    page.wait_for_timeout(400)
+    if cur(page) != 17:
+        fail(f"s015 flee should navigate to slide 17, got {cur(page)}")
     else:
-        print("OK s015 flee reloads self (no invent-bridge to 17; slide re-entered)")
+        print("OK s015 flee → 17 (CAN'T ESCAPE; slideId-resolved)")
 
 
 def assert_attack_shows_anim(page) -> None:
-    """Attack→18 must show motion/text without an extra stage click (not empty green boxes)."""
+    """Attack→19 must show motion/text without an extra stage click (not empty green boxes)."""
     goto(page, 15)
     page.wait_for_timeout(400)
     click_layer_center(page, OPTION_ATTACK)
     page.wait_for_timeout(200)
-    if cur(page) != 18:
-        fail(f"s015 Attack expected →18, got {cur(page)}")
+    if cur(page) != 19:
+        fail(f"s015 Attack expected →19, got {cur(page)}")
         return
     if not autoplay_flag(page):
-        fail("s018 after Attack should autoplay OnNext entrances (else blank/green-box phase)")
+        fail("s019 after Attack should autoplay OnNext entrances (else blank/green-box phase)")
         return
     # Within ~1.5s some attack motion target or result text must be visible.
     seen = False
@@ -245,22 +224,22 @@ def assert_attack_shows_anim(page) -> None:
             vis: getComputedStyle(el).visibility,
             op: parseFloat(getComputedStyle(el).opacity || '0'),
           }));
-          // Motion-path cast (23555/23556) or result caption — not static props.
-          const motion = layers.filter((l) => (l.id === '23555' || l.id === '23556') && l.vis === 'visible' && l.op > 0.15);
+          // Felled result caption or any visible text/image entrance on s019.
+          const motion = layers.filter((l) => l.vis === 'visible' && l.op > 0.15 && (l.id || l.text));
           const visibleText = layers.filter((l) => l.text && l.vis === 'visible' && l.op > 0.2);
           return { motion: motion.map((l) => l.id), visibleText: visibleText.map((l) => l.text), slide: goblinsRpg3Debug.snapshot().currentScreen.slide };
         }"""
         )
-        if info.get("slide") != 18:
-            fail(f"left s018 during attack anim wait → {info.get('slide')}")
+        if info.get("slide") != 19:
+            fail(f"left s019 during attack anim wait → {info.get('slide')}")
             return
         if info.get("motion") or info.get("visibleText"):
             seen = True
             break
     if not seen:
-        fail("s018 after Attack stayed empty (no visible motion/text within ~2s; green-box regression)")
+        fail("s019 after Attack stayed empty (no visible motion/text within ~2s; green-box regression)")
     else:
-        print(f"OK s015 Attack → 18 with visible entrance (autoplay)")
+        print(f"OK s015 Attack → 19 with visible entrance (autoplay)")
 
 
 def assert_attack_and_boredom(page) -> None:
@@ -297,15 +276,15 @@ def assert_manifest_policy() -> None:
         for h in s15["hotspots"]
         if OPTION_FLEE.match(str(h.get("shapeText") or ""))
     )
-    if flee.get("behaviorStatus") != "residual_self_reload":
-        fail(f"manifest s015 flee behaviorStatus={flee.get('behaviorStatus')}")
-    if not flee.get("clickable") or flee.get("targetSlide") != 15:
-        fail(f"manifest s015 flee should be clickable self, got {flee}")
+    if not flee.get("clickable") or flee.get("targetSlide") != 17:
+        fail(f"manifest s015 flee should be clickable →17, got {flee}")
+    if flee.get("resolveMethod") == "user_authorized_target_override":
+        fail("s015 flee must not use target override")
     for slide in (29, 30, 31):
         s = next(x for x in GM["screens"] if x["slide"] == slide)
         if s.get("advancement", {}).get("autoAdvance"):
             fail(f"s{slide:03d} must not have autoAdvance")
-    print("OK manifest policy (flee reload; 29/30/31 no autoAdvance)")
+    print("OK manifest policy (flee→17; 29/30/31 no autoAdvance)")
 
 
 def main() -> int:
@@ -316,10 +295,10 @@ def main() -> int:
         assert_chapter_jump(page)
         for slide in (29, 30, 31):
             assert_no_auto_nav(page, slide, seconds=5.0)
-        # 29 continue → 30 (self_continue_to_next); 31 continue → 29 (binary)
+        # 29 continue → 30 (self_continue_to_next); 31 continue → 30 (slideId-resolved; stale label Slide 29)
         assert_click_gated_continue(page, 29, 30)
-        assert_click_gated_continue(page, 31, 29)
-        assert_flee_reloads(page)
+        assert_click_gated_continue(page, 31, 30)
+        assert_flee_to_cant_escape(page)
         assert_attack_and_boredom(page)
         browser.close()
     if failures:
