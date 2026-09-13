@@ -84,12 +84,11 @@ def main() -> None:
     if promotes.get("format") != "goblins-rpg3-promote-audit-v1":
         fail("promote_audit format unexpected")
     methods = {p.get("resolveMethod") for p in promotes.get("promotes") or []}
-    for required_method in (
-        "noop_continue_to_next",
-        "noop_mirror_sibling_hyperlink",
-    ):
-        if required_method not in methods:
-            fail(f"promote audit missing method {required_method}")
+    if "noop_continue_to_next" not in methods:
+        fail("promote audit missing method noop_continue_to_next")
+    # noop_mirror_sibling_hyperlink is only for *different-shape* leftover
+    # InteractiveInfo. Same-shape click+none pairs stay explicit_noop (the
+    # real DocSum hyperlink is the only clickable button).
     # Self-link promotes (self_continue / combat_all_self / sole_image_self) are no longer
     # required: DocSummary slideId resolve yields the real targets (e.g. s046→47, s002→3).
 
@@ -112,7 +111,8 @@ def main() -> None:
         if screen["advancement"].get("stuckReason"):
             fail(f"slide {slide} should not be stuck")
 
-    # Phase 2.2: combat/menu noops mirror siblings
+    # Phase 2.2: combat options that used to be action=none leftovers now
+    # navigate via the same-shape DocSum hyperlink (one clickable button).
     for slide, text, target in (
         (150, "-limit", 167),
         (156, "-attack", 157),
@@ -120,15 +120,24 @@ def main() -> None:
         (164, "-attack", 165),
     ):
         screen = game["screens"][slide - 1]
-        mirrored = [
+        hits = [
             h
             for h in screen.get("hotspots") or []
-            if h.get("resolveMethod") == "noop_mirror_sibling_hyperlink"
+            if h.get("action") == "hyperlink"
+            and h.get("clickable")
             and str(h.get("shapeText") or "").lower().replace(" ", "") == text.lower()
             and h.get("targetSlide") == target
         ]
-        if not mirrored:
-            fail(f"slide {slide} expected noop_mirror for {text!r} → {target}")
+        if not hits:
+            fail(f"slide {slide} expected clickable {text!r} → {target}")
+        clickable_same_shape = [
+            h for h in hits if h.get("shapeId") is not None
+        ]
+        shape_ids = {h.get("shapeId") for h in clickable_same_shape}
+        for sid in shape_ids:
+            n = sum(1 for h in clickable_same_shape if h.get("shapeId") == sid)
+            if n != 1:
+                fail(f"slide {slide} {text!r} shape {sid} has {n} clickable hotspots")
 
     # Phase 2.4–2.5: former "residual selfs" were stale ExHyperlink labels.
     # After DocSummary slideId resolve they navigate (no accepted_source_self).
@@ -172,13 +181,18 @@ def main() -> None:
     matrix_path = generated / "combat_option_matrix.json"
     if matrix_path.exists():
         matrix = load_json(matrix_path)
-        if matrix.get("format") != "goblins-rpg3-combat-option-matrix-v1":
+        if matrix.get("format") not in (
+            "goblins-rpg3-combat-option-matrix-v1",
+            "goblins-rpg3-combat-option-matrix-v2",
+        ):
             fail("combat_option_matrix format unexpected")
         if matrix.get("summary", {}).get("noopOptions", 1) != 0:
             fail(
                 f"combat matrix still has noop options: "
                 f"{matrix.get('summary', {}).get('noopOptions')}"
             )
+        if matrix.get("summary", {}).get("mismatchCount", 0):
+            fail(f"combat matrix web/docsum/pptx mismatches: {matrix.get('mismatches')}")
 
     # Phase 2.7–2.9 media + death residuals
     for slide in (54, 96, 193):

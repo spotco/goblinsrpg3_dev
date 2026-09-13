@@ -1,3 +1,59 @@
+## 2026-09-13 Limit Break / combat option matrix (deterministic, PPT-faithful)
+
+**User report:** Limit (especially) does something different every battle;
+you should always click it when available.
+
+**Extract vs pptx:** Full Attack/Flee/Limit/Magic matrix
+(`generated/combat_option_matrix.json` v2) compares web hotspots to
+`.pps` DocSummary slideId (oracle) and `source/goblins3_v.1.0_launch-pptx.pptx`
+hyperlinks (debug lens). **mismatchCount=0.** There is no real Limit gauge —
+`00%` is decorative text; Limit exists only when the author placed a Limit
+hyperlink on that menu.
+
+### Limit menus (slide → DocSum/pptx target → outcome)
+
+| Menu | Limit → | Outcome | Then |
+|------|---------|---------|------|
+| s046 Ubergoblin | 47 | 15 dmg, player dead | auto 3s → 48 |
+| s079 / s087 Mr. T | 80 | charges LIMIT, Felled Mr. T | auto 3s → 81 level-up |
+| s092 / s094 Slug | 97 | charges LIMIT, Felled Slug | continue → 96 level-up |
+| s112 / s113 commander | 117 | charges LIMIT, 25 dmg | auto 6s → 118 counter → 120 (no Limit) |
+| s119 commander | 146 | charges LIMIT, 25 dmg | auto 6s → 147 counter → 137 |
+| s123 / s156 / s159 commander | 126 | charges LIMIT, Felled commander | continue → 127 WIN |
+| s142 commander (00%) | 143 | charges LIMIT, 25 dmg | auto 6s → 144 → **continue → 30 DED** |
+| s150 Round2 | 167 | charges LIMIT, 25 dmg | auto 6s → 168 → 169 attack-only |
+| s153 Round3 | 162 | charges LIMIT, 25 dmg | auto 6s → 163 → 164 attack-only |
+| s190 Guardian Askook | 194 | star/ending sequence (no LIMIT caption) | full-slide → 192 → 193 → 198 |
+
+### Bug vs authored quirk
+
+**Bug fixed:** leftover InteractiveInfo `action=none` on the *same shape* as
+the real hyperlink (s150 Limit, s156/s159/s164 Attack, s051 continue) was
+promoted via `noop_mirror_sibling_hyperlink`, emitting **two stacked buttons**.
+Same target, but a duplicate hitbox is the wrong binding. Same-shape none is
+now left `explicit_noop` (not rendered); one clickable DocSum hyperlink remains.
+`noop_mirror` is reserved for a *different-shape* sibling (none remain).
+Hotspots also inherit layer `zOrder` so PPT stacking wins in tight OPTION
+overlap (s190 Attack/Limit/Flee boxes overlap ~39 EMUs).
+
+**Not bugs (authored, pps == pptx):**
+- Different Limit outcomes per fight (kill / 25 dmg + counter / player death /
+  ending). Shared continues (s080, s097, s117, s126) always leave the same way.
+- Limit at `00%` (s142, s150, s153, …) — gauge is not a runtime lock.
+- s046 Attack/LIMIT/Flee all → 47 death cutscene.
+- s142 Limit path continue s144 → 30 death (pptx agrees).
+- s190 Limit → 194 stars, not “Player charges LIMIT!”.
+- First-combat Attack 15→19→25→21 (one fewer) / Flee 15→17→23→24 (same ×3)
+  unchanged.
+
+### Verify
+
+- `tools/build_combat_option_matrix.py` — v2 matrix, mismatchCount=0
+- `tools/verify_limit_combat.py` — Playwright: 15 Limit menus ×2 + Attack/Flee/Magic
+  siblings; visual OPTION center; landing slide == matrix
+- `?debug=1&slide=79` Limit → 80 Felled Mr. T; `slide=142` Limit → 143 then death;
+  `slide=190` Limit → 194 stars (not Flee 195)
+
 ## 2026-09-13 s183 caption / s194 star flash / s201 credits crawl
 
 **s183 top white box empty:** Shape 223238 is the white plate; 223239 is

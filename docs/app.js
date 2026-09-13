@@ -1429,6 +1429,9 @@ function renderHotspots(screen) {
         (hotspot.targetSlide ? `Go to slide ${hotspot.targetSlide}` : `Run ${hotspot.action} action`),
     );
     const layerMeta = (screen.layers || []).find((layer) => layer.shapeId === hotspot.shapeId);
+    if (layerMeta && layerMeta.zOrder != null) {
+      button.style.zIndex = String(layerMeta.zOrder);
+    }
     let awaitingReveal = false;
     let revealVisible = true;
     if (layerMeta && layerMeta.animated) {

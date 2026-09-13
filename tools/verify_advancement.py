@@ -103,14 +103,14 @@ def main() -> None:
     if "manualAdvance" not in flags and s17["advancement"].get("stageClickAdvancesSlide"):
         fail("slide 17 should not stage-click advance without manualAdvance bit")
 
-    # Flee-fail Continue: PPT binary →22 (1-goblin menu). No overrides.
+    # Flee-fail Continue: DocSummary slideId →23 (x3 Attacks), not stale label 22.
     cont = [
         h
         for h in s17.get("hotspots") or []
-        if h.get("action") == "hyperlink" and h.get("targetSlide") == 22
+        if h.get("action") == "hyperlink" and h.get("targetSlide") == 23
     ]
     if not cont:
-        fail("slide 17 Continue →22 missing (PPT binary)")
+        fail("slide 17 Continue →23 missing (DocSum slideId)")
     if cont[0].get("resolveMethod") not in (None, "binary_label"):
         # Allow binary_label or unset; never user_authorized_target_override.
         if cont[0].get("resolveMethod") == "user_authorized_target_override":
@@ -121,7 +121,7 @@ def main() -> None:
     ):
         fail("slide 17 must not carry user_authorized_target_override hotspots")
 
-    # Slide 2: binary self promoted to next (start continue policy).
+    # Slide 2: DocSummary slideId →3 (stale label was self). No promote needed.
     s2 = screens[1]
     if s2["advancement"].get("stageClickAdvancesSlide"):
         fail("slide 2 should not stage-click advance (leave via resolved start hotspot)")
@@ -129,12 +129,11 @@ def main() -> None:
         h
         for h in s2.get("hotspots") or []
         if h.get("action") == "hyperlink"
-        and h.get("resolveMethod") == "self_continue_to_next"
         and h.get("targetSlide") == 3
-        and h.get("originalTargetSlide") == 2
+        and h.get("clickable")
     ]
     if not promoted:
-        fail("slide 2 start hotspot should resolve self_continue_to_next → slide 3")
+        fail("slide 2 start hotspot should navigate → slide 3 (DocSum slideId)")
     if s2["advancement"].get("stuckReason"):
         fail(f"slide 2 should not be stuck after resolve, got {s2['advancement'].get('stuckReason')}")
     if "non_self_hyperlink" not in (s2["advancement"].get("leavePaths") or []):
@@ -161,21 +160,20 @@ def main() -> None:
     if "non_self_hyperlink" not in (s200["advancement"].get("leavePaths") or []):
         fail("slide 200 end card should keep hyperlink leave")
 
-    # Slide 46 Ubergoblin: all combat options promote to death cutscene 47.
+    # Slide 46 Ubergoblin: DocSum slideId sends all options to death cutscene 47.
     s46 = screens[45]
     if s46["advancement"].get("stuckReason"):
-        fail(f"slide 46 should not be stuck after combat_all_self resolve: {s46['advancement'].get('stuckReason')}")
+        fail(f"slide 46 should not be stuck after combat resolve: {s46['advancement'].get('stuckReason')}")
     combat_promoted = [
         h
         for h in s46.get("hotspots") or []
         if h.get("action") == "hyperlink"
-        and h.get("resolveMethod") == "combat_all_self_to_next_outcome"
         and h.get("targetSlide") == 47
-        and h.get("originalTargetSlide") == 46
+        and h.get("clickable")
     ]
     if len(combat_promoted) < 3:
         fail(
-            f"slide 46 expected 3 combat_all_self_to_next_outcome → 47 hotspots, "
+            f"slide 46 expected 3 clickable options → 47, "
             f"found {len(combat_promoted)}"
         )
     if "non_self_hyperlink" not in (s46["advancement"].get("leavePaths") or []):

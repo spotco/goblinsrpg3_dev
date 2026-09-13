@@ -174,6 +174,7 @@ def build_screens(
                 "targetSlide": h.get("targetSlide"),
                 "shapeText": h.get("shapeText"),
                 "label": h.get("label"),
+                "shapeId": h.get("shapeId"),
             }
             for h in draft
             if h.get("action") == "hyperlink" and h.get("targetSlide") is not None
@@ -190,6 +191,7 @@ def build_screens(
                 shape_text=str(shape_text) if shape_text else None,
                 next_slide=next_slide,
                 sibling_hyperlinks=sibling_hls,
+                shape_id=hotspot.get("shapeId"),
             )
             if noop_resolve.get("resolveMethod") and noop_resolve.get("targetSlide") is not None:
                 hotspot["action"] = "hyperlink"

@@ -2238,9 +2238,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -6006,9 +6004,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -6819,9 +6815,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -16429,9 +16423,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -26836,16 +26828,16 @@
           "id": "s051-a635208",
           "shapeId": 62471,
           "actionCode": 0,
-          "action": "hyperlink",
+          "action": "none",
           "soundRef": 0,
           "hyperlinkId": 0,
-          "targetSlide": 50,
+          "targetSlide": null,
           "targetLabel": null,
           "flagsHex": "079f0d30",
           "label": "Click here to continue",
-          "enabled": true,
-          "clickable": true,
-          "behaviorStatus": "navigation",
+          "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "shapeText": "Click here to continue",
           "bounds": {
             "raw": [
@@ -26864,10 +26856,7 @@
               4752,
               3533
             ]
-          },
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "binaryActionCode": 0,
-          "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+          }
         },
         {
           "id": "s051-a635320",
@@ -28351,9 +28340,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         },
         {
           "id": "slide-054-shape-65544",
@@ -35397,9 +35384,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         },
         {
           "id": "slide-074-shape-87045",
@@ -38390,9 +38375,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         },
         {
           "id": "slide-081-shape-94217",
@@ -45663,9 +45646,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         },
         {
           "id": "slide-096-shape-111628",
@@ -49071,9 +49052,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -75374,16 +75353,16 @@
           "id": "s150-a983827",
           "shapeId": 180228,
           "actionCode": 0,
-          "action": "hyperlink",
+          "action": "none",
           "soundRef": 0,
           "hyperlinkId": 0,
-          "targetSlide": 167,
+          "targetSlide": null,
           "targetLabel": null,
           "flagsHex": "079f0d30",
           "label": "-limit",
-          "enabled": true,
-          "clickable": true,
-          "behaviorStatus": "navigation",
+          "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "shapeText": "-limit",
           "bounds": {
             "raw": [
@@ -75402,10 +75381,7 @@
               5040,
               3159
             ]
-          },
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "binaryActionCode": 0,
-          "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+          }
         },
         {
           "id": "s150-a983875",
@@ -78899,16 +78875,16 @@
           "id": "s156-a1005369",
           "shapeId": 188419,
           "actionCode": 0,
-          "action": "hyperlink",
+          "action": "none",
           "soundRef": 0,
           "hyperlinkId": 0,
-          "targetSlide": 157,
+          "targetSlide": null,
           "targetLabel": null,
           "flagsHex": "079f0d30",
           "label": "-attack",
-          "enabled": true,
-          "clickable": true,
-          "behaviorStatus": "navigation",
+          "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -78927,10 +78903,7 @@
               5472,
               2919
             ]
-          },
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "binaryActionCode": 0,
-          "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+          }
         },
         {
           "id": "s156-a1005417",
@@ -80726,16 +80699,16 @@
           "id": "s159-a1016511",
           "shapeId": 191491,
           "actionCode": 0,
-          "action": "hyperlink",
+          "action": "none",
           "soundRef": 0,
           "hyperlinkId": 0,
-          "targetSlide": 160,
+          "targetSlide": null,
           "targetLabel": null,
           "flagsHex": "079f0d30",
           "label": "-attack",
-          "enabled": true,
-          "clickable": true,
-          "behaviorStatus": "navigation",
+          "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -80754,10 +80727,7 @@
               5472,
               2919
             ]
-          },
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "binaryActionCode": 0,
-          "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+          }
         },
         {
           "id": "s159-a1016559",
@@ -84153,16 +84123,16 @@
           "id": "s164-a1047095",
           "shapeId": 197635,
           "actionCode": 0,
-          "action": "hyperlink",
+          "action": "none",
           "soundRef": 0,
           "hyperlinkId": 0,
-          "targetSlide": 165,
+          "targetSlide": null,
           "targetLabel": null,
           "flagsHex": "079f0d30",
           "label": "-attack",
-          "enabled": true,
-          "clickable": true,
-          "behaviorStatus": "navigation",
+          "enabled": false,
+          "clickable": false,
+          "behaviorStatus": "explicit_noop",
           "shapeText": "-attack",
           "bounds": {
             "raw": [
@@ -84181,10 +84151,7 @@
               5472,
               2919
             ]
-          },
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "binaryActionCode": 0,
-          "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
+          }
         },
         {
           "id": "s164-a1047143",
@@ -95150,9 +95117,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         }
       ],
       "backgroundColor": "#ffffffff",
@@ -97295,9 +97260,7 @@
             "bottom": 0,
             "left": 0,
             "units": "poi-picture-clipping-insets"
-          },
-          "hideDuringShow": true,
-          "mediaDisplay": false
+          }
         }
       ],
       "backgroundColor": "#ffffffff",

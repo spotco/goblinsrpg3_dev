@@ -1,35 +1,188 @@
 {
-  "format": "goblins-rpg3-combat-option-matrix-v1",
+  "format": "goblins-rpg3-combat-option-matrix-v2",
+  "policy": "pps DocSummary slideId is oracle; pptx is debug lens; no USER_AUTHORIZED_TARGET_OVERRIDES; no invent-bridges",
+  "pptxDebugLens": "source/goblins3_v.1.0_launch-pptx.pptx",
   "summary": {
     "combatSlideCount": 28,
-    "totalOptions": 66,
+    "totalOptions": 62,
     "selfOptions": 0,
     "noopOptions": 0,
-    "navOptions": 66
+    "navOptions": 62,
+    "limitMenuCount": 15,
+    "mismatchCount": 0
   },
+  "limitMenus": [
+    {
+      "slide": 46,
+      "targetSlide": 47,
+      "outcomeCaption": "Ubergoblin attacks! | Player takes 15 damage.",
+      "pptxTarget": 47,
+      "docsumTarget": 47,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 79,
+      "targetSlide": 80,
+      "outcomeCaption": "Player charges LIMIT! | Felled Mr. T!",
+      "pptxTarget": 80,
+      "docsumTarget": 80,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 87,
+      "targetSlide": 80,
+      "outcomeCaption": "Player charges LIMIT! | Felled Mr. T!",
+      "pptxTarget": 80,
+      "docsumTarget": 80,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 92,
+      "targetSlide": 97,
+      "outcomeCaption": "Player charges LIMIT! | Felled Slug!",
+      "pptxTarget": 97,
+      "docsumTarget": 97,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 94,
+      "targetSlide": 97,
+      "outcomeCaption": "Player charges LIMIT! | Felled Slug!",
+      "pptxTarget": 97,
+      "docsumTarget": 97,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 112,
+      "targetSlide": 117,
+      "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+      "pptxTarget": 117,
+      "docsumTarget": 117,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 113,
+      "targetSlide": 117,
+      "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+      "pptxTarget": 117,
+      "docsumTarget": 117,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 119,
+      "targetSlide": 146,
+      "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+      "pptxTarget": 146,
+      "docsumTarget": 146,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 123,
+      "targetSlide": 126,
+      "outcomeCaption": "Player charges LIMIT! | Felled goblin commander!",
+      "pptxTarget": 126,
+      "docsumTarget": 126,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 142,
+      "targetSlide": 143,
+      "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+      "pptxTarget": 143,
+      "docsumTarget": 143,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 150,
+      "targetSlide": 167,
+      "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+      "pptxTarget": 167,
+      "docsumTarget": 167,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 153,
+      "targetSlide": 162,
+      "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+      "pptxTarget": 162,
+      "docsumTarget": 162,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 156,
+      "targetSlide": 126,
+      "outcomeCaption": "Player charges LIMIT! | Felled goblin commander!",
+      "pptxTarget": 126,
+      "docsumTarget": 126,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 159,
+      "targetSlide": 126,
+      "outcomeCaption": "Player charges LIMIT! | Felled goblin commander!",
+      "pptxTarget": 126,
+      "docsumTarget": 126,
+      "resolveMethod": "binary_label"
+    },
+    {
+      "slide": 190,
+      "targetSlide": 194,
+      "outcomeCaption": "",
+      "pptxTarget": 194,
+      "docsumTarget": 194,
+      "resolveMethod": "binary_label"
+    }
+  ],
+  "mismatches": [],
   "slides": [
     {
       "slide": 15,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 17419,
           "text": "-Attack",
           "action": "hyperlink",
           "targetSlide": 19,
+          "docsumTarget": 19,
+          "pptxTarget": 19,
+          "outcomeCaption": "Felled goblin!!!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 25,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 17424,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 17,
+          "docsumTarget": 17,
+          "pptxTarget": 17,
+          "outcomeCaption": "CAN'T ESCAPE!!!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 23,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -47,24 +200,56 @@
       "slide": 16,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 20488,
           "text": "-Attack",
           "action": "hyperlink",
           "targetSlide": 33,
+          "docsumTarget": 33,
+          "pptxTarget": 33,
+          "outcomeCaption": "Felled goblin!!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 38,
+              "resolveMethod": "binary_label"
+            },
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 38,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 20489,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 18,
+          "docsumTarget": 18,
+          "pptxTarget": 18,
+          "outcomeCaption": "CAN'T ESCAPE!!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here  to continue\u2026",
+              "targetSlide": 25,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -81,24 +266,50 @@
       "slide": 21,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 27655,
           "text": "-Attack",
           "action": "hyperlink",
           "targetSlide": 20,
+          "docsumTarget": 20,
+          "pptxTarget": 20,
+          "outcomeCaption": "Felled goblin!!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 26,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 27656,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 18,
+          "docsumTarget": 18,
+          "pptxTarget": 18,
+          "outcomeCaption": "CAN'T ESCAPE!!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here  to continue\u2026",
+              "targetSlide": 25,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -115,24 +326,50 @@
       "slide": 22,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 28678,
           "text": "-Attack",
           "action": "hyperlink",
           "targetSlide": 35,
+          "docsumTarget": 35,
+          "pptxTarget": 35,
+          "outcomeCaption": "Felled goblin!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 36,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 28679,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 37,
+          "docsumTarget": 37,
+          "pptxTarget": 37,
+          "outcomeCaption": "Can't escape!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026.",
+              "targetSlide": 29,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -149,24 +386,50 @@
       "slide": 24,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 31752,
           "text": "-Attack",
           "action": "hyperlink",
           "targetSlide": 32,
+          "docsumTarget": 32,
+          "pptxTarget": 32,
+          "outcomeCaption": "Goblin x2 Attacks! | Player takes 10 damage!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 30,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 31753,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 32,
+          "docsumTarget": 32,
+          "pptxTarget": 32,
+          "outcomeCaption": "Goblin x2 Attacks! | Player takes 10 damage!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 30,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -183,24 +446,50 @@
       "slide": 27,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 34822,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 35,
+          "docsumTarget": 35,
+          "pptxTarget": 35,
+          "outcomeCaption": "Felled goblin!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 36,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 34823,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 28,
+          "docsumTarget": 28,
+          "pptxTarget": 28,
+          "outcomeCaption": "Can't escape!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026.",
+              "targetSlide": 29,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -217,24 +506,50 @@
       "slide": 39,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 49156,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 40,
+          "docsumTarget": 40,
+          "pptxTarget": 40,
+          "outcomeCaption": "Felled goblin!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 36,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 49157,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 41,
+          "docsumTarget": 41,
+          "pptxTarget": 41,
+          "outcomeCaption": "Can't escape!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026.",
+              "targetSlide": 42,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -251,34 +566,70 @@
       "slide": 46,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 56333,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 47,
+          "docsumTarget": 47,
+          "pptxTarget": 47,
+          "outcomeCaption": "Ubergoblin attacks! | Player takes 15 damage.",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 48,
+              "delayMs": 3000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 56334,
           "text": "-LIMIT",
           "action": "hyperlink",
           "targetSlide": 47,
+          "docsumTarget": 47,
+          "pptxTarget": 47,
+          "outcomeCaption": "Ubergoblin attacks! | Player takes 15 damage.",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 48,
+              "delayMs": 3000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 56335,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 47,
+          "docsumTarget": 47,
+          "pptxTarget": 47,
+          "outcomeCaption": "Ubergoblin attacks! | Player takes 15 damage.",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 48,
+              "delayMs": 3000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,
@@ -297,34 +648,72 @@
       "slide": 79,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 92174,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 83,
+          "docsumTarget": 83,
+          "pptxTarget": 83,
+          "outcomeCaption": "Mr. T takes 7 damage!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 85,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 92175,
           "text": "-LIMIT",
           "action": "hyperlink",
           "targetSlide": 80,
+          "docsumTarget": 80,
+          "pptxTarget": 80,
+          "outcomeCaption": "Player charges LIMIT! | Felled Mr. T!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 81,
+              "delayMs": 3000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 92176,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 82,
+          "docsumTarget": 82,
+          "pptxTarget": 82,
+          "outcomeCaption": "I pity the foo..",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click to continue\u2026",
+              "targetSlide": 84,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,
@@ -342,34 +731,78 @@
       "slide": 87,
       "options": [
         {
+          "kind": "limit",
           "shapeId": 100359,
           "text": "-LIMIT",
           "action": "hyperlink",
           "targetSlide": 80,
+          "docsumTarget": 80,
+          "pptxTarget": 80,
+          "outcomeCaption": "Player charges LIMIT! | Felled Mr. T!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 81,
+              "delayMs": 3000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 100360,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 82,
+          "docsumTarget": 82,
+          "pptxTarget": 82,
+          "outcomeCaption": "I pity the foo..",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click to continue\u2026",
+              "targetSlide": 84,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "attack",
           "shapeId": 100361,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 88,
+          "docsumTarget": 88,
+          "pptxTarget": 88,
+          "outcomeCaption": "Mr. T takes 10 damage!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 89,
+              "resolveMethod": "binary_label"
+            },
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 89,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,
@@ -387,34 +820,79 @@
       "slide": 92,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 107528,
           "text": "-Attack",
           "action": "hyperlink",
           "targetSlide": 95,
+          "docsumTarget": 95,
+          "pptxTarget": 95,
+          "outcomeCaption": "Slug takes 14 damage! | Felled slug!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 96,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 107529,
           "text": "-LIMIT",
           "action": "hyperlink",
           "targetSlide": 97,
+          "docsumTarget": 97,
+          "pptxTarget": 97,
+          "outcomeCaption": "Player charges LIMIT! | Felled Slug!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 96,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 107530,
           "text": "-Flee",
           "action": "hyperlink",
           "targetSlide": 94,
+          "docsumTarget": 94,
+          "pptxTarget": 94,
+          "outcomeCaption": "You can't run from a slug! That's just not cool!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "-Attack",
+              "targetSlide": 95,
+              "resolveMethod": "binary_label"
+            },
+            {
+              "kind": "hyperlink",
+              "text": "-LIMIT",
+              "targetSlide": 97,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,
@@ -432,24 +910,50 @@
       "slide": 94,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 109574,
           "text": "-Attack",
           "action": "hyperlink",
           "targetSlide": 95,
+          "docsumTarget": 95,
+          "pptxTarget": 95,
+          "outcomeCaption": "Slug takes 14 damage! | Felled slug!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 96,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 109575,
           "text": "-LIMIT",
           "action": "hyperlink",
           "targetSlide": 97,
+          "docsumTarget": 97,
+          "pptxTarget": 97,
+          "outcomeCaption": "Player charges LIMIT! | Felled Slug!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 96,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -466,44 +970,106 @@
       "slide": 112,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 130065,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 115,
+          "docsumTarget": 115,
+          "pptxTarget": 115,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 116,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "magic",
           "shapeId": 130066,
           "text": "-magic",
           "action": "hyperlink",
           "targetSlide": 114,
+          "docsumTarget": 114,
+          "pptxTarget": 114,
+          "outcomeCaption": "Player casts shield! | Defense raised by 20%! | Click here to continue",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 149,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 130067,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 117,
+          "docsumTarget": 117,
+          "pptxTarget": 117,
+          "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 118,
+              "delayMs": 6000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 130068,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 113,
+          "docsumTarget": 113,
+          "pptxTarget": 113,
+          "outcomeCaption": "You can't flee from a boss! Duhh\u2026.\nWhy did I even include that?",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "-magic",
+              "targetSlide": 114,
+              "resolveMethod": "binary_label"
+            },
+            {
+              "kind": "hyperlink",
+              "text": "-attack",
+              "targetSlide": 115,
+              "resolveMethod": "binary_label"
+            },
+            {
+              "kind": "hyperlink",
+              "text": "-limit",
+              "targetSlide": 117,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 4,
@@ -522,34 +1088,71 @@
       "slide": 113,
       "options": [
         {
+          "kind": "magic",
           "shapeId": 131082,
           "text": "-magic",
           "action": "hyperlink",
           "targetSlide": 114,
+          "docsumTarget": 114,
+          "pptxTarget": 114,
+          "outcomeCaption": "Player casts shield! | Defense raised by 20%! | Click here to continue",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 149,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "attack",
           "shapeId": 131084,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 115,
+          "docsumTarget": 115,
+          "pptxTarget": 115,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 116,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 131086,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 117,
+          "docsumTarget": 117,
+          "pptxTarget": 117,
+          "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 118,
+              "delayMs": 6000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,
@@ -567,34 +1170,70 @@
       "slide": 119,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 143365,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 121,
+          "docsumTarget": 121,
+          "pptxTarget": 121,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 122,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 143369,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 146,
+          "docsumTarget": 146,
+          "pptxTarget": 146,
+          "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 147,
+              "delayMs": 6000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "magic",
           "shapeId": 143372,
           "text": "-magic",
           "action": "hyperlink",
           "targetSlide": 140,
+          "docsumTarget": 140,
+          "pptxTarget": 140,
+          "outcomeCaption": "Player casts shield! | Defense raised by 20%!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 141,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,
@@ -612,24 +1251,49 @@
       "slide": 120,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 144389,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 138,
+          "docsumTarget": 138,
+          "pptxTarget": 138,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 137,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "magic",
           "shapeId": 144392,
           "text": "-magic",
           "action": "hyperlink",
           "targetSlide": 130,
+          "docsumTarget": 130,
+          "pptxTarget": 130,
+          "outcomeCaption": "Player casts shield! | Defense raised by 20%!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 131,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -646,34 +1310,71 @@
       "slide": 123,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 148484,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 124,
+          "docsumTarget": 124,
+          "pptxTarget": 124,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 125,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 148485,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 126,
+          "docsumTarget": 126,
+          "pptxTarget": 126,
+          "outcomeCaption": "Player charges LIMIT! | Felled goblin commander!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 127,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "magic",
           "shapeId": 148486,
           "text": "-magic",
           "action": "hyperlink",
           "targetSlide": 128,
+          "docsumTarget": 128,
+          "pptxTarget": 128,
+          "outcomeCaption": "Player casts shield! | Defense raised by 20%!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 129,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,
@@ -691,14 +1392,26 @@
       "slide": 132,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 157700,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 133,
+          "docsumTarget": 133,
+          "pptxTarget": 133,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 134,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 1,
@@ -715,14 +1428,27 @@
       "slide": 135,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 163844,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 136,
+          "docsumTarget": 136,
+          "pptxTarget": 136,
+          "outcomeCaption": "Goblin commander takes 15 damage! | Felled goblin commander!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 127,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 1,
@@ -739,24 +1465,49 @@
       "slide": 137,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 166916,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 136,
+          "docsumTarget": 136,
+          "pptxTarget": 136,
+          "outcomeCaption": "Goblin commander takes 15 damage! | Felled goblin commander!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 127,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "magic",
           "shapeId": 166919,
           "text": "-magic",
           "action": "hyperlink",
           "targetSlide": 128,
+          "docsumTarget": 128,
+          "pptxTarget": 128,
+          "outcomeCaption": "Player casts shield! | Defense raised by 20%!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 129,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -774,24 +1525,48 @@
       "slide": 142,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 171012,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 133,
+          "docsumTarget": 133,
+          "pptxTarget": 133,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 134,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 171015,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 143,
+          "docsumTarget": 143,
+          "pptxTarget": 143,
+          "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 144,
+              "delayMs": 6000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -809,40 +1584,54 @@
       "slide": 150,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 180227,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 151,
+          "docsumTarget": 151,
+          "pptxTarget": 151,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 152,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 180228,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 167,
-          "isSelf": false,
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "clickable": true,
-          "behaviorStatus": "navigation"
-        },
-        {
-          "shapeId": 180228,
-          "text": "-limit",
-          "action": "hyperlink",
-          "targetSlide": 167,
+          "docsumTarget": 167,
+          "pptxTarget": 167,
+          "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 168,
+              "delayMs": 6000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
-      "optionCount": 3,
+      "optionCount": 2,
       "selfCount": 0,
       "noopCount": 0,
-      "navCount": 3,
+      "navCount": 2,
       "layerTexts": [
         "-attack",
         "-limit",
@@ -855,24 +1644,48 @@
       "slide": 153,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 185347,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 154,
+          "docsumTarget": 154,
+          "pptxTarget": 154,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 155,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 185348,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 162,
+          "docsumTarget": 162,
+          "pptxTarget": 162,
+          "outcomeCaption": "Player charges LIMIT! | Goblin commander takes 25 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 163,
+              "delayMs": 6000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 2,
@@ -891,40 +1704,55 @@
       "slide": 156,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 188419,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 157,
-          "isSelf": false,
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "clickable": true,
-          "behaviorStatus": "navigation"
-        },
-        {
-          "shapeId": 188419,
-          "text": "-attack",
-          "action": "hyperlink",
-          "targetSlide": 157,
+          "docsumTarget": 157,
+          "pptxTarget": 157,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 158,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 188420,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 126,
+          "docsumTarget": 126,
+          "pptxTarget": 126,
+          "outcomeCaption": "Player charges LIMIT! | Felled goblin commander!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 127,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
-      "optionCount": 3,
+      "optionCount": 2,
       "selfCount": 0,
       "noopCount": 0,
-      "navCount": 3,
+      "navCount": 2,
       "layerTexts": [
         "-attack",
         "-limit",
@@ -937,40 +1765,55 @@
       "slide": 159,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 191491,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 160,
-          "isSelf": false,
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "clickable": true,
-          "behaviorStatus": "navigation"
-        },
-        {
-          "shapeId": 191491,
-          "text": "-attack",
-          "action": "hyperlink",
-          "targetSlide": 160,
+          "docsumTarget": 160,
+          "pptxTarget": 160,
+          "outcomeCaption": "Goblin commander takes 15 damage!",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 161,
+              "delayMs": 2000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 191492,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 126,
+          "docsumTarget": 126,
+          "pptxTarget": 126,
+          "outcomeCaption": "Player charges LIMIT! | Felled goblin commander!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 127,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
-      "optionCount": 3,
+      "optionCount": 2,
       "selfCount": 0,
       "noopCount": 0,
-      "navCount": 3,
+      "navCount": 2,
       "layerTexts": [
         "-attack",
         "-limit",
@@ -983,30 +1826,33 @@
       "slide": 164,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 197635,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 165,
-          "isSelf": false,
-          "resolveMethod": "noop_mirror_sibling_hyperlink",
-          "clickable": true,
-          "behaviorStatus": "navigation"
-        },
-        {
-          "shapeId": 197635,
-          "text": "-attack",
-          "action": "hyperlink",
-          "targetSlide": 165,
+          "docsumTarget": 165,
+          "pptxTarget": 165,
+          "outcomeCaption": "Goblin commander takes 15 damage! | Felled goblin commander!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 127,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
-      "optionCount": 2,
+      "optionCount": 1,
       "selfCount": 0,
       "noopCount": 0,
-      "navCount": 2,
+      "navCount": 1,
       "layerTexts": [
         "-attack",
         "11",
@@ -1018,14 +1864,27 @@
       "slide": 169,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 203779,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 170,
+          "docsumTarget": 170,
+          "pptxTarget": 170,
+          "outcomeCaption": "Goblin commander takes 15 damage! | Felled goblin commander!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue",
+              "targetSlide": 127,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 1,
@@ -1042,34 +1901,72 @@
       "slide": 190,
       "options": [
         {
+          "kind": "attack",
           "shapeId": 230406,
           "text": "-attack",
           "action": "hyperlink",
           "targetSlide": 191,
+          "docsumTarget": 191,
+          "pptxTarget": 191,
+          "outcomeCaption": "Ow\u2026",
+          "outcomeNext": [
+            {
+              "kind": "auto_advance",
+              "targetSlide": 192,
+              "delayMs": 6000
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "limit",
           "shapeId": 230407,
           "text": "-limit",
           "action": "hyperlink",
           "targetSlide": 194,
+          "docsumTarget": 194,
+          "pptxTarget": 194,
+          "outcomeCaption": "",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Slide 192",
+              "targetSlide": 192,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         },
         {
+          "kind": "flee",
           "shapeId": 230408,
           "text": "-flee",
           "action": "hyperlink",
           "targetSlide": 195,
+          "docsumTarget": 195,
+          "pptxTarget": 195,
+          "outcomeCaption": "Can't flee!",
+          "outcomeNext": [
+            {
+              "kind": "hyperlink",
+              "text": "Click here to continue\u2026",
+              "targetSlide": 196,
+              "resolveMethod": "binary_label"
+            }
+          ],
           "isSelf": false,
           "resolveMethod": "binary_label",
           "clickable": true,
-          "behaviorStatus": "navigation"
+          "behaviorStatus": "navigation",
+          "flags": []
         }
       ],
       "optionCount": 3,

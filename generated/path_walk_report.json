@@ -1696,7 +1696,7 @@
               "kind": "hyperlink",
               "targetSlide": 50,
               "shapeText": "Click here to continue",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -4583,7 +4583,7 @@
               "kind": "hyperlink",
               "targetSlide": 167,
               "shapeText": "-limit",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -4759,7 +4759,7 @@
               "kind": "hyperlink",
               "targetSlide": 157,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -4851,7 +4851,7 @@
               "kind": "hyperlink",
               "targetSlide": 160,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -4997,7 +4997,7 @@
               "kind": "hyperlink",
               "targetSlide": 165,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -6690,7 +6690,7 @@
               "kind": "hyperlink",
               "targetSlide": 50,
               "shapeText": "Click here to continue",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -9577,7 +9577,7 @@
               "kind": "hyperlink",
               "targetSlide": 167,
               "shapeText": "-limit",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -9753,7 +9753,7 @@
               "kind": "hyperlink",
               "targetSlide": 157,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -9845,7 +9845,7 @@
               "kind": "hyperlink",
               "targetSlide": 160,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -9991,7 +9991,7 @@
               "kind": "hyperlink",
               "targetSlide": 165,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -11462,7 +11462,7 @@
               "kind": "hyperlink",
               "targetSlide": 50,
               "shapeText": "Click here to continue",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -14349,7 +14349,7 @@
               "kind": "hyperlink",
               "targetSlide": 167,
               "shapeText": "-limit",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -14525,7 +14525,7 @@
               "kind": "hyperlink",
               "targetSlide": 157,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -14617,7 +14617,7 @@
               "kind": "hyperlink",
               "targetSlide": 160,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -14763,7 +14763,7 @@
               "kind": "hyperlink",
               "targetSlide": 165,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -18756,7 +18756,7 @@
               "kind": "hyperlink",
               "targetSlide": 167,
               "shapeText": "-limit",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -18932,7 +18932,7 @@
               "kind": "hyperlink",
               "targetSlide": 157,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -19024,7 +19024,7 @@
               "kind": "hyperlink",
               "targetSlide": 160,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -19170,7 +19170,7 @@
               "kind": "hyperlink",
               "targetSlide": 165,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -22864,7 +22864,7 @@
               "kind": "hyperlink",
               "targetSlide": 167,
               "shapeText": "-limit",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -23040,7 +23040,7 @@
               "kind": "hyperlink",
               "targetSlide": 157,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -23132,7 +23132,7 @@
               "kind": "hyperlink",
               "targetSlide": 160,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -23278,7 +23278,7 @@
               "kind": "hyperlink",
               "targetSlide": 165,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -26949,7 +26949,7 @@
               "kind": "hyperlink",
               "targetSlide": 167,
               "shapeText": "-limit",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -27125,7 +27125,7 @@
               "kind": "hyperlink",
               "targetSlide": 157,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -27217,7 +27217,7 @@
               "kind": "hyperlink",
               "targetSlide": 160,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -27363,7 +27363,7 @@
               "kind": "hyperlink",
               "targetSlide": 165,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -30232,7 +30232,7 @@
               "kind": "hyperlink",
               "targetSlide": 167,
               "shapeText": "-limit",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }
@@ -30408,7 +30408,7 @@
               "kind": "hyperlink",
               "targetSlide": 157,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -30500,7 +30500,7 @@
               "kind": "hyperlink",
               "targetSlide": 160,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             },
@@ -30646,7 +30646,7 @@
               "kind": "hyperlink",
               "targetSlide": 165,
               "shapeText": "-attack",
-              "resolveMethod": "noop_mirror_sibling_hyperlink",
+              "resolveMethod": "binary_label",
               "isSelf": false,
               "clickable": true
             }

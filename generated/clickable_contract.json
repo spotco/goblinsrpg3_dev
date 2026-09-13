@@ -1,10 +1,10 @@
 {
   "format": "goblins-rpg3-clickable-contract-v1",
   "summary": {
-    "okCount": 209,
+    "okCount": 204,
     "violationCount": 0,
     "residualSelfCount": 0,
-    "residualExplicitNoopCount": 4,
+    "residualExplicitNoopCount": 9,
     "orphanContinueStageClickCount": 0,
     "passed": true
   },
@@ -37,6 +37,41 @@
       "hotspotId": "s036-a556670",
       "shapeId": 46093,
       "shapeText": null,
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 51,
+      "hotspotId": "s051-a635208",
+      "shapeId": 62471,
+      "shapeText": "Click here to continue",
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 150,
+      "hotspotId": "s150-a983827",
+      "shapeId": 180228,
+      "shapeText": "-limit",
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 156,
+      "hotspotId": "s156-a1005369",
+      "shapeId": 188419,
+      "shapeText": "-attack",
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 159,
+      "hotspotId": "s159-a1016511",
+      "shapeId": 191491,
+      "shapeText": "-attack",
+      "note": "binary action=none without continue/combat label (decorative)"
+    },
+    {
+      "slide": 164,
+      "hotspotId": "s164-a1047095",
+      "shapeId": 197635,
+      "shapeText": "-attack",
       "note": "binary action=none without continue/combat label (decorative)"
     }
   ],

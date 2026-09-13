@@ -195,11 +195,14 @@ def resolve_explicit_noop(
     shape_text: str | None,
     next_slide: int | None,
     sibling_hyperlinks: list[dict[str, Any]],
+    shape_id: Any = None,
 ) -> dict[str, Any]:
     """Promote binary action=none hotspots when labels imply navigation.
 
-    1. If shape text matches a sibling hyperlink on the same slide, mirror that
-       target (duplicate hitbox; common for -attack/-limit and double continues).
+    1. If shape text matches a *different-shape* sibling hyperlink, mirror that
+       target (true duplicate hitbox). Same-shape action=none + hyperlink pairs
+       (leftover InteractiveInfo on one shape) are left as explicit_noop so the
+       real hyperlink is the only clickable button.
     2. Else if continue/start-like text and next exists, go to next sequential
        (sole leave control, e.g. damage interstitials s155/158/163).
     3. Else leave as explicit_noop (decorative dead zone).
@@ -211,6 +214,10 @@ def resolve_explicit_noop(
                 target = sib.get("targetSlide")
                 if target is None:
                     continue
+                # Same shape already has the hyperlink — do not emit a second button.
+                if shape_id is not None and sib.get("shapeId") is not None:
+                    if int(sib["shapeId"]) == int(shape_id):
+                        continue
                 return {
                     "action": "hyperlink",
                     "targetSlide": int(target),

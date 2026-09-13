@@ -106,6 +106,7 @@ python tools/verify_visual_risks.py
 python tools/build_text_fidelity_report.py
 python tools/verify_text_fidelity.py
 python tools/verify_offline_playability.py
+python tools/verify_limit_combat.py
 ```
 
 `generated/poi_audit.tsv` is produced by `tools/poi/PoiAudit.java` using the portable JDK and Apache POI copies in `_port_analysis_tmp/`. See `POI_EVALUATION.md` for the exact toolchain notes.

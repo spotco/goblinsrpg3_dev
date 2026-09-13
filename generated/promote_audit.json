@@ -1,37 +1,14 @@
 {
   "format": "goblins-rpg3-promote-audit-v1",
   "summary": {
-    "promoteCount": 8,
+    "promoteCount": 3,
     "residualSelfCount": 0,
     "resolveMethodCounts": {
       "binary_label": 194,
-      "noop_continue_to_next": 3,
-      "noop_mirror_sibling_hyperlink": 5
+      "noop_continue_to_next": 3
     }
   },
   "promotes": [
-    {
-      "slide": 51,
-      "hotspotId": "s051-a635208",
-      "shapeId": 62471,
-      "shapeText": "Click here to continue",
-      "resolveMethod": "noop_mirror_sibling_hyperlink",
-      "originalTargetSlide": null,
-      "targetSlide": 50,
-      "binarySelfLink": false,
-      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
-    },
-    {
-      "slide": 150,
-      "hotspotId": "s150-a983827",
-      "shapeId": 180228,
-      "shapeText": "-limit",
-      "resolveMethod": "noop_mirror_sibling_hyperlink",
-      "originalTargetSlide": null,
-      "targetSlide": 167,
-      "binarySelfLink": false,
-      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
-    },
     {
       "slide": 155,
       "hotspotId": "s155-a1001260",
@@ -42,17 +19,6 @@
       "targetSlide": 156,
       "binarySelfLink": false,
       "resolveRationale": "InteractiveInfoAtom action=none with continue/start shape text and no non-self hyperlink leave on the slide; promote to next sequential so the labeled control navigates."
-    },
-    {
-      "slide": 156,
-      "hotspotId": "s156-a1005369",
-      "shapeId": 188419,
-      "shapeText": "-attack",
-      "resolveMethod": "noop_mirror_sibling_hyperlink",
-      "originalTargetSlide": null,
-      "targetSlide": 157,
-      "binarySelfLink": false,
-      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
     },
     {
       "slide": 158,
@@ -66,17 +32,6 @@
       "resolveRationale": "InteractiveInfoAtom action=none with continue/start shape text and no non-self hyperlink leave on the slide; promote to next sequential so the labeled control navigates."
     },
     {
-      "slide": 159,
-      "hotspotId": "s159-a1016511",
-      "shapeId": 191491,
-      "shapeText": "-attack",
-      "resolveMethod": "noop_mirror_sibling_hyperlink",
-      "originalTargetSlide": null,
-      "targetSlide": 160,
-      "binarySelfLink": false,
-      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
-    },
-    {
       "slide": 163,
       "hotspotId": "s163-a1042986",
       "shapeId": 196617,
@@ -86,17 +41,6 @@
       "targetSlide": 164,
       "binarySelfLink": false,
       "resolveRationale": "InteractiveInfoAtom action=none with continue/start shape text and no non-self hyperlink leave on the slide; promote to next sequential so the labeled control navigates."
-    },
-    {
-      "slide": 164,
-      "hotspotId": "s164-a1047095",
-      "shapeId": 197635,
-      "shapeText": "-attack",
-      "resolveMethod": "noop_mirror_sibling_hyperlink",
-      "originalTargetSlide": null,
-      "targetSlide": 165,
-      "binarySelfLink": false,
-      "resolveRationale": "InteractiveInfoAtom action=none but shape text matches a sibling hyperlink on the same slide; mirror that target so the labeled control navigates (duplicate hitbox pattern)."
     }
   ],
   "residualSelfHyperlinks": []
