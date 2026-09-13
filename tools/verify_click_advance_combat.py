@@ -201,17 +201,49 @@ def assert_flee_to_cant_escape(page) -> None:
 
 
 def assert_attack_shows_anim(page) -> None:
-    """Attack→19 must show motion/text without an extra stage click (not empty green boxes)."""
+    """Attack→19 must show motion/text without an extra stage click (not empty green boxes).
+
+    Also: left goblin (shape 24584) is exit-only (blinds) and must be visible at land,
+    not entrance-pre-hidden (guy+slash-only regression after hyperlink fix).
+    """
     goto(page, 15)
     page.wait_for_timeout(400)
     click_layer_center(page, OPTION_ATTACK)
-    page.wait_for_timeout(200)
+    page.wait_for_timeout(120)
     if cur(page) != 19:
         fail(f"s015 Attack expected →19, got {cur(page)}")
         return
     if not autoplay_flag(page):
         fail("s019 after Attack should autoplay OnNext entrances (else blank/green-box phase)")
         return
+    # Goblin is exit-only: must be visible immediately (before ~500ms hide-after).
+    goblin = page.evaluate(
+        """() => {
+          const el = document.querySelector('#layers .layer[data-shape-id="24584"]');
+          if (!el) return { missing: true };
+          const cs = getComputedStyle(el);
+          const r = el.getBoundingClientRect();
+          return {
+            vis: cs.visibility,
+            op: parseFloat(cs.opacity || '0'),
+            display: cs.display,
+            pureGreen: el.dataset.pureGreenPlaceholder || el.classList.contains('pure-green-placeholder'),
+            left: r.left,
+            width: r.width,
+          };
+        }"""
+    )
+    if goblin.get("missing"):
+        fail("s019 missing left goblin layer shape 24584")
+    elif goblin.get("pureGreen") in (True, "true", "1"):
+        fail("s019 left goblin wrongly tagged pure-green-placeholder")
+    elif goblin.get("vis") != "visible" or float(goblin.get("op") or 0) < 0.15:
+        fail(f"s019 left goblin not visible at Attack land (exit-only must not be entrance-hidden): {goblin}")
+    elif float(goblin.get("width") or 0) < 8:
+        fail(f"s019 left goblin has no layout width: {goblin}")
+    else:
+        print("OK s019 left goblin visible at Attack land (exit-only)")
+
     # Within ~1.5s some attack motion target or result text must be visible.
     seen = False
     for _ in range(8):

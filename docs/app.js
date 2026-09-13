@@ -4168,6 +4168,97 @@ function collectAnimatedShapeIds(slideAnimations) {
   return shapeIds;
 }
 
+/** PPT TimePropertyID TL_TPID_EffectType (variant instance 11). */
+const PPT_EFFECT_TYPE_ENTRANCE = 1;
+const PPT_EFFECT_TYPE_EXIT = 2;
+
+function timeVariantInt(node, instanceId) {
+  for (const variant of node.variants || []) {
+    const parsed = variant.parsed;
+    if (variant.instance === instanceId && parsed && typeof parsed.intValue === "number") {
+      return parsed.intValue;
+    }
+  }
+  return null;
+}
+
+function behaviorTargetShapeIds(node, behavior) {
+  const ids = new Set();
+  for (const target of [...(behavior.targets || []), ...(node.targets || [])]) {
+    if (target.kind === "shape" && target.shapeId !== undefined) {
+      ids.add(String(target.shapeId));
+    }
+  }
+  return ids;
+}
+
+/**
+ * Shapes that must start hidden until an entrance/motion reveals them.
+ * Exit-only targets (e.g. s019 felled goblin blinds + Hide After Animation) stay
+ * visible from slide land — pre-hiding them left only the guy/slash on Attack.
+ */
+function collectEntranceHiddenShapeIds(slideAnimations) {
+  const roles = new Map();
+  const ensure = (shapeId) => {
+    if (!roles.has(shapeId)) {
+      roles.set(shapeId, { entranceReveal: false, motion: false, exitOnly: false });
+    }
+    return roles.get(shapeId);
+  };
+
+  const walk = (node, inheritedEffectType) => {
+    const typed = timeVariantInt(node, 11);
+    const effectType = typed !== null ? typed : inheritedEffectType;
+    for (const behavior of node.behaviors || []) {
+      const strings = parsedStrings(behavior.variants).map((value) => String(value).toLowerCase());
+      const kind = String(behavior.kind || "");
+      const targets = behaviorTargetShapeIds(node, behavior);
+      const setVisible =
+        kind === "set" && strings.includes("style.visibility") && strings.includes("visible");
+      const setHidden =
+        kind === "set" && strings.includes("style.visibility") && strings.includes("hidden");
+      const isFadeDissolve =
+        kind === "effect" && strings.some((value) => value === "fade" || value === "dissolve");
+      const isExitEffect = kind === "effect" && effectType === PPT_EFFECT_TYPE_EXIT;
+      const isEntranceEffect =
+        kind === "effect" &&
+        (effectType === PPT_EFFECT_TYPE_ENTRANCE || (isFadeDissolve && effectType !== PPT_EFFECT_TYPE_EXIT));
+      const isMotion = kind === "motion" || kind === "animate" || kind === "scale";
+      for (const shapeId of targets) {
+        const role = ensure(shapeId);
+        if (setVisible || isEntranceEffect) {
+          role.entranceReveal = true;
+        }
+        if (isMotion) {
+          role.motion = true;
+        }
+        if (setHidden || isExitEffect) {
+          role.exitOnly = true;
+        }
+      }
+    }
+    for (const child of node.children || []) {
+      walk(child, effectType);
+    }
+    for (const sub of node.subEffects || []) {
+      walk(sub, effectType);
+    }
+  };
+
+  for (const root of slideAnimations.rootTimeNodes || []) {
+    walk(root, null);
+  }
+
+  const shapeIds = new Set();
+  for (const [shapeId, role] of roles) {
+    // Entrance + motion: pre-hide (motion/set/effect reveal). Exit-only: leave visible.
+    if (role.entranceReveal || role.motion) {
+      shapeIds.add(shapeId);
+    }
+  }
+  return shapeIds;
+}
+
 function setupAnimations(screen) {
   // Auto-advance slides and continue-only result beats autoplay OnNext entrances
   // (Attack→motion/text). Menu slides keep click-gated builds.
@@ -4196,9 +4287,10 @@ function setupAnimations(screen) {
     });
     return;
   }
-  // Entrance targets start hidden until a set/effect makes them visible.
-  const animatedShapeIds = collectAnimatedShapeIds(slideAnimations);
-  for (const shapeId of animatedShapeIds) {
+  // Entrance/motion targets start hidden until set/effect/motion reveals them.
+  // Exit-only targets (EffectType=Exit / hide-after) stay visible (s019 left goblin).
+  const entranceHiddenShapeIds = collectEntranceHiddenShapeIds(slideAnimations);
+  for (const shapeId of entranceHiddenShapeIds) {
     const element = state.currentLayerElements.get(String(shapeId));
     if (!element) {
       continue;
@@ -4209,7 +4301,8 @@ function setupAnimations(screen) {
   runtimeLog("animation:setup-roots", {
     screen: { id: screen.id, slide: screen.slide },
     rootCount: (slideAnimations.rootTimeNodes || []).length,
-    animatedShapeIds: Array.from(animatedShapeIds),
+    entranceHiddenShapeIds: Array.from(entranceHiddenShapeIds),
+    animatedShapeIds: Array.from(collectAnimatedShapeIds(slideAnimations)),
     roots: (slideAnimations.rootTimeNodes || []).map((node) => animationNodeInfo(node)),
   });
   for (const node of slideAnimations.rootTimeNodes || []) {
