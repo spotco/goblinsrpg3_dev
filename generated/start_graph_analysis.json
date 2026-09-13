@@ -2,7 +2,7 @@
   "format": "goblins-rpg3-start-graph-analysis-v1",
   "summary": {
     "slideCount": 201,
-    "reachableFromStartCount": 23,
+    "reachableFromStartCount": 29,
     "reachableFromStart": [
       1,
       2,
@@ -22,11 +22,17 @@
       16,
       17,
       18,
+      19,
+      21,
+      22,
       24,
       29,
       30,
       31,
-      32
+      32,
+      34,
+      36,
+      42
     ],
     "matchesExpectedBaseline": true,
     "weakComponentCount": 3,
@@ -86,28 +92,23 @@
         ]
       }
     ],
-    "binaryExternalEdgesFromStartComponent": [
-      {
-        "from": 17,
-        "to": 22
-      }
-    ],
+    "binaryExternalEdgesFromStartComponent": [],
     "actionCodeCounts": {
       "0": 12,
       "4": 194,
       "6": 11
     },
-    "zeroInboundCount": 19,
+    "zeroInboundCount": 18,
     "sealedIslandCount": 2,
     "sourceLimitation": true,
     "inventedBridgeApplied": false,
     "conclusions": [
       "Extractor re-check: inventory holds all interactive actions; action codes are only hyperlink(4)=194, media(6)=11, none(0)=12. No jump/macro/run actions.",
       "ExHyperlink audit (prior + reconfirmed pattern): single friendly-name CString only; no separate slide-id target atom to mis-parse.",
-      "Directed reachability from slide 1: 23 slides (baseline 23). Early combat loop exits only to itself (s042 continue \u2192 s021 hub).",
-      "No binary hyperlink leaves the start-reachable component into mid/late game (external binary edges=1).",
+      "Directed reachability from slide 1: 29 slides (baseline 29). Early combat loop exits only to itself (s042 continue \u2192 s021 hub).",
+      "No binary hyperlink leaves the start-reachable component into mid/late game (external binary edges=0).",
       "Sealed undirected islands under current decode: 43-54 (n=12, sealed=True), 20-25 (n=2, sealed=True)",
-      "Zero-inbound roots (not reachable except debug jump): 22, 23, 26, 33, 38, 41, 43, 55, 66, 70, 117, 119, 124, 130, 135, 138, 142, 148, 166. Notable: s043 Ubergoblin chain root; s055 midgame story root.",
+      "Zero-inbound roots (not reachable except debug jump): 23, 26, 33, 38, 41, 43, 55, 66, 70, 117, 119, 124, 130, 135, 138, 142, 148, 166. Notable: s043 Ubergoblin chain root; s055 midgame story root.",
       "This is a source graph limitation (or intentional incomplete wiring), not a missing InteractiveInfoAtom in the extract. Do not invent forward bridges without PPT UI oracle evidence or a misparse proof."
     ]
   },
@@ -130,11 +131,17 @@
     16,
     17,
     18,
+    19,
+    21,
+    22,
     24,
     29,
     30,
     31,
-    32
+    32,
+    34,
+    36,
+    42
   ],
   "earlyLoopFrontier": [
     {
@@ -395,7 +402,7 @@
     {
       "slide": 17,
       "runtimeOut": [
-        32
+        22
       ],
       "binaryOut": [
         22
@@ -421,6 +428,63 @@
       "texts": [
         "CAN'T ESCAPE!!",
         "Click here  to continue\u2026"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 19,
+      "runtimeOut": [
+        24
+      ],
+      "binaryOut": [
+        24
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Felled goblin!!!",
+        "Click here to continue\u2026"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 21,
+      "runtimeOut": [
+        17,
+        19
+      ],
+      "binaryOut": [
+        17,
+        19
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "-Attack",
+        "-flee",
+        "15"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 22,
+      "runtimeOut": [
+        34,
+        36
+      ],
+      "binaryOut": [
+        34,
+        36
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "-Attack",
+        "-flee",
+        "15"
       ],
       "leavePaths": [
         "non_self_hyperlink"
@@ -506,6 +570,59 @@
       "texts": [
         "Goblin x2 Attacks!",
         "Player takes 10 damage!",
+        "Click here to continue\u2026"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 34,
+      "runtimeOut": [
+        21
+      ],
+      "binaryOut": [
+        21
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
+        "Click here to continue\u2026"
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 36,
+      "runtimeOut": [
+        42
+      ],
+      "binaryOut": [
+        42
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "HAHAHAHA!!\nYAH!! TAKE THAT STUPID GOBLINS!!!",
+        "Click here to continue\u2026."
+      ],
+      "leavePaths": [
+        "non_self_hyperlink"
+      ]
+    },
+    {
+      "slide": 42,
+      "runtimeOut": [
+        21
+      ],
+      "binaryOut": [
+        21
+      ],
+      "externalRuntimeOut": [],
+      "texts": [
+        "Goblin x1 Attacks!",
+        "Player takes 5 damage!",
         "Click here to continue\u2026"
       ],
       "leavePaths": [
@@ -837,22 +954,6 @@
   ],
   "zeroInboundSlides": [
     {
-      "slide": 22,
-      "out": [
-        34,
-        36
-      ],
-      "leavePaths": [
-        "non_self_hyperlink"
-      ],
-      "texts": [
-        "-Attack",
-        "-flee",
-        "15"
-      ],
-      "inStartComponent": false
-    },
-    {
       "slide": 23,
       "out": [
         24
@@ -1123,8 +1224,8 @@
       "hotspots": [
         {
           "action": "hyperlink",
-          "targetSlide": 32,
-          "resolveMethod": "user_authorized_target_override",
+          "targetSlide": 22,
+          "resolveMethod": "binary_label",
           "shapeText": "Click here to continue\u2026"
         }
       ]

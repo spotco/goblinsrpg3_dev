@@ -10,7 +10,6 @@ from pathlib import Path
 from advancement_lib import (
     apply_media_residual_policy,
     apply_residual_self_policy,
-    apply_user_authorized_target_overrides,
     build_screen_advancement,
     combat_all_self_slide_ids,
     resolve_explicit_noop,
@@ -207,8 +206,6 @@ def build_screens(
 
         # Pass 3: document residual selfs; non-clickable when alternate leave exists.
         apply_residual_self_policy(draft, slide)
-        # Pass 4: user-authorized non-self remaps (e.g. flee-fail keep goblin count).
-        apply_user_authorized_target_overrides(draft, slide)
         actions_by_slide[slide] = draft
 
     screens: list[dict[str, object]] = []
@@ -681,14 +678,6 @@ def main() -> None:
                 "Combat option selfs (e.g. s015 -flee) are clickable residual_self_reload "
                 "(PPT self-hyperlink reloads the slide). Hub image selfs stay "
                 "non-clickable when another leave path exists."
-            ),
-            "userAuthorizedTargetOverride": (
-                "Rare explicit user remaps of non-self binary hyperlinks, keyed in "
-                "advancement_lib.USER_AUTHORIZED_TARGET_OVERRIDES and applied on every "
-                "manifest rebuild (resolveMethod=user_authorized_target_override). "
-                "Example: s017 Continue binary→22 (1-goblin) remapped→32 (Goblin x2 "
-                "Attacks) so flee-fail keeps the two-goblin count from s016/s021. "
-                "originalTargetSlide retains the PPT binary edge."
             ),
             "unresolvedMedia": (
                 "Legacy audio cue ids missing from extract (known 3/4) stay "

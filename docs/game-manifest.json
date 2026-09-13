@@ -148,7 +148,6 @@
     "noopMirrorSibling": "action=none hotspots whose shape text matches a sibling hyperlink mirror that target (resolveMethod=noop_mirror_sibling_hyperlink)",
     "noopContinueToNext": "action=none with continue/start shape text promotes to next sequential (resolveMethod=noop_continue_to_next) when it is the labeled leave control",
     "residualSelfPolicy": "Binary self-hyperlinks stay target=source (no invented remaps). Combat option selfs (e.g. s015 -flee) are clickable residual_self_reload (PPT self-hyperlink reloads the slide). Hub image selfs stay non-clickable when another leave path exists.",
-    "userAuthorizedTargetOverride": "Rare explicit user remaps of non-self binary hyperlinks, keyed in advancement_lib.USER_AUTHORIZED_TARGET_OVERRIDES and applied on every manifest rebuild (resolveMethod=user_authorized_target_override). Example: s017 Continue binary\u219222 (1-goblin) remapped\u219232 (Goblin x2 Attacks) so flee-fail keeps the two-goblin count from s016/s021. originalTargetSlide retains the PPT binary edge.",
     "unresolvedMedia": "Legacy audio cue ids missing from extract (known 3/4) stay documented_unresolved_media non-clickable; no invented sound assets",
     "zeroAreaMedia": "Mapped media with zero-area bounds stay documented_zero_area_media non-clickable; automatic playFrom may still run from timing tree",
     "deathTerminal": "DED/Press esc \u2192 terminalKind death, leavePaths restart_only; end cards may also hyperlink (terminalKind end_card). UI leave via Restart control (PPT Press esc).",
@@ -8400,14 +8399,14 @@
           "action": "hyperlink",
           "soundRef": 0,
           "hyperlinkId": 77,
-          "targetSlide": 32,
+          "targetSlide": 22,
           "targetLabel": "Slide 22",
           "flagsHex": "079f0d30",
-          "label": "Click here to continue\u2026",
+          "label": "Slide 22",
           "enabled": true,
           "clickable": true,
           "behaviorStatus": "navigation",
-          "resolveMethod": "user_authorized_target_override",
+          "resolveMethod": "binary_label",
           "originalTargetSlide": 22,
           "shapeText": "Click here to continue\u2026",
           "bounds": {
@@ -8427,8 +8426,7 @@
               3120,
               711
             ]
-          },
-          "resolveRationale": "User override 2026-09-13: flee-fail Continue must keep the same goblin count. Binary s017\u219222 drops into the one-goblin menu, but both Flee entries (s016 boredom, s021 loop) show two standing goblins. Remap Continue \u2192 s032 (Goblin x2 Attacks!) so fail does not reduce count. PPT binary remains in originalTargetSlide."
+          }
         }
       ],
       "advancement": {

@@ -92,40 +92,50 @@
 - **Regression:** `tools/verify_combat_visual_options.py` now covers the full s015 boredom→s016 two-goblin state, visual-pointer hit target, Flee→17 history, visible failure caption, and a long settle proving one click cannot continue to s022.
 
 
-## 2026-09-13 — flee-fail keep goblin count (s017→32)
+## 2026-09-13 — remove target overrides; PPT binary is oracle
 
-### User rule (authorized override)
-Flee-fail must **not** reduce goblin count. After CAN'T ESCAPE on s017, Continue goes to **Goblin x2 Attacks (s032)** instead of binary **s022** (1-goblin menu).
+### Hard policy
+**Never have overrides.** `USER_AUTHORIZED_TARGET_OVERRIDES` / Pass 4 remaps are removed.
+Treat the `.pps` binary (ExHyperlink labels + InteractiveInfoAtom + POI TEXTLINK) as
+oracle. If remembered play conflicts with binary edges, fix extract/runtime
+interpretation — do not invent story remaps.
 
-### Implementation (rebuild-safe)
-- `tools/advancement_lib.py`: `USER_AUTHORIZED_TARGET_OVERRIDES[(17,22)] → 32` with
-  `resolveMethod=user_authorized_target_override`; `originalTargetSlide=22` kept.
-- Applied every `tools/build_game_manifest.py` rebuild (Pass 4).
-- Both Flee entries to s017 are two-goblin menus (s016 boredom, s021 loop; asset-013 ×2),
-  so a single Continue→32 keeps count for both — no entry-aware branch needed.
+### Restored binary
+- s017 Continue → **22** (1-goblin menu). Provenance: ExHyperlink id 77 label
+  `Slide 22`, POI TEXTLINK on shape 18443, InteractiveInfoAtom action=4.
 
-### First goblin battle — goblin-count map (extract + override)
+### Deep re-read of first-goblin combat (extract evidence)
 
-Standing goblins = picture `asset-013` on grass menus. Attack sprites = `asset-025`.
+| From | Action | Binary target | Visual goblins | Notes |
+|------|--------|---------------|----------------|-------|
+| s015 (×3) | Attack | s018 | — | POI+inventory agree shape 17419→18. s018 caption says CAN'T ESCAPE but carries Attack motion paths; Continue→s024 still ×3. **Not a kill ladder.** |
+| s015 (×3) | Flee | s015 self | ×3 | Residual self-reload (PPT self-hyperlink). No invent→17. |
+| s015 (×3) | autoAdvance 9s | s016 | **×3→×2** | SSSlideInfoAtom autoAdvance bit confirmed by POI. s016 text “Goblin fled of boredom…”, asset-013 ×2. |
+| s016 (×2) | Attack | s032 | ×2 counter | Goblin x2 Attacks → Fury death chain |
+| s016 (×2) | Flee | s017→**22** | **×2→×1** | Binary Continue drops count. |
+| s021 (×2) | Attack | s019 Felled→24 | lands ×3 | “Felled” continue does **not** land on ×1/×2 menu |
+| s021 (×2) | Flee | s017→**22** | **×2→×1** | Same as s016 |
+| s022 (×1) | Attack/Flee | s034 / s036 | ×1 paths | Restored into start-reachability via s017→22 |
 
-| From | Action | To | Goblin count | Notes |
-|------|--------|----|--------------|-------|
-| s015 (×3) | Boredom auto 9s | s016 | **3→2** | Authored “Goblin fled of boredom…” |
-| s015 (×3) | Attack | s018 CAN'T ESCAPE → s024 | **3→3** | Attack fail; s024 still ×3, HP 10 |
-| s015 (×3) | Flee | s015 self-reload | **3→3** | Binary residual; feels like no-op (timer/anims reset). No invent→17. |
-| s016 (×2) | Attack | s032 Goblin x2 Attacks | **2→2** | Counterattack same count → s029 Fury → death |
-| s016 (×2) | Flee | s017 → **s032** | **2→2** | **User override** (binary was →s022 ×1) |
-| s021 (×2) | Attack | s019 Felled → s024 | text “Felled”; lands ×3 menu | Extract quirk — not a clean 2→1 kill path |
-| s021 (×2) | Flee | s017 → **s032** | **2→2** | Same override as s016 |
-| s022 (×1) | Attack / Flee | s034 / s036 | ×1 paths | Orphaned from flee-fail after override (only inbound was s017) |
-| s024 (×3) | Attack or Flee | s031 ×3 Attacks | **3→3** | Both options → death chain |
+### Interpretation fixes (not remaps)
+1. **Role misread:** debug `inferSlideRole` used caption “CAN'T ESCAPE” alone, so
+   Attack→s018 looked like flee-fail. Now prefers inbound Attack/Flee option labels
+   (`attack-result` vs `flee-fail`).
+2. **Hotspot↔shape mapping:** Attack/Flee shape→target associations match POI
+   TEXTLINK for s015/s016/s017/s018/s019/s021/s022 — **not** a resolve bug.
+3. **Boredom:** “I'm bored…” on s015 is the passive on-slide dissolve (autoplayed
+   with autoAdvance). Auto-nav 15→16 **is** authored and visually drops to ×2.
+   Treating that auto leave as a “kill” matches the PPT assets/text; it conflicts
+   with remembered “boredom≠kill”. **Documented conflict — no remap, no clearing
+   the autoAdvance bit.**
+4. **Attack=kill+counter:** No binary edge from the opening ×3 Attack lands on a
+   Felled→lower-count menu. The Felled kill (s021→19) exists but Continue→24 (×3).
+   **Documented conflict with remembered kill ladder.**
+5. **Flee=fail+counter same count:** Binary flee-fail Continue→22 drops ×2→×1.
+   Prior override→32 removed. **Documented conflict with remembered same-count
+   counter.**
 
-**Attack does not implement a clean one-hit 3→2→1 kill ladder** in this opening fight.
-The only authored count drop 3→2 is boredom. “Felled goblin” slides exist (s019/s020/s033/s035)
-but their continues do not consistently land on the next-lower standing-goblin menu.
-
-### s015 Flee residual
-Self-reload remains PPT-faithful. Making flee-fail “feel real” via invent→17 would need a
-*three*-goblin same-count continue (e.g. →s031 ×3 Attacks), which the user did **not**
-authorize — leave residual policy alone.
-
+### Verify
+- `tools/verify_advancement.py` — s017→22; zero `user_authorized_target_override`
+- `tools/verify_combat_visual_options.py` — visual Attack/Flee; boredom→Flee→17→22
+- `tools/verify_start_graph.py` — start reachability includes 19/21/22/34/36/42 again

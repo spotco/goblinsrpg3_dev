@@ -412,6 +412,30 @@ function dumpScreen(slideOrId) {
 }
 
 
+
+/** Collect Attack/Flee labels of hyperlinks that target a slide (debug roles). */
+function inboundOptionLabels(slideNumber) {
+  const labels = new Set();
+  if (!state.screens || slideNumber == null) {
+    return labels;
+  }
+  for (const other of state.screens.values()) {
+    for (const hotspot of other.hotspots || []) {
+      if (hotspot.action !== "hyperlink" || Number(hotspot.targetSlide) !== Number(slideNumber)) {
+        continue;
+      }
+      const text = String(hotspot.shapeText || hotspot.label || "").trim().toLowerCase();
+      if (/^-?\s*attack$/.test(text)) {
+        labels.add("attack");
+      } else if (/^-?\s*flee$/.test(text)) {
+        labels.add("flee");
+      }
+    }
+  }
+  return labels;
+}
+
+
 /** Infer a coarse slide role for combat / progression QA annotations. */
 function inferSlideRole(screen) {
   if (!screen) {
@@ -425,8 +449,18 @@ function inferSlideRole(screen) {
   if (modes.includes("terminal_death") || /\bded!!|\byou ded\b/.test(joined)) {
     return "death";
   }
+  // "CAN'T ESCAPE" captions are reused on both Flee-fail (s017) and the authored
+  // Attack destination (s018). Prefer inbound option labels when the screen map
+  // is loaded so Attack→18 is not misread as flee-fail.
   if (/can'?t escape/.test(joined)) {
-    return "flee-fail";
+    const inbound = inboundOptionLabels(screen.slide);
+    if (inbound.has("attack") && !inbound.has("flee")) {
+      return "attack-result";
+    }
+    if (inbound.has("flee") && !inbound.has("attack")) {
+      return "flee-fail";
+    }
+    return inbound.has("attack") ? "attack-result" : "flee-fail";
   }
   if (/felled goblin|take that|haha/.test(joined)) {
     return "victory";

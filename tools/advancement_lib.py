@@ -48,27 +48,6 @@ DEATH_TEXT_MARKERS = (
 RESOLVE_COMBAT_ALL_SELF = "combat_all_self_to_next_outcome"
 RESOLVE_NOOP_MIRROR = "noop_mirror_sibling_hyperlink"
 RESOLVE_NOOP_CONTINUE = "noop_continue_to_next"
-RESOLVE_USER_AUTHORIZED_TARGET = "user_authorized_target_override"
-
-# Explicit user-authorized hotspot remaps (not invent-bridges from binary gaps).
-# Key: (source_slide, binary_target_slide) → port target. Rebuilds re-apply these
-# so docs/game-manifest.json cannot silently revert to PPT binary edges.
-#
-# s017 Continue: binary →22 (1-goblin menu). Both inbound Flee edges (s016, s021)
-# are two-goblin menus (asset-013 ×2). User rule: flee-fail must keep goblin count
-# and continue into Goblin x2 Attacks (s032), not drop to s022.
-USER_AUTHORIZED_TARGET_OVERRIDES: dict[tuple[int, int], dict[str, Any]] = {
-    (17, 22): {
-        "targetSlide": 32,
-        "rationale": (
-            "User override 2026-09-13: flee-fail Continue must keep the same goblin "
-            "count. Binary s017→22 drops into the one-goblin menu, but both Flee "
-            "entries (s016 boredom, s021 loop) show two standing goblins. Remap "
-            "Continue → s032 (Goblin x2 Attacks!) so fail does not reduce count. "
-            "PPT binary remains in originalTargetSlide."
-        ),
-    },
-}
 
 
 def normalize_option_text(text: str | None) -> str:
@@ -208,43 +187,6 @@ def apply_residual_self_policy(hotspots: list[dict[str, Any]], slide: int) -> li
     return hotspots
 
 
-
-def apply_user_authorized_target_overrides(
-    hotspots: list[dict[str, Any]], slide: int
-) -> list[dict[str, Any]]:
-    """Apply documented user-authorized target remaps (survive manifest rebuilds).
-
-    Unlike playability self-link promotes, these change a *non-self* binary edge
-    only when explicitly listed in USER_AUTHORIZED_TARGET_OVERRIDES. Provenance:
-    originalTargetSlide (binary), resolveMethod=user_authorized_target_override,
-    resolveRationale.
-    """
-    for h in hotspots:
-        if h.get("action") != "hyperlink" or h.get("targetSlide") is None:
-            continue
-        # Prefer binary original when already recorded; else current target.
-        binary_target = h.get("originalTargetSlide")
-        if binary_target is None:
-            binary_target = h.get("targetSlide")
-        key = (int(slide), int(binary_target))
-        override = USER_AUTHORIZED_TARGET_OVERRIDES.get(key)
-        if not override:
-            continue
-        new_target = int(override["targetSlide"])
-        if int(h["targetSlide"]) == new_target and h.get("resolveMethod") == RESOLVE_USER_AUTHORIZED_TARGET:
-            continue
-        h["originalTargetSlide"] = int(binary_target)
-        h["targetSlide"] = new_target
-        h["resolveMethod"] = RESOLVE_USER_AUTHORIZED_TARGET
-        h["resolveRationale"] = override["rationale"]
-        h["clickable"] = True
-        h["enabled"] = True
-        h["behaviorStatus"] = "navigation"
-        # Keep shapeText; refresh label if it was only the binary slide label.
-        label = str(h.get("label") or "")
-        if label.lower().startswith("slide ") and h.get("shapeText"):
-            h["label"] = h["shapeText"]
-    return hotspots
 
 
 def resolve_explicit_noop(

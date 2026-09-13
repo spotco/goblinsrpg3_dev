@@ -103,21 +103,23 @@ def main() -> None:
     if "manualAdvance" not in flags and s17["advancement"].get("stageClickAdvancesSlide"):
         fail("slide 17 should not stage-click advance without manualAdvance bit")
 
-    # Flee-fail Continue: user-authorized remap →32 (keep ×2); binary original 22.
+    # Flee-fail Continue: PPT binary →22 (1-goblin menu). No overrides.
     cont = [
         h
         for h in s17.get("hotspots") or []
-        if h.get("action") == "hyperlink" and h.get("targetSlide") == 32
+        if h.get("action") == "hyperlink" and h.get("targetSlide") == 22
     ]
     if not cont:
-        fail("slide 17 Continue →32 missing (flee-fail keep-count override)")
-    if cont[0].get("originalTargetSlide") != 22:
-        fail("slide 17 Continue must retain binary originalTargetSlide=22")
-    if cont[0].get("resolveMethod") != "user_authorized_target_override":
-        fail(
-            "slide 17 Continue resolveMethod must be user_authorized_target_override, "
-            f"got {cont[0].get('resolveMethod')}"
-        )
+        fail("slide 17 Continue →22 missing (PPT binary)")
+    if cont[0].get("resolveMethod") not in (None, "binary_label"):
+        # Allow binary_label or unset; never user_authorized_target_override.
+        if cont[0].get("resolveMethod") == "user_authorized_target_override":
+            fail("slide 17 Continue must not use user_authorized_target_override")
+    if any(
+        h.get("resolveMethod") == "user_authorized_target_override"
+        for h in s17.get("hotspots") or []
+    ):
+        fail("slide 17 must not carry user_authorized_target_override hotspots")
 
     # Slide 2: binary self promoted to next (start continue policy).
     s2 = screens[1]
@@ -196,6 +198,16 @@ def main() -> None:
                 f"expected 0 stuck slides after resolve, "
                 f"found {model.get('summary', {}).get('stuckSlideCount')}"
             )
+
+    # Hard policy: never ship user_authorized_target_override remaps.
+    overridden = [
+        (int(s["slide"]), h.get("id") or h.get("shapeId"), h.get("targetSlide"), h.get("originalTargetSlide"))
+        for s in screens
+        for h in s.get("hotspots") or []
+        if h.get("resolveMethod") == "user_authorized_target_override"
+    ]
+    if overridden:
+        fail(f"user_authorized_target_override must be empty, found {overridden[:5]}")
 
     print("advancement verification passed")
 

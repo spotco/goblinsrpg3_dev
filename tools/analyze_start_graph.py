@@ -27,10 +27,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 # Baseline directed reachability from slide 1 under policy resolve +
-# auto/stage sequential edges + user-authorized overrides. Used by verify_start_graph.py.
-# 2026-09-13: s017 Continue remapped 22→32 (flee-fail keep ×2). That orphans the
-# binary 1-goblin chain from title reachability: 19, 21, 22, 34, 36, 42 (still in
-# the deck via chapter/debug jump; loop edge 42→21 remains in the graph).
+# auto/stage sequential edges (PPT binary only — no target overrides).
+# s017 Continue binary →22 restores the 1-goblin chain into start reachability.
 EXPECTED_START_REACHABLE = frozenset(
     {
         1,
@@ -51,11 +49,17 @@ EXPECTED_START_REACHABLE = frozenset(
         16,
         17,
         18,
+        19,
+        21,
+        22,
         24,
         29,
         30,
         31,
         32,
+        34,
+        36,
+        42,
     }
 )
 
