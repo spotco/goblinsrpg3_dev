@@ -669,3 +669,37 @@ button:focus-visible {
   outline-color: rgba(232, 199, 95, 0.25);
   background: rgba(232, 199, 95, 0.05);
 }
+
+/* ——— Title screen redesign (slide-002 only) ———
+   Scenic mashup PNG carries logo + CTA. Hide live Deflate WordArt so we do not
+   double-draw or punch underlay holes through the parchment banner. Hotspot
+   hyperlink behavior is unchanged. */
+.stage[data-screen-id="slide-002"] .wordart-layer,
+.stage[data-screen-id="slide-002"] .wordart-deflate,
+.stage[data-screen-id="slide-002"] .layer[data-shape-id="2052"] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Expand start hotspot hitbox to match the painted CTA plaque (same center). */
+.stage[data-screen-id="slide-002"] .hotspot[data-shape-id="2056"] {
+  transform: scale(1.57, 1.72);
+  transform-origin: center center;
+  border-radius: 8px;
+}
+
+.stage[data-screen-id="slide-002"] .hotspot[data-shape-id="2056"]:hover,
+.stage[data-screen-id="slide-002"] .hotspot[data-shape-id="2056"]:focus-visible {
+  outline: 2px solid rgba(255, 220, 80, 0.85);
+  outline-offset: 2px;
+  background: rgba(255, 220, 80, 0.08);
+}
+
+@keyframes title-cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 60, 0.0); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 215, 60, 0.22); }
+}
+
+.stage[data-screen-id="slide-002"] .hotspot[data-shape-id="2056"] {
+  animation: title-cta-pulse 2.4s ease-in-out infinite;
+}

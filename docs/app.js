@@ -2096,6 +2096,12 @@ function applyPngUnderlayWordArtHoles(screen) {
     clearPngUnderlayWordArtHoles();
     return;
   }
+  // Title redesign (slide-002): scenic PNG carries baked logo; do not punch
+  // underlay holes for live WordArt (CSS hides the WordArt layer on this slide).
+  if (screen && screen.id === "slide-002") {
+    clearPngUnderlayWordArtHoles();
+    return;
+  }
   const holes = (screen.layers || []).filter(isPathWarpedWordArt);
   if (!holes.length) {
     clearPngUnderlayWordArtHoles();
@@ -4663,6 +4669,7 @@ function renderScreen(screen) {
   layersLayer.hidden = !renderedLayers;
   missingRender.hidden = true;
   stage.dataset.loading = "false";
+  stage.dataset.screenId = screen.id || "";
   // Source slide solid fill (often white). Full-bleed black shapes still paint over it.
   stage.style.backgroundColor = cssColorFromPpt(screen.backgroundColor) || "#070604";
   state.lastRenderDecision = {
