@@ -2003,13 +2003,11 @@ function applyTextLayerStyle(element, layer) {
       }
       pathWarped = mountWordArtPathWarp(element, layer, geometry);
       if (pathWarped) {
-        // Cover PNG-underlay ink in-bounds so hybrid slides do not double-draw
-        // baked WordArt under the live SVG warp (s002 title).
-        const bg =
-          cssColorFromPpt((state.current && state.current.backgroundColor) || null) ||
-          (typeof stage !== "undefined" && stage.style.backgroundColor) ||
-          "#ffffff";
-        element.style.backgroundColor = bg;
+        // PPT WordArt spPr is noFill (verified on all deck WordArts). fillColor is
+        // glyph ink, not a text-box plate. Never invent a solid background — that
+        // painted a white rectangle over scenes (e.g. s014 Yip! on blue sky).
+        // Hybrid PNG double-draw is handled by underlay hole masks instead.
+        element.style.backgroundColor = "transparent";
       }
     }
     // Bake geometry into baseTransform so setupAnimations / motion / scale
@@ -2071,6 +2069,85 @@ function isPathWarpedWordArt(layer) {
   );
 }
 
+/** Clear CSS mask holes punched for live path-warped WordArt over hybrid PNG. */
+function clearPngUnderlayWordArtHoles() {
+  if (!screenImage) {
+    return;
+  }
+  screenImage.style.maskImage = "";
+  screenImage.style.webkitMaskImage = "";
+  screenImage.style.maskSize = "";
+  screenImage.style.webkitMaskSize = "";
+  screenImage.style.maskRepeat = "";
+  screenImage.style.webkitMaskRepeat = "";
+  screenImage.style.maskPosition = "";
+  screenImage.style.webkitMaskPosition = "";
+  screenImage.style.maskMode = "";
+  delete screenImage.dataset.wordArtUnderlayMask;
+}
+
+/**
+ * On hybrid slides, path-warped WordArt stays live (SVG warp) while the composite
+ * PNG still contains baked WordArt. Punch transparent holes in the underlay at
+ * those bounds so we do not need a fake solid plate on the WordArt layer.
+ */
+function applyPngUnderlayWordArtHoles(screen) {
+  if (!screenImage || !screenNeedsPngUnderlay(screen)) {
+    clearPngUnderlayWordArtHoles();
+    return;
+  }
+  const holes = (screen.layers || []).filter(isPathWarpedWordArt);
+  if (!holes.length) {
+    clearPngUnderlayWordArtHoles();
+    return;
+  }
+  const rects = holes
+    .map((layer) => {
+      const b = layer.bounds || {};
+      const x = Number(b.x);
+      const y = Number(b.y);
+      const w = Number(b.width);
+      const h = Number(b.height);
+      if (![x, y, w, h].every(Number.isFinite) || w <= 0 || h <= 0) {
+        return null;
+      }
+      // Slight pad so stroke/outline does not leave baked fringe.
+      const padX = Math.min(w * 0.04, 0.01);
+      const padY = Math.min(h * 0.08, 0.015);
+      return {
+        x: Math.max(x - padX, 0),
+        y: Math.max(y - padY, 0),
+        w: Math.min(w + padX * 2, 1),
+        h: Math.min(h + padY * 2, 1),
+      };
+    })
+    .filter(Boolean);
+  if (!rects.length) {
+    clearPngUnderlayWordArtHoles();
+    return;
+  }
+  const holeSvg = rects
+    .map(
+      (r) =>
+        `<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="black"/>`,
+    )
+    .join("");
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none">` +
+    `<rect width="1" height="1" fill="white"/>${holeSvg}</svg>`;
+  const maskUrl = `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`;
+  screenImage.style.maskImage = maskUrl;
+  screenImage.style.webkitMaskImage = maskUrl;
+  screenImage.style.maskSize = "100% 100%";
+  screenImage.style.webkitMaskSize = "100% 100%";
+  screenImage.style.maskRepeat = "no-repeat";
+  screenImage.style.webkitMaskRepeat = "no-repeat";
+  screenImage.style.maskPosition = "center";
+  screenImage.style.webkitMaskPosition = "center";
+  screenImage.style.maskMode = "luminance";
+  screenImage.dataset.wordArtUnderlayMask = "1";
+}
+
 /**
  * Non-clickable residual selfs (hub image self-links) stay visually muted.
  * Combat selfs (e.g. s015 -flee) are clickable and reload the slide — do not mute them.
@@ -2102,13 +2179,15 @@ function applyResidualCombatOptionStyle(screen) {
 }
 
 function applyHybridPngTextPolicy(screen) {
+  // Always refresh WordArt underlay holes (clears when not hybrid).
+  applyPngUnderlayWordArtHoles(screen);
   if (!screenNeedsPngUnderlay(screen)) {
     return;
   }
   // Composite PNG already includes static text/WordArt; overlaying live text
   // causes title-screen double-draw. Keep animated layers for entrance/media.
   // Path-warped WordArt (Deflate/Curve/Arch) stays live so SVG warp is visible
-  // instead of the baked PNG approx — glyphs cover the PNG ink in-bounds.
+  // instead of the baked PNG approx; underlay holes hide baked ink (no plate).
   // Visual-only hide: never disable clickable hotspots (separate #hotspots layer).
   for (const layer of screen.layers || []) {
     if (layer.type !== "text" || layer.animated) {

@@ -83,6 +83,8 @@ button:focus-visible {
 
 .wordart-layer {
   text-transform: none;
+  /* PPT WordArt spPr is noFill — never show a text-box plate behind glyphs. */
+  background: transparent;
 }
 
 .wordart-deflate {

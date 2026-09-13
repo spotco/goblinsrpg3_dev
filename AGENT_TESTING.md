@@ -127,7 +127,7 @@ Claim verdicts: extraction OK; web anim/render broken; progression partial (hots
 
 ### Runtime
 - `docs/app.js`: `mountWordArtPathWarp` + `wordArtDeflateGuides` / `cubicBezierPoint` — per-glyph `scaleY` from local top/bottom gap; aspect-matched viewBox.
-- Hybrid policy: path-warped WordArt stays live (not `hybrid-png-text-hidden`); layer background covers PNG ink in-bounds to avoid double-draw.
+- Hybrid policy: path-warped WordArt stays live (not `hybrid-png-text-hidden`); WordArt layer stays `background: transparent` (PPT `spPr` noFill). Hybrid double-draw avoided via PNG underlay hole masks (`applyPngUnderlayWordArtHoles`), not a solid plate.
 - Fixture: slide 2 shape **2052** “GOBLINSRPG3” — verify `http://127.0.0.1:8765/?debug=1&slide=2` (title visible immediately; no click needed).
 - Screenshots: `/workspace/goblins-gapfix-deflate-s2.png`, `-stage.png`, `-crop.png`.
 
