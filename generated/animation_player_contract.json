@@ -1,7 +1,7 @@
 {
   "format": "goblins-rpg3-animation-player-contract-v1",
   "summary": {
-    "features": 12,
+    "features": 13,
     "allPassed": true,
     "timeNodeContainers": 2407,
     "mappedMediaBindings": 8
@@ -200,13 +200,38 @@
         "`transition-effect-${effectType}`"
       ],
       "styleSnippets": [
+        "transition-effect-3",
+        "transition-effect-11",
+        "transition-effect-21",
         "transition-effect-22",
         "transition-effect-23",
-        "slide-wipe-horizontal",
-        "slide-wipe-vertical",
-        "slide-push-in",
-        "slide-dissolve-in"
+        "transition-effect-27",
+        "slide-checker-in",
+        "slide-zoom-in",
+        "slide-comb-in",
+        "slide-newsflash-in",
+        "slide-fade-in",
+        "slide-circle-in"
       ]
+    },
+    {
+      "feature": "image effect filters (fade/dissolve/blinds/box)",
+      "manifestEvidence": {
+        "variantStrings": [
+          "blinds(horizontal)",
+          "box(in)",
+          "dissolve",
+          "fade"
+        ]
+      },
+      "runtimeSnippets": [
+        "function applyEffectBehavior",
+        "function effectFilterName",
+        "function effectTransitionIsOut",
+        "startsWith(\"blinds\")",
+        "startsWith(\"box\")"
+      ],
+      "styleSnippets": []
     },
     {
       "feature": "sound commands",

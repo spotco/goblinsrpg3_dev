@@ -33,7 +33,7 @@ TRANSITION_FLAG_BITS = {
     0x1000: "cursorVisible",
 }
 
-# SSSlideInfoAtom effectType values used in this deck (validated vs pptx OOXML).
+# Complete SSSlideInfoAtom effectType set in this deck (validated vs pptx p:transition).
 TRANSITION_EFFECT_NAMES = {
     0: "cut",
     3: "checker",

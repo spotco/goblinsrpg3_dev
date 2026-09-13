@@ -533,6 +533,12 @@ function walkAnimationBehaviorKinds(node, counts) {
     if (strings.some((value) => value === "fade" || value === "dissolve")) {
       counts.dissolve = (counts.dissolve || 0) + 1;
     }
+    if (strings.some((value) => String(value).startsWith("blinds"))) {
+      counts.blinds = (counts.blinds || 0) + 1;
+    }
+    if (strings.some((value) => String(value).startsWith("box"))) {
+      counts.box = (counts.box || 0) + 1;
+    }
     if (strings.some((value) => /^m\s/i.test(value))) {
       counts.motionPath = (counts.motionPath || 0) + 1;
     }
@@ -562,7 +568,7 @@ function animationBehaviorSummary(screen) {
     walkAnimationBehaviorKinds(root, counts);
   }
   const total = Object.entries(counts).reduce((sum, [key, value]) => {
-    if (key === "dissolve" || key === "motionPath" || key === "visibility") {
+    if (key === "dissolve" || key === "motionPath" || key === "visibility" || key === "blinds" || key === "box") {
       return sum;
     }
     return sum + value;
@@ -574,8 +580,13 @@ function animationBehaviorSummary(screen) {
   if (counts.motionPath) {
     parts.push(`paths ${counts.motionPath}`);
   }
-  if (counts.effect || counts.dissolve) {
-    parts.push(`dissolve/fade ${(counts.dissolve || counts.effect || 0)}`);
+  if (counts.effect || counts.dissolve || counts.blinds || counts.box) {
+    const effectBits = [];
+    if (counts.dissolve) effectBits.push(`dissolve/fade ${counts.dissolve}`);
+    if (counts.blinds) effectBits.push(`blinds ${counts.blinds}`);
+    if (counts.box) effectBits.push(`box ${counts.box}`);
+    if (!effectBits.length && counts.effect) effectBits.push(`effect ${counts.effect}`);
+    parts.push(effectBits.join("+"));
   }
   if (counts.set) {
     parts.push(`set ${counts.set}`);
@@ -2930,7 +2941,7 @@ function applyBehaviorToIterateUnits(node, behavior, hostElements, strings, timi
       if (behavior.kind === "set") {
         applySetBehavior([host], strings);
       } else if (behavior.kind === "effect") {
-        applyEffectBehavior([host], strings, timing);
+        applyEffectBehavior([host], strings, timing, behavior);
       } else if (behavior.kind === "animate") {
         applyAnimateBehavior([host], strings, timing);
       } else if (behavior.kind === "motion") {
@@ -3286,45 +3297,150 @@ function applySetBehavior(elements, strings) {
   }
 }
 
-function applyEffectBehavior(elements, strings, timing) {
-  if (!strings.some((value) => value === "fade" || value === "dissolve")) {
-    runtimeLog("animation:effect-skipped", { strings, reason: "fade/dissolve not present" });
+/** PPT TimeEffectBehaviorAtom second uint32: 0=transition in, 1=transition out. */
+function effectTransitionIsOut(behavior) {
+  const atom = ((behavior && behavior.atoms) || []).find(
+    (item) => item.type === 61750 && typeof item.payloadHex === "string" && item.payloadHex.length >= 16,
+  );
+  if (!atom) {
+    return null;
+  }
+  const b0 = Number.parseInt(atom.payloadHex.slice(8, 10), 16);
+  const b1 = Number.parseInt(atom.payloadHex.slice(10, 12), 16);
+  const b2 = Number.parseInt(atom.payloadHex.slice(12, 14), 16);
+  const b3 = Number.parseInt(atom.payloadHex.slice(14, 16), 16);
+  if (![b0, b1, b2, b3].every(Number.isFinite)) {
+    return null;
+  }
+  const value = b0 | (b1 << 8) | (b2 << 16) | (b3 << 24);
+  return value === 1;
+}
+
+function effectFilterName(strings) {
+  const normalized = strings.map((value) => String(value).toLowerCase());
+  const named = normalized.find(
+    (value) =>
+      value === "fade" ||
+      value === "dissolve" ||
+      value.startsWith("blinds") ||
+      value.startsWith("box"),
+  );
+  return named || null;
+}
+
+function applyEffectBehavior(elements, strings, timing, behavior = null) {
+  const filter = effectFilterName(strings);
+  if (!filter) {
+    runtimeLog("animation:effect-skipped", { strings, reason: "no supported effect filter" });
     return;
   }
+  let isOut = effectTransitionIsOut(behavior);
+  if (isOut === null) {
+    // Fallback: blinds/box in this deck are exits; fade/dissolve default to entrance.
+    isOut = filter.startsWith("blinds") || filter.startsWith("box");
+  }
+  const duration = Math.max(timing.duration, 1);
   runtimeLog("animation:effect", {
-    effect: strings.find((value) => value === "fade" || value === "dissolve"),
+    effect: filter,
+    direction: isOut ? "out" : "in",
     timing,
     targetCount: elements.length,
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
-    // Entrance fade: force visible + opacity 0 → 1. Keep the end state unless auto-reverse.
-    element.style.visibility = "visible";
-    element.style.opacity = "0";
-    if (typeof element.animate === "function") {
-      try {
-        const animation = element.animate(
-          [{ opacity: 0 }, { opacity: 1 }],
-          {
-            duration: Math.max(timing.duration, 1),
-            easing: cssEasing(timing),
-            fill: "forwards",
-          },
-        );
-        animation.addEventListener("finish", () => {
-          element.style.opacity = "1";
-        });
-      } catch (_error) {
+    const finishOut = () => {
+      element.style.opacity = "0";
+      element.style.visibility = "hidden";
+      element.style.clipPath = "";
+      element.style.webkitClipPath = "";
+      element.style.maskImage = "";
+      element.style.webkitMaskImage = "";
+      if (element.dataset && element.dataset.shapeId) {
+        syncHotspotsForShapeVisibility(element.dataset.shapeId, false);
+      }
+    };
+    const finishIn = () => {
+      element.style.opacity = "1";
+      element.style.visibility = "visible";
+      element.style.clipPath = "";
+      element.style.webkitClipPath = "";
+      element.style.maskImage = "";
+      element.style.webkitMaskImage = "";
+      if (element.dataset && element.dataset.shapeId) {
+        syncHotspotsForShapeVisibility(element.dataset.shapeId, true);
+      }
+    };
+
+    let keyframes;
+    if (filter.startsWith("blinds")) {
+      // Horizontal blinds: stripe mask collapses (out) or opens (in).
+      const closed = {
+        opacity: 0,
+        webkitMaskImage: "repeating-linear-gradient(to bottom, #000 0 0px, transparent 0px 12px)",
+        maskImage: "repeating-linear-gradient(to bottom, #000 0 0px, transparent 0px 12px)",
+      };
+      const open = {
+        opacity: 1,
+        webkitMaskImage: "repeating-linear-gradient(to bottom, #000 0 12px, transparent 12px 12px)",
+        maskImage: "repeating-linear-gradient(to bottom, #000 0 12px, transparent 12px 12px)",
+      };
+      keyframes = isOut ? [open, closed] : [closed, open];
+    } else if (filter.startsWith("box")) {
+      // box(in) exit: iris closes from edges toward center.
+      const open = { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", webkitClipPath: "inset(0% 0% 0% 0%)" };
+      const closed = { opacity: 0, clipPath: "inset(50% 50% 50% 50%)", webkitClipPath: "inset(50% 50% 50% 50%)" };
+      keyframes = isOut ? [open, closed] : [closed, open];
+    } else {
+      // fade / dissolve
+      keyframes = isOut ? [{ opacity: 1 }, { opacity: 0 }] : [{ opacity: 0 }, { opacity: 1 }];
+    }
+
+    if (isOut) {
+      element.style.visibility = "visible";
+      if (element.style.opacity === "" || element.style.opacity === "0") {
         element.style.opacity = "1";
       }
     } else {
-      element.style.opacity = "1";
+      element.style.visibility = "visible";
+      element.style.opacity = "0";
     }
+
+    if (typeof element.animate === "function") {
+      try {
+        const animation = element.animate(keyframes, {
+          duration,
+          easing: cssEasing(timing),
+          fill: "forwards",
+        });
+        animation.addEventListener("finish", () => {
+          if (isOut) {
+            finishOut();
+          } else {
+            finishIn();
+          }
+        });
+      } catch (_error) {
+        if (isOut) {
+          finishOut();
+        } else {
+          finishIn();
+        }
+      }
+    } else if (isOut) {
+      finishOut();
+    } else {
+      finishIn();
+    }
+
     if (timing.autoReverse) {
       scheduleAnimation(() => {
-        runtimeLog("animation:effect-autoreverse", { target: animationElementInfo(element) });
-        element.style.opacity = "0";
-      }, timing.duration, "effect-auto-reverse", { target: animationElementInfo(element) });
+        runtimeLog("animation:effect-autoreverse", { target: animationElementInfo(element), effect: filter });
+        if (isOut) {
+          finishIn();
+        } else {
+          element.style.opacity = "0";
+        }
+      }, duration, "effect-auto-reverse", { target: animationElementInfo(element) });
     }
   }
 }
@@ -3878,7 +3994,7 @@ function applyBehavior(node, behavior, iterateContext = null) {
   if (behavior.kind === "set") {
     applySetBehavior(elements, strings);
   } else if (behavior.kind === "effect") {
-    applyEffectBehavior(elements, strings, timing);
+    applyEffectBehavior(elements, strings, timing, behavior);
   } else if (behavior.kind === "animate") {
     applyAnimateBehavior(elements, strings, timing);
   } else if (behavior.kind === "motion") {
@@ -4193,15 +4309,37 @@ function behaviorTargetShapeIds(node, behavior) {
 }
 
 /**
- * Shapes that must start hidden until an entrance/motion reveals them.
- * Exit-only targets (e.g. s019 felled goblin blinds + Hide After Animation) stay
- * visible from slide land — pre-hiding them left only the guy/slash on Attack.
+ * PPT motion paths are deltas from the authored position. A first point near
+ * (0,0) means the sprite is already on-slide (s023 goblin attack). A large
+ * first point is a fly-in (s014 hop / s019 slash) and must stay pre-hidden.
+ */
+function motionPathStartsNearOrigin(strings) {
+  const path = strings.find((value) => typeof value === "string" && /^m\s/i.test(value));
+  if (!path) {
+    return true;
+  }
+  const match = path.match(/^m\s+([-+eE.\d]+)\s+([-+eE.\d]+)/i);
+  if (!match) {
+    return true;
+  }
+  const x = Number.parseFloat(match[1]);
+  const y = Number.parseFloat(match[2]);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) {
+    return true;
+  }
+  return Math.abs(x) < 0.04 && Math.abs(y) < 0.04;
+}
+
+/**
+ * Shapes that must start hidden until an entrance / fly-in reveals them.
+ * On-slide motion (counter goblins) and exit-only (s019 blinds kill) stay
+ * visible from slide land.
  */
 function collectEntranceHiddenShapeIds(slideAnimations) {
   const roles = new Map();
   const ensure = (shapeId) => {
     if (!roles.has(shapeId)) {
-      roles.set(shapeId, { entranceReveal: false, motion: false, exitOnly: false });
+      roles.set(shapeId, { entranceReveal: false, motionFlyIn: false, exitOnly: false });
     }
     return roles.get(shapeId);
   };
@@ -4224,13 +4362,14 @@ function collectEntranceHiddenShapeIds(slideAnimations) {
         kind === "effect" &&
         (effectType === PPT_EFFECT_TYPE_ENTRANCE || (isFadeDissolve && effectType !== PPT_EFFECT_TYPE_EXIT));
       const isMotion = kind === "motion" || kind === "animate" || kind === "scale";
+      const flyIn = isMotion && kind === "motion" && !motionPathStartsNearOrigin(strings);
       for (const shapeId of targets) {
         const role = ensure(shapeId);
         if (setVisible || isEntranceEffect) {
           role.entranceReveal = true;
         }
-        if (isMotion) {
-          role.motion = true;
+        if (flyIn) {
+          role.motionFlyIn = true;
         }
         if (setHidden || isExitEffect) {
           role.exitOnly = true;
@@ -4251,8 +4390,9 @@ function collectEntranceHiddenShapeIds(slideAnimations) {
 
   const shapeIds = new Set();
   for (const [shapeId, role] of roles) {
-    // Entrance + motion: pre-hide (motion/set/effect reveal). Exit-only: leave visible.
-    if (role.entranceReveal || role.motion) {
+    // Entrances + off-slide fly-ins start hidden. On-slide motion and exit-only
+    // stay visible (s023/s025/s032 goblins; s019 felled blinds).
+    if (role.entranceReveal || role.motionFlyIn) {
       shapeIds.add(shapeId);
     }
   }
@@ -4287,8 +4427,8 @@ function setupAnimations(screen) {
     });
     return;
   }
-  // Entrance/motion targets start hidden until set/effect/motion reveals them.
-  // Exit-only targets (EffectType=Exit / hide-after) stay visible (s019 left goblin).
+  // Entrance targets start hidden until set/effect reveals them.
+  // Motion-only + exit-only stay visible (s023 goblins; s019 felled blinds).
   const entranceHiddenShapeIds = collectEntranceHiddenShapeIds(slideAnimations);
   for (const shapeId of entranceHiddenShapeIds) {
     const element = state.currentLayerElements.get(String(shapeId));

@@ -273,6 +273,70 @@ def assert_attack_shows_anim(page) -> None:
     else:
         print(f"OK s015 Attack → 19 with visible entrance (autoplay)")
 
+    # After blinds (~500ms) + hide-after (499ms) the felled goblin should fade/blinds out.
+    page.wait_for_timeout(900)
+    after = page.evaluate(
+        """() => {
+          const el = document.querySelector('#layers .layer[data-shape-id="24584"]');
+          if (!el) return { missing: true };
+          const cs = getComputedStyle(el);
+          return { vis: cs.visibility, op: parseFloat(cs.opacity || '0') };
+        }"""
+    )
+    if after.get("missing"):
+        fail("s019 lost left goblin layer during blinds exit")
+    elif after.get("vis") == "visible" and float(after.get("op") or 0) > 0.2:
+        fail(f"s019 left goblin should blinds-exit (opacity→0 / hidden) after ~1s: {after}")
+    else:
+        print("OK s019 left goblin blinds-exited after kill")
+
+
+def _layer_state(page, shape_id: int) -> dict:
+    return page.evaluate(
+        """(sid) => {
+          const el = document.querySelector(`#layers .layer[data-shape-id="${sid}"]`);
+          if (!el) return { missing: true };
+          const cs = getComputedStyle(el);
+          const r = el.getBoundingClientRect();
+          return {
+            vis: cs.visibility,
+            op: parseFloat(cs.opacity || '0'),
+            width: r.width,
+            height: r.height,
+          };
+        }""",
+        shape_id,
+    )
+
+
+def assert_counter_goblins_visible(page) -> None:
+    """s023/s025/s032 goblin pics are motion-only (no entrance); must be visible at land."""
+    cases = (
+        (23, (29701, 29703, 29704), "x3 Attacks"),
+        (25, (32771, 32772), "x2 Attacks"),
+        (32, (39939, 39940), "x2 Attacks"),
+    )
+    for slide, shape_ids, label in cases:
+        goto(page, slide)
+        page.wait_for_timeout(80)
+        if cur(page) != slide:
+            fail(f"goto s{slide:03d} landed on {cur(page)}")
+            continue
+        missing = []
+        hidden = []
+        for sid in shape_ids:
+            st = _layer_state(page, sid)
+            if st.get("missing"):
+                missing.append(sid)
+            elif st.get("vis") != "visible" or float(st.get("op") or 0) < 0.15 or float(st.get("width") or 0) < 8:
+                hidden.append((sid, st))
+        if missing:
+            fail(f"s{slide:03d} {label} missing goblin layers {missing}")
+        elif hidden:
+            fail(f"s{slide:03d} {label} goblins hidden at land (motion-only must not be pre-hidden): {hidden}")
+        else:
+            print(f"OK s{slide:03d} {label} goblins visible at land (motion-only)")
+
 
 def assert_attack_and_boredom(page) -> None:
     assert_attack_shows_anim(page)
@@ -332,6 +396,7 @@ def main() -> int:
         assert_click_gated_continue(page, 31, 30)
         assert_flee_to_cant_escape(page)
         assert_attack_and_boredom(page)
+        assert_counter_goblins_visible(page)
         browser.close()
     if failures:
         print(f"\n{len(failures)} failure(s)")

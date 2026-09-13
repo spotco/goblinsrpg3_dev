@@ -230,12 +230,41 @@ def main() -> None:
                 "`transition-effect-${effectType}`",
             ),
             "styleSnippets": (
+                "transition-effect-3",
+                "transition-effect-11",
+                "transition-effect-21",
                 "transition-effect-22",
                 "transition-effect-23",
-                "slide-wipe-horizontal",
-                "slide-wipe-vertical",
-                "slide-push-in",
-                "slide-dissolve-in",
+                "transition-effect-27",
+                "slide-checker-in",
+                "slide-zoom-in",
+                "slide-comb-in",
+                "slide-newsflash-in",
+                "slide-fade-in",
+                "slide-circle-in",
+            ),
+        },
+        {
+            "feature": "image effect filters (fade/dissolve/blinds/box)",
+            "manifestEvidence": {
+                "variantStrings": sorted(
+                    s
+                    for s in variant_strings
+                    if s in {"fade", "dissolve"} or s.startswith("blinds") or s.startswith("box")
+                ),
+            },
+            "present": (
+                "dissolve" in variant_strings
+                and "fade" in variant_strings
+                and any(s.startswith("blinds") for s in variant_strings)
+                and any(s.startswith("box") for s in variant_strings)
+            ),
+            "snippets": (
+                "function applyEffectBehavior",
+                "function effectFilterName",
+                "function effectTransitionIsOut",
+                'startsWith("blinds")',
+                'startsWith("box")',
             ),
         },
         {

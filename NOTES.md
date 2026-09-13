@@ -1,3 +1,21 @@
+## 2026-09-13 Image exits + counter visibility + transition catalog
+
+**Kill fade (s019 Felled and siblings):** PPS/pptx agree the goblin pic is
+`presetClass=exit` / EffectType=2 `blinds(horizontal)` (not fade) + hide-after
+~500ms. Runtime used to stub anything except fade/dissolve (`effect-skipped`).
+`applyEffectBehavior` now plays blinds / box(in) / fade+dissolve **out** using
+TimeEffectBehaviorAtom transition flag.
+
+**Counter attack visibility (s023/s025/s032):** goblin pics are motion-only
+paths starting at ~(0,0) — already on-slide. Pre-hiding every motion target
+left them invisible until the path ran. Fly-ins (s014 hop, s019 slash) still
+pre-hide because their path origin is far from 0.
+
+**Slide transitions:** catalog of SSSlideInfoAtom vs pptx `p:transition` is
+still only 3=checker, 11=zoom, 21=comb, 22=newsflash, 23=fade, 27=circle (+cut).
+All already had CSS from 8d03732. `verify_transition_effects.py` now asserts
+PPS↔pptx counts and image effect filters.
+
 # Maintenance notes
 
 ## 2026-09-13 DocSummary slideId hyperlink resolve (overturns "irreducible" combat)
