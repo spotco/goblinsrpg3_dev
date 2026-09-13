@@ -1,3 +1,15 @@
+## 2026-09-13 World-map yellow boxes after arrow dissolve
+
+**Symptom (slides 65 / also 84, 93):** yellow LEFT/DOWN_ARROW AutoShapes dissolve in looking correct for ~500ms, then become solid yellow rectangles.
+
+**Cause:** `applyEffectBehavior` `finishIn` cleared `clipPath`/`webkitClipPath` after every entrance. Arrow geometry is CSS `clip-path` from `AUTOSHAPE_CLIP_PATHS` (`dataset.autoShapeClip`). Clearing it left the `#ffff00` fill as a box.
+
+**Fix:** restore AutoShape clip-path in `finishIn` when `dataset.autoShapeClip` is set; `commitStyles`+`cancel` WAAPI so `fill: "forwards"` cannot keep a temporary box/inset clip.
+
+**Slide 44 “You are here”:** PPT/pptx has `downArrow` + motion path (off-slide start) + red ellipse + “You are here” text dissolve. Arrow has **motion only** (no dissolve), so it was not hit by this bug. Slide **64** has map + red oval + caption only — **no** arrow shapes in .pps/pptx.
+
+**Verify:** `?debug=1&slide=65` — after dissolve, LeftArrow/DownArrow stay arrow-shaped.
+
 ## 2026-09-13 Image exits + counter visibility + transition catalog
 
 **Kill fade (s019 Felled and siblings):** PPS/pptx agree the goblin pic is

@@ -3348,6 +3348,21 @@ function applyEffectBehavior(elements, strings, timing, behavior = null) {
     targets: elements.map(animationElementInfo),
   });
   for (const element of elements) {
+    const restoreAutoShapeClipAfterEffect = () => {
+      // Effect keyframes (especially box) temporarily override clip-path.
+      // finishIn used to blanket-clear clipPath, which turned yellow LEFT/DOWN
+      // ARROW AutoShapes into solid rectangles after dissolve/fade completed
+      // (world-map slides 65/84/93). Restore OOXML preset geometry when present.
+      const key = element.dataset && element.dataset.autoShapeClip;
+      const clip = key ? autoShapeClipPath(key) : null;
+      if (clip) {
+        element.style.clipPath = clip;
+        element.style.webkitClipPath = clip;
+      } else {
+        element.style.clipPath = "";
+        element.style.webkitClipPath = "";
+      }
+    };
     const finishOut = () => {
       element.style.opacity = "0";
       element.style.visibility = "hidden";
@@ -3362,8 +3377,7 @@ function applyEffectBehavior(elements, strings, timing, behavior = null) {
     const finishIn = () => {
       element.style.opacity = "1";
       element.style.visibility = "visible";
-      element.style.clipPath = "";
-      element.style.webkitClipPath = "";
+      restoreAutoShapeClipAfterEffect();
       element.style.maskImage = "";
       element.style.webkitMaskImage = "";
       if (element.dataset && element.dataset.shapeId) {
@@ -3413,6 +3427,18 @@ function applyEffectBehavior(elements, strings, timing, behavior = null) {
           fill: "forwards",
         });
         animation.addEventListener("finish", () => {
+          try {
+            if (typeof animation.commitStyles === "function") {
+              animation.commitStyles();
+            }
+          } catch (_commitErr) {
+            /* ignore */
+          }
+          try {
+            animation.cancel();
+          } catch (_cancelErr) {
+            /* ignore */
+          }
           if (isOut) {
             finishOut();
           } else {
