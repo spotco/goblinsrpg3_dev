@@ -2139,6 +2139,19 @@ function screenNeedsPngUnderlay(screen) {
   const nonEmptyText = layers.filter(
     (layer) => layer.type === "text" && String(layer.text || "").trim() && !layer.emptyTextPlaceholder,
   );
+  // Tall animated credit crawls (s201) are already addressable layers; keeping the
+  // composite PNG underlay double-draws baked + live scrolling text.
+  const largeAnimatedText = layers.some(
+    (layer) =>
+      layer.type === "text" &&
+      layer.animated &&
+      String(layer.text || "").trim() &&
+      !layer.emptyTextPlaceholder &&
+      layerArea(layer) >= 0.35,
+  );
+  if (largeAnimatedText) {
+    return false;
+  }
   return largeImages.length === 0 && maxArea < 0.5 && nonEmptyText.length <= 2;
 }
 
@@ -2972,7 +2985,12 @@ function applyBehaviorToIterateUnits(node, behavior, hostElements, strings, timi
                 : null;
             if (visibility) {
               unit.style.visibility = visibility;
-              if (visibility === "visible" && unit.style.opacity === "") {
+              // Appear/set-visible letter builds: units are created at opacity 0 for
+              // stagger; revealing visibility alone left s183's top caption invisible
+              // inside the white box (opacity stayed 0).
+              if (visibility === "visible") {
+                unit.style.opacity = "1";
+              } else if (visibility === "hidden") {
                 unit.style.opacity = "0";
               }
             }
@@ -4217,7 +4235,37 @@ function scheduleSubEffectNodes(node, startDelay, autoplay = false, iterateConte
       queueHideOnNextClickAfterEffect(sub);
       continue;
     }
-    // Other sub-effects (e.g. OnEnd-gated hide-after-animation) run with parent /
+    // OnEnd-gated Hide After Animation: binary targetId is often the OOXML cTn
+    // id, while emitAnimationTrigger keys on extract serial (s194-tn0034 → 34 vs
+    // wait 4:33). Stars on s194 never hid and stacked as white boxes over the art.
+    // Schedule against the parent entrance end instead of a mismatched waiter.
+    const endTriggers = nodeTriggerConditions(sub).filter((condition) => condition.triggerEvent === 4);
+    if (endTriggers.length && endTriggers.length === nodeTriggerConditions(sub).length) {
+      const parentLocalId = nodeLocalId(node);
+      const matchesParent = parentLocalId !== null && endTriggers.some((condition) => condition.targetId === parentLocalId);
+      if (!matchesParent) {
+        // +32ms so dissolve/fade finishIn (same nominal end) cannot re-show the shape.
+        const hideAt = startDelay + nodeOnEndDelayMs(node) + 32;
+        runtimeLog("animation:subeffect-onend-parent", {
+          parent: animationNodeInfo(node),
+          sub: animationNodeInfo(sub),
+          parentLocalId,
+          waitedTargetIds: endTriggers.map((condition) => condition.targetId),
+          hideAtMs: hideAt,
+          reason: "OnEnd targetId≠extract serial; bind to parent entrance end",
+        });
+        scheduleAnimation(
+          () => {
+            applyHideOnNextClickAfterEffectNow(sub);
+          },
+          hideAt,
+          "animation-subeffect-onend-hide",
+          { parent: animationNodeInfo(node), sub: animationNodeInfo(sub), hideAtMs: hideAt },
+        );
+        continue;
+      }
+    }
+    // Other sub-effects (e.g. OnEnd-gated hide when ids match) run with parent /
     // register trigger waits as usual.
     runAnimationNode(sub, startDelay, false, false, autoplay, iterateContext);
   }

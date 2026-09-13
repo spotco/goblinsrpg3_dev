@@ -1,3 +1,33 @@
+## 2026-09-13 s183 caption / s194 star flash / s201 credits crawl
+
+**s183 top white box empty:** Shape 223238 is the white plate; 223239 is
+`Step into the light… if th'art worthy…` with letter-iterate Appear. Units were
+created at `opacity:0` for stagger, but set-visible only flipped `visibility`
+when `opacity===""`, leaving letters invisible inside the box.
+
+**Fix:** iterate set-visible → `opacity:1` (hidden → `0`).
+
+**s194 white boxes over stars:** STAR_4 AutoShapes dissolve in then have
+After-Animation Hide (`subEffect` OnEnd). Extract OnEnd `targetId` is the OOXML
+cTn id, while `emitAnimationTrigger` keys on extract serial → hide never ran;
+white stars stacked over the art. Also raced dissolve `finishIn` at the same ms.
+
+**Fix:** bind mismatched OnEnd hides to parent entrance end +32ms and apply via
+`applyHideOnNextClickAfterEffectNow` (cancel WAAPI + hard hide).
+
+**s194 auto-advance?** No. Transition `slideTimeMs=6000` but `flags=0` (no
+`autoAdvance` bit). Manifest `autoAdvance=false`. Do not invent.
+
+**s201 multiple scrolling credits:** Hybrid PNG underlay kept baked credits under
+the live ppt_y crawl (plus character layers). 
+
+**Fix:** `screenNeedsPngUnderlay` returns false when a large animated text layer
+(area≥0.35) exists — layers-only so one credits crawl.
+
+**Verify:** `?debug=1&slide=183` (stage-click) — caption in white box;
+`?debug=1&slide=194` (stage-click, ~12–14s) — stars flash then clear;
+`?debug=1&slide=201` — single credits scroll, PNG hidden.
+
 ## 2026-09-13 World-map yellow boxes after arrow dissolve
 
 **Symptom (slides 65 / also 84, 93):** yellow LEFT/DOWN_ARROW AutoShapes dissolve in looking correct for ~500ms, then become solid yellow rectangles.
