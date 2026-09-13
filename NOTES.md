@@ -139,3 +139,69 @@ interpretation — do not invent story remaps.
 - `tools/verify_advancement.py` — s017→22; zero `user_authorized_target_override`
 - `tools/verify_combat_visual_options.py` — visual Attack/Flee; boredom→Flee→17→22
 - `tools/verify_start_graph.py` — start reachability includes 19/21/22/34/36/42 again
+
+## 2026-09-13 — exhaustive combat misread search (no remaps)
+
+Prior note documented conflicts; this pass dug past ExHyperlink labels into
+SSSlideInfoAtom bits, ExtTimeNode targets, InteractiveInfo parents, ExHyperlink
+CString instances, asset-013 counts, and orphan slides. **No interpretation bug
+found that yields remembered Attack/Flee/boredom play.** Binary remains oracle.
+
+Artifact: `generated/combat_interpretation_audit.json` via
+`tools/audit_combat_interpretation.py`.
+
+### 1. Boredom / auto-advance — NOT a false synthesize
+
+| Check | Result |
+|-------|--------|
+| SSSlideInfoAtom s015 | `rawHex=28230000…0016000400…` → slideTime=9000, **flags=0x0400 autoAdvance**, effectType=**22 newsflash** (POI: visual transition only) |
+| s016/s021/s022 | slideTime=9000 but **flags=0** — authors stored times without enabling auto |
+| “I'm bored…” | ExtTimeNode dissolve on shape **17427** (delay 3500ms); legacy AnimationInfoAtom automatic+synchronous |
+| Goblin hide on s015? | **No** — anim targets only text 17418/17427, never asset-013 pics |
+| Leave | auto 15→16; s016 text “Goblin fled of boredom…”, **asset-013 ×3→×2** |
+
+Falsified: media-end misparse, effectType-as-advance, boredom dissolve as slide change.
+
+### 2. Attack kill path — binding / off-by-one falsified
+
+| Check | Result |
+|-------|--------|
+| s015 Attack 17419 | InteractiveInfo hlId **62**, action=Hyperlink, jump=NoJump; ExHyperlink **only** CString inst0 `"Slide 18"` |
+| POI TEXTLINK | same 17419→Slide 18; address **null** |
+| MouseOver? | InteractiveInfo parent instance=**0** (mouse-click) for all early combat options |
+| Multi-InteractiveInfo/shape | **0** |
+| Bounds | Attack y≈0.644 / flee y≈0.711 — no overlap |
+| s018 | Caption CAN'T ESCAPE!! + motion paths; Continue→**24 still ×3** (HP 25→10) |
+| Orphan **s023** | “Goblin x3 Attacks!” / 15 dmg →24; **inbound=[]**; string `"Slide 23"` **absent** from Document stream |
+
+Cannot misread Attack→18 as →23: there is no hyperlink to 23. s021 Attack→19 Felled is a different menu’s edge; Continue still →24×3.
+
+### 3. Flee → same-count counter — Continue→22 is real ×1
+
+| Check | Result |
+|-------|--------|
+| s016/s021 Flee | →17 (binary) |
+| s017 Continue | ExHyperlink **77** `"Slide 22"`; transition flags=[]; no AfterEffect slide jump |
+| s022 art | **1× asset-013**; reconstructed PNG one goblin |
+| s032 (×2 Attacks) | inbound **only** s016 Attack — not flee Continue |
+
+Prior Continue→32 was a story override (removed db303a4). Not restorable under oracle policy.
+
+### 4. Asset-count heuristic
+
+`assetId==asset-013` picture count matches reconstructed screens (15:3, 16:2, 21:2, 22:1, 24:3). Not chroma-placeholder double-count.
+
+### Irreducible conflicts (remembered vs this LAUNCH.pps)
+
+1. Boredom ≠ kill — binary auto-leaves to authored ×2 boredom menu.
+2. Opening Attack = kill+fewer goblins — binary Attack→18→24 keeps ×3 (orphan s023 unused).
+3. Flee fail = counter same count — binary Continue→22 drops to ×1.
+
+### Interpretation experiments left (not remaps)
+
+1. **A (decisive):** Real PowerPoint slideshow oracle on this exact `.pps` (wait 9s / Attack / Flee+Continue).
+2. **B:** Hash any alternate goblins builds vs `inventory.source.sha256`.
+3. **C:** POI address null already confirmed.
+4. **D (anti-pattern):** Do not clear autoAdvance or remap 17→32 / 18→23.
+
+No code remaps. Runtime/extract targets unchanged.
